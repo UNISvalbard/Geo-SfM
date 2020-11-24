@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exercise 1 &#8212; UNIS SfM photogrammetry course</title>
+    <title>Metashape Tutorial &#8212; UNIS SfM photogrammetry course</title>
     
   <link rel="stylesheet" href="../../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -55,7 +55,7 @@
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="AM" href="../l2/agisoftmetashape.html" />
+    <link rel="next" title="AM" href="../l2/overview.html" />
     <link rel="prev" title="Welcome to Geo-SfM" href="../../../landing-page.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -99,7 +99,7 @@
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Exercise 1
+   Metashape Tutorial
   </a>
  </li>
 </ul>
@@ -110,18 +110,8 @@
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../l2/agisoftmetashape.html">
+  <a class="reference internal" href="../l2/overview.html">
    AM
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../l2/am_gui.html">
-   The graphical user interface
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../l2/exercise2.html">
-   Exercise 2
   </a>
  </li>
 </ul>
@@ -154,7 +144,7 @@
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../l4/automation.html">
+  <a class="reference internal" href="../l4/overview.html">
    Automation
   </a>
  </li>
@@ -281,6 +271,18 @@
     <a class="reference internal nav-link" href="#building-a-mesh">
      Building a mesh
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#texture-building">
+       Texture building
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#generating-a-tiled-model">
+     Generating a Tiled Model
+    </a>
    </li>
   </ul>
  </li>
@@ -295,8 +297,8 @@
         
               <div>
                 
-  <div class="section" id="exercise-1">
-<h1>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="metashape-tutorial">
+<h1>Metashape Tutorial<a class="headerlink" href="#metashape-tutorial" title="Permalink to this headline">¶</a></h1>
 <div class="admonition-deadline admonition">
 <p class="admonition-title">Deadline</p>
 <p>Please complete this exercise <strong>during today’s session</strong>.</p>
@@ -321,6 +323,12 @@ This should provide you with the <strong>major release</strong>, <em>minor</em>,
 <li><p>update the installation; or</p></li>
 <li><p>contact the Seismic Lab software responsible (Peter Betlem)</p></li>
 </ul>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">Think before doing…</p>
+<p>Always remember that quality comes at a cost, in this case as a computational cost (i.e., time) and storage cost (i.e., size).</p>
+<p>In processing this is the key dilemma, and requires you to think about the output before you start.</p>
+<p>Is it really necessary to generate a 500 GB model for a 1 by 1 square metre area, considering that your max upload limit for an assignment is only 200 MB?</p>
 </div>
 <div class="admonition-further-reading admonition">
 <p class="admonition-title">Further reading</p>
@@ -386,6 +394,10 @@ For example, down-sampling a 1000x1000 pixel image to a 100x100 image results in
 </div>
 <div class="section" id="improve-alignment-step">
 <h4>Improve alignment step<a class="headerlink" href="#improve-alignment-step" title="Permalink to this headline">¶</a></h4>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Work in progress</p>
+</div>
 </div>
 </div>
 <div class="section" id="build-dense-cloud">
@@ -434,6 +446,37 @@ Delete the selected points by hitting the <em>Del(ete)</em> key on the keyboard.
 </div>
 <div class="section" id="building-a-mesh">
 <h3>Building a mesh<a class="headerlink" href="#building-a-mesh" title="Permalink to this headline">¶</a></h3>
+<p>We can use the dense point cloud to generate a polygonal mesh model.
+While generating the dense cloud, Agisoft Metashape simultaneously generated a set of depth maps (if chosen to save to the project).
+This is important as we can decide which of the two to use for meshing.
+Depth maps may lead to better results when dealing with a big number of minor details, but otherwise dense clouds should be used as the source.</p>
+<p>After selecting <em>Build Mesh</em> from the <em>Workflow</em> menu, you will be able to chose either in the dialog that pops up for <em>Source data:</em>.</p>
+<p>Other important parameters here are the <em>Quality</em> and <em>Face count</em> parameters.
+These govern the quality of the generated mesh.
+Remember, however, that quality comes at a cost, so best to stick to <em>Medium</em> or lower to manage the exercise within the allocated of time…</p>
+<p>Finally, feel free to enable the <em>Calculate vertext colors</em> to provide the mesh with some colour as well, otherwise it will be shown as a purple mesh.</p>
+<p>Once generated, we can take a closer look at the mesh by clicking on the <em>Tetrahedral</em> icon next to the nine-dotted icon.
+Clicking on the gray triangle next to it, you see that the <em>Model Textured</em> is still grayed out.
+The next step involves generating a texture and placing this “image” onto the mesh - after which the <em>Model Textured</em> becomes selectable.</p>
+<div class="tip admonition">
+<p class="admonition-title">Depth maps</p>
+<p>If depth maps do exist, and you decide to use them as the source data, then make sure to enable <em>Reuse depth maps</em> to save computational time!</p>
+</div>
+<div class="section" id="texture-building">
+<h4>Texture building<a class="headerlink" href="#texture-building" title="Permalink to this headline">¶</a></h4>
+<p>We can build the textures by clicking on the <em>Build Texture</em> command from the <em>Workflow</em> menu.
+While the dialog has many different parameters, the most important are highlighted in the fiure below:</p>
+<p><img alt="" src="../../../_images/644b7ead.png" /></p>
+<p>Here <em>Texture size/count</em> determines the quality of the texture. Keep in mind that anything over 16384 can very quickly lead to very, very large file sizes on your harddisk.
+On the other hand, anything less than 4096 is probably insufficient.</p>
+</div>
+</div>
+<div class="section" id="generating-a-tiled-model">
+<h3>Generating a Tiled Model<a class="headerlink" href="#generating-a-tiled-model" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Work in progress</p>
+</div>
 </div>
 </div>
 </div>
@@ -467,7 +510,7 @@ Delete the selected points by hitting the <em>Del(ete)</em> key on the keyboard.
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="../../../landing-page.html" title="previous page">Welcome to Geo-SfM</a>
-    <a class='right-next' id="next-link" href="../l2/agisoftmetashape.html" title="next page">AM</a>
+    <a class='right-next' id="next-link" href="../l2/overview.html" title="next page">AM</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
