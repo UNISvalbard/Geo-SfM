@@ -1,4 +1,4 @@
-# Overview
+# Session 2
 
 In this second session we will implementing SfM photogrammetry on a human-sized object of our own choosing.
 
