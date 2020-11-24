@@ -1,0 +1,4 @@
+title: "UNIS SfM photogrammetry course"
+logo: images/logo.png
+execute:
+  execute_notebooks: "off"

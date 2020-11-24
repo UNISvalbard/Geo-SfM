@@ -1,0 +1,495 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 1 &#8212; UNIS SfM photogrammetry course</title>
+    
+  <link rel="stylesheet" href="../../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="AM" href="../l2/agisoftmetashape.html" />
+    <link rel="prev" title="Welcome to Geo-SfM" href="../../../landing-page.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">UNIS SfM photogrammetry course</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../landing-page.html">
+   Welcome to Geo-SfM
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Session 1
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Exercise 1
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Session 2
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../l2/agisoftmetashape.html">
+   AM
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../l2/am_gui.html">
+   The graphical user interface
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../l2/exercise2.html">
+   Exercise 2
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Session 3
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../l3/overview.html">
+   Lesson 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../l3/gcps.html">
+   gcps
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../l3/aruco.html">
+   Aruco
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Session 4
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../l4/automation.html">
+   Automation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../l4/Batch.html">
+   Batch-based manual processing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../l4/python.html">
+   Python-based standardised processing
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/content/lessons/l1/exercise1.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#d-model-reconstruction-with-agisoft-metashape">
+   3D model reconstruction with Agisoft Metashape
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#photo-set">
+     Photo set
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-photos">
+     Adding photos
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#aligning-photos">
+     Aligning photos
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#improve-alignment-step">
+       Improve alignment step
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#build-dense-cloud">
+     Build Dense CLoud
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#selection-by-point-confidence">
+       Selection by point confidence
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#building-a-mesh">
+     Building a mesh
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="exercise-1">
+<h1>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">¶</a></h1>
+<div class="admonition-deadline admonition">
+<p class="admonition-title">Deadline</p>
+<p>Please complete this exercise <strong>during today’s session</strong>.</p>
+</div>
+<p>The exercise for the first session consists of the following:</p>
+<ul class="simple">
+<li><p>You will <strong>learn the basics of Agisoft Metashape</strong></p></li>
+<li><p>You will <strong>use Agisoft Metashape to digitise samples and/or outcrops</strong></p></li>
+</ul>
+<div class="section" id="d-model-reconstruction-with-agisoft-metashape">
+<h2>3D model reconstruction with Agisoft Metashape<a class="headerlink" href="#d-model-reconstruction-with-agisoft-metashape" title="Permalink to this headline">¶</a></h2>
+<p>In this session we will learn how to use Agisoft Metashape.
+This is an established SfM photogrammetry package and is often used in the Arctic Geology department at UNIS to create digital outcrop models (DOMs) and hand-sample models (HSMs).
+This session introduce basic processing through the graphical user interface through use of a standardised data set.</p>
+<div class="tip admonition">
+<p class="admonition-title">Software version</p>
+<p>The following tutorial assumes the use of <strong>Agisoft Metashape version 1.6.x.</strong></p>
+<p>To see whether you are indeed running the correct version proceed to <em>Help/About Metashape…</em> in the menubar.
+This should provide you with the <strong>major release</strong>, <em>minor</em>, and patch (<strong>1</strong>.<em>6</em>.x) version number, as well as the build.</p>
+<p>If the version does not match the version listed above, please either</p>
+<ul class="simple">
+<li><p>update the installation; or</p></li>
+<li><p>contact the Seismic Lab software responsible (Peter Betlem)</p></li>
+</ul>
+</div>
+<div class="admonition-further-reading admonition">
+<p class="admonition-title">Further reading</p>
+<p>The guidelines below are based on the official Agisoft <em>3D model reconstruction</em> tutorial.
+This tutorial, as well as more in-depth help, can be visited here:
+https://agisoft.freshdesk.com/support/solutions/articles/31000152092</p>
+</div>
+<div class="section" id="photo-set">
+<h3>Photo set<a class="headerlink" href="#photo-set" title="Permalink to this headline">¶</a></h3>
+<p>We’ll be using a standardised data set that can be retrieved from the following URL:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">URL</span><span class="p">:</span>
+</pre></div>
+</div>
+<p>Go ahead and download the package, then extract the archive’s contents.
+As you will see, we are aiming to have the following folder structure:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>project_directory (where you unzipped the files to)
+├───100MEDIA (The folder in which all the images reside)
+|       DJI_0001.JPG
+|       DJI_0002.JPG
+|       ...
+├───gcps
+|       (We&#39;ll get back to this in a later session)
+└───metashape
+        (This is where you save your Agisoft Metashape projects to)
+</pre></div>
+</div>
+<p>This is a standardised folder structure that (as we will see later on) is also used for automated processing.</p>
+</div>
+<div class="section" id="adding-photos">
+<h3>Adding photos<a class="headerlink" href="#adding-photos" title="Permalink to this headline">¶</a></h3>
+<p>Next we’ll be adding the photos to Agisoft Metashape.
+This assumes
+To do this, proceed to and click on <em>Add photos…</em> from <em>Workflow</em> in the <em>menu bar</em>.
+In the dialog that pops up, browse to the <em>project_directory/100MEDIA</em> folder that you created in the previous section.
+Select all files to be processed.
+These should now show up in a <em>chunk</em> with <em>cameras</em> in the <em>Workspace</em> panel.
+Verify that this is indeed the case by double clicking one of the <em>cameras</em> in the <em>Worksapce/Chunk/Cameras</em> panel.</p>
+<div class="tip admonition">
+<p class="admonition-title">Save often!</p>
+<p>It is important to save your work often.
+Make a habbit of saving at least after every step.
+To do so, proceed to <em>Save as…</em> under <em>File</em> in the menu bar, and save your project in the <em>project_directory/metashape</em> directory that you created when extracting in data.</p>
+</div>
+</div>
+<div class="section" id="aligning-photos">
+<h3>Aligning photos<a class="headerlink" href="#aligning-photos" title="Permalink to this headline">¶</a></h3>
+<p>With the photos now imported into Metashape, we can proceed with the alignment process.
+This process goes through all images in the project and tries to identify <em>common features</em>.
+In Metashape this first requires the estimation of camera positions for each photo, which are then used to build a <em>sparse cloud</em>.
+Select <em>Align Photos…</em> in the <em>Workflow</em> menu.</p>
+<p>A dialog will pop up with several parameter options.
+Most important here is the <em>Accuracy</em> parameter, which governs whether your photos are down-sampled before alignment.</p>
+<p>For now we’ll skip the other parameters; just make sure to deselect <em>Generic preselection</em>, <em>Reference preselection</em>, <em>Guided image matching</em>, and <em>Adaptive camera model fitting</em>.</p>
+<p>After clicking <em>OK</em>, Metashape starts aligning your photos.
+This may take a while, but assuming there is sufficient overlap between the data, a <em>sparse point cloud</em> will be shown on the screen (in the <em>Model</em> tab) once processing is done.
+If not, one can select this by clicking the four-dotted icon in the menu.</p>
+<div class="admonition-down-sampling admonition">
+<p class="admonition-title">Down-sampling</p>
+<p>Down-sampling is the process in which you combine parts of a data set, resulting in the loss of knowledge.
+For example, down-sampling a 1000x1000 pixel image to a 100x100 image results in a factor 100 compression of data (= easier to process), but you also lose the initial resolution!</p>
+<p>Depending on your computer specifications, you’ll have to weigh computational time versus output quality.</p>
+<p>Give it a shot, and compare the photo alignment results with <em>medium</em> vs <em>high</em> processing accuracy.</p>
+</div>
+<div class="section" id="improve-alignment-step">
+<h4>Improve alignment step<a class="headerlink" href="#improve-alignment-step" title="Permalink to this headline">¶</a></h4>
+</div>
+</div>
+<div class="section" id="build-dense-cloud">
+<h3>Build Dense CLoud<a class="headerlink" href="#build-dense-cloud" title="Permalink to this headline">¶</a></h3>
+<p>Based on the estimated camera positions, we can now estimate a <em>dense point cloud</em> by calculating depth information for each image.</p>
+<p>Select <em>Build Dense Cloud</em> from the <em>Workflow</em> menu. Once again you will be asked about the desired accuracy/quality. Keeping in mind what we discussed above, make sure to select <em>Medium</em> for the quality.</p>
+<p>Also open up the <em>Advanced</em> section, and set <em>Depth filtering</em> to <em>Mild</em>.
+<strong>Make sure to always enable <em>Calculate point confidence</em></strong></p>
+<p>Once processing is done, you’ll be able to show the <em>dense point cloud</em> on the screen in the <em>Model</em> tab.
+If not, one can visualise the <em>dense point cloud</em> by clicking on the nine-dotted icon in the menu.
+Alternative, you could also visualise the point confidence.
+Do so by clicking the gray triangle next to the nine-dotted icon and selecting <em>Dense cloud confidence</em>.
+The colour coding (red = bad, blue = good) shows where the best confidence is found.</p>
+<div class="admonition-point-confidence admonition">
+<p class="admonition-title">Point confidence</p>
+<p><em>Point confidence</em> shows how accurate a given point in the dense cloud is.
+This is key to estimate whether the part we are interested in can be scientifically used for measurements and characterisation based on predefined criteria.</p>
+</div>
+<div class="section" id="selection-by-point-confidence">
+<h4>Selection by point confidence<a class="headerlink" href="#selection-by-point-confidence" title="Permalink to this headline">¶</a></h4>
+<div class="tip admonition">
+<p class="admonition-title">Save time - make backups</p>
+<p>Make sure to always either backup your data before playing with it.
+This can be done by either backing up the entire project (<em>Save as…</em>) or by making a local copy of the data within the project.
+To do the latter, right click on the <em>Workspace/Dense Cloud (… points)</em> and select <em>Duplicate…</em>.
+Following alterations to the duplicated data set, you can always switch back to the original by right clicking <em>Workspace/Dense Cloud (… points)</em> and <em>Set As Default</em>.</p>
+</div>
+<p>There are various ways of cutting off parts of your Dense Cloud.
+However, not all of them are scientifically repeatable - because let’s be honest, would you be able to exactly tell which of the points you removed from the data? No.</p>
+<p>Luckily, Metashape allows selection and deletion of points by <em>Point confidence</em>.
+Proceed to <em>Tools/Dense Cloud</em> in the menu and click on <em>Filter by confidence…</em>.
+The dialog that pops up allows you to set minimal and maximal confidences.</p>
+<p>For example, try setting <em>Min</em>:50 and <em>Max</em>:255 to only show the Dense Cloud points wth the highest confidence.
+After looking at the difference, reset the filter by clicking on <em>Reset filter</em> within the <em>Tools/Dense Cloud</em> menu.</p>
+<p>We will now use the method outlined above to filter out the lowest confidence interval (in this case, set <em>Min</em>:0 and <em>Max</em>:5).
+Proceed by selecting all the points shown in the <em>Model</em> tab.
+Do this by enabling the <em>Rectangle Selection</em> tool, found next to the mouse pointer icon in the menu.
+Then drag a rectangle selection and include all to-be-selected points currently visible.
+Delete the selected points by hitting the <em>Del(ete)</em> key on the keyboard.</p>
+<p>Now reset the filter, and you’ll see that just the high-confidence part remains. :)</p>
+<div class="admonition-scientific-repeatability admonition">
+<p class="admonition-title">Scientific repeatability</p>
+<p><strong>Always write down the chosen confidence interval</strong> - repeatability depends on it!</p>
+</div>
+</div>
+</div>
+<div class="section" id="building-a-mesh">
+<h3>Building a mesh<a class="headerlink" href="#building-a-mesh" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content\lessons\l1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="../../../landing-page.html" title="previous page">Welcome to Geo-SfM</a>
+    <a class='right-next' id="next-link" href="../l2/agisoftmetashape.html" title="next page">AM</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book community<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

@@ -1,0 +1,27 @@
+- file: landing-page.md
+
+- part: Session 1
+  chapters:
+  - file: /content/lessons/l1/software
+  - file: /content/lessons/l1/seismic_lab
+  - file: /content/lessons/l1/exercise1
+
+
+- part: Session 2
+  chapters:
+  - file: /content/lessons/l2/agisoftmetashape
+  - file: /content/lessons/l2/am_gui
+  - file: /content/lessons/l2/exercise2
+
+- part: Session 3
+  chapters:
+  - file: /content/lessons/l3/overview
+  - file: /content/lessons/l3/gcps
+  - file: /content/lessons/l3/aruco
+  - file: /content/lessons/l3/metashape
+
+- part: Session 4
+  chapters:
+  - file: /content/lessons/l4/automation
+  - file: /content/lessons/l4/Batch
+  - file: /content/lessons/l4/python
