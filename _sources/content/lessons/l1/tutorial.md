@@ -8,6 +8,11 @@ The exercise for the first session consists of the following:
 - You will **learn the basics of Agisoft Metashape**
 - You will **use Agisoft Metashape to digitise samples and/or outcrops**
 
+```{admonition} Support
+:class: warning
+Please note that **we only provide feedback and support for students enrolled in the course at the University Centre of Svalbard**.
+```
+
 ## 3D model reconstruction with Agisoft Metashape
 
 In this session we will learn how to use Agisoft Metashape.
@@ -115,7 +120,7 @@ Work in progress
 ```
 
 
-### Build Dense CLoud
+### Build Dense Cloud
 
 Based on the estimated camera positions, we can now estimate a *dense point cloud* by calculating depth information for each image.
 
@@ -202,6 +207,12 @@ Here *Texture size/count* determines the quality of the texture. Keep in mind th
 On the other hand, anything less than 4096 is probably insufficient.
 
 ### Generating a Tiled Model
+
+```{note}
+Work in progress
+```
+
+### Export a processing report
 
 ```{note}
 Work in progress

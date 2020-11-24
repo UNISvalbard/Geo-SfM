@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AM &#8212; Geo-SfM Course 2020</title>
+    <title>Overview &#8212; Geo-SfM Course 2020</title>
     
   <link rel="stylesheet" href="../../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -55,7 +55,7 @@
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Lesson 3" href="../l3/overview.html" />
+    <link rel="next" title="Exercise 2" href="exercise2.html" />
     <link rel="prev" title="Metashape Tutorial" href="../l1/tutorial.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -93,6 +93,23 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
+  Informations and other bits
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/seismic_lab.html">
+   Seismic lab (Signehamna)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/software.html">
+   Software
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
   Session 1
  </span>
 </p>
@@ -111,7 +128,12 @@
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   AM
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="exercise2.html">
+   Exercise 2
   </a>
  </li>
 </ul>
@@ -156,23 +178,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../l4/python.html">
    Python-based standardised processing
-  </a>
- </li>
-</ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  About
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../about/seismic_lab.html">
-   Seismic lab (Signehamna)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../about/software.html">
-   Software
   </a>
  </li>
 </ul>
@@ -226,6 +231,22 @@
 
         <!-- Source interaction buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/UNISvalbard/Geo-SfM"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/UNISvalbard/Geo-SfM/issues/new?title=Issue%20on%20page%20%2Fcontent/lessons/l2/overview.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
 
         <!-- Full screen (wrap in <a> to have style consistency -->
         <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
@@ -240,6 +261,20 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#learning-goals">
+   Learning goals
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -247,8 +282,17 @@
         
               <div>
                 
-  <div class="section" id="am">
-<h1>AM<a class="headerlink" href="#am" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="overview">
+<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
+<p>In this second session we will implementing SfM photogrammetry on a human-sized object of our own choosing.</p>
+<div class="section" id="learning-goals">
+<h2>Learning goals<a class="headerlink" href="#learning-goals" title="Permalink to this headline">¶</a></h2>
+<p><strong>After this session you will be able to:</strong></p>
+<ul class="simple">
+<li><p>Use Agisoft Metashape to digitally reconstruct macro-objects, outcrops, and more.</p></li>
+<li><p>Discover and implement basic tips and tricks for data acquisition</p></li>
+</ul>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -280,14 +324,14 @@
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="../l1/tutorial.html" title="previous page">Metashape Tutorial</a>
-    <a class='right-next' id="next-link" href="../l3/overview.html" title="next page">Lesson 3</a>
+    <a class='right-next' id="next-link" href="exercise2.html" title="next page">Exercise 2</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
     <div class="container">
       <p>
         
-          By The Jupyter Book community<br/>
+          By Peter Betlem<br/>
         
             &copy; Copyright 2020.<br/>
       </p>

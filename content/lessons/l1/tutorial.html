@@ -55,8 +55,8 @@
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="AM" href="../l2/overview.html" />
-    <link rel="prev" title="Welcome to Geo-SfM" href="../../../landing-page.html" />
+    <link rel="next" title="Overview" href="../l2/overview.html" />
+    <link rel="prev" title="Software" href="../about/software.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -93,6 +93,23 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
+  Informations and other bits
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/seismic_lab.html">
+   Seismic lab (Signehamna)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/software.html">
+   Software
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
   Session 1
  </span>
 </p>
@@ -111,7 +128,12 @@
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../l2/overview.html">
-   AM
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../l2/exercise2.html">
+   Exercise 2
   </a>
  </li>
 </ul>
@@ -156,23 +178,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../l4/python.html">
    Python-based standardised processing
-  </a>
- </li>
-</ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  About
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../about/seismic_lab.html">
-   Seismic lab (Signehamna)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../about/software.html">
-   Software
   </a>
  </li>
 </ul>
@@ -226,6 +231,22 @@
 
         <!-- Source interaction buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/UNISvalbard/Geo-SfM"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/UNISvalbard/Geo-SfM/issues/new?title=Issue%20on%20page%20%2Fcontent/lessons/l1/tutorial.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
 
         <!-- Full screen (wrap in <a> to have style consistency -->
         <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
@@ -274,7 +295,7 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#build-dense-cloud">
-     Build Dense CLoud
+     Build Dense Cloud
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
@@ -301,6 +322,11 @@
      Generating a Tiled Model
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#export-a-processing-report">
+     Export a processing report
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -325,6 +351,10 @@
 <li><p>You will <strong>learn the basics of Agisoft Metashape</strong></p></li>
 <li><p>You will <strong>use Agisoft Metashape to digitise samples and/or outcrops</strong></p></li>
 </ul>
+<div class="warning admonition">
+<p class="admonition-title">Support</p>
+<p>Please note that <strong>we only provide feedback and support for students enrolled in the course at the University Centre of Svalbard</strong>.</p>
+</div>
 <div class="section" id="d-model-reconstruction-with-agisoft-metashape">
 <h2>3D model reconstruction with Agisoft Metashape<a class="headerlink" href="#d-model-reconstruction-with-agisoft-metashape" title="Permalink to this headline">¶</a></h2>
 <p>In this session we will learn how to use Agisoft Metashape.
@@ -418,7 +448,7 @@ For example, down-sampling a 1000x1000 pixel image to a 100x100 image results in
 </div>
 </div>
 <div class="section" id="build-dense-cloud">
-<h3>Build Dense CLoud<a class="headerlink" href="#build-dense-cloud" title="Permalink to this headline">¶</a></h3>
+<h3>Build Dense Cloud<a class="headerlink" href="#build-dense-cloud" title="Permalink to this headline">¶</a></h3>
 <p>Based on the estimated camera positions, we can now estimate a <em>dense point cloud</em> by calculating depth information for each image.</p>
 <p>Select <em>Build Dense Cloud</em> from the <em>Workflow</em> menu. Once again you will be asked about the desired accuracy/quality. Keeping in mind what we discussed above, make sure to select <em>Medium</em> for the quality.</p>
 <p>Also open up the <em>Advanced</em> section, and set <em>Depth filtering</em> to <em>Mild</em>.
@@ -495,6 +525,13 @@ On the other hand, anything less than 4096 is probably insufficient.</p>
 <p>Work in progress</p>
 </div>
 </div>
+<div class="section" id="export-a-processing-report">
+<h3>Export a processing report<a class="headerlink" href="#export-a-processing-report" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Work in progress</p>
+</div>
+</div>
 </div>
 </div>
 
@@ -526,15 +563,15 @@ On the other hand, anything less than 4096 is probably insufficient.</p>
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="../../../landing-page.html" title="previous page">Welcome to Geo-SfM</a>
-    <a class='right-next' id="next-link" href="../l2/overview.html" title="next page">AM</a>
+    <a class='left-prev' id="prev-link" href="../about/software.html" title="previous page">Software</a>
+    <a class='right-next' id="next-link" href="../l2/overview.html" title="next page">Overview</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
     <div class="container">
       <p>
         
-          By The Jupyter Book community<br/>
+          By Peter Betlem<br/>
         
             &copy; Copyright 2020.<br/>
       </p>
