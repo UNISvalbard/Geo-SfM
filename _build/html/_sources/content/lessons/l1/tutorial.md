@@ -8,6 +8,11 @@ The exercise for the first session consists of the following:
 - You will **learn the basics of Agisoft Metashape**
 - You will **use Agisoft Metashape to digitise samples and/or outcrops**
 
+```{admonition} Support
+:class: warning
+Please note that **we only provide feedback and support for students enrolled in the course at the University Centre of Svalbard**.
+```
+
 ## 3D model reconstruction with Agisoft Metashape
 
 In this session we will learn how to use Agisoft Metashape.
@@ -15,7 +20,6 @@ This is an established SfM photogrammetry package and is often used in the Arcti
 This session introduce basic processing through the graphical user interface through use of a standardised data set.
 
 ```{admonition} Software version
-:class: tip
 The following tutorial assumes the use of **Agisoft Metashape version 1.6.x.**
 
 To see whether you are indeed running the correct version proceed to *Help/About Metashape...* in the menu bar.
@@ -32,10 +36,11 @@ Always remember that quality comes at a cost, in this case as a computational co
 
 In processing this is the key dilemma, and requires you to think about the output before you start.
 
-Is it really necessary to generate a 500 GB model for a 1 by 1 square metre area, considering that your max upload limit for an assignment is only 200 MB?
+*Is it really necessary to generate a 500 GB model for a 1 by 1 square metre area, considering that your max upload limit for an assignment is only 200 MB?*
 ```
 
 ```{admonition} Further reading
+:class: tip
 The guidelines below are based on the official Agisoft *3D model reconstruction* tutorial.
 This tutorial, as well as more in-depth help, can be visited here:
 https://agisoft.freshdesk.com/support/solutions/articles/31000152092
@@ -115,7 +120,7 @@ Work in progress
 ```
 
 
-### Build Dense CLoud
+### Build Dense Cloud
 
 Based on the estimated camera positions, we can now estimate a *dense point cloud* by calculating depth information for each image.
 
@@ -202,6 +207,12 @@ Here *Texture size/count* determines the quality of the texture. Keep in mind th
 On the other hand, anything less than 4096 is probably insufficient.
 
 ### Generating a Tiled Model
+
+```{note}
+Work in progress
+```
+
+### Export a processing report
 
 ```{note}
 Work in progress

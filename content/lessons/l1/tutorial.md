@@ -1,4 +1,4 @@
-# Exercise 1
+# Metashape Tutorial
 
 ```{admonition} Deadline
 Please complete this exercise **during today's session**.
@@ -8,6 +8,11 @@ The exercise for the first session consists of the following:
 - You will **learn the basics of Agisoft Metashape**
 - You will **use Agisoft Metashape to digitise samples and/or outcrops**
 
+```{admonition} Support
+:class: warning
+Please note that **we only provide feedback and support for students enrolled in the course at the University Centre of Svalbard**.
+```
+
 ## 3D model reconstruction with Agisoft Metashape
 
 In this session we will learn how to use Agisoft Metashape.
@@ -15,7 +20,6 @@ This is an established SfM photogrammetry package and is often used in the Arcti
 This session introduce basic processing through the graphical user interface through use of a standardised data set.
 
 ```{admonition} Software version
-:class: tip
 The following tutorial assumes the use of **Agisoft Metashape version 1.6.x.**
 
 To see whether you are indeed running the correct version proceed to *Help/About Metashape...* in the menu bar.
@@ -26,7 +30,17 @@ If the version does not match the version listed above, please either
 - contact the Seismic Lab software responsible (Peter Betlem)
 ```
 
+```{admonition} Think before doing...
+:class: warning
+Always remember that quality comes at a cost, in this case as a computational cost (i.e., time) and storage cost (i.e., size).
+
+In processing this is the key dilemma, and requires you to think about the output before you start.
+
+*Is it really necessary to generate a 500 GB model for a 1 by 1 square metre area, considering that your max upload limit for an assignment is only 200 MB?*
+```
+
 ```{admonition} Further reading
+:class: tip
 The guidelines below are based on the official Agisoft *3D model reconstruction* tutorial.
 This tutorial, as well as more in-depth help, can be visited here:
 https://agisoft.freshdesk.com/support/solutions/articles/31000152092
@@ -100,12 +114,13 @@ Give it a shot, and compare the photo alignment results with *medium* vs *high* 
 ```
 
 #### Improve alignment step
-```{admonition}
-To be implemented...
+
+```{note}
+Work in progress
 ```
 
 
-### Build Dense CLoud
+### Build Dense Cloud
 
 Based on the estimated camera positions, we can now estimate a *dense point cloud* by calculating depth information for each image.
 
@@ -158,3 +173,47 @@ Now reset the filter, and you'll see that just the high-confidence part remains.
 ```
 
 ### Building a mesh
+
+We can use the dense point cloud to generate a polygonal mesh model.
+While generating the dense cloud, Agisoft Metashape simultaneously generated a set of depth maps (if chosen to save to the project).
+This is important as we can decide which of the two to use for meshing.
+Depth maps may lead to better results when dealing with a big number of minor details, but otherwise dense clouds should be used as the source.
+
+After selecting *Build Mesh* from the *Workflow* menu, you will be able to chose either in the dialog that pops up for *Source data:*.
+
+Other important parameters here are the *Quality* and *Face count* parameters.
+These govern the quality of the generated mesh.
+Remember, however, that quality comes at a cost, so best to stick to *Medium* or lower to manage the exercise within the allocated of time...
+
+Finally, feel free to enable the *Calculate vertext colors* to provide the mesh with some colour as well, otherwise it will be shown as a purple mesh.
+
+Once generated, we can take a closer look at the mesh by clicking on the *Tetrahedral* icon next to the nine-dotted icon.
+Clicking on the gray triangle next to it, you see that the *Model Textured* is still grayed out.
+The next step involves generating a texture and placing this "image" onto the mesh - after which the *Model Textured* becomes selectable.
+
+```{admonition} Depth maps
+:class: tip
+If depth maps do exist, and you decide to use them as the source data, then make sure to enable *Reuse depth maps* to save computational time!
+```
+
+#### Texture building
+
+We can build the textures by clicking on the *Build Texture* command from the *Workflow* menu.
+While the dialog has many different parameters, the most important are highlighted in the fiure below:
+
+![](assets/644b7ead.png)
+
+Here *Texture size/count* determines the quality of the texture. Keep in mind that anything over 16384 can very quickly lead to very, very large file sizes on your harddisk.
+On the other hand, anything less than 4096 is probably insufficient.
+
+### Generating a Tiled Model
+
+```{note}
+Work in progress
+```
+
+### Export a processing report
+
+```{note}
+Work in progress
+```

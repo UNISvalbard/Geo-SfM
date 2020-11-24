@@ -1,4 +1,14 @@
-title: "UNIS SfM photogrammetry course"
+title: "Geo-SfM Course 2020"
 logo: images/logo.png
+author: Peter Betlem
+copyright: "2020"
+
+repository:
+  url: https://github.com/UNISvalbard/Geo-SfM
+
+html:
+  use_repository_button: True
+  use_issues_button: True
+
 execute:
   execute_notebooks: "off"

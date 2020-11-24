@@ -1,16 +1,18 @@
 - file: landing-page.md
 
+- part: Informations and other bits
+  chapters:
+  - file: /content/lessons/about/seismic_lab
+  - file: /content/lessons/about/software
+
 - part: Session 1
   chapters:
-  - file: /content/lessons/l1/software
-  - file: /content/lessons/l1/seismic_lab
-  - file: /content/lessons/l1/exercise1
-
+  - file: /content/lessons/l1/tutorial
 
 - part: Session 2
   chapters:
-  - file: /content/lessons/l2/agisoftmetashape
-  - file: /content/lessons/l2/am_gui
+  - file: /content/lessons/l2/overview
+  - file: /content/lessons/l2/tips_n_tricks
   - file: /content/lessons/l2/exercise2
 
 - part: Session 3
@@ -22,6 +24,6 @@
 
 - part: Session 4
   chapters:
-  - file: /content/lessons/l4/automation
+  - file: /content/lessons/l4/overview
   - file: /content/lessons/l4/Batch
   - file: /content/lessons/l4/python

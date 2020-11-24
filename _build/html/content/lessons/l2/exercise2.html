@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exercise 2 &#8212; UNIS SfM photogrammetry course</title>
+    <title>Exercise 2 &#8212; Geo-SfM Course 2020</title>
     
   <link rel="stylesheet" href="../../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -56,7 +56,7 @@
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Lesson 3" href="../l3/overview.html" />
-    <link rel="prev" title="The graphical user interface" href="am_gui.html" />
+    <link rel="prev" title="Overview" href="overview.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -76,7 +76,7 @@
 <a class="navbar-brand text-wrap" href="../../../index.html">
   
   
-  <h1 class="site-logo" id="site-title">UNIS SfM photogrammetry course</h1>
+  <h1 class="site-logo" id="site-title">Geo-SfM Course 2020</h1>
   
 </a>
 </div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
@@ -93,13 +93,30 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
+  Informations and other bits
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/seismic_lab.html">
+   Seismic lab (Signehamna)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/software.html">
+   Software
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
   Session 1
  </span>
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../l1/exercise1.html">
-   Exercise 1
+  <a class="reference internal" href="../l1/tutorial.html">
+   Metashape Tutorial
   </a>
  </li>
 </ul>
@@ -110,13 +127,8 @@
 </p>
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="agisoftmetashape.html">
-   AM
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="am_gui.html">
-   The graphical user interface
+  <a class="reference internal" href="overview.html">
+   Overview
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -154,7 +166,7 @@
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../l4/automation.html">
+  <a class="reference internal" href="../l4/overview.html">
    Automation
   </a>
  </li>
@@ -219,6 +231,22 @@
 
         <!-- Source interaction buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/UNISvalbard/Geo-SfM"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/UNISvalbard/Geo-SfM/issues/new?title=Issue%20on%20page%20%2Fcontent/lessons/l2/exercise2.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
 
         <!-- Full screen (wrap in <a> to have style consistency -->
         <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
@@ -233,6 +261,37 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-2-hints">
+   Exercise 2 hints
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#image-acquisition">
+     Image acquisition
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sfm-photogrammetry">
+     SfM photogrammetry
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deliverable">
+     Deliverable
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -246,18 +305,30 @@
 <p class="admonition-title">Deadline</p>
 <p>Please complete this exercise <strong>by the start of the next session</strong>.</p>
 </div>
-<div class="tip admonition">
-<p class="admonition-title">Software version</p>
-<p>The following tutorial assumes the use of <strong>Agisoft Metashape version 1.6.x.</strong></p>
-<p>To see whether you are indeed running the correct version proceed to <em>Help/About Metashape…</em> in the menubar.
-This should provide you with the <strong>major release</strong>, <em>minor</em>, and patch (<strong>1</strong>.<em>6</em>.x) version number, as well as the build.</p>
-<p>If the version does not match the version listed above, please either</p>
-<ul class="simple">
-<li><p>update the installation; or</p></li>
-<li><p>contact the Seismic Lab software responsible (Peter Betlem)</p></li>
-</ul>
+<div class="warning admonition">
+<p class="admonition-title">Support</p>
+<p>Please note that <strong>we only provide feedback and support for students enrolled in the course at the University Centre of Svalbard</strong>.</p>
 </div>
-<p>Today we focus on the</p>
+<p>Today we focus on the reconstruction of a model of our own.
+Split up into separate tasks:</p>
+<ul class="simple">
+<li><p>[ ] Image acquisition</p></li>
+<li><p>[ ] SfM photogrammetry</p></li>
+<li><p>[ ] Deliverable</p></li>
+</ul>
+<div class="section" id="exercise-2-hints">
+<h2>Exercise 2 hints<a class="headerlink" href="#exercise-2-hints" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="image-acquisition">
+<h3>Image acquisition<a class="headerlink" href="#image-acquisition" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="sfm-photogrammetry">
+<h3>SfM photogrammetry<a class="headerlink" href="#sfm-photogrammetry" title="Permalink to this headline">¶</a></h3>
+<p>Have a look at last session’s <a class="reference internal" href="../l1/tutorial.html"><span class="doc std std-doc">tutorial</span></a> for some useful tips and tricks.</p>
+</div>
+<div class="section" id="deliverable">
+<h3>Deliverable<a class="headerlink" href="#deliverable" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -288,7 +359,7 @@ This should provide you with the <strong>major release</strong>, <em>minor</em>,
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="am_gui.html" title="previous page">The graphical user interface</a>
+    <a class='left-prev' id="prev-link" href="overview.html" title="previous page">Overview</a>
     <a class='right-next' id="next-link" href="../l3/overview.html" title="next page">Lesson 3</a>
 
     </div>
@@ -296,7 +367,7 @@ This should provide you with the <strong>major release</strong>, <em>minor</em>,
     <div class="container">
       <p>
         
-          By The Jupyter Book community<br/>
+          By Peter Betlem<br/>
         
             &copy; Copyright 2020.<br/>
       </p>
