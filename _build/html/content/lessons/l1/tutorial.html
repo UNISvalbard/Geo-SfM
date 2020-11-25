@@ -323,9 +323,21 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#export-a-processing-report">
-     Export a processing report
+    <a class="reference internal nav-link" href="#documenting-processing-parameters">
+     Documenting processing parameters
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#processing-report">
+       Processing report
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#in-programme-parameters">
+       In-programme parameters
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -525,11 +537,35 @@ On the other hand, anything less than 4096 is probably insufficient.</p>
 <p>Work in progress</p>
 </div>
 </div>
-<div class="section" id="export-a-processing-report">
-<h3>Export a processing report<a class="headerlink" href="#export-a-processing-report" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="documenting-processing-parameters">
+<h3>Documenting processing parameters<a class="headerlink" href="#documenting-processing-parameters" title="Permalink to this headline">¶</a></h3>
+<p>Perhaps the most important aspect of processing is to document the taken processing steps and their parameters.
+Metashape automatically keeps track and stores all <em>Workflow</em> actions that the project has undergone.
+There are two ways of documenting and showing these parameters.</p>
+<div class="warning admonition">
+<p class="admonition-title">What about manual alterations?</p>
+<p>Sadly, the processing report does not include manual changes made to e.g. the point or dense cloud.
+This means that to be truly <em>scientifically grounded</em> and <em>repeatable</em>, you should refrain from doing such alterations manually.
+Instead, rely on e.g. the point confidence to make edits (and always report the chosen parameters).</p>
+</div>
+<div class="section" id="processing-report">
+<h4>Processing report<a class="headerlink" href="#processing-report" title="Permalink to this headline">¶</a></h4>
+<p>The first, and perhaps most important, is to generate a processing report.
+Proceed to <em>File/Export</em> in the menu bar and select <em>Generate Report…</em>.
+Provide the desired <em>Title</em> and description, then proceed by clicking <em>OK</em>.
+Store the report alongside the Metashape project in the same directory.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The procedure listed above should <strong>always</strong> be implemented in your workflows, with the output stored together with the raw data (e.g., images) and Metashape project files.
+Make this a habit :)</p>
+</div>
+</div>
+<div class="section" id="in-programme-parameters">
+<h4>In-programme parameters<a class="headerlink" href="#in-programme-parameters" title="Permalink to this headline">¶</a></h4>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Work in progress</p>
+</div>
 </div>
 </div>
 </div>
