@@ -212,7 +212,32 @@ On the other hand, anything less than 4096 is probably insufficient.
 Work in progress
 ```
 
-### Export a processing report
+### Documenting processing parameters
+
+Perhaps the most important aspect of processing is to document the taken processing steps and their parameters.
+Metashape automatically keeps track and stores all *Workflow* actions that the project has undergone.
+There are two ways of documenting and showing these parameters.
+
+```{admonition} What about manual alterations?
+:class: warning
+Sadly, the processing report does not include manual changes made to e.g. the point or dense cloud.
+This means that to be truly *scientifically grounded* and *repeatable*, you should refrain from doing such alterations manually.
+Instead, rely on e.g. the point confidence to make edits (and always report the chosen parameters).
+```
+
+#### Processing report
+
+The first, and perhaps most important, is to generate a processing report.
+Proceed to *File/Export* in the menu bar and select *Generate Report...*.
+Provide the desired *Title* and description, then proceed by clicking *OK*.
+Store the report alongside the Metashape project in the same directory.
+
+```{note}
+The procedure listed above should **always** be implemented in your workflows, with the output stored together with the raw data (e.g., images) and Metashape project files.
+Make this a habit :)
+```
+
+#### In-programme parameters
 
 ```{note}
 Work in progress
