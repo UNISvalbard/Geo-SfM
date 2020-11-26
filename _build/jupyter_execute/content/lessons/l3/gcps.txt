@@ -1,0 +1,4 @@
+from myst_nb import glue
+a = "my variable!"
+print(a)
+glue("my_variable", a)
