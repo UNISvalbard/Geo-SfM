@@ -1,12 +1,8 @@
 - file: landing-page.md
 
-- part: Informations and other bits
-  chapters:
-  - file: /content/lessons/about/seismic_lab
-  - file: /content/lessons/about/software
-
 - part: Session 1
   chapters:
+  - file: /content/lessons/l1/sfm_photogrammetry
   - file: /content/lessons/l1/tutorial
 
 - part: Session 2
@@ -26,3 +22,8 @@
   - file: /content/lessons/l4/overview
   - file: /content/lessons/l4/Batch
   - file: /content/lessons/l4/python
+
+- part: Resources
+  chapters:
+  - file: /content/lessons/about/seismic_lab
+  - file: /content/lessons/about/software

@@ -47,7 +47,7 @@ Work in progress
 Work in progress
 ```
 
-### Placement of GCPs
+## Placement of GCPs
 
 ```{note}
 Work in progress
