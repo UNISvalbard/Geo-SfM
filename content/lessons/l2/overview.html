@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Session 2 &#8212; Geo-SfM Course 2020</title>
+    <title>Hands-on experience &#8212; Geo-SfM Course 2020</title>
     
   <link rel="stylesheet" href="../../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -93,27 +93,15 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Informations and other bits
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../about/seismic_lab.html">
-   Seismic lab (Signehamna)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../about/software.html">
-   Software
-  </a>
- </li>
-</ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
   Session 1
  </span>
 </p>
 <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../l1/sfm_photogrammetry.html">
+   SfM photogrammetry
+  </a>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../l1/tutorial.html">
    Metashape Tutorial
@@ -128,7 +116,7 @@
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Session 2
+   Hands-on experience
   </a>
  </li>
  <li class="toctree-l1">
@@ -145,12 +133,12 @@
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../l3/overview.html">
-   Lesson 3
+   Geo-referencing
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../l3/gcps.html">
-   gcps
+   Ground control points
   </a>
  </li>
  <li class="toctree-l1">
@@ -178,6 +166,23 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../l4/python.html">
    Python-based standardised processing
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Resources
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/seismic_lab.html">
+   Seismic lab (Signehamna)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/software.html">
+   Software
   </a>
  </li>
 </ul>
@@ -282,15 +287,11 @@
         
               <div>
                 
-  <div class="section" id="session-2">
-<h1>Session 2<a class="headerlink" href="#session-2" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="hands-on-experience">
+<h1>Hands-on experience<a class="headerlink" href="#hands-on-experience" title="Permalink to this headline">¶</a></h1>
 <p>In this second session we will implementing SfM photogrammetry on a human-sized object of our own choosing.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">raw</span><span class="p">::</span> <span class="n">html</span>
-
-<span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;sketchfab-embed-wrapper&quot;</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">iframe</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;A 3D model&quot;</span> <span class="n">width</span><span class="o">=</span><span class="s2">&quot;640&quot;</span> <span class="n">height</span><span class="o">=</span><span class="s2">&quot;480&quot;</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://sketchfab.com/models/32a09a9097dd422e8e19a14fb78835a2/embed?autospin=0.2&amp;amp;autostart=1&amp;amp;camera=0&amp;amp;preload=1&amp;amp;ui_controls=1&amp;amp;ui_infos=1&amp;amp;ui_inspector=1&amp;amp;ui_stop=1&amp;amp;ui_watermark=1&amp;amp;ui_watermark_link=1&quot;</span> <span class="n">frameborder</span><span class="o">=</span><span class="s2">&quot;0&quot;</span> <span class="n">allow</span><span class="o">=</span><span class="s2">&quot;autoplay; fullscreen; vr&quot;</span> <span class="n">mozallowfullscreen</span><span class="o">=</span><span class="s2">&quot;true&quot;</span> <span class="n">webkitallowfullscreen</span><span class="o">=</span><span class="s2">&quot;true&quot;</span><span class="o">&gt;&lt;/</span><span class="n">iframe</span><span class="o">&gt;&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
-</pre></div>
-</div>
+<div class="sketchfab-embed-wrapper">
+    <iframe title="A 3D model" width="640" height="480" src="https://sketchfab.com/models/32a09a9097dd422e8e19a14fb78835a2/embed?autospin=0.2&amp;autostart=1&amp;camera=0&amp;preload=1&amp;ui_controls=1&amp;ui_infos=1&amp;ui_inspector=1&amp;ui_stop=1&amp;ui_watermark=1&amp;ui_watermark_link=1" frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe></div>
 <div class="section" id="learning-goals">
 <h2>Learning goals<a class="headerlink" href="#learning-goals" title="Permalink to this headline">¶</a></h2>
 <p><strong>After this session you will be able to:</strong></p>
