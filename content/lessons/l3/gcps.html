@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>gcps &#8212; Geo-SfM Course 2020</title>
+    <title>Ground control points &#8212; Geo-SfM Course 2020</title>
     
   <link rel="stylesheet" href="../../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -150,7 +150,7 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   gcps
+   Ground control points
   </a>
  </li>
  <li class="toctree-l1">
@@ -261,6 +261,37 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#when-do-we-need-gcps">
+   When do we need GCPs?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ground-control-design">
+   Ground control design
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#artificial-vs-natural-gcps">
+   Artificial vs natural GCPs
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#placement-of-gcps">
+     Placement of GCPs
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -268,8 +299,63 @@
         
               <div>
                 
-  <div class="section" id="gcps">
-<h1>gcps<a class="headerlink" href="#gcps" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="ground-control-points">
+<h1>Ground control points<a class="headerlink" href="#ground-control-points" title="Permalink to this headline">¶</a></h1>
+<p>Ground control points (GCPs) are locations that we can track with high precision and accuracy between the targeted object and a selection of our photos.
+We can use these to provide “exact” real world coordinates to our reconstructed models, as well as to determine the accuracy and impact of processing parameters.</p>
+<p>In a mapping survey, GCPs are points which can be precisely pinpointed.
+This precision not only applies to the points themselves, but can also be interpolated to the mesh between GCPs.
+It is therefore possible to accurately map large areas with only a handful of precisely known coordinates (up to sub-metre levels!).</p>
+<div class="admonition-geo-location-accuracies admonition">
+<p class="admonition-title">Geo-location accuracies</p>
+<p>We distinguish 3 different scenarios when it comes to geo-referencing:</p>
+<ul class="simple">
+<li><p>Horizontal - i.e., measuring lon, lat</p></li>
+<li><p>Vertical - i.e., measuring height</p></li>
+<li><p>Full - i.e., measuring lon, lat, and height</p></li>
+</ul>
+<p>Given the way GPS works, <em>verical</em> accuracies are usually worse than <em>horizontal</em> accuracies (often by more than an order of magnitude).
+Seeing as most handheld and built-in GPSs have a horizontal error of at least 1 metre, the corresponding vertical error may be large enough to prevent accurate correlation to the real world.</p>
+</div>
+<div class="admonition-built-in-gps admonition">
+<p class="admonition-title">built-in GPS</p>
+<p>The images taken from drones or GPS-equipped cameras store the <em>image location</em> in the image’s metadata.
+Metashape automatically imports this upon loading.
+Do remember, however, that built-in GPSs still have quite large errors compared to differential GPS and similar.</p>
+</div>
+<div class="section" id="when-do-we-need-gcps">
+<h2>When do we need GCPs?<a class="headerlink" href="#when-do-we-need-gcps" title="Permalink to this headline">¶</a></h2>
+<p>GCPs are essential when you need <em>high global accuracy</em> (or <em>absolute accuracy</em>) and when you need to verify the accuracy of the final models.</p>
+<p>Applications include:</p>
+<ul class="simple">
+<li><p>terrain mapping (contour map, digital terrain model, etc.)</p></li>
+<li><p>geotechnical surveys (e.g., land titles, other assessments)</p></li>
+<li><p>volume measurements</p></li>
+</ul>
+<p>Only when the area is small and we do not care about <em>absolute accuracy</em> (i.e., only <em>relative accuracy is important</em>) can we omit GCPs.
+This is e.g. the case when we want to compare elements within the same models without relating these to real world properties.</p>
+</div>
+<div class="section" id="ground-control-design">
+<h2>Ground control design<a class="headerlink" href="#ground-control-design" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Work in progress</p>
+</div>
+</div>
+<div class="section" id="artificial-vs-natural-gcps">
+<h2>Artificial vs natural GCPs<a class="headerlink" href="#artificial-vs-natural-gcps" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Work in progress</p>
+</div>
+<div class="section" id="placement-of-gcps">
+<h3>Placement of GCPs<a class="headerlink" href="#placement-of-gcps" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Work in progress</p>
+</div>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
