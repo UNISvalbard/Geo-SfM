@@ -23,6 +23,15 @@
   - file: /content/lessons/l4/Batch
   - file: /content/lessons/l4/python
 
+- part: Session 5
+  chapters:
+  - file: /content/lessons/l5/overview
+  - file: /content/lessons/l5/from_metashape_to_geomodel
+
+- part: Supplementary
+  chapters:
+  - file: /content/lessons/suppl/best_practices
+
 - part: Resources
   chapters:
   - file: /content/lessons/about/seismic_lab

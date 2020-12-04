@@ -12,3 +12,6 @@ html:
 
 execute:
   execute_notebooks: "off"
+
+parse:
+  myst_extended_syntax: true

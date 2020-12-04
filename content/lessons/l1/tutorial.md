@@ -58,15 +58,21 @@ Go ahead and download the package, then extract the archive's contents.
 As you will see, we are aiming to have the following folder structure:
 
 ```
-project_directory (where you unzipped the files to)
-├───100MEDIA (The folder in which all the images reside)
-|       DJI_0001.JPG
-|       DJI_0002.JPG
-|       ...
-├───gcps
-|       (We'll get back to this in a later session)
-└───metashape
-        (This is where you save your Agisoft Metashape projects to)
+project_directory (The folder with all files related to this project)
+|   overview_img
+|   description.txt
+├───data_directory (where you unzipped the files to)
+├───────100MEDIA (The folder in which all the images reside)
+|           DJI_0001.JPG
+|           DJI_0002.JPG
+|           ...
+├───────gcps
+|           (We'll get back to this in a later session)
+└───────metashape (This is where you save your Agisoft Metashape projects to)
+            metashape_project.psx
+            .metashape_project.files
+            metashape_processing_report
+            (optionally: metashape_project.log)
 ```
 
 This is a standardised folder structure that (as we will see later on) is also used for automated processing.
@@ -79,7 +85,7 @@ To do this, proceed to and click on *Add photos...* from *Workflow* in the *menu
 In the dialog that pops up, browse to the *project_directory/100MEDIA* folder that you created in the previous section.
 Select all files to be processed.
 These should now show up in a *chunk* with *cameras* in the *Workspace* panel.
-Verify that this is indeed the case by double clicking one of the *cameras* in the *Worksapce/Chunk/Cameras* panel.
+Verify that this is indeed the case by double clicking one of the *cameras* in the *Workspace/Chunk/Cameras* panel.
 
 ```{admonition} Save often!
 :class: tip
@@ -104,6 +110,12 @@ After clicking *OK*, Metashape starts aligning your photos.
 This may take a while, but assuming there is sufficient overlap between the data, a *sparse point cloud* will be shown on the screen (in the *Model* tab) once processing is done.
 If not, one can select this by clicking the four-dotted icon in the menu.
 
+```{figure} assets/0343f82c.png
+:name: align_photos
+
+The *Align Photos* dialog after opening it from the *Workflow* menu.
+```
+
 ```{admonition} Down-sampling
 Down-sampling is the process in which you combine parts of a data set, resulting in the loss of knowledge.
 For example, down-sampling a 1000x1000 pixel image to a 100x100 image results in a factor 100 compression of data (= easier to process), but you also lose the initial resolution!
@@ -115,19 +127,35 @@ Give it a shot, and compare the photo alignment results with *medium* vs *high* 
 
 #### Improve alignment step
 
-```{note}
-Work in progress
-```
+Although the photos have now been aligned, it is important to further optimize the cameras.
+This is done by selecting *Optimize Cameras* from the *Tools* menu.
+A {ref}`dialog <optimize_cameras>` will pop up with several parameter options pre-selected.
+Most important here is to at least select make sure that the *Estimate tie point covariance* is enabled.
 
+```{figure} assets/5ca3a257.png
+:name: optimize_cameras
+
+The *Optimize Camera Alignment* dialog after opening it from the *Tools* menu.
+```
 
 ### Build Dense Cloud
 
 Based on the estimated camera positions, we can now estimate a *dense point cloud* by calculating depth information for each image.
 
-Select *Build Dense Cloud* from the *Workflow* menu. Once again you will be asked about the desired accuracy/quality. Keeping in mind what we discussed above, make sure to select *Medium* for the quality.
+Select *Build Dense Cloud* from the *Workflow* menu.
+{ref}`Once again you will be asked about the desired accuracy/quality <dense_cloud>`.
+Keeping in mind what we discussed above, make sure to select *Medium* for the quality.
 
 Also open up the *Advanced* section, and set *Depth filtering* to *Mild*.
 **Make sure to always enable *Calculate point confidence***
+
+*Reuse depth maps* can only be selected if depth maps have been previously calculated for the specified quality.
+
+```{figure} assets/d2a861b0.png
+:name: dense_cloud
+
+The *Build dense cloud* dialog after opening it from the *Workflow* menu.
+```
 
 Once processing is done, you'll be able to show the *dense point cloud* on the screen in the *Model* tab.
 If not, one can visualise the *dense point cloud* by clicking on the nine-dotted icon in the menu.
@@ -138,6 +166,11 @@ The colour coding (red = bad, blue = good) shows where the best confidence is fo
 ```{admonition} Point confidence
 *Point confidence* shows how accurate a given point in the dense cloud is.
 This is key to estimate whether the part we are interested in can be scientifically used for measurements and characterisation based on predefined criteria.
+```
+
+```{admonition} Dense cloud quality
+:class: tip
+While this tutorial suggests *Medium* to be used for the quality parameter, you should feel free to change this depending on the computational power at your disposal.
 ```
 
 #### Selection by point confidence
@@ -179,7 +212,13 @@ While generating the dense cloud, Agisoft Metashape simultaneously generated a s
 This is important as we can decide which of the two to use for meshing.
 Depth maps may lead to better results when dealing with a big number of minor details, but otherwise dense clouds should be used as the source.
 
-After selecting *Build Mesh* from the *Workflow* menu, you will be able to chose either in the dialog that pops up for *Source data:*.
+After selecting *Build Mesh* from the *Workflow* menu, you will be able to chose either in the {ref}`dialog <build_mesh>` that pops up for *Source data:*.
+
+```{figure} assets/9b4ac0b8.png
+:name: build_mesh
+
+The *Build mesh* dialog after opening it from the *Workflow* menu.
+```
 
 Other important parameters here are the *Quality* and *Face count* parameters.
 These govern the quality of the generated mesh.
@@ -199,22 +238,35 @@ If depth maps do exist, and you decide to use them as the source data, then make
 #### Texture building
 
 We can build the textures by clicking on the *Build Texture* command from the *Workflow* menu.
-While the dialog has many different parameters, the most important are highlighted in the fiure below:
+While the dialog has many different parameters, the most important are highlighted in {numref}`build_texture`.
 
-![](assets/644b7ead.png)
+```{figure} assets/7237597c.png
+:name: build_texture
 
-Here *Texture size/count* determines the quality of the texture. Keep in mind that anything over 16384 can very quickly lead to very, very large file sizes on your harddisk.
+The *Build texture* dialog after opening it from the *Workflow* menu.
+```
+
+Here *Texture size/count* determines the quality of the texture.
+Keep in mind that anything over 16384 can very quickly lead to very, very large file sizes on your harddisk.
 On the other hand, anything less than 4096 is probably insufficient.
 
 ### Generating a Tiled Model
 
-```{note}
-Work in progress
+Sometimes the need arises to not only build a mesh, but also a *Tiled Model*.
+We can do this by selecting *Build Tiled Model* from the *Workflow* menu.
+Once again we can select the parameters for the processing step through the {ref}`dialog <build_tiled_model>` that popped up.
+
+The most import parameter here is the *Pixel size (m)*, which should never be set than lower than the pixel size available to the model (= the default value shown when opening the dialog).
+
+```{figure} assets/6c44a1dc.png
+:name: build_tiled_model
+
+The *Build Tiled Model* dialog after opening it from the *Workflow* menu.
 ```
 
 ### Documenting processing parameters
 
-Perhaps the most important aspect of processing is to document the taken processing steps and their parameters.
+While each of the previous steps has been important in generating the models, ***perhaps the most important aspect of processing is to document the taken processing steps and their parameters***.
 Metashape automatically keeps track and stores all *Workflow* actions that the project has undergone.
 There are two ways of documenting and showing these parameters.
 
@@ -237,8 +289,27 @@ The procedure listed above should **always** be implemented in your workflows, w
 Make this a habit :)
 ```
 
+```{admonition} Exercise 2
+:class: tip
+You'll find key metadata within the generated processing_report.pdf that has to be submitted as part of the second session's assignment.
+Have a look and familiarise yourself with it.
+```
+
 #### In-programme parameters
 
-```{note}
-Work in progress
+One does not always need to export the processing report to obtain the overview of parameters.
+Handily, Metashape also provides an overview within the *Workspace* panel after having selected an item in the chunk.
+An example of this is depicted in {numref}`internal_parameters`.
+
+```{figure} assets/5201e3e2.png
+:name: interal_parameters
+
+An example of the internal *Workspace* panel, including the parameters and processing metadata that is available from within the Metashape project interface.
+```
+
+```{tip}
+The above is just a very generalised approach to SfM-photogrammetry that outlines the basic steps to be taken from photo acquisition to model generation.
+In many cases the chosen parameters can (and should!) be changed to match the given circumstances.
+That said, the *Photo alignment* step should always be conducted at the highest setting possible (considering computational power available).
+Furthermore, one should ***always document each and every processing step performed*** - manually cutting and editing part of the model is therefore *not* encouraged as this remains (for now) difficult to document.
 ```
