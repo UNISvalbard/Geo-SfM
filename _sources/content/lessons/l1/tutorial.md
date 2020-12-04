@@ -104,6 +104,12 @@ After clicking *OK*, Metashape starts aligning your photos.
 This may take a while, but assuming there is sufficient overlap between the data, a *sparse point cloud* will be shown on the screen (in the *Model* tab) once processing is done.
 If not, one can select this by clicking the four-dotted icon in the menu.
 
+```{figure}assets/0343f82c.png
+:name: align_photos
+
+The *Align Photos* dialog after opening it from the *Workflow* menu.
+```
+
 ```{admonition} Down-sampling
 Down-sampling is the process in which you combine parts of a data set, resulting in the loss of knowledge.
 For example, down-sampling a 1000x1000 pixel image to a 100x100 image results in a factor 100 compression of data (= easier to process), but you also lose the initial resolution!
@@ -115,19 +121,35 @@ Give it a shot, and compare the photo alignment results with *medium* vs *high* 
 
 #### Improve alignment step
 
-```{note}
-Work in progress
-```
+Although the photos have now been aligned, it is important to further optimize the cameras.
+This is done by selecting *Optimize Cameras* from the *Tools* menu.
+A {ref}`dialog <optimize_cameras>` will pop up with several parameter options pre-selected.
+Most important here is to at least select make sure that the *Estimate tie point covariance* is enabled.
 
+```{figure}assets/5ca3a257.png
+:name: optimize_cameras
+
+The *Optimize Camera Alignment* dialog after opening it from the *Tools* menu.
+```
 
 ### Build Dense Cloud
 
 Based on the estimated camera positions, we can now estimate a *dense point cloud* by calculating depth information for each image.
 
-Select *Build Dense Cloud* from the *Workflow* menu. Once again you will be asked about the desired accuracy/quality. Keeping in mind what we discussed above, make sure to select *Medium* for the quality.
+Select *Build Dense Cloud* from the *Workflow* menu.
+{ref}`Once again you will be asked about the desired accuracy/quality <dense_cloud>`.
+Keeping in mind what we discussed above, make sure to select *Medium* for the quality.
 
 Also open up the *Advanced* section, and set *Depth filtering* to *Mild*.
 **Make sure to always enable *Calculate point confidence***
+
+*Reuse depth maps* can only be selected if depth maps have been previously calculated for the specified quality.
+
+```{figure}assets/d2a861b0.png
+:name: dense_cloud
+
+The *Build dense cloud* dialog after opening it from the *Workflow* menu.
+```
 
 Once processing is done, you'll be able to show the *dense point cloud* on the screen in the *Model* tab.
 If not, one can visualise the *dense point cloud* by clicking on the nine-dotted icon in the menu.
@@ -138,6 +160,11 @@ The colour coding (red = bad, blue = good) shows where the best confidence is fo
 ```{admonition} Point confidence
 *Point confidence* shows how accurate a given point in the dense cloud is.
 This is key to estimate whether the part we are interested in can be scientifically used for measurements and characterisation based on predefined criteria.
+```
+
+```{admonition} Dense cloud quality
+:class: tip
+While this tutorial suggests *Medium* to be used for the quality parameter, you should feel free to change this depending on the computational power at your disposal.
 ```
 
 #### Selection by point confidence
@@ -179,7 +206,13 @@ While generating the dense cloud, Agisoft Metashape simultaneously generated a s
 This is important as we can decide which of the two to use for meshing.
 Depth maps may lead to better results when dealing with a big number of minor details, but otherwise dense clouds should be used as the source.
 
-After selecting *Build Mesh* from the *Workflow* menu, you will be able to chose either in the dialog that pops up for *Source data:*.
+After selecting *Build Mesh* from the *Workflow* menu, you will be able to chose either in the {ref}`dialog <build_mesh>` that pops up for *Source data:*.
+
+```{figure}assets/9b4ac0b8.png
+:name: build_mesh
+
+The *Build mesh* dialog after opening it from the *Workflow* menu.
+```
 
 Other important parameters here are the *Quality* and *Face count* parameters.
 These govern the quality of the generated mesh.
@@ -199,11 +232,16 @@ If depth maps do exist, and you decide to use them as the source data, then make
 #### Texture building
 
 We can build the textures by clicking on the *Build Texture* command from the *Workflow* menu.
-While the dialog has many different parameters, the most important are highlighted in the fiure below:
+While the dialog has many different parameters, the most important are highlighted in {numref}`build_texture`.
 
-![](assets/644b7ead.png)
+```{figure}assets/7237597c.png
+:name: build_texture
 
-Here *Texture size/count* determines the quality of the texture. Keep in mind that anything over 16384 can very quickly lead to very, very large file sizes on your harddisk.
+The *Build texture* dialog after opening it from the *Workflow* menu.
+```
+
+Here *Texture size/count* determines the quality of the texture.
+Keep in mind that anything over 16384 can very quickly lead to very, very large file sizes on your harddisk.
 On the other hand, anything less than 4096 is probably insufficient.
 
 ### Generating a Tiled Model
