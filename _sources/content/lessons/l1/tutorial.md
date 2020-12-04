@@ -295,15 +295,15 @@ One does not always need to export the processing report to obtain the overview 
 Handily, Metashape also provides an overview within the *Workspace* panel after having selected an item in the chunk.
 An example of this is depicted in {numref}`internal_parameters`.
 
-```{figure}
+```{figure} assets/5201e3e2.png
 :name: interal_parameters
 
-Work in progress
+An example of the internal *Workspace* panel, including the parameters and processing metadata that is available from within the Metashape project interface.
 ```
 
 ```{tip}
 The above is just a very generalised approach to SfM-photogrammetry that outlines the basic steps to be taken from photo acquisition to model generation.
 In many cases the chosen parameters can (and should!) be changed to match the given circumstances.
 That said, the *Photo alignment* step should always be conducted at the highest setting possible (considering computational power available).
-Furthermore, one should ***always document each and every processing step performed***.
+Furthermore, one should ***always document each and every processing step performed*** - manually cutting and editing part of the model is therefore *not* encouraged as this remains (for now) difficult to document.
 ```
