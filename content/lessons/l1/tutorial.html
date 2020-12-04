@@ -446,7 +446,7 @@ To do this, proceed to and click on <em>Add photos…</em> from <em>Workflow</em
 In the dialog that pops up, browse to the <em>project_directory/100MEDIA</em> folder that you created in the previous section.
 Select all files to be processed.
 These should now show up in a <em>chunk</em> with <em>cameras</em> in the <em>Workspace</em> panel.
-Verify that this is indeed the case by double clicking one of the <em>cameras</em> in the <em>Worksapce/Chunk/Cameras</em> panel.</p>
+Verify that this is indeed the case by double clicking one of the <em>cameras</em> in the <em>Workspace/Chunk/Cameras</em> panel.</p>
 <div class="tip admonition">
 <p class="admonition-title">Save often!</p>
 <p>It is important to save your work often.
@@ -581,14 +581,18 @@ On the other hand, anything less than 4096 is probably insufficient.</p>
 </div>
 <div class="section" id="generating-a-tiled-model">
 <h3>Generating a Tiled Model<a class="headerlink" href="#generating-a-tiled-model" title="Permalink to this headline">¶</a></h3>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Work in progress</p>
+<p>Sometimes the need arises to not only build a mesh, but also a <em>Tiled Model</em>.
+We can do this by selecting <em>Build Tiled Model</em> from the <em>Workflow</em> menu.
+Once again we can select the parameters for the processing step through the <a class="reference internal" href="#build-tiled-model"><span class="std std-ref">dialog</span></a> that popped up.</p>
+<p>The most import parameter here is the <em>Pixel size (m)</em>, which should never be set than lower than the pixel size available to the model (= the default value shown when opening the dialog).</p>
+<div class="figure align-default" id="build-tiled-model">
+<img alt="../../../_images/6c44a1dc.png" src="../../../_images/6c44a1dc.png" />
+<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">The <em>Build Tiled Model</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#build-tiled-model" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="documenting-processing-parameters">
 <h3>Documenting processing parameters<a class="headerlink" href="#documenting-processing-parameters" title="Permalink to this headline">¶</a></h3>
-<p>Perhaps the most important aspect of processing is to document the taken processing steps and their parameters.
+<p>While each of the previous steps has been important in generating the models, <em><strong>perhaps the most important aspect of processing is to document the taken processing steps and their parameters</strong></em>.
 Metashape automatically keeps track and stores all <em>Workflow</em> actions that the project has undergone.
 There are two ways of documenting and showing these parameters.</p>
 <div class="warning admonition">
@@ -616,9 +620,15 @@ Have a look and familiarise yourself with it.</p>
 </div>
 <div class="section" id="in-programme-parameters">
 <h4>In-programme parameters<a class="headerlink" href="#in-programme-parameters" title="Permalink to this headline">¶</a></h4>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Work in progress</p>
+<p>One does not always need to export the processing report to obtain the overview of parameters.
+Handily, Metashape also provides an overview within the <em>Workspace</em> panel after having selected an item in the chunk.
+An example of this is depicted in <code class="xref std std-numref docutils literal notranslate"><span class="pre">internal_parameters</span></code>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The above is just a very generalised approach to SfM-photogrammetry that outlines the basic steps to be taken from photo acquisition to model generation.
+In many cases the chosen parameters can (and should!) be changed to match the given circumstances.
+That said, the <em>Photo alignment</em> step should always be conducted at the highest setting possible (considering computational power available).
+Furthermore, one should <em><strong>always document each and every processing step performed</strong></em>.</p>
 </div>
 </div>
 </div>

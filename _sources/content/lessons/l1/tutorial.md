@@ -79,7 +79,7 @@ To do this, proceed to and click on *Add photos...* from *Workflow* in the *menu
 In the dialog that pops up, browse to the *project_directory/100MEDIA* folder that you created in the previous section.
 Select all files to be processed.
 These should now show up in a *chunk* with *cameras* in the *Workspace* panel.
-Verify that this is indeed the case by double clicking one of the *cameras* in the *Worksapce/Chunk/Cameras* panel.
+Verify that this is indeed the case by double clicking one of the *cameras* in the *Workspace/Chunk/Cameras* panel.
 
 ```{admonition} Save often!
 :class: tip
@@ -246,13 +246,21 @@ On the other hand, anything less than 4096 is probably insufficient.
 
 ### Generating a Tiled Model
 
-```{note}
-Work in progress
+Sometimes the need arises to not only build a mesh, but also a *Tiled Model*.
+We can do this by selecting *Build Tiled Model* from the *Workflow* menu.
+Once again we can select the parameters for the processing step through the {ref}`dialog <build_tiled_model>` that popped up.
+
+The most import parameter here is the *Pixel size (m)*, which should never be set than lower than the pixel size available to the model (= the default value shown when opening the dialog).
+
+```{figure} assets/6c44a1dc.png
+:name: build_tiled_model
+
+The *Build Tiled Model* dialog after opening it from the *Workflow* menu.
 ```
 
 ### Documenting processing parameters
 
-Perhaps the most important aspect of processing is to document the taken processing steps and their parameters.
+While each of the previous steps has been important in generating the models, ***perhaps the most important aspect of processing is to document the taken processing steps and their parameters***.
 Metashape automatically keeps track and stores all *Workflow* actions that the project has undergone.
 There are two ways of documenting and showing these parameters.
 
@@ -283,6 +291,19 @@ Have a look and familiarise yourself with it.
 
 #### In-programme parameters
 
-```{note}
+One does not always need to export the processing report to obtain the overview of parameters.
+Handily, Metashape also provides an overview within the *Workspace* panel after having selected an item in the chunk.
+An example of this is depicted in {numref}`internal_parameters`.
+
+```{figure}
+:name: interal_parameters
+
 Work in progress
+```
+
+```{tip}
+The above is just a very generalised approach to SfM-photogrammetry that outlines the basic steps to be taken from photo acquisition to model generation.
+In many cases the chosen parameters can (and should!) be changed to match the given circumstances.
+That said, the *Photo alignment* step should always be conducted at the highest setting possible (considering computational power available).
+Furthermore, one should ***always document each and every processing step performed***.
 ```
