@@ -31,7 +31,7 @@ Suggested targets include:
 ![the boulders in front of the UNIS entrance](assets/f103d976.png)
 
 ```{admonition} Checklist and questions
-:class: tip
+:class: note
 - [ ] Find a suitable target
 - [ ] Take photos of the target
   - [ ] ... from two distances
@@ -81,38 +81,24 @@ metadata:
     category: # STRING, item separator: ;
 ```
 
+In addition, everyone will be asked to answer the following questions:
+
+```{warning}
+To do, come up with good questinos here
+```
+
+
 ```{note}
 :class: tip
 As for the metadata, you'll only be able to fill out some of the metadata after fully implementing all the steps (and including up to) the meshing and texturing step.
 ```
 
-### Tips n Tricks
-#### Image acquisition
-
-Have a look at the [supplementary information](../supl/best practices "supl") dealing with best practices in photogrammetry.
-
-#### SfM photogrammetry
-
-Have a look at last session's [tutorial](../l1/tutorial "tutorial") for some useful tips and tricks.
-
-#### Folder structure
-
-Make sure to create the right folder structure (see also the [tutorial](../l1/tutorial "tutorial")).
-
+```{admonition} Image acquisition
+:class: tip
+Have a look at the [supplementary information](../suppl/best practices "suppl") dealing with best practices in photogrammetry.
 ```
-package_directory
-|   overview_img
-|   description.txt
-├───data_directory
-├───────100MEDIA (The folder in which all the images reside)
-|           DJI_0001.JPG
-|           DJI_0002.JPG
-|           ...
-├───────gcps
-|           (We'll get back to this in a later session)
-└───────metashape
-            metashape_project.psx
-            .metashape_project.files
-            metashape_processing_report
-            (optionally: metashape_project.log)
+
+```{admonition} SfM photogrammetry workflow
+:class: tip
+Have a look at last session's [tutorial](../l1/tutorial "tutorial") for some useful tips and tricks.
 ```

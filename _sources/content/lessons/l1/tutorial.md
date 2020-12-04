@@ -58,15 +58,21 @@ Go ahead and download the package, then extract the archive's contents.
 As you will see, we are aiming to have the following folder structure:
 
 ```
-project_directory (where you unzipped the files to)
-├───100MEDIA (The folder in which all the images reside)
-|       DJI_0001.JPG
-|       DJI_0002.JPG
-|       ...
-├───gcps
-|       (We'll get back to this in a later session)
-└───metashape
-        (This is where you save your Agisoft Metashape projects to)
+project_directory (The folder with all files related to this project)
+|   overview_img
+|   description.txt
+├───data_directory (where you unzipped the files to)
+├───────100MEDIA (The folder in which all the images reside)
+|           DJI_0001.JPG
+|           DJI_0002.JPG
+|           ...
+├───────gcps
+|           (We'll get back to this in a later session)
+└───────metashape (This is where you save your Agisoft Metashape projects to)
+            metashape_project.psx
+            .metashape_project.files
+            metashape_processing_report
+            (optionally: metashape_project.log)
 ```
 
 This is a standardised folder structure that (as we will see later on) is also used for automated processing.

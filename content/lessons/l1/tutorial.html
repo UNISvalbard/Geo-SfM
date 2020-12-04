@@ -188,6 +188,18 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
+  Supplementary
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../suppl/best_practices.html">
+   Best practices
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
   Resources
  </span>
 </p>
@@ -425,15 +437,21 @@ https://agisoft.freshdesk.com/support/solutions/articles/31000152092</p>
 </div>
 <p>Go ahead and download the package, then extract the archive’s contents.
 As you will see, we are aiming to have the following folder structure:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>project_directory (where you unzipped the files to)
-├───100MEDIA (The folder in which all the images reside)
-|       DJI_0001.JPG
-|       DJI_0002.JPG
-|       ...
-├───gcps
-|       (We&#39;ll get back to this in a later session)
-└───metashape
-        (This is where you save your Agisoft Metashape projects to)
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>project_directory (The folder with all files related to this project)
+|   overview_img
+|   description.txt
+├───data_directory (where you unzipped the files to)
+├───────100MEDIA (The folder in which all the images reside)
+|           DJI_0001.JPG
+|           DJI_0002.JPG
+|           ...
+├───────gcps
+|           (We&#39;ll get back to this in a later session)
+└───────metashape (This is where you save your Agisoft Metashape projects to)
+            metashape_project.psx
+            .metashape_project.files
+            metashape_processing_report
+            (optionally: metashape_project.log)
 </pre></div>
 </div>
 <p>This is a standardised folder structure that (as we will see later on) is also used for automated processing.</p>

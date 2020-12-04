@@ -188,6 +188,18 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
+  Supplementary
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../suppl/best_practices.html">
+   Best practices
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
   Resources
  </span>
 </p>
@@ -298,28 +310,6 @@
      Deliverable
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#tips-n-tricks">
-     Tips n Tricks
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#image-acquisition">
-       Image acquisition
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#sfm-photogrammetry">
-       SfM photogrammetry
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#folder-structure">
-       Folder structure
-      </a>
-     </li>
-    </ul>
-   </li>
   </ul>
  </li>
 </ul>
@@ -361,7 +351,7 @@ Split up into separate tasks, we would like you to cover the following goals in 
 <li><p>small outcrops (ca. 5 m long, 5 m high)</p></li>
 </ul>
 <p><img alt="the boulders in front of the UNIS entrance" src="../../../_images/f103d976.png" /></p>
-<div class="tip admonition">
+<div class="note admonition">
 <p class="admonition-title">Checklist and questions</p>
 <ul class="simple">
 <li><p>[ ] Find a suitable target</p></li>
@@ -414,41 +404,22 @@ Copy it over and send it in to the course responsible.</p>
     <span class="n">category</span><span class="p">:</span> <span class="c1"># STRING, item separator: ;</span>
 </pre></div>
 </div>
+<p>In addition, everyone will be asked to answer the following questions:</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>To do, come up with good questinos here</p>
+</div>
 <div class="tip admonition note">
 <p class="admonition-title">Note</p>
 <p>As for the metadata, you’ll only be able to fill out some of the metadata after fully implementing all the steps (and including up to) the meshing and texturing step.</p>
 </div>
+<div class="tip admonition">
+<p class="admonition-title">Image acquisition</p>
+<p>Have a look at the [supplementary information](../suppl/best practices “suppl”) dealing with best practices in photogrammetry.</p>
 </div>
-<div class="section" id="tips-n-tricks">
-<h3>Tips n Tricks<a class="headerlink" href="#tips-n-tricks" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="image-acquisition">
-<h4>Image acquisition<a class="headerlink" href="#image-acquisition" title="Permalink to this headline">¶</a></h4>
-<p>Have a look at the [supplementary information](../supl/best practices “supl”) dealing with best practices in photogrammetry.</p>
-</div>
-<div class="section" id="sfm-photogrammetry">
-<h4>SfM photogrammetry<a class="headerlink" href="#sfm-photogrammetry" title="Permalink to this headline">¶</a></h4>
+<div class="tip admonition">
+<p class="admonition-title">SfM photogrammetry workflow</p>
 <p>Have a look at last session’s <a class="reference internal" href="../l1/tutorial.html"><span class="doc std std-doc">tutorial</span></a> for some useful tips and tricks.</p>
-</div>
-<div class="section" id="folder-structure">
-<h4>Folder structure<a class="headerlink" href="#folder-structure" title="Permalink to this headline">¶</a></h4>
-<p>Make sure to create the right folder structure (see also the <a class="reference internal" href="../l1/tutorial.html"><span class="doc std std-doc">tutorial</span></a>).</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>package_directory
-|   overview_img
-|   description.txt
-├───data_directory
-├───────100MEDIA (The folder in which all the images reside)
-|           DJI_0001.JPG
-|           DJI_0002.JPG
-|           ...
-├───────gcps
-|           (We&#39;ll get back to this in a later session)
-└───────metashape
-            metashape_project.psx
-            .metashape_project.files
-            metashape_processing_report
-            (optionally: metashape_project.log)
-</pre></div>
-</div>
 </div>
 </div>
 </div>
