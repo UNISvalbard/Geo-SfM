@@ -97,7 +97,7 @@ Have a look at last session's [tutorial](../l1/tutorial "tutorial") for some use
 
 #### Folder structure
 
-Make sure to create the right folder structure (see also the [tutorial]{../l1/tutorial "tutorial"}).
+Make sure to create the right folder structure (see also the [tutorial](../l1/tutorial "tutorial")).
 
 ```
 package_directory
