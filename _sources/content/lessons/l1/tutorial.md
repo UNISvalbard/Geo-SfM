@@ -237,6 +237,12 @@ The procedure listed above should **always** be implemented in your workflows, w
 Make this a habit :)
 ```
 
+```{admonition} Exercise 2
+:class: tip
+You'll find key metadata within the generated processing_report.pdf that has to be submitted as part of the second session's assignment.
+Have a look and familiarise yourself with it.
+```
+
 #### In-programme parameters
 
 ```{note}

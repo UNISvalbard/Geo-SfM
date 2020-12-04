@@ -10,48 +10,41 @@ Please note that **we only provide feedback and support for students enrolled in
 ```
 
 Today we focus on the reconstruction of a model of our own.
-Split up into separate tasks, we would like you to cover the following goals in groups of 4:
+Split up into separate tasks, we would like you to cover the following goals in groups of 3:
 
 - Image acquisition of an object of your choosing
 - SfM photogrammetry of the object you imaged
+- Archiving of the dataset in a standardised way
+- Documenting the processing steps.
 
 The exercise also includes a deliverable, i.e., a set of requirements that are listed further below.
 
-## Exercise 2 hints
+## Assignment
 
-### Image acquisition
+It is now up to you to head out and acquire your own data set and process this by following the [photogrammetry tutorial](../l1/tutorial "tutorial").
 
-Feel free to use your smart phone to take images of an object.
-Make sure that each of the images you take has at least 80% overlap with the previous and next image.
-Make also sure to change imaging-angles and distances.
+Suggested targets include:
 
-### SfM photogrammetry
+- the boulders in front of UNIS
+- small outcrops (ca. 5 m long, 5 m high)
 
-Have a look at last session's [tutorial](../l1/tutorial "tutorial") for some useful tips and tricks.
+![the boulders in front of the UNIS entrance](assets/f103d976.png)
 
-### Deliverable
-
-Make sure to create the right folder structure (see also the [tutorial]{../l1/tutorial}).
-
-```
-package_directory
-|   overview_img
-|   description.txt
-├───data_directory
-├───────100MEDIA (The folder in which all the images reside)
-|           DJI_0001.JPG
-|           DJI_0002.JPG
-|           ...
-├───────gcps
-|           (We'll get back to this in a later session)
-└───────metashape
-            metashape_project.psx
-            .metashape_project.files
-            metashape_processing_report
-            (optionally: metashape_project.log)
+```{admonition} Checklist and questions
+:class: tip
+- [ ] Find a suitable target
+- [ ] Take photos of the target
+  - [ ] ... from two distances
+  - [ ] ... from two angles
+  - [ ] ... with photos having at least 80% overlap between them
+- [ ] Import the photos to your workstation...
+- [ ] ... into the standardised folder structure
+- [ ] Create a textured model, saving project into the assigned folder
+- [ ] Export a processing report.
+- [ ] Fill out the deliverable
 ```
 
-## Exercise 2 deliverable
+#### Deliverable
 
 At the very least, the following should be completed **prior to the start of the next session**.
 Copy it over and send it in to the course responsible.
@@ -89,5 +82,37 @@ metadata:
 ```
 
 ```{note}
-As for the metadata, have a look in the processing report.
+:class: tip
+As for the metadata, you'll only be able to fill out some of the metadata after fully implementing all the steps (and including up to) the meshing and texturing step.
+```
+
+### Tips n Tricks
+#### Image acquisition
+
+Have a look at the [supplementary information](../supl/best practices "supl") dealing with best practices in photogrammetry.
+
+#### SfM photogrammetry
+
+Have a look at last session's [tutorial](../l1/tutorial "tutorial") for some useful tips and tricks.
+
+#### Folder structure
+
+Make sure to create the right folder structure (see also the [tutorial]{../l1/tutorial "tutorial"}).
+
+```
+package_directory
+|   overview_img
+|   description.txt
+├───data_directory
+├───────100MEDIA (The folder in which all the images reside)
+|           DJI_0001.JPG
+|           DJI_0002.JPG
+|           ...
+├───────gcps
+|           (We'll get back to this in a later session)
+└───────metashape
+            metashape_project.psx
+            .metashape_project.files
+            metashape_processing_report
+            (optionally: metashape_project.log)
 ```
