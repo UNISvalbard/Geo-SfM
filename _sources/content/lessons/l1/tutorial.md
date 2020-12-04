@@ -104,7 +104,7 @@ After clicking *OK*, Metashape starts aligning your photos.
 This may take a while, but assuming there is sufficient overlap between the data, a *sparse point cloud* will be shown on the screen (in the *Model* tab) once processing is done.
 If not, one can select this by clicking the four-dotted icon in the menu.
 
-```{figure}assets/0343f82c.png
+```{figure} assets/0343f82c.png
 :name: align_photos
 
 The *Align Photos* dialog after opening it from the *Workflow* menu.
@@ -126,7 +126,7 @@ This is done by selecting *Optimize Cameras* from the *Tools* menu.
 A {ref}`dialog <optimize_cameras>` will pop up with several parameter options pre-selected.
 Most important here is to at least select make sure that the *Estimate tie point covariance* is enabled.
 
-```{figure}assets/5ca3a257.png
+```{figure} assets/5ca3a257.png
 :name: optimize_cameras
 
 The *Optimize Camera Alignment* dialog after opening it from the *Tools* menu.
@@ -145,7 +145,7 @@ Also open up the *Advanced* section, and set *Depth filtering* to *Mild*.
 
 *Reuse depth maps* can only be selected if depth maps have been previously calculated for the specified quality.
 
-```{figure}assets/d2a861b0.png
+```{figure} assets/d2a861b0.png
 :name: dense_cloud
 
 The *Build dense cloud* dialog after opening it from the *Workflow* menu.
@@ -208,7 +208,7 @@ Depth maps may lead to better results when dealing with a big number of minor de
 
 After selecting *Build Mesh* from the *Workflow* menu, you will be able to chose either in the {ref}`dialog <build_mesh>` that pops up for *Source data:*.
 
-```{figure}assets/9b4ac0b8.png
+```{figure} assets/9b4ac0b8.png
 :name: build_mesh
 
 The *Build mesh* dialog after opening it from the *Workflow* menu.
@@ -234,7 +234,7 @@ If depth maps do exist, and you decide to use them as the source data, then make
 We can build the textures by clicking on the *Build Texture* command from the *Workflow* menu.
 While the dialog has many different parameters, the most important are highlighted in {numref}`build_texture`.
 
-```{figure}assets/7237597c.png
+```{figure} assets/7237597c.png
 :name: build_texture
 
 The *Build texture* dialog after opening it from the *Workflow* menu.

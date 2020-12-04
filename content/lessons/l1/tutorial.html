@@ -466,10 +466,9 @@ Most important here is the <em>Accuracy</em> parameter, which governs whether yo
 <p>After clicking <em>OK</em>, Metashape starts aligning your photos.
 This may take a while, but assuming there is sufficient overlap between the data, a <em>sparse point cloud</em> will be shown on the screen (in the <em>Model</em> tab) once processing is done.
 If not, one can select this by clicking the four-dotted icon in the menu.</p>
-<div class="highlight-{figure}assets/0343f82c.png notranslate"><div class="highlight"><pre><span></span>:name: align_photos
-
-The *Align Photos* dialog after opening it from the *Workflow* menu.
-</pre></div>
+<div class="figure align-default" id="align-photos">
+<img alt="../../../_images/0343f82c.png" src="../../../_images/0343f82c.png" />
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">The <em>Align Photos</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#align-photos" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition-down-sampling admonition">
 <p class="admonition-title">Down-sampling</p>
@@ -482,12 +481,11 @@ For example, down-sampling a 1000x1000 pixel image to a 100x100 image results in
 <h4>Improve alignment step<a class="headerlink" href="#improve-alignment-step" title="Permalink to this headline">¶</a></h4>
 <p>Although the photos have now been aligned, it is important to further optimize the cameras.
 This is done by selecting <em>Optimize Cameras</em> from the <em>Tools</em> menu.
-A <span class="xref std std-ref">dialog</span> will pop up with several parameter options pre-selected.
+A <a class="reference internal" href="#optimize-cameras"><span class="std std-ref">dialog</span></a> will pop up with several parameter options pre-selected.
 Most important here is to at least select make sure that the <em>Estimate tie point covariance</em> is enabled.</p>
-<div class="highlight-{figure}assets/5ca3a257.png notranslate"><div class="highlight"><pre><span></span>:name: optimize_cameras
-
-The *Optimize Camera Alignment* dialog after opening it from the *Tools* menu.
-</pre></div>
+<div class="figure align-default" id="optimize-cameras">
+<img alt="../../../_images/5ca3a257.png" src="../../../_images/5ca3a257.png" />
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">The <em>Optimize Camera Alignment</em> dialog after opening it from the <em>Tools</em> menu.</span><a class="headerlink" href="#optimize-cameras" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
@@ -495,15 +493,14 @@ The *Optimize Camera Alignment* dialog after opening it from the *Tools* menu.
 <h3>Build Dense Cloud<a class="headerlink" href="#build-dense-cloud" title="Permalink to this headline">¶</a></h3>
 <p>Based on the estimated camera positions, we can now estimate a <em>dense point cloud</em> by calculating depth information for each image.</p>
 <p>Select <em>Build Dense Cloud</em> from the <em>Workflow</em> menu.
-<span class="xref std std-ref">Once again you will be asked about the desired accuracy/quality</span>.
+<a class="reference internal" href="#dense-cloud"><span class="std std-ref">Once again you will be asked about the desired accuracy/quality</span></a>.
 Keeping in mind what we discussed above, make sure to select <em>Medium</em> for the quality.</p>
 <p>Also open up the <em>Advanced</em> section, and set <em>Depth filtering</em> to <em>Mild</em>.
 <strong>Make sure to always enable <em>Calculate point confidence</em></strong></p>
 <p><em>Reuse depth maps</em> can only be selected if depth maps have been previously calculated for the specified quality.</p>
-<div class="highlight-{figure}assets/d2a861b0.png notranslate"><div class="highlight"><pre><span></span>:name: dense_cloud
-
-The *Build dense cloud* dialog after opening it from the *Workflow* menu.
-</pre></div>
+<div class="figure align-default" id="dense-cloud">
+<img alt="../../../_images/d2a861b0.png" src="../../../_images/d2a861b0.png" />
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">The <em>Build dense cloud</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#dense-cloud" title="Permalink to this image">¶</a></p>
 </div>
 <p>Once processing is done, you’ll be able to show the <em>dense point cloud</em> on the screen in the <em>Model</em> tab.
 If not, one can visualise the <em>dense point cloud</em> by clicking on the nine-dotted icon in the menu.
@@ -553,11 +550,10 @@ Delete the selected points by hitting the <em>Del(ete)</em> key on the keyboard.
 While generating the dense cloud, Agisoft Metashape simultaneously generated a set of depth maps (if chosen to save to the project).
 This is important as we can decide which of the two to use for meshing.
 Depth maps may lead to better results when dealing with a big number of minor details, but otherwise dense clouds should be used as the source.</p>
-<p>After selecting <em>Build Mesh</em> from the <em>Workflow</em> menu, you will be able to chose either in the <span class="xref std std-ref">dialog</span> that pops up for <em>Source data:</em>.</p>
-<div class="highlight-{figure}assets/9b4ac0b8.png notranslate"><div class="highlight"><pre><span></span>:name: build_mesh
-
-The *Build mesh* dialog after opening it from the *Workflow* menu.
-</pre></div>
+<p>After selecting <em>Build Mesh</em> from the <em>Workflow</em> menu, you will be able to chose either in the <a class="reference internal" href="#build-mesh"><span class="std std-ref">dialog</span></a> that pops up for <em>Source data:</em>.</p>
+<div class="figure align-default" id="build-mesh">
+<img alt="../../../_images/9b4ac0b8.png" src="../../../_images/9b4ac0b8.png" />
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">The <em>Build mesh</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#build-mesh" title="Permalink to this image">¶</a></p>
 </div>
 <p>Other important parameters here are the <em>Quality</em> and <em>Face count</em> parameters.
 These govern the quality of the generated mesh.
@@ -573,11 +569,10 @@ The next step involves generating a texture and placing this “image” onto th
 <div class="section" id="texture-building">
 <h4>Texture building<a class="headerlink" href="#texture-building" title="Permalink to this headline">¶</a></h4>
 <p>We can build the textures by clicking on the <em>Build Texture</em> command from the <em>Workflow</em> menu.
-While the dialog has many different parameters, the most important are highlighted in <code class="xref std std-numref docutils literal notranslate"><span class="pre">build_texture</span></code>.</p>
-<div class="highlight-{figure}assets/7237597c.png notranslate"><div class="highlight"><pre><span></span>:name: build_texture
-
-The *Build texture* dialog after opening it from the *Workflow* menu.
-</pre></div>
+While the dialog has many different parameters, the most important are highlighted in <a class="reference internal" href="#build-texture"><span class="std std-numref">Fig. 5</span></a>.</p>
+<div class="figure align-default" id="build-texture">
+<img alt="../../../_images/7237597c.png" src="../../../_images/7237597c.png" />
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">The <em>Build texture</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#build-texture" title="Permalink to this image">¶</a></p>
 </div>
 <p>Here <em>Texture size/count</em> determines the quality of the texture.
 Keep in mind that anything over 16384 can very quickly lead to very, very large file sizes on your harddisk.
