@@ -373,7 +373,7 @@ then proceed by running each cell by either clicking the <em>play</em> button or
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">config_file</span> <span class="o">=</span> <span class="s2">&quot;../config/photogrammetry_processing_settings.yml&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">config_file</span> <span class="o">=</span> <span class="s2">&quot;../config/empty_photogrammetry_processing_settings.yml&quot;</span>
 <span class="n">AP</span><span class="p">(</span><span class="n">config_file</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -381,8 +381,8 @@ then proceed by running each cell by either clicking the <em>play</em> button or
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="mi">78</span><span class="n">f7fde85962</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">config_file</span> <span class="o">=</span> <span class="s2">&quot;../config/photogrammetry_processing_settings.yml&quot;</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="mi">158988</span><span class="n">d995da</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">config_file</span> <span class="o">=</span> <span class="s2">&quot;../config/empty_photogrammetry_processing_settings.yml&quot;</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">AP</span><span class="p">(</span><span class="n">config_file</span><span class="p">)</span>
 
 <span class="nn">~\.conda\envs\Photogrammetry\lib\site-packages\automated_metashape\MetashapeProcessing.py</span> in <span class="ni">__init__</span><span class="nt">(self, config_file, logger)</span>
@@ -399,7 +399,7 @@ then proceed by running each cell by either clicking the <em>play</em> button or
 <span class="g g-Whitespace">     </span><span class="mi">49</span>         <span class="n">cfg</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">ymlfile</span><span class="p">,</span> <span class="n">Loader</span><span class="o">=</span><span class="n">yaml</span><span class="o">.</span><span class="n">SafeLoader</span><span class="p">)</span>
 <span class="g g-Whitespace">     </span><span class="mi">50</span> 
 
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;..\\config\\photogrammetry_processing_settings.yml&#39;
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;..\\config\\empty_photogrammetry_processing_settings.yml&#39;
 </pre></div>
 </div>
 </div>
@@ -444,8 +444,8 @@ These should be present in every YAML configuration file, regardless of the desi
 </li>
 <li><p>not to use any new lines in the configuration files</p>
 <ul>
-<li><p>bad: load_project_path: asda</p></li>
-<li><p>sfasd#comment here</p></li>
+<li><p>bad: load_project_path: asda …</p></li>
+<li><p>… sfasd#comment here</p></li>
 </ul>
 </li>
 </ul>
@@ -461,8 +461,8 @@ Refer to <a class="reference external" href="https://www.agisoft.com/pdf/metasha
 The parameter-section names should fully follow the parameter names of the Metashape functions.
 In case default parameters are to be used, remove the corresponding parameter-section.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="8ade6c9a-cc06-40c9-8c75-3773a803cc39" name="12117b2b-a2eb-4110-b691-00295027798d" type="radio">
-</input><label class="tabbed-label" for="8ade6c9a-cc06-40c9-8c75-3773a803cc39">
+<input checked="checked" id="9b91b066-97ce-48c1-a245-3e7977de0f03" name="c1738473-efef-4e8b-ad88-46755f867bef" type="radio">
+</input><label class="tabbed-label" for="9b91b066-97ce-48c1-a245-3e7977de0f03">
 Add photos</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">addPhotos</span><span class="p">:</span>
     <span class="nt">enabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
@@ -475,8 +475,8 @@ Add photos</label><div class="tabbed-content docutils">
 This should generally only be set to <em>True</em> when ground control points (GCPs) are to be used.</p>
 </div>
 </div>
-<input id="db9c76a1-1b58-40ae-9b29-4f9efa1629f1" name="12117b2b-a2eb-4110-b691-00295027798d" type="radio">
-</input><label class="tabbed-label" for="db9c76a1-1b58-40ae-9b29-4f9efa1629f1">
+<input id="ec661031-9f1e-415b-bc08-b4b4be35b790" name="c1738473-efef-4e8b-ad88-46755f867bef" type="radio">
+</input><label class="tabbed-label" for="ec661031-9f1e-415b-bc08-b4b4be35b790">
 Add masks</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">masks</span><span class="p">:</span>
     <span class="nt">enabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span> <span class="c1"># Default, only enable if you have images with masks :)</span>
@@ -485,8 +485,8 @@ Add masks</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="40213ede-bbc1-4669-b560-2fa0f07cdaf5" name="12117b2b-a2eb-4110-b691-00295027798d" type="radio">
-</input><label class="tabbed-label" for="40213ede-bbc1-4669-b560-2fa0f07cdaf5">
+<input id="485f8a04-49ea-48e3-83c9-961b1c2eaabc" name="c1738473-efef-4e8b-ad88-46755f867bef" type="radio">
+</input><label class="tabbed-label" for="485f8a04-49ea-48e3-83c9-961b1c2eaabc">
 Alignment</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">alignPhotos</span><span class="p">:</span> <span class="c1"># (Metashape: alignPhotos)</span>
     <span class="nt">enabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
@@ -505,8 +505,8 @@ Alignment</label><div class="tabbed-content docutils">
 <p>Whether or not to try alignment of images that failed alignment during the first stage.</p>
 </div>
 </div>
-<input id="b1afa528-7fcd-446d-b560-1f295ce3a092" name="12117b2b-a2eb-4110-b691-00295027798d" type="radio">
-</input><label class="tabbed-label" for="b1afa528-7fcd-446d-b560-1f295ce3a092">
+<input id="d1295fcf-f369-48f9-b399-aede19a4a91e" name="c1738473-efef-4e8b-ad88-46755f867bef" type="radio">
+</input><label class="tabbed-label" for="d1295fcf-f369-48f9-b399-aede19a4a91e">
 Optimise cameras</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">optimizeCameras</span><span class="p">:</span> <span class="c1"># (Metashape: optimizeCameras)</span>
     <span class="nt">enabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
@@ -515,8 +515,8 @@ Optimise cameras</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="31e8d8f3-bfe9-4b62-a393-bccf07024472" name="12117b2b-a2eb-4110-b691-00295027798d" type="radio">
-</input><label class="tabbed-label" for="31e8d8f3-bfe9-4b62-a393-bccf07024472">
+<input id="da7a13ca-d4ea-46d4-b88b-49723521388c" name="c1738473-efef-4e8b-ad88-46755f867bef" type="radio">
+</input><label class="tabbed-label" for="da7a13ca-d4ea-46d4-b88b-49723521388c">
 Dense cloud</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">buildDenseCloud</span><span class="p">:</span> <span class="c1"># (Metashape: buildDepthMaps, buildDenseCloud, classifyGroundPoints, and exportPoints)</span>
     <span class="nt">enabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
@@ -544,8 +544,8 @@ Aggressive filtering removes detail and makes worse DEMs (at least for forest).
 NoFiltering takes very long. In trials, it never completed.</p>
 </div>
 </div>
-<input id="83d96971-58f2-497e-86a9-6e9bcdcbf5f5" name="12117b2b-a2eb-4110-b691-00295027798d" type="radio">
-</input><label class="tabbed-label" for="83d96971-58f2-497e-86a9-6e9bcdcbf5f5">
+<input id="cfc8e6d3-b549-49fb-bf67-235e4bfde810" name="c1738473-efef-4e8b-ad88-46755f867bef" type="radio">
+</input><label class="tabbed-label" for="cfc8e6d3-b549-49fb-bf67-235e4bfde810">
 Filter dense cloud</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">filterDenseCloud</span><span class="p">:</span>
     <span class="nt">enabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
@@ -553,8 +553,8 @@ Filter dense cloud</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="0e1b7449-76ec-4bfa-970f-85989613cbd7" name="12117b2b-a2eb-4110-b691-00295027798d" type="radio">
-</input><label class="tabbed-label" for="0e1b7449-76ec-4bfa-970f-85989613cbd7">
+<input id="833d3503-ba84-4620-82dc-1a4094ec36e6" name="c1738473-efef-4e8b-ad88-46755f867bef" type="radio">
+</input><label class="tabbed-label" for="833d3503-ba84-4620-82dc-1a4094ec36e6">
 Mesh</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">buildMesh</span><span class="p">:</span> <span class="c1"># (Metashape: buildModel)</span>
     <span class="nt">enabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
@@ -566,8 +566,8 @@ Mesh</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="3f3656a2-164e-472a-8427-0a53e0046650" name="12117b2b-a2eb-4110-b691-00295027798d" type="radio">
-</input><label class="tabbed-label" for="3f3656a2-164e-472a-8427-0a53e0046650">
+<input id="0e5c13a1-2a4e-4f67-b411-361a845ad55f" name="c1738473-efef-4e8b-ad88-46755f867bef" type="radio">
+</input><label class="tabbed-label" for="0e5c13a1-2a4e-4f67-b411-361a845ad55f">
 Textures</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">buildTexture</span><span class="p">:</span> <span class="c1"># (Metashape: buildTexture)</span>
     <span class="nt">enabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
@@ -577,8 +577,8 @@ Textures</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="c4259d71-256a-4232-91c6-b5b3b2bea8bc" name="12117b2b-a2eb-4110-b691-00295027798d" type="radio">
-</input><label class="tabbed-label" for="c4259d71-256a-4232-91c6-b5b3b2bea8bc">
+<input id="01a59b61-7418-4ac7-be43-c4b94712b053" name="c1738473-efef-4e8b-ad88-46755f867bef" type="radio">
+</input><label class="tabbed-label" for="01a59b61-7418-4ac7-be43-c4b94712b053">
 Tiled model</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">buildTiledModel</span><span class="p">:</span> <span class="c1"># (Metashape: buildTexture)</span>
     <span class="nt">enabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
@@ -590,8 +590,8 @@ Tiled model</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="ea4597e1-926e-4f40-bc3e-35d300b40fe9" name="12117b2b-a2eb-4110-b691-00295027798d" type="radio">
-</input><label class="tabbed-label" for="ea4597e1-926e-4f40-bc3e-35d300b40fe9">
+<input id="30bfd359-aac6-4c6f-ac15-a04e8eeb9714" name="c1738473-efef-4e8b-ad88-46755f867bef" type="radio">
+</input><label class="tabbed-label" for="30bfd359-aac6-4c6f-ac15-a04e8eeb9714">
 GCPs - detection</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">detectGCPs</span><span class="p">:</span>
     <span class="nt">enabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
@@ -604,8 +604,8 @@ GCPs - detection</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="1d1a798e-5046-4477-abbb-cbb71fdad7ce" name="12117b2b-a2eb-4110-b691-00295027798d" type="radio">
-</input><label class="tabbed-label" for="1d1a798e-5046-4477-abbb-cbb71fdad7ce">
+<input id="70647af3-9cc5-4ded-9d81-6d38677821cb" name="c1738473-efef-4e8b-ad88-46755f867bef" type="radio">
+</input><label class="tabbed-label" for="70647af3-9cc5-4ded-9d81-6d38677821cb">
 GCPs - add to project</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">addGCPs</span><span class="p">:</span>
     <span class="nt">enabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
@@ -616,8 +616,8 @@ GCPs - add to project</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="d1961182-4a65-40f8-9cda-9324bfafcccf" name="12117b2b-a2eb-4110-b691-00295027798d" type="radio">
-</input><label class="tabbed-label" for="d1961182-4a65-40f8-9cda-9324bfafcccf">
+<input id="3832e45a-0518-47bc-a7eb-73fc4aaf8f98" name="c1738473-efef-4e8b-ad88-46755f867bef" type="radio">
+</input><label class="tabbed-label" for="3832e45a-0518-47bc-a7eb-73fc4aaf8f98">
 Networking</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">networkProcessing</span><span class="p">:</span>
     <span class="nt">enabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
@@ -632,6 +632,20 @@ Networking</label><div class="tabbed-content docutils">
 <h3>Another shot<a class="headerlink" href="#another-shot" title="Permalink to this headline">¶</a></h3>
 <p>After copying over the desired parameter-sections, update the config_file path correspondingly and run the cell again.
 It should now result in a successful runtime.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">config_file_path</span> <span class="o">=</span> <span class="s2">&quot;../config/photogrammetry_processing_settings.yml&quot;</span>
+<span class="n">AP</span><span class="p">(</span><span class="n">config_file</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This assumes <em>../config/photogrammetry_processing_settings.yml</em> consist of the following:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">run_name</span><span class="p">:</span> <span class="c1"># name of the project run (e.g., KonusdalenWestFault)</span>
+<span class="nt">load_project_path</span><span class="p">:</span> <span class="c1"># This field may remain empty; put the absolute filepath to a pre-existing Agisoft Metashape project here if it is to be loaded.</span>
+<span class="nt">photo_path</span><span class="p">:</span> <span class="c1"># path to photo directory (&quot;data_directory&quot; in the standardised folder directory)  - this parameter will be moved to the addPhotos configuration section in later releases.</span>
+<span class="nt">output_path</span><span class="p">:</span> <span class="c1"># path to output directory, usually {photo_path}/metashape</span>
+<span class="nt">project_path</span><span class="p">:</span> <span class="c1"># path to Agisoft Metashape project directory, usually {photo_path}/metashape</span>
+<span class="nt">project_crs</span><span class="p">:</span> <span class="s">&quot;EPSG::32633&quot;</span> <span class="c1"># 32633 is WGS1984 UTM 33N; epsg number that corresponds to the required project crs. Look here: https://epsg.io/</span>
+<span class="nt">subdivide_task</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span> <span class="c1"># Fine-level task subdivision reduces memory by breaking processing into independent chunks that are run in series. True recommended.</span>
+</pre></div>
+</div>
 <div class="tip admonition">
 <p class="admonition-title">Did you know…</p>
 <p>… that you can continue processing an existing project by linking to the project file through the <em>load_project_path</em> parameter?
