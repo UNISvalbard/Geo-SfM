@@ -146,6 +146,11 @@
    Aruco
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../l3/exercise3.html">
+   Exercise 3
+  </a>
+ </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
@@ -365,10 +370,6 @@ Minimal differences may exist between versions, especially when ensuring compati
 <h2>Automated processing with Jupyter lab<a class="headerlink" href="#automated-processing-with-jupyter-lab" title="Permalink to this headline">¶</a></h2>
 <p>We here showcase the Automated Metashape scripts through use of Jupyter lab.
 When ready, open Anaconda Prompt again, change into the <em>automated_metashape</em> environment, and run <em>Jupyter lab</em>.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">automated_metashape</span>
-<span class="n">jupyter</span> <span class="n">lab</span>
-</pre></div>
-</div>
 <p>This should open up your webbrowser, and opens up the Jupyter lab interface that is used for processing.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -475,8 +476,8 @@ Refer to <a class="reference external" href="https://www.agisoft.com/pdf/metasha
 The parameter-section names should fully follow the parameter names of the Metashape functions.
 In case default parameters are to be used, remove the corresponding parameter-section.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="ba1caae2-6b24-4e82-92b5-4b070ce5577b" name="bcc31677-647f-46ed-bc0f-772ac3742cf0" type="radio">
-</input><label class="tabbed-label" for="ba1caae2-6b24-4e82-92b5-4b070ce5577b">
+<input checked="checked" id="98bc69f8-9c39-496e-8a4a-d5a22e5619bd" name="e071adf9-05a0-4fe5-9fea-89885ef21319" type="radio">
+</input><label class="tabbed-label" for="98bc69f8-9c39-496e-8a4a-d5a22e5619bd">
 Add photos</label><div class="tabbed-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">addPhotos</span><span class="p">:</span>
     <span class="n">enabled</span><span class="p">:</span> <span class="kc">True</span>
@@ -489,8 +490,8 @@ Add photos</label><div class="tabbed-content docutils">
 This should generally only be set to <em>True</em> when ground control points (GCPs) are to be used.</p>
 </div>
 </div>
-<input id="021a4ce8-6d98-4670-afa7-e837cd21d391" name="bcc31677-647f-46ed-bc0f-772ac3742cf0" type="radio">
-</input><label class="tabbed-label" for="021a4ce8-6d98-4670-afa7-e837cd21d391">
+<input id="e0272005-c9ea-444a-bdce-5e8742d66adc" name="e071adf9-05a0-4fe5-9fea-89885ef21319" type="radio">
+</input><label class="tabbed-label" for="e0272005-c9ea-444a-bdce-5e8742d66adc">
 Add masks</label><div class="tabbed-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">masks</span><span class="p">:</span>
     <span class="n">enabled</span><span class="p">:</span> <span class="kc">True</span> <span class="c1"># Default, only enable if you have images with masks :)</span>
@@ -499,8 +500,8 @@ Add masks</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="586f1818-f7f0-42a6-a622-1195bda44351" name="bcc31677-647f-46ed-bc0f-772ac3742cf0" type="radio">
-</input><label class="tabbed-label" for="586f1818-f7f0-42a6-a622-1195bda44351">
+<input id="cb4a5b17-f25a-4ce0-80c9-799ca5e1fbd4" name="e071adf9-05a0-4fe5-9fea-89885ef21319" type="radio">
+</input><label class="tabbed-label" for="cb4a5b17-f25a-4ce0-80c9-799ca5e1fbd4">
 Alignment</label><div class="tabbed-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">alignPhotos</span><span class="p">:</span> <span class="c1"># (Metashape: alignPhotos)</span>
     <span class="n">enabled</span><span class="p">:</span> <span class="kc">True</span>
@@ -519,8 +520,8 @@ Alignment</label><div class="tabbed-content docutils">
 <p>Whether or not to try alignment of images that failed alignment during the first stage.</p>
 </div>
 </div>
-<input id="73295805-4fa5-4756-b3a5-8b288467acc0" name="bcc31677-647f-46ed-bc0f-772ac3742cf0" type="radio">
-</input><label class="tabbed-label" for="73295805-4fa5-4756-b3a5-8b288467acc0">
+<input id="e902893f-d814-4650-9f03-791749225952" name="e071adf9-05a0-4fe5-9fea-89885ef21319" type="radio">
+</input><label class="tabbed-label" for="e902893f-d814-4650-9f03-791749225952">
 Optimise cameras</label><div class="tabbed-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">optimizeCameras</span><span class="p">:</span> <span class="c1"># (Metashape: optimizeCameras)</span>
     <span class="n">enabled</span><span class="p">:</span> <span class="kc">True</span>
@@ -529,8 +530,8 @@ Optimise cameras</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="339e130f-4599-4ded-bd21-56f0280bee6d" name="bcc31677-647f-46ed-bc0f-772ac3742cf0" type="radio">
-</input><label class="tabbed-label" for="339e130f-4599-4ded-bd21-56f0280bee6d">
+<input id="e9c1dcd6-f2f0-4ebb-8c64-8ef1a18d9bf3" name="e071adf9-05a0-4fe5-9fea-89885ef21319" type="radio">
+</input><label class="tabbed-label" for="e9c1dcd6-f2f0-4ebb-8c64-8ef1a18d9bf3">
 Dense cloud</label><div class="tabbed-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">buildDenseCloud</span><span class="p">:</span> <span class="c1"># (Metashape: buildDepthMaps, buildDenseCloud, classifyGroundPoints, and exportPoints)</span>
     <span class="n">enabled</span><span class="p">:</span> <span class="kc">True</span>
@@ -558,8 +559,8 @@ Aggressive filtering removes detail and makes worse DEMs (at least for forest).
 NoFiltering takes very long. In trials, it never completed.</p>
 </div>
 </div>
-<input id="ee6e2c7d-ef7f-407d-8e13-edcf6a7dc722" name="bcc31677-647f-46ed-bc0f-772ac3742cf0" type="radio">
-</input><label class="tabbed-label" for="ee6e2c7d-ef7f-407d-8e13-edcf6a7dc722">
+<input id="349fed6b-1a95-4103-892d-47eb2407092b" name="e071adf9-05a0-4fe5-9fea-89885ef21319" type="radio">
+</input><label class="tabbed-label" for="349fed6b-1a95-4103-892d-47eb2407092b">
 Filter dense cloud</label><div class="tabbed-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">filterDenseCloud</span><span class="p">:</span>
     <span class="n">enabled</span><span class="p">:</span> <span class="kc">True</span>
@@ -567,8 +568,8 @@ Filter dense cloud</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="b52c6a48-c711-45f7-98fa-5327ac2377ed" name="bcc31677-647f-46ed-bc0f-772ac3742cf0" type="radio">
-</input><label class="tabbed-label" for="b52c6a48-c711-45f7-98fa-5327ac2377ed">
+<input id="41bbdfcd-b4aa-4f5b-b5fb-5f812ded5767" name="e071adf9-05a0-4fe5-9fea-89885ef21319" type="radio">
+</input><label class="tabbed-label" for="41bbdfcd-b4aa-4f5b-b5fb-5f812ded5767">
 Mesh</label><div class="tabbed-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">buildMesh</span><span class="p">:</span> <span class="c1"># (Metashape: buildModel)</span>
     <span class="n">enabled</span><span class="p">:</span> <span class="kc">True</span>
@@ -580,8 +581,8 @@ Mesh</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="0f358d12-649b-4ee1-ae63-a8f188e43514" name="bcc31677-647f-46ed-bc0f-772ac3742cf0" type="radio">
-</input><label class="tabbed-label" for="0f358d12-649b-4ee1-ae63-a8f188e43514">
+<input id="6fb15524-8d24-4d52-ada6-7236c6ff31b3" name="e071adf9-05a0-4fe5-9fea-89885ef21319" type="radio">
+</input><label class="tabbed-label" for="6fb15524-8d24-4d52-ada6-7236c6ff31b3">
 Textures</label><div class="tabbed-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">buildTexture</span><span class="p">:</span> <span class="c1"># (Metashape: buildTexture)</span>
     <span class="n">enabled</span><span class="p">:</span> <span class="kc">True</span>
@@ -591,8 +592,8 @@ Textures</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="932354e9-4eb4-49d4-a559-3c97e8bf4bd3" name="bcc31677-647f-46ed-bc0f-772ac3742cf0" type="radio">
-</input><label class="tabbed-label" for="932354e9-4eb4-49d4-a559-3c97e8bf4bd3">
+<input id="c63f8309-6c77-4d81-9aa7-ef0d92c35179" name="e071adf9-05a0-4fe5-9fea-89885ef21319" type="radio">
+</input><label class="tabbed-label" for="c63f8309-6c77-4d81-9aa7-ef0d92c35179">
 Tiled model</label><div class="tabbed-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">buildTiledModel</span><span class="p">:</span> <span class="c1"># (Metashape: buildTexture)</span>
     <span class="n">enabled</span><span class="p">:</span> <span class="kc">True</span>
@@ -604,8 +605,8 @@ Tiled model</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="6d7d7efa-3396-45b9-9508-8046c00adc05" name="bcc31677-647f-46ed-bc0f-772ac3742cf0" type="radio">
-</input><label class="tabbed-label" for="6d7d7efa-3396-45b9-9508-8046c00adc05">
+<input id="061921a5-beb6-45cf-9ad2-d11a8155eadf" name="e071adf9-05a0-4fe5-9fea-89885ef21319" type="radio">
+</input><label class="tabbed-label" for="061921a5-beb6-45cf-9ad2-d11a8155eadf">
 GCPs - detection</label><div class="tabbed-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">detectGCPs</span><span class="p">:</span>
     <span class="n">enabled</span><span class="p">:</span> <span class="kc">True</span>
@@ -618,8 +619,8 @@ GCPs - detection</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="09d764e7-dc56-48cd-9a5c-470d90689eca" name="bcc31677-647f-46ed-bc0f-772ac3742cf0" type="radio">
-</input><label class="tabbed-label" for="09d764e7-dc56-48cd-9a5c-470d90689eca">
+<input id="a9577bcf-ce51-400d-9129-03c0b62e1b3f" name="e071adf9-05a0-4fe5-9fea-89885ef21319" type="radio">
+</input><label class="tabbed-label" for="a9577bcf-ce51-400d-9129-03c0b62e1b3f">
 GCPs - add to project</label><div class="tabbed-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">addGCPs</span><span class="p">:</span>
     <span class="n">enabled</span><span class="p">:</span> <span class="kc">True</span>
@@ -630,8 +631,8 @@ GCPs - add to project</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="84e773d1-36aa-4b10-8550-51e7a4fac104" name="bcc31677-647f-46ed-bc0f-772ac3742cf0" type="radio">
-</input><label class="tabbed-label" for="84e773d1-36aa-4b10-8550-51e7a4fac104">
+<input id="8a6c7e14-145d-4c79-ad72-bf35ce161d6a" name="e071adf9-05a0-4fe5-9fea-89885ef21319" type="radio">
+</input><label class="tabbed-label" for="8a6c7e14-145d-4c79-ad72-bf35ce161d6a">
 Networking</label><div class="tabbed-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">networkProcessing</span><span class="p">:</span>
     <span class="n">enabled</span><span class="p">:</span> <span class="kc">True</span>
