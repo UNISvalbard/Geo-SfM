@@ -69,6 +69,7 @@ conda install pyyaml -c conda-forge
 conda install numpy -c conda-forge
 conda install pandas -c conda-forge
 conda install opencv -c conda-forge
+conda install jupyterlab -c conda-forge
 ```
 
 To interact with the Agisoft Metashape API, you also need to install the [Python 3 Module (v1.6.5 - time-of-writing)](https://www.agisoft.com/downloads/installer/).
@@ -119,6 +120,14 @@ Linux
 pip install Metashape-1.6.5-cp35.cp36.cp37-abi3-linux_x86_64.whl
 ```
 ````
+
+Finally we can install the *automated metashape* scripts using the pip manager.
+Download the pip [redistributable](https://github.com/PeterBetlem/image_processing/releases/tag/v0.1.0) and install:
+
+```
+pip install automated_metashape-0.1.0-py37-none-any.whl
+```
+
 
 
 
