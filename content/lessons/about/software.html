@@ -385,16 +385,16 @@ Below provides an overview for when you want to setup the environment on your ow
 <h2>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h2>
 <p>Agisoft Metashape has a Python API.
 This means that we can use Python to manage the processing rather than use the GUI.
-We **highly recommend using <img alt="Miniconda" src="https://docs.conda.io/en/latest/miniconda.html" />.
+We **highly recommend using <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a>.
 Miniconda is essentially a bare-bones Python installation to which additional packages can be installed using the conda package management system.</p>
 <p>In case you already have Anaconda (or Miniconda) installed on your computer, you can use that during the Geo-SfM course without any issue.
 We do, however, recommend creating a separate environment for this.</p>
 <div class="section" id="installing-miniconda">
 <h3>Installing Miniconda<a class="headerlink" href="#installing-miniconda" title="Permalink to this headline">¶</a></h3>
-<p>Head over to <img alt="Miniconda" src="https://docs.conda.io/en/latest/miniconda.html" /> and install the latest Python 3.x installer that is available for your platform (i.e., Windows, macOS, Linux).</p>
+<p>Head over to <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a> and install the latest Python 3.x installer that is available for your platform (i.e., Windows, macOS, Linux).</p>
 <div class="section" id="installing-packages-with-conda">
 <h4>Installing packages with Conda<a class="headerlink" href="#installing-packages-with-conda" title="Permalink to this headline">¶</a></h4>
-<p>Conda has a great <img alt="online user guide" src="https://docs.conda.io/projects/conda/en/latest/index.html" /> available in case you get stuck.
+<p>Conda has a great <a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/index.html">online user guide</a> available in case you get stuck.
 Nontheless we will be going through the basic commands below.</p>
 <div class="section" id="the-conda-prompt">
 <h5>The Conda prompt<a class="headerlink" href="#the-conda-prompt" title="Permalink to this headline">¶</a></h5>
@@ -404,7 +404,6 @@ Access this from your start menu, and you will be greeted by a <a class="referen
 <img alt="../../../_images/e0902cb5.png" src="../../../_images/e0902cb5.png" />
 <p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">The Anaconda Prompt shows our current working directory and the environment we are in (base).</span><a class="headerlink" href="#anaconda-cli" title="Permalink to this image">¶</a></p>
 </div>
-<p><img alt="" src="../../../_images/e0902cb5.png" /></p>
 </div>
 <div class="section" id="creating-and-activating-environments">
 <h5>Creating and activating environments<a class="headerlink" href="#creating-and-activating-environments" title="Permalink to this headline">¶</a></h5>
@@ -422,7 +421,7 @@ That also means that when we want to launch interactive interfaces, we will have
 </div>
 <div class="section" id="installing-python-and-required-packages">
 <h5>Installing Python and required packages<a class="headerlink" href="#installing-python-and-required-packages" title="Permalink to this headline">¶</a></h5>
-<p>With the environment all set, we can now install Python and the required packages using the <img alt="conda install" src="https://docs.conda.io/projects/conda/en/latest/commands/install.html" /> command.
+<p>With the environment all set, we can now install Python and the required packages using the <a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/commands/install.html">conda install</a> command.
 The basic syntax is <strong>conda install <em>package-name</em></strong>, but we can specify a particular <strong>conda channel</strong> to specify where the package is downloaded using the parameter <em>-c</em>.
 So let’s proceed with first installing Py37 (Python 3.7) and then the required packages for the automated metashape scripts.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.7</span>
@@ -432,7 +431,7 @@ So let’s proceed with first installing Py37 (Python 3.7) and then the required
 <span class="n">conda</span> <span class="n">install</span> <span class="n">opencv</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
 </pre></div>
 </div>
-<p>To interact with the Agisoft Metashape API, you also need to install the <img alt="Python 3 Module (v1.6.5) time-of-writing" src="https://www.agisoft.com/downloads/installer/" />.
+<p>To interact with the Agisoft Metashape API, you also need to install the <a class="reference external" href="https://www.agisoft.com/downloads/installer/">Python 3 Module (v1.6.5) time-of-writing</a>.
 Once downloaded, change your current working directory to your downloads folder:</p>
 <div class="sphinx-bs container pb-4 docutils">
 <div class="row docutils">
@@ -474,7 +473,7 @@ Once downloaded, change your current working directory to your downloads folder:
 </div>
 </div>
 </div>
-<p>And then install the downloaded <em>.whl</em> file using the <img alt="pip package installer" src="https://packaging.python.org/guides/tool-recommendations/" /> for Python.</p>
+<p>And then install the downloaded <em>.whl</em> file using the <a class="reference external" href="https://packaging.python.org/guides/tool-recommendations/">pip package installer</a> for Python.</p>
 <div class="sphinx-bs container pb-4 docutils">
 <div class="row docutils">
 <div class="d-flex col-4 docutils">

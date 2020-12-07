@@ -14,7 +14,7 @@ Below provides an overview for when you want to setup the environment on your ow
 
 Agisoft Metashape has a Python API.
 This means that we can use Python to manage the processing rather than use the GUI.
-We **highly recommend using ![Miniconda](https://docs.conda.io/en/latest/miniconda.html).
+We **highly recommend using [Miniconda](https://docs.conda.io/en/latest/miniconda.html).
 Miniconda is essentially a bare-bones Python installation to which additional packages can be installed using the conda package management system.
 
 In case you already have Anaconda (or Miniconda) installed on your computer, you can use that during the Geo-SfM course without any issue.
@@ -22,11 +22,11 @@ We do, however, recommend creating a separate environment for this.
 
 ### Installing Miniconda
 
-Head over to ![Miniconda](https://docs.conda.io/en/latest/miniconda.html) and install the latest Python 3.x installer that is available for your platform (i.e., Windows, macOS, Linux).
+Head over to [Miniconda](https://docs.conda.io/en/latest/miniconda.html) and install the latest Python 3.x installer that is available for your platform (i.e., Windows, macOS, Linux).
 
 #### Installing packages with Conda
 
-Conda has a great ![online user guide](https://docs.conda.io/projects/conda/en/latest/index.html) available in case you get stuck.
+Conda has a great [online user guide](https://docs.conda.io/projects/conda/en/latest/index.html) available in case you get stuck.
 Nontheless we will be going through the basic commands below.
 
 ##### The Conda prompt
@@ -39,7 +39,6 @@ Access this from your start menu, and you will be greeted by a {ref}`command lin
 
 The Anaconda Prompt shows our current working directory and the environment we are in (base).
 ```
-![](assets/e0902cb5.png)
 
 ##### Creating and activating environments
 To prevent our work from interfering with other applications, we can create separate, unique environments for us to install packages to.
@@ -60,7 +59,7 @@ That also means that when we want to launch interactive interfaces, we will have
 
 ##### Installing Python and required packages
 
-With the environment all set, we can now install Python and the required packages using the ![conda install](https://docs.conda.io/projects/conda/en/latest/commands/install.html) command.
+With the environment all set, we can now install Python and the required packages using the [conda install](https://docs.conda.io/projects/conda/en/latest/commands/install.html) command.
 The basic syntax is **conda install *package-name***, but we can specify a particular **conda channel** to specify where the package is downloaded using the parameter *-c*.
 So let's proceed with first installing Py37 (Python 3.7) and then the required packages for the automated metashape scripts.
 
@@ -72,7 +71,7 @@ conda install pandas -c conda-forge
 conda install opencv -c conda-forge
 ```
 
-To interact with the Agisoft Metashape API, you also need to install the ![Python 3 Module (v1.6.5) time-of-writing](https://www.agisoft.com/downloads/installer/).
+To interact with the Agisoft Metashape API, you also need to install the [Python 3 Module (v1.6.5) time-of-writing](https://www.agisoft.com/downloads/installer/).
 Once downloaded, change your current working directory to your downloads folder:
 
 ````{panels}
@@ -98,7 +97,7 @@ to be done...
 ````
 
 
-And then install the downloaded *.whl* file using the ![pip package installer](https://packaging.python.org/guides/tool-recommendations/) for Python.
+And then install the downloaded *.whl* file using the [pip package installer](https://packaging.python.org/guides/tool-recommendations/) for Python.
 
 ````{panels}
 :column: col-4
