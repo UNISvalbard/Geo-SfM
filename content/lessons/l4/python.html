@@ -318,9 +318,23 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#jupyter-lab">
-   Jupyter lab
+  <a class="reference internal nav-link" href="#automated-processing-with-jupyter-lab">
+   Automated processing with Jupyter lab
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#minimal-yaml-configuration-file">
+     Minimal YAML configuration file
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#additional-parameters">
+       Additional parameters
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#yaml-configuration-file">
@@ -418,8 +432,8 @@
 <h1>Python-based standardised processing<a class="headerlink" href="#python-based-standardised-processing" title="Permalink to this headline">¶</a></h1>
 <p>The following page provices an overview of the functions that are implemented in <a class="reference external" href="https://github.com/PeterBetlem/image_processing">Automated Metashape</a>.
 These require the Python to be installed as documented in <a class="reference external" href="../about/software#Python">the software section</a>.</p>
-<div class="section" id="jupyter-lab">
-<h2>Jupyter lab<a class="headerlink" href="#jupyter-lab" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="automated-processing-with-jupyter-lab">
+<h2>Automated processing with Jupyter lab<a class="headerlink" href="#automated-processing-with-jupyter-lab" title="Permalink to this headline">¶</a></h2>
 <p>We here showcase the Automated Metashape scripts through use of Jupyter lab.
 When ready, open Anaconda Prompt again, change into the <em>automated_metashape</em> environment, and run <em>Jupyter lab</em>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">automated_metashape</span>
@@ -486,6 +500,110 @@ then proceed by running each cell by either clicking the <em>play</em> button or
 </div>
 <p>If all went well, the AutomatedProcessing module was successfully imported (= no error on first input).
 However, as per above, we have a <em>FileNotFoundError</em> - after all, we have yet to set up the configuration file that was linked to.</p>
+<div class="section" id="minimal-yaml-configuration-file">
+<h3>Minimal YAML configuration file<a class="headerlink" href="#minimal-yaml-configuration-file" title="Permalink to this headline">¶</a></h3>
+<p>The automated processing scripts rely on a <a class="reference external" href="https://yaml.org/">YAML</a> configuration file.
+YAML (or <em>YAML Ain’t Markup Language</em>) is a human friendly data serialization standard for programming languages.</p>
+<p>Proceed by creating a new file in the <em>config</em> directory created previously and give it the <em>.yaml</em> extension.
+Name this file according to the project you are working on.</p>
+<p>At the very least, copy-paste in the project-level parameters found below.</p>
+<p>The above won’t do much - it simply creates a new Metashape project or loads an existing project and saves it again.</p>
+<div class="suggestion admonition">
+<p class="admonition-title">Use the standardised folder structure</p>
+<p>As the script automatically searches for all compatible images within the photo_path, make sure to use the standardised folder structure described in the <a class="reference internal" href="../l1/tutorial.html"><span class="doc std std-doc">Metashape tutorial</span></a>.</p>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">Correctly filling out YAML configuration</p>
+<p>Make sure…</p>
+<ul class="simple">
+<li><p>keep at least one space between the : (colon) and parameter</p>
+<ul>
+<li><p>bad: load_project_path:asdasfasd #comment here</p></li>
+</ul>
+</li>
+<li><p>keep at least one space between the parameter and # (comment)</p>
+<ul>
+<li><p>bad: load_project_path: asdasfasd#comment here</p></li>
+</ul>
+</li>
+<li><p>not to use any new lines in the configuration files</p>
+<ul>
+<li><p>bad: load_project_path: asda
+sfasd#comment here</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="additional-parameters">
+<h4>Additional parameters<a class="headerlink" href="#additional-parameters" title="Permalink to this headline">¶</a></h4>
+<p>Steps can be run or skipped using the ‘enabled’ parameter. If enabled == False, everything else in the step is irrelevant.
+Alternatively, the entire parameter can be left out.
+Keep in mind, though, that some steps require others to be completed.
+E.g., not adding photos is likely to prevent photo alignment in some cases. ;)</p>
+<p>The metashape functions powering each of these steps are listed in the comments in parentheses.
+Refer to Metashape documentation for full parameter definitions: https://www.agisoft.com/pdf/metashape_python_api_1_6_0.pdf.
+Parameter names here should fully follow the parameter names of the Metashape functions.
+In case default parameters are to be used, comment out the corresponding parameter with an # (Exception: addGCP parameters!)</p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="1ade97a0-5ddb-4818-9e94-11ec0a0ca6d2" name="c64c9a2d-3194-4fbd-88bb-cf17d05ab763" type="radio">
+</input><label class="tabbed-label" for="1ade97a0-5ddb-4818-9e94-11ec0a0ca6d2">
+Networking</label><div class="tabbed-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">networkProcessing</span><span class="p">:</span>
+    <span class="n">enabled</span><span class="p">:</span> <span class="kc">True</span>
+    <span class="n">server_ip</span><span class="p">:</span> <span class="n">svalbox</span> <span class="c1"># Host Server IP address</span>
+</pre></div>
+</div>
+</div>
+<input id="b5749839-5915-4f03-88d3-1f191ad2af1c" name="c64c9a2d-3194-4fbd-88bb-cf17d05ab763" type="radio">
+</input><label class="tabbed-label" for="b5749839-5915-4f03-88d3-1f191ad2af1c">
+Add photos</label><div class="tabbed-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">networkProcessing</span><span class="p">:</span>
+    <span class="n">enabled</span><span class="p">:</span> <span class="kc">True</span>
+    <span class="n">server_ip</span><span class="p">:</span> <span class="n">svalbox</span> <span class="c1"># Host Server IP address</span>
+</pre></div>
+</div>
+</div>
+<input id="d35c113c-89b5-4f0b-8636-d77cd5b8d62c" name="c64c9a2d-3194-4fbd-88bb-cf17d05ab763" type="radio">
+</input><label class="tabbed-label" for="d35c113c-89b5-4f0b-8636-d77cd5b8d62c">
+Alignment</label><div class="tabbed-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">alignPhotos</span><span class="p">:</span> <span class="c1"># (Metashape: alignPhotos)</span>
+    <span class="n">enabled</span><span class="p">:</span> <span class="kc">False</span>
+    <span class="n">downscale</span><span class="p">:</span> <span class="mi">0</span> <span class="c1"># Recommended: 1. How much to coarsen the photos when searching for tie points. Corresponding settings in Metashape: 0: Highest, 1: High, 2: Medium, 3: Low, 4: Lowest</span>
+    <span class="n">adaptive_fitting</span><span class="p">:</span> <span class="kc">True</span> <span class="c1"># Recommended: True. Should the camera lens model be fit at the same time as aligning photos?</span>
+    <span class="n">mask_tiepoints</span><span class="p">:</span> <span class="kc">True</span>
+    <span class="n">double_alignment</span><span class="p">:</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+<input id="fefca824-5fc9-4b48-8ef6-498808d8985d" name="c64c9a2d-3194-4fbd-88bb-cf17d05ab763" type="radio">
+</input><label class="tabbed-label" for="fefca824-5fc9-4b48-8ef6-498808d8985d">
+GCPs - detection</label><div class="tabbed-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">detectGCPs</span><span class="p">:</span>
+    <span class="n">enabled</span><span class="p">:</span> <span class="kc">True</span>
+    <span class="n">aruco_dict</span><span class="p">:</span> <span class="n">aruco</span><span class="o">.</span><span class="n">DICT_6X6_250</span> <span class="c1"># options include: aruco.DICT_6X6_250, aruco.DICT_4X4_50</span>
+    <span class="n">corner</span><span class="p">:</span> <span class="s2">&quot;topright&quot;</span> <span class="c1"># options: bottomleft (=1), topleft (2), topright (3), bottomright (4), centre (0).</span>
+    <span class="n">template</span><span class="p">:</span>
+        <span class="n">enabled</span><span class="p">:</span> <span class="kc">False</span> <span class="c1"># Keep false when using geopackage with long/lat data</span>
+        <span class="n">template_file_path</span><span class="p">:</span> <span class="s2">&quot;../markers/markers_circle.png&quot;</span>
+        <span class="n">template_size</span><span class="p">:</span> <span class="mf">0.20</span> <span class="c1"># one-sided dimension of a mxm square in metres. The example in Markers is a 20x20 cm frame, i.e. 0.20 m here.</span>
+</pre></div>
+</div>
+</div>
+<input id="2a039814-530d-4446-a814-b2dc75abf0d4" name="c64c9a2d-3194-4fbd-88bb-cf17d05ab763" type="radio">
+</input><label class="tabbed-label" for="2a039814-530d-4446-a814-b2dc75abf0d4">
+GCPs - add to project</label><div class="tabbed-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">addGCPs</span><span class="p">:</span>
+    <span class="n">enabled</span><span class="p">:</span> <span class="kc">False</span>
+    <span class="n">gcp_crs</span><span class="p">:</span> <span class="s2">&quot;EPSG::4326&quot;</span> <span class="c1"># CRS EPSG code of GCP coordinates. 32633 (UTM 33 N) is the CRS of the sample RGB photoset.</span>
+    <span class="n">marker_location_accuracy</span><span class="p">:</span> <span class="mf">0.1</span> <span class="c1"># Recommended: 0.1. Accuracy of GCPs real-world coordinates, in meters.</span>
+    <span class="n">marker_projection_accuracy</span><span class="p">:</span> <span class="mi">8</span> <span class="c1"># Recommended: 8. Accuracy of the identified locations of the GCPs within the images, in pixels.</span>
+    <span class="n">optimize_w_gcps_only</span><span class="p">:</span> <span class="kc">True</span> <span class="c1"># Optimize alignment using GCPs only: required for GCP locations to take precedence over photo GPS data. Disabling it makes GCPs essentially irrelevant.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="yaml-configuration-file">
 <h2>YAML configuration file<a class="headerlink" href="#yaml-configuration-file" title="Permalink to this headline">¶</a></h2>
