@@ -68,6 +68,7 @@ conda install python=3.7
 conda install pyyaml -c conda-forge
 conda install numpy -c conda-forge
 conda install pandas -c conda-forge
+conda install geopandas -c conda-forge
 conda install opencv -c conda-forge
 conda install jupyterlab -c conda-forge
 ```

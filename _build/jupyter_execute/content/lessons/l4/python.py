@@ -16,7 +16,7 @@
 # We here showcase the Automated Metashape scripts through use of Jupyter lab.
 # When ready, open Anaconda Prompt again, change into the *automated_metashape* environment, and run *Jupyter lab*.
 # 
-# ```
+# ```{code-cell}
 # conda activate automated_metashape
 # jupyter lab
 # ```
@@ -53,7 +53,7 @@ from automated_metashape.MetashapeProcessing import AutomatedProcessing as AP
 # In[2]:
 
 
-config_file = "../config/photogrammetry_processing_settings.yml"
+config_file = "../config/empty_photogrammetry_processing_settings.yml"
 AP(config_file)
 
 
@@ -71,7 +71,7 @@ AP(config_file)
 # At the very least, copy-paste in the project-level parameters found below.
 # These should be present in every YAML configuration file, regardless of the desired outcome.
 # 
-# ```{code-cell} yaml
+# ```yaml
 # run_name: # name of the project run (e.g., KonusdalenWestFault)
 # load_project_path: # This field may remain empty; put the absolute filepath to a pre-existing Agisoft Metashape project here if it is to be loaded.
 # photo_path: # path to photo directory ("data_directory" in the standardised folder directory)  - this parameter will be moved to the addPhotos configuration section in later releases.
@@ -98,8 +98,8 @@ AP(config_file)
 # - keep at least one space between the parameter and # (comment)
 #     - bad: load_project_path: asdasfasd#comment here
 # - not to use any new lines in the configuration files
-#     - bad: load_project_path: asda
-#                         sfasd#comment here
+#     - bad: load_project_path: asda ...
+#     - ... sfasd#comment here
 # ```
 # 
 # #### Additional parameters
@@ -115,7 +115,7 @@ AP(config_file)
 # In case default parameters are to be used, remove the corresponding parameter-section.
 # 
 # ````{tabbed} Add photos
-# ```
+# ```yaml
 # addPhotos:
 #     enabled: True
 #     remove_photo_location_metadata: False #
@@ -128,7 +128,7 @@ AP(config_file)
 # ````
 # 
 # ````{tabbed} Add masks
-# ```
+# ```yaml
 # masks:
 #     enabled: True # Default, only enable if you have images with masks :)
 #     mask_path: E:\Anna\EK11\100MEDIA # Has to point to dir with masks
@@ -137,7 +137,7 @@ AP(config_file)
 # ````
 # 
 # ````{tabbed} Alignment
-# ```
+# ```yaml
 # alignPhotos: # (Metashape: alignPhotos)
 #     enabled: True
 #     downscale: 1 # Recommended: 1. How much to coarsen the photos when searching for tie points. 
@@ -157,7 +157,7 @@ AP(config_file)
 # ````
 # 
 # ````{tabbed} Optimise cameras
-# ```
+# ```yaml
 # optimizeCameras: # (Metashape: optimizeCameras)
 #     enabled: True
 #     adaptive_fitting: True # Recommended: True. Should the camera lens model be fit at the same time as optinizing photos?
@@ -166,7 +166,7 @@ AP(config_file)
 # ````
 # 
 # ````{tabbed} Dense cloud
-# ```
+# ```yaml
 # buildDenseCloud: # (Metashape: buildDepthMaps, buildDenseCloud, classifyGroundPoints, and exportPoints)
 #     enabled: True
 #     downscale: 2 # Recommended: 2. How much to coarsen the photos when searching for matches to build the dense cloud.
@@ -195,7 +195,7 @@ AP(config_file)
 # ````
 # 
 # ````{tabbed} Filter dense cloud
-# ```
+# ```yaml
 # filterDenseCloud:
 #     enabled: True
 #     point_confidence_max: 20 # maximum point confidence for points to be removed, ranges from 1-99
@@ -203,7 +203,7 @@ AP(config_file)
 # ````
 # 
 # ````{tabbed} Mesh
-# ```
+# ```yaml
 # buildMesh: # (Metashape: buildModel)
 #     enabled: True
 #     surface_type: Metashape.Arbitrary # Recommended: Metashape.Arbitrary
@@ -215,7 +215,7 @@ AP(config_file)
 # ````
 # 
 # ````{tabbed} Textures
-# ```
+# ```yaml
 # buildTexture: # (Metashape: buildTexture)
 #     enabled: True
 #     mapping_mode: Metashape.GenericMapping # [LegacyMapping, GenericMapping, OrthophotoMapping, AdaptiveOrthophotoMapping, SphericalMapping, CameraMapping]
@@ -225,7 +225,7 @@ AP(config_file)
 # ````
 # 
 # ````{tabbed} Tiled model
-# ```
+# ```yaml
 # buildTiledModel: # (Metashape: buildTexture)
 #     enabled: True
 #     ## For depth maps (buldModel)
@@ -237,7 +237,7 @@ AP(config_file)
 # ````
 # 
 # ````{tabbed} GCPs - detection
-# ```
+# ```yaml
 # detectGCPs:
 #     enabled: True
 #     aruco_dict: aruco.DICT_6X6_250 # options include: aruco.DICT_6X6_250, aruco.DICT_4X4_50
@@ -250,7 +250,7 @@ AP(config_file)
 # ````
 # 
 # ````{tabbed} GCPs - add to project
-# ```
+# ```yaml
 # addGCPs:
 #     enabled: True
 #     gcp_crs: "EPSG::4326" # CRS EPSG code of GCP coordinates. 32633 (UTM 33 N) is the CRS of the sample RGB photoset. 4326 (GPS) is the standard for GPS coordinates.
@@ -261,7 +261,7 @@ AP(config_file)
 # ````
 # 
 # ````{tabbed} Networking
-# ```
+# ```yaml
 # networkProcessing:
 #     enabled: True
 #     server_ip: svalbox # Host Server IP address
@@ -273,10 +273,23 @@ AP(config_file)
 # After copying over the desired parameter-sections, update the config_file path correspondingly and run the cell again.
 # It should now result in a successful runtime.
 # 
-# ```{code-cell} ipython
+# ```python
 # config_file_path = "../config/photogrammetry_processing_settings.yml"
 # AP(config_file)
 # ```
+# 
+# This assumes *../config/photogrammetry_processing_settings.yml* consist of the following:
+# 
+# ```yaml
+# run_name: # name of the project run (e.g., KonusdalenWestFault)
+# load_project_path: # This field may remain empty; put the absolute filepath to a pre-existing Agisoft Metashape project here if it is to be loaded.
+# photo_path: # path to photo directory ("data_directory" in the standardised folder directory)  - this parameter will be moved to the addPhotos configuration section in later releases.
+# output_path: # path to output directory, usually {photo_path}/metashape
+# project_path: # path to Agisoft Metashape project directory, usually {photo_path}/metashape
+# project_crs: "EPSG::32633" # 32633 is WGS1984 UTM 33N; epsg number that corresponds to the required project crs. Look here: https://epsg.io/
+# subdivide_task: True # Fine-level task subdivision reduces memory by breaking processing into independent chunks that are run in series. True recommended.
+# ```
+# 
 # 
 # ```{admonition} Did you know...
 # :class: tip
@@ -291,6 +304,4 @@ AP(config_file)
 # It even has all the implemted YAML parameter-sections, software versions, and computer specs.
 # It can be easily used to reprocess and exactly repeat the processing.
 # ```
-# 
-
 # 
