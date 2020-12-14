@@ -84,7 +84,14 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <p class="caption collapsible-parent">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../landing-page.html">
+   Welcome to Geo-SfM
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Session 1
  </span>
@@ -98,6 +105,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../l1/tutorial.html">
    Metashape Tutorial
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../l1/tutorial.html#d-model-reconstruction-with-agisoft-metashape">
+   3D model reconstruction with Agisoft Metashape
   </a>
  </li>
 </ul>
@@ -183,6 +195,16 @@
    From Metashape to Geomodel
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../l5/quantifying_digital_samples.html">
+   What else can we use digital samples for?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../l5/digital_elevation_models.html">
+   DEMs
+  </a>
+ </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
@@ -202,6 +224,11 @@
  </span>
 </p>
 <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/biblio.html">
+   Bibliography
+  </a>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../about/seismic_lab.html">
    Seismic lab (Signehamna)
@@ -302,6 +329,13 @@
                 
   <div class="section" id="geo-referencing">
 <h1>Geo-referencing<a class="headerlink" href="#geo-referencing" title="Permalink to this headline">¶</a></h1>
+<p>Seeing as neither the camera positions nor the 2D images are required to contain real world coordinates, the 3D point clounds that are generated through SfM photogrammetry are generated in a relative <em>image-space</em> coordinate system.</p>
+<p>to do:</p>
+<ul class="simple">
+<li><p>explain how to use gcps</p></li>
+<li><p>epsg</p></li>
+<li><p>epsg 40400</p></li>
+</ul>
 </div>
 
     <script type="text/x-thebe-config">

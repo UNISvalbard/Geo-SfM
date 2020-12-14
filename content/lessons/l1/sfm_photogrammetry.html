@@ -84,7 +84,14 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <p class="caption collapsible-parent">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../landing-page.html">
+   Welcome to Geo-SfM
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Session 1
  </span>
@@ -183,6 +190,16 @@
    From Metashape to Geomodel
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../l5/quantifying_digital_samples.html">
+   What else can we use digital samples for?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../l5/digital_elevation_models.html">
+   DEMs
+  </a>
+ </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
@@ -202,6 +219,11 @@
  </span>
 </p>
 <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/biblio.html">
+   Bibliography
+  </a>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../about/seismic_lab.html">
    Seismic lab (Signehamna)
@@ -299,8 +321,8 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#summary">
-   Summary
+  <a class="reference internal nav-link" href="#structure-from-motion-photogrammetry">
+   Structure-from-Motion photogrammetry
   </a>
  </li>
 </ul>
@@ -316,12 +338,46 @@
                 
   <div class="section" id="sfm-photogrammetry">
 <h1>SfM photogrammetry<a class="headerlink" href="#sfm-photogrammetry" title="Permalink to this headline">¶</a></h1>
-<div><iframe width="560" height="315" src="https://www.youtube.com/embed/i7ierVkXYa8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-<div class="section" id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Work in progress</p>
+<p>Structure-from-Motion photogrammetry (or SfM photogrammetry for short) allows you to digitise objects using nothing more than a camera, sufficient data storage, and enough processing power.</p>
+<p>The video below provides a short and concise overview of how this process takes place, as well as the main steps that are involved in the digitisation of objects to their digital counterparts.</p>
+<div><iframe width=100% height=100% src="https://www.youtube.com/embed/i7ierVkXYa8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<div class="section" id="structure-from-motion-photogrammetry">
+<h2>Structure-from-Motion photogrammetry<a class="headerlink" href="#structure-from-motion-photogrammetry" title="Permalink to this headline">¶</a></h2>
+<p>SfM photogrammetry implements (some of) the principles that we humans use to perceive the three-dimensional world around us.
+As an observer moves around, the surrounding objects move different amounts based on their distance from the observer, providing additional information on the depth/distance of individual objects.
+Had the observed not moved around, it would have been impossible to estimate the 3D coordinates of objects within the scene, yet alone to fully understand the entire 3D scene.
+After all, by looking at any given object from a single direction, the 3D scene effectively becomes a 2D image, which inherently does not have any data on depth.</p>
+<p>Similar to how line of sight is used by humans to perceive depth, computer algorithms can establish a line of sight to key points on an object for different views (<a class="reference internal" href="#stero-figure"><span class="std std-numref">Fig. 1</span></a>).
+Where different lines of sight intercept, an estimate of the 3D coordinates of a given point is found that can be combined with other estimated point coordinates to form a <em>point cloud</em>.</p>
+<div class="figure align-default" id="stero-figure">
+<img alt="../../../_images/stereo.jpg" src="../../../_images/stereo.jpg" />
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Perceiving depth by tracing lines of sight from different viewing angles. Image from <a class="bibtex reference internal" href="../about/biblio.html#humboldtstateuniversitystructuremotionsfm2016" id="id1">[1]</a>.</span><a class="headerlink" href="#stero-figure" title="Permalink to this image">¶</a></p>
+</div>
+<p>Increasing the amount of lines of sight automatically results in a higher confidence of the 3D coordinates of the associated point.
+It is therefore common to not just use two or three 3D images, but rather a series of dozens, hundreds, and even more 2D images to reconstruct a 3D structure of a scene or object.</p>
+<div class="figure align-default" id="sfm-figure">
+<img alt="../../../_images/sfm-diagram.jpg" src="../../../_images/sfm-diagram.jpg" />
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Capturing an object from many angles with sufficient overlap between images is a must for usable output. Image from <a class="bibtex reference internal" href="../about/biblio.html#westobystructurefrommotionphotogrammetrylowcost2012" id="id2">[2]</a>.</span><a class="headerlink" href="#sfm-figure" title="Permalink to this image">¶</a></p>
+</div>
+<p>Preferably, the images each feature a high degree of overlap and are taken from different angles (<a class="reference internal" href="#sfm-figure"><span class="std std-numref">Fig. 2</span></a>) to narrow down the margin of error of the coordinate estimates.
+Interestingly, modern algorithms do not only calculate the point coordinates - they simultaneously calculate the original camera locations; amazing, no?</p>
+<p>This is, however, only the first step.
+Once the camera positions are known and a hand full of key matching points are estimated, the <em>sparse point cloud</em> (i.e., point cloud with only few key points) can be turned into a <em>dense point cloud</em> (i.e., every unique feature on the 2D images is turned into a unique 3D point).</p>
+<p>Seeing as the points contain a Z or elevation component, the points can then be used to construct <em>digital elevation models</em> (DEMs), representing height information without further defining the surface.</p>
+<p>One can also connect neighbouring points (coordinates along with other information such as colour, normal vector, etc., called <em>verteces</em>) to create <em>edges</em>; combine <em>edges</em> to create <em>faces</em>; combine <em>faces</em> into <em>polygons</em> and <em>surfaces</em> in a <em>meshed model</em> (<a class="reference internal" href="#sfm-polygons"><span class="std std-numref">Fig. 3</span></a>).</p>
+<div class="figure align-default" id="sfm-polygons">
+<img alt="../../../_images/polygonal_meshing_modelling.png" src="../../../_images/polygonal_meshing_modelling.png" />
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Capturing an object from many angles with sufficient overlap between images is a must for usable output. Image from <a class="bibtex reference internal" href="../about/biblio.html#lobsterbakemeshoverview2009" id="id3">[3]</a>.</span><a class="headerlink" href="#sfm-polygons" title="Permalink to this image">¶</a></p>
+</div>
+<p>The <em>meshed model</em> is effectively the digitised outer shell of the 3D scene that was captured on camera.
+<em>Ddigital outcrop models</em> (DOMs) is the term given to meshed models (often with texture, i.e., colouring) of geological outcrops.
+An example of a DOM featuring the folding observed near the top of the Janusfjellet mountain on Svalbard is shown below:</p>
+<div class="sketchfab-embed-wrapper">
+    <iframe title="A 3D model" width="100%" src="https://sketchfab.com/models/2daddd560c1840eb98cf95981cb366bf/embed?autostart=0&amp;camera=0&amp;ui_controls=1&amp;ui_infos=1&amp;ui_inspector=1&amp;ui_stop=1&amp;ui_watermark=1&amp;ui_watermark_link=1" frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Further reading</p>
+<p>Westoby et al. <a class="bibtex reference internal" href="../about/biblio.html#westobystructurefrommotionphotogrammetrylowcost2012" id="id4">[2]</a> put together an excellent overview on the use of SfM photogrammetry in the geosciences, which is a recommended read for the interested reader.</p>
 </div>
 </div>
 </div>
