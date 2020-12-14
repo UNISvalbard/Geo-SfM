@@ -2,7 +2,7 @@
 
 Seeing as neither the camera positions nor the 2D images are required to contain real world coordinates, the 3D point clounds that are generated through SfM photogrammetry are generated in a relative *image-space* coordinate system.
 This means that in order to be quantitative, the generated point clouds need to be aligned to a real-world, *object-space* coordinate system {cite}`westobyStructurefromMotionPhotogrammetryLowcost2012`.
-This transformation can be achieved using a 3D similarity transform based on either known camera locations, a small number of known ground control points (GCPs) with known object-space coordinates, or a combination of the two, which is covered in the upcoming sections of the Geo-SfM module.
+This transformation can be achieved using a 3D similarity transform based on either known camera locations, a small number of known ground control points (GCPs) with known object-space coordinates, or a combination of the two, which is covered in the upcoming sections of the Geo-SfM module. 
 
 ```{admonition} Coordinate reference systems
 :class: note
