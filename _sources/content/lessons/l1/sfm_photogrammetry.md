@@ -57,7 +57,8 @@ An example of a DOM featuring the folding observed near the top of the Janusfjel
     <iframe title="A 3D model" width="100%" src="https://sketchfab.com/models/2daddd560c1840eb98cf95981cb366bf/embed?autostart=0&amp;camera=0&amp;ui_controls=1&amp;ui_infos=1&amp;ui_inspector=1&amp;ui_stop=1&amp;ui_watermark=1&amp;ui_watermark_link=1" frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 </div>
 
-```{seealso}
+```{admonition} Further reading
+:class: seealso
 
 Westoby et al. {cite}`westobyStructurefromMotionPhotogrammetryLowcost2012` put together an excellent overview on the use of SfM photogrammetry in the geosciences, which is a recommended read for the interested reader.
 ```
