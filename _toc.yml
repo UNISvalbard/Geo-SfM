@@ -27,6 +27,8 @@
   chapters:
   - file: /content/lessons/l5/overview
   - file: /content/lessons/l5/from_metashape_to_geomodel
+  - file: /content/lessons/l5/quantifying_digital_samples
+  - file: /content/lessons/l5/digital_elevation_models
 
 - part: Supplementary
   chapters:
@@ -34,5 +36,6 @@
 
 - part: Resources
   chapters:
+  - file: /content/lessons/about/biblio
   - file: /content/lessons/about/seismic_lab
   - file: /content/lessons/about/software

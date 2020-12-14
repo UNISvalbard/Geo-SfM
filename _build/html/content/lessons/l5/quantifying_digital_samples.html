@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hands-on experience &#8212; Geo-SfM Course 2020</title>
+    <title>What else can we use digital samples for? &#8212; Geo-SfM Course 2020</title>
     
   <link rel="stylesheet" href="../../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -55,8 +55,8 @@
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Exercise 2" href="exercise2.html" />
-    <link rel="prev" title="Metashape Tutorial" href="../l1/tutorial.html" />
+    <link rel="next" title="DEMs" href="digital_elevation_models.html" />
+    <link rel="prev" title="From Metashape to Geomodel" href="from_metashape_to_geomodel.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -113,14 +113,14 @@
   Session 2
  </span>
 </p>
-<ul class="current nav sidenav_l1">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../l2/overview.html">
    Hands-on experience
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="exercise2.html">
+  <a class="reference internal" href="../l2/exercise2.html">
    Exercise 2
   </a>
  </li>
@@ -179,24 +179,24 @@
   Session 5
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../l5/overview.html">
+  <a class="reference internal" href="overview.html">
    Overview
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../l5/from_metashape_to_geomodel.html">
+  <a class="reference internal" href="from_metashape_to_geomodel.html">
    From Metashape to Geomodel
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../l5/quantifying_digital_samples.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    What else can we use digital samples for?
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../l5/digital_elevation_models.html">
+  <a class="reference internal" href="digital_elevation_models.html">
    DEMs
   </a>
  </li>
@@ -274,7 +274,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../_sources/content/lessons/l2/overview.md"><button type="button"
+        <a class="dropdown-buttons" href="../../../_sources/content/lessons/l5/quantifying_digital_samples.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -294,7 +294,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/UNISvalbard/Geo-SfM/issues/new?title=Issue%20on%20page%20%2Fcontent/lessons/l2/overview.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/UNISvalbard/Geo-SfM/issues/new?title=Issue%20on%20page%20%2Fcontent/lessons/l5/quantifying_digital_samples.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -315,20 +315,6 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learning-goals">
-   Learning goals
-  </a>
- </li>
-</ul>
-
-        </nav>
-        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -336,19 +322,9 @@
         
               <div>
                 
-  <div class="section" id="hands-on-experience">
-<h1>Hands-on experience<a class="headerlink" href="#hands-on-experience" title="Permalink to this headline">¶</a></h1>
-<p>In this second session we will implementing SfM photogrammetry on a human-sized object of our own choosing.</p>
-<div class="sketchfab-embed-wrapper">
-    <iframe title="A 3D model" width="640" height="480" src="https://sketchfab.com/models/32a09a9097dd422e8e19a14fb78835a2/embed?autospin=0.2&amp;autostart=1&amp;camera=0&amp;preload=1&amp;ui_controls=1&amp;ui_infos=1&amp;ui_inspector=1&amp;ui_stop=1&amp;ui_watermark=1&amp;ui_watermark_link=1" frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe></div>
-<div class="section" id="learning-goals">
-<h2>Learning goals<a class="headerlink" href="#learning-goals" title="Permalink to this headline">¶</a></h2>
-<p><strong>After this session you will be able to:</strong></p>
-<ul class="simple">
-<li><p>Use Agisoft Metashape to digitally reconstruct macro-objects, outcrops, and more.</p></li>
-<li><p>Discover and implement basic tips and tricks for data acquisition</p></li>
-</ul>
-</div>
+  <div class="section" id="what-else-can-we-use-digital-samples-for">
+<h1>What else can we use digital samples for?<a class="headerlink" href="#what-else-can-we-use-digital-samples-for" title="Permalink to this headline">¶</a></h1>
+<p><span class="bibtex" id="id1">[betlemDigitalDrillCore2020]</span></p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -364,7 +340,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./content\lessons\l2"
+            path: "./content\lessons\l5"
         },
         predefinedOutput: true
     }
@@ -379,8 +355,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="../l1/tutorial.html" title="previous page">Metashape Tutorial</a>
-    <a class='right-next' id="next-link" href="exercise2.html" title="next page">Exercise 2</a>
+    <a class='left-prev' id="prev-link" href="from_metashape_to_geomodel.html" title="previous page">From Metashape to Geomodel</a>
+    <a class='right-next' id="next-link" href="digital_elevation_models.html" title="next page">DEMs</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

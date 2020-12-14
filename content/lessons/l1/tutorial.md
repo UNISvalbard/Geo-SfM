@@ -1,10 +1,10 @@
 # Metashape Tutorial
 
 ```{admonition} Deadline
-Please complete this exercise **during today's session**.
+Please complete this tutorial **during today's session**.
 ```
 
-The exercise for the first session consists of the following:
+This tutorial (and exercise) features the following learning goals:
 - You will **learn the basics of Agisoft Metashape**
 - You will **use Agisoft Metashape to digitise samples and/or outcrops**
 
@@ -13,7 +13,7 @@ The exercise for the first session consists of the following:
 Please note that **we only provide feedback and support for students enrolled in the course at the University Centre of Svalbard**.
 ```
 
-## 3D model reconstruction with Agisoft Metashape
+# 3D model reconstruction with Agisoft Metashape
 
 In this session we will learn how to use Agisoft Metashape.
 This is an established SfM photogrammetry package and is often used in the Arctic Geology department at UNIS to create digital outcrop models (DOMs) and hand-sample models (HSMs).
@@ -76,6 +76,15 @@ project_directory (The folder with all files related to this project)
 ```
 
 This is a standardised folder structure that (as we will see later on) is also used for automated processing.
+
+```{admonition} Got your own data?
+:class: suggestion
+
+Feel free to follow along this tutorial with your own data set (as is the requirement for [exercise2](../l2/exercise2 "exercise2")).
+Keep in mind, however, to use the standardised folder structure.
+Furthermore, depending on the data set, certain changes may have to be made to allow for the processing to be finished within a reasonable time.
+That's part of the fun :)
+```
 
 ### Adding photos
 

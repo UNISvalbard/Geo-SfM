@@ -11,7 +11,7 @@ html:
   use_issues_button: True
 #  extra_navbar:
 #  extra_footer:
-  home_page_in_navbar: Sign up for the <a href="https://www.unis.no/course/ag-222-integrated-geological-methods-from-outcrop-to-geomodel/">UNIS AG222 course</a>
+#  home_page_in_navbar: Sign up for the <a href="https://www.unis.no/course/ag-222-integrated-geological-methods-from-outcrop-to-geomodel/">UNIS AG222 course</a>
 
 launch_buttons:
   binderhub_url: ""
