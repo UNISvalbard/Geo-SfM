@@ -13,7 +13,7 @@ This tutorial (and exercise) features the following learning goals:
 Please note that **we only provide feedback and support for students enrolled in the course at the University Centre of Svalbard**.
 ```
 
-# 3D model reconstruction with Agisoft Metashape
+## 3D model reconstruction with Agisoft Metashape
 
 In this session we will learn how to use Agisoft Metashape.
 This is an established SfM photogrammetry package and is often used in the Arctic Geology department at UNIS to create digital outcrop models (DOMs) and hand-sample models (HSMs).
