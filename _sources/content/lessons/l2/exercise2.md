@@ -95,7 +95,7 @@ As for the metadata, you'll only be able to fill out some of the metadata after 
 
 ```{admonition} Image acquisition
 :class: tip
-Have a look at the [supplementary information](../about/best_practices "suppl") dealing with best practices in photogrammetry.
+Have a look at the [supplementary information](../suppl/best_practices "suppl") dealing with best practices in photogrammetry.
 ```
 
 ```{admonition} SfM photogrammetry workflow
