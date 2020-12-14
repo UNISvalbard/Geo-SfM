@@ -1,5 +1,6 @@
 # Bibliography
 
-```{bibliography} references.bib
+```{bibliography} ./references.bib
 :style: unsrt
+
 ```
