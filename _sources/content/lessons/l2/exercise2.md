@@ -44,7 +44,7 @@ Suggested targets include:
 - [ ] Fill out the deliverable
 ```
 
-#### Deliverable
+### Deliverable
 
 At the very least, the following should be completed **prior to the start of the next session**.
 Copy it over and send it in to the course responsible.
@@ -95,7 +95,7 @@ As for the metadata, you'll only be able to fill out some of the metadata after 
 
 ```{admonition} Image acquisition
 :class: tip
-Have a look at the [supplementary information](../suppl/best_practices "suppl") dealing with best practices in photogrammetry.
+Have a look at the [supplementary information](../about/best_practices "suppl") dealing with best practices in photogrammetry.
 ```
 
 ```{admonition} SfM photogrammetry workflow
