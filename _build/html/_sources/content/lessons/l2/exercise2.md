@@ -44,7 +44,7 @@ Suggested targets include:
 - [ ] Fill out the deliverable
 ```
 
-#### Deliverable
+### Deliverable
 
 At the very least, the following should be completed **prior to the start of the next session**.
 Copy it over and send it in to the course responsible.

@@ -1,4 +1,4 @@
-- file: landing-page.md
+- file: landing-page
 
 - part: Session 1
   chapters:
@@ -30,12 +30,9 @@
   - file: /content/lessons/l5/quantifying_digital_samples
   - file: /content/lessons/l5/digital_elevation_models
 
-- part: Supplementary
-  chapters:
-  - file: /content/lessons/suppl/best_practices
-
 - part: Resources
   chapters:
-  - file: /content/lessons/about/biblio
+  - file: /content/lessons/suppl/best_practices
   - file: /content/lessons/about/seismic_lab
   - file: /content/lessons/about/software
+  - file: /content/lessons/about/biblio

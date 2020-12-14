@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Metashape Tutorial &#8212; Geo-SfM Course 2020</title>
+    <title>Metashape Tutorial &#8212; Geo-SfM Course Beta</title>
     
   <link rel="stylesheet" href="../../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -75,8 +75,10 @@
         <div class="navbar-brand-box">
 <a class="navbar-brand text-wrap" href="../../../index.html">
   
+  <img src="../../../_static/UNIS_logo_liggende_web_main_logo-01.svg" class="logo" alt="logo">
   
-  <h1 class="site-logo" id="site-title">Geo-SfM Course 2020</h1>
+  
+  <h1 class="site-logo" id="site-title">Geo-SfM Course Beta</h1>
   
 </a>
 </div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
@@ -105,11 +107,6 @@
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Metashape Tutorial
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="#d-model-reconstruction-with-agisoft-metashape">
-   3D model reconstruction with Agisoft Metashape
   </a>
  </li>
 </ul>
@@ -208,25 +205,13 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Supplementary
+  Resources
  </span>
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../suppl/best_practices.html">
    Best practices
-  </a>
- </li>
-</ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  Resources
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../about/biblio.html">
-   Bibliography
   </a>
  </li>
  <li class="toctree-l1">
@@ -237,6 +222,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../about/software.html">
    Software
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/biblio.html">
+   Bibliography
   </a>
  </li>
 </ul>
@@ -325,78 +315,73 @@
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Metashape Tutorial
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#d-model-reconstruction-with-agisoft-metashape">
    3D model reconstruction with Agisoft Metashape
   </a>
   <ul class="nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#photo-set">
      Photo set
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#adding-photos">
      Adding photos
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#aligning-photos">
      Aligning photos
     </a>
     <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#improve-alignment-step">
        Improve alignment step
       </a>
      </li>
     </ul>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#build-dense-cloud">
      Build Dense Cloud
     </a>
     <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#selection-by-point-confidence">
        Selection by point confidence
       </a>
      </li>
     </ul>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#building-a-mesh">
      Building a mesh
     </a>
     <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#texture-building">
        Texture building
       </a>
      </li>
     </ul>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#generating-a-tiled-model">
      Generating a Tiled Model
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#documenting-processing-parameters">
      Documenting processing parameters
     </a>
     <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#processing-report">
        Processing report
       </a>
      </li>
-     <li class="toc-h3 nav-item toc-entry">
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#in-programme-parameters">
        In-programme parameters
       </a>
@@ -431,9 +416,8 @@
 <p class="admonition-title">Support</p>
 <p>Please note that <strong>we only provide feedback and support for students enrolled in the course at the University Centre of Svalbard</strong>.</p>
 </div>
-</div>
 <div class="section" id="d-model-reconstruction-with-agisoft-metashape">
-<h1>3D model reconstruction with Agisoft Metashape<a class="headerlink" href="#d-model-reconstruction-with-agisoft-metashape" title="Permalink to this headline">¶</a></h1>
+<h2>3D model reconstruction with Agisoft Metashape<a class="headerlink" href="#d-model-reconstruction-with-agisoft-metashape" title="Permalink to this headline">¶</a></h2>
 <p>In this session we will learn how to use Agisoft Metashape.
 This is an established SfM photogrammetry package and is often used in the Arctic Geology department at UNIS to create digital outcrop models (DOMs) and hand-sample models (HSMs).
 This session introduce basic processing through the graphical user interface through use of a standardised data set.</p>
@@ -461,7 +445,7 @@ This tutorial, as well as more in-depth help, can be visited here:
 https://agisoft.freshdesk.com/support/solutions/articles/31000152092</p>
 </div>
 <div class="section" id="photo-set">
-<h2>Photo set<a class="headerlink" href="#photo-set" title="Permalink to this headline">¶</a></h2>
+<h3>Photo set<a class="headerlink" href="#photo-set" title="Permalink to this headline">¶</a></h3>
 <p>We’ll be using a standardised data set that can be retrieved from the following URL:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">URL</span><span class="p">:</span>
 </pre></div>
@@ -495,7 +479,7 @@ That’s part of the fun :)</p>
 </div>
 </div>
 <div class="section" id="adding-photos">
-<h2>Adding photos<a class="headerlink" href="#adding-photos" title="Permalink to this headline">¶</a></h2>
+<h3>Adding photos<a class="headerlink" href="#adding-photos" title="Permalink to this headline">¶</a></h3>
 <p>Next we’ll be adding the photos to Agisoft Metashape.
 This assumes
 To do this, proceed to and click on <em>Add photos…</em> from <em>Workflow</em> in the <em>menu bar</em>.
@@ -511,7 +495,7 @@ To do so, proceed to <em>Save as…</em> under <em>File</em> in the menu bar, an
 </div>
 </div>
 <div class="section" id="aligning-photos">
-<h2>Aligning photos<a class="headerlink" href="#aligning-photos" title="Permalink to this headline">¶</a></h2>
+<h3>Aligning photos<a class="headerlink" href="#aligning-photos" title="Permalink to this headline">¶</a></h3>
 <p>With the photos now imported into Metashape, we can proceed with the alignment process.
 This process goes through all images in the project and tries to identify <em>common features</em>.
 In Metashape this first requires the estimation of camera positions for each photo, which are then used to build a <em>sparse cloud</em>.
@@ -534,7 +518,7 @@ For example, down-sampling a 1000x1000 pixel image to a 100x100 image results in
 <p>Give it a shot, and compare the photo alignment results with <em>medium</em> vs <em>high</em> processing accuracy.</p>
 </div>
 <div class="section" id="improve-alignment-step">
-<h3>Improve alignment step<a class="headerlink" href="#improve-alignment-step" title="Permalink to this headline">¶</a></h3>
+<h4>Improve alignment step<a class="headerlink" href="#improve-alignment-step" title="Permalink to this headline">¶</a></h4>
 <p>Although the photos have now been aligned, it is important to further optimize the cameras.
 This is done by selecting <em>Optimize Cameras</em> from the <em>Tools</em> menu.
 A <a class="reference internal" href="#optimize-cameras"><span class="std std-ref">dialog</span></a> will pop up with several parameter options pre-selected.
@@ -546,7 +530,7 @@ Most important here is to at least select make sure that the <em>Estimate tie po
 </div>
 </div>
 <div class="section" id="build-dense-cloud">
-<h2>Build Dense Cloud<a class="headerlink" href="#build-dense-cloud" title="Permalink to this headline">¶</a></h2>
+<h3>Build Dense Cloud<a class="headerlink" href="#build-dense-cloud" title="Permalink to this headline">¶</a></h3>
 <p>Based on the estimated camera positions, we can now estimate a <em>dense point cloud</em> by calculating depth information for each image.</p>
 <p>Select <em>Build Dense Cloud</em> from the <em>Workflow</em> menu.
 <a class="reference internal" href="#dense-cloud"><span class="std std-ref">Once again you will be asked about the desired accuracy/quality</span></a>.
@@ -573,7 +557,7 @@ This is key to estimate whether the part we are interested in can be scientifica
 <p>While this tutorial suggests <em>Medium</em> to be used for the quality parameter, you should feel free to change this depending on the computational power at your disposal.</p>
 </div>
 <div class="section" id="selection-by-point-confidence">
-<h3>Selection by point confidence<a class="headerlink" href="#selection-by-point-confidence" title="Permalink to this headline">¶</a></h3>
+<h4>Selection by point confidence<a class="headerlink" href="#selection-by-point-confidence" title="Permalink to this headline">¶</a></h4>
 <div class="tip admonition">
 <p class="admonition-title">Save time - make backups</p>
 <p>Make sure to always either backup your data before playing with it.
@@ -601,7 +585,7 @@ Delete the selected points by hitting the <em>Del(ete)</em> key on the keyboard.
 </div>
 </div>
 <div class="section" id="building-a-mesh">
-<h2>Building a mesh<a class="headerlink" href="#building-a-mesh" title="Permalink to this headline">¶</a></h2>
+<h3>Building a mesh<a class="headerlink" href="#building-a-mesh" title="Permalink to this headline">¶</a></h3>
 <p>We can use the dense point cloud to generate a polygonal mesh model.
 While generating the dense cloud, Agisoft Metashape simultaneously generated a set of depth maps (if chosen to save to the project).
 This is important as we can decide which of the two to use for meshing.
@@ -623,7 +607,7 @@ The next step involves generating a texture and placing this “image” onto th
 <p>If depth maps do exist, and you decide to use them as the source data, then make sure to enable <em>Reuse depth maps</em> to save computational time!</p>
 </div>
 <div class="section" id="texture-building">
-<h3>Texture building<a class="headerlink" href="#texture-building" title="Permalink to this headline">¶</a></h3>
+<h4>Texture building<a class="headerlink" href="#texture-building" title="Permalink to this headline">¶</a></h4>
 <p>We can build the textures by clicking on the <em>Build Texture</em> command from the <em>Workflow</em> menu.
 While the dialog has many different parameters, the most important are highlighted in <a class="reference internal" href="#build-texture"><span class="std std-numref">Fig. 8</span></a>.</p>
 <div class="figure align-default" id="build-texture">
@@ -636,7 +620,7 @@ On the other hand, anything less than 4096 is probably insufficient.</p>
 </div>
 </div>
 <div class="section" id="generating-a-tiled-model">
-<h2>Generating a Tiled Model<a class="headerlink" href="#generating-a-tiled-model" title="Permalink to this headline">¶</a></h2>
+<h3>Generating a Tiled Model<a class="headerlink" href="#generating-a-tiled-model" title="Permalink to this headline">¶</a></h3>
 <p>Sometimes the need arises to not only build a mesh, but also a <em>Tiled Model</em>.
 We can do this by selecting <em>Build Tiled Model</em> from the <em>Workflow</em> menu.
 Once again we can select the parameters for the processing step through the <a class="reference internal" href="#build-tiled-model"><span class="std std-ref">dialog</span></a> that popped up.</p>
@@ -647,7 +631,7 @@ Once again we can select the parameters for the processing step through the <a c
 </div>
 </div>
 <div class="section" id="documenting-processing-parameters">
-<h2>Documenting processing parameters<a class="headerlink" href="#documenting-processing-parameters" title="Permalink to this headline">¶</a></h2>
+<h3>Documenting processing parameters<a class="headerlink" href="#documenting-processing-parameters" title="Permalink to this headline">¶</a></h3>
 <p>While each of the previous steps has been important in generating the models, <em><strong>perhaps the most important aspect of processing is to document the taken processing steps and their parameters</strong></em>.
 Metashape automatically keeps track and stores all <em>Workflow</em> actions that the project has undergone.
 There are two ways of documenting and showing these parameters.</p>
@@ -658,7 +642,7 @@ This means that to be truly <em>scientifically grounded</em> and <em>repeatable<
 Instead, rely on e.g. the point confidence to make edits (and always report the chosen parameters).</p>
 </div>
 <div class="section" id="processing-report">
-<h3>Processing report<a class="headerlink" href="#processing-report" title="Permalink to this headline">¶</a></h3>
+<h4>Processing report<a class="headerlink" href="#processing-report" title="Permalink to this headline">¶</a></h4>
 <p>The first, and perhaps most important, is to generate a processing report.
 Proceed to <em>File/Export</em> in the menu bar and select <em>Generate Report…</em>.
 Provide the desired <em>Title</em> and description, then proceed by clicking <em>OK</em>.
@@ -675,7 +659,7 @@ Have a look and familiarise yourself with it.</p>
 </div>
 </div>
 <div class="section" id="in-programme-parameters">
-<h3>In-programme parameters<a class="headerlink" href="#in-programme-parameters" title="Permalink to this headline">¶</a></h3>
+<h4>In-programme parameters<a class="headerlink" href="#in-programme-parameters" title="Permalink to this headline">¶</a></h4>
 <p>One does not always need to export the processing report to obtain the overview of parameters.
 Handily, Metashape also provides an overview within the <em>Workspace</em> panel after having selected an item in the chunk.
 An example of this is depicted in <code class="xref std std-numref docutils literal notranslate"><span class="pre">internal_parameters</span></code>.</p>
@@ -689,6 +673,7 @@ An example of this is depicted in <code class="xref std std-numref docutils lite
 In many cases the chosen parameters can (and should!) be changed to match the given circumstances.
 That said, the <em>Photo alignment</em> step should always be conducted at the highest setting possible (considering computational power available).
 Furthermore, one should <em><strong>always document each and every processing step performed</strong></em> - manually cutting and editing part of the model is therefore <em>not</em> encouraged as this remains (for now) difficult to document.</p>
+</div>
 </div>
 </div>
 </div>

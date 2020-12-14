@@ -9,7 +9,7 @@ This course is **open for everyone to follow online**. The aim of the course is 
 ```
 
 ```{admonition} The University Centre in Svalbard
-This Geo-SfM course is part of the University Centre in Svalbard Arctic Geology 222 bachelor course, running each spring.
+This Geo-SfM course is part of the [University Centre in Svalbard Arctic Geology 222 bachelor course](https://www.unis.no/course/ag-222-integrated-geological-methods-from-outcrop-to-geomodel/), running each spring.
 ```
 
 ## Course format and topics
