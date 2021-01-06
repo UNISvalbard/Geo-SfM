@@ -321,18 +321,30 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ground-control-design">
-   Ground control design
+  <a class="reference internal nav-link" href="#gcp-design">
+   GCP design
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gcp-size">
+     GCP size
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#unique-gcp-shapes">
+     Unique GCP shapes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#computer-readability">
+     Computer readability
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#artificial-vs-natural-gcps">
-   Artificial vs natural GCPs
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#placement-of-gcps">
-   Placement of GCPs
+  <a class="reference internal nav-link" href="#placement-of-gcps-in-terms-of-highest-accuracy">
+   Placement of GCPs in terms of highest accuracy
   </a>
  </li>
 </ul>
@@ -357,9 +369,9 @@ It is therefore possible to accurately map large areas with only a handful of pr
 <p class="admonition-title">Geo-location accuracies</p>
 <p>We distinguish 3 different scenarios when it comes to geo-referencing:</p>
 <ul class="simple">
-<li><p>Horizontal - i.e., measuring lon, lat</p></li>
-<li><p>Vertical - i.e., measuring height</p></li>
-<li><p>Full - i.e., measuring lon, lat, and height</p></li>
+<li><p>Horizontal - i.e., measuring longitude, latitude</p></li>
+<li><p>Vertical - i.e., measuring altitude</p></li>
+<li><p>Full - i.e., measuring longitude, latitude, and altitude</p></li>
 </ul>
 <p>Given the way GPS works, <em>verical</em> accuracies are usually worse than <em>horizontal</em> accuracies (often by more than an order of magnitude).
 Seeing as most handheld and built-in GPSs have a horizontal error of at least 1 metre, the corresponding vertical error may be large enough to prevent accurate correlation to the real world.</p>
@@ -382,26 +394,81 @@ Do remember, however, that built-in GPSs still have quite large errors compared 
 <p>Only when the area is small and we do not care about <em>absolute accuracy</em> (i.e., only <em>relative accuracy is important</em>) can we omit GCPs.
 This is e.g. the case when we want to compare elements within the same models without relating these to real world properties.</p>
 </div>
-<div class="section" id="ground-control-design">
-<h2>Ground control design<a class="headerlink" href="#ground-control-design" title="Permalink to this headline">¶</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Work in progress</p>
+<div class="section" id="gcp-design">
+<h2>GCP design<a class="headerlink" href="#gcp-design" title="Permalink to this headline">¶</a></h2>
+<p>In general, ground control points must be</p>
+<ul class="simple">
+<li><p>sharp</p></li>
+<li><p>well defined, and</p></li>
+<li><p>positively identifiable on at least a sub-selection of photos.</p></li>
+</ul>
+<p>In many cases, however, markers used as GCPs should be <em>unique</em>.</p>
+<p>We generally differentiate between <em>artificial</em> and <em>natural</em> GCPs.
+Here, however, <em>artificial</em> strictly means that a marker or GCP was specifically designed and placed for the survey.
+<em>Natural</em> markers include e.g. terminus of a sidewalk, sharp corner of a parking spot, a unique landscape feature (e.g., rock, peak), etc.
+Artificial markers’ unique appearance makes misidentification less likely, though comes at the cost of extra work and expense.</p>
+<p>So, what makes a good marker?
+Main elements in GCP design:</p>
+<ul class="simple">
+<li><p>GCP size</p></li>
+<li><p>Unique GCP symbols</p></li>
+<li><p>Computer readability</p></li>
+</ul>
+<div class="section" id="gcp-size">
+<h3>GCP size<a class="headerlink" href="#gcp-size" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="unique-gcp-shapes">
+<h3>Unique GCP shapes<a class="headerlink" href="#unique-gcp-shapes" title="Permalink to this headline">¶</a></h3>
+<p>While technically not a requirement, it is always preferred to be able to differentiate GCPs based on uniqueness of the marker.
+That means, in its most simplistic form, one could get away with the following 4-member marker-set: o+Δ☐</p>
+<div class="figure align-default" id="common-gcps">
+<img alt="../../../_images/common_gcps.png" src="../../../_images/common_gcps.png" />
+<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">An example of GCP markers commonly employed in photogrammetry applications <span class="bibtex" id="id1">[cucciACCURATEOPTICALTARGET2016]</span>.</span><a class="headerlink" href="#common-gcps" title="Permalink to this image">¶</a></p>
+</div>
+<p>Additionally, one of the most popular approaches is the use of binary fiducial markers, examples of which are shown in <a class="reference internal" href="#common-gcps"><span class="std std-numref">Fig. 11</span></a>.
+With each subsequent marker slightly differing, and therefore unique, these synthetic markers are great for use as GCPs.</p>
+</div>
+<div class="section" id="computer-readability">
+<h3>Computer readability<a class="headerlink" href="#computer-readability" title="Permalink to this headline">¶</a></h3>
+<p>Their standardised uniqueness furthermore allows for automisation of the marker detection step.
+While not an issue when dealing with just a handful of photos, highly detailed surveys quickly expand the photo collection to hundreds, if not thousands, of photos.</p>
+<p>While Agisoft Metashape provides a set of GCPs internally, one of the most popular approaches is the use of the <a class="reference external" href="http://www.uco.es/investiga/grupos/ava/node/26">ArUco library</a> <span class="bibtex" id="id2">[rrido-juradoAutomaticGenerationDetection2014]</span>.
+In addition to exhibiting a standardised uniqueness, the ArUco-based markers are square markers and thus preferred as a single marker provides enough correspondences (i.e., its four corners) to obtain the camera pose in augmented reality applications.</p>
+<div class="figure align-default" id="aruco-markers">
+<img alt="../../../_images/aruco_markers.png" src="../../../_images/aruco_markers.png" />
+<p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text">Example of ArUco marker images <span class="bibtex" id="id3">[garrido-juradoAutomaticGenerationDetection2014]</span>.</span><a class="headerlink" href="#aruco-markers" title="Permalink to this image">¶</a></p>
+</div>
+<div class="suggestion admonition">
+<p class="admonition-title">Python-based automated marker detection</p>
+<p>ArUco markers (50x50 cm) printed on canvas are available for use in the UNIS Arctic Geology department.
+Marker detection hereof can be done by using the scripts described in <span class="xref std std-ref">Python-based standardised processing ../l4/python.ipynb</span>.</p>
 </div>
 </div>
-<div class="section" id="artificial-vs-natural-gcps">
-<h2>Artificial vs natural GCPs<a class="headerlink" href="#artificial-vs-natural-gcps" title="Permalink to this headline">¶</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Work in progress</p>
 </div>
+<div class="section" id="placement-of-gcps-in-terms-of-highest-accuracy">
+<h2>Placement of GCPs in terms of highest accuracy<a class="headerlink" href="#placement-of-gcps-in-terms-of-highest-accuracy" title="Permalink to this headline">¶</a></h2>
+<p>An extensive review on the accuracy of GCPs types is conducted by <span class="bibtex" id="id4">[martinez-carricondoAssessmentUAVphotogrammetricMapping2018]</span> and <span class="bibtex" id="id5">[vegaAssessmentPhotogrammetricMapping2017]</span>, and we here only focus on the take-home messages.
+These conclusions are based on an accuracy-assessment that seeks minimal root mean square errors (RMSEs) for the GCPs’s longitude, latitude, and altitude.</p>
+<p>Prior to implementing GCPs, one always has to assess the need of precision and accuracy in terms of cost, i.e., time.
+In a timeless setting, one could set up an infinite amount of GCPs (<code class="xref std std-numref docutils literal notranslate"><span class="pre">gcp_locations</span></code>, top row) and obtain the smallest GCP RMSEs in each direction.
+However, when time is of the essence, there appears to be a cut-off point at which the introduction of an additional GCP does not warrant the additional time it takes to set it up.
+As a result, efficiency can be gained by reducing the number of GCPs (<code class="xref std std-numref docutils literal notranslate"><span class="pre">gcp_locations</span></code>, second row).</p>
+<p>``{figure} assets/gcp_locations.png
+:name: gcp_locations</p>
+<p>Five different GCP distribution types and an example for the combination of 16 GCPs (second row). (a) edge distribution, (b) central distribution, (c) corner distribution (equivalent for all four corners), (d) stratified distribution, (e) random distribution. In general, the stratified distribution (d) gives rise to the lowest overall errors <span class="bibtex" id="id6">[martinez-carricondoAssessmentUAVphotogrammetricMapping2018]</span></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+Placing the GCPs around the edges and in a stratified manner throughout the survey area results in the lowest overall errors.
+Therefore, best accuracies are achieved **(1) placing GCPs around the edge of the study area**, but it is also essential to **(2) place GCPs inside the area with stratified distribution to optimize vertical accuracy** {cite}`martinez-carricondoAssessmentUAVphotogrammetricMapping2018`.
+As for the optimal number of GCPs in the stratified interior, try to aim for a density of around 0.5-1 GCP per hectare to minimise altimetry errors, and make sure to place GCPs throughout the entire altimetry-interval, e.g., covering both ridges and valleys.
+
+```{admonition} Hand-sized samples
+:class: suggestion
+GCPs are also implemented for the digitisation of hand-sized samples.
+Then, however, it is suggested to only place GCPs along the edge.
+</pre></div>
 </div>
-<div class="section" id="placement-of-gcps">
-<h2>Placement of GCPs<a class="headerlink" href="#placement-of-gcps" title="Permalink to this headline">¶</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Work in progress</p>
-</div>
+<p>Finally, always make sure to properly fasten &amp; secure your GCPs.
+A moving GCP is essentially useless, and likely to give rise to major positional errors in the final models.</p>
 </div>
 </div>
 
