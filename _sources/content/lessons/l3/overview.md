@@ -15,7 +15,7 @@ A datum is a set of parameters that define the position of the origin, the scale
 Luckily, these are pre-defined by the European Petroleum Survey Group (EPSG) for the most common CRSs in use {cite}`internatonalassociationofoilandgasproducersGeomaticsGuidanceNote2019`.
 For example some codes often in use in Svalbard:
 
-- EPSG:4326 corresponds to WGS 84 (used by GPS)
-- EPSG:32633 corresponds to UTM-33N
+- EPSG:4326 corresponds to WGS 84 longitude-latitude (used by GPS).
+- EPSG:32633 corresponds to WGS 84 UTM-33N.
 - EPSG:40400 is a special wildcard CRS that has no real world meaning, e.g., useful for hand samples.
 ```
