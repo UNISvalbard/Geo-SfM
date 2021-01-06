@@ -78,7 +78,7 @@ With each subsequent marker slightly differing, and therefore unique, these synt
 Their standardised uniqueness furthermore allows for automisation of the marker detection step.
 While not an issue when dealing with just a handful of photos, highly detailed surveys quickly expand the photo collection to hundreds, if not thousands, of photos.
 
-While Agisoft Metashape provides a set of GCPs internally, one of the most popular approaches is the use of the [ArUco library](http://www.uco.es/investiga/grupos/ava/node/26) {cite}`rrido-juradoAutomaticGenerationDetection2014`.
+While Agisoft Metashape provides a set of GCPs internally, one of the most popular approaches is the use of the [ArUco library](http://www.uco.es/investiga/grupos/ava/node/26) {cite}`garrido-juradoAutomaticGenerationDetection2014`.
 In addition to exhibiting a standardised uniqueness, the ArUco-based markers are square markers and thus preferred as a single marker provides enough correspondences (i.e., its four corners) to obtain the camera pose in augmented reality applications.
 
 ```{figure} assets/aruco_markers.png
