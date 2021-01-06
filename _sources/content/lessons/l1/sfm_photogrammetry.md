@@ -28,7 +28,7 @@ It is therefore common to not just use two or three 3D images, but rather a seri
 ```{figure} ./assets/sfm-diagram.jpg
 :name: sfm_figure
 
-Capturing an object from many angles with sufficient overlap between images is a must for usable output. Image from {cite}`westobyStructurefromMotionPhotogrammetryLowcost2012`.
+Capturing an object from many angles with sufficient overlap between images is a must for usable output. Image from.
 ```
 
 Preferably, the images each feature a high degree of overlap and are taken from different angles ({numref}`sfm_figure`) to narrow down the margin of error of the coordinate estimates.
@@ -46,7 +46,7 @@ One can also connect neighbouring points (coordinates along with other informati
 ```{figure} ./assets/polygonal_meshing_modelling.png
 :name: sfm_polygons
 
-Capturing an object from many angles with sufficient overlap between images is a must for usable output. Image from {cite}`lobsterbakeMeshOverview2009`.
+Capturing an object from many angles with sufficient overlap between images is a must for usable output. Image from.
 ```
 
 The *meshed model* is effectively the digitised outer shell of the 3D scene that was captured on camera.
@@ -61,5 +61,5 @@ An example of a DOM featuring the folding observed near the top of the Janusfjel
 :class: seealso
 
 
-Westoby et al. {cite}`westobyStructurefromMotionPhotogrammetryLowcost2012` put together an excellent overview on the use of SfM photogrammetry in the geosciences, which is a recommended read for the interested reader.
+Westoby et al. put together an excellent overview on the use of SfM photogrammetry in the geosciences, which is a recommended read for the interested reader.
 ```

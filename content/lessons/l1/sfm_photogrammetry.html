@@ -346,13 +346,13 @@ After all, by looking at any given object from a single direction, the 3D scene 
 Where different lines of sight intercept, an estimate of the 3D coordinates of a given point is found that can be combined with other estimated point coordinates to form a <em>point cloud</em>.</p>
 <div class="figure align-default" id="stero-figure">
 <img alt="../../../_images/stereo.jpg" src="../../../_images/stereo.jpg" />
-<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Perceiving depth by tracing lines of sight from different viewing angles. Image from <span class="bibtex" id="id1">[humboldtstateuniversityStructureMotionSfM2016]</span>.</span><a class="headerlink" href="#stero-figure" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Perceiving depth by tracing lines of sight from different viewing angles. Image from <a class="bibtex reference internal" href="../about/zbiblio.html#humboldtstateuniversitystructuremotionsfm2016" id="id1">[1]</a>.</span><a class="headerlink" href="#stero-figure" title="Permalink to this image">¶</a></p>
 </div>
 <p>Increasing the amount of lines of sight automatically results in a higher confidence of the 3D coordinates of the associated point.
 It is therefore common to not just use two or three 3D images, but rather a series of dozens, hundreds, and even more 2D images to reconstruct a 3D structure of a scene or object.</p>
 <div class="figure align-default" id="sfm-figure">
 <img alt="../../../_images/sfm-diagram.jpg" src="../../../_images/sfm-diagram.jpg" />
-<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Capturing an object from many angles with sufficient overlap between images is a must for usable output. Image from <span class="bibtex" id="id2">[westobyStructurefromMotionPhotogrammetryLowcost2012]</span>.</span><a class="headerlink" href="#sfm-figure" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Capturing an object from many angles with sufficient overlap between images is a must for usable output. Image from.</span><a class="headerlink" href="#sfm-figure" title="Permalink to this image">¶</a></p>
 </div>
 <p>Preferably, the images each feature a high degree of overlap and are taken from different angles (<a class="reference internal" href="#sfm-figure"><span class="std std-numref">Fig. 2</span></a>) to narrow down the margin of error of the coordinate estimates.
 Interestingly, modern algorithms do not only calculate the point coordinates - they simultaneously calculate the original camera locations; amazing, no?</p>
@@ -362,7 +362,7 @@ Once the camera positions are known and a hand full of key matching points are e
 <p>One can also connect neighbouring points (coordinates along with other information such as colour, normal vector, etc., called <em>verteces</em>) to create <em>edges</em>; combine <em>edges</em> to create <em>faces</em>; combine <em>faces</em> into <em>polygons</em> and <em>surfaces</em> in a <em>meshed model</em> (<a class="reference internal" href="#sfm-polygons"><span class="std std-numref">Fig. 3</span></a>).</p>
 <div class="figure align-default" id="sfm-polygons">
 <img alt="../../../_images/polygonal_meshing_modelling.png" src="../../../_images/polygonal_meshing_modelling.png" />
-<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Capturing an object from many angles with sufficient overlap between images is a must for usable output. Image from <span class="bibtex" id="id3">[lobsterbakeMeshOverview2009]</span>.</span><a class="headerlink" href="#sfm-polygons" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Capturing an object from many angles with sufficient overlap between images is a must for usable output. Image from.</span><a class="headerlink" href="#sfm-polygons" title="Permalink to this image">¶</a></p>
 </div>
 <p>The <em>meshed model</em> is effectively the digitised outer shell of the 3D scene that was captured on camera.
 <em>Ddigital outcrop models</em> (DOMs) is the term given to meshed models (often with texture, i.e., colouring) of geological outcrops.
@@ -372,7 +372,7 @@ An example of a DOM featuring the folding observed near the top of the Janusfjel
 </div>
 <div class="seealso admonition">
 <p class="admonition-title">Further reading</p>
-<p>Westoby et al. <span class="bibtex" id="id4">[westobyStructurefromMotionPhotogrammetryLowcost2012]</span> put together an excellent overview on the use of SfM photogrammetry in the geosciences, which is a recommended read for the interested reader.</p>
+<p>Westoby et al. put together an excellent overview on the use of SfM photogrammetry in the geosciences, which is a recommended read for the interested reader.</p>
 </div>
 </div>
 </div>
