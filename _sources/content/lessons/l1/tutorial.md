@@ -311,7 +311,7 @@ Handily, Metashape also provides an overview within the *Workspace* panel after 
 An example of this is depicted in {numref}`internal_parameters`.
 
 ```{figure} assets/5201e3e2.png
-:name: interal_parameters
+:name: internal_parameters
 
 An example of the internal *Workspace* panel, including the parameters and processing metadata that is available from within the Metashape project interface.
 ```
