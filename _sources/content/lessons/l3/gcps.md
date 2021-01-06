@@ -107,7 +107,7 @@ As a result, efficiency can be gained by reducing the number of GCPs ({numref}`g
 ```{figure} assets/gcp_locations.png
 :name: gcp_locations
 
-Five different GCP distribution types and an example for the combination of 16 GCPs (second row). (a) edge distribution, (b) central distribution, (c) corner distribution (equivalent for all four corners), (d) stratified distribution, (e) random distribution. In general, the stratified distribution (d) gives rise to the lowest overall errors {cite}`martinez-carricondoAssessmentUAVphotogrammetricMapping2018`
+Five different GCP distribution types and an example for the combination of 16 GCPs (second row). (a) edge distribution, (b) central distribution, (c) corner distribution (equivalent for all four corners), (d) stratified distribution, (e) random distribution. In general, a combination of the edge and stratified distributions (d) gives rise to the lowest overall errors {cite}`martinez-carricondoAssessmentUAVphotogrammetricMapping2018`
 ```
 
 Placing the GCPs around the edges and in a stratified manner throughout the survey area results in the lowest overall errors.
