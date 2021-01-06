@@ -13,7 +13,7 @@ We distinguish 3 different scenarios when it comes to geo-referencing:
 - Vertical - i.e., measuring altitude
 - Full - i.e., measuring longitude, latitude, and altitude
 
-Given the way GPS works, *verical* accuracies are usually worse than *horizontal* accuracies (often by more than an order of magnitude).
+Given the way GPS works, *vertical* accuracies are usually worse than *horizontal* accuracies (often by more than an order of magnitude).
 Seeing as most handheld and built-in GPSs have a horizontal error of at least 1 metre, the corresponding vertical error may be large enough to prevent accurate correlation to the real world.
 ```
 
@@ -91,7 +91,7 @@ Example of ArUco marker images {cite}`garrido-juradoAutomaticGenerationDetection
 :class: suggestion
 
 ArUco markers (50x50 cm) printed on canvas are available for use in the UNIS Arctic Geology department.
-Marker detection hereof can be done by using the scripts described in {ref}`../l4/python.ipynb`.
+Marker detection hereof can be done by using the scripts described in {ref}`the Python-automisation chapter <../l4/python.ipynb>`.
 ```
 
 ## Placement of GCPs in terms of highest accuracy
