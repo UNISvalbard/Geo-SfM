@@ -320,7 +320,7 @@
   <div class="section" id="geo-referencing">
 <h1>Geo-referencing<a class="headerlink" href="#geo-referencing" title="Permalink to this headline">¶</a></h1>
 <p>Seeing as neither the camera positions nor the 2D images are required to contain real world coordinates, the 3D point clounds that are generated through SfM photogrammetry are generated in a relative <em>image-space</em> coordinate system.
-This means that in order to be quantitative, the generated point clouds need to be aligned to a real-world, <em>object-space</em> coordinate system <a class="bibtex reference internal" href="../about/zbiblio.html#westobystructurefrommotionphotogrammetrylowcost2012" id="id1">[2]</a>.
+This means that in order to be quantitative, the generated point clouds need to be aligned to a real-world, <em>object-space</em> coordinate system <span class="bibtex" id="id1">[westobyStructurefromMotionPhotogrammetryLowcost2012]</span>.
 This transformation can be achieved using a 3D similarity transform based on either known camera locations, a small number of known ground control points (GCPs) with known object-space coordinates, or a combination of the two, which is covered in the upcoming sections of the Geo-SfM module.</p>
 <div class="note admonition">
 <p class="admonition-title">Coordinate reference systems</p>
@@ -329,7 +329,7 @@ A CRS is always composed of a coordinate system and datum component.
 A coordinate system is a set of mathematical rules that specify how coordinates are to be assigned to points.
 A datum is a set of parameters that define the position of the origin, the scale, and the orientation of a coordinate system.</p>
 <p>Luckily, these are pre-defined by the European Petroleum Survey Group (EPSG) for the most common CRSs in use.
-For example some codes often in use in Svalbard:</p>
+For example some codes often in use in Svalbard are:</p>
 <ul class="simple">
 <li><p>EPSG:4326 corresponds to WGS 84 longitude-latitude (used by GPS).</p></li>
 <li><p>EPSG:32633 corresponds to WGS 84 UTM-33N.</p></li>

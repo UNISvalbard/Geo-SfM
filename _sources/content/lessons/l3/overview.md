@@ -13,7 +13,7 @@ A coordinate system is a set of mathematical rules that specify how coordinates 
 A datum is a set of parameters that define the position of the origin, the scale, and the orientation of a coordinate system.
 
 Luckily, these are pre-defined by the European Petroleum Survey Group (EPSG) for the most common CRSs in use.
-For example some codes often in use in Svalbard:
+For example some codes often in use in Svalbard are:
 
 - EPSG:4326 corresponds to WGS 84 longitude-latitude (used by GPS).
 - EPSG:32633 corresponds to WGS 84 UTM-33N.
