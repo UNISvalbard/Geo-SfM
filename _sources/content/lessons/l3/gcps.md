@@ -104,7 +104,7 @@ In a timeless setting, one could set up an infinite amount of GCPs ({numref}`gcp
 However, when time is of the essence, there appears to be a cut-off point at which the introduction of an additional GCP does not warrant the additional time it takes to set it up.
 As a result, efficiency can be gained by reducing the number of GCPs ({numref}`gcp_locations`, second row).
 
-``{figure} assets/gcp_locations.png
+```{figure} assets/gcp_locations.png
 :name: gcp_locations
 
 Five different GCP distribution types and an example for the combination of 16 GCPs (second row). (a) edge distribution, (b) central distribution, (c) corner distribution (equivalent for all four corners), (d) stratified distribution, (e) random distribution. In general, the stratified distribution (d) gives rise to the lowest overall errors {cite}`martinez-carricondoAssessmentUAVphotogrammetricMapping2018`
