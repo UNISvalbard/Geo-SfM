@@ -12,7 +12,7 @@ A CRS is always composed of a coordinate system and datum component.
 A coordinate system is a set of mathematical rules that specify how coordinates are to be assigned to points.
 A datum is a set of parameters that define the position of the origin, the scale, and the orientation of a coordinate system.
 
-Luckily, these are pre-defined by the European Petroleum Survey Group (EPSG) for the most common CRSs in use.
+Luckily, these are pre-defined by the European Petroleum Survey Group (EPSG) for the most common CRSs in use {cite}`internatonalassociationofoilandgasproducersGeomaticsGuidanceNote2019`.
 For example some codes often in use in Svalbard are:
 
 - EPSG:4326 corresponds to WGS 84 longitude-latitude (used by GPS).
