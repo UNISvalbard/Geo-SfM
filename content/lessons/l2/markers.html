@@ -466,16 +466,25 @@ Be advised: one can only place specific markers after having added them previous
 <p>When added, a <em>green</em> flag appears that can be moved around by <em>click-holding</em> the left mouse button.
 This is especially useful for finetuning locations.</p>
 <p>Once done, proceed to the <em>Reference panel</em> and find that the markers you added have been added to the project - albeit without real world positional values.
-Also <a class="reference internal" href="#marker-reference"><span class="std std-ref">shown</span></a> are the number of projections, accuracy and error, of which the latter two also remain blank.</p>
-<div class="figure align-default" id="marker-reference">
-<img alt="../../../_images/marker_reference.png" src="../../../_images/marker_reference.png" />
-<p class="caption"><span class="caption-number">Fig. 19 </span><span class="caption-text">A marker with ID <em>point 1</em> has been added to the project.
-Thusfar, no positional information is available, though the metadata shows that the marker has been identified in a single image (<em>Projections</em>).</span><a class="headerlink" href="#marker-reference" title="Permalink to this image">¶</a></p>
-</div>
-<p>Positional information can either be added directly into the <em>Reference</em> panel by double clicking one of the fields, as shown in <a class="reference internal" href="#metashape-reference-panel-markers"><span class="std std-numref">Fig. 20</span></a>.</p>
+Also shown are the number of projections, accuracy and error, of which the latter two also remain blank.
+Positional information can either be added directly into the <em>Reference</em> panel by double clicking one of the fields, as shown in <a class="reference internal" href="#metashape-reference-panel-markers"><span class="std std-numref">Fig. 19</span></a>, or by importing reference data.</p>
 <div class="figure align-default" id="metashape-reference-panel-markers">
 <img alt="../../../_images/metashape_reference_panel_markers.gif" src="../../../_images/metashape_reference_panel_markers.gif" />
-<p class="caption"><span class="caption-number">Fig. 20 </span><span class="caption-text">Editing the GCP point data.</span><a class="headerlink" href="#metashape-reference-panel-markers" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 19 </span><span class="caption-text">A marker with ID <em>point 1</em> has been added to the project.
+Thusfar, no positional information is available, though the metadata shows that the marker has been identified in a single image (<em>Projections</em>).
+Editing the GCP point data can be easily done by double clicking each of the fields.</span><a class="headerlink" href="#metashape-reference-panel-markers" title="Permalink to this image">¶</a></p>
+</div>
+<p>Reference data is imported through the <a class="reference internal" href="#metashape-reference-import"><span class="std std-ref">dialog</span></a> opened by selecting <em>File/Import/Import Reference…</em>.
+Make sure to select the correct <em>Coordinate System</em>, select <em>Comma</em> as the <em>Delimiter</em>, and select the appropriate <em>Columns</em> for the <em>Label</em>, <em>longitude</em>, <em>Latitude</em>, and <em>Altitude</em>.</p>
+<div class="figure align-default" id="metashape-reference-import">
+<img alt="../../../_images/metashape_reference_import.png" src="../../../_images/metashape_reference_import.png" />
+<p class="caption"><span class="caption-number">Fig. 20 </span><span class="caption-text">Importing reference data for the GCP marker positions.
+Make sure to select the <em>gcp_table.csv</em> file when prompted.</span><a class="headerlink" href="#metashape-reference-import" title="Permalink to this image">¶</a></p>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">Matching labels</p>
+<p>Make sure to double check and match all GCP IDs (=Labels) prior to importing.
+Rename the picked Labels in the <em>Reference</em> panel prior to importing, if you have to!</p>
 </div>
 </div>
 <div class="section" id="automated-detection">

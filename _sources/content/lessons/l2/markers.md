@@ -137,21 +137,33 @@ When added, a *green* flag appears that can be moved around by *click-holding* t
 This is especially useful for finetuning locations.
 
 Once done, proceed to the *Reference panel* and find that the markers you added have been added to the project - albeit without real world positional values.
-Also {ref}`shown <marker_reference>` are the number of projections, accuracy and error, of which the latter two also remain blank.
-
-````{figure} assets/marker_reference.png
-:name: marker_reference
-
-A marker with ID *point 1* has been added to the project.
-Thusfar, no positional information is available, though the metadata shows that the marker has been identified in a single image (*Projections*).
-````
-
-Positional information can either be added directly into the *Reference* panel by double clicking one of the fields, as shown in {numref}`metashape_reference_panel_markers`.
+Also shown are the number of projections, accuracy and error, of which the latter two also remain blank.
+Positional information can either be added directly into the *Reference* panel by double clicking one of the fields, as shown in {numref}`metashape_reference_panel_markers`, or by importing reference data.
 
 ```{figure} assets/metashape_reference_panel_markers.gif
 :name: metashape_reference_panel_markers
 
-Editing the GCP point data.
+A marker with ID *point 1* has been added to the project.
+Thusfar, no positional information is available, though the metadata shows that the marker has been identified in a single image (*Projections*).
+Editing the GCP point data can be easily done by double clicking each of the fields.
+```
+
+Reference data is imported through the {ref}`dialog <metashape_reference_import>` opened by selecting *File/Import/Import Reference...*.
+Make sure to select the correct *Coordinate System*, select *Comma* as the *Delimiter*, and select the appropriate *Columns* for the *Label*, *longitude*, *Latitude*, and *Altitude*.
+
+```{figure} assets/metashape_reference_import.png
+:name: metashape_reference_import
+
+Importing reference data for the GCP marker positions.
+Make sure to select the *gcp_table.csv* file when prompted.
+```
+
+```{admonition} Matching labels
+:class: warning
+
+Make sure to double check and match all GCP IDs (=Labels) prior to importing.
+Rename the picked Labels in the *Reference* panel prior to importing, if you have to!
+
 ```
 
 ### Automated detection
