@@ -117,6 +117,8 @@ For those interested in using the programming approach, please read the [OpenCV 
 This allows for far more freedom, including the automated generation of multiple markers in a circle as used for hand-sized sample digitisation.
 ```
 
+## GCP detection
+
 ### Manual detection
 
 In order to manually detect GCPs, one first has to create a new Agisoft Metashape project and import all the taken images.
@@ -146,17 +148,17 @@ Thusfar, no positional information is available, though the metadata shows that 
 
 Positional information can either be added directly into the *Reference* panel by double clicking one of the fields, as shown in {numref}`metashape_reference_panel_markers`.
 
-```{figure} assets\metashape_reference_panel_markers.gif
+```{figure} assets/metashape_reference_panel_markers.gif
 :name: metashape_reference_panel_markers
 
 Editing the GCP point data.
 ```
 
-#### Automated detection
+### Automated detection
 
 A more significant difference exists in the way both marker types are automatically detected.
 
-##### Metashape
+#### Metashape
 
 In Metashape, the {ref}`Marker Detection dialog <metashape_marker_detection>` can be used to automatically detect the binary Metashape markers.
 This dialog can be accessed through *Tools/Markers/Detect markers...*.
@@ -170,7 +172,7 @@ Metashape GUI option for marker detection.
 
 Once done, all markers should
 
-##### ArUco
+#### ArUco
 
 ```{admonition} Python installation required
 :class: warning

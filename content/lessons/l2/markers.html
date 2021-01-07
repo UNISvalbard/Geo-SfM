@@ -326,27 +326,32 @@
      ArUco
     </a>
    </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gcp-detection">
+   GCP detection
+  </a>
+  <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#manual-detection">
      Manual detection
     </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#automated-detection">
+     Automated detection
+    </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#automated-detection">
-       Automated detection
+      <a class="reference internal nav-link" href="#metashape">
+       Metashape
       </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#metashape">
-         Metashape
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id1">
-         ArUco
-        </a>
-       </li>
-      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       ArUco
+      </a>
      </li>
     </ul>
    </li>
@@ -444,6 +449,9 @@ Make sure to pick an acceptable size.</p>
 This allows for far more freedom, including the automated generation of multiple markers in a circle as used for hand-sized sample digitisation.</p>
 </div>
 </div>
+</div>
+<div class="section" id="gcp-detection">
+<h2>GCP detection<a class="headerlink" href="#gcp-detection" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="manual-detection">
 <h3>Manual detection<a class="headerlink" href="#manual-detection" title="Permalink to this headline">¶</a></h3>
 <p>In order to manually detect GCPs, one first has to create a new Agisoft Metashape project and import all the taken images.
@@ -466,14 +474,15 @@ Thusfar, no positional information is available, though the metadata shows that 
 </div>
 <p>Positional information can either be added directly into the <em>Reference</em> panel by double clicking one of the fields, as shown in <a class="reference internal" href="#metashape-reference-panel-markers"><span class="std std-numref">Fig. 20</span></a>.</p>
 <div class="figure align-default" id="metashape-reference-panel-markers">
-<img alt="content\lessons\l2\assetsmetashape_reference_panel_markers.gif" src="content\lessons\l2\assetsmetashape_reference_panel_markers.gif" />
+<img alt="../../../_images/metashape_reference_panel_markers.gif" src="../../../_images/metashape_reference_panel_markers.gif" />
 <p class="caption"><span class="caption-number">Fig. 20 </span><span class="caption-text">Editing the GCP point data.</span><a class="headerlink" href="#metashape-reference-panel-markers" title="Permalink to this image">¶</a></p>
 </div>
+</div>
 <div class="section" id="automated-detection">
-<h4>Automated detection<a class="headerlink" href="#automated-detection" title="Permalink to this headline">¶</a></h4>
+<h3>Automated detection<a class="headerlink" href="#automated-detection" title="Permalink to this headline">¶</a></h3>
 <p>A more significant difference exists in the way both marker types are automatically detected.</p>
 <div class="section" id="metashape">
-<h5>Metashape<a class="headerlink" href="#metashape" title="Permalink to this headline">¶</a></h5>
+<h4>Metashape<a class="headerlink" href="#metashape" title="Permalink to this headline">¶</a></h4>
 <p>In Metashape, the <a class="reference internal" href="#metashape-marker-detection"><span class="std std-ref">Marker Detection dialog</span></a> can be used to automatically detect the binary Metashape markers.
 This dialog can be accessed through <em>Tools/Markers/Detect markers…</em>.
 To optimise marker detection, it is advised to set the <em>Marker type</em> parameter equal to the bit-encoding selected during generation and leave the other parameters as-is before clicking OK to proceed.</p>
@@ -484,7 +493,7 @@ To optimise marker detection, it is advised to set the <em>Marker type</em> para
 <p>Once done, all markers should</p>
 </div>
 <div class="section" id="id1">
-<h5>ArUco<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h5>
+<h4>ArUco<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
 <div class="warning admonition">
 <p class="admonition-title">Python installation required</p>
 <p>The following steps require the <a class="reference external" href="../about/software#python">installation of Python and the automated metashape scripts</a>.</p>
@@ -499,7 +508,6 @@ To optimise marker detection, it is advised to set the <em>Marker type</em> para
 </ul>
 <p>Make sure to place this file in the <em>config directory</em> of the <a class="reference external" href="../l1/tutorial#a-standardised-project-environment">standardised project environment</a>.</p>
 <p>Then proceed with the <a class="reference internal" href="../l4/python.html"><span class="doc std std-doc">Python tutorial</span></a> to subsequently add all images to the Metashape project; to detect the GCPs in all the images; to add the detected GCPs and corresponding real world coordinates to the Metashape project.</p>
-</div>
 </div>
 </div>
 </div>
