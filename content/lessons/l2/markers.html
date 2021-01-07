@@ -448,8 +448,16 @@ This allows for far more freedom, including the automated generation of multiple
 <h3>Manual detection<a class="headerlink" href="#manual-detection" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="automated-detection">
 <h4>Automated detection<a class="headerlink" href="#automated-detection" title="Permalink to this headline">¶</a></h4>
+<p>A more significant difference exists in the way both marker types are automatically detected.</p>
 <div class="section" id="metashape">
 <h5>Metashape<a class="headerlink" href="#metashape" title="Permalink to this headline">¶</a></h5>
+<p>In Metashape, the <a class="reference internal" href="#metashape-marker-detection"><span class="std std-ref">Marker Detection dialog</span></a> can be used to automatically detect the binary Metashape markers.
+This dialog can be accessed through <em>Tools/Markers/Detect markers…</em>.
+To optimise marker detection, it is advised to set the <em>Marker type</em> parameter equal to the bit-encoding selected during generation and leave the other parameters as-is before clicking OK to proceed.</p>
+<div class="figure align-default" id="metashape-marker-detection">
+<img alt="../../../_images/metashape_marker_detection.png" src="../../../_images/metashape_marker_detection.png" />
+<p class="caption"><span class="caption-number">Fig. 18 </span><span class="caption-text">Metashape GUI option for marker detection.</span><a class="headerlink" href="#metashape-marker-detection" title="Permalink to this image">¶</a></p>
+</div>
 </div>
 <div class="section" id="id1">
 <h5>ArUco<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h5>
@@ -460,12 +468,12 @@ This allows for far more freedom, including the automated generation of multiple
 <p>Prior to automated detection, we will have to configure a settings or parameter file for the <a class="reference internal" href="../l4/python.html"><span class="doc std std-doc">automated metashape scripts</span></a>.</p>
 <p>Head over to the <a class="reference internal" href="../l4/python.html"><span class="doc std std-doc">tutorial</span></a> and put together a minimal working example (MWE) configuration consisting of:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="../l4/python.md#minimal-yaml-configuration-file">minimal configuration parameters</a></p></li>
+<li><p><a class="reference external" href="../l4/python#minimal-yaml-configuration-file">minimal configuration parameters</a></p></li>
 <li><p><a class="reference external" href="../l4/python.md#additional-parameters">Add photos</a></p></li>
-<li><p><a class="reference external" href="../l4/python.md#additional-parameters">GCPs - detection</a></p></li>
-<li><p><a class="reference external" href="../l4/python.md#additional-parameters">GCPs - add to project additional parameters</a></p></li>
+<li><p><a class="reference external" href="../l4/python#additional-parameters">GCPs - detection</a></p></li>
+<li><p><a class="reference external" href="../l4/python#additional-parameters">GCPs - add to project additional parameters</a></p></li>
 </ul>
-<p>Make sure to place this file in the <em>config directory</em> of the <a class="reference external" href="../l1/tutorial.md#a-standardised-project-environment">standardised project environment</a>.</p>
+<p>Make sure to place this file in the <em>config directory</em> of the <a class="reference external" href="../l1/tutorial#a-standardised-project-environment">standardised project environment</a>.</p>
 <p>Then proceed with the <a class="reference internal" href="../l4/python.html"><span class="doc std std-doc">Python tutorial</span></a> to subsequently add all images to the Metashape project; to detect the GCPs in all the images; to add the detected GCPs and corresponding real world coordinates to the Metashape project.</p>
 </div>
 </div>

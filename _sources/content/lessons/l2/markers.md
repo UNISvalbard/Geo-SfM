@@ -121,7 +121,19 @@ This allows for far more freedom, including the automated generation of multiple
 
 #### Automated detection
 
+A more significant difference exists in the way both marker types are automatically detected.
+
 ##### Metashape
+
+In Metashape, the {ref}`Marker Detection dialog <metashape_marker_detection>` can be used to automatically detect the binary Metashape markers.
+This dialog can be accessed through *Tools/Markers/Detect markers...*.
+To optimise marker detection, it is advised to set the *Marker type* parameter equal to the bit-encoding selected during generation and leave the other parameters as-is before clicking OK to proceed.
+
+```{figure} assets/metashape_marker_detection.png
+:name: metashape_marker_detection
+
+Metashape GUI option for marker detection.
+```
 
 ##### ArUco
 
@@ -135,11 +147,11 @@ Prior to automated detection, we will have to configure a settings or parameter 
 
 Head over to the [tutorial](../l4/python.ipynb) and put together a minimal working example (MWE) configuration consisting of:
 
-- [minimal configuration parameters](../l4/python.md#minimal-yaml-configuration-file)
+- [minimal configuration parameters](../l4/python#minimal-yaml-configuration-file)
 - [Add photos](../l4/python.md#additional-parameters)
-- [GCPs - detection](../l4/python.md#additional-parameters)
-- [GCPs - add to project additional parameters](../l4/python.md#additional-parameters)
+- [GCPs - detection](../l4/python#additional-parameters)
+- [GCPs - add to project additional parameters](../l4/python#additional-parameters)
 
-Make sure to place this file in the *config directory* of the [standardised project environment](../l1/tutorial.md#a-standardised-project-environment).
+Make sure to place this file in the *config directory* of the [standardised project environment](../l1/tutorial#a-standardised-project-environment).
 
 Then proceed with the [Python tutorial](../l4/python.md) to subsequently add all images to the Metashape project; to detect the GCPs in all the images; to add the detected GCPs and corresponding real world coordinates to the Metashape project.
