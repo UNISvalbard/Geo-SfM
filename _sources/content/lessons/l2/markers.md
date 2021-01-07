@@ -148,6 +148,8 @@ Positional information can either be added directly into the *Reference* panel b
 
 ```{figure} assets\metashape_reference_panel_markers.gif
 :name: metashape_reference_panel_markers
+
+Editing the GCP point data.
 ```
 
 #### Automated detection
