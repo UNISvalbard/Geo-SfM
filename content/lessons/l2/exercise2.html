@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exercise 2 &#8212; Geo-SfM Course Beta</title>
+    <title>Exercise 2 - learning the ropes of GCP and marker detection &#8212; Geo-SfM Course Beta</title>
     
   <link rel="stylesheet" href="../../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -55,8 +55,8 @@
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Geo-referencing" href="../l3/overview.html" />
-    <link rel="prev" title="Hands-on experience" href="overview.html" />
+    <link rel="next" title="GCP markers - generation and detection" href="markers.html" />
+    <link rel="prev" title="Ground control points" href="gcps.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -105,6 +105,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../l1/exercise1.html">
+   Exercise 1 - learning the ropes of SfM photogrammetry
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../l1/tutorial.html">
    Metashape Tutorial
   </a>
@@ -118,39 +123,22 @@
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="overview.html">
-   Hands-on experience
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Exercise 2
-  </a>
- </li>
-</ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  Session 3
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../l3/overview.html">
    Geo-referencing
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../l3/gcps.html">
+  <a class="reference internal" href="gcps.html">
    Ground control points
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../l3/aruco.html">
-   Aruco
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Exercise 2 - learning the ropes of GCP and marker detection
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../l3/exercise3.html">
-   Exercise 3
+  <a class="reference internal" href="markers.html">
+   GCP markers - generation and detection
   </a>
  </li>
 </ul>
@@ -316,16 +304,14 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#learning-goals">
+   Learning goals
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#assignment">
    Assignment
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#deliverable">
-     Deliverable
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -338,104 +324,64 @@
         
               <div>
                 
-  <div class="section" id="exercise-2">
-<h1>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="exercise-2-learning-the-ropes-of-gcp-and-marker-detection">
+<h1>Exercise 2 - learning the ropes of GCP and marker detection<a class="headerlink" href="#exercise-2-learning-the-ropes-of-gcp-and-marker-detection" title="Permalink to this headline">¶</a></h1>
 <div class="admonition-deadline admonition">
 <p class="admonition-title">Deadline</p>
-<p>Please complete this exercise <strong>by the start of the next session</strong>.</p>
+<p>Please complete this exercise <strong>by the end of the current session</strong>.</p>
 </div>
+<div class="section" id="learning-goals">
+<h2>Learning goals<a class="headerlink" href="#learning-goals" title="Permalink to this headline">¶</a></h2>
+<p><strong>After this session you will be able to:</strong></p>
+<ul class="simple">
+<li><p>Generate your own set of GCPs;</p></li>
+<li><p>Manually detect GCPs in a set of images; and,</p></li>
+<li><p>Automatically detect GCPs using computer algorithms.</p></li>
+</ul>
 <div class="warning admonition">
 <p class="admonition-title">Support</p>
 <p>Please note that <strong>we only provide feedback and support for students enrolled in the course at the University Centre of Svalbard</strong>.</p>
 </div>
-<p>Today we focus on the reconstruction of a model of our own.
-Split up into separate tasks, we would like you to cover the following goals in groups of 3:</p>
-<ul class="simple">
-<li><p>Image acquisition of an object of your choosing</p></li>
-<li><p>SfM photogrammetry of the object you imaged</p></li>
-<li><p>Archiving of the dataset in a standardised way</p></li>
-<li><p>Documenting the processing steps.</p></li>
-</ul>
-<p>The exercise also includes a deliverable, i.e., a set of requirements that are listed further below.</p>
+<p>We now focus on familiarising ourselves with the concept of GCPs and markers.
+This includes the generation of both Metashape markers and open-source ArUco markers, as well as their manual and automated detection.</p>
+</div>
 <div class="section" id="assignment">
 <h2>Assignment<a class="headerlink" href="#assignment" title="Permalink to this headline">¶</a></h2>
-<p>It is now up to you to head out and acquire your own data set and process this by following the <a class="reference internal" href="../l1/tutorial.html"><span class="doc std std-doc">photogrammetry tutorial</span></a>.</p>
-<p>Suggested targets include:</p>
-<ul class="simple">
-<li><p>the boulders in front of UNIS</p></li>
-<li><p>small outcrops (ca. 5 m long, 5 m high)</p></li>
-</ul>
-<p><img alt="the boulders in front of the UNIS entrance" src="../../../_images/f103d976.png" /></p>
+<p>Proceed to the <a class="reference internal" href="markers.html"><span class="doc std std-doc">GCP tutorial</span></a> while keeping the following assignments in mind:</p>
 <div class="note admonition">
 <p class="admonition-title">Checklist and questions</p>
 <ul class="simple">
-<li><p>[ ] Find a suitable target</p></li>
-<li><p>[ ] Take photos of the target</p>
+<li><p>[ ] GCP generation</p>
 <ul>
-<li><p>[ ] … from two distances</p></li>
-<li><p>[ ] … from two angles</p></li>
-<li><p>[ ] … with photos having at least 80% overlap between them</p></li>
+<li><p>[ ] Generate a single Metashape marker and print it on A4</p></li>
+<li><p>[ ] Generate a single ArUco marker and print it on A4</p></li>
 </ul>
 </li>
-<li><p>[ ] Import the photos to your workstation…</p></li>
-<li><p>[ ] … into the standardised folder structure</p></li>
-<li><p>[ ] Create a textured model, saving project into the assigned folder</p></li>
-<li><p>[ ] Export a processing report.</p></li>
-<li><p>[ ] Fill out the deliverable</p></li>
+<li><p>[ ] photoshoot:</p>
+<ul>
+<li><p>[ ] Place both markers near an object of interest (e.g., computer screen, chair)</p></li>
+<li><p>[ ] Take at least 10 photos of the target from different angles and distances, making sure the markers are fully included in at least 3 photos each</p></li>
+</ul>
+</li>
+<li><p>[ ] GCP detection:</p>
+<ul>
+<li><p>[ ] create a new Metashape project comforming the standardised project environment</p></li>
+<li><p>[ ] detect the ArUco markers manually</p></li>
+<li><p>[ ] detect the Metashape markers automatically</p></li>
+<li><p>[ ] add real world coordinates to the GCPs</p></li>
+</ul>
+</li>
 </ul>
 </div>
-<div class="section" id="deliverable">
-<h3>Deliverable<a class="headerlink" href="#deliverable" title="Permalink to this headline">¶</a></h3>
-<p>At the very least, the following should be completed <strong>prior to the start of the next session</strong>.
-Copy it over and send it in to the course responsible.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">group</span><span class="p">:</span>
-    <span class="n">name</span><span class="p">:</span>
-    <span class="n">person1</span><span class="p">:</span>
-    <span class="n">person2</span><span class="p">:</span>
-    <span class="o">...</span>
-<span class="n">model</span><span class="p">:</span>
-    <span class="n">place</span><span class="p">:</span> <span class="c1"># Where did you find your target?</span>
-    <span class="n">region</span><span class="p">:</span>  <span class="c1"># PICK: Hopen / Spitsbergen / Kong Karls Land / Edgeøya / Barentsøya / Tusenøyane / Nordaustlandet / Kvitøya / Prins Karls Forland / Bjørnøya / Other</span>
-
-<span class="n">data</span><span class="p">:</span>
-    <span class="n">package_directory</span><span class="p">:</span> <span class="c1"># FOLDER DIR (absolute, where did you create the standard processing folder structure referred to in the [tutorial]{../l1/tutorial})</span>
-    <span class="n">data_directory</span><span class="p">:</span> <span class="c1">#</span>
-    <span class="n">overview_img</span><span class="p">:</span> <span class="c1"># FILE DIR (relative to package_directory)</span>
-    <span class="n">model_crs</span><span class="p">:</span>  <span class="c1"># INT EPSG number of model CRS</span>
-    <span class="n">description_file</span><span class="p">:</span> <span class="s2">&quot;&quot;</span> <span class="c1"># create a simple text file with a description, and put it in the package_directory</span>
-
-<span class="n">metadata</span><span class="p">:</span>
-    <span class="n">acquisition_date</span><span class="p">:</span> <span class="c1"># STRING DD.MM.YYYY</span>
-    <span class="n">acquisition_type</span><span class="p">:</span> <span class="c1"># PICK Boat / UAV / Handheld / Combination</span>
-    <span class="n">acquisition_user</span><span class="p">:</span> <span class="c1"># STRING Data collector</span>
-    <span class="n">operator</span><span class="p">:</span> <span class="c1"># STRING Project owner</span>
-    <span class="n">acquisition_distance2outcrop</span><span class="p">:</span> <span class="c1"># FLOAT, distance to outcrop</span>
-    <span class="n">processing_user</span><span class="p">:</span> <span class="c1"># STRING in charge of processing</span>
-    <span class="n">processing_images</span><span class="p">:</span> <span class="c1"># INT number of images used for the model</span>
-    <span class="n">processing_calibration</span><span class="p">:</span> <span class="c1"># PICK: Built-in (GPS) / Marker (GPS) / Marker (dGPS) / None</span>
-    <span class="n">processing_resolution</span><span class="p">:</span> <span class="c1"># FLOAT resolution in cm/pixel</span>
-    <span class="n">processing_quality</span><span class="p">:</span> <span class="c1"># PICK bad / average / good / excellent / None</span>
-    <span class="n">tag</span><span class="p">:</span> <span class="c1"># STRING, item separator: ;</span>
-    <span class="n">category</span><span class="p">:</span> <span class="c1"># STRING, item separator: ;</span>
-</pre></div>
-</div>
-<p>In addition, everyone will be asked to answer the following questions:</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>To do, come up with good questinos here</p>
-</div>
-<div class="tip admonition note">
-<p class="admonition-title">Note</p>
-<p>As for the metadata, you’ll only be able to fill out some of the metadata after fully implementing all the steps (and including up to) the meshing and texturing step.</p>
-</div>
-<div class="tip admonition">
-<p class="admonition-title">Image acquisition</p>
-<p>Have a look at the <a class="reference internal" href="../suppl/best_practices.html"><span class="doc std std-doc">supplementary information</span></a> dealing with best practices in photogrammetry.</p>
-</div>
+<p>In addition, please come up with some thoughts on the following statements:</p>
+<ul class="simple">
+<li><p>GCP detection requires only part of the markers to be visible in an image</p></li>
+<li><p>A GCP should always be fully imaged in at least five images</p></li>
+<li></li>
+</ul>
 <div class="tip admonition">
 <p class="admonition-title">SfM photogrammetry workflow</p>
-<p>Have a look at last session’s <a class="reference internal" href="../l1/tutorial.html"><span class="doc std std-doc">tutorial</span></a> for some useful tips and tricks.</p>
-</div>
+<p>Have a look at last session’s accompanying <a class="reference internal" href="../l1/tutorial.html"><span class="doc std std-doc">tutorial</span></a> for some useful tips and tricks.</p>
 </div>
 </div>
 </div>
@@ -468,8 +414,8 @@ Copy it over and send it in to the course responsible.</p>
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="overview.html" title="previous page">Hands-on experience</a>
-    <a class='right-next' id="next-link" href="../l3/overview.html" title="next page">Geo-referencing</a>
+    <a class='left-prev' id="prev-link" href="gcps.html" title="previous page">Ground control points</a>
+    <a class='right-next' id="next-link" href="markers.html" title="next page">GCP markers - generation and detection</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

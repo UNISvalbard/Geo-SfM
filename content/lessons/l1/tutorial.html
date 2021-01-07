@@ -55,8 +55,8 @@
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Hands-on experience" href="../l2/overview.html" />
-    <link rel="prev" title="SfM photogrammetry" href="sfm_photogrammetry.html" />
+    <link rel="next" title="Geo-referencing" href="../l2/overview.html" />
+    <link rel="prev" title="Exercise 1 - learning the ropes of SfM photogrammetry" href="exercise1.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -104,6 +104,11 @@
    SfM photogrammetry
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="exercise1.html">
+   Exercise 1 - learning the ropes of SfM photogrammetry
+  </a>
+ </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Metashape Tutorial
@@ -118,39 +123,22 @@
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../l2/overview.html">
-   Hands-on experience
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../l2/exercise2.html">
-   Exercise 2
-  </a>
- </li>
-</ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  Session 3
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../l3/overview.html">
    Geo-referencing
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../l3/gcps.html">
+  <a class="reference internal" href="../l2/gcps.html">
    Ground control points
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../l3/aruco.html">
-   Aruco
+  <a class="reference internal" href="../l2/exercise2.html">
+   Exercise 2 - learning the ropes of GCP and marker detection
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../l3/exercise3.html">
-   Exercise 3
+  <a class="reference internal" href="../l2/markers.html">
+   GCP markers - generation and detection
   </a>
  </li>
 </ul>
@@ -321,6 +309,11 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-standardised-project-environment">
+     A standardised project environment
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#photo-set">
      Photo set
     </a>
@@ -403,10 +396,6 @@
                 
   <div class="section" id="metashape-tutorial">
 <h1>Metashape Tutorial<a class="headerlink" href="#metashape-tutorial" title="Permalink to this headline">¶</a></h1>
-<div class="admonition-deadline admonition">
-<p class="admonition-title">Deadline</p>
-<p>Please complete this tutorial <strong>during today’s session</strong>.</p>
-</div>
 <p>This tutorial (and exercise) features the following learning goals:</p>
 <ul class="simple">
 <li><p>You will <strong>learn the basics of Agisoft Metashape</strong></p></li>
@@ -441,41 +430,66 @@ This should provide you with the <strong>major release</strong>, <em>minor</em>,
 <div class="tip admonition">
 <p class="admonition-title">Further reading</p>
 <p>The guidelines below are based on the official Agisoft <em>3D model reconstruction</em> tutorial.
-This tutorial, as well as more in-depth help, can be visited here:
-https://agisoft.freshdesk.com/support/solutions/articles/31000152092</p>
+This tutorial, as well as more in-depth help, can be visited <a class="reference external" href="https://agisoft.freshdesk.com/support/solutions/articles/31000152092">here</a>.</p>
 </div>
-<div class="section" id="photo-set">
-<h3>Photo set<a class="headerlink" href="#photo-set" title="Permalink to this headline">¶</a></h3>
-<p>We’ll be using a standardised data set that can be retrieved from the following URL:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">URL</span><span class="p">:</span>
-</pre></div>
-</div>
-<p>Go ahead and download the package, then extract the archive’s contents.
-As you will see, we are aiming to have the following folder structure:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>project_directory (The folder with all files related to this project)
-|   overview_img
+<div class="section" id="a-standardised-project-environment">
+<h3>A standardised project environment<a class="headerlink" href="#a-standardised-project-environment" title="Permalink to this headline">¶</a></h3>
+<p>We will be using a standardised project environment throughout this course.
+It is recommended to use this setup (or something similar) throughout all future projects as well.
+The use of this standardised project setup is furthermore a requirement for digital models to be uploaded to <a class="reference external" href="http://svalbox.no">the Svalbox DB</a>.</p>
+<p>Proceed by creating the following folder structure in the projects directory (i.e., the directory where you have all your projects stored together).
+Herein folders are named without extensions, and filenames are given extensions.
+Text between {} indicates variable names.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{project_directory} (The folder with all files related to this project)
+|   overview_img.{ext}
 |   description.txt
+├───config_directory (where you place your configuration files)
+        {cfg_0001}.yml
+        {cfg_0002}.yml
+        ...
 ├───data_directory (where you unzipped the files to)
 ├───────100MEDIA (The folder in which all the images reside)
-|           DJI_0001.JPG
-|           DJI_0002.JPG
+|           {img_0001}.{ext}
+|           {img_0002}.{ext}
+|           ...
+├───────101MEDIA (The folder in which all the images reside)
+|           {img_0001}.{ext}
+|           {img_0002}.{ext}
+|           ...
+|       ...
+├───────199MEDIA (The folder in which all the images reside)
+|           {img_0001}.{ext}
+|           {img_0002}.{ext}
 |           ...
 ├───────gcps
 |           (We&#39;ll get back to this in a later session)
 └───────metashape (This is where you save your Agisoft Metashape projects to)
-            metashape_project.psx
-            .metashape_project.files
-            metashape_processing_report
-            (optionally: metashape_project.log)
+            {metashape_project_name}.psx
+            .{metashape_project_name}.files
+            {metashape_project_name}_processing_report.pdf
+            (optionally: {metashape_project_name}.log)
 </pre></div>
 </div>
-<p>This is a standardised folder structure that (as we will see later on) is also used for automated processing.</p>
+<p>The standardised project structure (as we will see later on) is also used for automated processing.</p>
+</div>
+<div class="section" id="photo-set">
+<h3>Photo set<a class="headerlink" href="#photo-set" title="Permalink to this headline">¶</a></h3>
+<p>Having created the standardised project structure, proceed with extracting all your taken images to the following directory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">project_directory</span><span class="p">}</span>\<span class="n">data_directory</span>\<span class="mi">100</span><span class="n">MEDIA</span>
+</pre></div>
+</div>
 <div class="suggestion admonition">
-<p class="admonition-title">Got your own data?</p>
-<p>Feel free to follow along this tutorial with your own data set (as is the requirement for <a class="reference internal" href="../l2/exercise2.html"><span class="doc std std-doc">exercise2</span></a>).
-Keep in mind, however, to use the standardised folder structure.
-Furthermore, depending on the data set, certain changes may have to be made to allow for the processing to be finished within a reasonable time.
-That’s part of the fun :)</p>
+<p class="admonition-title">More than 999 images?</p>
+<p>In case your project contains more than 999 images, make sure to utilise multiple media folders in the <em>data_directory</em>.
+In other words, create as many <em>{XXX}MEDIA</em> subdirectories as needed, and limit their contents to 999 images.
+This is especially useful when dealing with non-unique filenames, as the different directories prevent files being overwritten.</p>
+</div>
+<div class="suggestion admonition">
+<p class="admonition-title">Want to follow along without your own data?</p>
+<p>Go ahead and download the package, then extract the archive’s contents as per the above.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">URL</span><span class="p">:</span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="adding-photos">
@@ -508,7 +522,7 @@ This may take a while, but assuming there is sufficient overlap between the data
 If not, one can select this by clicking the four-dotted icon in the menu.</p>
 <div class="figure align-default" id="align-photos">
 <img alt="../../../_images/0343f82c.png" src="../../../_images/0343f82c.png" />
-<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">The <em>Align Photos</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#align-photos" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">The <em>Align Photos</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#align-photos" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition-down-sampling admonition">
 <p class="admonition-title">Down-sampling</p>
@@ -525,7 +539,7 @@ A <a class="reference internal" href="#optimize-cameras"><span class="std std-re
 Most important here is to at least select make sure that the <em>Estimate tie point covariance</em> is enabled.</p>
 <div class="figure align-default" id="optimize-cameras">
 <img alt="../../../_images/5ca3a257.png" src="../../../_images/5ca3a257.png" />
-<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">The <em>Optimize Camera Alignment</em> dialog after opening it from the <em>Tools</em> menu.</span><a class="headerlink" href="#optimize-cameras" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">The <em>Optimize Camera Alignment</em> dialog after opening it from the <em>Tools</em> menu.</span><a class="headerlink" href="#optimize-cameras" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
@@ -540,7 +554,7 @@ Keeping in mind what we discussed above, make sure to select <em>Medium</em> for
 <p><em>Reuse depth maps</em> can only be selected if depth maps have been previously calculated for the specified quality.</p>
 <div class="figure align-default" id="dense-cloud">
 <img alt="../../../_images/d2a861b0.png" src="../../../_images/d2a861b0.png" />
-<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">The <em>Build dense cloud</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#dense-cloud" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">The <em>Build dense cloud</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#dense-cloud" title="Permalink to this image">¶</a></p>
 </div>
 <p>Once processing is done, you’ll be able to show the <em>dense point cloud</em> on the screen in the <em>Model</em> tab.
 If not, one can visualise the <em>dense point cloud</em> by clicking on the nine-dotted icon in the menu.
@@ -593,7 +607,7 @@ Depth maps may lead to better results when dealing with a big number of minor de
 <p>After selecting <em>Build Mesh</em> from the <em>Workflow</em> menu, you will be able to chose either in the <a class="reference internal" href="#build-mesh"><span class="std std-ref">dialog</span></a> that pops up for <em>Source data:</em>.</p>
 <div class="figure align-default" id="build-mesh">
 <img alt="../../../_images/9b4ac0b8.png" src="../../../_images/9b4ac0b8.png" />
-<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">The <em>Build mesh</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#build-mesh" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">The <em>Build mesh</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#build-mesh" title="Permalink to this image">¶</a></p>
 </div>
 <p>Other important parameters here are the <em>Quality</em> and <em>Face count</em> parameters.
 These govern the quality of the generated mesh.
@@ -609,10 +623,10 @@ The next step involves generating a texture and placing this “image” onto th
 <div class="section" id="texture-building">
 <h4>Texture building<a class="headerlink" href="#texture-building" title="Permalink to this headline">¶</a></h4>
 <p>We can build the textures by clicking on the <em>Build Texture</em> command from the <em>Workflow</em> menu.
-While the dialog has many different parameters, the most important are highlighted in <a class="reference internal" href="#build-texture"><span class="std std-numref">Fig. 8</span></a>.</p>
+While the dialog has many different parameters, the most important are highlighted in <a class="reference internal" href="#build-texture"><span class="std std-numref">Fig. 9</span></a>.</p>
 <div class="figure align-default" id="build-texture">
 <img alt="../../../_images/7237597c.png" src="../../../_images/7237597c.png" />
-<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">The <em>Build texture</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#build-texture" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">The <em>Build texture</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#build-texture" title="Permalink to this image">¶</a></p>
 </div>
 <p>Here <em>Texture size/count</em> determines the quality of the texture.
 Keep in mind that anything over 16384 can very quickly lead to very, very large file sizes on your harddisk.
@@ -627,7 +641,7 @@ Once again we can select the parameters for the processing step through the <a c
 <p>The most import parameter here is the <em>Pixel size (m)</em>, which should never be set than lower than the pixel size available to the model (= the default value shown when opening the dialog).</p>
 <div class="figure align-default" id="build-tiled-model">
 <img alt="../../../_images/6c44a1dc.png" src="../../../_images/6c44a1dc.png" />
-<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">The <em>Build Tiled Model</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#build-tiled-model" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">The <em>Build Tiled Model</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#build-tiled-model" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="documenting-processing-parameters">
@@ -662,10 +676,10 @@ Have a look and familiarise yourself with it.</p>
 <h4>In-programme parameters<a class="headerlink" href="#in-programme-parameters" title="Permalink to this headline">¶</a></h4>
 <p>One does not always need to export the processing report to obtain the overview of parameters.
 Handily, Metashape also provides an overview within the <em>Workspace</em> panel after having selected an item in the chunk.
-An example of this is depicted in <a class="reference internal" href="#internal-parameters"><span class="std std-numref">Fig. 10</span></a>.</p>
+An example of this is depicted in <a class="reference internal" href="#internal-parameters"><span class="std std-numref">Fig. 11</span></a>.</p>
 <div class="figure align-default" id="internal-parameters">
 <img alt="../../../_images/5201e3e2.png" src="../../../_images/5201e3e2.png" />
-<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">An example of the internal <em>Workspace</em> panel, including the parameters and processing metadata that is available from within the Metashape project interface.</span><a class="headerlink" href="#internal-parameters" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">An example of the internal <em>Workspace</em> panel, including the parameters and processing metadata that is available from within the Metashape project interface.</span><a class="headerlink" href="#internal-parameters" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -707,8 +721,8 @@ Furthermore, one should <em><strong>always document each and every processing st
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="sfm_photogrammetry.html" title="previous page">SfM photogrammetry</a>
-    <a class='right-next' id="next-link" href="../l2/overview.html" title="next page">Hands-on experience</a>
+    <a class='left-prev' id="prev-link" href="exercise1.html" title="previous page">Exercise 1 - learning the ropes of SfM photogrammetry</a>
+    <a class='right-next' id="next-link" href="../l2/overview.html" title="next page">Geo-referencing</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
