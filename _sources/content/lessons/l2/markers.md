@@ -119,6 +119,37 @@ This allows for far more freedom, including the automated generation of multiple
 
 ### Manual detection
 
+In order to manually detect GCPs, one first has to create a new Agisoft Metashape project and import all the taken images.
+Then one can browse through the images and manually look through all the images for the GCP markers.
+Once identified, proceed by right clicking on the point of interest to open the {ref}`marker dialog <marker_dialog>`.
+Here, one can either place a new marker, or choose to place a previously-added marker.
+
+```{figure} assets/marker_dialog.png
+:name: marker_dialog
+
+Dialog for adding or placing specific markers.
+Be advised: one can only place specific markers after having added them previously.
+```
+
+When added, a *green* flag appears that can be moved around by *click-holding* the left mouse button.
+This is especially useful for finetuning locations.
+
+Once done, proceed to the *Reference panel* and find that the markers you added have been added to the project - albeit without real world positional values.
+Also {ref}`shown <marker_reference>` are the number of projections, accuracy and error, of which the latter two also remain blank.
+
+````{figure} assets/marker_reference.png
+:name: marker_reference
+
+A marker with ID *point 1* has been added to the project.
+Thusfar, no positional information is available, though the metadata shows that the marker has been identified in a single image (*Projections*).
+````
+
+Positional information can either be added directly into the *Reference* panel by double clicking one of the fields, as shown in {numref}`metashape_reference_panel_markers`.
+
+```{figure} assets\metashape_reference_panel_markers.gif
+:name: metashape_reference_panel_markers
+```
+
 #### Automated detection
 
 A more significant difference exists in the way both marker types are automatically detected.
@@ -135,6 +166,8 @@ To optimise marker detection, it is advised to set the *Marker type* parameter e
 Metashape GUI option for marker detection.
 ```
 
+Once done, all markers should
+
 ##### ArUco
 
 ```{admonition} Python installation required
@@ -148,7 +181,7 @@ Prior to automated detection, we will have to configure a settings or parameter 
 Head over to the [tutorial](../l4/python.ipynb) and put together a minimal working example (MWE) configuration consisting of:
 
 - [minimal configuration parameters](../l4/python#minimal-yaml-configuration-file)
-- [Add photos](../l4/python.md#additional-parameters)
+- [Add photos](../l4/python#additional-parameters)
 - [GCPs - detection](../l4/python#additional-parameters)
 - [GCPs - add to project additional parameters](../l4/python#additional-parameters)
 
