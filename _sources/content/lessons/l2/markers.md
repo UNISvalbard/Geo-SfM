@@ -12,7 +12,7 @@ kernelspec:
   name: python3
 ---
 
-# GCP markers - generation and detection
+# GCP tutorial
 
 While other GCP marker types exist, we here focus on the use of either ArUco or Agisoft Metashape markers.
 Both marker types are of the binary fiducial sort, and, in principal, machine readable.  

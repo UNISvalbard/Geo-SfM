@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ground control points &#8212; Geo-SfM Course Beta</title>
+    <title>Ground control points (GCPs) &#8212; Geo-SfM Course Beta</title>
     
   <link rel="stylesheet" href="../../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -128,7 +128,7 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Ground control points
+   Ground control points (GCPs)
   </a>
  </li>
  <li class="toctree-l1">
@@ -138,7 +138,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="markers.html">
-   GCP markers - generation and detection
+   GCP tutorial
   </a>
  </li>
 </ul>
@@ -346,8 +346,8 @@
         
               <div>
                 
-  <div class="section" id="ground-control-points">
-<h1>Ground control points<a class="headerlink" href="#ground-control-points" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="ground-control-points-gcps">
+<h1>Ground control points (GCPs)<a class="headerlink" href="#ground-control-points-gcps" title="Permalink to this headline">¶</a></h1>
 <p>Ground control points (GCPs) are locations that we can track with high precision and accuracy between the targeted object and a selection of our photos.
 We can use these to provide “exact” real world coordinates to our reconstructed models, as well as to determine the accuracy and impact of processing parameters.</p>
 <p>In a mapping survey, GCPs are points which can be precisely pinpointed.
@@ -408,7 +408,7 @@ Would you be able to eyeball placement of the measurement and be within the erro
 With each subsequent marker in a set slightly differing, and therefore considered unique, these synthetic markers are great for use as GCPs.</p>
 <div class="figure align-default" id="common-gcps">
 <img alt="../../../_images/common_gcps.png" src="../../../_images/common_gcps.png" />
-<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">An example of GCP markers commonly employed in photogrammetry applications <span class="bibtex" id="id1">[cucciACCURATEOPTICALTARGET2016]</span>.</span><a class="headerlink" href="#common-gcps" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">An example of GCP markers commonly employed in photogrammetry applications <a class="bibtex reference internal" href="../about/zbiblio.html#cucciaccurateopticaltarget2016" id="id1">[4]</a>.</span><a class="headerlink" href="#common-gcps" title="Permalink to this image">¶</a></p>
 </div>
 <p>No longer featuring a plane of symmetry, one can now certainly select a point where the real world coordinates can be measured and later the corresponding pixels in the photo can be selected.</p>
 <div class="suggestion admonition">
@@ -421,11 +421,11 @@ If you decide to measure the first marker in the top right corner, then make sur
 <h3>Computer readability<a class="headerlink" href="#computer-readability" title="Permalink to this headline">¶</a></h3>
 <p>The standardised uniqueness of binary fiducial markers furthermore allows for automisation of the marker detection step.
 While not an issue when dealing with just a handful of photos, highly detailed surveys quickly expand the photo collection to hundreds, if not thousands, of photos.</p>
-<p>While Agisoft Metashape provides a set of GCPs internally, one of the most popular marker sets is the <a class="reference external" href="http://www.uco.es/investiga/grupos/ava/node/26">ArUco library</a> <span class="bibtex" id="id2">[garrido-juradoAutomaticGenerationDetection2014]</span>.
+<p>While Agisoft Metashape provides a set of GCPs internally, one of the most popular marker sets is the <a class="reference external" href="http://www.uco.es/investiga/grupos/ava/node/26">ArUco library</a> <a class="bibtex reference internal" href="../about/zbiblio.html#garrido-juradoautomaticgenerationdetection2014" id="id2">[5]</a>.
 In addition to exhibiting a standardised uniqueness, the ArUco-based markers are square markers and thus preferred as a single marker provides enough correspondences (i.e., its four corners) to obtain the camera pose in augmented reality applications.</p>
 <div class="figure align-default" id="aruco-markers">
 <img alt="../../../_images/aruco_markers.png" src="../../../_images/aruco_markers.png" />
-<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">Example of ArUco marker images <span class="bibtex" id="id3">[garrido-juradoAutomaticGenerationDetection2014]</span>.</span><a class="headerlink" href="#aruco-markers" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">Example of ArUco marker images <a class="bibtex reference internal" href="../about/zbiblio.html#garrido-juradoautomaticgenerationdetection2014" id="id3">[5]</a>.</span><a class="headerlink" href="#aruco-markers" title="Permalink to this image">¶</a></p>
 </div>
 <div class="suggestion admonition">
 <p class="admonition-title">Python-based automated marker detection</p>
@@ -446,7 +446,7 @@ On the other hand, GCP markers for hand-sized sample digitisation can be as smal
 </div>
 <div class="section" id="placement-of-gcps-in-terms-of-highest-accuracy">
 <h2>Placement of GCPs in terms of highest accuracy<a class="headerlink" href="#placement-of-gcps-in-terms-of-highest-accuracy" title="Permalink to this headline">¶</a></h2>
-<p>An extensive review on the accuracy of GCPs types is conducted by <span class="bibtex" id="id4">[martinez-carricondoAssessmentUAVphotogrammetricMapping2018]</span> and <span class="bibtex" id="id5">[vegaAssessmentPhotogrammetricMapping2017]</span>, and we here only focus on the take-home messages.
+<p>An extensive review on the accuracy of GCPs types is conducted by <a class="bibtex reference internal" href="../about/zbiblio.html#martinez-carricondoassessmentuavphotogrammetricmapping2018" id="id4">[6]</a> and <span class="bibtex" id="id5">[vegaAssessmentPhotogrammetricMapping2017]</span>, and we here only focus on the take-home messages.
 These conclusions are based on an accuracy-assessment that seeks minimal root mean square errors (RMSEs) for the GCPs’s longitude, latitude, and altitude.</p>
 <p>Prior to implementing GCPs, one always has to assess the need of precision and accuracy in terms of cost, i.e., time.
 In a timeless setting, one could set up an infinite amount of GCPs (<a class="reference internal" href="#gcp-locations"><span class="std std-numref">Fig. 15</span></a>, top row) and obtain the smallest GCP RMSEs in each direction.
@@ -454,10 +454,10 @@ However, when time is of the essence, there appears to be a cut-off point at whi
 As a result, efficiency can be gained by reducing the number of GCPs (<a class="reference internal" href="#gcp-locations"><span class="std std-numref">Fig. 15</span></a>, second row).</p>
 <div class="figure align-default" id="gcp-locations">
 <img alt="../../../_images/gcp_locations.png" src="../../../_images/gcp_locations.png" />
-<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">Five different GCP distribution types and an example for the combination of 16 GCPs (second row). (a) edge distribution, (b) central distribution, (c) corner distribution (equivalent for all four corners), (d) stratified distribution, (e) random distribution. In general, a combination of the edge and stratified distribution (d) gives rise to the lowest overall errors <span class="bibtex" id="id6">[martinez-carricondoAssessmentUAVphotogrammetricMapping2018]</span>.</span><a class="headerlink" href="#gcp-locations" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">Five different GCP distribution types and an example for the combination of 16 GCPs (second row). (a) edge distribution, (b) central distribution, (c) corner distribution (equivalent for all four corners), (d) stratified distribution, (e) random distribution. In general, a combination of the edge and stratified distribution (d) gives rise to the lowest overall errors <a class="bibtex reference internal" href="../about/zbiblio.html#martinez-carricondoassessmentuavphotogrammetricmapping2018" id="id6">[6]</a>.</span><a class="headerlink" href="#gcp-locations" title="Permalink to this image">¶</a></p>
 </div>
 <p>Placing the GCPs around the edges and in a stratified manner throughout the survey area results in the lowest overall errors.
-Therefore, best accuracies are achieved <strong>(1) placing GCPs around the edge of the study area</strong>, but it is also essential to <strong>(2) place GCPs inside the area with stratified distribution to optimize vertical accuracy</strong> <span class="bibtex" id="id7">[martinez-carricondoAssessmentUAVphotogrammetricMapping2018]</span>.
+Therefore, best accuracies are achieved <strong>(1) placing GCPs around the edge of the study area</strong>, but it is also essential to <strong>(2) place GCPs inside the area with stratified distribution to optimize vertical accuracy</strong> <a class="bibtex reference internal" href="../about/zbiblio.html#martinez-carricondoassessmentuavphotogrammetricmapping2018" id="id7">[6]</a>.
 As for the optimal number of GCPs in the stratified interior, try to aim for a density of around 0.5-1 GCP per hectare to minimise altimetry errors, and make sure to place GCPs throughout the entire altimetry-interval, e.g., covering both ridges and valleys.</p>
 <div class="suggestion admonition">
 <p class="admonition-title">Hand-sized samples</p>

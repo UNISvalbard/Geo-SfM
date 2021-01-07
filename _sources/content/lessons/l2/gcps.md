@@ -1,4 +1,4 @@
-# Ground control points
+# Ground control points (GCPs)
 
 Ground control points (GCPs) are locations that we can track with high precision and accuracy between the targeted object and a selection of our photos.
 We can use these to provide "exact" real world coordinates to our reconstructed models, as well as to determine the accuracy and impact of processing parameters.
