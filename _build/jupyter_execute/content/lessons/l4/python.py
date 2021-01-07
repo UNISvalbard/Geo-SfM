@@ -16,7 +16,7 @@
 # We here showcase the Automated Metashape scripts through use of Jupyter lab.
 # When ready, open Anaconda Prompt again, change into the *automated_metashape* environment, and run *Jupyter lab*.
 # 
-# ```{code-cell}
+# ```markdown
 # conda activate automated_metashape
 # jupyter lab
 # ```
@@ -41,7 +41,7 @@
 # └───────config (remains empty for now)
 # ```
 # 
-# Here we can copy/paste the below (into individual cells); 
+# Here we can copy/paste the below (into individual cells);
 # then proceed by running each cell by either clicking the *play* button or shift-enter whilst having click on the cell.
 
 # In[1]:
@@ -62,7 +62,7 @@ AP(config_file)
 # 
 # ### Minimal YAML configuration file
 # 
-# The automated processing scripts rely on a [YAML](https://yaml.org/) configuration file. 
+# The automated processing scripts rely on a [YAML](https://yaml.org/) configuration file.
 # YAML (or *YAML Ain't Markup Language*) is a human friendly data serialization standard for programming languages.
 # 
 # Proceed by creating a new file in the *config* directory created previously and give it the *.yaml* extension.
@@ -140,7 +140,7 @@ AP(config_file)
 # ```yaml
 # alignPhotos: # (Metashape: alignPhotos)
 #     enabled: True
-#     downscale: 1 # Recommended: 1. How much to coarsen the photos when searching for tie points. 
+#     downscale: 1 # Recommended: 1. How much to coarsen the photos when searching for tie points.
 #     adaptive_fitting: True # Recommended: True. Should the camera lens model be fit at the same time as aligning photos?
 #     mask_tiepoints: True
 #     double_alignment: True
@@ -188,8 +188,8 @@ AP(config_file)
 # ```
 # 
 # ```{admonition} filter_mode
-# Options are NoFiltering, MildFiltering, ModerateFiltering, AggressiveFiltering. 
-# Aggressive filtering removes detail and makes worse DEMs (at least for forest). 
+# Options are NoFiltering, MildFiltering, ModerateFiltering, AggressiveFiltering.
+# Aggressive filtering removes detail and makes worse DEMs (at least for forest).
 # NoFiltering takes very long. In trials, it never completed.
 # ```
 # ````
@@ -272,12 +272,14 @@ AP(config_file)
 # 
 # After copying over the desired parameter-sections, update the config_file path correspondingly and run the cell again.
 # It should now result in a successful runtime.
-# 
-# ```python
-# config_file_path = "../config/photogrammetry_processing_settings.yml"
-# AP(config_file)
-# ```
-# 
+
+# In[3]:
+
+
+config_file_path = "../config/photogrammetry_processing_settings.yml"
+AP(config_file)
+
+
 # This assumes *../config/photogrammetry_processing_settings.yml* consist of the following:
 # 
 # ```yaml
@@ -304,4 +306,3 @@ AP(config_file)
 # It even has all the implemted YAML parameter-sections, software versions, and computer specs.
 # It can be easily used to reprocess and exactly repeat the processing.
 # ```
-# 

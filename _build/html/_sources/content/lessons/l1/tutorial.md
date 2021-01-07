@@ -1,9 +1,5 @@
 # Metashape Tutorial
 
-```{admonition} Deadline
-Please complete this tutorial **during today's session**.
-```
-
 This tutorial (and exercise) features the following learning goals:
 - You will **learn the basics of Agisoft Metashape**
 - You will **use Agisoft Metashape to digitise samples and/or outcrops**
@@ -42,49 +38,78 @@ In processing this is the key dilemma, and requires you to think about the outpu
 ```{admonition} Further reading
 :class: tip
 The guidelines below are based on the official Agisoft *3D model reconstruction* tutorial.
-This tutorial, as well as more in-depth help, can be visited here:
-https://agisoft.freshdesk.com/support/solutions/articles/31000152092
+This tutorial, as well as more in-depth help, can be visited [here](https://agisoft.freshdesk.com/support/solutions/articles/31000152092).
 ```
+
+### A standardised project environment
+
+We will be using a standardised project environment throughout this course.
+It is recommended to use this setup (or something similar) throughout all future projects as well.
+The use of this standardised project setup is furthermore a requirement for digital models to be uploaded to [the Svalbox DB](http://svalbox.no).
+
+Proceed by creating the following folder structure in the projects directory (i.e., the directory where you have all your projects stored together).
+Herein folders are named without extensions, and filenames are given extensions.
+Text between {} indicates variable names.
+
+```
+{project_directory} (The folder with all files related to this project)
+|   overview_img.{ext}
+|   description.txt
+├───config_directory (where you place your configuration files)
+        {cfg_0001}.yml
+        {cfg_0002}.yml
+        ...
+├───data_directory (where you unzipped the files to)
+├───────100MEDIA (The folder in which all the images reside)
+|           {img_0001}.{ext}
+|           {img_0002}.{ext}
+|           ...
+├───────101MEDIA (The folder in which all the images reside)
+|           {img_0001}.{ext}
+|           {img_0002}.{ext}
+|           ...
+|       ...
+├───────199MEDIA (The folder in which all the images reside)
+|           {img_0001}.{ext}
+|           {img_0002}.{ext}
+|           ...
+├───────gcps
+|           (We'll get back to this in a later session)
+└───────metashape (This is where you save your Agisoft Metashape projects to)
+            {metashape_project_name}.psx
+            .{metashape_project_name}.files
+            {metashape_project_name}_processing_report.pdf
+            (optionally: {metashape_project_name}.log)
+```
+
+The standardised project structure (as we will see later on) is also used for automated processing.
 
 ### Photo set
 
-We'll be using a standardised data set that can be retrieved from the following URL:
+Having created the standardised project structure, proceed with extracting all your taken images to the following directory:
+
+```
+{project_directory}\data_directory\100MEDIA
+```
+
+```{admonition} More than 999 images?
+:class: suggestion
+
+In case your project contains more than 999 images, make sure to utilise multiple media folders in the *data_directory*.
+In other words, create as many *{XXX}MEDIA* subdirectories as needed, and limit their contents to 999 images.
+This is especially useful when dealing with non-unique filenames, as the different directories prevent files being overwritten.
+```
+
+````{admonition} Want to follow along without your own data?
+:class: suggestion
+
+Go ahead and download the package, then extract the archive's contents as per the above.
 
 ```
 URL:
 ```
 
-Go ahead and download the package, then extract the archive's contents.
-As you will see, we are aiming to have the following folder structure:
-
-```
-project_directory (The folder with all files related to this project)
-|   overview_img
-|   description.txt
-├───data_directory (where you unzipped the files to)
-├───────100MEDIA (The folder in which all the images reside)
-|           DJI_0001.JPG
-|           DJI_0002.JPG
-|           ...
-├───────gcps
-|           (We'll get back to this in a later session)
-└───────metashape (This is where you save your Agisoft Metashape projects to)
-            metashape_project.psx
-            .metashape_project.files
-            metashape_processing_report
-            (optionally: metashape_project.log)
-```
-
-This is a standardised folder structure that (as we will see later on) is also used for automated processing.
-
-```{admonition} Got your own data?
-:class: suggestion
-
-Feel free to follow along this tutorial with your own data set (as is the requirement for [exercise2](../l2/exercise2 "exercise2")).
-Keep in mind, however, to use the standardised folder structure.
-Furthermore, depending on the data set, certain changes may have to be made to allow for the processing to be finished within a reasonable time.
-That's part of the fun :)
-```
+````
 
 ### Adding photos
 
@@ -311,7 +336,7 @@ Handily, Metashape also provides an overview within the *Workspace* panel after 
 An example of this is depicted in {numref}`internal_parameters`.
 
 ```{figure} assets/5201e3e2.png
-:name: interal_parameters
+:name: internal_parameters
 
 An example of the internal *Workspace* panel, including the parameters and processing metadata that is available from within the Metashape project interface.
 ```

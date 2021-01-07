@@ -1,38 +1,34 @@
-- file: landing-page
+- file: landing-page.md
 
 - part: Session 1
   chapters:
-  - file: /content/lessons/l1/sfm_photogrammetry
-  - file: /content/lessons/l1/tutorial
+  - file: /content/lessons/l1/sfm_photogrammetry.md
+  - file: /content/lessons/l1/exercise1.md
+  - file: /content/lessons/l1/tutorial.md
 
 - part: Session 2
   chapters:
-  - file: /content/lessons/l2/overview
-  - file: /content/lessons/l2/exercise2
-
-- part: Session 3
-  chapters:
-  - file: /content/lessons/l3/overview
-  - file: /content/lessons/l3/gcps
-  - file: /content/lessons/l3/aruco
-  - file: /content/lessons/l3/exercise3
+  - file: /content/lessons/l2/overview.md
+  - file: /content/lessons/l2/gcps.md
+  - file: /content/lessons/l2/exercise2.md
+  - file: /content/lessons/l2/markers.md
 
 - part: Session 4
   chapters:
-  - file: /content/lessons/l4/overview
-  - file: /content/lessons/l4/Batch
-  - file: /content/lessons/l4/python
+  - file: /content/lessons/l4/overview.md
+  - file: /content/lessons/l4/Batch.md
+  - file: /content/lessons/l4/python.md
 
 - part: Session 5
   chapters:
-  - file: /content/lessons/l5/overview
-  - file: /content/lessons/l5/from_metashape_to_geomodel
-  - file: /content/lessons/l5/quantifying_digital_samples
-  - file: /content/lessons/l5/digital_elevation_models
+  - file: /content/lessons/l5/overview.md
+  - file: /content/lessons/l5/from_metashape_to_geomodel.md
+  - file: /content/lessons/l5/quantifying_digital_samples.md
+  - file: /content/lessons/l5/digital_elevation_models.md
 
 - part: Resources
   chapters:
-  - file: /content/lessons/suppl/best_practices
-  - file: /content/lessons/about/seismic_lab
-  - file: /content/lessons/about/software
-  - file: /content/lessons/about/zbiblio
+  - file: /content/lessons/suppl/best_practices.md
+  - file: /content/lessons/about/seismic_lab.md
+  - file: /content/lessons/about/software.md
+  - file: /content/lessons/about/zbiblio.md

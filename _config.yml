@@ -21,3 +21,4 @@ execute:
 
 parse:
   myst_extended_syntax: true
+  myst_header_anchors: 4
