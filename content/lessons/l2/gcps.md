@@ -101,7 +101,7 @@ Example of ArUco marker images {cite}`garrido-juradoAutomaticGenerationDetection
 :class: suggestion
 
 ArUco markers (50x50 cm) printed on canvas are available for use in the UNIS Arctic Geology department.
-Marker detection hereof can be done by using the scripts described in {ref}`the Python-automisation chapter <../l4/python.ipynb>`.
+Marker detection hereof can be done by using the scripts described in {ref}`the Python-automisation chapter <../l3/python.ipynb>`.
 ```
 
 ### GCP size

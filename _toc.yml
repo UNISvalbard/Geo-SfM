@@ -15,9 +15,9 @@
 
 - part: Session 4
   chapters:
-  - file: /content/lessons/l4/overview.md
-  - file: /content/lessons/l4/Batch.md
-  - file: /content/lessons/l4/python.md
+  - file: /content/lessons/l3/overview.md
+  - file: /content/lessons/l3/Batch.md
+  - file: /content/lessons/l3/python.md
 
 - part: Session 5
   chapters:

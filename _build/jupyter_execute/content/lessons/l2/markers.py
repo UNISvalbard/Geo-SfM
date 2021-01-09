@@ -181,15 +181,15 @@
 # The following steps require the [installation of Python and the automated metashape scripts](../about/software#python).
 # ```
 # 
-# Prior to automated detection, we will have to configure a settings or parameter file for the [automated metashape scripts](../l4/python.ipynb).
+# Prior to automated detection, we will have to configure a settings or parameter file for the [automated metashape scripts](../l3/python.ipynb).
 # 
-# Head over to the [tutorial](../l4/python.ipynb) and put together a minimal working example (MWE) configuration consisting of:
+# Head over to the [tutorial](../l3/python.ipynb) and put together a minimal working example (MWE) configuration consisting of:
 # 
-# - [minimal configuration parameters](../l4/python#minimal-yaml-configuration-file)
-# - [Add photos](../l4/python#additional-parameters)
-# - [GCPs - detection](../l4/python#additional-parameters)
-# - [GCPs - add to project additional parameters](../l4/python#additional-parameters)
+# - [minimal configuration parameters](../l3/python#minimal-yaml-configuration-file)
+# - [Add photos](../l3/python#additional-parameters)
+# - [GCPs - detection](../l3/python#additional-parameters)
+# - [GCPs - add to project additional parameters](../l3/python#additional-parameters)
 # 
 # Make sure to place this file in the *config directory* of the [standardised project environment](../l1/tutorial#a-standardised-project-environment).
 # 
-# Then proceed with the [Python tutorial](../l4/python.md) to subsequently add all images to the Metashape project; to detect the GCPs in all the images; to add the detected GCPs and corresponding real world coordinates to the Metashape project.
+# Then proceed with the [Python tutorial](../l3/python.md) to subsequently add all images to the Metashape project; to detect the GCPs in all the images; to add the detected GCPs and corresponding real world coordinates to the Metashape project.
