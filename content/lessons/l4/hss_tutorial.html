@@ -193,6 +193,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../suppl/metadata_lists.html">
+   Meta data lists for archiving
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../about/seismic_lab.html">
    Seismic lab (Signehamna)
   </a>
@@ -317,6 +322,10 @@
 </div>
 <div class="section" id="digital-bananas">
 <h2>Digital bananas<a class="headerlink" href="#digital-bananas" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-deadline admonition">
+<p class="admonition-title">Deadline</p>
+<p>Please complete this exercise <strong>by the end of the current session</strong>.</p>
+</div>
 <p>Agisoft has been so kind to publish a tutorial on the digitisation of hand-sized samples, which we will follow and adept for to-scale digitisation.</p>
 <div class="sidebar">
 <p class="sidebar-title">Banana for Scale</p>
@@ -328,56 +337,8 @@
 </ul>
 </div>
 <p>Have a look at the following <a class="reference external" href="https://agisoft.freshdesk.com/support/solutions/articles/31000158967-aligning-turntable-photos-with-background-suppression-from-single-mask-in-agisoft-metashape">Metashape tutorial</a>, and proceed by digitising either the <em>banana</em> or the <em>water jug</em>.
-All required material is linked to from within the tutorial.
-As an added exercise, make sure to create the <a class="reference external" href="../l1/tutorial#a-standardised-project-environment">standardised project directory</a> and fill out the metadata form found below.</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is an example yaml configuration for the archiving of a digitised rock/handsample.</span>
-<span class="c1"># The name is automatically generated as a function of locality + rock_type.</span>
-<span class="c1"># E.g.: Maaykedalen shale.</span>
-
-<span class="c1"># Geological information</span>
-<span class="nt">geo_rock_type</span><span class="p">:</span>  <span class="c1"># shale, sandstone, etc. keep all lowercase. If multiple, use the itemisation below instead and leave empty.</span>
-<span class="c1">#    - shale</span>
-<span class="c1">#    - sandstone</span>
-<span class="nt">geo_supergroup</span><span class="p">:</span>
-<span class="nt">geo_group</span><span class="p">:</span>
-<span class="nt">geo_formation</span><span class="p">:</span>
-<span class="nt">geo_member</span><span class="p">:</span>
-<span class="nt">geo_bed</span><span class="p">:</span>
-
-<span class="c1"># Sample information</span>
-<span class="nt">sample_age</span><span class="p">:</span>
-<span class="nt">sample_description</span><span class="p">:</span>  
-<span class="nt">sample_type</span><span class="p">:</span> <span class="c1"># drill core, pebble, etc.</span>
-
-<span class="c1"># Sampling data</span>
-<span class="nt">sampling_date</span><span class="p">:</span>  <span class="c1">#YYYYMMDD</span>
-<span class="nt">sampling_contact</span><span class="p">:</span>  <span class="c1"># Person who sampled it</span>
-<span class="nt">sampling_longitude_wgs84</span><span class="p">:</span>  <span class="c1"># DD.decimals in WGS84</span>
-<span class="nt">sampling_latitude_wgs84</span><span class="p">:</span>  <span class="c1"># DD.decimals in WGS84</span>
-<span class="nt">sampling_locality</span><span class="p">:</span>
-<span class="nt">sampling_area</span><span class="p">:</span>
-<span class="nt">sampling_region</span><span class="p">:</span>
-
-<span class="nt">storage_location</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">non-existing</span> <span class="c1"># Description on where&amp;how the data has been stored, or used for e.g. experiments.</span>
-<span class="nt">storage_analysis</span><span class="p">:</span>
-
-<span class="c1"># Processing data/3d models:</span>
-<span class="nt">digital_images_used</span><span class="p">:</span>
-<span class="nt">digital_camera_used</span><span class="p">:</span>
-<span class="nt">digital_lens_used</span><span class="p">:</span>
-<span class="nt">digital_imaging_distance</span><span class="p">:</span>  <span class="c1">#i.e., flying altitude from report</span>
-<span class="nt">digital_ground_resolution</span><span class="p">:</span>
-<span class="nt">digital_sketchfab_id</span><span class="p">:</span>
-<span class="nt">digital_control_point_no</span><span class="p">:</span>
-
-<span class="c1"># remaining metadata:</span>
-<span class="nt">unis_project_no</span><span class="p">:</span>
-<span class="nt">unis_project_campaign</span><span class="p">:</span> <span class="c1"># Same as in the project_config_setting</span>
-<span class="nt">owner</span><span class="p">:</span>
-<span class="nt">data_path</span><span class="p">:</span>
-<span class="nt">comment</span><span class="p">:</span>
-</pre></div>
-</div>
+All required material is linked to from within the tutorial.</p>
+<p>As an added exercise, make sure to create the <a class="reference external" href="../l1/tutorial#a-standardised-project-environment">standardised project directory</a> and fill out the <a class="reference internal" href="../suppl/metadata_lists.html"><span class="doc std std-doc">hand-sized sample metadata form</span></a> found under resources.</p>
 </div>
 </div>
 
