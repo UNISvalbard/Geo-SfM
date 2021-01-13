@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Automation &#8212; Geo-SfM Course Beta</title>
+    <title>Batch-based processing through Metashape GUI &#8212; Geo-SfM Course Beta</title>
     
   <link rel="stylesheet" href="../../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -55,8 +55,8 @@
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Batch-based manual processing" href="Batch.html" />
-    <link rel="prev" title="GCP markers - generation and detection" href="../l2/markers.html" />
+    <link rel="next" title="Python-based standardised processing" href="python.html" />
+    <link rel="prev" title="Automation" href="overview.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -128,7 +128,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../l2/gcps.html">
-   Ground control points
+   Ground control points (GCPs)
   </a>
  </li>
  <li class="toctree-l1">
@@ -138,7 +138,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../l2/markers.html">
-   GCP markers - generation and detection
+   GCP tutorial
   </a>
  </li>
 </ul>
@@ -148,46 +148,19 @@
  </span>
 </p>
 <ul class="current nav sidenav_l1">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="overview.html">
    Automation
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Batch.html">
-   Batch-based manual processing
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Batch-based processing through Metashape GUI
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="python.html">
    Python-based standardised processing
-  </a>
- </li>
-</ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  Session 5
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../l5/overview.html">
-   Overview
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../l5/from_metashape_to_geomodel.html">
-   From Metashape to Geomodel
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../l5/quantifying_digital_samples.html">
-   What else can we use digital samples for?
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../l5/digital_elevation_models.html">
-   DEMs
   </a>
  </li>
 </ul>
@@ -257,7 +230,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../_sources/content/lessons/l3/overview.md"><button type="button"
+        <a class="dropdown-buttons" href="../../../_sources/content/lessons/l3/Batch.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -277,7 +250,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/UNISvalbard/Geo-SfM/issues/new?title=Issue%20on%20page%20%2Fcontent/lessons/l3/overview.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/UNISvalbard/Geo-SfM/issues/new?title=Issue%20on%20page%20%2Fcontent/lessons/l3/Batch.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -305,8 +278,18 @@
         
               <div>
                 
-  <div class="section" id="automation">
-<h1>Automation<a class="headerlink" href="#automation" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="batch-based-processing-through-metashape-gui">
+<h1>Batch-based processing through Metashape GUI<a class="headerlink" href="#batch-based-processing-through-metashape-gui" title="Permalink to this headline">¶</a></h1>
+<p>Batch processing can be initiated through the Metashape GUI by selecting <em>Workflow/Batch Process..</em>.
+The resulting <span class="xref std std-ref">dialog &lt;batch_gui</span> allows for most Metashape processing steps to be sequentially automated, i.e., one after another.</p>
+<div class="figure align-default" id="batch-gui">
+<img alt="../../../_images/batch.gif" src="../../../_images/batch.gif" />
+<p class="caption"><span class="caption-number">Fig. 23 </span><span class="caption-text">The Metashape GUI batch processing dialog.
+Make sure to always select <em>Save project after each step</em> to save yourself from computer crashes and power outages - or Windows updates (ouch!).</span><a class="headerlink" href="#batch-gui" title="Permalink to this image">¶</a></p>
+</div>
+<p>The dialog allows the setting of all processing parameters as per their individual operations.
+This includes only selecting certain chunks or photo elements for processing.
+Make sure to refer to <a class="reference internal" href="../l1/tutorial.html"><span class="doc std std-doc">the Metashape tutorial</span></a> for step-specific recommendations.</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -322,7 +305,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./content\lessons\l4"
+            path: "./content\lessons\l3"
         },
         predefinedOutput: true
     }
@@ -337,8 +320,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="../l2/markers.html" title="previous page">GCP markers - generation and detection</a>
-    <a class='right-next' id="next-link" href="Batch.html" title="next page">Batch-based manual processing</a>
+    <a class='left-prev' id="prev-link" href="overview.html" title="previous page">Automation</a>
+    <a class='right-next' id="next-link" href="python.html" title="next page">Python-based standardised processing</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

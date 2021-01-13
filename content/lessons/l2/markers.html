@@ -55,7 +55,7 @@
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Automation" href="../l4/overview.html" />
+    <link rel="next" title="Automation" href="../l3/overview.html" />
     <link rel="prev" title="Exercise 2 - learning the ropes of GCP and marker detection" href="exercise2.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -149,45 +149,18 @@
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../l4/overview.html">
+  <a class="reference internal" href="../l3/overview.html">
    Automation
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../l4/Batch.html">
-   Batch-based manual processing
+  <a class="reference internal" href="../l3/Batch.html">
+   Batch-based processing through Metashape GUI
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../l4/python.html">
+  <a class="reference internal" href="../l3/python.html">
    Python-based standardised processing
-  </a>
- </li>
-</ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  Session 5
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../l5/overview.html">
-   Overview
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../l5/from_metashape_to_geomodel.html">
-   From Metashape to Geomodel
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../l5/quantifying_digital_samples.html">
-   What else can we use digital samples for?
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../l5/digital_elevation_models.html">
-   DEMs
   </a>
  </li>
 </ul>
@@ -413,13 +386,13 @@ They should therefore always be unique (i.e., used only once).</p>
 <h3>Agisoft Metashape<a class="headerlink" href="#agisoft-metashape" title="Permalink to this headline">¶</a></h3>
 <div class="figure align-default" id="meta-markers">
 <img alt="../../../_images/meta_markers.png" src="../../../_images/meta_markers.png" />
-<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text">Two Metashape markers generated with the parameters listed in <a class="reference internal" href="#metashape-markers"><span class="std std-numref">Fig. 17</span></a>.</span><a class="headerlink" href="#meta-markers" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">Two Metashape markers generated with the parameters listed in <a class="reference internal" href="#metashape-markers"><span class="std std-numref">Fig. 18</span></a>.</span><a class="headerlink" href="#meta-markers" title="Permalink to this image">¶</a></p>
 </div>
 <p>To generate Metashape GCP markers, proceed to <em>Tools/Markers/Print markers…</em> to open the  <a class="reference internal" href="#metashape-markers"><span class="std std-ref">Print Markers dialog</span></a>.
 Multiple parameters can be set, including the <em>bit-encoding</em> of the marker (<em>Marker type</em>); the <em>Center point radius</em> of the centre dot; how many markers to include per  (<em>Targets per page</em>); and the <em>Font size</em>.</p>
 <div class="figure align-default" id="metashape-markers">
 <img alt="../../../_images/metashape_markers.png" src="../../../_images/metashape_markers.png" />
-<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">Overview of the Metashape marker generation window.</span><a class="headerlink" href="#metashape-markers" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 18 </span><span class="caption-text">Overview of the Metashape marker generation window.</span><a class="headerlink" href="#metashape-markers" title="Permalink to this image">¶</a></p>
 </div>
 <div class="warning admonition">
 <p class="admonition-title">Centre dot size</p>
@@ -460,17 +433,17 @@ Once identified, proceed by right clicking on the point of interest to open the 
 Here, one can either place a new marker, or choose to place a previously-added marker.</p>
 <div class="figure align-default" id="marker-dialog">
 <img alt="../../../_images/marker_dialog.png" src="../../../_images/marker_dialog.png" />
-<p class="caption"><span class="caption-number">Fig. 18 </span><span class="caption-text">Dialog for adding or placing specific markers.
+<p class="caption"><span class="caption-number">Fig. 19 </span><span class="caption-text">Dialog for adding or placing specific markers.
 Be advised: one can only place specific markers after having added them previously.</span><a class="headerlink" href="#marker-dialog" title="Permalink to this image">¶</a></p>
 </div>
 <p>When added, a <em>green</em> flag appears that can be moved around by <em>click-holding</em> the left mouse button.
 This is especially useful for finetuning locations.</p>
 <p>Once done, proceed to the <em>Reference panel</em> and find that the markers you added have been added to the project - albeit without real world positional values.
 Also shown are the number of projections, accuracy and error, of which the latter two also remain blank.
-Positional information can either be added directly into the <em>Reference</em> panel by double clicking one of the fields, as shown in <a class="reference internal" href="#metashape-reference-panel-markers"><span class="std std-numref">Fig. 19</span></a>, or by importing reference data.</p>
+Positional information can either be added directly into the <em>Reference</em> panel by double clicking one of the fields, as shown in <a class="reference internal" href="#metashape-reference-panel-markers"><span class="std std-numref">Fig. 20</span></a>, or by importing reference data.</p>
 <div class="figure align-default" id="metashape-reference-panel-markers">
 <img alt="../../../_images/metashape_reference_panel_markers.gif" src="../../../_images/metashape_reference_panel_markers.gif" />
-<p class="caption"><span class="caption-number">Fig. 19 </span><span class="caption-text">A marker with ID <em>point 1</em> has been added to the project.
+<p class="caption"><span class="caption-number">Fig. 20 </span><span class="caption-text">A marker with ID <em>point 1</em> has been added to the project.
 Thusfar, no positional information is available, though the metadata shows that the marker has been identified in a single image (<em>Projections</em>).
 Editing the GCP point data can be easily done by double clicking each of the fields.</span><a class="headerlink" href="#metashape-reference-panel-markers" title="Permalink to this image">¶</a></p>
 </div>
@@ -478,7 +451,7 @@ Editing the GCP point data can be easily done by double clicking each of the fie
 Make sure to select the correct <em>Coordinate System</em>, select <em>Comma</em> as the <em>Delimiter</em>, and select the appropriate <em>Columns</em> for the <em>Label</em>, <em>longitude</em>, <em>Latitude</em>, and <em>Altitude</em>.</p>
 <div class="figure align-default" id="metashape-reference-import">
 <img alt="../../../_images/metashape_reference_import.png" src="../../../_images/metashape_reference_import.png" />
-<p class="caption"><span class="caption-number">Fig. 20 </span><span class="caption-text">Importing reference data for the GCP marker positions.
+<p class="caption"><span class="caption-number">Fig. 21 </span><span class="caption-text">Importing reference data for the GCP marker positions.
 Make sure to select the <em>gcp_table.csv</em> file when prompted.</span><a class="headerlink" href="#metashape-reference-import" title="Permalink to this image">¶</a></p>
 </div>
 <div class="warning admonition">
@@ -497,7 +470,7 @@ This dialog can be accessed through <em>Tools/Markers/Detect markers…</em>.
 To optimise marker detection, it is advised to set the <em>Marker type</em> parameter equal to the bit-encoding selected during generation and leave the other parameters as-is before clicking OK to proceed.</p>
 <div class="figure align-default" id="metashape-marker-detection">
 <img alt="../../../_images/metashape_marker_detection.png" src="../../../_images/metashape_marker_detection.png" />
-<p class="caption"><span class="caption-number">Fig. 21 </span><span class="caption-text">Metashape GUI option for marker detection.</span><a class="headerlink" href="#metashape-marker-detection" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 22 </span><span class="caption-text">Metashape GUI option for marker detection.</span><a class="headerlink" href="#metashape-marker-detection" title="Permalink to this image">¶</a></p>
 </div>
 <p>Once done, all markers should</p>
 </div>
@@ -507,16 +480,16 @@ To optimise marker detection, it is advised to set the <em>Marker type</em> para
 <p class="admonition-title">Python installation required</p>
 <p>The following steps require the <a class="reference external" href="../about/software#python">installation of Python and the automated metashape scripts</a>.</p>
 </div>
-<p>Prior to automated detection, we will have to configure a settings or parameter file for the <a class="reference internal" href="../l4/python.html"><span class="doc std std-doc">automated metashape scripts</span></a>.</p>
-<p>Head over to the <a class="reference internal" href="../l4/python.html"><span class="doc std std-doc">tutorial</span></a> and put together a minimal working example (MWE) configuration consisting of:</p>
+<p>Prior to automated detection, we will have to configure a settings or parameter file for the <a class="reference internal" href="../l3/python.html"><span class="doc std std-doc">automated metashape scripts</span></a>.</p>
+<p>Head over to the <a class="reference internal" href="../l3/python.html"><span class="doc std std-doc">tutorial</span></a> and put together a minimal working example (MWE) configuration consisting of:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="../l4/python#minimal-yaml-configuration-file">minimal configuration parameters</a></p></li>
-<li><p><a class="reference external" href="../l4/python#additional-parameters">Add photos</a></p></li>
-<li><p><a class="reference external" href="../l4/python#additional-parameters">GCPs - detection</a></p></li>
-<li><p><a class="reference external" href="../l4/python#additional-parameters">GCPs - add to project additional parameters</a></p></li>
+<li><p><a class="reference external" href="../l3/python#minimal-yaml-configuration-file">minimal configuration parameters</a></p></li>
+<li><p><a class="reference external" href="../l3/python#additional-parameters">Add photos</a></p></li>
+<li><p><a class="reference external" href="../l3/python#additional-parameters">GCPs - detection</a></p></li>
+<li><p><a class="reference external" href="../l3/python#additional-parameters">GCPs - add to project additional parameters</a></p></li>
 </ul>
 <p>Make sure to place this file in the <em>config directory</em> of the <a class="reference external" href="../l1/tutorial#a-standardised-project-environment">standardised project environment</a>.</p>
-<p>Then proceed with the <a class="reference internal" href="../l4/python.html"><span class="doc std std-doc">Python tutorial</span></a> to subsequently add all images to the Metashape project; to detect the GCPs in all the images; to add the detected GCPs and corresponding real world coordinates to the Metashape project.</p>
+<p>Then proceed with the <a class="reference internal" href="../l3/python.html"><span class="doc std std-doc">Python tutorial</span></a> to subsequently add all images to the Metashape project; to detect the GCPs in all the images; to add the detected GCPs and corresponding real world coordinates to the Metashape project.</p>
 </div>
 </div>
 </div>
@@ -551,7 +524,7 @@ To optimise marker detection, it is advised to set the <em>Marker type</em> para
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="exercise2.html" title="previous page">Exercise 2 - learning the ropes of GCP and marker detection</a>
-    <a class='right-next' id="next-link" href="../l4/overview.html" title="next page">Automation</a>
+    <a class='right-next' id="next-link" href="../l3/overview.html" title="next page">Automation</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

@@ -25,3 +25,13 @@ These include:
 - Keeping a log of every decision and change you make
 - Standardising your approach to ensure your science is reproducible
 - Archiving raw data, metadata, processing reports
+
+## Suggestions and or fixes?
+
+```{figure} assets/github_tut.gif
+:name: github_tut
+
+This page uses [Github](https://youtu.be/w3jLJU7DT5E) as a backbone.
+All it takes is a [Github account](https://github.com/join), which even comes with student benefits.
+Once connected, feel free to open an issue as per the above - whether suggesting improvements or highlighting bugs.
+```
