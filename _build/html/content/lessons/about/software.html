@@ -128,7 +128,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../l2/gcps.html">
-   Ground control points
+   Ground control points (GCPs)
   </a>
  </li>
  <li class="toctree-l1">
@@ -138,13 +138,13 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../l2/markers.html">
-   GCP markers - generation and detection
+   GCP tutorial
   </a>
  </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Session 4
+  Session 3
  </span>
 </p>
 <ul class="nav sidenav_l1">
@@ -155,7 +155,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../l3/Batch.html">
-   Batch-based manual processing
+   Batch-based processing through Metashape GUI
   </a>
  </li>
  <li class="toctree-l1">
@@ -166,28 +166,18 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Session 5
+  Session 4
  </span>
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../l5/overview.html">
-   Overview
+  <a class="reference internal" href="../l4/hss_overview.html">
+   Digitising small objects
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../l5/from_metashape_to_geomodel.html">
-   From Metashape to Geomodel
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../l5/quantifying_digital_samples.html">
-   What else can we use digital samples for?
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../l5/digital_elevation_models.html">
-   DEMs
+  <a class="reference internal" href="../l4/hss_tutorial.html">
+   Hand-sized samples exercise: food for thought
   </a>
  </li>
 </ul>
@@ -200,6 +190,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../suppl/best_practices.html">
    Best practices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../suppl/metadata_lists.html">
+   Meta data lists for archiving
   </a>
  </li>
  <li class="toctree-l1">
@@ -389,7 +384,7 @@ Below provides an overview for when you want to setup the environment on your ow
 <h2>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h2>
 <p>Agisoft Metashape has a Python API.
 This means that we can use Python to manage the processing rather than use the GUI.
-We **highly recommend using <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a>.
+We <strong>highly recommend</strong> using <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a>.
 Miniconda is essentially a bare-bones Python installation to which additional packages can be installed using the conda package management system.</p>
 <p>In case you already have Anaconda (or Miniconda) installed on your computer, you can use that during the Geo-SfM course without any issue.
 We do, however, recommend creating a separate environment for this.</p>
@@ -406,7 +401,7 @@ Nontheless we will be going through the basic commands below.</p>
 Access this from your start menu, and you will be greeted by a <a class="reference internal" href="#anaconda-cli"><span class="std std-ref">command line interface (cli)</span></a>.</p>
 <div class="figure align-default" id="anaconda-cli">
 <img alt="../../../_images/e0902cb5.png" src="../../../_images/e0902cb5.png" />
-<p class="caption"><span class="caption-number">Fig. 22 </span><span class="caption-text">The Anaconda Prompt shows our current working directory and the environment we are in (base).</span><a class="headerlink" href="#anaconda-cli" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 24 </span><span class="caption-text">The Anaconda Prompt shows our current working directory and the environment we are in (base).</span><a class="headerlink" href="#anaconda-cli" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="creating-and-activating-environments">

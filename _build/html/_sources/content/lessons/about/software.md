@@ -14,7 +14,7 @@ Below provides an overview for when you want to setup the environment on your ow
 
 Agisoft Metashape has a Python API.
 This means that we can use Python to manage the processing rather than use the GUI.
-We **highly recommend using [Miniconda](https://docs.conda.io/en/latest/miniconda.html).
+We **highly recommend** using [Miniconda](https://docs.conda.io/en/latest/miniconda.html).
 Miniconda is essentially a bare-bones Python installation to which additional packages can be installed using the conda package management system.
 
 In case you already have Anaconda (or Miniconda) installed on your computer, you can use that during the Geo-SfM course without any issue.

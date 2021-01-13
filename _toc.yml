@@ -13,11 +13,17 @@
   - file: /content/lessons/l2/exercise2.md
   - file: /content/lessons/l2/markers.md
 
-- part: Session 4
+- part: Session 3
   chapters:
   - file: /content/lessons/l3/overview.md
   - file: /content/lessons/l3/Batch.md
   - file: /content/lessons/l3/python.md
+
+- part: Session 4
+  chapters:
+  - file: /content/lessons/l4/hss_overview.md
+  - file: /content/lessons/l4/hss_tutorial.md
+
 
 - part: Session 5
   chapters:
@@ -29,6 +35,7 @@
 - part: Resources
   chapters:
   - file: /content/lessons/suppl/best_practices.md
+  - file: /content/lessons/suppl/metadata_lists.md
   - file: /content/lessons/about/seismic_lab.md
   - file: /content/lessons/about/software.md
   - file: /content/lessons/about/zbiblio.md
