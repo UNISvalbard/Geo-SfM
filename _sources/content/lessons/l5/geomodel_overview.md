@@ -1,4 +1,4 @@
-# Geomodel overview
+# Geomodelling overview
 
 ## Interpretation of digital models.
 
