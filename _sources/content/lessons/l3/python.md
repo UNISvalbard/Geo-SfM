@@ -21,6 +21,17 @@ The tutorial below assumes the latest version of Automated Metashape is used.
 Minimal differences may exist between versions, especially when ensuring compatibility with Minor updates of the Agisoft Metashape releases.
 ```
 
+````{admonition} Cite me
+:class: seealso
+
+Please cite the following acknowledgement when using the automated metashape scripting package:
+```
+Betlem, P.; Birchall, T.; Ogata, K.; Park, J.; Skurtveit, E.; Senger, K. Digital Drill Core Models: Structure-from-Motion as a Tool for the Characterisation, Orientation, and Digital Archiving of Drill Core Samples. Remote Sens. 2020, 12, 330.
+```
+
+````
+
+
 ## Automated processing with Jupyter lab
 
 We here showcase the Automated Metashape scripts through use of Jupyter lab.

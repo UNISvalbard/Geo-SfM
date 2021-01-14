@@ -129,12 +129,11 @@ Download the pip [redistributable](https://github.com/PeterBetlem/image_processi
 pip install automated_metashape-0.1.0-py37-none-any.whl
 ```
 
+````{admonition} Cite me
+:class: seealso
 
-
-
-
-
-
-
-
-### Automated processing
+Please cite the following acknowledgement when using the automated metashape scripting package:
+```
+Betlem, P.; Birchall, T.; Ogata, K.; Park, J.; Skurtveit, E.; Senger, K. Digital Drill Core Models: Structure-from-Motion as a Tool for the Characterisation, Orientation, and Digital Archiving of Drill Core Samples. Remote Sens. 2020, 12, 330.
+```
+````

@@ -1,4 +1,4 @@
-# Digitising field samples
+# Exercise 4 - Digitising field samples
 
 ```{admonition} Deadline
 The following exercise is to be completed **prior to the final semester presentation**.

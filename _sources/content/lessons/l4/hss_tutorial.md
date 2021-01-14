@@ -1,4 +1,4 @@
-# Hand-sized samples exercise: food for thought
+# Exercise 3 - food for thought
 
 ```{admonition} Deadline
 Please complete these exercises **by the end of the current session**.
