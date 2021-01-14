@@ -178,6 +178,11 @@
    Hand-sized samples exercise: food for thought
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../l4/hss_field_exercise.html">
+   Digitising field samples
+  </a>
+ </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
@@ -291,6 +296,27 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interpretation-of-the-digital-model">
+   Interpretation of the digital model
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#metashape">
+     Metashape
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -300,6 +326,76 @@
                 
   <div class="section" id="geomodeling-tutorial">
 <h1>Geomodeling tutorial<a class="headerlink" href="#geomodeling-tutorial" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="interpretation-of-the-digital-model">
+<h2>Interpretation of the digital model<a class="headerlink" href="#interpretation-of-the-digital-model" title="Permalink to this headline">¶</a></h2>
+<div class="tip admonition">
+<p class="admonition-title">Work in progress</p>
+<p>Interpretation of the digital model can be done through different means.
+Thusfar, the tutorial only details the use of the Metashape GUI.
+Feel free to contribute with a different programme workflow.</p>
+</div>
+<div class="section" id="metashape">
+<h3>Metashape<a class="headerlink" href="#metashape" title="Permalink to this headline">¶</a></h3>
+<p>Point clouds, meshes and tiled models can all be interpreted directly from within the Metashape GUI.
+<code class="xref std std-numref docutils literal notranslate"><span class="pre">metashape_point_selection</span></code> shows the annotation drop-down menu, in which both the annotation type (e.g., <em>points</em>) and mechanism can be selected (e.g., <em>snap to grid</em>).</p>
+<div class="figure align-default" id="metashape-point-selection">
+<img alt="../../../_images/metashape_point_selection.png" src="../../../_images/metashape_point_selection.png" />
+<p class="caption"><span class="caption-text">Various annotation options can be selected, including polylines, polygons and points (combined referred to as <em>shapes</em>).</span><a class="headerlink" href="#metashape-point-selection" title="Permalink to this image">¶</a></p>
+</div>
+<p>Once the annotation type and mechanism are set, the model can be annotated by clicking in the desired locations.
+For points, a left-mouse single click results in the creation of a point.
+<a class="reference internal" href="#interp-clicking"><span class="std std-ref">Polylines</span></a> and polygons require clicking along the feature until the end is reached, which corresponds to a double-click with the left-mouse button.
+In all cases, termination of the annotation exercise results in a <a class="reference internal" href="#interp-clicking"><span class="std std-ref">property window</span></a>.
+Here the label of the shape can be changed, the description set, and new shape groups and properties created or revised.</p>
+<div class="figure align-default" id="interp-clicking">
+<img alt="../../../_images/interp_clicking.gif" src="../../../_images/interp_clicking.gif" />
+<p class="caption"><span class="caption-text">Polyline annotation of a fracture in a digital outcrop model.
+Similar operations allow one to annotate the model with points and polygons.</span><a class="headerlink" href="#interp-clicking" title="Permalink to this image">¶</a></p>
+</div>
+<p>Subsequently - as long as the polyline or polygon is selected - one can add additional vertices to the annotation by clicking <em>i</em> on the keyboard, or <em>r</em> to remove them.
+The same can also be achieved through the <a class="reference internal" href="#interp-clicking"><span class="std std-ref">right-click pop-up window</span></a>, which furthermore gives access to the same <em>property window</em> by selecting <em>Properties</em>.</p>
+<div class="figure align-default" id="interp-properties">
+<img alt="../../../_images/interp_properties.gif" src="../../../_images/interp_properties.gif" />
+<p class="caption"><span class="caption-text">Polyline interaction options.
+Use right-click on a selected shape to open the pop-up menu.
+Similar operations allow one to interact with points and polygons.</span><a class="headerlink" href="#interp-properties" title="Permalink to this image">¶</a></p>
+</div>
+<p>While distances could easily be calculated from the different points in a shape, the <a class="reference internal" href="#interp-ruler"><span class="std std-ref">ruler tool</span></a> provides an easier way of doing so.
+Simply activate the tool and left-click the points of interest to return a distance.</p>
+<div class="figure align-default" id="interp-ruler">
+<img alt="../../../_images/interp_ruler.gif" src="../../../_images/interp_ruler.gif" />
+<p class="caption"><span class="caption-text">Measuring distances within a digital model.
+Don’t believe the given value is right?
+Or would you like to verify that your model is indeed to scale?
+Measure the real-world dimensions (e.g., height of a hand-sized sample) and their digital counterparts and compare.</span><a class="headerlink" href="#interp-ruler" title="Permalink to this image">¶</a></p>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">Strange distance values or coordinates?</p>
+<p>It could be that your model has not been properly constrained with a coordinate system or CRS (e.g., from photos with GPS metadata, GCPs).
+Having a valid CRS set for your Metashape project not only allows your model to be exported with real-world coordinates, it also gives meaning to the values given onscreen.
+Remember the SketchFab Labs distance feature discussed in <a class="reference external" href="../l4/hss_overview#digitising-small-objects">Session 4</a>?
+If you look closely you will notice that only numbers are given without units.
+SketchFab is an example of a service that does not use a CRS.
+One therefore has to guess what the original CRS of the uploaded model is to make sense of the SketchFab Labs distances.</p>
+</div>
+<p>When the model has been annotated, one can simply export the (georeferenced) annotations by selecting <em>File/Export/Export Shapes…</em>.
+First a dialog will prompt a save location and savefile type.
+The <em>shapefile format</em>, though old and a pain to work with, is a well-known standard and can be opened in most GIS-capable software solutions (including Petrel).
+Once specified, <a class="reference internal" href="#interp-export"><span class="std std-ref">the shapes export dialog</span></a> allows for a selection of which shapes to export; whether to only export their points, polylines, and/or polygons, and which CRS the exported file should use.
+Make sure to always enable the <em>Shape labels</em> and <em>Shape attributes</em> for exporting.</p>
+<div class="figure align-default" id="interp-export">
+<img alt="../../../_images/interp_export.png" src="../../../_images/interp_export.png" />
+<p class="caption"><span class="caption-text">The dialog for exporting shapes.
+Always enable <em>Shape labels</em> and <em>Shape attributes</em>.</span><a class="headerlink" href="#interp-export" title="Permalink to this image">¶</a></p>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">Interpolation versus reality: interpretation</p>
+<p>As one may notice, lines between points in the polyline and polygon shapes are simply interpolated.
+That means that to accurately interpret a given section, additional points (vertices) should be added along the entire feature to accurately depict one’s interpretation.
+One should therefore always treat the polyline and polygon “lines” as a visualisation aid, and definitely not as the interpretation itself (i.e., the interpretation are only the points within the shapes).</p>
+</div>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">

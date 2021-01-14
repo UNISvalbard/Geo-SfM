@@ -16,7 +16,7 @@ Based on the material covered in [session 2](../l2/overview "overviewl2"):
 ```
 
 ```{admonition} Deadline
-Please complete this exercise **by the end of the current session**.
+Please complete this exercise (and questions) **by the end of the current session**.
 ```
 
 Agisoft has been so kind to publish a tutorial on the digitisation of hand-sized samples, which we will follow and adept for to-scale digitisation.

@@ -29,7 +29,7 @@ Signehamna also hosts the hand-sample lightbox suitable for hand-sample SfM phot
 Work in progress
 ```
 
-## Hand-sample lightbox
+## Automated photography lightbox
 
 ```{note}
 Work in progress

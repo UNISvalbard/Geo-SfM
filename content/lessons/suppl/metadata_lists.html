@@ -180,6 +180,11 @@
    Hand-sized samples exercise: food for thought
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../l4/hss_field_exercise.html">
+   Digitising field samples
+  </a>
+ </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
@@ -303,8 +308,8 @@
   <div class="section" id="meta-data-lists-for-archiving">
 <h1>Meta data lists for archiving<a class="headerlink" href="#meta-data-lists-for-archiving" title="Permalink to this headline">¶</a></h1>
 <div class="tabbed-set docutils">
-<input checked="checked" id="d693894e-f7e9-4da2-9c2d-450daf0aaa8f" name="f78ef082-1985-4442-9923-5c231ea21922" type="radio">
-</input><label class="tabbed-label" for="d693894e-f7e9-4da2-9c2d-450daf0aaa8f">
+<input checked="checked" id="b3260a27-752a-4410-93d4-abaa4f93b612" name="17777365-2681-45de-b1e9-edb3903b9a4d" type="radio">
+</input><label class="tabbed-label" for="b3260a27-752a-4410-93d4-abaa4f93b612">
 Hand-sized samples</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is an example yaml configuration for the archiving of a digitised rock/handsample.</span>
 <span class="c1"># The name is automatically generated as a function of locality + rock_type.</span>
@@ -321,30 +326,33 @@ Hand-sized samples</label><div class="tabbed-content docutils">
 <span class="nt">geo_bed</span><span class="p">:</span>
 
 <span class="c1"># Sample information</span>
-<span class="nt">sample_age</span><span class="p">:</span>
+<span class="nt">sample_age</span><span class="p">:</span>  <span class="c1"># in case it has been scientifically determined</span>
 <span class="nt">sample_description</span><span class="p">:</span>  
 <span class="nt">sample_type</span><span class="p">:</span> <span class="c1"># drill core, pebble, etc.</span>
+<span class="nt">sample_weight</span><span class="p">:</span> <span class="c1"># weight of sample in grams.</span>
 
 <span class="c1"># Sampling data</span>
 <span class="nt">sampling_date</span><span class="p">:</span>  <span class="c1">#YYYYMMDD</span>
-<span class="nt">sampling_contact</span><span class="p">:</span>  <span class="c1"># Person who sampled it</span>
+<span class="nt">sampling_contact</span><span class="p">:</span>  <span class="c1"># Person who sampled it. If multiple, use the itemisation below instead and leave empty and remove the preceding # symbols</span>
+<span class="c1">#    -</span>
+<span class="c1">#    -</span>
 <span class="nt">sampling_longitude_wgs84</span><span class="p">:</span>  <span class="c1"># DD.decimals in WGS84</span>
 <span class="nt">sampling_latitude_wgs84</span><span class="p">:</span>  <span class="c1"># DD.decimals in WGS84</span>
-<span class="nt">sampling_locality</span><span class="p">:</span>
-<span class="nt">sampling_area</span><span class="p">:</span>
-<span class="nt">sampling_region</span><span class="p">:</span>
+<span class="nt">sampling_locality</span><span class="p">:</span>  <span class="c1"># Where was the sample sampled? Outcrop name</span>
+<span class="nt">sampling_area</span><span class="p">:</span>  <span class="c1"># In which area was the sample sampled? Valley/fjord/mountain</span>
+<span class="nt">sampling_region</span><span class="p">:</span>  <span class="c1"># In which region was the sample sampled? Think Spitsbergen, Nordaustlandet, etc.</span>
 
 <span class="nt">storage_location</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">non-existing</span> <span class="c1"># Description on where&amp;how the data has been stored, or used for e.g. experiments.</span>
 <span class="nt">storage_analysis</span><span class="p">:</span>
 
 <span class="c1"># Processing data/3d models:</span>
-<span class="nt">digital_images_used</span><span class="p">:</span>
-<span class="nt">digital_camera_used</span><span class="p">:</span>
-<span class="nt">digital_lens_used</span><span class="p">:</span>
+<span class="nt">digital_images_used</span><span class="p">:</span>  <span class="c1"># how many photos were used for the model</span>
+<span class="nt">digital_camera_used</span><span class="p">:</span>  <span class="c1"># version number of the camera lens</span>
+<span class="nt">digital_lens_used</span><span class="p">:</span>  <span class="c1"># version number of the camera lens</span>
 <span class="nt">digital_imaging_distance</span><span class="p">:</span>  <span class="c1">#i.e., flying altitude from report</span>
-<span class="nt">digital_ground_resolution</span><span class="p">:</span>
-<span class="nt">digital_sketchfab_id</span><span class="p">:</span>
-<span class="nt">digital_control_point_no</span><span class="p">:</span>
+<span class="nt">digital_ground_resolution</span><span class="p">:</span>  <span class="c1">#i.e., resolution stated in the processing report.</span>
+<span class="nt">digital_sketchfab_id</span><span class="p">:</span>  <span class="c1">#i.e., unique id obtained after uploading model to SketchFab</span>
+<span class="nt">digital_control_point_no</span><span class="p">:</span>  <span class="c1">#i.e., how many control points were used.</span>
 
 <span class="c1"># remaining metadata:</span>
 <span class="nt">unis_project_no</span><span class="p">:</span>
