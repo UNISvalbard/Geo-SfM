@@ -1,4 +1,4 @@
-# Exercise 3 - food for thought
+# Exercise 3 - Food for thought
 
 ```{admonition} Deadline
 Please complete these exercises **by the end of the current session**.
@@ -24,4 +24,4 @@ Agisoft has been so kind to publish a tutorial on the digitisation of hand-sized
 Have a look at the following [Metashape tutorial](https://agisoft.freshdesk.com/support/solutions/articles/31000158967-aligning-turntable-photos-with-background-suppression-from-single-mask-in-agisoft-metashape), and proceed by digitising either the *banana* or the *water jug*.
 All required material is linked to from within the tutorial.
 
-As an added exercise, make sure to create the [standardised project directory](../l1/tutorial#a-standardised-project-environment "tutorialstandard") and fill out the [hand-sized sample metadata form](../suppl/metadata_lists) found under resources.
+As an added exercise, make sure to create the [standardised project directory](../l1/tutorial#a-standardised-project-environment "tutorialstandard") and fill out the [hand-sized sample metadata template](../suppl/metadata_lists) found under resources.

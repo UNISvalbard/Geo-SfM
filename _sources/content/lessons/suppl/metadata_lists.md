@@ -1,4 +1,4 @@
-# Meta data lists for archiving
+# Metadata templates for archiving
 
 ````{tabbed} Hand-sized samples
 ```yaml

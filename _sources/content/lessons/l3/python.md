@@ -28,7 +28,6 @@ Please cite the following acknowledgement when using the automated metashape scr
 ```
 Betlem, P.; Birchall, T.; Ogata, K.; Park, J.; Skurtveit, E.; Senger, K. Digital Drill Core Models: Structure-from-Motion as a Tool for the Characterisation, Orientation, and Digital Archiving of Drill Core Samples. Remote Sens. 2020, 12, 330.
 ```
-
 ````
 
 
