@@ -26,7 +26,7 @@ Minimal differences may exist between versions, especially when ensuring compati
 
 Please cite the following acknowledgement when using the automated metashape scripting package:
 ```
-Betlem, P.; Birchall, T.; Ogata, K.; Park, J.; Skurtveit, E.; Senger, K. Digital Drill Core Models: Structure-from-Motion as a Tool for the Characterisation, Orientation, and Digital Archiving of Drill Core Samples. Remote Sens. 2020, 12, 330.
+Betlem, P., Birchall, T., Mosociova, T., Sartell, A.M.R., and Senger, K., 2020, From seismic-scale outcrop to hand sample: streamlining SfM photogrammetry processing in the geosciences, ARCEx, https://arcex.no/arcex-2020/.
 ```
 ````
 
