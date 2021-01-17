@@ -155,12 +155,6 @@ analyzePhotos:
     quality_cutoff: 0.5 # value between 0 and 1, indicates the lowest quality unit at which photos are used for processing. 0.5 is suggested by Agisoft.
 ```
 
-```{admonition} remove_photo_location_metadata
-The *remove_photo_location_metadata* parameter removes all location data from the photos that are added to the project.
-This should generally only be set to *True* when ground control points (GCPs) are to be used.
-```
-````
-
 ````{tabbed} Add masks
 ```yaml
 masks:
