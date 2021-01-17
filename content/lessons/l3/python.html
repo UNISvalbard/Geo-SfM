@@ -455,7 +455,7 @@ These should be present in every YAML configuration file, regardless of the desi
 <span class="nt">photo_path</span><span class="p">:</span> <span class="c1"># path to photo directory (&quot;data_directory&quot; in the standardised folder directory)  - this parameter will be moved to the addPhotos configuration section in later releases.</span>
 <span class="nt">output_path</span><span class="p">:</span> <span class="c1"># path to output directory, usually {photo_path}/metashape</span>
 <span class="nt">project_path</span><span class="p">:</span> <span class="c1"># path to Agisoft Metashape project directory, usually {photo_path}/metashape</span>
-<span class="nt">project_crs</span><span class="p">:</span> <span class="s">&quot;EPSG::32633&quot;</span> <span class="c1"># 32633 is WGS1984 UTM 33N; epsg number that corresponds to the required project crs. Look here: https://epsg.io/</span>
+<span class="nt">project_crs</span><span class="p">:</span> <span class="s">&quot;EPSG::32633&quot;</span> <span class="c1"># 32633 is WGS1984 UTM 33N; epsg number that corresponds to the required project crs. Look here: https://epsg.io/ &quot;EPSG::40400&quot; for hand samples.</span>
 <span class="nt">subdivide_task</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span> <span class="c1"># Fine-level task subdivision reduces memory by breaking processing into independent chunks that are run in series. True recommended.</span>
 </pre></div>
 </div>
@@ -497,12 +497,13 @@ Refer to <a class="reference external" href="https://www.agisoft.com/pdf/metasha
 The parameter-section names should fully follow the parameter names of the Metashape functions.
 In case default parameters are to be used, remove the corresponding parameter-section.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="e67e540d-2c28-421e-9f35-eb4afd3721bb" name="00467de1-1cc0-4777-9b18-66ea3cd932d7" type="radio">
-</input><label class="tabbed-label" for="e67e540d-2c28-421e-9f35-eb4afd3721bb">
+<input checked="checked" id="10ce9b73-1ea7-41a4-9c2b-67c51cecffe0" name="9e223f77-3851-4b46-880b-137504061baa" type="radio">
+</input><label class="tabbed-label" for="10ce9b73-1ea7-41a4-9c2b-67c51cecffe0">
 Add photos</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">addPhotos</span><span class="p">:</span>
     <span class="nt">enabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
-    <span class="nt">remove_photo_location_metadata</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span> <span class="c1">#</span>
+    <span class="nt">remove_photo_location_metadata</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span> <span class="c1"># Removes photo location metadata</span>
+    <span class="nt">multispectral</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span> <span class="c1"># Is this a multispectral photo set? If RGB, set to False.</span>
 </pre></div>
 </div>
 <div class="admonition-remove-photo-location-metadata admonition">
@@ -511,24 +512,38 @@ Add photos</label><div class="tabbed-content docutils">
 This should generally only be set to <em>True</em> when ground control points (GCPs) are to be used.</p>
 </div>
 </div>
-<input id="0be5e2b3-9b9c-4014-aabd-dec1cde1cb8c" name="00467de1-1cc0-4777-9b18-66ea3cd932d7" type="radio">
-</input><label class="tabbed-label" for="0be5e2b3-9b9c-4014-aabd-dec1cde1cb8c">
+<input id="3f31e502-8a76-4df8-90d9-1edd4e301305" name="9e223f77-3851-4b46-880b-137504061baa" type="radio">
+</input><label class="tabbed-label" for="3f31e502-8a76-4df8-90d9-1edd4e301305">
+Analyze photos</label><div class="tabbed-content docutils">
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">analyzePhotos</span><span class="p">:</span>
+    <span class="nt">enabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+    <span class="nt">quality_cutoff</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.5</span> <span class="c1"># value between 0 and 1, indicates the lowest quality unit at which photos are used for processing. 0.5 is suggested by Agisoft.</span>
+</pre></div>
+</div>
+<div class="admonition-remove-photo-location-metadata admonition">
+<p class="admonition-title">remove_photo_location_metadata</p>
+<p>The <em>remove_photo_location_metadata</em> parameter removes all location data from the photos that are added to the project.
+This should generally only be set to <em>True</em> when ground control points (GCPs) are to be used.</p>
+</div>
+</div>
+<input id="63f3980f-88bf-476e-a647-40009a366ed6" name="9e223f77-3851-4b46-880b-137504061baa" type="radio">
+</input><label class="tabbed-label" for="63f3980f-88bf-476e-a647-40009a366ed6">
 Add masks</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">masks</span><span class="p">:</span>
-    <span class="nt">enabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span> <span class="c1"># Default, only enable if you have images with masks :)</span>
-    <span class="nt">mask_path</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">E:\Anna\EK11\100MEDIA</span> <span class="c1"># Has to point to dir with masks</span>
-    <span class="nt">mask_source</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Metashape.MaskSourceFile</span> <span class="c1"># Default, other options include: [MaskSourceAlpha, MaskSourceFile, MaskSourceBackground, MaskSourceModel]</span>
+    <span class="nt">enabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span> <span class="c1"># Default, only enable if you have images with masks :)</span>
+    <span class="nt">path</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">E:\Anna\EK11\100MEDIA\{filename}_mask.JPG</span> <span class="c1"># Has to point to dir with masks</span>
+    <span class="nt">masking_mode</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Metashape.MaskModeFile</span> <span class="c1"># Default, other options include: Masking mode in [MaskingModeAlpha, MaskingModeFile, MaskingModeBackground, MaskingModeModel]</span>
 </pre></div>
 </div>
 </div>
-<input id="6806970d-15a7-4f73-9ffe-5965ccfec0e9" name="00467de1-1cc0-4777-9b18-66ea3cd932d7" type="radio">
-</input><label class="tabbed-label" for="6806970d-15a7-4f73-9ffe-5965ccfec0e9">
+<input id="d4f2706f-a775-4b52-ab31-faa0d584789f" name="9e223f77-3851-4b46-880b-137504061baa" type="radio">
+</input><label class="tabbed-label" for="d4f2706f-a775-4b52-ab31-faa0d584789f">
 Alignment</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">alignPhotos</span><span class="p">:</span> <span class="c1"># (Metashape: alignPhotos)</span>
     <span class="nt">enabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
-    <span class="nt">downscale</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span> <span class="c1"># Recommended: 1. How much to coarsen the photos when searching for tie points.</span>
+    <span class="nt">downscale</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0</span> <span class="c1"># Recommended: 0. How much to coarsen the photos when searching for tie points. Corresponding settings in Metashape: 0: Highest, 1: High, 2: Medium, 3: Low, 4: Lowest</span>
     <span class="nt">adaptive_fitting</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span> <span class="c1"># Recommended: True. Should the camera lens model be fit at the same time as aligning photos?</span>
-    <span class="nt">mask_tiepoints</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+    <span class="nt">filter_mask_tiepoints</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
     <span class="nt">double_alignment</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
 </pre></div>
 </div>
@@ -541,8 +556,8 @@ Alignment</label><div class="tabbed-content docutils">
 <p>Whether or not to try alignment of images that failed alignment during the first stage.</p>
 </div>
 </div>
-<input id="61a5cc4f-c99f-430a-bd93-8c43cb765f22" name="00467de1-1cc0-4777-9b18-66ea3cd932d7" type="radio">
-</input><label class="tabbed-label" for="61a5cc4f-c99f-430a-bd93-8c43cb765f22">
+<input id="942b8c3a-2d1c-4cf8-ae5f-46b111ae7246" name="9e223f77-3851-4b46-880b-137504061baa" type="radio">
+</input><label class="tabbed-label" for="942b8c3a-2d1c-4cf8-ae5f-46b111ae7246">
 Optimise cameras</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">optimizeCameras</span><span class="p">:</span> <span class="c1"># (Metashape: optimizeCameras)</span>
     <span class="nt">enabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
@@ -551,21 +566,28 @@ Optimise cameras</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="535e5c6b-1ed1-4eab-bdc5-ccd046da46b0" name="00467de1-1cc0-4777-9b18-66ea3cd932d7" type="radio">
-</input><label class="tabbed-label" for="535e5c6b-1ed1-4eab-bdc5-ccd046da46b0">
+<input id="180e9722-af25-494b-bb29-496932247ca4" name="9e223f77-3851-4b46-880b-137504061baa" type="radio">
+</input><label class="tabbed-label" for="180e9722-af25-494b-bb29-496932247ca4">
 Dense cloud</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">buildDenseCloud</span><span class="p">:</span> <span class="c1"># (Metashape: buildDepthMaps, buildDenseCloud, classifyGroundPoints, and exportPoints)</span>
     <span class="nt">enabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
-    <span class="nt">downscale</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span> <span class="c1"># Recommended: 2. How much to coarsen the photos when searching for matches to build the dense cloud.</span>
-    <span class="nt">filter_mode</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Metashape.MildFiltering</span> <span class="c1"># Recommended: Metashape.MildFiltering. How to filter the point cloud.</span>
-    <span class="nt">reuse_depth</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span> <span class="c1"># Recommended: False.</span>
-    <span class="nt">keep_depth</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span> <span class="c1"># Recommended: True.</span>
+    <span class="c1">## For depth maps (buldDepthMaps)</span>
+    <span class="nt">downscale</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span> <span class="c1"># Recommended: 2. How much to coarsen the photos when searching for matches to build the dense cloud. Corresponding settings in Metashape: 1: Highest, 2: High, 3: Medium, 4: Low, 5: Lowest</span>
+    <span class="nt">filter_mode</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Metashape.MildFiltering</span> <span class="c1"># Recommended: Metashape.MildFiltering. How to filter the point cloud. Options are NoFiltering, MildFiltering, ModerateFiltering, AggressiveFiltering. Aggressive filtering removes detail and makes worse DEMs (at least for forest). NoFiltering takes very long. In trials, it never completed.</span>
+    <span class="nt">reuse_depth</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span> <span class="c1"># Recommended: False. Purpose unknown.</span>
+    <span class="c1">## For dense cloud (buildDenseCloud)</span>
+    <span class="nt">keep_depth</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span> <span class="c1"># Recommended: False. Purpose unknown.</span>
+    <span class="c1">## For both</span>
     <span class="nt">max_neighbors</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">100</span> <span class="c1"># Recommended: 100. Maximum number of neighboring photos to use for estimating point cloud. Higher numbers may increase accuracy but dramatically increase processing time.</span>
     <span class="c1">## For ground point classification (classifyGroundPoints). Definitions here: https://www.agisoft.com/forum/index.php?topic=9328.0</span>
     <span class="nt">classify</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span> <span class="c1"># Must be enabled if a digital terrain model (DTM) is needed either for orthomosaic or DTM export</span>
     <span class="nt">max_angle</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">15.0</span> <span class="c1"># Recommended: 15.0</span>
     <span class="nt">max_distance</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1.0</span> <span class="c1"># Recommended: 1.0</span>
     <span class="nt">cell_size</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">50.0</span> <span class="c1"># Recommended: 50.0</span>
+    <span class="c1">## For dense cloud export (exportPoints)</span>
+    <span class="nt">export</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span> <span class="c1"># Whether to export dense cloud file.</span>
+    <span class="nt">format</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Metashape.PointsFormatLAS</span> <span class="c1"># Recommended: PointsFormatLAS. The file format to export points in.</span>
+    <span class="nt">classes</span><span class="p">:</span> <span class="s">&quot;ALL&quot;</span> <span class="c1"># Recommended: &quot;ALL&quot;. Point classes to export. Must be a list. Or can set to &quot;ALL&quot; to use all points. An example of a specific class is: Metashape.PointClass.Ground</span>
 </pre></div>
 </div>
 <div class="admonition-downscale admonition">
@@ -580,8 +602,8 @@ Aggressive filtering removes detail and makes worse DEMs (at least for forest).
 NoFiltering takes very long. In trials, it never completed.</p>
 </div>
 </div>
-<input id="af56d7d7-9dcf-48f6-9103-a9f77564738a" name="00467de1-1cc0-4777-9b18-66ea3cd932d7" type="radio">
-</input><label class="tabbed-label" for="af56d7d7-9dcf-48f6-9103-a9f77564738a">
+<input id="d848429b-1868-40da-87bf-697d6c908714" name="9e223f77-3851-4b46-880b-137504061baa" type="radio">
+</input><label class="tabbed-label" for="d848429b-1868-40da-87bf-697d6c908714">
 Filter dense cloud</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">filterDenseCloud</span><span class="p">:</span>
     <span class="nt">enabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
@@ -589,45 +611,57 @@ Filter dense cloud</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="1e8e5acc-49bd-4ff8-8061-65f19a52ea38" name="00467de1-1cc0-4777-9b18-66ea3cd932d7" type="radio">
-</input><label class="tabbed-label" for="1e8e5acc-49bd-4ff8-8061-65f19a52ea38">
+<input id="d7523cea-c0aa-4841-90c7-75490daae1af" name="9e223f77-3851-4b46-880b-137504061baa" type="radio">
+</input><label class="tabbed-label" for="d7523cea-c0aa-4841-90c7-75490daae1af">
 Mesh</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">buildMesh</span><span class="p">:</span> <span class="c1"># (Metashape: buildModel)</span>
     <span class="nt">enabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
     <span class="nt">surface_type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Metashape.Arbitrary</span> <span class="c1"># Recommended: Metashape.Arbitrary</span>
     <span class="nt">face_count</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Metashape.HighFaceCount</span> <span class="c1"># Options are [LowFaceCount, MediumFaceCount, HighFaceCount, CustomFaceCount]</span>
     <span class="nt">face_count_custom</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">100000</span> <span class="c1"># Integer, has to be enabled through CustomFaceCount above.</span>
+    <span class="c1">## For dense cloud (buildDenseCloud)</span>
     <span class="nt">source_data</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Metashape.DenseCloudData</span> <span class="c1"># Recommended: DenseCloudData. Others include: PointCloudData and ModelData.</span>
     <span class="nt">volumetric_masks</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span> <span class="c1"># Default False; True for volumetric masking during 3D mesh generation, as documented here https://www.agisoft.com/index.php?id=48</span>
 </pre></div>
 </div>
 </div>
-<input id="6e50dbfa-e544-40c0-8427-152825fabfbb" name="00467de1-1cc0-4777-9b18-66ea3cd932d7" type="radio">
-</input><label class="tabbed-label" for="6e50dbfa-e544-40c0-8427-152825fabfbb">
+<input id="9679cae6-146e-4fa8-8812-083da0ffc06f" name="9e223f77-3851-4b46-880b-137504061baa" type="radio">
+</input><label class="tabbed-label" for="9679cae6-146e-4fa8-8812-083da0ffc06f">
 Textures</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">buildTexture</span><span class="p">:</span> <span class="c1"># (Metashape: buildTexture)</span>
     <span class="nt">enabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
     <span class="nt">mapping_mode</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Metashape.GenericMapping</span> <span class="c1"># [LegacyMapping, GenericMapping, OrthophotoMapping, AdaptiveOrthophotoMapping, SphericalMapping, CameraMapping]</span>
     <span class="nt">blending_mode</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Metashape.MosaicBlending</span> <span class="c1"># Recommended: Mosaic. Other options: [AverageBlending, MosaicBlending, MinBlending, MaxBlending, DisabledBlending]</span>
-    <span class="nt">texture_size</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">16384</span> <span class="c1"># integer, multiple of 4096</span>
+    <span class="nt">texture_size</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">8192</span> <span class="c1"># integer, multiple of 4096</span>
 </pre></div>
 </div>
 </div>
-<input id="2e6504a4-44f1-4a26-baea-22fb69159bb6" name="00467de1-1cc0-4777-9b18-66ea3cd932d7" type="radio">
-</input><label class="tabbed-label" for="2e6504a4-44f1-4a26-baea-22fb69159bb6">
+<input id="5eb8cc57-5378-46da-a19a-3999848668ec" name="9e223f77-3851-4b46-880b-137504061baa" type="radio">
+</input><label class="tabbed-label" for="5eb8cc57-5378-46da-a19a-3999848668ec">
 Tiled model</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">buildTiledModel</span><span class="p">:</span> <span class="c1"># (Metashape: buildTexture)</span>
     <span class="nt">enabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
     <span class="c1">## For depth maps (buldModel)</span>
     <span class="nt">source_data</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Metashape.DenseCloudData</span>
     <span class="nt">pixel_size</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.010</span>
-    <span class="nt">tile_size</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">256</span>
+    <span class="nt">tile_size</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">128</span>
     <span class="nt">face_count</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">4000</span>
 </pre></div>
 </div>
 </div>
-<input id="bf933af5-0071-4e04-b61e-9ab24cd8c30c" name="00467de1-1cc0-4777-9b18-66ea3cd932d7" type="radio">
-</input><label class="tabbed-label" for="bf933af5-0071-4e04-b61e-9ab24cd8c30c">
+<input id="ea0a1b8f-11c3-45b6-a79f-c856eaf72af1" name="9e223f77-3851-4b46-880b-137504061baa" type="radio">
+</input><label class="tabbed-label" for="ea0a1b8f-11c3-45b6-a79f-c856eaf72af1">
+DEM</label><div class="tabbed-content docutils">
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">buildDEM</span><span class="p">:</span> <span class="c1"># (Metashape: buildTexture)</span>
+    <span class="nt">enabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+    <span class="nt">source_data</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Metashape.DenseCloudData</span>
+    <span class="nt">resolution</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.01</span>
+    <span class="nt">projection</span><span class="p">:</span> <span class="s">&quot;EPSG::32633&quot;</span>
+</pre></div>
+</div>
+</div>
+<input id="a4e011d1-c847-43d6-942b-3e908963e280" name="9e223f77-3851-4b46-880b-137504061baa" type="radio">
+</input><label class="tabbed-label" for="a4e011d1-c847-43d6-942b-3e908963e280">
 GCPs - detection</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">detectGCPs</span><span class="p">:</span>
     <span class="nt">enabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
@@ -640,8 +674,8 @@ GCPs - detection</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="d927edd6-8212-4796-91ae-d714d10e0f74" name="00467de1-1cc0-4777-9b18-66ea3cd932d7" type="radio">
-</input><label class="tabbed-label" for="d927edd6-8212-4796-91ae-d714d10e0f74">
+<input id="d66f3f3c-fe11-4408-9ce0-812c7a12c88c" name="9e223f77-3851-4b46-880b-137504061baa" type="radio">
+</input><label class="tabbed-label" for="d66f3f3c-fe11-4408-9ce0-812c7a12c88c">
 GCPs - add to project</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">addGCPs</span><span class="p">:</span>
     <span class="nt">enabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
@@ -652,8 +686,26 @@ GCPs - add to project</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="0fee5b95-9586-4d12-8908-e66bec6213b3" name="00467de1-1cc0-4777-9b18-66ea3cd932d7" type="radio">
-</input><label class="tabbed-label" for="0fee5b95-9586-4d12-8908-e66bec6213b3">
+<input id="300c65df-5baf-46e5-9869-8e24425d7a1c" name="9e223f77-3851-4b46-880b-137504061baa" type="radio">
+</input><label class="tabbed-label" for="300c65df-5baf-46e5-9869-8e24425d7a1c">
+Publish</label><div class="tabbed-content docutils">
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">publishData</span><span class="p">:</span>
+    <span class="nt">enabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+    <span class="nt">service</span><span class="p">:</span>  <span class="c1"># Service type in [ServiceSketchfab, ServiceMapbox, Service4DMapper, ServiceSputnik, ServicePointscene, ServiceMelown, ServicePointbox, ServicePicterra]</span>
+    <span class="nt">source</span><span class="p">:</span> <span class="c1"># Data source in [PointCloudData, DenseCloudData, DepthMapsData, ModelData, TiledModelData, ElevationData, OrthomosaicData, ImagesData]</span>
+    <span class="nt">with_camera_track</span><span class="p">:</span>  <span class="c1"># True/False If model should be uploaded with camera track. Can be used only with DataSource.ModelData.</span>
+    <span class="nt">export_point_colors</span><span class="p">:</span>  <span class="c1"># True/False If Point Cloud should be uploaded with point colors.</span>
+    <span class="nt">title</span><span class="p">:</span>  <span class="c1"># Title of uploading model.</span>
+    <span class="nt">description</span><span class="p">:</span>  <span class="c1"># Description of uploading model.</span>
+    <span class="nt">token</span><span class="p">:</span>  <span class="c1"># Token used to upload data.</span>
+    <span class="nt">is_draft</span><span class="p">:</span>  <span class="c1"># If model should be uploaded as draft.</span>
+    <span class="nt">is_private</span><span class="p">:</span>  <span class="c1"># True/False If model should have private access.</span>
+    <span class="nt">password</span><span class="p">:</span>  <span class="c1"># Password to access model if uploaded as private.</span>
+</pre></div>
+</div>
+</div>
+<input id="2bee83b4-7041-4189-a6b2-4cdcedeea8b9" name="9e223f77-3851-4b46-880b-137504061baa" type="radio">
+</input><label class="tabbed-label" for="2bee83b4-7041-4189-a6b2-4cdcedeea8b9">
 Networking</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">networkProcessing</span><span class="p">:</span>
     <span class="nt">enabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
