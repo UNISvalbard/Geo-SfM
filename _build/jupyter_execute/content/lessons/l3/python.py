@@ -11,6 +11,16 @@
 # Minimal differences may exist between versions, especially when ensuring compatibility with Minor updates of the Agisoft Metashape releases.
 # ```
 # 
+# ````{admonition} Cite me
+# :class: seealso
+# 
+# Please cite the following acknowledgement when using the automated metashape scripting package:
+# ```
+# Betlem, P., Birchall, T., Mosociova, T., Sartell, A.M.R., and Senger, K., 2020, From seismic-scale outcrop to hand sample: streamlining SfM photogrammetry processing in the geosciences, ARCEx, https://arcex.no/arcex-2020/.
+# ```
+# ````
+# 
+# 
 # ## Automated processing with Jupyter lab
 # 
 # We here showcase the Automated Metashape scripts through use of Jupyter lab.
@@ -77,7 +87,7 @@ AP(config_file)
 # photo_path: # path to photo directory ("data_directory" in the standardised folder directory)  - this parameter will be moved to the addPhotos configuration section in later releases.
 # output_path: # path to output directory, usually {photo_path}/metashape
 # project_path: # path to Agisoft Metashape project directory, usually {photo_path}/metashape
-# project_crs: "EPSG::32633" # 32633 is WGS1984 UTM 33N; epsg number that corresponds to the required project crs. Look here: https://epsg.io/
+# project_crs: "EPSG::32633" # 32633 is WGS1984 UTM 33N; epsg number that corresponds to the required project crs. Look here: https://epsg.io/ "EPSG::40400" for hand samples.
 # subdivide_task: True # Fine-level task subdivision reduces memory by breaking processing into independent chunks that are run in series. True recommended.
 # ```
 # 
@@ -118,7 +128,8 @@ AP(config_file)
 # ```yaml
 # addPhotos:
 #     enabled: True
-#     remove_photo_location_metadata: False #
+#     remove_photo_location_metadata: False # Removes photo location metadata
+#     multispectral: False # Is this a multispectral photo set? If RGB, set to False.
 # ```
 # 
 # ```{admonition} remove_photo_location_metadata
@@ -127,12 +138,19 @@ AP(config_file)
 # ```
 # ````
 # 
+# ````{tabbed} Analyze photos
+# ```yaml
+# analyzePhotos:
+#     enabled: True
+#     quality_cutoff: 0.5 # value between 0 and 1, indicates the lowest quality unit at which photos are used for processing. 0.5 is suggested by Agisoft.
+# ```
+# 
 # ````{tabbed} Add masks
 # ```yaml
 # masks:
-#     enabled: True # Default, only enable if you have images with masks :)
-#     mask_path: E:\Anna\EK11\100MEDIA # Has to point to dir with masks
-#     mask_source: Metashape.MaskSourceFile # Default, other options include: [MaskSourceAlpha, MaskSourceFile, MaskSourceBackground, MaskSourceModel]
+#     enabled: False # Default, only enable if you have images with masks :)
+#     path: E:\Anna\EK11\100MEDIA\{filename}_mask.JPG # Has to point to dir with masks
+#     masking_mode: Metashape.MaskModeFile # Default, other options include: Masking mode in [MaskingModeAlpha, MaskingModeFile, MaskingModeBackground, MaskingModeModel]
 # ```
 # ````
 # 
@@ -140,9 +158,9 @@ AP(config_file)
 # ```yaml
 # alignPhotos: # (Metashape: alignPhotos)
 #     enabled: True
-#     downscale: 1 # Recommended: 1. How much to coarsen the photos when searching for tie points.
+#     downscale: 0 # Recommended: 0. How much to coarsen the photos when searching for tie points. Corresponding settings in Metashape: 0: Highest, 1: High, 2: Medium, 3: Low, 4: Lowest
 #     adaptive_fitting: True # Recommended: True. Should the camera lens model be fit at the same time as aligning photos?
-#     mask_tiepoints: True
+#     filter_mask_tiepoints: True
 #     double_alignment: True
 # ```
 # 
@@ -169,16 +187,23 @@ AP(config_file)
 # ```yaml
 # buildDenseCloud: # (Metashape: buildDepthMaps, buildDenseCloud, classifyGroundPoints, and exportPoints)
 #     enabled: True
-#     downscale: 2 # Recommended: 2. How much to coarsen the photos when searching for matches to build the dense cloud.
-#     filter_mode: Metashape.MildFiltering # Recommended: Metashape.MildFiltering. How to filter the point cloud.
-#     reuse_depth: False # Recommended: False.
-#     keep_depth: True # Recommended: True.
+#     ## For depth maps (buldDepthMaps)
+#     downscale: 2 # Recommended: 2. How much to coarsen the photos when searching for matches to build the dense cloud. Corresponding settings in Metashape: 1: Highest, 2: High, 3: Medium, 4: Low, 5: Lowest
+#     filter_mode: Metashape.MildFiltering # Recommended: Metashape.MildFiltering. How to filter the point cloud. Options are NoFiltering, MildFiltering, ModerateFiltering, AggressiveFiltering. Aggressive filtering removes detail and makes worse DEMs (at least for forest). NoFiltering takes very long. In trials, it never completed.
+#     reuse_depth: False # Recommended: False. Purpose unknown.
+#     ## For dense cloud (buildDenseCloud)
+#     keep_depth: False # Recommended: False. Purpose unknown.
+#     ## For both
 #     max_neighbors: 100 # Recommended: 100. Maximum number of neighboring photos to use for estimating point cloud. Higher numbers may increase accuracy but dramatically increase processing time.
 #     ## For ground point classification (classifyGroundPoints). Definitions here: https://www.agisoft.com/forum/index.php?topic=9328.0
 #     classify: False # Must be enabled if a digital terrain model (DTM) is needed either for orthomosaic or DTM export
 #     max_angle: 15.0 # Recommended: 15.0
 #     max_distance: 1.0 # Recommended: 1.0
 #     cell_size: 50.0 # Recommended: 50.0
+#     ## For dense cloud export (exportPoints)
+#     export: False # Whether to export dense cloud file.
+#     format: Metashape.PointsFormatLAS # Recommended: PointsFormatLAS. The file format to export points in.
+#     classes: "ALL" # Recommended: "ALL". Point classes to export. Must be a list. Or can set to "ALL" to use all points. An example of a specific class is: Metashape.PointClass.Ground
 # ```
 # 
 # ```{admonition} downscale
@@ -209,6 +234,7 @@ AP(config_file)
 #     surface_type: Metashape.Arbitrary # Recommended: Metashape.Arbitrary
 #     face_count: Metashape.HighFaceCount # Options are [LowFaceCount, MediumFaceCount, HighFaceCount, CustomFaceCount]
 #     face_count_custom: 100000 # Integer, has to be enabled through CustomFaceCount above.
+#     ## For dense cloud (buildDenseCloud)
 #     source_data: Metashape.DenseCloudData # Recommended: DenseCloudData. Others include: PointCloudData and ModelData.
 #     volumetric_masks: False # Default False; True for volumetric masking during 3D mesh generation, as documented here https://www.agisoft.com/index.php?id=48
 # ```
@@ -220,7 +246,7 @@ AP(config_file)
 #     enabled: True
 #     mapping_mode: Metashape.GenericMapping # [LegacyMapping, GenericMapping, OrthophotoMapping, AdaptiveOrthophotoMapping, SphericalMapping, CameraMapping]
 #     blending_mode: Metashape.MosaicBlending # Recommended: Mosaic. Other options: [AverageBlending, MosaicBlending, MinBlending, MaxBlending, DisabledBlending]
-#     texture_size: 16384 # integer, multiple of 4096
+#     texture_size: 8192 # integer, multiple of 4096
 # ```
 # ````
 # 
@@ -231,8 +257,18 @@ AP(config_file)
 #     ## For depth maps (buldModel)
 #     source_data: Metashape.DenseCloudData
 #     pixel_size: 0.010
-#     tile_size: 256
+#     tile_size: 128
 #     face_count: 4000
+# ```
+# ````
+# 
+# ````{tabbed} DEM
+# ```yaml
+# buildDEM: # (Metashape: buildTexture)
+#     enabled: True
+#     source_data: Metashape.DenseCloudData
+#     resolution: 0.01
+#     projection: "EPSG::32633"
 # ```
 # ````
 # 
@@ -257,6 +293,23 @@ AP(config_file)
 #     marker_location_accuracy: 0.1 # Recommended: 0.1. Accuracy of GCPs real-world coordinates, in meters.
 #     marker_projection_accuracy: 8 # Recommended: 8. Accuracy of the identified locations of the GCPs within the images, in pixels.
 #     optimize_w_gcps_only: True # Optimize alignment using GCPs only: required for GCP locations to take precedence over photo GPS data. Disabling it makes GCPs essentially irrelevant.
+# ```
+# ````
+# 
+# ````{tabbed} Publish
+# ```yaml
+# publishData:
+#     enabled: True
+#     service:  # Service type in [ServiceSketchfab, ServiceMapbox, Service4DMapper, ServiceSputnik, ServicePointscene, ServiceMelown, ServicePointbox, ServicePicterra]
+#     source: # Data source in [PointCloudData, DenseCloudData, DepthMapsData, ModelData, TiledModelData, ElevationData, OrthomosaicData, ImagesData]
+#     with_camera_track:  # True/False If model should be uploaded with camera track. Can be used only with DataSource.ModelData.
+#     export_point_colors:  # True/False If Point Cloud should be uploaded with point colors.
+#     title:  # Title of uploading model.
+#     description:  # Description of uploading model.
+#     token:  # Token used to upload data.
+#     is_draft:  # If model should be uploaded as draft.
+#     is_private:  # True/False If model should have private access.
+#     password:  # Password to access model if uploaded as private.
 # ```
 # ````
 # 

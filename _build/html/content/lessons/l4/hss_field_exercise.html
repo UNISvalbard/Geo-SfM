@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Digitising samples from the field &#8212; Geo-SfM Course Beta</title>
+    <title>Exercise 4 - Digitising field samples &#8212; Geo-SfM Course Beta</title>
     
   <link rel="stylesheet" href="../../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -55,6 +55,8 @@
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Geomodel overview" href="../l5/geomodel_overview.html" />
+    <link rel="prev" title="Exercise 3 - Food for thought" href="hss_tutorial.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -167,7 +169,7 @@
   Session 4
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="hss_overview.html">
    Digitising small objects
@@ -175,7 +177,29 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="hss_tutorial.html">
-   Hand-sized samples exercise: food for thought
+   Exercise 3 - Food for thought
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Exercise 4 - Digitising field samples
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Session 5
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../l5/geomodel_overview.html">
+   Geomodel overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../l5/geomodel_tutorial.html">
+   Geomodeling tutorial
   </a>
  </li>
 </ul>
@@ -192,7 +216,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../suppl/metadata_lists.html">
-   Meta data lists for archiving
+   Metadata templates for archiving
   </a>
  </li>
  <li class="toctree-l1">
@@ -291,6 +315,20 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise">
+   Exercise
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -298,11 +336,41 @@
         
               <div>
                 
-  <div class="section" id="digitising-samples-from-the-field">
-<h1>Digitising samples from the field<a class="headerlink" href="#digitising-samples-from-the-field" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="exercise-4-digitising-field-samples">
+<h1>Exercise 4 - Digitising field samples<a class="headerlink" href="#exercise-4-digitising-field-samples" title="Permalink to this headline">¶</a></h1>
 <div class="admonition-deadline admonition">
 <p class="admonition-title">Deadline</p>
-<p>Please complete this exercise <strong>prior to the final semester presentation</strong>.</p>
+<p>The following exercise is to be completed <strong>prior to the final semester presentation</strong>.</p>
+</div>
+<p><span class="bibtex" id="id1">[betlemDigitalDrillCore2020]</span> present an effective method to digitise hand-sized samples at their respective scales.
+While the paper focuses on drill core samples, the same GCP-based methodology can be used for most hand-sized samples from the field, minerals (e.g., Malte’s mineral), and other object.</p>
+<p>In short, the method relies on acquiring a single GCP-calibrated photo halo (i.e., 24-36 object-centered photos taken in which at least 5 well-referenced GCPs surround the object) alongside at least two additional photo haloes for which the object’s orientation has been changed (see <code class="xref std std-numref docutils literal notranslate"><span class="pre">tobedone</span></code>).
+This is easily done through use of a well-lit round-table or, as present at UNIS, an <a class="reference external" href="../about/seismic_lab#automated-photography-lightbox">automated photography light box</a> combined with the <a class="reference internal" href="../l3/python.html"><span class="doc std std-doc">automated Python scripts package</span></a>.</p>
+<p>A summary of the methodology as well as numerous tips and tricks can be found in the <a class="reference external" href="../suppl/best_practices#Lightbox">Resources sections</a>, which should be explored as part of the open-ended exercise below.</p>
+<div class="section" id="exercise">
+<h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Whilst out on a fieldtrip, collect at least one (1) sample in which any given dimension falls between 5 and 15 centimetres;</p></li>
+<li><p>Write down coordinates of the exact sampling location, fill out the <a class="reference internal" href="../suppl/metadata_lists.html"><span class="doc std std-doc">sample metadata form</span></a> in full  (i.e., those fields related to the sampling, not yet processing);</p></li>
+<li><p>When back, process the collected sample and create a to-scale 3D digital hand-sized sample model without artefacts using the <span class="xref myst">automated photography light box procedure</span>.</p></li>
+<li><p>Finalise the <a class="reference internal" href="../suppl/metadata_lists.html"><span class="doc std std-doc">sample metadata form</span></a> and submit/discuss it with the course responsible. This include the SketchFab ID which is only obtained after the submission has been quality controlled and the model has been uploaded to SketchFab.</p></li>
+</ul>
+<div class="note admonition">
+<p class="admonition-title">Bulk sample density</p>
+<p>Seeing as your digital model is 1:1 scaled with the real sample, any idea on how to calculate its wet bulk density?</p>
+<div class="tip admonition">
+<p class="admonition-title">Metashape volume measurement</p>
+<p>Metashape provides a built-in feature to determine a model’s volume (<em>Tools/Mesh/Measure Area and Volume…</em>).
+Be careful, though, as this calculates the total volume of <em>all</em> closed surfaces/meshes in your project.
+The calculated volume is furthermore given in m3 - so make sure to apply the correct conversion.
+Better yet, use some handy Python code that calculates the volumes in cm3 instead.</p>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Model annotation and interpretation</p>
+<p>The same tools used for interpreting and annotating digital outcrop models (DOMs) can also be used for hand-sized digital models.
+Have a look at the <a class="reference internal" href="../l5/geomodel_tutorial.html"><span class="doc std std-doc">geomodelling tutorial</span></a> to get started.</p>
+</div>
 </div>
 </div>
 
@@ -334,6 +402,8 @@
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="hss_tutorial.html" title="previous page">Exercise 3 - Food for thought</a>
+    <a class='right-next' id="next-link" href="../l5/geomodel_overview.html" title="next page">Geomodel overview</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

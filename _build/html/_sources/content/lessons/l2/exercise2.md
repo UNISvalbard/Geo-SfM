@@ -24,7 +24,7 @@ This includes the generation of both Metashape markers and open-source ArUco mar
 
 Proceed to the [GCP tutorial](../l2/markers "GCP tutorial") while keeping the following assignments in mind:
 
-```{admonition} Checklist and questions
+````{admonition} Checklist and questions
 :class: note
 - [ ] GCP generation
   - [ ] Generate a single Metashape marker and print it on A4
@@ -37,14 +37,21 @@ Proceed to the [GCP tutorial](../l2/markers "GCP tutorial") while keeping the fo
   - [ ] detect the ArUco markers manually
   - [ ] detect the Metashape markers automatically
   - [ ] add real world coordinates to the GCPs
-```
 
 In addition, please come up with some thoughts on the following statements:
 
-- GCP detection requires only part of the markers to be visible in an image
-- A GCP should always be fully imaged in at least five images
-- 
+  - GCP detection requires only part of the markers to be visible in an image
+  - A GCP should always be fully imaged in at least five images
 
+```{admonition} Hand-drawn marker points.
+:class: tip
+
+Stuck in home-office without a printer but still have access to paper, a ruler and pencil?
+You're out of luck when it comes to automated GCP recognition.
+However, you could always measure out 4 points and draw them on the paper in a rectangle.
+Make sure to set one corner as the origin (0,0), and use your ruler to measure the other marker-point coordinates correspondingly.
+```
+````
 
 ```{admonition} SfM photogrammetry workflow
 :class: tip

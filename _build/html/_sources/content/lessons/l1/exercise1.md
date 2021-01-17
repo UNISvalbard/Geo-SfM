@@ -28,7 +28,16 @@ The exercise also includes a deliverable, i.e., a set of requirements that are l
 
 ## Assignment
 
+```{sidebar} What about ... ?
+
+- What geological applications do you think this would be useful for?
+- What could the weaknesses be?
+- What should you consider before even acquiring the data? (e.g. scale, resolution, precision requirements - purpose?)
+- What is an artifact and how may they arise in your models? (Make screenshots of these when/if found in your own models!)
+```
+
 It is now up to you to head out and acquire your own data set and process this by following the [photogrammetry tutorial](../l1/tutorial "tutorial").
+Make sure to also give some thought and answer the questions in the side bar.
 
 Suggested targets include:
 
@@ -90,12 +99,6 @@ metadata:
     processing_quality: # PICK bad / average / good / excellent / None
     tag: # STRING, item separator: ;
     category: # STRING, item separator: ;
-```
-
-In addition, everyone will be asked to answer the following questions:
-
-```{warning}
-To do, come up with good questinos here
 ```
 
 

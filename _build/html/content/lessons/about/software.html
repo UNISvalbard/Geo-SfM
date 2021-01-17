@@ -177,7 +177,29 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../l4/hss_tutorial.html">
-   Hand-sized samples exercise: food for thought
+   Exercise 3 - Food for thought
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../l4/hss_field_exercise.html">
+   Exercise 4 - Digitising field samples
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Session 5
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../l5/geomodel_overview.html">
+   Geomodelling overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../l5/geomodel_tutorial.html">
+   Geomodeling tutorial
   </a>
  </li>
 </ul>
@@ -194,7 +216,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../suppl/metadata_lists.html">
-   Meta data lists for archiving
+   Metadata templates for archiving
   </a>
  </li>
  <li class="toctree-l1">
@@ -349,11 +371,6 @@
      </li>
     </ul>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#automated-processing">
-     Automated processing
-    </a>
-   </li>
   </ul>
  </li>
 </ul>
@@ -373,6 +390,17 @@
 Below provides an overview for when you want to setup the environment on your own computer or elsewhere.</p>
 <div class="section" id="agisoft-metashape">
 <h2>Agisoft Metashape<a class="headerlink" href="#agisoft-metashape" title="Permalink to this headline">¶</a></h2>
+<p>Agisoft Metashape (<em>previously</em> Photoscan; <em>Metashape</em> throughout the module) is a well known software suite for SfM photogrammetry.
+Metashape is available for all major operating systems, and can be downloaded and installed as both a standard and professional edition.
+The Professional Edition is installed on computers in the <a class="reference internal" href="seismic_lab.html"><span class="doc std std-doc">seismic lab</span></a>.
+While these licenses can not be made available for personal computers, Agisoft does offer a month-long trial period for both versions.
+Those wishing to installed Metashape are therefore redirected to the <a class="reference external" href="https://www.agisoft.com/downloads/installer/">Agisoft Downloads section</a>.</p>
+<div class="warning admonition">
+<p class="admonition-title">Version mismatch</p>
+<p>It is always recommended to install the latest version.
+However, following the release of major and minor software updates, small incompatibilities may exist between the current module.
+If found, please report these by raising a Github issue.</p>
+</div>
 </div>
 <div class="section" id="github">
 <h2>Github<a class="headerlink" href="#github" title="Permalink to this headline">¶</a></h2>
@@ -401,7 +429,7 @@ Nontheless we will be going through the basic commands below.</p>
 Access this from your start menu, and you will be greeted by a <a class="reference internal" href="#anaconda-cli"><span class="std std-ref">command line interface (cli)</span></a>.</p>
 <div class="figure align-default" id="anaconda-cli">
 <img alt="../../../_images/e0902cb5.png" src="../../../_images/e0902cb5.png" />
-<p class="caption"><span class="caption-number">Fig. 24 </span><span class="caption-text">The Anaconda Prompt shows our current working directory and the environment we are in (base).</span><a class="headerlink" href="#anaconda-cli" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 29 </span><span class="caption-text">The Anaconda Prompt shows our current working directory and the environment we are in (base).</span><a class="headerlink" href="#anaconda-cli" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="creating-and-activating-environments">
@@ -520,11 +548,15 @@ Download the pip <a class="reference external" href="https://github.com/PeterBet
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">automated_metashape</span><span class="o">-</span><span class="mf">0.1</span><span class="o">.</span><span class="mi">0</span><span class="o">-</span><span class="n">py37</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="nb">any</span><span class="o">.</span><span class="n">whl</span>
 </pre></div>
 </div>
+<div class="seealso admonition">
+<p class="admonition-title">Cite me</p>
+<p>Please cite the following acknowledgement when using the automated metashape scripting package:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Betlem</span><span class="p">,</span> <span class="n">P</span><span class="o">.</span><span class="p">,</span> <span class="n">Birchall</span><span class="p">,</span> <span class="n">T</span><span class="o">.</span><span class="p">,</span> <span class="n">Mosociova</span><span class="p">,</span> <span class="n">T</span><span class="o">.</span><span class="p">,</span> <span class="n">Sartell</span><span class="p">,</span> <span class="n">A</span><span class="o">.</span><span class="n">M</span><span class="o">.</span><span class="n">R</span><span class="o">.</span><span class="p">,</span> <span class="ow">and</span> <span class="n">Senger</span><span class="p">,</span> <span class="n">K</span><span class="o">.</span><span class="p">,</span> <span class="mi">2020</span><span class="p">,</span> <span class="n">From</span> <span class="n">seismic</span><span class="o">-</span><span class="n">scale</span> <span class="n">outcrop</span> <span class="n">to</span> <span class="n">hand</span> <span class="n">sample</span><span class="p">:</span> <span class="n">streamlining</span> <span class="n">SfM</span> <span class="n">photogrammetry</span> <span class="n">processing</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">geosciences</span><span class="p">,</span> <span class="n">ARCEx</span><span class="p">,</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">arcex</span><span class="o">.</span><span class="n">no</span><span class="o">/</span><span class="n">arcex</span><span class="o">-</span><span class="mi">2020</span><span class="o">/.</span>
+</pre></div>
 </div>
 </div>
 </div>
-<div class="section" id="automated-processing">
-<h3>Automated processing<a class="headerlink" href="#automated-processing" title="Permalink to this headline">¶</a></h3>
+</div>
 </div>
 </div>
 </div>

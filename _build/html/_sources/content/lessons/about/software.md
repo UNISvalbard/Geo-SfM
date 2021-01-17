@@ -5,6 +5,19 @@ Below provides an overview for when you want to setup the environment on your ow
 
 ## Agisoft Metashape
 
+Agisoft Metashape (*previously* Photoscan; *Metashape* throughout the module) is a well known software suite for SfM photogrammetry.
+Metashape is available for all major operating systems, and can be downloaded and installed as both a standard and professional edition.
+The Professional Edition is installed on computers in the [seismic lab](seismic_lab "seismic").
+While these licenses can not be made available for personal computers, Agisoft does offer a month-long trial period for both versions.
+Those wishing to installed Metashape are therefore redirected to the [Agisoft Downloads section](https://www.agisoft.com/downloads/installer/).
+
+```{admonition} Version mismatch
+:class: warning
+
+It is always recommended to install the latest version.
+However, following the release of major and minor software updates, small incompatibilities may exist between the current module.
+If found, please report these by raising a Github issue.
+```
 
 ## Github
 
@@ -129,12 +142,11 @@ Download the pip [redistributable](https://github.com/PeterBetlem/image_processi
 pip install automated_metashape-0.1.0-py37-none-any.whl
 ```
 
+````{admonition} Cite me
+:class: seealso
 
-
-
-
-
-
-
-
-### Automated processing
+Please cite the following acknowledgement when using the automated metashape scripting package:
+```
+Betlem, P., Birchall, T., Mosociova, T., Sartell, A.M.R., and Senger, K., 2020, From seismic-scale outcrop to hand sample: streamlining SfM photogrammetry processing in the geosciences, ARCEx, https://arcex.no/arcex-2020/.
+```
+````

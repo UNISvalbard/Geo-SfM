@@ -23,14 +23,12 @@
   chapters:
   - file: /content/lessons/l4/hss_overview.md
   - file: /content/lessons/l4/hss_tutorial.md
-
+  - file: /content/lessons/l4/hss_field_exercise.md
 
 - part: Session 5
   chapters:
-  - file: /content/lessons/l5/overview.md
-  - file: /content/lessons/l5/from_metashape_to_geomodel.md
-  - file: /content/lessons/l5/quantifying_digital_samples.md
-  - file: /content/lessons/l5/digital_elevation_models.md
+  - file: /content/lessons/l5/geomodel_overview.md
+  - file: /content/lessons/l5/geomodel_tutorial.md
 
 - part: Resources
   chapters:
