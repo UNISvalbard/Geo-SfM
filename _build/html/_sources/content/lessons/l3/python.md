@@ -154,6 +154,7 @@ analyzePhotos:
     enabled: True
     quality_cutoff: 0.5 # value between 0 and 1, indicates the lowest quality unit at which photos are used for processing. 0.5 is suggested by Agisoft.
 ```
+````
 
 ````{tabbed} Add masks
 ```yaml

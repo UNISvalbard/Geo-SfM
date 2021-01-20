@@ -16,10 +16,10 @@ This is an established SfM photogrammetry package and is often used in the Arcti
 This session introduce basic processing through the graphical user interface through use of a standardised data set.
 
 ```{admonition} Software version
-The following tutorial assumes the use of **Agisoft Metashape version 1.6.x.**
+The following tutorial assumes the use of **Agisoft Metashape version 1.7.x.**
 
 To see whether you are indeed running the correct version proceed to *Help/About Metashape...* in the menu bar.
-This should provide you with the **major release**, *minor*, and patch (**1**.*6*.x) version number, as well as the build.
+This should provide you with the **major release**, *minor*, and patch (**1**.*7*.x) version number, as well as the build.
 
 If the version does not match the version listed above, please either
 - update the installation; or
@@ -47,7 +47,7 @@ We will be using a standardised project environment throughout this course.
 It is recommended to use this setup (or something similar) throughout all future projects as well.
 The use of this standardised project setup is furthermore a requirement for digital models to be uploaded to [the Svalbox DB](http://svalbox.no).
 
-Proceed by creating the following folder structure in the projects directory (i.e., the directory where you have all your projects stored together).
+Proceed by creating the following project_directory in the folder where you have all your projects..
 Herein folders are named without extensions, and filenames are given extensions.
 Text between {} indicates variable names.
 
