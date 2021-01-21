@@ -345,7 +345,7 @@ config_file = "../config/photogrammetry_processing_settings.yml"
 AP(config_file)
 ```
 
-This assumes *../config/photogrammetry_processing_settings.yml* consist of the following:
+This assumes *..//config/photogrammetry_processing_settings.yml* consist of the following:
 
 ```yaml
 run_name: # name of the project run (e.g., KonusdalenWestFault)
