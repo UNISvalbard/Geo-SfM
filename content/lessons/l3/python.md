@@ -161,7 +161,7 @@ analyzePhotos:
 masks:
     enabled: False # Default, only enable if you have images with masks :)
     path: E:\Anna\EK11\100MEDIA\{filename}_mask.JPG # Has to point to dir with masks
-    masking_mode: Metashape.MaskModeFile # Default, other options include: Masking mode in [MaskingModeAlpha, MaskingModeFile, MaskingModeBackground, MaskingModeModel]
+    masking_mode: Metashape.MaskingModeFile # Default, other options include: Masking mode in Metashape.[MaskingModeAlpha, MaskingModeFile, MaskingModeBackground, MaskingModeModel]
 ```
 ````
 
@@ -242,11 +242,12 @@ filterDenseCloud:
 ```yaml
 buildMesh: # (Metashape: buildModel)
     enabled: True
-    surface_type: Metashape.Arbitrary # Recommended: Metashape.Arbitrary
+    surface_type: Metashape.Arbitrary # Recommended: Metashape.Arbitrary. Surface type in [Arbitrary, HeightField]
+    interpolation: Metashape.EnabledInterpolation # Interpolation mode in Metashape.[DisabledInterpolation, EnabledInterpolation, Extrapolated]
     face_count: Metashape.HighFaceCount # Options are [LowFaceCount, MediumFaceCount, HighFaceCount, CustomFaceCount]
     face_count_custom: 100000 # Integer, has to be enabled through CustomFaceCount above.
     ## For dense cloud (buildDenseCloud)
-    source_data: Metashape.DenseCloudData # Recommended: DenseCloudData. Others include: PointCloudData and ModelData.
+    source_data: Metashape.DenseCloudData # Recommended: DenseCloudData. Others include: Data source in [PointCloudData, DenseCloudData, DepthMapsData, ModelData, TiledModelData, ElevationData, OrthomosaicData, ImagesData]
     volumetric_masks: False # Default False; True for volumetric masking during 3D mesh generation, as documented here https://www.agisoft.com/index.php?id=48
 ```
 ````
@@ -277,9 +278,9 @@ buildTiledModel: # (Metashape: buildTexture)
 ```yaml
 buildDEM: # (Metashape: buildTexture)
     enabled: True
-    source_data: Metashape.DenseCloudData
+    source_data: Metashape.ModelData # Data source in Metashape.[PointCloudData, DenseCloudData, DepthMapsData, ModelData, TiledModelData, ElevationData, OrthomosaicData, ImagesData]
     resolution: 0.01
-    projection: "EPSG::32633"
+    interpolation: Metashape.DisabledInterpolation # Interpolation mode in Metashape.[DisabledInterpolation, EnabledInterpolation, Extrapolated]
 ```
 ````
 
@@ -340,11 +341,11 @@ It should now result in a successful runtime.
 ```{code-cell} ipython3
 :tags: [raises-exception]
 
-config_file_path = "../config/photogrammetry_processing_settings.yml"
+config_file = "../config/photogrammetry_processing_settings.yml"
 AP(config_file)
 ```
 
-This assumes *../config/photogrammetry_processing_settings.yml* consist of the following:
+This assumes *..//config/photogrammetry_processing_settings.yml* consist of the following:
 
 ```yaml
 run_name: # name of the project run (e.g., KonusdalenWestFault)
