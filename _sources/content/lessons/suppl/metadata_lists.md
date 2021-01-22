@@ -1,6 +1,14 @@
 # Metadata templates for archiving
 
 ````{tabbed} Hand-sized samples
+
+```{admonition} Final list TBD
+:class: warning
+
+Keep in mind that the metadata form below is still undergoing active development.
+The final form required for archiving may therefore not be compatible with the one below.
+```
+
 ```yaml
 # This is an example yaml configuration for the archiving of a digitised rock/handsample.
 # The name is automatically generated as a function of locality + rock_type.
@@ -51,5 +59,64 @@ unis_project_campaign: # Same as in the project_config_setting
 owner:
 data_path:
 comment:
+```
+````
+
+````{tabbed} Digital outcrop models
+
+```{admonition} Final list TBD
+:class: warning
+
+Keep in mind that the metadata form below is still undergoing active development.
+The final form required for archiving may therefore not be compatible with the one below.
+```
+
+```yaml
+data:
+    data_project_path: C:\Users\Peter\Downloads\UNIS_3051_20180827_Spit_Sarstangen_Sarsoyra1_U # FOLDER DIR (absolute)
+    data_model_file: {model_filename}.obj # MODEL FILE NAME (relative to data_path)
+    data_model_crs_epsg: 32633 # INT EPSG number of model CRS
+    data_owner:
+    data_reference_contact:
+    data_reference_scientific:
+
+metadata:
+    acquisition_date: 10.12.2019 # STRING DD.MM.YYYY
+    acquisition_vehicle: Boat # PICK Boat / UAV / Handheld / Combination
+    acquisition_reference: Peter Betlem # STRING Data collector
+    acquisition_camera_model: iPad mini 4
+    acquisition_marker_type:
+    acquisition_camera_lens:
+#
+    location_locality: Longyearbyen # STRING
+    location_land: # PICK Albert I Land / Andrée Land / Bünsow Land / Dickson Land / Haakon VII Land /
+#       Heer Land / James I Land / Nathorst Land / Nordenskiöld Land / Ny-Friesland / Olav V Land /
+#       Oscar II Land / Sabine Land / Sørkapp Land / Torell Land / Wedel Jarlsberg Land / Gustav Adolf Land /
+#        Gustav V Land / Orvin Land
+    location_island: Edgeøya # Island the outcrop is found oni#     PICK: Hopen / Spitsbergen / Kong Karls Land / Edgeøya / Barentsøya /
+#        Tusenøyane / Nordaustlandet / Kvitøya / Prins Karls Forland / Bjørnøya / Other
+#
+    processing_camera_stations: 267
+    processing_camera_total_error: 10
+    processing_ground_resolution: 0.00345 # in metres/pixel
+    processing_dem_resolution: 0.0138 # in metres/pixel
+    processing_dem_point_density: 0.526 # in points/m2
+    processing_flying_altitude: 10.8 # in m, average distance between cameras and sparse point cloud
+    processing_coverage_area: 932.0 # in m2
+    processing_georeferencing_type:
+    processing_georeferencing_crs:
+    processing_reference_contact: Peter Betlem
+#
+    publishing_sketchfab_id: bf3b54faa2554771a6c49c30638544fb
+    publishing_svalbox_post_id: # automatically supplied, just for reference
+    publishing_svalbox_img_id: # automatically supplied, just for reference
+    publishing_dom_id: # automatically supplied, just for reference
+    publishing_date_archived: # automatically supplied, just for reference
+    publishing_date_revised: # automatically supplied, just for reference
+#
+    unis_project_no:
+    unis_project_owner:
+#
+    comments:
 ```
 ````

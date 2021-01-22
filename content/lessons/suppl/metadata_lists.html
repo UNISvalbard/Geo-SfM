@@ -325,9 +325,14 @@
   <div class="section" id="metadata-templates-for-archiving">
 <h1>Metadata templates for archiving<a class="headerlink" href="#metadata-templates-for-archiving" title="Permalink to this headline">¶</a></h1>
 <div class="tabbed-set docutils">
-<input checked="checked" id="a0e4cbac-5615-4a97-b055-4d08a59cbb9b" name="f25dcdd2-fdea-4991-9c4b-187f008e2f45" type="radio">
-</input><label class="tabbed-label" for="a0e4cbac-5615-4a97-b055-4d08a59cbb9b">
+<input checked="checked" id="1566fe79-7c0f-4cc1-9183-4d71b3c1d11d" name="4a41b573-bd66-44a1-b9ee-1067c1bb06b9" type="radio">
+</input><label class="tabbed-label" for="1566fe79-7c0f-4cc1-9183-4d71b3c1d11d">
 Hand-sized samples</label><div class="tabbed-content docutils">
+<div class="warning admonition">
+<p class="admonition-title">Final list TBD</p>
+<p>Keep in mind that the metadata form below is still undergoing active development.
+The final form required for archiving may therefore not be compatible with the one below.</p>
+</div>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is an example yaml configuration for the archiving of a digitised rock/handsample.</span>
 <span class="c1"># The name is automatically generated as a function of locality + rock_type.</span>
 <span class="c1"># E.g.: Maaykedalen shale.</span>
@@ -377,6 +382,63 @@ Hand-sized samples</label><div class="tabbed-content docutils">
 <span class="nt">owner</span><span class="p">:</span>
 <span class="nt">data_path</span><span class="p">:</span>
 <span class="nt">comment</span><span class="p">:</span>
+</pre></div>
+</div>
+</div>
+<input id="41f9d87e-a887-4c2a-820a-e11a75c28eed" name="4a41b573-bd66-44a1-b9ee-1067c1bb06b9" type="radio">
+</input><label class="tabbed-label" for="41f9d87e-a887-4c2a-820a-e11a75c28eed">
+Digital outcrop models</label><div class="tabbed-content docutils">
+<div class="warning admonition">
+<p class="admonition-title">Final list TBD</p>
+<p>Keep in mind that the metadata form below is still undergoing active development.
+The final form required for archiving may therefore not be compatible with the one below.</p>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">data</span><span class="p">:</span>
+    <span class="nt">data_project_path</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">C:\Users\Peter\Downloads\UNIS_3051_20180827_Spit_Sarstangen_Sarsoyra1_U</span> <span class="c1"># FOLDER DIR (absolute)</span>
+    <span class="nt">data_model_file</span><span class="p">:</span> <span class="p p-Indicator">{</span><span class="nv">model_filename</span><span class="p p-Indicator">}</span><span class="l l-Scalar l-Scalar-Plain">.obj</span> <span class="c1"># MODEL FILE NAME (relative to data_path)</span>
+    <span class="nt">data_model_crs_epsg</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">32633</span> <span class="c1"># INT EPSG number of model CRS</span>
+    <span class="nt">data_owner</span><span class="p">:</span>
+    <span class="nt">data_reference_contact</span><span class="p">:</span>
+    <span class="nt">data_reference_scientific</span><span class="p">:</span>
+
+<span class="nt">metadata</span><span class="p">:</span>
+    <span class="nt">acquisition_date</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10.12.2019</span> <span class="c1"># STRING DD.MM.YYYY</span>
+    <span class="nt">acquisition_vehicle</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Boat</span> <span class="c1"># PICK Boat / UAV / Handheld / Combination</span>
+    <span class="nt">acquisition_reference</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Peter Betlem</span> <span class="c1"># STRING Data collector</span>
+    <span class="nt">acquisition_camera_model</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">iPad mini 4</span>
+    <span class="nt">acquisition_marker_type</span><span class="p">:</span>
+    <span class="nt">acquisition_camera_lens</span><span class="p">:</span>
+<span class="c1">#</span>
+    <span class="nt">location_locality</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Longyearbyen</span> <span class="c1"># STRING</span>
+    <span class="nt">location_land</span><span class="p">:</span> <span class="c1"># PICK Albert I Land / Andrée Land / Bünsow Land / Dickson Land / Haakon VII Land /</span>
+<span class="c1">#       Heer Land / James I Land / Nathorst Land / Nordenskiöld Land / Ny-Friesland / Olav V Land /</span>
+<span class="c1">#       Oscar II Land / Sabine Land / Sørkapp Land / Torell Land / Wedel Jarlsberg Land / Gustav Adolf Land /</span>
+<span class="c1">#        Gustav V Land / Orvin Land</span>
+    <span class="nt">location_island</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Edgeøya</span> <span class="c1"># Island the outcrop is found oni#     PICK: Hopen / Spitsbergen / Kong Karls Land / Edgeøya / Barentsøya /</span>
+<span class="c1">#        Tusenøyane / Nordaustlandet / Kvitøya / Prins Karls Forland / Bjørnøya / Other</span>
+<span class="c1">#</span>
+    <span class="nt">processing_camera_stations</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">267</span>
+    <span class="nt">processing_camera_total_error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10</span>
+    <span class="nt">processing_ground_resolution</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.00345</span> <span class="c1"># in metres/pixel</span>
+    <span class="nt">processing_dem_resolution</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.0138</span> <span class="c1"># in metres/pixel</span>
+    <span class="nt">processing_dem_point_density</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.526</span> <span class="c1"># in points/m2</span>
+    <span class="nt">processing_flying_altitude</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10.8</span> <span class="c1"># in m, average distance between cameras and sparse point cloud</span>
+    <span class="nt">processing_coverage_area</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">932.0</span> <span class="c1"># in m2</span>
+    <span class="nt">processing_georeferencing_type</span><span class="p">:</span>
+    <span class="nt">processing_georeferencing_crs</span><span class="p">:</span>
+    <span class="nt">processing_reference_contact</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Peter Betlem</span>
+<span class="c1">#</span>
+    <span class="nt">publishing_sketchfab_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">bf3b54faa2554771a6c49c30638544fb</span>
+    <span class="nt">publishing_svalbox_post_id</span><span class="p">:</span> <span class="c1"># automatically supplied, just for reference</span>
+    <span class="nt">publishing_svalbox_img_id</span><span class="p">:</span> <span class="c1"># automatically supplied, just for reference</span>
+    <span class="nt">publishing_dom_id</span><span class="p">:</span> <span class="c1"># automatically supplied, just for reference</span>
+    <span class="nt">publishing_date_archived</span><span class="p">:</span> <span class="c1"># automatically supplied, just for reference</span>
+    <span class="nt">publishing_date_revised</span><span class="p">:</span> <span class="c1"># automatically supplied, just for reference</span>
+<span class="c1">#</span>
+    <span class="nt">unis_project_no</span><span class="p">:</span>
+    <span class="nt">unis_project_owner</span><span class="p">:</span>
+<span class="c1">#</span>
+    <span class="nt">comments</span><span class="p">:</span>
 </pre></div>
 </div>
 </div>
