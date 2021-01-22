@@ -136,10 +136,10 @@ pip install Metashape-1.7.0-cp35.cp36.cp37.cp38-abi3-linux_x86_64.whl
 ````
 
 Finally we can install the *automated metashape* scripts using the pip manager.
-Download the pip [redistributable](https://github.com/PeterBetlem/image_processing/releases/tag/v0.1.0) and install:
+Download the latest pip [redistributable](https://github.com/PeterBetlem/image_processing/releases) and install:
 
 ```
-pip install automated_metashape-0.1.1-py37-none-any.whl
+pip install automated_metashape-0.1.1-py3-none-any.whl
 ```
 
 ````{admonition} Cite me
