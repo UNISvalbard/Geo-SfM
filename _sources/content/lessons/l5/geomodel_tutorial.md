@@ -12,6 +12,8 @@ Feel free to contribute with a different programme workflow.
 
 ### Metashape
 
+#### Annotations: points, polylines, polygons
+
 Point clouds, meshes and tiled models can all be interpreted directly from within the Metashape GUI.
 {numref}`metashape_point_selection` shows the annotation drop-down menu, in which both the annotation type (e.g., *points*) and mechanism can be selected (e.g., *snap to grid*).
 
@@ -44,6 +46,8 @@ Polyline interaction options.
 Use right-click on a selected shape to open the pop-up menu.
 Similar operations allow one to interact with points and polygons.
 ```
+
+#### Ruler tool
 
 While distances could easily be calculated from the different points in a shape, the {ref}`ruler tool <interp_ruler>` provides an easier way of doing so.
 Simply activate the tool and left-click the points of interest to return a distance.
