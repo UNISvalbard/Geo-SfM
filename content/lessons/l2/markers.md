@@ -119,6 +119,16 @@ This allows for far more freedom, including the automated generation of multiple
 
 ## GCP detection
 
+```{admonition} Compatible CRS
+:class: warning
+
+Always make sure to select a compatible CRS when dealing with markers.
+For instance, using metric measurements while in a longitude latitude CRS will give rise to very funky scaling issues!
+Probably wise to change the project or marker CRS to EPSG:9001 (*Local Coordinates (m)*) when dealing with metric measurements.
+Do so by right-clicking the active chunk in the *Workspace*, and then select *Reference Settings...*.
+
+```
+
 ### Manual detection
 
 In order to manually detect GCPs, one first has to create a new Agisoft Metashape project and import all the taken images.
@@ -181,8 +191,6 @@ To optimise marker detection, it is advised to set the *Marker type* parameter e
 
 Metashape GUI option for marker detection.
 ```
-
-Once done, all markers should
 
 #### ArUco
 

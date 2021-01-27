@@ -4,7 +4,7 @@
 
 ## Lightbox
 
-Use CRS = epsg:40400.
+Use CRS = epsg:9001.
 Correct lightning
 Different angles.
 

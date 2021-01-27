@@ -345,7 +345,7 @@
 <h1>Exercise 2 - learning the ropes of GCP and marker detection<a class="headerlink" href="#exercise-2-learning-the-ropes-of-gcp-and-marker-detection" title="Permalink to this headline">¶</a></h1>
 <div class="admonition-deadline admonition">
 <p class="admonition-title">Deadline</p>
-<p>Please complete this exercise <strong>by the end of the current session</strong>.</p>
+<p>Please complete this exercise <strong>by the start of the next session</strong>.</p>
 </div>
 <div class="section" id="learning-goals">
 <h2>Learning goals<a class="headerlink" href="#learning-goals" title="Permalink to this headline">¶</a></h2>
@@ -370,22 +370,31 @@ This includes the generation of both Metashape markers and open-source ArUco mar
 <ul class="simple">
 <li><p>[ ] GCP generation</p>
 <ul>
-<li><p>[ ] Generate a single Metashape marker and print it on A4</p></li>
-<li><p>[ ] Generate a single ArUco marker and print it on A4</p></li>
+<li><p>[ ] Generate a single Metashape marker and print it on A4 (or show it on your screen)</p></li>
+<li><p>[ ] Generate a single ArUco marker and print it on A4 (or show it on your screen)</p></li>
 </ul>
 </li>
 <li><p>[ ] photoshoot:</p>
 <ul>
-<li><p>[ ] Place both markers near an object of interest (e.g., computer screen, chair)</p></li>
-<li><p>[ ] Take at least 10 photos of the target from different angles and distances, making sure the markers are fully included in at least 3 photos each</p></li>
+<li><p>[ ] Take at least 10 photos of the printed (or imaged) marker from different angles and distances, making sure the markers are fully included in at least 3 photos each, and at least partially visible in the rest.</p></li>
 </ul>
 </li>
 <li><p>[ ] GCP detection:</p>
 <ul>
-<li><p>[ ] create a new Metashape project comforming the standardised project environment</p></li>
-<li><p>[ ] detect the ArUco markers manually</p></li>
-<li><p>[ ] detect the Metashape markers automatically</p></li>
-<li><p>[ ] add real world coordinates to the GCPs</p></li>
+<li><p>[ ] create a new Metashape project conforming the standardised project environment</p></li>
+<li><p>[ ] detect the ArUco marker manually</p></li>
+<li><p>[ ] detect the Metashape marker automatically</p></li>
+</ul>
+</li>
+<li><p>[ ] Combined workflow:</p>
+<ul>
+<li><p>[ ] Create a <a class="reference internal" href="#student-marker"><span class="std std-ref">hand-drawn marker grid</span></a> on A4 with 4 corners marked (i.e., the GCPs).</p></li>
+<li><p>[ ] Measure the distances between the GCPs, treating the top left corner as your origin GCP (=0,0).</p></li>
+<li><p>[ ] Place a small object in the middle, not covering any of the grid points.</p></li>
+<li><p>[ ] Image the object as per last session.</p></li>
+<li><p>[ ] Create a new Metashape project conforming the standardised project environment</p></li>
+<li><p>[ ] Import photos, manually detect the GCPs, and assign real world coordinates to the GCPs</p></li>
+<li><p>[ ] Run all steps leading up to and including texture generation (and export processing report).</p></li>
 </ul>
 </li>
 </ul>
@@ -393,9 +402,16 @@ This includes the generation of both Metashape markers and open-source ArUco mar
 <ul class="simple">
 <li><p>GCP detection requires only part of the markers to be visible in an image</p></li>
 <li><p>A GCP should always be fully imaged in at least five images</p></li>
+<li><p>The original, real-world object and the digital model are identicial in dimensions (pro tip: <a class="reference external" href="../l5/geomodel_tutorial#ruler-tool">measure this using the ruler tool</a>).</p></li>
 </ul>
 <div class="tip admonition">
-<p class="admonition-title">Hand-drawn marker points.</p>
+<p class="admonition-title">The Student’s approach to markers in Corona-lockdown.</p>
+<div class="figure align-default" id="student-marker">
+<img alt="../../../_images/student_marker.png" src="../../../_images/student_marker.png" />
+<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">One does not need to use the binary markers per se.
+As long as you have access to a ruler, pencil, and flat (and big enough) piece of paper, you can create your own marker grid.
+Then simply put the object in the middle, and voila!</span><a class="headerlink" href="#student-marker" title="Permalink to this image">¶</a></p>
+</div>
 <p>Stuck in home-office without a printer but still have access to paper, a ruler and pencil?
 You’re out of luck when it comes to automated GCP recognition.
 However, you could always measure out 4 points and draw them on the paper in a rectangle.

@@ -1,0 +1,20 @@
+2021-01-22 11:56:31,967 [INFO] automated_metashape.MetashapeProcessing: --------------
+2021-01-22 11:56:31,969 [INFO] automated_metashape.MetashapeProcessing: Fresh run initiated.
+2021-01-22 11:56:31,969 [INFO] automated_metashape.MetashapeProcessing: Runtime id: MS_20210122T1156
+2021-01-22 11:56:31,970 [INFO] automated_metashape.MetashapeProcessing: --------------
+2021-01-22 11:56:31,971 [INFO] automated_metashape.MetashapeProcessing: Agisoft Metashape Professional Version: 1.7.0.
+2021-01-22 11:56:31,971 [INFO] automated_metashape.MetashapeProcessing: Automated metashape package version: 0.1.1.
+
+2021-01-22 11:56:31,973 [INFO] automated_metashape.MetashapeProcessing: Creating new project None
+2021-01-22 11:56:32,381 [INFO] automated_metashape.MetashapeProcessing: Saved project as metashape\MS_20210122T1156.psx
+
+### Start of input file configuration for startup-stage ###
+load_project_path: null
+output_path: ./metashape
+photo_path: .
+project_crs: EPSG::32633
+project_path: ./metashape
+run_name: MS
+subdivide_task: true
+### End of input file configuration for startup-stage ###
+

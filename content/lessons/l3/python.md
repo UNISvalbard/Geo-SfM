@@ -259,6 +259,7 @@ buildTexture: # (Metashape: buildTexture)
     mapping_mode: Metashape.GenericMapping # [LegacyMapping, GenericMapping, OrthophotoMapping, AdaptiveOrthophotoMapping, SphericalMapping, CameraMapping]
     blending_mode: Metashape.MosaicBlending # Recommended: Mosaic. Other options: [AverageBlending, MosaicBlending, MinBlending, MaxBlending, DisabledBlending]
     texture_size: 8192 # integer, multiple of 4096
+    page_count: 5 # number of textures to create
 ```
 ````
 

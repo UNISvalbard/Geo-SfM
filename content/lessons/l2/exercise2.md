@@ -1,7 +1,7 @@
 # Exercise 2 - learning the ropes of GCP and marker detection
 
 ```{admonition} Deadline
-Please complete this exercise **by the end of the current session**.
+Please complete this exercise **by the start of the next session**.
 ```
 
 ## Learning goals
@@ -24,34 +24,52 @@ This includes the generation of both Metashape markers and open-source ArUco mar
 
 Proceed to the [GCP tutorial](../l2/markers "GCP tutorial") while keeping the following assignments in mind:
 
-````{admonition} Checklist and questions
+`````{admonition} Checklist and questions
 :class: note
 - [ ] GCP generation
-  - [ ] Generate a single Metashape marker and print it on A4
-  - [ ] Generate a single ArUco marker and print it on A4
+  - [ ] Generate a single Metashape marker and print it on A4 (or show it on your screen)
+  - [ ] Generate a single ArUco marker and print it on A4 (or show it on your screen)
 - [ ] photoshoot:
-  - [ ] Place both markers near an object of interest (e.g., computer screen, chair)
-  - [ ] Take at least 10 photos of the target from different angles and distances, making sure the markers are fully included in at least 3 photos each
+  - [ ] Take at least 10 photos of the printed (or imaged) marker from different angles and distances, making sure the markers are fully included in at least 3 photos each, and at least partially visible in the rest.
 - [ ] GCP detection:
-  - [ ] create a new Metashape project comforming the standardised project environment
-  - [ ] detect the ArUco markers manually
-  - [ ] detect the Metashape markers automatically
-  - [ ] add real world coordinates to the GCPs
+  - [ ] create a new Metashape project conforming the standardised project environment
+  - [ ] detect the ArUco marker manually
+  - [ ] detect the Metashape marker automatically
+
+- [ ] Combined workflow:
+  - [ ] Create a {ref}`hand-drawn marker grid <student_marker>` on A4 with 4 corners marked (i.e., the GCPs).
+  - [ ] Measure the distances between the GCPs, treating the top left corner as your origin GCP (=0,0).
+  - [ ] Place a small object in the middle, not covering any of the grid points.
+  - [ ] Image the object as per last session.
+  - [ ] Create a new Metashape project conforming the standardised project environment
+  - [ ] Import photos, manually detect the GCPs, and assign real world coordinates to the GCPs
+  - [ ] Run all steps leading up to and including texture generation (and export processing report).
+
 
 In addition, please come up with some thoughts on the following statements:
 
   - GCP detection requires only part of the markers to be visible in an image
   - A GCP should always be fully imaged in at least five images
+  - The original, real-world object and the digital model are identicial in dimensions (pro tip: [measure this using the ruler tool](../l5/geomodel_tutorial#ruler-tool)).
 
-```{admonition} Hand-drawn marker points.
+````{admonition} The Student's approach to markers in Corona-lockdown.
 :class: tip
+
+```{figure} assets/student_marker.png
+:name: student_marker
+
+One does not need to use the binary markers per se.
+As long as you have access to a ruler, pencil, and flat (and big enough) piece of paper, you can create your own marker grid.
+Then simply put the object in the middle, and voila!
+
+```
 
 Stuck in home-office without a printer but still have access to paper, a ruler and pencil?
 You're out of luck when it comes to automated GCP recognition.
 However, you could always measure out 4 points and draw them on the paper in a rectangle.
 Make sure to set one corner as the origin (0,0), and use your ruler to measure the other marker-point coordinates correspondingly.
-```
 ````
+`````
 
 ```{admonition} SfM photogrammetry workflow
 :class: tip

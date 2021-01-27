@@ -283,6 +283,7 @@ The *Build texture* dialog after opening it from the *Workflow* menu.
 Here *Texture size/count* determines the quality of the texture.
 Keep in mind that anything over 16384 can very quickly lead to very, very large file sizes on your harddisk.
 On the other hand, anything less than 4096 is probably insufficient.
+For greatest compatibility, keep the *Texture size* at 4096, but increase the count to e.g. 5 or 10.
 
 ### Generating a Tiled Model
 
