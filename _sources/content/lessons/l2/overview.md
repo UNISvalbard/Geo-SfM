@@ -17,5 +17,5 @@ For example some codes often in use in Svalbard are:
 
 - EPSG:4326 corresponds to WGS 84 longitude-latitude (used by GPS).
 - EPSG:32633 corresponds to WGS 84 UTM-33N.
-- EPSG:40400 is a special wildcard CRS that has no real world meaning, e.g., useful for hand samples.
+- EPSG:40400 is a special wildcard CRS that has no real world meaning, e.g., useful for hand samples - **though sadly not supported by Metashape (instead, use 9001 for Local Coordinates in metres)**.
 ```
