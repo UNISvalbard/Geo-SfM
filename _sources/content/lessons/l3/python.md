@@ -95,7 +95,6 @@ These should be present in every YAML configuration file, regardless of the desi
 ```yaml
 run_name: # name of the project run (e.g., KonusdalenWestFault)
 load_project_path: # This field may remain empty; put the absolute filepath to a pre-existing Agisoft Metashape project here if it is to be loaded.
-export_path: # path to output directory, usually {photo_path}/metashape
 project_path: # path to Agisoft Metashape project directory, usually {photo_path}/metashape
 project_crs: "EPSG::32633" # 32633 is WGS1984 UTM 33N; epsg number that corresponds to the required project crs. Look here: https://epsg.io/ "EPSG::40400" for hand samples.
 subdivide_task: True # Fine-level task subdivision reduces memory by breaking processing into independent chunks that are run in series. True recommended.
@@ -355,11 +354,10 @@ This assumes *..//config/photogrammetry_processing_settings.yml* consist of the 
 ```yaml
 run_name: # name of the project run (e.g., KonusdalenWestFault)
 load_project_path: # This field may remain empty; put the absolute filepath to a pre-existing Agisoft Metashape project here if it is to be loaded.
-photo_path: # path to photo directory ("data_directory" in the standardised folder directory)  - this parameter will be moved to the addPhotos configuration section in later releases.
-output_path: # path to output directory, usually {photo_path}/metashape
 project_path: # path to Agisoft Metashape project directory, usually {photo_path}/metashape
 project_crs: "EPSG::32633" # 32633 is WGS1984 UTM 33N; epsg number that corresponds to the required project crs. Look here: https://epsg.io/
 subdivide_task: True # Fine-level task subdivision reduces memory by breaking processing into independent chunks that are run in series. True recommended.
+enable_overwrite: False
 ```
 
 
