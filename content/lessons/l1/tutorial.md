@@ -144,7 +144,7 @@ Estimating image quality in the Metashape GUI.
 One can then open the *Photos* pane by clicking *Photos* in the *View* menu.
 Then, make sure to view the details rather than icons to check the Quality for each image ({numref}`analyze_select`.)
 
-```{figure} assets/analyze_process.gif
+```{figure} assets/analyze_select.gif
 :name: analyze_select
 
 Showing the image quality and disable photos that do not meet the requirement in the Metashape GUI.
