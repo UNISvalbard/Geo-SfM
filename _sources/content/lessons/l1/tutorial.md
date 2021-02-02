@@ -135,7 +135,7 @@ To do so, proceed to *Save as...* under *File* in the menu bar, and save your pr
 Before actual processing begins, we need to analyse the imported photos.
 This is done by right clicking any of the photos in a *Chunk*, then selecting *Estimate Image Quality...*, and select all photos to be analysed, as shown in {numref}`analyze_process`.
 
-```{figure} assets/analyze_process.png
+```{figure} assets/analyze_process.gif
 :name: analyze_process
 
 Estimating image quality in the Metashape GUI.
@@ -144,7 +144,7 @@ Estimating image quality in the Metashape GUI.
 One can then open the *Photos* pane by clicking *Photos* in the *View* menu.
 Then, make sure to view the details rather than icons to check the Quality for each image ({numref}`analyze_select`.)
 
-```{figure} assets/analyze_process.png
+```{figure} assets/analyze_process.gif
 :name: analyze_select
 
 Showing the image quality and disable photos that do not meet the requirement in the Metashape GUI.
