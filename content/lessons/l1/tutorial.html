@@ -341,6 +341,11 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#analyze-photos">
+     Analyze photos
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#aligning-photos">
      Aligning photos
     </a>
@@ -480,11 +485,13 @@ Text between {} indicates variable names.</p>
 |           ...
 ├───────gcps
 |           (We&#39;ll get back to this in a later session)
-└───────metashape (This is where you save your Agisoft Metashape projects to)
-            {metashape_project_name}.psx
-            .{metashape_project_name}.files
-            {metashape_project_name}_processing_report.pdf
-            (optionally: {metashape_project_name}.log)
+├───export_directory (where you place export models and files to)
+        ...
+└───metashape (This is where you save your Agisoft Metashape projects to)
+        {metashape_project_name}.psx
+        .{metashape_project_name}.files
+        {metashape_project_name}_processing_report.pdf
+        (optionally: {metashape_project_name}.log)
 </pre></div>
 </div>
 <p>The standardised project structure (as we will see later on) is also used for automated processing.</p>
@@ -525,9 +532,26 @@ Make a habbit of saving at least after every step.
 To do so, proceed to <em>Save as…</em> under <em>File</em> in the menu bar, and save your project in the <em>project_directory/metashape</em> directory that you created when extracting in data.</p>
 </div>
 </div>
+<div class="section" id="analyze-photos">
+<h3>Analyze photos<a class="headerlink" href="#analyze-photos" title="Permalink to this headline">¶</a></h3>
+<p>Before actual processing begins, we need to analyse the imported photos.
+This is done by right clicking any of the photos in a <em>Chunk</em>, then selecting <em>Estimate Image Quality…</em>, and select all photos to be analysed, as shown in <a class="reference internal" href="#analyze-process"><span class="std std-numref">Fig. 6</span></a>.</p>
+<div class="figure align-default" id="analyze-process">
+<img alt="content\lessons\l1\assets/analyze_process.png" src="content\lessons\l1\assets/analyze_process.png" />
+<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">Estimating image quality in the Metashape GUI.</span><a class="headerlink" href="#analyze-process" title="Permalink to this image">¶</a></p>
+</div>
+<p>One can then open the <em>Photos</em> pane by clicking <em>Photos</em> in the <em>View</em> menu.
+Then, make sure to view the details rather than icons to check the Quality for each image (<a class="reference internal" href="#analyze-select"><span class="std std-numref">Fig. 7</span></a>.)</p>
+<div class="figure align-default" id="analyze-select">
+<img alt="content\lessons\l1\assets/analyze_process.png" src="content\lessons\l1\assets/analyze_process.png" />
+<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">Showing the image quality and disable photos that do not meet the requirement in the Metashape GUI.</span><a class="headerlink" href="#analyze-select" title="Permalink to this image">¶</a></p>
+</div>
+<p>Then, filter on quality and <em>Disable</em> all selected cameras that do not meet the standard.
+Agisoft recommends a <em>Quality</em> of at least 0.5.</p>
+</div>
 <div class="section" id="aligning-photos">
 <h3>Aligning photos<a class="headerlink" href="#aligning-photos" title="Permalink to this headline">¶</a></h3>
-<p>With the photos now imported into Metashape, we can proceed with the alignment process.
+<p>With the photos now imported into Metashape and analysed, we can proceed with the alignment process.
 This process goes through all images in the project and tries to identify <em>common features</em>.
 In Metashape this first requires the estimation of camera positions for each photo, which are then used to build a <em>sparse cloud</em>.
 Select <em>Align Photos…</em> in the <em>Workflow</em> menu.</p>
@@ -539,7 +563,7 @@ This may take a while, but assuming there is sufficient overlap between the data
 If not, one can select this by clicking the four-dotted icon in the menu.</p>
 <div class="figure align-default" id="align-photos">
 <img alt="../../../_images/0343f82c.png" src="../../../_images/0343f82c.png" />
-<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">The <em>Align Photos</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#align-photos" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">The <em>Align Photos</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#align-photos" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition-down-sampling admonition">
 <p class="admonition-title">Down-sampling</p>
@@ -556,7 +580,7 @@ A <a class="reference internal" href="#optimize-cameras"><span class="std std-re
 Most important here is to at least select make sure that the <em>Estimate tie point covariance</em> is enabled.</p>
 <div class="figure align-default" id="optimize-cameras">
 <img alt="../../../_images/5ca3a257.png" src="../../../_images/5ca3a257.png" />
-<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">The <em>Optimize Camera Alignment</em> dialog after opening it from the <em>Tools</em> menu.</span><a class="headerlink" href="#optimize-cameras" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">The <em>Optimize Camera Alignment</em> dialog after opening it from the <em>Tools</em> menu.</span><a class="headerlink" href="#optimize-cameras" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
@@ -571,7 +595,7 @@ Keeping in mind what we discussed above, make sure to select <em>Medium</em> for
 <p><em>Reuse depth maps</em> can only be selected if depth maps have been previously calculated for the specified quality.</p>
 <div class="figure align-default" id="dense-cloud">
 <img alt="../../../_images/d2a861b0.png" src="../../../_images/d2a861b0.png" />
-<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">The <em>Build dense cloud</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#dense-cloud" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">The <em>Build dense cloud</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#dense-cloud" title="Permalink to this image">¶</a></p>
 </div>
 <p>Once processing is done, you’ll be able to show the <em>dense point cloud</em> on the screen in the <em>Model</em> tab.
 If not, one can visualise the <em>dense point cloud</em> by clicking on the nine-dotted icon in the menu.
@@ -624,7 +648,7 @@ Depth maps may lead to better results when dealing with a big number of minor de
 <p>After selecting <em>Build Mesh</em> from the <em>Workflow</em> menu, you will be able to chose either in the <a class="reference internal" href="#build-mesh"><span class="std std-ref">dialog</span></a> that pops up for <em>Source data:</em>.</p>
 <div class="figure align-default" id="build-mesh">
 <img alt="../../../_images/9b4ac0b8.png" src="../../../_images/9b4ac0b8.png" />
-<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">The <em>Build mesh</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#build-mesh" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">The <em>Build mesh</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#build-mesh" title="Permalink to this image">¶</a></p>
 </div>
 <p>Other important parameters here are the <em>Quality</em> and <em>Face count</em> parameters.
 These govern the quality of the generated mesh.
@@ -640,10 +664,10 @@ The next step involves generating a texture and placing this “image” onto th
 <div class="section" id="texture-building">
 <h4>Texture building<a class="headerlink" href="#texture-building" title="Permalink to this headline">¶</a></h4>
 <p>We can build the textures by clicking on the <em>Build Texture</em> command from the <em>Workflow</em> menu.
-While the dialog has many different parameters, the most important are highlighted in <a class="reference internal" href="#build-texture"><span class="std std-numref">Fig. 10</span></a>.</p>
+While the dialog has many different parameters, the most important are highlighted in <a class="reference internal" href="#build-texture"><span class="std std-numref">Fig. 12</span></a>.</p>
 <div class="figure align-default" id="build-texture">
 <img alt="../../../_images/7237597c.png" src="../../../_images/7237597c.png" />
-<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">The <em>Build texture</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#build-texture" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text">The <em>Build texture</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#build-texture" title="Permalink to this image">¶</a></p>
 </div>
 <p>Here <em>Texture size/count</em> determines the quality of the texture.
 Keep in mind that anything over 16384 can very quickly lead to very, very large file sizes on your harddisk.
@@ -659,7 +683,7 @@ Once again we can select the parameters for the processing step through the <a c
 <p>The most import parameter here is the <em>Pixel size (m)</em>, which should never be set than lower than the pixel size available to the model (= the default value shown when opening the dialog).</p>
 <div class="figure align-default" id="build-tiled-model">
 <img alt="../../../_images/6c44a1dc.png" src="../../../_images/6c44a1dc.png" />
-<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">The <em>Build Tiled Model</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#build-tiled-model" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">The <em>Build Tiled Model</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#build-tiled-model" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="documenting-processing-parameters">
@@ -694,10 +718,10 @@ Have a look and familiarise yourself with it.</p>
 <h4>In-programme parameters<a class="headerlink" href="#in-programme-parameters" title="Permalink to this headline">¶</a></h4>
 <p>One does not always need to export the processing report to obtain the overview of parameters.
 Handily, Metashape also provides an overview within the <em>Workspace</em> panel after having selected an item in the chunk.
-An example of this is depicted in <a class="reference internal" href="#internal-parameters"><span class="std std-numref">Fig. 12</span></a>.</p>
+An example of this is depicted in <a class="reference internal" href="#internal-parameters"><span class="std std-numref">Fig. 14</span></a>.</p>
 <div class="figure align-default" id="internal-parameters">
 <img alt="../../../_images/5201e3e2.png" src="../../../_images/5201e3e2.png" />
-<p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text">An example of the internal <em>Workspace</em> panel, including the parameters and processing metadata that is available from within the Metashape project interface.</span><a class="headerlink" href="#internal-parameters" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">An example of the internal <em>Workspace</em> panel, including the parameters and processing metadata that is available from within the Metashape project interface.</span><a class="headerlink" href="#internal-parameters" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
