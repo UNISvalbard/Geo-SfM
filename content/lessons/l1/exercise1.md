@@ -43,6 +43,7 @@ Suggested targets include:
 
 - the {ref}`boulders in front of UNIS <unis_boulders>`
 - small outcrops (ca. 5 m long, 5 m high)
+- a mug turned upside down
 
 ```{figure} assets/unis_boulders.png
 :name: unis_boulders

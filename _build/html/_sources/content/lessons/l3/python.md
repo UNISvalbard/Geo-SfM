@@ -74,7 +74,8 @@ from automated_metashape.MetashapeProcessing import AutomatedProcessing as AP
 :tags: [raises-exception]
 
 config_file = "../config/empty_photogrammetry_processing_settings.yml"
-AP(config_file)
+project = AP(config_file)
+project.init_tasks()
 ```
 
 If all went well, the AutomatedProcessing module was successfully imported (= no error on first input).
@@ -94,11 +95,10 @@ These should be present in every YAML configuration file, regardless of the desi
 ```yaml
 run_name: # name of the project run (e.g., KonusdalenWestFault)
 load_project_path: # This field may remain empty; put the absolute filepath to a pre-existing Agisoft Metashape project here if it is to be loaded.
-photo_path: # path to photo directory ("data_directory" in the standardised folder directory)  - this parameter will be moved to the addPhotos configuration section in later releases.
-output_path: # path to output directory, usually {photo_path}/metashape
 project_path: # path to Agisoft Metashape project directory, usually {photo_path}/metashape
 project_crs: "EPSG::32633" # 32633 is WGS1984 UTM 33N; epsg number that corresponds to the required project crs. Look here: https://epsg.io/ "EPSG::40400" for hand samples.
 subdivide_task: True # Fine-level task subdivision reduces memory by breaking processing into independent chunks that are run in series. True recommended.
+enable_overwrite: False # If set to True, overwrites project that is loaded with load_project_path parameter. Use with caution!
 ```
 
 The above won't do much - it simply creates a new Metashape project or loads an existing project and saves it again.
@@ -138,6 +138,7 @@ In case default parameters are to be used, remove the corresponding parameter-se
 ```yaml
 addPhotos:
     enabled: True
+    photo_path: # path to photo directory ("data_directory" in the standardised folder directory)  - this parameter will be moved to the addPhotos configuration section in later releases.
     remove_photo_location_metadata: False # Removes photo location metadata
     multispectral: False # Is this a multispectral photo set? If RGB, set to False.
 ```
@@ -289,6 +290,7 @@ buildDEM: # (Metashape: buildTexture)
 ```yaml
 detectGCPs:
     enabled: True
+    photo_path: # path to photo directory ("data_directory" in the standardised folder directory)  - this parameter will be moved to the addPhotos configuration section in later releases.
     aruco_dict: aruco.DICT_6X6_250 # options include: aruco.DICT_6X6_250, aruco.DICT_4X4_50
     corner: "topright" # options: bottomleft (=1), topleft (2), topright (3), bottomright (4), centre (0).
     template:
@@ -343,7 +345,8 @@ It should now result in a successful runtime.
 :tags: [raises-exception]
 
 config_file = "../config/photogrammetry_processing_settings.yml"
-AP(config_file)
+project = AP(config_file)
+project.init_tasks()
 ```
 
 This assumes *..//config/photogrammetry_processing_settings.yml* consist of the following:
@@ -351,11 +354,10 @@ This assumes *..//config/photogrammetry_processing_settings.yml* consist of the 
 ```yaml
 run_name: # name of the project run (e.g., KonusdalenWestFault)
 load_project_path: # This field may remain empty; put the absolute filepath to a pre-existing Agisoft Metashape project here if it is to be loaded.
-photo_path: # path to photo directory ("data_directory" in the standardised folder directory)  - this parameter will be moved to the addPhotos configuration section in later releases.
-output_path: # path to output directory, usually {photo_path}/metashape
 project_path: # path to Agisoft Metashape project directory, usually {photo_path}/metashape
 project_crs: "EPSG::32633" # 32633 is WGS1984 UTM 33N; epsg number that corresponds to the required project crs. Look here: https://epsg.io/
 subdivide_task: True # Fine-level task subdivision reduces memory by breaking processing into independent chunks that are run in series. True recommended.
+enable_overwrite: False
 ```
 
 

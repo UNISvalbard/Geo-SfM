@@ -119,19 +119,19 @@ And then install the downloaded *.whl* file using the [pip package installer](ht
 Windows
 ^^^
 ```
-pip install Metashape-1.7.0-cp35.cp36.cp37.cp38-none-win_amd64.whl
+pip install Metashape-1.7.1-cp35.cp36.cp37.cp38-none-win_amd64.whl
 ```
 ---
 macOS
 ^^^
 ```
-pip install Metashape-1.7.0-cp35.cp36.cp37.cp38-abi3-macosx_10_13_x86_64.whl
+pip install Metashape-1.7.1-cp35.cp36.cp37.cp38-abi3-macosx_10_13_x86_64.whl
 ```
 ---
 Linux
 ^^^
 ```
-pip install Metashape-1.7.0-cp35.cp36.cp37.cp38-abi3-linux_x86_64.whl
+pip install Metashape-1.7.1-cp35.cp36.cp37.cp38-abi3-linux_x86_64.whl
 ```
 ````
 
@@ -139,7 +139,7 @@ Finally we can install the *automated metashape* scripts using the pip manager.
 Download the latest pip [redistributable](https://github.com/PeterBetlem/image_processing/releases) and install:
 
 ```
-pip install automated_metashape-0.1.1-py3-none-any.whl
+pip install automated_metashape-0.1.2-py3-none-any.whl
 ```
 
 ````{admonition} Cite me

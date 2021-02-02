@@ -34,8 +34,6 @@ Capturing an object from many angles with sufficient overlap between images is a
 Preferably, the images each feature a high degree of overlap and are taken from different angles ({numref}`sfm_figure`) to narrow down the margin of error of the coordinate estimates.
 Interestingly, modern algorithms do not only calculate the point coordinates - they simultaneously calculate the original camera locations; amazing, no?
 
-
-
 This is, however, only the first step.
 Once the camera positions are known and a hand full of key matching points are estimated, the *sparse point cloud* (i.e., point cloud with only few key points) can be turned into a *dense point cloud* (i.e., every unique feature on the 2D images is turned into a unique 3D point).
 

@@ -75,11 +75,13 @@ Text between {} indicates variable names.
 |           ...
 ├───────gcps
 |           (We'll get back to this in a later session)
-└───────metashape (This is where you save your Agisoft Metashape projects to)
-            {metashape_project_name}.psx
-            .{metashape_project_name}.files
-            {metashape_project_name}_processing_report.pdf
-            (optionally: {metashape_project_name}.log)
+├───export_directory (where you place export models and files to)
+        ...
+└───metashape (This is where you save your Agisoft Metashape projects to)
+        {metashape_project_name}.psx
+        .{metashape_project_name}.files
+        {metashape_project_name}_processing_report.pdf
+        (optionally: {metashape_project_name}.log)
 ```
 
 The standardised project structure (as we will see later on) is also used for automated processing.
@@ -128,9 +130,32 @@ Make a habbit of saving at least after every step.
 To do so, proceed to *Save as...* under *File* in the menu bar, and save your project in the *project_directory/metashape* directory that you created when extracting in data.
 ```
 
+### Analyze photos
+
+Before actual processing begins, we need to analyse the imported photos.
+This is done by right clicking any of the photos in a *Chunk*, then selecting *Estimate Image Quality...*, and select all photos to be analysed, as shown in {numref}`analyze_process`.
+
+```{figure} assets/analyze_process.png
+:name: analyze_process
+
+Estimating image quality in the Metashape GUI.
+```
+
+One can then open the *Photos* pane by clicking *Photos* in the *View* menu.
+Then, make sure to view the details rather than icons to check the Quality for each image ({numref}`analyze_select`.)
+
+```{figure} assets/analyze_process.png
+:name: analyze_select
+
+Showing the image quality and disable photos that do not meet the requirement in the Metashape GUI.
+```
+
+Then, filter on quality and *Disable* all selected cameras that do not meet the standard.
+Agisoft recommends a *Quality* of at least 0.5.
+
 ### Aligning photos
 
-With the photos now imported into Metashape, we can proceed with the alignment process.
+With the photos now imported into Metashape and analysed, we can proceed with the alignment process.
 This process goes through all images in the project and tries to identify *common features*.
 In Metashape this first requires the estimation of camera positions for each photo, which are then used to build a *sparse cloud*.
 Select *Align Photos...* in the *Workflow* menu.
