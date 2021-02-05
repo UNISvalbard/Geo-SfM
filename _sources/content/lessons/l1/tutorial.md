@@ -59,7 +59,7 @@ Text between {} indicates variable names.
         {cfg_0001}.yml
         {cfg_0002}.yml
         ...
-├───data_directory (where you unzipped the files to)
+├───data (where you unzipped the files to)
 ├───────100MEDIA (The folder in which all the images reside)
 |           {img_0001}.{ext}
 |           {img_0002}.{ext}
@@ -75,7 +75,7 @@ Text between {} indicates variable names.
 |           ...
 ├───────gcps
 |           (We'll get back to this in a later session)
-├───export_directory (where you place export models and files to)
+├───export (where you place export models and files to)
         ...
 └───metashape (This is where you save your Agisoft Metashape projects to)
         {metashape_project_name}.psx

@@ -75,31 +75,45 @@ group:
     name:
     person1:
     person2:
+    person3:
+    person4:
     ...
 model:
     place: # Where did you find your target?
-    region:  # PICK: Hopen / Spitsbergen / Kong Karls Land / Edgeøya / Barentsøya / Tusenøyane / Nordaustlandet / Kvitøya / Prins Karls Forland / Bjørnøya / Other
+    land:
+    island:  # PICK: Hopen / Spitsbergen / Kong Karls Land / Edgeøya / Barentsøya / Tusenøyane / Nordaustlandet / Kvitøya / Prins Karls Forland / Bjørnøya / Other
 
 data:
-    package_directory: # FOLDER DIR (absolute, where did you create the standard processing folder structure referred to in the [tutorial]{../l1/tutorial})
-    data_directory: #
-    overview_img: # FILE DIR (relative to package_directory)
-    model_crs:  # INT EPSG number of model CRS
-    description_file: "" # create a simple text file with a description, and put it in the package_directory
+    data_project_path: C:\Users\Peter\Downloads\UNIS_3051_20180827_Spit_Sarstangen_Sarsoyra1_U # FOLDER DIR (absolute)
+    data_model_file: {model_filename}.obj # MODEL FILE NAME (relative to data_path)
+    data_owner:
+    data_reference_contact:
+    data_reference_scientific:
 
-metadata:
-    acquisition_date: # STRING DD.MM.YYYY
-    acquisition_type: # PICK Boat / UAV / Handheld / Combination
-    acquisition_user: # STRING Data collector
-    operator: # STRING Project owner
-    acquisition_distance2outcrop: # FLOAT, distance to outcrop
-    processing_user: # STRING in charge of processing
-    processing_images: # INT number of images used for the model
-    processing_calibration: # PICK: Built-in (GPS) / Marker (GPS) / Marker (dGPS) / None
-    processing_resolution: # FLOAT resolution in cm/pixel
-    processing_quality: # PICK bad / average / good / excellent / None
-    tag: # STRING, item separator: ;
-    category: # STRING, item separator: ;
+metadata: # these can all be found in the exported processing report :)
+    acquisition_date: 10.12.2019 # STRING DD.MM.YYYY
+    acquisition_reference: # STRING Data collector
+    acquisition_camera_model:
+    acquisition_marker_type:
+    acquisition_camera_lens:
+    processing_camera_stations: # a number
+    processing_camera_total_error:
+    processing_ground_resolution: 0.00345 # in metres/pixel
+    processing_dem_resolution: 0.0138 # in metres/pixel
+    processing_dem_point_density: 0.526 # in points/m2
+    processing_flying_altitude: 10.8 # in m, average distance between cameras and sparse point cloud
+    processing_coverage_area: 932.0 # in m2
+    processing_georeferencing_type:
+    processing_georeferencing_crs:
+    processing_reference_contact:
+```
+
+```{admonition} Do not forget...
+:class: warning
+
+Make sure to also create a *description.txt* file with a description of the object and selecting an overview image.
+Save these within the project directory with the suggested filenames (*description.txt*, *image_overview.jpg*).
+
 ```
 
 
