@@ -91,7 +91,7 @@ The standardised project structure (as we will see later on) is also used for au
 Having created the standardised project structure, proceed with extracting all your taken images to the following directory:
 
 ```
-{project_directory}\data_directory\100MEDIA
+{project_directory}\data\100MEDIA
 ```
 
 ```{admonition} More than 999 images?
