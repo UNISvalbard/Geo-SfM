@@ -140,3 +140,54 @@ unis_project_campaign: # STRING, campaign
 comments: # STRING, comment you would like to add to the database entry.
 ```
 ````
+
+````{tabbed} Digital drill core models
+
+```{admonition} Final list TBD
+:class: warning
+
+Keep in mind that the metadata form below is still undergoing active development.
+The final form required for archiving may therefore not be compatible with the one below.
+```
+
+```yaml
+data_project_path: dir/to\path
+data_owner: Svalbox
+data_reference: Peter Betlem
+data_cite: <a href ="https://doi.org/10.3390/rs12020330">Betlem et al. (2020)</a>
+acq_date: 18.09.2019 # DD.MM.YYYY
+acq_reference: Peter Betlem
+acq_camera_model: ILCE-6300
+acq_camera_lens: 50 mm
+acq_gcp_numbers: 6
+acq_gcp_space: 2D # options include 2D, 3D
+borehole_identifier: DH4
+borehole_name: DH4
+sample_top_depth: 643.0 # m
+sample_base_depth: 643.047 # m
+sample_length: 4.7 # cm
+sample_width: 4.1 # cm
+sample_volume: 54.48 # cm3
+sample_weight: 137.98 # g
+sample_bulk_density: 2.53 # g/cm3
+sample_lithology:
+    - siltstone # str
+    - sandstone
+proc_camera_stations: 96 # INT
+proc_camera_total_rmse: # in mm
+proc_ground_resolution: 0.0374 # in mm/pix
+proc_dem_resolution: 0.04 # in mm/pix
+proc_dem_point_density: 624 # points/mm2
+proc_dense_cloud_confidence_min:
+proc_flying_altitude: 48.3 # cm
+proc_coverage_area: 14.2 # cm2
+proc_gcp_type: Agisoft Metashape
+proc_gcp_crs_epsg: 40400
+proc_gcp_total_rmse: 0.126707 # mm
+proc_reference: Peter Betlem
+publ_sketchfab_id: 925c0f05104b491f818925839fb5133b
+unis_project_no: 123456asbas
+unis_project_campaign: lightbox
+comments:
+```
+````

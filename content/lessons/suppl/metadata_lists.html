@@ -325,8 +325,8 @@
   <div class="section" id="metadata-templates-for-archiving">
 <h1>Metadata templates for archiving<a class="headerlink" href="#metadata-templates-for-archiving" title="Permalink to this headline">¶</a></h1>
 <div class="tabbed-set docutils">
-<input checked="checked" id="a834d465-9cf3-458e-8f66-370291ed2bcf" name="5e4419c2-a714-4960-887c-7b44c4417b0c" type="radio">
-</input><label class="tabbed-label" for="a834d465-9cf3-458e-8f66-370291ed2bcf">
+<input checked="checked" id="fa6cb28f-77bd-4802-9ecf-14601ad2a9bb" name="c3dce8bb-f006-4b11-8485-728716ea2d35" type="radio">
+</input><label class="tabbed-label" for="fa6cb28f-77bd-4802-9ecf-14601ad2a9bb">
 Hand-sized samples</label><div class="tabbed-content docutils">
 <div class="warning admonition">
 <p class="admonition-title">Final list TBD</p>
@@ -406,8 +406,8 @@ The final form required for archiving may therefore not be compatible with the o
 </pre></div>
 </div>
 </div>
-<input id="78a56a11-f9c3-44bc-b73b-53a62cc6ba0f" name="5e4419c2-a714-4960-887c-7b44c4417b0c" type="radio">
-</input><label class="tabbed-label" for="78a56a11-f9c3-44bc-b73b-53a62cc6ba0f">
+<input id="70516841-45f2-4b43-b191-c71e7719830e" name="c3dce8bb-f006-4b11-8485-728716ea2d35" type="radio">
+</input><label class="tabbed-label" for="70516841-45f2-4b43-b191-c71e7719830e">
 Digital outcrop models</label><div class="tabbed-content docutils">
 <div class="warning admonition">
 <p class="admonition-title">Final list TBD</p>
@@ -459,6 +459,55 @@ The final form required for archiving may therefore not be compatible with the o
 <span class="nt">unis_project_campaign</span><span class="p">:</span> <span class="c1"># STRING, campaign</span>
 <span class="c1">#</span>
 <span class="nt">comments</span><span class="p">:</span> <span class="c1"># STRING, comment you would like to add to the database entry.</span>
+</pre></div>
+</div>
+</div>
+<input id="f340bc37-1528-404f-99ba-e6746d6d221e" name="c3dce8bb-f006-4b11-8485-728716ea2d35" type="radio">
+</input><label class="tabbed-label" for="f340bc37-1528-404f-99ba-e6746d6d221e">
+Digital drill core models</label><div class="tabbed-content docutils">
+<div class="warning admonition">
+<p class="admonition-title">Final list TBD</p>
+<p>Keep in mind that the metadata form below is still undergoing active development.
+The final form required for archiving may therefore not be compatible with the one below.</p>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">data_project_path</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">dir/to\path</span>
+<span class="nt">data_owner</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Svalbox</span>
+<span class="nt">data_reference</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Peter Betlem</span>
+<span class="nt">data_cite</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;a href =&quot;https://doi.org/10.3390/rs12020330&quot;&gt;Betlem et al. (2020)&lt;/a&gt;</span>
+<span class="nt">acq_date</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">18.09.2019</span> <span class="c1"># DD.MM.YYYY</span>
+<span class="nt">acq_reference</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Peter Betlem</span>
+<span class="nt">acq_camera_model</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ILCE-6300</span>
+<span class="nt">acq_camera_lens</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">50 mm</span>
+<span class="nt">acq_gcp_numbers</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">6</span>
+<span class="nt">acq_gcp_space</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2D</span> <span class="c1"># options include 2D, 3D</span>
+<span class="nt">borehole_identifier</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">DH4</span>
+<span class="nt">borehole_name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">DH4</span>
+<span class="nt">sample_top_depth</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">643.0</span> <span class="c1"># m</span>
+<span class="nt">sample_base_depth</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">643.047</span> <span class="c1"># m</span>
+<span class="nt">sample_length</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">4.7</span> <span class="c1"># cm</span>
+<span class="nt">sample_width</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">4.1</span> <span class="c1"># cm</span>
+<span class="nt">sample_volume</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">54.48</span> <span class="c1"># cm3</span>
+<span class="nt">sample_weight</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">137.98</span> <span class="c1"># g</span>
+<span class="nt">sample_bulk_density</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2.53</span> <span class="c1"># g/cm3</span>
+<span class="nt">sample_lithology</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">siltstone</span> <span class="c1"># str</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">sandstone</span>
+<span class="nt">proc_camera_stations</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">96</span> <span class="c1"># INT</span>
+<span class="nt">proc_camera_total_rmse</span><span class="p">:</span> <span class="c1"># in mm</span>
+<span class="nt">proc_ground_resolution</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.0374</span> <span class="c1"># in mm/pix</span>
+<span class="nt">proc_dem_resolution</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.04</span> <span class="c1"># in mm/pix</span>
+<span class="nt">proc_dem_point_density</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">624</span> <span class="c1"># points/mm2</span>
+<span class="nt">proc_dense_cloud_confidence_min</span><span class="p">:</span>
+<span class="nt">proc_flying_altitude</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">48.3</span> <span class="c1"># cm</span>
+<span class="nt">proc_coverage_area</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">14.2</span> <span class="c1"># cm2</span>
+<span class="nt">proc_gcp_type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Agisoft Metashape</span>
+<span class="nt">proc_gcp_crs_epsg</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">40400</span>
+<span class="nt">proc_gcp_total_rmse</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.126707</span> <span class="c1"># mm</span>
+<span class="nt">proc_reference</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Peter Betlem</span>
+<span class="nt">publ_sketchfab_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">925c0f05104b491f818925839fb5133b</span>
+<span class="nt">unis_project_no</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">123456asbas</span>
+<span class="nt">unis_project_campaign</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">lightbox</span>
+<span class="nt">comments</span><span class="p">:</span>
 </pre></div>
 </div>
 </div>

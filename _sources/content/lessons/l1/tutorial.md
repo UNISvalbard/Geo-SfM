@@ -55,7 +55,7 @@ Text between {} indicates variable names.
 {project_directory} (The folder with all files related to this project)
 |   overview_img.{ext}
 |   description.txt
-├───config_directory (where you place your configuration files)
+├───config (where you place your configuration files)
         {cfg_0001}.yml
         {cfg_0002}.yml
         ...
