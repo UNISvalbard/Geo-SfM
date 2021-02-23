@@ -85,13 +85,6 @@ comments:
 
 ````{tabbed} Digital outcrop models
 
-```{admonition} Final list TBD
-:class: warning
-
-Keep in mind that the metadata form below is still undergoing active development.
-The final form required for archiving may therefore not be compatible with the one below.
-```
-
 ```yaml
 # Data:
 data_project_path: # STRING with folder directory (absolute)
@@ -102,11 +95,11 @@ data_reference: # STRING, who has the data?
 data_cite: # STRING, reference to data.
 
 # Metadata:
-acquisition_date: # STRING DD.MM.YYYY
-acquisition_reference: # STRING Data collector
-acquisition_camera_model: # STRING camera model indicated in processing report.
-acquisition_camera_lens: # STRING camera lens indicated in processing report.
-acquisition_georeferencing: # STRING, pick: built-in GPS, dGPS, GCPs, GCPs/GPS, GCPs/dGPS
+acq_date: # STRING DD.MM.YYYY
+acq_reference: # STRING Data collector
+acq_camera_model: # STRING camera model indicated in processing report.
+acq_camera_lens: # STRING camera lens indicated in processing report.
+acq_georeferencing: # STRING, pick: built-in GPS, dGPS, GCPs, GCPs/GPS, GCPs/dGPS
 #
 location_locality: # STRING
 location_land: # PICK Albert I Land / Andrée Land / Bünsow Land / Dickson Land / Haakon VII Land /
@@ -116,22 +109,22 @@ location_land: # PICK Albert I Land / Andrée Land / Bünsow Land / Dickson Land
 location_island: # Island the outcrop is found on PICK: Hopen / Spitsbergen / Kong Karls Land / Edgeøya / Barentsøya /
 #        Tusenøyane / Nordaustlandet / Kvitøya / Prins Karls Forland / Bjørnøya / Other
 #
-processing_camera_stations: # INTEGER
-processing_camera_total_error: # FLOAT, in metres found in processing report (e.g., 4.116)
-processing_ground_resolution: # FLOAT in metres/pixel found in processing report
-processing_dem_resolution: # FLOAT in metres/pixel found in processing report
-processing_dem_point_density: # FLOAT in points/m2 found in processing report
-processing_flying_altitude: # FLOAT in metres, average distance between cameras and sparse point cloud
-processing_coverage_area: 932.0 # FLOAT in metres squared
-processing_georeferencing_type: # STRING, e.g., Aruco or Agisoft markers, also indicate marker version.
-processing_georeferencing_crs: # INTEGER, epsg CRS number
-processing_reference: # STRING, who did the processing?
+proc_camera_stations: # INTEGER
+proc_camera_total_error: # FLOAT, in metres found in processing report (e.g., 4.116)
+proc_ground_resolution: # FLOAT in metres/pixel found in processing report
+proc_dem_resolution: # FLOAT in metres/pixel found in processing report
+proc_dem_point_density: # FLOAT in points/m2 found in processing report
+proc_flying_altitude: # FLOAT in metres, average distance between cameras and sparse point cloud
+proc_overage_area: 932.0 # FLOAT in metres squared
+proc_georeferencing_type: # STRING, e.g., Aruco or Agisoft markers, also indicate marker version.
+proc_georeferencing_crs: # INTEGER, epsg CRS number
+proc_reference: # STRING, who did the processing?
 #
-publishing_sketchfab_id: bf3b54faa2554771a6c49c30638544fb
-publishing_svalbox_post_id: # automatically supplied, remove before use!
-publishing_svalbox_img_id: # automatically supplied, remove before use!
-publishing_date_archived: # automatically supplied, remove before use!
-publishing_date_revised: # automatically supplied, remove before use!
+publ_sketchfab_id: bf3b54faa2554771a6c49c30638544fb
+publ_svalbox_post_id: # automatically supplied, remove before use!
+publ_svalbox_img_id: # automatically supplied, remove before use!
+publ_date_archived: # automatically supplied, remove before use!
+publ_date_revised: # automatically supplied, remove before use!
 #
 svalbox_dom_id: # automatically supplied, remove before use!
 unis_project_no: # STRING, UNIS project number funding acquisition
@@ -142,13 +135,6 @@ comments: # STRING, comment you would like to add to the database entry.
 ````
 
 ````{tabbed} Digital drill core models
-
-```{admonition} Final list TBD
-:class: warning
-
-Keep in mind that the metadata form below is still undergoing active development.
-The final form required for archiving may therefore not be compatible with the one below.
-```
 
 ```yaml
 data_project_path: dir/to\path
