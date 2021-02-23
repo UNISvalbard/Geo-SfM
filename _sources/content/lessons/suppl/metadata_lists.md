@@ -134,7 +134,7 @@ comments: # STRING, comment you would like to add to the database entry.
 ```
 ````
 
-````{tabbed} Digital drill core models
+````{tabbed} (digital-drill-core-models)= Digital drill core models
 
 ```yaml
 data_project_path: dir/to\path
