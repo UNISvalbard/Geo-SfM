@@ -87,50 +87,52 @@ comments:
 
 ```yaml
 # Data:
-data_project_path: # STRING with folder directory (absolute)
-data_model_file_name: {model_filename}.obj # STRING with model file name and obj extension.
+data_project_path: C:\\Path\to\data\here # STRING with folder directory (absolute)
+data_model_file_name: filename.extension # STRING with model file name and obj extension.
 data_model_crs_epsg: 32633 # INT EPSG number of model CRS
-data_owner: # STRING, who owns the data?
-data_reference: # STRING, who has the data?
-data_cite: # STRING, reference to data.
+data_author: # Uncomment each line which you want to use by removing the '#'
+    - name: Surname, First Name(s)
+#      affiliation: Affiliation1, Affiliation2, Affiliation3, ...
+#      orcid: xxxx-xxxx-xxxx-xxxx
 
 # Metadata:
-acq_date: # STRING DD.MM.YYYY
-acq_reference: # STRING Data collector
-acq_camera_model: # STRING camera model indicated in processing report.
-acq_camera_lens: # STRING camera lens indicated in processing report.
+acq_date: DD.MM.YYYY # STRING DD.MM.YYYY
+acq_camera_model: # STRING camera model indicated in proc report.
+acq_camera_lens: # STRING camera lens indicated in proc report.
 acq_georeferencing: # STRING, pick: built-in GPS, dGPS, GCPs, GCPs/GPS, GCPs/dGPS
 #
-location_locality: # STRING
+location_locality: # STRING Location name
 location_land: # PICK Albert I Land / Andrée Land / Bünsow Land / Dickson Land / Haakon VII Land /
 #       Heer Land / James I Land / Nathorst Land / Nordenskiöld Land / Ny-Friesland / Olav V Land /
 #       Oscar II Land / Sabine Land / Sørkapp Land / Torell Land / Wedel Jarlsberg Land / Gustav Adolf Land /
 #        Gustav V Land / Orvin Land
-location_island: # Island the outcrop is found on PICK: Hopen / Spitsbergen / Kong Karls Land / Edgeøya / Barentsøya /
+location_island: Spitsbergen # Island the outcrop is found on PICK: Hopen / Spitsbergen / Kong Karls Land / Edgeøya / Barentsøya /
 #        Tusenøyane / Nordaustlandet / Kvitøya / Prins Karls Forland / Bjørnøya / Other
 #
-proc_camera_stations: # INTEGER
-proc_camera_total_error: # FLOAT, in metres found in processing report (e.g., 4.116)
-proc_ground_resolution: # FLOAT in metres/pixel found in processing report
-proc_dem_resolution: # FLOAT in metres/pixel found in processing report
-proc_dem_point_density: # FLOAT in points/m2 found in processing report
+proc_software: Agisoft Metashape # Write down software name here
+proc_software_version: 1.7.1.11797 # And software version, including build number
+
+proc_camera_stations: # INTEGER, number of photos
+proc_camera_total_error: # FLOAT, in metres found in proc report (e.g., 4.116)
+proc_ground_resolution: # FLOAT in metres/pixel found in proc report
+proc_dem_resolution: # FLOAT in metres/pixel found in proc report
+proc_dem_point_density: # FLOAT in points/m2 found in proc report
 proc_flying_altitude: # FLOAT in metres, average distance between cameras and sparse point cloud
-proc_overage_area: 932.0 # FLOAT in metres squared
+proc_coverage_area: # FLOAT in km squared
 proc_georeferencing_type: # STRING, e.g., Aruco or Agisoft markers, also indicate marker version.
 proc_georeferencing_crs: # INTEGER, epsg CRS number
-proc_reference: # STRING, who did the processing?
+publ_sketchfab_id: #
 #
-publ_sketchfab_id: bf3b54faa2554771a6c49c30638544fb
-publ_svalbox_post_id: # automatically supplied, remove before use!
-publ_svalbox_img_id: # automatically supplied, remove before use!
-publ_date_archived: # automatically supplied, remove before use!
-publ_date_revised: # automatically supplied, remove before use!
-#
-svalbox_dom_id: # automatically supplied, remove before use!
-unis_project_no: # STRING, UNIS project number funding acquisition
+unis_project_no: # STRING, UNIS project number funding acq
 unis_project_campaign: # STRING, campaign
+funding: # Uncomment each line which you want to use by removing the '#'
+    - name: Norwegian Research Council
+#      grant_number:
+#    - name: ABC2
+#      grant_number: asdasx/a
 #
-comments: # STRING, comment you would like to add to the database entry.
+comments: All other comments go here...
+keywords: separate; each; keyword; by; semi-colons
 ```
 ````
 
