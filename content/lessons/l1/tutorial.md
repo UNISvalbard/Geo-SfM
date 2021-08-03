@@ -55,11 +55,11 @@ Text between {} indicates variable names.
 {project_directory} (The folder with all files related to this project)
 |   overview_img.{ext}
 |   description.txt
-├───config_directory (where you place your configuration files)
+├───config (where you place your configuration files)
         {cfg_0001}.yml
         {cfg_0002}.yml
         ...
-├───data_directory (where you unzipped the files to)
+├───data (where you unzipped the files to)
 ├───────100MEDIA (The folder in which all the images reside)
 |           {img_0001}.{ext}
 |           {img_0002}.{ext}
@@ -75,7 +75,7 @@ Text between {} indicates variable names.
 |           ...
 ├───────gcps
 |           (We'll get back to this in a later session)
-├───export_directory (where you place export models and files to)
+├───export (where you place export models and files to)
         ...
 └───metashape (This is where you save your Agisoft Metashape projects to)
         {metashape_project_name}.psx
@@ -91,7 +91,7 @@ The standardised project structure (as we will see later on) is also used for au
 Having created the standardised project structure, proceed with extracting all your taken images to the following directory:
 
 ```
-{project_directory}\data_directory\100MEDIA
+{project_directory}\data\100MEDIA
 ```
 
 ```{admonition} More than 999 images?

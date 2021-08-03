@@ -424,32 +424,43 @@ Copy it over and send it in to the course responsible.</p>
     <span class="n">name</span><span class="p">:</span>
     <span class="n">person1</span><span class="p">:</span>
     <span class="n">person2</span><span class="p">:</span>
+    <span class="n">person3</span><span class="p">:</span>
+    <span class="n">person4</span><span class="p">:</span>
     <span class="o">...</span>
 <span class="n">model</span><span class="p">:</span>
     <span class="n">place</span><span class="p">:</span> <span class="c1"># Where did you find your target?</span>
-    <span class="n">region</span><span class="p">:</span>  <span class="c1"># PICK: Hopen / Spitsbergen / Kong Karls Land / Edgeøya / Barentsøya / Tusenøyane / Nordaustlandet / Kvitøya / Prins Karls Forland / Bjørnøya / Other</span>
+    <span class="n">land</span><span class="p">:</span>
+    <span class="n">island</span><span class="p">:</span>  <span class="c1"># PICK: Hopen / Spitsbergen / Kong Karls Land / Edgeøya / Barentsøya / Tusenøyane / Nordaustlandet / Kvitøya / Prins Karls Forland / Bjørnøya / Other</span>
 
 <span class="n">data</span><span class="p">:</span>
-    <span class="n">package_directory</span><span class="p">:</span> <span class="c1"># FOLDER DIR (absolute, where did you create the standard processing folder structure referred to in the [tutorial]{../l1/tutorial})</span>
-    <span class="n">data_directory</span><span class="p">:</span> <span class="c1">#</span>
-    <span class="n">overview_img</span><span class="p">:</span> <span class="c1"># FILE DIR (relative to package_directory)</span>
-    <span class="n">model_crs</span><span class="p">:</span>  <span class="c1"># INT EPSG number of model CRS</span>
-    <span class="n">description_file</span><span class="p">:</span> <span class="s2">&quot;&quot;</span> <span class="c1"># create a simple text file with a description, and put it in the package_directory</span>
+    <span class="n">data_project_path</span><span class="p">:</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">Peter</span>\<span class="n">Downloads</span>\<span class="n">UNIS_3051_20180827_Spit_Sarstangen_Sarsoyra1_U</span> <span class="c1"># FOLDER DIR (absolute)</span>
+    <span class="n">data_model_file</span><span class="p">:</span> <span class="p">{</span><span class="n">model_filename</span><span class="p">}</span><span class="o">.</span><span class="n">obj</span> <span class="c1"># MODEL FILE NAME (relative to data_path)</span>
+    <span class="n">data_owner</span><span class="p">:</span>
+    <span class="n">data_reference_contact</span><span class="p">:</span>
+    <span class="n">data_reference_scientific</span><span class="p">:</span>
 
-<span class="n">metadata</span><span class="p">:</span>
-    <span class="n">acquisition_date</span><span class="p">:</span> <span class="c1"># STRING DD.MM.YYYY</span>
-    <span class="n">acquisition_type</span><span class="p">:</span> <span class="c1"># PICK Boat / UAV / Handheld / Combination</span>
-    <span class="n">acquisition_user</span><span class="p">:</span> <span class="c1"># STRING Data collector</span>
-    <span class="n">operator</span><span class="p">:</span> <span class="c1"># STRING Project owner</span>
-    <span class="n">acquisition_distance2outcrop</span><span class="p">:</span> <span class="c1"># FLOAT, distance to outcrop</span>
-    <span class="n">processing_user</span><span class="p">:</span> <span class="c1"># STRING in charge of processing</span>
-    <span class="n">processing_images</span><span class="p">:</span> <span class="c1"># INT number of images used for the model</span>
-    <span class="n">processing_calibration</span><span class="p">:</span> <span class="c1"># PICK: Built-in (GPS) / Marker (GPS) / Marker (dGPS) / None</span>
-    <span class="n">processing_resolution</span><span class="p">:</span> <span class="c1"># FLOAT resolution in cm/pixel</span>
-    <span class="n">processing_quality</span><span class="p">:</span> <span class="c1"># PICK bad / average / good / excellent / None</span>
-    <span class="n">tag</span><span class="p">:</span> <span class="c1"># STRING, item separator: ;</span>
-    <span class="n">category</span><span class="p">:</span> <span class="c1"># STRING, item separator: ;</span>
+<span class="n">metadata</span><span class="p">:</span> <span class="c1"># these can all be found in the exported processing report :)</span>
+    <span class="n">acquisition_date</span><span class="p">:</span> <span class="mf">10.12</span><span class="o">.</span><span class="mi">2019</span> <span class="c1"># STRING DD.MM.YYYY</span>
+    <span class="n">acquisition_reference</span><span class="p">:</span> <span class="c1"># STRING Data collector</span>
+    <span class="n">acquisition_camera_model</span><span class="p">:</span>
+    <span class="n">acquisition_marker_type</span><span class="p">:</span>
+    <span class="n">acquisition_camera_lens</span><span class="p">:</span>
+    <span class="n">processing_camera_stations</span><span class="p">:</span> <span class="c1"># a number</span>
+    <span class="n">processing_camera_total_error</span><span class="p">:</span>
+    <span class="n">processing_ground_resolution</span><span class="p">:</span> <span class="mf">0.00345</span> <span class="c1"># in metres/pixel</span>
+    <span class="n">processing_dem_resolution</span><span class="p">:</span> <span class="mf">0.0138</span> <span class="c1"># in metres/pixel</span>
+    <span class="n">processing_dem_point_density</span><span class="p">:</span> <span class="mf">0.526</span> <span class="c1"># in points/m2</span>
+    <span class="n">processing_flying_altitude</span><span class="p">:</span> <span class="mf">10.8</span> <span class="c1"># in m, average distance between cameras and sparse point cloud</span>
+    <span class="n">processing_coverage_area</span><span class="p">:</span> <span class="mf">932.0</span> <span class="c1"># in m2</span>
+    <span class="n">processing_georeferencing_type</span><span class="p">:</span>
+    <span class="n">processing_georeferencing_crs</span><span class="p">:</span>
+    <span class="n">processing_reference_contact</span><span class="p">:</span>
 </pre></div>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">Do not forget…</p>
+<p>Make sure to also create a <em>description.txt</em> file with a description of the object and selecting an overview image.
+Save these within the project directory with the suggested filenames (<em>description.txt</em>, <em>image_overview.jpg</em>).</p>
 </div>
 <div class="tip admonition note">
 <p class="admonition-title">Note</p>

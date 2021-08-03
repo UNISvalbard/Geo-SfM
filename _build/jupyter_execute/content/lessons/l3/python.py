@@ -185,27 +185,15 @@ project.init_tasks()
 # ```
 # ````
 # 
-# ````{tabbed} Dense cloud
+# ````{tabbed} Depth maps
 # ```yaml
-# buildDenseCloud: # (Metashape: buildDepthMaps, buildDenseCloud, classifyGroundPoints, and exportPoints)
+# buildDepthMaps: # (Metashape: buildDepthMaps)
 #     enabled: True
-#     ## For depth maps (buldDepthMaps)
 #     downscale: 2 # Recommended: 2. How much to coarsen the photos when searching for matches to build the dense cloud. Corresponding settings in Metashape: 1: Highest, 2: High, 3: Medium, 4: Low, 5: Lowest
 #     filter_mode: Metashape.MildFiltering # Recommended: Metashape.MildFiltering. How to filter the point cloud. Options are NoFiltering, MildFiltering, ModerateFiltering, AggressiveFiltering. Aggressive filtering removes detail and makes worse DEMs (at least for forest). NoFiltering takes very long. In trials, it never completed.
-#     reuse_depth: False # Recommended: False. Purpose unknown.
-#     ## For dense cloud (buildDenseCloud)
-#     keep_depth: False # Recommended: False. Purpose unknown.
-#     ## For both
+#     reuse_depth: True # Recommended: True.
 #     max_neighbors: 100 # Recommended: 100. Maximum number of neighboring photos to use for estimating point cloud. Higher numbers may increase accuracy but dramatically increase processing time.
-#     ## For ground point classification (classifyGroundPoints). Definitions here: https://www.agisoft.com/forum/index.php?topic=9328.0
-#     classify: False # Must be enabled if a digital terrain model (DTM) is needed either for orthomosaic or DTM export
-#     max_angle: 15.0 # Recommended: 15.0
-#     max_distance: 1.0 # Recommended: 1.0
-#     cell_size: 50.0 # Recommended: 50.0
-#     ## For dense cloud export (exportPoints)
-#     export: False # Whether to export dense cloud file.
-#     format: Metashape.PointsFormatLAS # Recommended: PointsFormatLAS. The file format to export points in.
-#     classes: "ALL" # Recommended: "ALL". Point classes to export. Must be a list. Or can set to "ALL" to use all points. An example of a specific class is: Metashape.PointClass.Ground
+# 
 # ```
 # 
 # ```{admonition} downscale
@@ -218,6 +206,17 @@ project.init_tasks()
 # Options are NoFiltering, MildFiltering, ModerateFiltering, AggressiveFiltering.
 # Aggressive filtering removes detail and makes worse DEMs (at least for forest).
 # NoFiltering takes very long. In trials, it never completed.
+# ```
+# ````
+# 
+# ````{tabbed} Dense cloud
+# ```yaml
+# buildDenseCloud: # (Metashape: buildDepthMaps, buildDenseCloud, classifyGroundPoints, and exportPoints)
+#     enabled: True
+#     point_colors: True # enable point colors calculations
+#     point_confidence: True # enable point confidence calculations
+#     keep_depth: True # Recommended: True. Enable store depth maps option.
+#     max_neighbors: 100 # Recommended: 100. Maximum number of neighboring photos to use for estimating point cloud. Higher numbers may increase accuracy but dramatically increase processing time.
 # ```
 # ````
 # 
