@@ -11,6 +11,15 @@ Please note that **we only provide feedback and support for students enrolled in
 
 ## 3D model reconstruction with Agisoft Metashape
 
+````{admonition} Creating high-quality models the USGS way
+:class: suggestion
+
+The United States Geological Survey {cite}`overProcessingCoastalImagery2021` has put together an excellent tutorial on the use of Agisoft Metashape for creating high resolution digital elevation models.
+Although digital elevation models are but one of many desired products, the same guide can be used for the creation of high resolution and properly processed DOMs.
+USGS guidelines and the quick start guide to processing (Table 1) can be found [here](https://pubs.usgs.gov/of/2021/1039/ofr20211039.pdf), and should be used supplementary to this tutorial.
+```
+````
+
 In this session we will learn how to use Agisoft Metashape.
 This is an established SfM photogrammetry package and is often used in the Arctic Geology department at UNIS to create digital outcrop models (DOMs) and hand-sample models (HSMs).
 This session introduce basic processing through the graphical user interface through use of a standardised data set.
@@ -160,16 +169,17 @@ This process goes through all images in the project and tries to identify *commo
 In Metashape this first requires the estimation of camera positions for each photo, which are then used to build a *sparse cloud*.
 Select *Align Photos...* in the *Workflow* menu.
 
-A dialog will pop up with several parameter options.
+A {ref}`dialog <align_photos>` will pop up with several parameter options.
 Most important here is the *Accuracy* parameter, which governs whether your photos are down-sampled before alignment.
 
-For now we'll skip the other parameters; just make sure to deselect *Generic preselection*, *Reference preselection*, *Guided image matching*, and *Adaptive camera model fitting*.
+For now we'll skip the other parameters; just make sure to deselect *Reference preselection*, *Guided image matching*, and *Adaptive camera model fitting*.
+Keep *Generic preselection* and *Exclude stationary tie points* selected.
 
 After clicking *OK*, Metashape starts aligning your photos.
 This may take a while, but assuming there is sufficient overlap between the data, a *sparse point cloud* will be shown on the screen (in the *Model* tab) once processing is done.
 If not, one can select this by clicking the four-dotted icon in the menu.
 
-```{figure} assets/0343f82c.png
+```{figure} assets/3a24665c.png
 :name: align_photos
 
 The *Align Photos* dialog after opening it from the *Workflow* menu.
@@ -184,17 +194,115 @@ Depending on your computer specifications, you'll have to weigh computational ti
 Give it a shot, and compare the photo alignment results with *medium* vs *high* processing accuracy.
 ```
 
-#### Improve alignment step
+(content:tutorial:improve)=
+### Improve alignment step: Error Reduction-Optimization and Camera Calibration
+
+
+```{admonition} Ground control points
+:class: warning
+Additional steps are needed to ensure ground control points and checkpoints are adequately integrated into the model.
+We will discuss what ground control points are and what they can be used for in [](content:gcps).
+
+Those implementing ground control points, please refer to the USGS manual for the correct sequence of steps and optimizations.
+```
 
 Although the photos have now been aligned, it is important to further optimize the cameras.
 This is done by selecting *Optimize Cameras* from the *Tools* menu.
 A {ref}`dialog <optimize_cameras>` will pop up with several parameter options pre-selected.
 Most important here is to at least select make sure that the *Estimate tie point covariance* is enabled.
 
-```{figure} assets/5ca3a257.png
+```{figure} assets/291baf87.png
 :name: optimize_cameras
 
 The *Optimize Camera Alignment* dialog after opening it from the *Tools* menu.
+Make sure to enable *Fit f*, *Fit k1-k3*, *Fit cx, cy*, *Fit p1-p2*, and *Estimate tie point covariance*.
+```
+
+Once processing is done, change the model view to show the Point Cloud Variance by following the instructions given in {ref}`dialog <point-cloud-variance>`.
+Lower values (=blue) are generally better and more constrained.
+
+```{figure} assets/view_tie_point_covariance.gif
+:name: point-cloud-variance
+
+Changing the view of your points and model to show errors and other things.
+Here we change our view to show Spare Point Covariance instead of RGB coloring.
+```
+
+As the sparse cloud is the very first step in a long processing chain, we want to optimize it as much as possible.
+After all, bad quality in usually equals bad quality out.
+We will now conduct several optimizations to improve quality of the sparse cloud, implementing USGS {cite}`overProcessingCoastalImagery2021` recommendations that aim to reduce reconstruction uncertainty, improve projection accuracy, and lower the overall reprojection errors.
+Unlike shown below, the project sometimes benefits by having each of the steps repeated multiple times, rather than just once.
+Keep in mind, however, that running too many optimizations may also result in over-fitting of the data.
+That means that the model is no longer based on real input, but rather on the processing parameters (= not real!).
+
+````{admonition} Make a backup for every step
+:class: tip
+Whenever you are about to perform a destructive action (i.e., "deleting" stuff), make sure to make a backup of the current state first.
+In Metashape this can be done by right clicking an object (e.g., Chunk, Points, etc.) and selecting the *Duplicate...* option.
+It usually takes a bit of time to complete, but the cost of not doing so is usually much, much higher!
+
+```{figure} assets/duplicate_chunk.gif
+:name: duplication
+
+Making a backup duplicate of Chunk 1. To keep things simple, make sure to rename your copies; else you may end up with a Copy of Copy of Copy of Something...
+```
+````
+
+
+#### Filtering by Reconstruction Uncertainty
+
+Once you're ready (ahem, make a duplicate/backup first!), filter your Sparse points by their Reconstruction Uncertainty.
+
+```{figure} assets/reconstruction_uncertainty_filter.gif
+:name: filter_reconstruction_uncertainty
+
+The *Gradual Selection* dialog after opening it from the *Model* menu, here showing selections that are possible for the Sparse Point Cloud.
+A good value to use here is 10, though make sure you do not remove all points by doing so!
+After clicking OK, the left corner shows you how many points there are in total, followed by the number currently selected.
+A rule of thumb is to select no more than two-thirds to half of all points, and then delete these by pressing the Delete key on the keyboard.
+```
+
+After deleting the selected points, it is important to once more optimize the alignment of your points.
+Do so by revisiting the [](content:tutorial:improve) section.
+
+#### Filtering by Projection accuracy
+
+This time, select the points based on their Projection accuracy, aiming for a final Projection accuracy of 3.
+
+```{figure} assets/f7c6c589.png
+:name: filter_projection_error
+
+The *Gradual Selection* dialog after opening it from the *Model* menu, here making a selection based on the projection accuracy parameter.
+A good value to use here is 3, though make sure you do not remove all points by doing so!
+After clicking OK, the left corner shows you how many points there are in total, followed by the number currently selected.
+```
+
+Keep in mind that not all projects can tolerate the removal of points below 5, which is no problem as long as you document the values you have used.
+After deleting the selected points, it is important to once more optimize the alignment of your points.
+Do so by revisiting the [](content:tutorial:improve) section.
+
+#### Filtering by Reprojection Error
+
+Up next is to filter the points by their reprojection error, see {ref}`dialog <filter_reprojection_error>`.
+A good value to use here is 0.3, though make sure you do not remove all points by doing so!
+As a rule of thumb, this final selection of points should leave you with approx. 10% of the points you started off with.
+
+```{figure} assets/5fba8b6a.png
+:name: filter_reprojection_error
+
+The *Gradual Selection* dialog after opening it from the *Model* menu, here making a selection based on the reprojection error parameter.
+After clicking OK, the left corner shows you how many points there are in total, followed by the number currently selected.
+```
+
+After deleting the selected points, it is important to runa final *Optimize alignment* step on your points.
+Do so by revisiting the [](content:tutorial:improve) section.
+
+```{admonition} Keep your duplicates
+:class: tip
+
+It is always a good idea to keep your duplicate backups of previous steps until you are fully done with them.
+They allow you to go back and write down important processing parameters, such as how many points were filtered during each step and which cutoff values you used during processing.
+Only once completely done should you remove these earlier attempts.
 ```
 
 ### Build Dense Cloud
@@ -309,6 +417,14 @@ Here *Texture size/count* determines the quality of the texture.
 Keep in mind that anything over 16384 can very quickly lead to very, very large file sizes on your harddisk.
 On the other hand, anything less than 4096 is probably insufficient.
 For greatest compatibility, keep the *Texture size* at 4096, but increase the count to e.g. 5 or 10.
+
+```{admonition} Publishing on V3Geo or Sketchfab
+:class: tip
+
+Publication guidelines for V3Geo specify that the *Texture size* must always be 4096.
+In addition, no fewer than 10 *Texture count* must be used.
+It is recommended to follow this even for SketchFab, as this setup generally results in a higher-quality look of the published model.
+```
 
 ### Generating a Tiled Model
 

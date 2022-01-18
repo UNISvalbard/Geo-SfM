@@ -1,0 +1,50 @@
+2022-01-18 16:31:23,783 [INFO] automated_metashape.MetashapeProcessing: --------------
+2022-01-18 16:31:23,784 [INFO] automated_metashape.MetashapeProcessing: Fresh run initiated.
+2022-01-18 16:31:23,785 [INFO] automated_metashape.MetashapeProcessing: Runtime id: MS_20220118T1631
+2022-01-18 16:31:23,786 [INFO] automated_metashape.MetashapeProcessing: --------------
+2022-01-18 16:31:23,786 [INFO] automated_metashape.MetashapeProcessing: Agisoft Metashape Professional Version: 1.7.1.
+2022-01-18 16:31:23,787 [INFO] automated_metashape.MetashapeProcessing: Automated metashape package version: 0.1.10.
+
+2022-01-18 16:31:24,241 [INFO] automated_metashape.MetashapeProcessing: Creating new project...
+2022-01-18 16:31:24,648 [INFO] automated_metashape.MetashapeProcessing: Saved project as C:/Users/Peter/Documents/GitHub/automated_agisoft_documentation/content/lessons/l3/metashape/MS_20220118T1631.psx
+
+### Start of input file configuration for startup-stage ###
+load_project_path: null
+output_path: ./metashape
+photo_path: .
+project_crs: EPSG::32633
+project_path: ./metashape
+run_name: MS
+subdivide_task: true
+### End of input file configuration for startup-stage ###
+
+2022-01-18 16:31:24,853 [WARNING] automated_metashape.MetashapeProcessing: Failed to export report. Export report manually.
+2022-01-18 16:31:25,055 [INFO] automated_metashape.MetashapeProcessing: --------------
+2022-01-18 16:31:25,056 [INFO] automated_metashape.MetashapeProcessing: Run completed.
+2022-01-18 16:31:25,056 [INFO] automated_metashape.MetashapeProcessing: --------------
+
+2022-01-18 16:31:56,507 [INFO] automated_metashape.MetashapeProcessing: --------------
+2022-01-18 16:31:56,508 [INFO] automated_metashape.MetashapeProcessing: Fresh run initiated.
+2022-01-18 16:31:56,509 [INFO] automated_metashape.MetashapeProcessing: Runtime id: MS_20220118T1631
+2022-01-18 16:31:56,509 [INFO] automated_metashape.MetashapeProcessing: --------------
+2022-01-18 16:31:56,510 [INFO] automated_metashape.MetashapeProcessing: Agisoft Metashape Professional Version: 1.7.1.
+2022-01-18 16:31:56,510 [INFO] automated_metashape.MetashapeProcessing: Automated metashape package version: 0.1.10.
+
+2022-01-18 16:31:56,877 [INFO] automated_metashape.MetashapeProcessing: Creating new project...
+2022-01-18 16:31:57,286 [INFO] automated_metashape.MetashapeProcessing: Saved project as C:/Users/Peter/Documents/GitHub/automated_agisoft_documentation/content/lessons/l3/metashape/MS_20220118T1631.psx
+
+### Start of input file configuration for startup-stage ###
+load_project_path: null
+output_path: ./metashape
+photo_path: .
+project_crs: EPSG::32633
+project_path: ./metashape
+run_name: MS
+subdivide_task: true
+### End of input file configuration for startup-stage ###
+
+2022-01-18 16:31:57,489 [WARNING] automated_metashape.MetashapeProcessing: Failed to export report. Export report manually.
+2022-01-18 16:31:57,692 [INFO] automated_metashape.MetashapeProcessing: --------------
+2022-01-18 16:31:57,693 [INFO] automated_metashape.MetashapeProcessing: Run completed.
+2022-01-18 16:31:57,693 [INFO] automated_metashape.MetashapeProcessing: --------------
+

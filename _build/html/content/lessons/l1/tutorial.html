@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Metashape Tutorial &#8212; Geo-SfM Course Beta</title>
     
-  <link rel="stylesheet" href="../../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,14 +20,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="../../../_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="../../../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
@@ -34,19 +31,19 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../../_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/language_data.js"></script>
     <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
     <script src="../../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
@@ -57,48 +54,60 @@
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Geo-referencing" href="../l2/overview.html" />
     <link rel="prev" title="Exercise 1 - learning the ropes of SfM photogrammetry" href="exercise1.html" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
 
-
-
+    <!-- Google Analytics -->
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<div class="col-12 col-md-3 bd-sidebar site-navigation " id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="../../../index.html">
-  
-  <img src="../../../_static/logo.gif" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">Geo-SfM Course Beta</h1>
-  
-</a>
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/logo.gif" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Geo-SfM Course Beta</h1>
+      
+    </a>
 </div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../../landing-page.html">
    Welcome to Geo-SfM
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Session 1
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="sfm_photogrammetry.html">
    SfM photogrammetry
@@ -115,12 +124,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Session 2
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../l2/overview.html">
    Geo-referencing
@@ -142,12 +151,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Session 3
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../l3/overview.html">
    Automation
@@ -164,12 +173,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Session 4
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../l4/hss_overview.html">
    Digitising small objects
@@ -186,12 +195,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Session 5
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../l5/geomodel_overview.html">
    Geomodelling overview
@@ -203,12 +212,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Resources
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../suppl/best_practices.html">
    Best practices
@@ -236,6 +245,7 @@
  </li>
 </ul>
 
+    </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -249,23 +259,23 @@
 
 
           
+<!-- This is an invisible pixel that we watch to see if we've scrolled. -->
+<div class="sbt-scroll-pixel-helper"></div>
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="row topbar fixed-top container-xl">
-    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
-    </div>
-    <div class="col pl-2 topbar-main">
-        
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-arrow-left"></i>
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        
-        
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            <div class="topbar-left">
+                
+                <label class="nav-toggle-button" for="__navigation">
+                    <div class="visually-hidden">Toggle navigation</div>
+                    <i class="fas fa-bars"></i>
+                </label>
+                
+            </div>
+            
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
@@ -279,11 +289,11 @@
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
-        <!-- Source interaction buttons -->
+            <!-- Source interaction buttons -->
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
@@ -301,25 +311,25 @@
     </div>
 </div>
 
+            <!-- Full screen (wrap in <a> to have style consistency -->
 
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                title="Fullscreen mode"><i
-                    class="fas fa-expand"></i></button></a>
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
-        <!-- Launch buttons -->
+            <!-- Launch buttons -->
 
-    </div>
-
-    <!-- Table of contents -->
-    <div class="d-none d-md-block col-md-2 bd-toc show">
-        
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
         </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#d-model-reconstruction-with-agisoft-metashape">
    3D model reconstruction with Agisoft Metashape
@@ -349,10 +359,25 @@
     <a class="reference internal nav-link" href="#aligning-photos">
      Aligning photos
     </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#improve-alignment-step-error-reduction-optimization-and-camera-calibration">
+     Improve alignment step: Error Reduction-Optimization and Camera Calibration
+    </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#improve-alignment-step">
-       Improve alignment step
+      <a class="reference internal nav-link" href="#filtering-by-reconstruction-uncertainty">
+       Filtering by Reconstruction Uncertainty
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#filtering-by-projection-accuracy">
+       Filtering by Projection accuracy
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#filtering-by-reprojection-error">
+       Filtering by Reprojection Error
       </a>
      </li>
     </ul>
@@ -407,13 +432,131 @@
  </li>
 </ul>
 
-        </nav>
-        
+            </nav>
+        </div>
     </div>
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Metashape Tutorial</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#d-model-reconstruction-with-agisoft-metashape">
+   3D model reconstruction with Agisoft Metashape
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-standardised-project-environment">
+     A standardised project environment
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#photo-set">
+     Photo set
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-photos">
+     Adding photos
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#analyze-photos">
+     Analyze photos
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#aligning-photos">
+     Aligning photos
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#improve-alignment-step-error-reduction-optimization-and-camera-calibration">
+     Improve alignment step: Error Reduction-Optimization and Camera Calibration
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#filtering-by-reconstruction-uncertainty">
+       Filtering by Reconstruction Uncertainty
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#filtering-by-projection-accuracy">
+       Filtering by Projection accuracy
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#filtering-by-reprojection-error">
+       Filtering by Reprojection Error
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#build-dense-cloud">
+     Build Dense Cloud
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#selection-by-point-confidence">
+       Selection by point confidence
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#building-a-mesh">
+     Building a mesh
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#texture-building">
+       Texture building
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#generating-a-tiled-model">
+     Generating a Tiled Model
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#documenting-processing-parameters">
+     Documenting processing parameters
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#processing-report">
+       Processing report
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#in-programme-parameters">
+       In-programme parameters
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
   <div class="section" id="metashape-tutorial">
@@ -429,6 +572,15 @@
 </div>
 <div class="section" id="d-model-reconstruction-with-agisoft-metashape">
 <h2>3D model reconstruction with Agisoft Metashape<a class="headerlink" href="#d-model-reconstruction-with-agisoft-metashape" title="Permalink to this headline">¶</a></h2>
+<div class="suggestion admonition">
+<p class="admonition-title">Creating high-quality models the USGS way</p>
+<p>The United States Geological Survey <a class="bibtex reference internal" href="../about/zbiblio.html#overprocessingcoastalimagery2021" id="id1">[4]</a> has put together an excellent tutorial on the use of Agisoft Metashape for creating high resolution digital elevation models.
+Although digital elevation models are but one of many desired products, the same guide can be used for the creation of high resolution and properly processed DOMs.
+USGS guidelines and the quick start guide to processing (Table 1) can be found <a class="reference external" href="https://pubs.usgs.gov/of/2021/1039/ofr20211039.pdf">here</a>, and should be used supplementary to this tutorial.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
 <p>In this session we will learn how to use Agisoft Metashape.
 This is an established SfM photogrammetry package and is often used in the Arctic Geology department at UNIS to create digital outcrop models (DOMs) and hand-sample models (HSMs).
 This session introduce basic processing through the graphical user interface through use of a standardised data set.</p>
@@ -555,14 +707,15 @@ Agisoft recommends a <em>Quality</em> of at least 0.5.</p>
 This process goes through all images in the project and tries to identify <em>common features</em>.
 In Metashape this first requires the estimation of camera positions for each photo, which are then used to build a <em>sparse cloud</em>.
 Select <em>Align Photos…</em> in the <em>Workflow</em> menu.</p>
-<p>A dialog will pop up with several parameter options.
+<p>A <a class="reference internal" href="#align-photos"><span class="std std-ref">dialog</span></a> will pop up with several parameter options.
 Most important here is the <em>Accuracy</em> parameter, which governs whether your photos are down-sampled before alignment.</p>
-<p>For now we’ll skip the other parameters; just make sure to deselect <em>Generic preselection</em>, <em>Reference preselection</em>, <em>Guided image matching</em>, and <em>Adaptive camera model fitting</em>.</p>
+<p>For now we’ll skip the other parameters; just make sure to deselect <em>Reference preselection</em>, <em>Guided image matching</em>, and <em>Adaptive camera model fitting</em>.
+Keep <em>Generic preselection</em> and <em>Exclude stationary tie points</em> selected.</p>
 <p>After clicking <em>OK</em>, Metashape starts aligning your photos.
 This may take a while, but assuming there is sufficient overlap between the data, a <em>sparse point cloud</em> will be shown on the screen (in the <em>Model</em> tab) once processing is done.
 If not, one can select this by clicking the four-dotted icon in the menu.</p>
 <div class="figure align-default" id="align-photos">
-<img alt="../../../_images/0343f82c.png" src="../../../_images/0343f82c.png" />
+<img alt="../../../_images/3a24665c.png" src="../../../_images/3a24665c.png" />
 <p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">The <em>Align Photos</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#align-photos" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition-down-sampling admonition">
@@ -572,15 +725,90 @@ For example, down-sampling a 1000x1000 pixel image to a 100x100 image results in
 <p>Depending on your computer specifications, you’ll have to weigh computational time versus output quality.</p>
 <p>Give it a shot, and compare the photo alignment results with <em>medium</em> vs <em>high</em> processing accuracy.</p>
 </div>
-<div class="section" id="improve-alignment-step">
-<h4>Improve alignment step<a class="headerlink" href="#improve-alignment-step" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="improve-alignment-step-error-reduction-optimization-and-camera-calibration">
+<span id="content-tutorial-improve"></span><h3>Improve alignment step: Error Reduction-Optimization and Camera Calibration<a class="headerlink" href="#improve-alignment-step-error-reduction-optimization-and-camera-calibration" title="Permalink to this headline">¶</a></h3>
+<div class="warning admonition">
+<p class="admonition-title">Ground control points</p>
+<p>Additional steps are needed to ensure ground control points and checkpoints are adequately integrated into the model.
+We will discuss what ground control points are and what they can be used for in <a class="reference internal" href="../l2/gcps.html#content-gcps"><span class="std std-ref">Ground control points (GCPs)</span></a>.</p>
+<p>Those implementing ground control points, please refer to the USGS manual for the correct sequence of steps and optimizations.</p>
+</div>
 <p>Although the photos have now been aligned, it is important to further optimize the cameras.
 This is done by selecting <em>Optimize Cameras</em> from the <em>Tools</em> menu.
 A <a class="reference internal" href="#optimize-cameras"><span class="std std-ref">dialog</span></a> will pop up with several parameter options pre-selected.
 Most important here is to at least select make sure that the <em>Estimate tie point covariance</em> is enabled.</p>
 <div class="figure align-default" id="optimize-cameras">
-<img alt="../../../_images/5ca3a257.png" src="../../../_images/5ca3a257.png" />
-<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">The <em>Optimize Camera Alignment</em> dialog after opening it from the <em>Tools</em> menu.</span><a class="headerlink" href="#optimize-cameras" title="Permalink to this image">¶</a></p>
+<img alt="../../../_images/291baf87.png" src="../../../_images/291baf87.png" />
+<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">The <em>Optimize Camera Alignment</em> dialog after opening it from the <em>Tools</em> menu.
+Make sure to enable <em>Fit f</em>, <em>Fit k1-k3</em>, <em>Fit cx, cy</em>, <em>Fit p1-p2</em>, and <em>Estimate tie point covariance</em>.</span><a class="headerlink" href="#optimize-cameras" title="Permalink to this image">¶</a></p>
+</div>
+<p>Once processing is done, change the model view to show the Point Cloud Variance by following the instructions given in <a class="reference internal" href="#point-cloud-variance"><span class="std std-ref">dialog</span></a>.
+Lower values (=blue) are generally better and more constrained.</p>
+<div class="figure align-default" id="point-cloud-variance">
+<img alt="../../../_images/view_tie_point_covariance.gif" src="../../../_images/view_tie_point_covariance.gif" />
+<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">Changing the view of your points and model to show errors and other things.
+Here we change our view to show Spare Point Covariance instead of RGB coloring.</span><a class="headerlink" href="#point-cloud-variance" title="Permalink to this image">¶</a></p>
+</div>
+<p>As the sparse cloud is the very first step in a long processing chain, we want to optimize it as much as possible.
+After all, bad quality in usually equals bad quality out.
+We will now conduct several optimizations to improve quality of the sparse cloud, implementing USGS <a class="bibtex reference internal" href="../about/zbiblio.html#overprocessingcoastalimagery2021" id="id2">[4]</a> recommendations that aim to reduce reconstruction uncertainty, improve projection accuracy, and lower the overall reprojection errors.
+Unlike shown below, the project sometimes benefits by having each of the steps repeated multiple times, rather than just once.
+Keep in mind, however, that running too many optimizations may also result in over-fitting of the data.
+That means that the model is no longer based on real input, but rather on the processing parameters (= not real!).</p>
+<div class="tip admonition">
+<p class="admonition-title">Make a backup for every step</p>
+<p>Whenever you are about to perform a destructive action (i.e., “deleting” stuff), make sure to make a backup of the current state first.
+In Metashape this can be done by right clicking an object (e.g., Chunk, Points, etc.) and selecting the <em>Duplicate…</em> option.
+It usually takes a bit of time to complete, but the cost of not doing so is usually much, much higher!</p>
+<div class="figure align-default" id="duplication">
+<img alt="../../../_images/duplicate_chunk.gif" src="../../../_images/duplicate_chunk.gif" />
+<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">Making a backup duplicate of Chunk 1. To keep things simple, make sure to rename your copies; else you may end up with a Copy of Copy of Copy of Something…</span><a class="headerlink" href="#duplication" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="filtering-by-reconstruction-uncertainty">
+<h4>Filtering by Reconstruction Uncertainty<a class="headerlink" href="#filtering-by-reconstruction-uncertainty" title="Permalink to this headline">¶</a></h4>
+<p>Once you’re ready (ahem, make a duplicate/backup first!), filter your Sparse points by their Reconstruction Uncertainty.</p>
+<div class="figure align-default" id="filter-reconstruction-uncertainty">
+<img alt="../../../_images/reconstruction_uncertainty_filter.gif" src="../../../_images/reconstruction_uncertainty_filter.gif" />
+<p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text">The <em>Gradual Selection</em> dialog after opening it from the <em>Model</em> menu, here showing selections that are possible for the Sparse Point Cloud.
+A good value to use here is 10, though make sure you do not remove all points by doing so!
+After clicking OK, the left corner shows you how many points there are in total, followed by the number currently selected.
+A rule of thumb is to select no more than two-thirds to half of all points, and then delete these by pressing the Delete key on the keyboard.</span><a class="headerlink" href="#filter-reconstruction-uncertainty" title="Permalink to this image">¶</a></p>
+</div>
+<p>After deleting the selected points, it is important to once more optimize the alignment of your points.
+Do so by revisiting the <a class="reference internal" href="#content-tutorial-improve"><span class="std std-ref">Improve alignment step: Error Reduction-Optimization and Camera Calibration</span></a> section.</p>
+</div>
+<div class="section" id="filtering-by-projection-accuracy">
+<h4>Filtering by Projection accuracy<a class="headerlink" href="#filtering-by-projection-accuracy" title="Permalink to this headline">¶</a></h4>
+<p>This time, select the points based on their Projection accuracy, aiming for a final Projection accuracy of 3.</p>
+<div class="figure align-default" id="filter-projection-error">
+<img alt="../../../_images/f7c6c589.png" src="../../../_images/f7c6c589.png" />
+<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">The <em>Gradual Selection</em> dialog after opening it from the <em>Model</em> menu, here making a selection based on the projection accuracy parameter.
+A good value to use here is 3, though make sure you do not remove all points by doing so!
+After clicking OK, the left corner shows you how many points there are in total, followed by the number currently selected.</span><a class="headerlink" href="#filter-projection-error" title="Permalink to this image">¶</a></p>
+</div>
+<p>Keep in mind that not all projects can tolerate the removal of points below 5, which is no problem as long as you document the values you have used.
+After deleting the selected points, it is important to once more optimize the alignment of your points.
+Do so by revisiting the <a class="reference internal" href="#content-tutorial-improve"><span class="std std-ref">Improve alignment step: Error Reduction-Optimization and Camera Calibration</span></a> section.</p>
+</div>
+<div class="section" id="filtering-by-reprojection-error">
+<h4>Filtering by Reprojection Error<a class="headerlink" href="#filtering-by-reprojection-error" title="Permalink to this headline">¶</a></h4>
+<p>Up next is to filter the points by their reprojection error, see <a class="reference internal" href="#filter-reprojection-error"><span class="std std-ref">dialog</span></a>.
+A good value to use here is 0.3, though make sure you do not remove all points by doing so!
+As a rule of thumb, this final selection of points should leave you with approx. 10% of the points you started off with.</p>
+<div class="figure align-default" id="filter-reprojection-error">
+<img alt="../../../_images/5fba8b6a.png" src="../../../_images/5fba8b6a.png" />
+<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">The <em>Gradual Selection</em> dialog after opening it from the <em>Model</em> menu, here making a selection based on the reprojection error parameter.
+After clicking OK, the left corner shows you how many points there are in total, followed by the number currently selected.</span><a class="headerlink" href="#filter-reprojection-error" title="Permalink to this image">¶</a></p>
+</div>
+<p>After deleting the selected points, it is important to runa final <em>Optimize alignment</em> step on your points.
+Do so by revisiting the <a class="reference internal" href="#content-tutorial-improve"><span class="std std-ref">Improve alignment step: Error Reduction-Optimization and Camera Calibration</span></a> section.</p>
+<div class="tip admonition">
+<p class="admonition-title">Keep your duplicates</p>
+<p>It is always a good idea to keep your duplicate backups of previous steps until you are fully done with them.
+They allow you to go back and write down important processing parameters, such as how many points were filtered during each step and which cutoff values you used during processing.
+Only once completely done should you remove these earlier attempts.</p>
 </div>
 </div>
 </div>
@@ -595,7 +823,7 @@ Keeping in mind what we discussed above, make sure to select <em>Medium</em> for
 <p><em>Reuse depth maps</em> can only be selected if depth maps have been previously calculated for the specified quality.</p>
 <div class="figure align-default" id="dense-cloud">
 <img alt="../../../_images/d2a861b0.png" src="../../../_images/d2a861b0.png" />
-<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">The <em>Build dense cloud</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#dense-cloud" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">The <em>Build dense cloud</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#dense-cloud" title="Permalink to this image">¶</a></p>
 </div>
 <p>Once processing is done, you’ll be able to show the <em>dense point cloud</em> on the screen in the <em>Model</em> tab.
 If not, one can visualise the <em>dense point cloud</em> by clicking on the nine-dotted icon in the menu.
@@ -648,7 +876,7 @@ Depth maps may lead to better results when dealing with a big number of minor de
 <p>After selecting <em>Build Mesh</em> from the <em>Workflow</em> menu, you will be able to chose either in the <a class="reference internal" href="#build-mesh"><span class="std std-ref">dialog</span></a> that pops up for <em>Source data:</em>.</p>
 <div class="figure align-default" id="build-mesh">
 <img alt="../../../_images/9b4ac0b8.png" src="../../../_images/9b4ac0b8.png" />
-<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">The <em>Build mesh</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#build-mesh" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text">The <em>Build mesh</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#build-mesh" title="Permalink to this image">¶</a></p>
 </div>
 <p>Other important parameters here are the <em>Quality</em> and <em>Face count</em> parameters.
 These govern the quality of the generated mesh.
@@ -664,15 +892,21 @@ The next step involves generating a texture and placing this “image” onto th
 <div class="section" id="texture-building">
 <h4>Texture building<a class="headerlink" href="#texture-building" title="Permalink to this headline">¶</a></h4>
 <p>We can build the textures by clicking on the <em>Build Texture</em> command from the <em>Workflow</em> menu.
-While the dialog has many different parameters, the most important are highlighted in <a class="reference internal" href="#build-texture"><span class="std std-numref">Fig. 12</span></a>.</p>
+While the dialog has many different parameters, the most important are highlighted in <a class="reference internal" href="#build-texture"><span class="std std-numref">Fig. 17</span></a>.</p>
 <div class="figure align-default" id="build-texture">
 <img alt="../../../_images/7237597c.png" src="../../../_images/7237597c.png" />
-<p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text">The <em>Build texture</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#build-texture" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">The <em>Build texture</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#build-texture" title="Permalink to this image">¶</a></p>
 </div>
 <p>Here <em>Texture size/count</em> determines the quality of the texture.
 Keep in mind that anything over 16384 can very quickly lead to very, very large file sizes on your harddisk.
 On the other hand, anything less than 4096 is probably insufficient.
 For greatest compatibility, keep the <em>Texture size</em> at 4096, but increase the count to e.g. 5 or 10.</p>
+<div class="tip admonition">
+<p class="admonition-title">Publishing on V3Geo or Sketchfab</p>
+<p>Publication guidelines for V3Geo specify that the <em>Texture size</em> must always be 4096.
+In addition, no fewer than 10 <em>Texture count</em> must be used.
+It is recommended to follow this even for SketchFab, as this setup generally results in a higher-quality look of the published model.</p>
+</div>
 </div>
 </div>
 <div class="section" id="generating-a-tiled-model">
@@ -683,7 +917,7 @@ Once again we can select the parameters for the processing step through the <a c
 <p>The most import parameter here is the <em>Pixel size (m)</em>, which should never be set than lower than the pixel size available to the model (= the default value shown when opening the dialog).</p>
 <div class="figure align-default" id="build-tiled-model">
 <img alt="../../../_images/6c44a1dc.png" src="../../../_images/6c44a1dc.png" />
-<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">The <em>Build Tiled Model</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#build-tiled-model" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 18 </span><span class="caption-text">The <em>Build Tiled Model</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#build-tiled-model" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="documenting-processing-parameters">
@@ -718,10 +952,10 @@ Have a look and familiarise yourself with it.</p>
 <h4>In-programme parameters<a class="headerlink" href="#in-programme-parameters" title="Permalink to this headline">¶</a></h4>
 <p>One does not always need to export the processing report to obtain the overview of parameters.
 Handily, Metashape also provides an overview within the <em>Workspace</em> panel after having selected an item in the chunk.
-An example of this is depicted in <a class="reference internal" href="#internal-parameters"><span class="std std-numref">Fig. 14</span></a>.</p>
+An example of this is depicted in <a class="reference internal" href="#internal-parameters"><span class="std std-numref">Fig. 19</span></a>.</p>
 <div class="figure align-default" id="internal-parameters">
 <img alt="../../../_images/5201e3e2.png" src="../../../_images/5201e3e2.png" />
-<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">An example of the internal <em>Workspace</em> panel, including the parameters and processing metadata that is available from within the Metashape project interface.</span><a class="headerlink" href="#internal-parameters" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 19 </span><span class="caption-text">An example of the internal <em>Workspace</em> panel, including the parameters and processing metadata that is available from within the Metashape project interface.</span><a class="headerlink" href="#internal-parameters" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -757,36 +991,42 @@ Furthermore, one should <em><strong>always document each and every processing st
 
               </div>
               
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="exercise1.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Exercise 1 - learning the ropes of SfM photogrammetry</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../l2/overview.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Geo-referencing</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
         </div>
     </div>
+    <footer class="footer">
+  <p>
     
+      By Peter Betlem<br/>
     
-    <div class='prev-next-bottom'>
-        
-    <a class='left-prev' id="prev-link" href="exercise1.html" title="previous page">Exercise 1 - learning the ropes of SfM photogrammetry</a>
-    <a class='right-next' id="next-link" href="../l2/overview.html" title="next page">Geo-referencing</a>
-
-    </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By Peter Betlem<br/>
-        
-            &copy; Copyright 2020.<br/>
-      </p>
-    </div>
-  </footer>
+        &copy; Copyright 2020.<br/>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
+  
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-    
-  <script src="../../../_static/js/index.3da636dd464baa7582d2.js"></script>
-
-
-    
   </body>
 </html>
