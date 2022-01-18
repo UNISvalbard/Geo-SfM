@@ -179,7 +179,7 @@ After clicking *OK*, Metashape starts aligning your photos.
 This may take a while, but assuming there is sufficient overlap between the data, a *sparse point cloud* will be shown on the screen (in the *Model* tab) once processing is done.
 If not, one can select this by clicking the four-dotted icon in the menu.
 
-```{figure} assets/3a24665c.png)
+```{figure} assets/3a24665c.png
 :name: align_photos
 
 The *Align Photos* dialog after opening it from the *Workflow* menu.
