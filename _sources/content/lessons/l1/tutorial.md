@@ -194,7 +194,7 @@ Depending on your computer specifications, you'll have to weigh computational ti
 Give it a shot, and compare the photo alignment results with *medium* vs *high* processing accuracy.
 ```
 
-(content:tutorial:improve)
+(content:tutorial:improve)=
 ### Improve alignment step: Error Reduction-Optimization and Camera Calibration
 
 
