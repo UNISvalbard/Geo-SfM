@@ -574,7 +574,7 @@
 <h2>3D model reconstruction with Agisoft Metashape<a class="headerlink" href="#d-model-reconstruction-with-agisoft-metashape" title="Permalink to this headline">¶</a></h2>
 <div class="suggestion admonition">
 <p class="admonition-title">Creating high-quality models the USGS way</p>
-<p>The United States Geological Survey <span class="bibtex" id="id1">[overProcessingCoastalImagery2021]</span> has put together an excellent tutorial on the use of Agisoft Metashape for creating high resolution digital elevation models.
+<p>The United States Geological Survey <a class="bibtex reference internal" href="../about/zbiblio.html#overprocessingcoastalimagery2021" id="id1">[4]</a> has put together an excellent tutorial on the use of Agisoft Metashape for creating high resolution digital elevation models.
 Although digital elevation models are but one of many desired products, the same guide can be used for the creation of high resolution and properly processed DOMs.
 USGS guidelines and the quick start guide to processing (Table 1) can be found <a class="reference external" href="https://pubs.usgs.gov/of/2021/1039/ofr20211039.pdf">here</a>, and should be used supplementary to this tutorial.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
@@ -752,7 +752,7 @@ Here we change our view to show Spare Point Covariance instead of RGB coloring.<
 </div>
 <p>As the sparse cloud is the very first step in a long processing chain, we want to optimize it as much as possible.
 After all, bad quality in usually equals bad quality out.
-We will now conduct several optimizations to improve quality of the sparse cloud, implementing USGS <span class="bibtex" id="id2">[overProcessingCoastalImagery2021]</span> recommendations that aim to reduce reconstruction uncertainty, improve projection accuracy, and lower the overall reprojection errors.
+We will now conduct several optimizations to improve quality of the sparse cloud, implementing USGS <a class="bibtex reference internal" href="../about/zbiblio.html#overprocessingcoastalimagery2021" id="id2">[4]</a> recommendations that aim to reduce reconstruction uncertainty, improve projection accuracy, and lower the overall reprojection errors.
 Unlike shown below, the project sometimes benefits by having each of the steps repeated multiple times, rather than just once.
 Keep in mind, however, that running too many optimizations may also result in over-fitting of the data.
 That means that the model is no longer based on real input, but rather on the processing parameters (= not real!).</p>
@@ -770,7 +770,7 @@ It usually takes a bit of time to complete, but the cost of not doing so is usua
 <h4>Filtering by Reconstruction Uncertainty<a class="headerlink" href="#filtering-by-reconstruction-uncertainty" title="Permalink to this headline">¶</a></h4>
 <p>Once you’re ready (ahem, make a duplicate/backup first!), filter your Sparse points by their Reconstruction Uncertainty.</p>
 <div class="figure align-default" id="filter-reconstruction-uncertainty">
-<img alt="content/lessons/l1/assets/reconstruction_uncertainty_filtering.gif" src="content/lessons/l1/assets/reconstruction_uncertainty_filtering.gif" />
+<img alt="../../../_images/reconstruction_uncertainty_filter.gif" src="../../../_images/reconstruction_uncertainty_filter.gif" />
 <p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text">The <em>Gradual Selection</em> dialog after opening it from the <em>Model</em> menu, here showing selections that are possible for the Sparse Point Cloud.
 A good value to use here is 10, though make sure you do not remove all points by doing so!
 After clicking OK, the left corner shows you how many points there are in total, followed by the number currently selected.
@@ -784,17 +784,32 @@ Do so by revisiting the <a class="reference internal" href="#content-tutorial-im
 <p>This time, select the points based on their Projection accuracy, aiming for a final Projection accuracy of 3.</p>
 <div class="figure align-default" id="filter-projection-error">
 <img alt="../../../_images/f7c6c589.png" src="../../../_images/f7c6c589.png" />
-<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">The <em>Gradual Selection</em> dialog after opening it from the <em>Model</em> menu, here making a selection based on the projection error parameter.
+<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">The <em>Gradual Selection</em> dialog after opening it from the <em>Model</em> menu, here making a selection based on the projection accuracy parameter.
 A good value to use here is 3, though make sure you do not remove all points by doing so!
 After clicking OK, the left corner shows you how many points there are in total, followed by the number currently selected.</span><a class="headerlink" href="#filter-projection-error" title="Permalink to this image">¶</a></p>
 </div>
-<p>Keep in mind that not all projects can tolerate the removal of points below 5 or 6.
+<p>Keep in mind that not all projects can tolerate the removal of points below 5, which is no problem as long as you document the values you have used.
 After deleting the selected points, it is important to once more optimize the alignment of your points.
 Do so by revisiting the <a class="reference internal" href="#content-tutorial-improve"><span class="std std-ref">Improve alignment step: Error Reduction-Optimization and Camera Calibration</span></a> section.</p>
 </div>
 <div class="section" id="filtering-by-reprojection-error">
 <h4>Filtering by Reprojection Error<a class="headerlink" href="#filtering-by-reprojection-error" title="Permalink to this headline">¶</a></h4>
-<p>To be done.</p>
+<p>Up next is to filter the points by their reprojection error, see <a class="reference internal" href="#filter-reprojection-error"><span class="std std-ref">dialog</span></a>.
+A good value to use here is 0.3, though make sure you do not remove all points by doing so!
+As a rule of thumb, this final selection of points should leave you with approx. 10% of the points you started off with.</p>
+<div class="figure align-default" id="filter-reprojection-error">
+<img alt="../../../_images/5fba8b6a.png" src="../../../_images/5fba8b6a.png" />
+<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">The <em>Gradual Selection</em> dialog after opening it from the <em>Model</em> menu, here making a selection based on the reprojection error parameter.
+After clicking OK, the left corner shows you how many points there are in total, followed by the number currently selected.</span><a class="headerlink" href="#filter-reprojection-error" title="Permalink to this image">¶</a></p>
+</div>
+<p>After deleting the selected points, it is important to runa final <em>Optimize alignment</em> step on your points.
+Do so by revisiting the <a class="reference internal" href="#content-tutorial-improve"><span class="std std-ref">Improve alignment step: Error Reduction-Optimization and Camera Calibration</span></a> section.</p>
+<div class="tip admonition">
+<p class="admonition-title">Keep your duplicates</p>
+<p>It is always a good idea to keep your duplicate backups of previous steps until you are fully done with them.
+They allow you to go back and write down important processing parameters, such as how many points were filtered during each step and which cutoff values you used during processing.
+Only once completely done should you remove these earlier attempts.</p>
+</div>
 </div>
 </div>
 <div class="section" id="build-dense-cloud">
@@ -808,7 +823,7 @@ Keeping in mind what we discussed above, make sure to select <em>Medium</em> for
 <p><em>Reuse depth maps</em> can only be selected if depth maps have been previously calculated for the specified quality.</p>
 <div class="figure align-default" id="dense-cloud">
 <img alt="../../../_images/d2a861b0.png" src="../../../_images/d2a861b0.png" />
-<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">The <em>Build dense cloud</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#dense-cloud" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">The <em>Build dense cloud</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#dense-cloud" title="Permalink to this image">¶</a></p>
 </div>
 <p>Once processing is done, you’ll be able to show the <em>dense point cloud</em> on the screen in the <em>Model</em> tab.
 If not, one can visualise the <em>dense point cloud</em> by clicking on the nine-dotted icon in the menu.
@@ -861,7 +876,7 @@ Depth maps may lead to better results when dealing with a big number of minor de
 <p>After selecting <em>Build Mesh</em> from the <em>Workflow</em> menu, you will be able to chose either in the <a class="reference internal" href="#build-mesh"><span class="std std-ref">dialog</span></a> that pops up for <em>Source data:</em>.</p>
 <div class="figure align-default" id="build-mesh">
 <img alt="../../../_images/9b4ac0b8.png" src="../../../_images/9b4ac0b8.png" />
-<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">The <em>Build mesh</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#build-mesh" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text">The <em>Build mesh</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#build-mesh" title="Permalink to this image">¶</a></p>
 </div>
 <p>Other important parameters here are the <em>Quality</em> and <em>Face count</em> parameters.
 These govern the quality of the generated mesh.
@@ -877,15 +892,21 @@ The next step involves generating a texture and placing this “image” onto th
 <div class="section" id="texture-building">
 <h4>Texture building<a class="headerlink" href="#texture-building" title="Permalink to this headline">¶</a></h4>
 <p>We can build the textures by clicking on the <em>Build Texture</em> command from the <em>Workflow</em> menu.
-While the dialog has many different parameters, the most important are highlighted in <a class="reference internal" href="#build-texture"><span class="std std-numref">Fig. 16</span></a>.</p>
+While the dialog has many different parameters, the most important are highlighted in <a class="reference internal" href="#build-texture"><span class="std std-numref">Fig. 17</span></a>.</p>
 <div class="figure align-default" id="build-texture">
 <img alt="../../../_images/7237597c.png" src="../../../_images/7237597c.png" />
-<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text">The <em>Build texture</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#build-texture" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">The <em>Build texture</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#build-texture" title="Permalink to this image">¶</a></p>
 </div>
 <p>Here <em>Texture size/count</em> determines the quality of the texture.
 Keep in mind that anything over 16384 can very quickly lead to very, very large file sizes on your harddisk.
 On the other hand, anything less than 4096 is probably insufficient.
 For greatest compatibility, keep the <em>Texture size</em> at 4096, but increase the count to e.g. 5 or 10.</p>
+<div class="tip admonition">
+<p class="admonition-title">Publishing on V3Geo or Sketchfab</p>
+<p>Publication guidelines for V3Geo specify that the <em>Texture size</em> must always be 4096.
+In addition, no fewer than 10 <em>Texture count</em> must be used.
+It is recommended to follow this even for SketchFab, as this setup generally results in a higher-quality look of the published model.</p>
+</div>
 </div>
 </div>
 <div class="section" id="generating-a-tiled-model">
@@ -896,7 +917,7 @@ Once again we can select the parameters for the processing step through the <a c
 <p>The most import parameter here is the <em>Pixel size (m)</em>, which should never be set than lower than the pixel size available to the model (= the default value shown when opening the dialog).</p>
 <div class="figure align-default" id="build-tiled-model">
 <img alt="../../../_images/6c44a1dc.png" src="../../../_images/6c44a1dc.png" />
-<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">The <em>Build Tiled Model</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#build-tiled-model" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 18 </span><span class="caption-text">The <em>Build Tiled Model</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#build-tiled-model" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="documenting-processing-parameters">
@@ -931,10 +952,10 @@ Have a look and familiarise yourself with it.</p>
 <h4>In-programme parameters<a class="headerlink" href="#in-programme-parameters" title="Permalink to this headline">¶</a></h4>
 <p>One does not always need to export the processing report to obtain the overview of parameters.
 Handily, Metashape also provides an overview within the <em>Workspace</em> panel after having selected an item in the chunk.
-An example of this is depicted in <a class="reference internal" href="#internal-parameters"><span class="std std-numref">Fig. 18</span></a>.</p>
+An example of this is depicted in <a class="reference internal" href="#internal-parameters"><span class="std std-numref">Fig. 19</span></a>.</p>
 <div class="figure align-default" id="internal-parameters">
 <img alt="../../../_images/5201e3e2.png" src="../../../_images/5201e3e2.png" />
-<p class="caption"><span class="caption-number">Fig. 18 </span><span class="caption-text">An example of the internal <em>Workspace</em> panel, including the parameters and processing metadata that is available from within the Metashape project interface.</span><a class="headerlink" href="#internal-parameters" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 19 </span><span class="caption-text">An example of the internal <em>Workspace</em> panel, including the parameters and processing metadata that is available from within the Metashape project interface.</span><a class="headerlink" href="#internal-parameters" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>

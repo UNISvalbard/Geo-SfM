@@ -253,7 +253,7 @@ Making a backup duplicate of Chunk 1. To keep things simple, make sure to rename
 
 Once you're ready (ahem, make a duplicate/backup first!), filter your Sparse points by their Reconstruction Uncertainty.
 
-```{figure} assets/reconstruction_uncertainty_filtering.gif
+```{figure} assets/reconstruction_uncertainty_filter.gif
 :name: filter_reconstruction_uncertainty
 
 The *Gradual Selection* dialog after opening it from the *Model* menu, here showing selections that are possible for the Sparse Point Cloud.
@@ -269,22 +269,41 @@ Do so by revisiting the [](content:tutorial:improve) section.
 
 This time, select the points based on their Projection accuracy, aiming for a final Projection accuracy of 3.
 
-
 ```{figure} assets/f7c6c589.png
 :name: filter_projection_error
 
-The *Gradual Selection* dialog after opening it from the *Model* menu, here making a selection based on the projection error parameter.
+The *Gradual Selection* dialog after opening it from the *Model* menu, here making a selection based on the projection accuracy parameter.
 A good value to use here is 3, though make sure you do not remove all points by doing so!
 After clicking OK, the left corner shows you how many points there are in total, followed by the number currently selected.
 ```
 
-Keep in mind that not all projects can tolerate the removal of points below 5 or 6.
+Keep in mind that not all projects can tolerate the removal of points below 5, which is no problem as long as you document the values you have used.
 After deleting the selected points, it is important to once more optimize the alignment of your points.
 Do so by revisiting the [](content:tutorial:improve) section.
 
 #### Filtering by Reprojection Error
 
-To be done.
+Up next is to filter the points by their reprojection error, see {ref}`dialog <filter_reprojection_error>`.
+A good value to use here is 0.3, though make sure you do not remove all points by doing so!
+As a rule of thumb, this final selection of points should leave you with approx. 10% of the points you started off with.
+
+```{figure} assets/5fba8b6a.png
+:name: filter_reprojection_error
+
+The *Gradual Selection* dialog after opening it from the *Model* menu, here making a selection based on the reprojection error parameter.
+After clicking OK, the left corner shows you how many points there are in total, followed by the number currently selected.
+```
+
+After deleting the selected points, it is important to runa final *Optimize alignment* step on your points.
+Do so by revisiting the [](content:tutorial:improve) section.
+
+```{admonition} Keep your duplicates
+:class: tip
+
+It is always a good idea to keep your duplicate backups of previous steps until you are fully done with them.
+They allow you to go back and write down important processing parameters, such as how many points were filtered during each step and which cutoff values you used during processing.
+Only once completely done should you remove these earlier attempts.
+```
 
 ### Build Dense Cloud
 
@@ -398,6 +417,14 @@ Here *Texture size/count* determines the quality of the texture.
 Keep in mind that anything over 16384 can very quickly lead to very, very large file sizes on your harddisk.
 On the other hand, anything less than 4096 is probably insufficient.
 For greatest compatibility, keep the *Texture size* at 4096, but increase the count to e.g. 5 or 10.
+
+```{admonition} Publishing on V3Geo or Sketchfab
+:class: tip
+
+Publication guidelines for V3Geo specify that the *Texture size* must always be 4096.
+In addition, no fewer than 10 *Texture count* must be used.
+It is recommended to follow this even for SketchFab, as this setup generally results in a higher-quality look of the published model.
+```
 
 ### Generating a Tiled Model
 
