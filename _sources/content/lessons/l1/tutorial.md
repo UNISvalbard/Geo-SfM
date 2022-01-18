@@ -181,6 +181,7 @@ If not, one can select this by clicking the four-dotted icon in the menu.
 
 ```{figure} assets/3a24665c.png)
 :name: align_photos
+
 The *Align Photos* dialog after opening it from the *Workflow* menu.
 ```
 
@@ -193,7 +194,9 @@ Depending on your computer specifications, you'll have to weigh computational ti
 Give it a shot, and compare the photo alignment results with *medium* vs *high* processing accuracy.
 ```
 
+(content:tutorial:improve)
 ### Improve alignment step: Error Reduction-Optimization and Camera Calibration
+
 
 ```{admonition} Ground control points
 :class: warning
@@ -221,13 +224,16 @@ Lower values (=blue) are generally better and more constrained.
 ```{figure} assets/view_tie_point_covariance.gif
 :name: point-cloud-variance
 
-The *Optimize Camera Alignment* dialog after opening it from the *Tools* menu.
-Make sure to enable *Fit f*, *Fit k1-k3*, *Fit cx, cy*, *Fit p1-p2*, and *Estimate tie point covariance*.
+Changing the view of your points and model to show errors and other things.
+Here we change our view to show Spare Point Covariance instead of RGB coloring.
 ```
 
 As the sparse cloud is the very first step in a long processing chain, we want to optimize it as much as possible.
 After all, bad quality in usually equals bad quality out.
 We will now conduct several optimizations to improve quality of the sparse cloud, implementing USGS {cite}`overProcessingCoastalImagery2021` recommendations that aim to reduce reconstruction uncertainty, improve projection accuracy, and lower the overall reprojection errors.
+Unlike shown below, the project sometimes benefits by having each of the steps repeated multiple times, rather than just once.
+Keep in mind, however, that running too many optimizations may also result in over-fitting of the data.
+That means that the model is no longer based on real input, but rather on the processing parameters (= not real!).
 
 ````{admonition} Make a backup for every step
 :class: tip
@@ -247,8 +253,8 @@ Making a backup duplicate of Chunk 1. To keep things simple, make sure to rename
 
 Once you're ready (ahem, make a duplicate/backup first!), filter your Sparse points by their Reconstruction Uncertainty.
 
-```{figure} assets/view_tie_point_covariance.gif
-:name: point-cloud-variance
+```{figure} assets/reconstruction_uncertainty_filtering.gif
+:name: filter_reconstruction_uncertainty
 
 The *Gradual Selection* dialog after opening it from the *Model* menu, here showing selections that are possible for the Sparse Point Cloud.
 A good value to use here is 10, though make sure you do not remove all points by doing so!
@@ -256,9 +262,25 @@ After clicking OK, the left corner shows you how many points there are in total,
 A rule of thumb is to select no more than two-thirds to half of all points, and then delete these by pressing the Delete key on the keyboard.
 ```
 
+After deleting the selected points, it is important to once more optimize the alignment of your points.
+Do so by revisiting the [](content:tutorial:improve) section.
+
 #### Filtering by Projection accuracy
 
-To be done.
+This time, select the points based on their Projection accuracy, aiming for a final Projection accuracy of 3.
+
+
+```{figure} assets/f7c6c589.png
+:name: filter_projection_error
+
+The *Gradual Selection* dialog after opening it from the *Model* menu, here making a selection based on the projection error parameter.
+A good value to use here is 3, though make sure you do not remove all points by doing so!
+After clicking OK, the left corner shows you how many points there are in total, followed by the number currently selected.
+```
+
+Keep in mind that not all projects can tolerate the removal of points below 5 or 6.
+After deleting the selected points, it is important to once more optimize the alignment of your points.
+Do so by revisiting the [](content:tutorial:improve) section.
 
 #### Filtering by Reprojection Error
 
