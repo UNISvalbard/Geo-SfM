@@ -410,7 +410,7 @@ If depth maps do exist, and you decide to use them as the source data, then make
 Sometiems your mesh/model features blobs that are not connected to the main model.
 These can be easily (and scientifically!) removed through use of the *Connected component filter*, see {ref}`dialog <filter_connected_component_size>`.
 
-```{figure} assets/filter_connected_component_size.jpg
+```{figure} assets/filter_connected_component_size.gif
 :name: filter_connected_component_size
 
 Filtering the mesh based on the connected component size.
