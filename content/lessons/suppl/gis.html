@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exercise 2 - learning the ropes of GCP and marker detection &#8212; Geo-SfM Course Beta</title>
+    <title>GIS 101 &#8212; Geo-SfM Course Beta</title>
     
   <link href="../../../_static/css/theme.css" rel="stylesheet">
   <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -52,8 +52,6 @@
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="GCP tutorial" href="markers.html" />
-    <link rel="prev" title="Ground control points (GCPs)" href="gcps.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -129,24 +127,24 @@
   Session 2
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="overview.html">
+  <a class="reference internal" href="../l2/overview.html">
    Geo-referencing
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="gcps.html">
+  <a class="reference internal" href="../l2/gcps.html">
    Ground control points (GCPs)
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../l2/exercise2.html">
    Exercise 2 - learning the ropes of GCP and marker detection
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="markers.html">
+  <a class="reference internal" href="../l2/markers.html">
    GCP tutorial
   </a>
  </li>
@@ -219,12 +217,12 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../suppl/best_practices.html">
+  <a class="reference internal" href="best_practices.html">
    Best practices
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../suppl/metadata_lists.html">
+  <a class="reference internal" href="metadata_lists.html">
    Metadata templates for archiving
   </a>
  </li>
@@ -284,7 +282,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../_sources/content/lessons/l2/exercise2.md"><button type="button"
+        <a class="dropdown-buttons" href="../../../_sources/content/lessons/suppl/gis.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -304,7 +302,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/UNISvalbard/Geo-SfM/issues/new?title=Issue%20on%20page%20%2Fcontent/lessons/l2/exercise2.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/UNISvalbard/Geo-SfM/issues/new?title=Issue%20on%20page%20%2Fcontent/lessons/suppl/gis.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -331,14 +329,64 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learning-goals">
-   Learning goals
+  <a class="reference internal nav-link" href="#some-useful-definitions">
+   Some useful definitions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#assignment">
-   Assignment
+  <a class="reference internal nav-link" href="#creation-of-a-arcgis-pro-project">
+   Creation of a ArcGIS Pro project
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-data">
+     Adding data
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#importing-gpx-tracks">
+       Importing GPX tracks
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#importing-a-digital-terrain-model">
+       Importing a digital terrain model
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#creating-slopes">
+         Creating slopes
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#connecting-to-arcgis-servers">
+     Connecting to ArcGIS Servers
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#svalbox-server">
+       Svalbox server
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#harvesting-metadata-360image-to-iframe">
+         Harvesting metadata: 360image to iframe
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#npi-server">
+       NPI server
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -350,7 +398,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Exercise 2 - learning the ropes of GCP and marker detection</h1>
+                <h1>GIS 101</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -361,14 +409,64 @@
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learning-goals">
-   Learning goals
+  <a class="reference internal nav-link" href="#some-useful-definitions">
+   Some useful definitions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#assignment">
-   Assignment
+  <a class="reference internal nav-link" href="#creation-of-a-arcgis-pro-project">
+   Creation of a ArcGIS Pro project
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-data">
+     Adding data
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#importing-gpx-tracks">
+       Importing GPX tracks
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#importing-a-digital-terrain-model">
+       Importing a digital terrain model
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#creating-slopes">
+         Creating slopes
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#connecting-to-arcgis-servers">
+     Connecting to ArcGIS Servers
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#svalbox-server">
+       Svalbox server
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#harvesting-metadata-360image-to-iframe">
+         Harvesting metadata: 360image to iframe
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#npi-server">
+       NPI server
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -379,86 +477,109 @@
             
               <div>
                 
-  <div class="section" id="exercise-2-learning-the-ropes-of-gcp-and-marker-detection">
-<h1>Exercise 2 - learning the ropes of GCP and marker detection<a class="headerlink" href="#exercise-2-learning-the-ropes-of-gcp-and-marker-detection" title="Permalink to this headline">¶</a></h1>
-<div class="admonition-deadline admonition">
-<p class="admonition-title">Deadline</p>
-<p>Please complete this exercise <strong>by the start of the next session</strong>.</p>
-</div>
-<div class="section" id="learning-goals">
-<h2>Learning goals<a class="headerlink" href="#learning-goals" title="Permalink to this headline">¶</a></h2>
-<p><strong>After this session you will be able to:</strong></p>
-<ul class="simple">
-<li><p>Generate your own set of GCPs;</p></li>
-<li><p>Manually detect GCPs in a set of images; and,</p></li>
-<li><p>Automatically detect GCPs using computer algorithms.</p></li>
-</ul>
-<div class="warning admonition">
-<p class="admonition-title">Support</p>
-<p>Please note that <strong>we only provide feedback and support for students enrolled in the course at the University Centre of Svalbard</strong>.</p>
-</div>
-<p>We now focus on familiarising ourselves with the concept of GCPs and markers.
-This includes the generation of both Metashape markers and open-source ArUco markers, as well as their manual and automated detection.</p>
-</div>
-<div class="section" id="assignment">
-<h2>Assignment<a class="headerlink" href="#assignment" title="Permalink to this headline">¶</a></h2>
-<p>Proceed to the <a class="reference internal" href="markers.html"><span class="doc std std-doc">GCP tutorial</span></a> while keeping the following assignments in mind:</p>
-<div class="note admonition">
-<p class="admonition-title">Checklist and questions</p>
-<ul class="simple">
-<li><p>[ ] GCP generation</p>
-<ul>
-<li><p>[ ] Generate a single Metashape marker and print it on A4 (or show it on your screen)</p></li>
-<li><p>[ ] Generate a single ArUco marker and print it on A4 (or show it on your screen)</p></li>
-</ul>
-</li>
-<li><p>[ ] photoshoot:</p>
-<ul>
-<li><p>[ ] Take at least 10 photos of the printed (or imaged) marker from different angles and distances, making sure the markers are fully included in at least 3 photos each, and at least partially visible in the rest.</p></li>
-</ul>
-</li>
-<li><p>[ ] GCP detection:</p>
-<ul>
-<li><p>[ ] create a new Metashape project conforming the standardised project environment</p></li>
-<li><p>[ ] detect the ArUco marker manually</p></li>
-<li><p>[ ] detect the Metashape marker automatically</p></li>
-</ul>
-</li>
-<li><p>[ ] Combined workflow:</p>
-<ul>
-<li><p>[ ] Create a <a class="reference internal" href="#student-marker"><span class="std std-ref">hand-drawn marker grid</span></a> on A4 with 4 corners marked (i.e., the GCPs).</p></li>
-<li><p>[ ] Measure the distances between the GCPs, treating the top left corner as your origin GCP (=0,0).</p></li>
-<li><p>[ ] Place a small object in the middle, not covering any of the grid points.</p></li>
-<li><p>[ ] Image the object as per last session.</p></li>
-<li><p>[ ] Create a new Metashape project conforming the standardised project environment</p></li>
-<li><p>[ ] Import photos, manually detect the GCPs, and assign real world coordinates to the GCPs</p></li>
-<li><p>[ ] Run all steps leading up to and including texture generation (and export processing report).</p></li>
-</ul>
-</li>
-</ul>
-<p>In addition, please come up with some thoughts on the following statements:</p>
-<ul class="simple">
-<li><p>GCP detection requires only part of the markers to be visible in an image</p></li>
-<li><p>A GCP should always be fully imaged in at least five images</p></li>
-<li><p>The original, real-world object and the digital model are identicial in dimensions (pro tip: <a class="reference external" href="../l5/geomodel_tutorial#ruler-tool">measure this using the ruler tool</a>).</p></li>
-</ul>
-<div class="tip admonition">
-<p class="admonition-title">The Student’s approach to markers in Corona-lockdown.</p>
-<div class="figure align-default" id="student-marker">
-<img alt="../../../_images/student_marker.png" src="../../../_images/student_marker.png" />
-<p class="caption"><span class="caption-number">Fig. 25 </span><span class="caption-text">One does not need to use the binary markers per se.
-As long as you have access to a ruler, pencil, and flat (and big enough) piece of paper, you can create your own marker grid.
-Then simply put the object in the middle, and voila!</span><a class="headerlink" href="#student-marker" title="Permalink to this image">¶</a></p>
-</div>
-<p>Stuck in home-office without a printer but still have access to paper, a ruler and pencil?
-You’re out of luck when it comes to automated GCP recognition.
-However, you could always measure out 4 points and draw them on the paper in a rectangle.
-Make sure to set one corner as the origin (0,0), and use your ruler to measure the other marker-point coordinates correspondingly.</p>
+  <div class="section" id="gis-101">
+<h1>GIS 101<a class="headerlink" href="#gis-101" title="Permalink to this headline">¶</a></h1>
+<p>A geographic information system (GIS) is a key component to integrate data geospatially, i.e., linking data to their physical locations on Earth.
+GIS is one of the way in which you can access the metadata of your georeferenced 3D model easily.
+It is the system that forms the foundation to almost everything that is Svalbox.
+In other words, everyone should at the very least grasp the basics - hence the need for this section.</p>
+<div class="section" id="some-useful-definitions">
+<h2>Some useful definitions<a class="headerlink" href="#some-useful-definitions" title="Permalink to this headline">¶</a></h2>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As in every field, there are some common phrases and definitions that are frequently used.
+Here we provide you with some of them.</p>
 </div>
 </div>
-<div class="tip admonition">
-<p class="admonition-title">SfM photogrammetry workflow</p>
-<p>Have a look at last session’s accompanying <a class="reference internal" href="../l1/tutorial.html"><span class="doc std std-doc">tutorial</span></a> for some useful tips and tricks.</p>
+<dl class="simple myst">
+<dt>ESRI</dt><dd><p>Esri is an international supplier of geographic information system software, web GIS and geodatabase management applications.
+The company was founded as the Environmental Systems Research Institute in 1969 as a land-use consulting firm.
+Esri has tons of resources and online help for any kind of GIS questions.</p>
+</dd>
+<dt>ArcGIS</dt><dd><p>ArcGIS is a geographic information system (GIS) for working with maps and geographic information maintained by the Environmental Systems Research Institute (Esri).
+It is used for creating and using maps, compiling geographic data, analyzing mapped information, sharing and discovering geographic information, using maps and geographic information in a range of applications, and managing geographic information in a database.</p>
+</dd>
+<dt>ArcGIS Pro</dt><dd><p>A new, integrated GIS application, planned to eventually supersede ArcMap and its companion programs.</p>
+</dd>
+<dt>QGIS</dt><dd><p>QGIS is a free and open-source cross-platform desktop geographic information system application that supports viewing, editing, and analysis of geospatial data.</p>
+</dd>
+<dt>Layer</dt><dd><p>Layers are the mechanism used to display geographic datasets.
+Each layer references a dataset and specifies how that dataset is portrayed using symbols and text labels.
+When you add a layer to a map, you specify its dataset and set its map symbols and labeling properties.
+Each map, globe, or scene document in ArcGIS is assembled by adding a series of layers.
+Layers are displayed in a particular order displayed in the map’s table of contents. Layers listed at the bottom are displayed first, followed by the layers above them.</p>
+</dd>
+<dt>ShapeFile</dt><dd><p>A shapefile is an Esri vector data storage format for storing the location, shape, and attributes of geographic features.
+It is stored as a set of related files and contains one feature class.
+Shapefiles often contain large features with a lot of associated data and historically have been used in GIS desktop applications such as ArcMap.
+A shapefile consists of multiple components, containing at least the .shp, .shx, .dbf, and .prj files.
+A better option is to use the opensource GeoPackage equivalent.</p>
+</dd>
+<dt>GeoPackage</dt><dd><p>An open source storage format for storing the location, shape, and attributes of geographic features.
+May feature many different feature classes and files.</p>
+</dd>
+<dt>Feature Class</dt><dd><p>Feature classes are homogeneous collections of common features, each having the same spatial representation, such as points, lines, or polygons, and a common set of attribute columns, for example, a line feature class for representing road centerlines.
+The four most commonly used feature classes are points, lines, polygons, and annotation (the geodatabase name for map text).</p>
+</dd>
+<dt>Points</dt><dd><p>Features that are too small to represent as lines or polygons as well as point locations (such as GPS observations).</p>
+</dd>
+<dt>Lines</dt><dd><p>Represent the shape and location of geographic objects, such as street centerlines and streams, too narrow to depict as areas.
+Lines are also used to represent features that have length but no area, such as contour lines and boundaries.</p>
+</dd>
+</dl>
+<p>Polygons
+: A set of many-sided area features that represents the shape and location of homogeneous feature types such as states, counties, parcels, soil types, and land-use zones.</p>
+<p>Annotation
+: Map text including properties for how the text is rendered. For example, in addition to the text string of each annotation, other properties are included such as the shape points for placing the text, its font and point size, and other display properties. Annotation can also be feature linked and can contain subclasses.</p>
+</div>
+<div class="section" id="creation-of-a-arcgis-pro-project">
+<h2>Creation of a ArcGIS Pro project<a class="headerlink" href="#creation-of-a-arcgis-pro-project" title="Permalink to this headline">¶</a></h2>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>An excellent albeit bit long guide for QGIS exists on the interwebz.
+Those who would like an open and free experience, may try QGIS and follow the tutorial here:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">qgistutorials</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">en</span><span class="o">/</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>New, Blank Templates, Map. Define the Name of the new project (ideally without spaces, dots, or commas).
+In Location, define the folder path where you want to save the project.
+This last step is important to have a good data structure because everything related to your project will be saved there.
+Also, select the tick that says “Create a new folder for this project”.</p>
+<div class="section" id="adding-data">
+<h3>Adding data<a class="headerlink" href="#adding-data" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="importing-gpx-tracks">
+<h4>Importing GPX tracks<a class="headerlink" href="#importing-gpx-tracks" title="Permalink to this headline">¶</a></h4>
+<p>ArcGIS Pro uses a Georeferencing tool to import GPX tracks.</p>
+</div>
+<div class="section" id="importing-a-digital-terrain-model">
+<h4>Importing a digital terrain model<a class="headerlink" href="#importing-a-digital-terrain-model" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="creating-slopes">
+<h5>Creating slopes<a class="headerlink" href="#creating-slopes" title="Permalink to this headline">¶</a></h5>
+</div>
+</div>
+</div>
+<div class="section" id="connecting-to-arcgis-servers">
+<h3>Connecting to ArcGIS Servers<a class="headerlink" href="#connecting-to-arcgis-servers" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="svalbox-server">
+<h4>Svalbox server<a class="headerlink" href="#svalbox-server" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="harvesting-metadata-360image-to-iframe">
+<h5>Harvesting metadata: 360image to iframe<a class="headerlink" href="#harvesting-metadata-360image-to-iframe" title="Permalink to this headline">¶</a></h5>
+<p>Once the Svalbox ArcGIS server has been added to your project, drag and drop the images360 layer into your map.
+The location of 360 images should now be visible on your map.
+However, when clicking on them, you will not be shown the 360 image in the way it is served to you on svalbox.no/map.
+Instead, a popup featuring all the image’s metadata will show up.
+Here, the most important is to copy the svalbox_i0wpurl link - this link can be pasted into the [Pannellum panorama url link box]{https://pannellum.org/documentation/overview/tutorial/} to generate a 360 view of the image.</p>
+</div>
+</div>
+<div class="section" id="npi-server">
+<h4>NPI server<a class="headerlink" href="#npi-server" title="Permalink to this headline">¶</a></h4>
+</div>
 </div>
 </div>
 </div>
@@ -476,7 +597,7 @@ Make sure to set one corner as the origin (0,0), and use your ruler to measure t
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./content\lessons\l2"
+            path: "./content\lessons\suppl"
         },
         predefinedOutput: true
     }
@@ -487,21 +608,7 @@ Make sure to set one corner as the origin (0,0), and use your ruler to measure t
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="gcps.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Ground control points (GCPs)</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="markers.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">GCP tutorial</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
+<div class='prev-next-area'>
 </div>
             
         </div>
