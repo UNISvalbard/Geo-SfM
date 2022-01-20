@@ -18,6 +18,9 @@ The United States Geological Survey {cite}`overProcessingCoastalImagery2021` has
 Although digital elevation models are but one of many desired products, the same guide can be used for the creation of high resolution and properly processed DOMs.
 USGS guidelines and the quick start guide to processing (Table 1) can be found [here](https://pubs.usgs.gov/of/2021/1039/ofr20211039.pdf), and should be used supplementary to this tutorial.
 ```
+https://pubs.usgs.gov/of/2021/1039/ofr20211039.pdf
+```
+
 ````
 
 In this session we will learn how to use Agisoft Metashape.
@@ -400,6 +403,23 @@ The next step involves generating a texture and placing this "image" onto the me
 ```{admonition} Depth maps
 :class: tip
 If depth maps do exist, and you decide to use them as the source data, then make sure to enable *Reuse depth maps* to save computational time!
+```
+
+##### Filtering the mesh
+
+Sometiems your mesh/model features blobs that are not connected to the main model.
+These can be easily (and scientifically!) removed through use of the *Connected component filter*, see {ref}`dialog <filter_connected_component_size>`.
+
+```{figure} assets/filter_connected_component_size.gif
+:name: filter_connected_component_size
+
+Filtering the mesh based on the connected component size.
+This is a percentage of the largest component, which by default is 100.
+```
+
+```{admonition} Select the model first!
+:class: warning
+The option may not be available if you have not selected the mesh/model data first, or not in the model view panel.
 ```
 
 #### Texture building

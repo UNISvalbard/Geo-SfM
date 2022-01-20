@@ -224,6 +224,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../suppl/gis.html">
+   GIS 101
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../suppl/metadata_lists.html">
    Metadata templates for archiving
   </a>
@@ -400,6 +405,11 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#filtering-the-mesh">
+       Filtering the mesh
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#texture-building">
        Texture building
       </a>
@@ -520,6 +530,11 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#filtering-the-mesh">
+       Filtering the mesh
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#texture-building">
        Texture building
       </a>
@@ -574,10 +589,10 @@
 <h2>3D model reconstruction with Agisoft Metashape<a class="headerlink" href="#d-model-reconstruction-with-agisoft-metashape" title="Permalink to this headline">¶</a></h2>
 <div class="suggestion admonition">
 <p class="admonition-title">Creating high-quality models the USGS way</p>
-<p>The United States Geological Survey <a class="bibtex reference internal" href="../about/zbiblio.html#overprocessingcoastalimagery2021" id="id1">[4]</a> has put together an excellent tutorial on the use of Agisoft Metashape for creating high resolution digital elevation models.
+<p>The United States Geological Survey <span class="bibtex" id="id1">[overProcessingCoastalImagery2021]</span> has put together an excellent tutorial on the use of Agisoft Metashape for creating high resolution digital elevation models.
 Although digital elevation models are but one of many desired products, the same guide can be used for the creation of high resolution and properly processed DOMs.
 USGS guidelines and the quick start guide to processing (Table 1) can be found <a class="reference external" href="https://pubs.usgs.gov/of/2021/1039/ofr20211039.pdf">here</a>, and should be used supplementary to this tutorial.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">pubs</span><span class="o">.</span><span class="n">usgs</span><span class="o">.</span><span class="n">gov</span><span class="o">/</span><span class="n">of</span><span class="o">/</span><span class="mi">2021</span><span class="o">/</span><span class="mi">1039</span><span class="o">/</span><span class="n">ofr20211039</span><span class="o">.</span><span class="n">pdf</span>
 </pre></div>
 </div>
 </div>
@@ -752,7 +767,7 @@ Here we change our view to show Spare Point Covariance instead of RGB coloring.<
 </div>
 <p>As the sparse cloud is the very first step in a long processing chain, we want to optimize it as much as possible.
 After all, bad quality in usually equals bad quality out.
-We will now conduct several optimizations to improve quality of the sparse cloud, implementing USGS <a class="bibtex reference internal" href="../about/zbiblio.html#overprocessingcoastalimagery2021" id="id2">[4]</a> recommendations that aim to reduce reconstruction uncertainty, improve projection accuracy, and lower the overall reprojection errors.
+We will now conduct several optimizations to improve quality of the sparse cloud, implementing USGS <span class="bibtex" id="id2">[overProcessingCoastalImagery2021]</span> recommendations that aim to reduce reconstruction uncertainty, improve projection accuracy, and lower the overall reprojection errors.
 Unlike shown below, the project sometimes benefits by having each of the steps repeated multiple times, rather than just once.
 Keep in mind, however, that running too many optimizations may also result in over-fitting of the data.
 That means that the model is no longer based on real input, but rather on the processing parameters (= not real!).</p>
@@ -889,13 +904,27 @@ The next step involves generating a texture and placing this “image” onto th
 <p class="admonition-title">Depth maps</p>
 <p>If depth maps do exist, and you decide to use them as the source data, then make sure to enable <em>Reuse depth maps</em> to save computational time!</p>
 </div>
+<div class="section" id="filtering-the-mesh">
+<h4>Filtering the mesh<a class="headerlink" href="#filtering-the-mesh" title="Permalink to this headline">¶</a></h4>
+<p>Sometiems your mesh/model features blobs that are not connected to the main model.
+These can be easily (and scientifically!) removed through use of the <em>Connected component filter</em>, see <a class="reference internal" href="#filter-connected-component-size"><span class="std std-ref">dialog</span></a>.</p>
+<div class="figure align-default" id="filter-connected-component-size">
+<img alt="../../../_images/filter_connected_component_size.gif" src="../../../_images/filter_connected_component_size.gif" />
+<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">Filtering the mesh based on the connected component size.
+This is a percentage of the largest component, which by default is 100.</span><a class="headerlink" href="#filter-connected-component-size" title="Permalink to this image">¶</a></p>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">Select the model first!</p>
+<p>The option may not be available if you have not selected the mesh/model data first, or not in the model view panel.</p>
+</div>
+</div>
 <div class="section" id="texture-building">
 <h4>Texture building<a class="headerlink" href="#texture-building" title="Permalink to this headline">¶</a></h4>
 <p>We can build the textures by clicking on the <em>Build Texture</em> command from the <em>Workflow</em> menu.
-While the dialog has many different parameters, the most important are highlighted in <a class="reference internal" href="#build-texture"><span class="std std-numref">Fig. 17</span></a>.</p>
+While the dialog has many different parameters, the most important are highlighted in <a class="reference internal" href="#build-texture"><span class="std std-numref">Fig. 18</span></a>.</p>
 <div class="figure align-default" id="build-texture">
 <img alt="../../../_images/7237597c.png" src="../../../_images/7237597c.png" />
-<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">The <em>Build texture</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#build-texture" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 18 </span><span class="caption-text">The <em>Build texture</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#build-texture" title="Permalink to this image">¶</a></p>
 </div>
 <p>Here <em>Texture size/count</em> determines the quality of the texture.
 Keep in mind that anything over 16384 can very quickly lead to very, very large file sizes on your harddisk.
@@ -917,7 +946,7 @@ Once again we can select the parameters for the processing step through the <a c
 <p>The most import parameter here is the <em>Pixel size (m)</em>, which should never be set than lower than the pixel size available to the model (= the default value shown when opening the dialog).</p>
 <div class="figure align-default" id="build-tiled-model">
 <img alt="../../../_images/6c44a1dc.png" src="../../../_images/6c44a1dc.png" />
-<p class="caption"><span class="caption-number">Fig. 18 </span><span class="caption-text">The <em>Build Tiled Model</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#build-tiled-model" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 19 </span><span class="caption-text">The <em>Build Tiled Model</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#build-tiled-model" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="documenting-processing-parameters">
@@ -952,10 +981,10 @@ Have a look and familiarise yourself with it.</p>
 <h4>In-programme parameters<a class="headerlink" href="#in-programme-parameters" title="Permalink to this headline">¶</a></h4>
 <p>One does not always need to export the processing report to obtain the overview of parameters.
 Handily, Metashape also provides an overview within the <em>Workspace</em> panel after having selected an item in the chunk.
-An example of this is depicted in <a class="reference internal" href="#internal-parameters"><span class="std std-numref">Fig. 19</span></a>.</p>
+An example of this is depicted in <a class="reference internal" href="#internal-parameters"><span class="std std-numref">Fig. 20</span></a>.</p>
 <div class="figure align-default" id="internal-parameters">
 <img alt="../../../_images/5201e3e2.png" src="../../../_images/5201e3e2.png" />
-<p class="caption"><span class="caption-number">Fig. 19 </span><span class="caption-text">An example of the internal <em>Workspace</em> panel, including the parameters and processing metadata that is available from within the Metashape project interface.</span><a class="headerlink" href="#internal-parameters" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 20 </span><span class="caption-text">An example of the internal <em>Workspace</em> panel, including the parameters and processing metadata that is available from within the Metashape project interface.</span><a class="headerlink" href="#internal-parameters" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
