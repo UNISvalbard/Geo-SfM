@@ -417,6 +417,11 @@ Filtering the mesh based on the connected component size.
 This is a percentage of the largest component, which by default is 100.
 ```
 
+```{admonition} Select the model first!
+:class: warning
+The option may not be available if you have not selected the mesh/model data first, or not in the model view panel.
+```
+
 #### Texture building
 
 We can build the textures by clicking on the *Build Texture* command from the *Workflow* menu.

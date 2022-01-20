@@ -52,6 +52,8 @@
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Metadata templates for archiving" href="metadata_lists.html" />
+    <link rel="prev" title="Best practices" href="best_practices.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -215,10 +217,15 @@
   Resources
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="best_practices.html">
    Best practices
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   GIS 101
   </a>
  </li>
  <li class="toctree-l1">
@@ -339,10 +346,27 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#specify-a-coordinate-system-for-your-project">
+     Specify a coordinate system for your project
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#change-projected-coordinate-system-in-a-layer">
+       Change Projected Coordinate System in a layer
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#adding-data">
      Adding data
     </a>
     <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#importing-data">
+       Importing data
+      </a>
+     </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#importing-gpx-tracks">
        Importing GPX tracks
@@ -354,8 +378,42 @@
       </a>
       <ul class="nav section-nav flex-column">
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#creating-slopes">
-         Creating slopes
+        <a class="reference internal nav-link" href="#creating-slopes-hillshades-and-contours">
+         Creating slopes, hillshades and contours
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#adding-new-features">
+       Adding new features
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#georeference-image-raster">
+       Georeference image/raster
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#connecting-to-arcgis-servers">
+       Connecting to ArcGIS Servers
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#svalbox-server">
+         Svalbox server
+        </a>
+        <ul class="nav section-nav flex-column">
+         <li class="toc-h6 nav-item toc-entry">
+          <a class="reference internal nav-link" href="#harvesting-metadata-360image-to-iframe">
+           Harvesting metadata: 360image to iframe
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#npi-server">
+         NPI server
         </a>
        </li>
       </ul>
@@ -363,28 +421,14 @@
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#connecting-to-arcgis-servers">
-     Connecting to ArcGIS Servers
+    <a class="reference internal nav-link" href="#edit-layer-characteristics">
+     Edit layer characteristics
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#svalbox-server">
-       Svalbox server
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#harvesting-metadata-360image-to-iframe">
-         Harvesting metadata: 360image to iframe
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#npi-server">
-       NPI server
-      </a>
-     </li>
-    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exporting-a-map">
+     Exporting a map
+    </a>
    </li>
   </ul>
  </li>
@@ -419,10 +463,27 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#specify-a-coordinate-system-for-your-project">
+     Specify a coordinate system for your project
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#change-projected-coordinate-system-in-a-layer">
+       Change Projected Coordinate System in a layer
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#adding-data">
      Adding data
     </a>
     <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#importing-data">
+       Importing data
+      </a>
+     </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#importing-gpx-tracks">
        Importing GPX tracks
@@ -434,8 +495,42 @@
       </a>
       <ul class="nav section-nav flex-column">
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#creating-slopes">
-         Creating slopes
+        <a class="reference internal nav-link" href="#creating-slopes-hillshades-and-contours">
+         Creating slopes, hillshades and contours
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#adding-new-features">
+       Adding new features
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#georeference-image-raster">
+       Georeference image/raster
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#connecting-to-arcgis-servers">
+       Connecting to ArcGIS Servers
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#svalbox-server">
+         Svalbox server
+        </a>
+        <ul class="nav section-nav flex-column">
+         <li class="toc-h6 nav-item toc-entry">
+          <a class="reference internal nav-link" href="#harvesting-metadata-360image-to-iframe">
+           Harvesting metadata: 360image to iframe
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#npi-server">
+         NPI server
         </a>
        </li>
       </ul>
@@ -443,28 +538,14 @@
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#connecting-to-arcgis-servers">
-     Connecting to ArcGIS Servers
+    <a class="reference internal nav-link" href="#edit-layer-characteristics">
+     Edit layer characteristics
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#svalbox-server">
-       Svalbox server
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#harvesting-metadata-360image-to-iframe">
-         Harvesting metadata: 360image to iframe
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#npi-server">
-       NPI server
-      </a>
-     </li>
-    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exporting-a-map">
+     Exporting a map
+    </a>
    </li>
   </ul>
  </li>
@@ -550,26 +631,76 @@ Those who would like an open and free experience, may try QGIS and follow the tu
 <p>New, Blank Templates, Map. Define the Name of the new project (ideally without spaces, dots, or commas).
 In Location, define the folder path where you want to save the project.
 This last step is important to have a good data structure because everything related to your project will be saved there.
-Also, select the tick that says “Create a new folder for this project”.</p>
+Also, select the tick that says <em>Create a new folder for this project</em>.</p>
+<div class="section" id="specify-a-coordinate-system-for-your-project">
+<h3>Specify a coordinate system for your project<a class="headerlink" href="#specify-a-coordinate-system-for-your-project" title="Permalink to this headline">¶</a></h3>
+<p>The horizontal coordinate System for a global scene is limited to WGS1984.
+We can define a vertical coordinate system for a map or scene.</p>
+<p>In the Table of Contents right click on the layer or map you want to modify &gt; Properties &gt; Coordinate system.</p>
+<p>The coordinate System for Svalbard is: WGS1984 UTM Zone 33N.
+You can do a quick search by looking for the EPSG code 32633.</p>
+<div class="section" id="change-projected-coordinate-system-in-a-layer">
+<h4>Change Projected Coordinate System in a layer<a class="headerlink" href="#change-projected-coordinate-system-in-a-layer" title="Permalink to this headline">¶</a></h4>
+<p>We differentiate two common cases for why you would like to change the projection of your layer:</p>
+<dl class="simple myst">
+<dt>Layer with a wrong projection</dt><dd><p>Create a new Feature Class &gt; Geoprocessing &gt; Create Feature Class &gt; Only fill “Feature Class Name” &gt; Run &gt;&gt; Geoprocessing &gt; Define Projection Tool &gt; Input Dataset of Feature Class: select the layer with the wrong projection system and Coordinate System: select the layer that has an unknown coordinate system &gt; Run. The layer will match the coordinate characteristics of the project.</p>
+</dd>
+<dt>Layer with an Unknown Projection</dt><dd><p>Geoprocessing &gt; Define Projection Tool &gt; Input Dataset of Feature Class: Select the layer you want to change the projection system and
+Coordinate System: Select a layer that has already the projection you want &gt; Run.</p>
+</dd>
+</dl>
+</div>
+</div>
 <div class="section" id="adding-data">
 <h3>Adding data<a class="headerlink" href="#adding-data" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="importing-data">
+<h4>Importing data<a class="headerlink" href="#importing-data" title="Permalink to this headline">¶</a></h4>
+<p>Map &gt; Add data &gt; Go to the folder where you saved the data you want to import.
+Once you add it, it will appear as a new layer in the Table of Contents.</p>
+</div>
 <div class="section" id="importing-gpx-tracks">
 <h4>Importing GPX tracks<a class="headerlink" href="#importing-gpx-tracks" title="Permalink to this headline">¶</a></h4>
 <p>ArcGIS Pro uses a Georeferencing tool to import GPX tracks.</p>
 </div>
 <div class="section" id="importing-a-digital-terrain-model">
 <h4>Importing a digital terrain model<a class="headerlink" href="#importing-a-digital-terrain-model" title="Permalink to this headline">¶</a></h4>
-<div class="section" id="creating-slopes">
-<h5>Creating slopes<a class="headerlink" href="#creating-slopes" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="creating-slopes-hillshades-and-contours">
+<h5>Creating slopes, hillshades and contours<a class="headerlink" href="#creating-slopes-hillshades-and-contours" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><p>Hillshade: Imagery &gt; Raster Functions &gt; Surface &gt; Hillshade &gt; Choose the layer you want to do the hillshade from &gt; Define the vertical exaggeration &gt; Create New Layer.</p></li>
+<li><p>Contour: Imagery &gt; Raster Functions &gt; Surface &gt; Contour &gt; Choose the layer you want to do the contours from &gt; Define the contour separation &gt; Create New Layer.</p></li>
+<li><p>You can do this with lots of other tools: Aspect, Slope, Shaded relief, Curvature, etc.</p></li>
+</ul>
 </div>
 </div>
+<div class="section" id="adding-new-features">
+<h4>Adding new features<a class="headerlink" href="#adding-new-features" title="Permalink to this headline">¶</a></h4>
+<dl class="simple myst">
+<dt>Option 1</dt><dd><p>Open Catalog &gt; Right Click on the geodatabase file (.gdb) &gt; New &gt; Feature Class &gt; Define a name and the type of feature you want to create.
+Once it is created, drag the new .gdb to the Table of Contents.
+Select the new layer &gt; Edit &gt; Create &gt; Define the feature you want to work with.</p>
+</dd>
+<dt>Option 2</dt><dd><p>Geoprocessing Pane &gt; Search for Create Feature Class.
+Define all the parameters.
+The Name cannot contain Spaces, points, or commas.
+Make sure to select the Coordinate System of the Current Map.
+Through this step, the New Feature layer will automatically appear in the table of contents.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="georeference-image-raster">
+<h4>Georeference image/raster<a class="headerlink" href="#georeference-image-raster" title="Permalink to this headline">¶</a></h4>
+<p>Import an image you want to georeference in the map in JPG or PNG format.
+Then go to Imagery &gt; Georeference &gt; Add control points.
+Click an exact point on the image and then click this point in the map before saving the changes.</p>
 </div>
 <div class="section" id="connecting-to-arcgis-servers">
-<h3>Connecting to ArcGIS Servers<a class="headerlink" href="#connecting-to-arcgis-servers" title="Permalink to this headline">¶</a></h3>
+<h4>Connecting to ArcGIS Servers<a class="headerlink" href="#connecting-to-arcgis-servers" title="Permalink to this headline">¶</a></h4>
+<p>Insert &gt; Connections &gt; Add ArcGIS Server</p>
 <div class="section" id="svalbox-server">
-<h4>Svalbox server<a class="headerlink" href="#svalbox-server" title="Permalink to this headline">¶</a></h4>
+<h5>Svalbox server<a class="headerlink" href="#svalbox-server" title="Permalink to this headline">¶</a></h5>
 <div class="section" id="harvesting-metadata-360image-to-iframe">
-<h5>Harvesting metadata: 360image to iframe<a class="headerlink" href="#harvesting-metadata-360image-to-iframe" title="Permalink to this headline">¶</a></h5>
+<h6>Harvesting metadata: 360image to iframe<a class="headerlink" href="#harvesting-metadata-360image-to-iframe" title="Permalink to this headline">¶</a></h6>
 <p>Once the Svalbox ArcGIS server has been added to your project, drag and drop the images360 layer into your map.
 The location of 360 images should now be visible on your map.
 However, when clicking on them, you will not be shown the 360 image in the way it is served to you on svalbox.no/map.
@@ -578,8 +709,25 @@ Here, the most important is to copy the svalbox_i0wpurl link - this link can be 
 </div>
 </div>
 <div class="section" id="npi-server">
-<h4>NPI server<a class="headerlink" href="#npi-server" title="Permalink to this headline">¶</a></h4>
+<h5>NPI server<a class="headerlink" href="#npi-server" title="Permalink to this headline">¶</a></h5>
 </div>
+</div>
+</div>
+<div class="section" id="edit-layer-characteristics">
+<h3>Edit layer characteristics<a class="headerlink" href="#edit-layer-characteristics" title="Permalink to this headline">¶</a></h3>
+<p>Depending on the layer characteristics that we want to modify we will go to:</p>
+<ul class="simple">
+<li><p>Appearance tab</p></li>
+<li><p>Symbology: Right click on the feature layer in the Control Pane &gt; Symbology</p></li>
+</ul>
+</div>
+<div class="section" id="exporting-a-map">
+<h3>Exporting a map<a class="headerlink" href="#exporting-a-map" title="Permalink to this headline">¶</a></h3>
+<p>Insert tab &gt; New Layout &gt; Generate the frame you want for your map.</p>
+<p>Map &gt; Activate Map Frame to move and edit the map. Add Legend, North Arrow and Scale bar.</p>
+<ul class="simple">
+<li><p>Export map: Share &gt; Export Layout. Export Raster in -PNG and Vectors in -EPS. It is important to select <em>Clip to Graphics Extent</em>.</p></li>
+</ul>
 </div>
 </div>
 </div>
@@ -608,7 +756,21 @@ Here, the most important is to copy the svalbox_i0wpurl link - this link can be 
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="best_practices.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Best practices</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="metadata_lists.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Metadata templates for archiving</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             
         </div>
