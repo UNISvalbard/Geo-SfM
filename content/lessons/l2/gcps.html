@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
@@ -33,18 +33,17 @@
     
   <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../../_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
-    <script src="../../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -70,12 +69,7 @@
     <div class="container-xl">
       <div class="row">
           
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<div class="col-12 col-md-3 bd-sidebar site-navigation " id="site-navigation">
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../../index.html">
@@ -102,7 +96,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Session 1
  </span>
@@ -124,7 +118,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Session 2
  </span>
@@ -151,7 +145,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Session 3
  </span>
@@ -173,7 +167,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Session 4
  </span>
@@ -195,7 +189,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Session 5
  </span>
@@ -212,7 +206,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Resources
  </span>
@@ -221,11 +215,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../suppl/best_practices.html">
    Best practices
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../suppl/gis.html">
-   GIS 101
   </a>
  </li>
  <li class="toctree-l1">
@@ -264,22 +253,22 @@
 
 
           
-<!-- This is an invisible pixel that we watch to see if we've scrolled. -->
-<div class="sbt-scroll-pixel-helper"></div>
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
     <div class="topbar container-xl fixed-top">
     <div class="topbar-contents row">
         <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
         <div class="col pl-md-4 topbar-main">
-            <div class="topbar-left">
-                
-                <label class="nav-toggle-button" for="__navigation">
-                    <div class="visually-hidden">Toggle navigation</div>
-                    <i class="fas fa-bars"></i>
-                </label>
-                
-            </div>
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
             
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
@@ -428,7 +417,7 @@
             
               <div>
                 
-  <div class="section" id="ground-control-points-gcps">
+  <div class="tex2jax_ignore mathjax_ignore section" id="ground-control-points-gcps">
 <span id="content-gcps"></span><h1>Ground control points (GCPs)<a class="headerlink" href="#ground-control-points-gcps" title="Permalink to this headline">¶</a></h1>
 <p>Ground control points (GCPs) are locations that we can track with high precision and accuracy between the targeted object and a selection of our photos.
 We can use these to provide “exact” real world coordinates to our reconstructed models, as well as to determine the accuracy and impact of processing parameters.</p>
@@ -490,7 +479,7 @@ Would you be able to eyeball placement of the measurement and be within the erro
 With each subsequent marker in a set slightly differing, and therefore considered unique, these synthetic markers are great for use as GCPs.</p>
 <div class="figure align-default" id="common-gcps">
 <img alt="../../../_images/common_gcps.png" src="../../../_images/common_gcps.png" />
-<p class="caption"><span class="caption-number">Fig. 22 </span><span class="caption-text">An example of GCP markers commonly employed in photogrammetry applications <span class="bibtex" id="id1">[cucciACCURATEOPTICALTARGET2016]</span>.</span><a class="headerlink" href="#common-gcps" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 22 </span><span class="caption-text">An example of GCP markers commonly employed in photogrammetry applications <a href="#id1"><span class="problematic" id="id2">:cite:`cucciACCURATEOPTICALTARGET2016`</span></a>.</span><a class="headerlink" href="#common-gcps" title="Permalink to this image">¶</a></p>
 </div>
 <p>No longer featuring a plane of symmetry, one can now certainly select a point where the real world coordinates can be measured and later the corresponding pixels in the photo can be selected.</p>
 <div class="suggestion admonition">
@@ -503,11 +492,11 @@ If you decide to measure the first marker in the top right corner, then make sur
 <h3>Computer readability<a class="headerlink" href="#computer-readability" title="Permalink to this headline">¶</a></h3>
 <p>The standardised uniqueness of binary fiducial markers furthermore allows for automisation of the marker detection step.
 While not an issue when dealing with just a handful of photos, highly detailed surveys quickly expand the photo collection to hundreds, if not thousands, of photos.</p>
-<p>While Agisoft Metashape provides a set of GCPs internally, one of the most popular marker sets is the <a class="reference external" href="http://www.uco.es/investiga/grupos/ava/node/26">ArUco library</a> <span class="bibtex" id="id2">[garrido-juradoAutomaticGenerationDetection2014]</span>.
+<p>While Agisoft Metashape provides a set of GCPs internally, one of the most popular marker sets is the <a class="reference external" href="http://www.uco.es/investiga/grupos/ava/node/26">ArUco library</a> <a href="#id3"><span class="problematic" id="id4">:cite:`garrido-juradoAutomaticGenerationDetection2014`</span></a>.
 In addition to exhibiting a standardised uniqueness, the ArUco-based markers are square markers and thus preferred as a single marker provides enough correspondences (i.e., its four corners) to obtain the camera pose in augmented reality applications.</p>
 <div class="figure align-default" id="aruco-markers">
 <img alt="../../../_images/aruco_markers.png" src="../../../_images/aruco_markers.png" />
-<p class="caption"><span class="caption-number">Fig. 23 </span><span class="caption-text">Example of ArUco marker images <span class="bibtex" id="id3">[garrido-juradoAutomaticGenerationDetection2014]</span>.</span><a class="headerlink" href="#aruco-markers" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 23 </span><span class="caption-text">Example of ArUco marker images <a href="#id5"><span class="problematic" id="id6">:cite:`garrido-juradoAutomaticGenerationDetection2014`</span></a>.</span><a class="headerlink" href="#aruco-markers" title="Permalink to this image">¶</a></p>
 </div>
 <div class="suggestion admonition">
 <p class="admonition-title">Python-based automated marker detection</p>
@@ -528,7 +517,7 @@ On the other hand, GCP markers for hand-sized sample digitisation can be as smal
 </div>
 <div class="section" id="placement-of-gcps-in-terms-of-highest-accuracy">
 <h2>Placement of GCPs in terms of highest accuracy<a class="headerlink" href="#placement-of-gcps-in-terms-of-highest-accuracy" title="Permalink to this headline">¶</a></h2>
-<p>An extensive review on the accuracy of GCPs types is conducted by <span class="bibtex" id="id4">[martinez-carricondoAssessmentUAVphotogrammetricMapping2018]</span> and <span class="bibtex" id="id5">[vegaAssessmentPhotogrammetricMapping2017]</span>, and we here only focus on the take-home messages.
+<p>An extensive review on the accuracy of GCPs types is conducted by <a href="#id7"><span class="problematic" id="id8">:cite:`martinez-carricondoAssessmentUAVphotogrammetricMapping2018`</span></a> and <a href="#id9"><span class="problematic" id="id10">:cite:`vegaAssessmentPhotogrammetricMapping2017`</span></a>, and we here only focus on the take-home messages.
 These conclusions are based on an accuracy-assessment that seeks minimal root mean square errors (RMSEs) for the GCPs’s longitude, latitude, and altitude.</p>
 <p>Prior to implementing GCPs, one always has to assess the need of precision and accuracy in terms of cost, i.e., time.
 In a timeless setting, one could set up an infinite amount of GCPs (<a class="reference internal" href="#gcp-locations"><span class="std std-numref">Fig. 24</span></a>, top row) and obtain the smallest GCP RMSEs in each direction.
@@ -536,10 +525,10 @@ However, when time is of the essence, there appears to be a cut-off point at whi
 As a result, efficiency can be gained by reducing the number of GCPs (<a class="reference internal" href="#gcp-locations"><span class="std std-numref">Fig. 24</span></a>, second row).</p>
 <div class="figure align-default" id="gcp-locations">
 <img alt="../../../_images/gcp_locations.png" src="../../../_images/gcp_locations.png" />
-<p class="caption"><span class="caption-number">Fig. 24 </span><span class="caption-text">Five different GCP distribution types and an example for the combination of 16 GCPs (second row). (a) edge distribution, (b) central distribution, (c) corner distribution (equivalent for all four corners), (d) stratified distribution, (e) random distribution. In general, a combination of the edge and stratified distribution (d) gives rise to the lowest overall errors <span class="bibtex" id="id6">[martinez-carricondoAssessmentUAVphotogrammetricMapping2018]</span>.</span><a class="headerlink" href="#gcp-locations" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 24 </span><span class="caption-text">Five different GCP distribution types and an example for the combination of 16 GCPs (second row). (a) edge distribution, (b) central distribution, (c) corner distribution (equivalent for all four corners), (d) stratified distribution, (e) random distribution. In general, a combination of the edge and stratified distribution (d) gives rise to the lowest overall errors <a href="#id11"><span class="problematic" id="id12">:cite:`martinez-carricondoAssessmentUAVphotogrammetricMapping2018`</span></a>.</span><a class="headerlink" href="#gcp-locations" title="Permalink to this image">¶</a></p>
 </div>
 <p>Placing the GCPs around the edges and in a stratified manner throughout the survey area results in the lowest overall errors.
-Therefore, best accuracies are achieved <strong>(1) placing GCPs around the edge of the study area</strong>, but it is also essential to <strong>(2) place GCPs inside the area with stratified distribution to optimize vertical accuracy</strong> <span class="bibtex" id="id7">[martinez-carricondoAssessmentUAVphotogrammetricMapping2018]</span>.
+Therefore, best accuracies are achieved <strong>(1) placing GCPs around the edge of the study area</strong>, but it is also essential to <strong>(2) place GCPs inside the area with stratified distribution to optimize vertical accuracy</strong> <a href="#id13"><span class="problematic" id="id14">:cite:`martinez-carricondoAssessmentUAVphotogrammetricMapping2018`</span></a>.
 As for the optimal number of GCPs in the stratified interior, try to aim for a density of around 0.5-1 GCP per hectare to minimise altimetry errors, and make sure to place GCPs throughout the entire altimetry-interval, e.g., covering both ridges and valleys.</p>
 <div class="suggestion admonition">
 <p class="admonition-title">Hand-sized samples</p>
@@ -599,7 +588,7 @@ A moving GCP is essentially useless, and likely to give rise to major positional
     
       By Peter Betlem<br/>
     
-        &copy; Copyright 2020.<br/>
+        &copy; Copyright 2022.<br/>
   </p>
 </footer>
 </main>
