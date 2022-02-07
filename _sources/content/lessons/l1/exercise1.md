@@ -60,17 +60,18 @@ Suggested targets include:
 - [ ] Fill out the deliverable
 ```
 
+### Deliverable
+
+At the very least, the following should be completed **prior to the start of the next session**.
+Copy it over and send it in to the course responsible.
+
+
 ```{admonition} Use the processing network!
 :class: tip
 
 Make sure to submit your processing requests to the network!
 Else processing may take forever!
 ```
-
-### Deliverable
-
-At the very least, the following should be completed **prior to the start of the next session**.
-Copy it over and send it in to the course responsible.
 
 ```
 group:
