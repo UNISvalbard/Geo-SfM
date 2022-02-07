@@ -60,6 +60,13 @@ Suggested targets include:
 - [ ] Fill out the deliverable
 ```
 
+```{admonition} Use the processing network!
+:class: tip
+
+Make sure to submit your processing requests to the network!
+Else processing may take forever!
+```
+
 ### Deliverable
 
 At the very least, the following should be completed **prior to the start of the next session**.
@@ -70,16 +77,14 @@ group:
     name:
     person1:
     person2:
-    person3:
-    person4:
-    ...
+
 model:
     place: # Where did you find your target?
     land:
     island:  # PICK: Hopen / Spitsbergen / Kong Karls Land / Edgeøya / Barentsøya / Tusenøyane / Nordaustlandet / Kvitøya / Prins Karls Forland / Bjørnøya / Other
 
 data:
-    data_project_path: C:\Users\Peter\Downloads\UNIS_3051_20180827_Spit_Sarstangen_Sarsoyra1_U # FOLDER DIR (absolute)
+    data_project_path: \\svalbox\metashape-processing$\ag222-2022\{your-project-folder} # FOLDER DIR (absolute)
     data_model_file: {model_filename}.obj # MODEL FILE NAME (relative to data_path)
     data_owner:
     data_reference_contact:
@@ -110,7 +115,6 @@ Make sure to also create a *description.txt* file with a description of the obje
 Save these within the project directory with the suggested filenames (*description.txt*, *image_overview.jpg*).
 
 ```
-
 
 ```{note}
 :class: tip
