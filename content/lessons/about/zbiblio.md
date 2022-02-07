@@ -1,5 +1,5 @@
 # Bibliography
 
-```{bibliography} zreferences.bib
+```{bibliography}
 :style: unsrt
 ```

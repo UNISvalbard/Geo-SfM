@@ -20,7 +20,6 @@ USGS guidelines and the quick start guide to processing (Table 1) can be found [
 ```
 https://pubs.usgs.gov/of/2021/1039/ofr20211039.pdf
 ```
-
 ````
 
 In this session we will learn how to use Agisoft Metashape.
@@ -52,6 +51,26 @@ In processing this is the key dilemma, and requires you to think about the outpu
 The guidelines below are based on the official Agisoft *3D model reconstruction* tutorial.
 This tutorial, as well as more in-depth help, can be visited [here](https://agisoft.freshdesk.com/support/solutions/articles/31000152092).
 ```
+
+````{margin} Network processing
+
+For those present at UNIS and following this tutorial as part of the UNIS AG-222 Course, please enable network processing.
+Proceed to *Tools* in the menu bar and click on *Preferences...*.
+Then proceed to *Network* and check the *Enable network processing* setting.
+
+The following parameters should be used to connect to the server:
+
+Host name:
+  ~ svalbox
+
+Root:
+  ~ \\svalbox\metashape-processing$
+
+Port number:
+  ~ 5840
+
+Whenever you want to use the network for processing, you will have to place your project within the *Root* folder specified above.
+````
 
 ### A standardised project environment
 

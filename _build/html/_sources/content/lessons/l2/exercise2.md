@@ -26,31 +26,21 @@ Proceed to the [GCP tutorial](../l2/markers "GCP tutorial") while keeping the fo
 
 `````{admonition} Checklist and questions
 :class: note
-- [ ] GCP generation
-  - [ ] Generate a single Metashape marker and print it on A4 (or show it on your screen)
-  - [ ] Generate a single ArUco marker and print it on A4 (or show it on your screen)
-- [ ] photoshoot:
-  - [ ] Take at least 10 photos of the printed (or imaged) marker from different angles and distances, making sure the markers are fully included in at least 3 photos each, and at least partially visible in the rest.
-- [ ] GCP detection:
-  - [ ] create a new Metashape project conforming the standardised project environment
-  - [ ] detect the ArUco marker manually
-  - [ ] detect the Metashape marker automatically
 
-- [ ] Combined workflow:
-  - [ ] Create a {ref}`hand-drawn marker grid <student_marker>` on A4 with 4 corners marked (i.e., the GCPs).
-  - [ ] Measure the distances between the GCPs, treating the top left corner as your origin GCP (=0,0).
-  - [ ] Place a small object in the middle, not covering any of the grid points.
-  - [ ] Image the object as per last session.
-  - [ ] Create a new Metashape project conforming the standardised project environment
-  - [ ] Import photos, manually detect the GCPs, and assign real world coordinates to the GCPs
-  - [ ] Run all steps leading up to and including texture generation (and export processing report).
-
+The workflow:
+- [ ] Create a {ref}`hand-drawn marker grid <student_marker>` on A4 with 4 corners marked (i.e., the GCPs).
+- [ ] Measure the distances between the GCPs, treating the top left corner as your origin GCP (=0,0).
+- [ ] Place a small object in the middle, not covering any of the grid points.
+- [ ] Image the object as per last session.
+- [ ] Create a new Metashape project conforming the standardised project environment
+- [ ] Import photos, manually detect the GCPs, and assign real world coordinates to the GCPs
+- [ ] Run all steps leading up to and including texture generation (and export processing report).
 
 In addition, please come up with some thoughts on the following statements:
 
-  - GCP detection requires only part of the markers to be visible in an image
-  - A GCP should always be fully imaged in at least five images
-  - The original, real-world object and the digital model are identicial in dimensions (pro tip: [measure this using the ruler tool](../l5/geomodel_tutorial#ruler-tool)).
+- GCP detection requires only part of the markers to be visible in an image
+- A GCP should always be fully imaged in at least five images
+- The original, real-world object and the digital model are identical in dimensions (pro tip: [measure this using the ruler tool](../l5/geomodel_tutorial#ruler-tool)).
 
 ````{admonition} The Student's approach to markers in Corona-lockdown.
 :class: tip

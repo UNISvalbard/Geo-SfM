@@ -1,40 +1,35 @@
-- file: landing-page.md
-
-- part: Session 1
+format: jb-book
+root: landing-page.md
+parts:
+- caption: Session 1
   chapters:
-  - file: /content/lessons/l1/sfm_photogrammetry.md
-  - file: /content/lessons/l1/exercise1.md
-  - file: /content/lessons/l1/tutorial.md
-
-- part: Session 2
+  - file: content/lessons/l1/sfm_photogrammetry.md
+  - file: content/lessons/l1/exercise1.md
+  - file: content/lessons/l1/tutorial.md
+- caption: Session 2
   chapters:
-  - file: /content/lessons/l2/overview.md
-  - file: /content/lessons/l2/gcps.md
-  - file: /content/lessons/l2/exercise2.md
-  - file: /content/lessons/l2/markers.md
-
-- part: Session 3
+  - file: content/lessons/l2/overview.md
+  - file: content/lessons/l2/gcps.md
+  - file: content/lessons/l2/exercise2.md
+  - file: content/lessons/l2/markers.md
+- caption: Session 3
   chapters:
-  - file: /content/lessons/l3/overview.md
-  - file: /content/lessons/l3/Batch.md
-  - file: /content/lessons/l3/python.md
-
-- part: Session 4
+  - file: content/lessons/l3/overview.md
+  - file: content/lessons/l3/Batch.md
+  - file: content/lessons/l3/python.md
+- caption: Session 4
   chapters:
-  - file: /content/lessons/l4/hss_overview.md
-  - file: /content/lessons/l4/hss_tutorial.md
-  - file: /content/lessons/l4/hss_field_exercise.md
-
-- part: Session 5
+  - file: content/lessons/l4/hss_overview.md
+  - file: content/lessons/l4/hss_tutorial.md
+  - file: content/lessons/l4/hss_field_exercise.md
+- caption: Session 5
   chapters:
-  - file: /content/lessons/l5/geomodel_overview.md
-  - file: /content/lessons/l5/geomodel_tutorial.md
-
-- part: Resources
+  - file: content/lessons/l5/geomodel_overview.md
+  - file: content/lessons/l5/geomodel_tutorial.md
+- caption: Resources
   chapters:
-  - file: /content/lessons/suppl/best_practices.md
-  - file: /content/lessons/suppl/gis.md
-  - file: /content/lessons/suppl/metadata_lists.md
-  - file: /content/lessons/about/seismic_lab.md
-  - file: /content/lessons/about/software.md
-  - file: /content/lessons/about/zbiblio.md
+  - file: content/lessons/suppl/best_practices.md
+  - file: content/lessons/suppl/metadata_lists.md
+  - file: content/lessons/about/seismic_lab.md
+  - file: content/lessons/about/software.md
+  - file: content/lessons/about/zbiblio.md

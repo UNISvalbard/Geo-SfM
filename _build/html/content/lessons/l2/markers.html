@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
@@ -33,18 +33,17 @@
     
   <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../../_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
-    <script src="../../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -70,12 +69,7 @@
     <div class="container-xl">
       <div class="row">
           
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<div class="col-12 col-md-3 bd-sidebar site-navigation " id="site-navigation">
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../../index.html">
@@ -102,7 +96,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Session 1
  </span>
@@ -124,7 +118,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Session 2
  </span>
@@ -151,7 +145,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Session 3
  </span>
@@ -173,7 +167,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Session 4
  </span>
@@ -195,7 +189,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Session 5
  </span>
@@ -212,7 +206,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Resources
  </span>
@@ -221,11 +215,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../suppl/best_practices.html">
    Best practices
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../suppl/gis.html">
-   GIS 101
   </a>
  </li>
  <li class="toctree-l1">
@@ -264,22 +253,22 @@
 
 
           
-<!-- This is an invisible pixel that we watch to see if we've scrolled. -->
-<div class="sbt-scroll-pixel-helper"></div>
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
     <div class="topbar container-xl fixed-top">
     <div class="topbar-contents row">
         <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
         <div class="col pl-md-4 topbar-main">
-            <div class="topbar-left">
-                
-                <label class="nav-toggle-button" for="__navigation">
-                    <div class="visually-hidden">Toggle navigation</div>
-                    <i class="fas fa-bars"></i>
-                </label>
-                
-            </div>
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
             
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
@@ -327,18 +316,6 @@
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        
-        
-        
-        
-    </div>
-</div>
 
         </div>
 
@@ -481,7 +458,7 @@
             
               <div>
                 
-  <div class="section" id="gcp-tutorial">
+  <div class="tex2jax_ignore mathjax_ignore section" id="gcp-tutorial">
 <h1>GCP tutorial<a class="headerlink" href="#gcp-tutorial" title="Permalink to this headline">¶</a></h1>
 <p>While other GCP marker types exist, we here focus on the use of either ArUco or Agisoft Metashape markers.
 Both marker types are of the binary fiducial sort, and, in principal, machine readable.</p>
@@ -526,13 +503,13 @@ They should therefore always be unique (i.e., used only once).</p>
 <h3>Agisoft Metashape<a class="headerlink" href="#agisoft-metashape" title="Permalink to this headline">¶</a></h3>
 <div class="figure align-default" id="meta-markers">
 <img alt="../../../_images/meta_markers.png" src="../../../_images/meta_markers.png" />
-<p class="caption"><span class="caption-number">Fig. 26 </span><span class="caption-text">Two Metashape markers generated with the parameters listed in <a class="reference internal" href="#metashape-markers"><span class="std std-numref">Fig. 27</span></a>.</span><a class="headerlink" href="#meta-markers" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 25 </span><span class="caption-text">Two Metashape markers generated with the parameters listed in <a class="reference internal" href="#metashape-markers"><span class="std std-numref">Fig. 26</span></a>.</span><a class="headerlink" href="#meta-markers" title="Permalink to this image">¶</a></p>
 </div>
 <p>To generate Metashape GCP markers, proceed to <em>Tools/Markers/Print markers…</em> to open the  <a class="reference internal" href="#metashape-markers"><span class="std std-ref">Print Markers dialog</span></a>.
 Multiple parameters can be set, including the <em>bit-encoding</em> of the marker (<em>Marker type</em>); the <em>Center point radius</em> of the centre dot; how many markers to include per  (<em>Targets per page</em>); and the <em>Font size</em>.</p>
 <div class="figure align-default" id="metashape-markers">
 <img alt="../../../_images/metashape_markers.png" src="../../../_images/metashape_markers.png" />
-<p class="caption"><span class="caption-number">Fig. 27 </span><span class="caption-text">Overview of the Metashape marker generation window.</span><a class="headerlink" href="#metashape-markers" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 26 </span><span class="caption-text">Overview of the Metashape marker generation window.</span><a class="headerlink" href="#metashape-markers" title="Permalink to this image">¶</a></p>
 </div>
 <div class="warning admonition">
 <p class="admonition-title">Centre dot size</p>
@@ -580,17 +557,17 @@ Once identified, proceed by right clicking on the point of interest to open the 
 Here, one can either place a new marker, or choose to place a previously-added marker.</p>
 <div class="figure align-default" id="marker-dialog">
 <img alt="../../../_images/marker_dialog.png" src="../../../_images/marker_dialog.png" />
-<p class="caption"><span class="caption-number">Fig. 28 </span><span class="caption-text">Dialog for adding or placing specific markers.
+<p class="caption"><span class="caption-number">Fig. 27 </span><span class="caption-text">Dialog for adding or placing specific markers.
 Be advised: one can only place specific markers after having added them previously.</span><a class="headerlink" href="#marker-dialog" title="Permalink to this image">¶</a></p>
 </div>
 <p>When added, a <em>green</em> flag appears that can be moved around by <em>click-holding</em> the left mouse button.
 This is especially useful for finetuning locations.</p>
 <p>Once done, proceed to the <em>Reference panel</em> and find that the markers you added have been added to the project - albeit without real world positional values.
 Also shown are the number of projections, accuracy and error, of which the latter two also remain blank.
-Positional information can either be added directly into the <em>Reference</em> panel by double clicking one of the fields, as shown in <a class="reference internal" href="#metashape-reference-panel-markers"><span class="std std-numref">Fig. 29</span></a>, or by importing reference data.</p>
+Positional information can either be added directly into the <em>Reference</em> panel by double clicking one of the fields, as shown in <a class="reference internal" href="#metashape-reference-panel-markers"><span class="std std-numref">Fig. 28</span></a>, or by importing reference data.</p>
 <div class="figure align-default" id="metashape-reference-panel-markers">
 <img alt="../../../_images/metashape_reference_panel_markers.gif" src="../../../_images/metashape_reference_panel_markers.gif" />
-<p class="caption"><span class="caption-number">Fig. 29 </span><span class="caption-text">A marker with ID <em>point 1</em> has been added to the project.
+<p class="caption"><span class="caption-number">Fig. 28 </span><span class="caption-text">A marker with ID <em>point 1</em> has been added to the project.
 Thusfar, no positional information is available, though the metadata shows that the marker has been identified in a single image (<em>Projections</em>).
 Editing the GCP point data can be easily done by double clicking each of the fields.</span><a class="headerlink" href="#metashape-reference-panel-markers" title="Permalink to this image">¶</a></p>
 </div>
@@ -598,7 +575,7 @@ Editing the GCP point data can be easily done by double clicking each of the fie
 Make sure to select the correct <em>Coordinate System</em>, select <em>Comma</em> as the <em>Delimiter</em>, and select the appropriate <em>Columns</em> for the <em>Label</em>, <em>longitude</em>, <em>Latitude</em>, and <em>Altitude</em>.</p>
 <div class="figure align-default" id="metashape-reference-import">
 <img alt="../../../_images/metashape_reference_import.png" src="../../../_images/metashape_reference_import.png" />
-<p class="caption"><span class="caption-number">Fig. 30 </span><span class="caption-text">Importing reference data for the GCP marker positions.
+<p class="caption"><span class="caption-number">Fig. 29 </span><span class="caption-text">Importing reference data for the GCP marker positions.
 Make sure to select the <em>gcp_table.csv</em> file when prompted.</span><a class="headerlink" href="#metashape-reference-import" title="Permalink to this image">¶</a></p>
 </div>
 <div class="warning admonition">
@@ -617,7 +594,7 @@ This dialog can be accessed through <em>Tools/Markers/Detect markers…</em>.
 To optimise marker detection, it is advised to set the <em>Marker type</em> parameter equal to the bit-encoding selected during generation and leave the other parameters as-is before clicking OK to proceed.</p>
 <div class="figure align-default" id="metashape-marker-detection">
 <img alt="../../../_images/metashape_marker_detection.png" src="../../../_images/metashape_marker_detection.png" />
-<p class="caption"><span class="caption-number">Fig. 31 </span><span class="caption-text">Metashape GUI option for marker detection.</span><a class="headerlink" href="#metashape-marker-detection" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 30 </span><span class="caption-text">Metashape GUI option for marker detection.</span><a class="headerlink" href="#metashape-marker-detection" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="id1">
@@ -689,7 +666,7 @@ To optimise marker detection, it is advised to set the <em>Marker type</em> para
     
       By Peter Betlem<br/>
     
-        &copy; Copyright 2020.<br/>
+        &copy; Copyright 2022.<br/>
   </p>
 </footer>
 </main>

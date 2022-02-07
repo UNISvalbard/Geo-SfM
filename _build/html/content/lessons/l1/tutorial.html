@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
@@ -33,18 +33,17 @@
     
   <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../../_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
-    <script src="../../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -70,12 +69,7 @@
     <div class="container-xl">
       <div class="row">
           
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<div class="col-12 col-md-3 bd-sidebar site-navigation " id="site-navigation">
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../../index.html">
@@ -102,7 +96,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Session 1
  </span>
@@ -124,7 +118,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Session 2
  </span>
@@ -151,7 +145,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Session 3
  </span>
@@ -173,7 +167,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Session 4
  </span>
@@ -195,7 +189,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Session 5
  </span>
@@ -212,7 +206,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Resources
  </span>
@@ -221,11 +215,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../suppl/best_practices.html">
    Best practices
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../suppl/gis.html">
-   GIS 101
   </a>
  </li>
  <li class="toctree-l1">
@@ -264,22 +253,22 @@
 
 
           
-<!-- This is an invisible pixel that we watch to see if we've scrolled. -->
-<div class="sbt-scroll-pixel-helper"></div>
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
     <div class="topbar container-xl fixed-top">
     <div class="topbar-contents row">
         <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
         <div class="col pl-md-4 topbar-main">
-            <div class="topbar-left">
-                
-                <label class="nav-toggle-button" for="__navigation">
-                    <div class="visually-hidden">Toggle navigation</div>
-                    <i class="fas fa-bars"></i>
-                </label>
-                
-            </div>
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
             
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
@@ -574,7 +563,7 @@
             
               <div>
                 
-  <div class="section" id="metashape-tutorial">
+  <div class="tex2jax_ignore mathjax_ignore section" id="metashape-tutorial">
 <h1>Metashape Tutorial<a class="headerlink" href="#metashape-tutorial" title="Permalink to this headline">¶</a></h1>
 <p>This tutorial (and exercise) features the following learning goals:</p>
 <ul class="simple">
@@ -589,7 +578,7 @@
 <h2>3D model reconstruction with Agisoft Metashape<a class="headerlink" href="#d-model-reconstruction-with-agisoft-metashape" title="Permalink to this headline">¶</a></h2>
 <div class="suggestion admonition">
 <p class="admonition-title">Creating high-quality models the USGS way</p>
-<p>The United States Geological Survey <span class="bibtex" id="id1">[overProcessingCoastalImagery2021]</span> has put together an excellent tutorial on the use of Agisoft Metashape for creating high resolution digital elevation models.
+<p>The United States Geological Survey <span id="id1">[]</span> has put together an excellent tutorial on the use of Agisoft Metashape for creating high resolution digital elevation models.
 Although digital elevation models are but one of many desired products, the same guide can be used for the creation of high resolution and properly processed DOMs.
 USGS guidelines and the quick start guide to processing (Table 1) can be found <a class="reference external" href="https://pubs.usgs.gov/of/2021/1039/ofr20211039.pdf">here</a>, and should be used supplementary to this tutorial.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">pubs</span><span class="o">.</span><span class="n">usgs</span><span class="o">.</span><span class="n">gov</span><span class="o">/</span><span class="n">of</span><span class="o">/</span><span class="mi">2021</span><span class="o">/</span><span class="mi">1039</span><span class="o">/</span><span class="n">ofr20211039</span><span class="o">.</span><span class="n">pdf</span>
@@ -620,6 +609,20 @@ This should provide you with the <strong>major release</strong>, <em>minor</em>,
 <p class="admonition-title">Further reading</p>
 <p>The guidelines below are based on the official Agisoft <em>3D model reconstruction</em> tutorial.
 This tutorial, as well as more in-depth help, can be visited <a class="reference external" href="https://agisoft.freshdesk.com/support/solutions/articles/31000152092">here</a>.</p>
+</div>
+<div class="margin sidebar">
+<p class="sidebar-title">Network processing</p>
+<p>For those present at UNIS and following this tutorial as part of the UNIS AG-222 Course, please enable network processing.
+Proceed to <em>Tools</em> in the menu bar and click on <em>Preferences…</em>.
+Then proceed to <em>Network</em> and check the <em>Enable network processing</em> setting.</p>
+<p>The following parameters should be used to connect to the server:</p>
+<p>Host name:
+~ svalbox</p>
+<p>Root:
+~ \svalbox\metashape-processing$</p>
+<p>Port number:
+~ 5840</p>
+<p>Whenever you want to use the network for processing, you will have to place your project within the <em>Root</em> folder specified above.</p>
 </div>
 <div class="section" id="a-standardised-project-environment">
 <h3>A standardised project environment<a class="headerlink" href="#a-standardised-project-environment" title="Permalink to this headline">¶</a></h3>
@@ -702,16 +705,16 @@ To do so, proceed to <em>Save as…</em> under <em>File</em> in the menu bar, an
 <div class="section" id="analyze-photos">
 <h3>Analyze photos<a class="headerlink" href="#analyze-photos" title="Permalink to this headline">¶</a></h3>
 <p>Before actual processing begins, we need to analyse the imported photos.
-This is done by right clicking any of the photos in a <em>Chunk</em>, then selecting <em>Estimate Image Quality…</em>, and select all photos to be analysed, as shown in <a class="reference internal" href="#analyze-process"><span class="std std-numref">Fig. 6</span></a>.</p>
+This is done by right clicking any of the photos in a <em>Chunk</em>, then selecting <em>Estimate Image Quality…</em>, and select all photos to be analysed, as shown in <a class="reference internal" href="#analyze-process"><span class="std std-numref">Fig. 5</span></a>.</p>
 <div class="figure align-default" id="analyze-process">
 <img alt="../../../_images/analyze_process.gif" src="../../../_images/analyze_process.gif" />
-<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">Estimating image quality in the Metashape GUI.</span><a class="headerlink" href="#analyze-process" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">Estimating image quality in the Metashape GUI.</span><a class="headerlink" href="#analyze-process" title="Permalink to this image">¶</a></p>
 </div>
 <p>One can then open the <em>Photos</em> pane by clicking <em>Photos</em> in the <em>View</em> menu.
-Then, make sure to view the details rather than icons to check the Quality for each image (<a class="reference internal" href="#analyze-select"><span class="std std-numref">Fig. 7</span></a>.)</p>
+Then, make sure to view the details rather than icons to check the Quality for each image (<a class="reference internal" href="#analyze-select"><span class="std std-numref">Fig. 6</span></a>.)</p>
 <div class="figure align-default" id="analyze-select">
 <img alt="../../../_images/analyze_select.gif" src="../../../_images/analyze_select.gif" />
-<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">Showing the image quality and disable photos that do not meet the requirement in the Metashape GUI.</span><a class="headerlink" href="#analyze-select" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">Showing the image quality and disable photos that do not meet the requirement in the Metashape GUI.</span><a class="headerlink" href="#analyze-select" title="Permalink to this image">¶</a></p>
 </div>
 <p>Then, filter on quality and <em>Disable</em> all selected cameras that do not meet the standard.
 Agisoft recommends a <em>Quality</em> of at least 0.5.</p>
@@ -731,7 +734,7 @@ This may take a while, but assuming there is sufficient overlap between the data
 If not, one can select this by clicking the four-dotted icon in the menu.</p>
 <div class="figure align-default" id="align-photos">
 <img alt="../../../_images/3a24665c.png" src="../../../_images/3a24665c.png" />
-<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">The <em>Align Photos</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#align-photos" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">The <em>Align Photos</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#align-photos" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition-down-sampling admonition">
 <p class="admonition-title">Down-sampling</p>
@@ -755,19 +758,19 @@ A <a class="reference internal" href="#optimize-cameras"><span class="std std-re
 Most important here is to at least select make sure that the <em>Estimate tie point covariance</em> is enabled.</p>
 <div class="figure align-default" id="optimize-cameras">
 <img alt="../../../_images/291baf87.png" src="../../../_images/291baf87.png" />
-<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">The <em>Optimize Camera Alignment</em> dialog after opening it from the <em>Tools</em> menu.
+<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">The <em>Optimize Camera Alignment</em> dialog after opening it from the <em>Tools</em> menu.
 Make sure to enable <em>Fit f</em>, <em>Fit k1-k3</em>, <em>Fit cx, cy</em>, <em>Fit p1-p2</em>, and <em>Estimate tie point covariance</em>.</span><a class="headerlink" href="#optimize-cameras" title="Permalink to this image">¶</a></p>
 </div>
 <p>Once processing is done, change the model view to show the Point Cloud Variance by following the instructions given in <a class="reference internal" href="#point-cloud-variance"><span class="std std-ref">dialog</span></a>.
 Lower values (=blue) are generally better and more constrained.</p>
 <div class="figure align-default" id="point-cloud-variance">
 <img alt="../../../_images/view_tie_point_covariance.gif" src="../../../_images/view_tie_point_covariance.gif" />
-<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">Changing the view of your points and model to show errors and other things.
+<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">Changing the view of your points and model to show errors and other things.
 Here we change our view to show Spare Point Covariance instead of RGB coloring.</span><a class="headerlink" href="#point-cloud-variance" title="Permalink to this image">¶</a></p>
 </div>
 <p>As the sparse cloud is the very first step in a long processing chain, we want to optimize it as much as possible.
 After all, bad quality in usually equals bad quality out.
-We will now conduct several optimizations to improve quality of the sparse cloud, implementing USGS <span class="bibtex" id="id2">[overProcessingCoastalImagery2021]</span> recommendations that aim to reduce reconstruction uncertainty, improve projection accuracy, and lower the overall reprojection errors.
+We will now conduct several optimizations to improve quality of the sparse cloud, implementing USGS <span id="id2">[]</span> recommendations that aim to reduce reconstruction uncertainty, improve projection accuracy, and lower the overall reprojection errors.
 Unlike shown below, the project sometimes benefits by having each of the steps repeated multiple times, rather than just once.
 Keep in mind, however, that running too many optimizations may also result in over-fitting of the data.
 That means that the model is no longer based on real input, but rather on the processing parameters (= not real!).</p>
@@ -778,7 +781,7 @@ In Metashape this can be done by right clicking an object (e.g., Chunk, Points, 
 It usually takes a bit of time to complete, but the cost of not doing so is usually much, much higher!</p>
 <div class="figure align-default" id="duplication">
 <img alt="../../../_images/duplicate_chunk.gif" src="../../../_images/duplicate_chunk.gif" />
-<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">Making a backup duplicate of Chunk 1. To keep things simple, make sure to rename your copies; else you may end up with a Copy of Copy of Copy of Something…</span><a class="headerlink" href="#duplication" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">Making a backup duplicate of Chunk 1. To keep things simple, make sure to rename your copies; else you may end up with a Copy of Copy of Copy of Something…</span><a class="headerlink" href="#duplication" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="filtering-by-reconstruction-uncertainty">
@@ -786,7 +789,7 @@ It usually takes a bit of time to complete, but the cost of not doing so is usua
 <p>Once you’re ready (ahem, make a duplicate/backup first!), filter your Sparse points by their Reconstruction Uncertainty.</p>
 <div class="figure align-default" id="filter-reconstruction-uncertainty">
 <img alt="../../../_images/reconstruction_uncertainty_filter.gif" src="../../../_images/reconstruction_uncertainty_filter.gif" />
-<p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text">The <em>Gradual Selection</em> dialog after opening it from the <em>Model</em> menu, here showing selections that are possible for the Sparse Point Cloud.
+<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">The <em>Gradual Selection</em> dialog after opening it from the <em>Model</em> menu, here showing selections that are possible for the Sparse Point Cloud.
 A good value to use here is 10, though make sure you do not remove all points by doing so!
 After clicking OK, the left corner shows you how many points there are in total, followed by the number currently selected.
 A rule of thumb is to select no more than two-thirds to half of all points, and then delete these by pressing the Delete key on the keyboard.</span><a class="headerlink" href="#filter-reconstruction-uncertainty" title="Permalink to this image">¶</a></p>
@@ -799,7 +802,7 @@ Do so by revisiting the <a class="reference internal" href="#content-tutorial-im
 <p>This time, select the points based on their Projection accuracy, aiming for a final Projection accuracy of 3.</p>
 <div class="figure align-default" id="filter-projection-error">
 <img alt="../../../_images/f7c6c589.png" src="../../../_images/f7c6c589.png" />
-<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">The <em>Gradual Selection</em> dialog after opening it from the <em>Model</em> menu, here making a selection based on the projection accuracy parameter.
+<p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text">The <em>Gradual Selection</em> dialog after opening it from the <em>Model</em> menu, here making a selection based on the projection accuracy parameter.
 A good value to use here is 3, though make sure you do not remove all points by doing so!
 After clicking OK, the left corner shows you how many points there are in total, followed by the number currently selected.</span><a class="headerlink" href="#filter-projection-error" title="Permalink to this image">¶</a></p>
 </div>
@@ -814,7 +817,7 @@ A good value to use here is 0.3, though make sure you do not remove all points b
 As a rule of thumb, this final selection of points should leave you with approx. 10% of the points you started off with.</p>
 <div class="figure align-default" id="filter-reprojection-error">
 <img alt="../../../_images/5fba8b6a.png" src="../../../_images/5fba8b6a.png" />
-<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">The <em>Gradual Selection</em> dialog after opening it from the <em>Model</em> menu, here making a selection based on the reprojection error parameter.
+<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">The <em>Gradual Selection</em> dialog after opening it from the <em>Model</em> menu, here making a selection based on the reprojection error parameter.
 After clicking OK, the left corner shows you how many points there are in total, followed by the number currently selected.</span><a class="headerlink" href="#filter-reprojection-error" title="Permalink to this image">¶</a></p>
 </div>
 <p>After deleting the selected points, it is important to runa final <em>Optimize alignment</em> step on your points.
@@ -838,7 +841,7 @@ Keeping in mind what we discussed above, make sure to select <em>Medium</em> for
 <p><em>Reuse depth maps</em> can only be selected if depth maps have been previously calculated for the specified quality.</p>
 <div class="figure align-default" id="dense-cloud">
 <img alt="../../../_images/d2a861b0.png" src="../../../_images/d2a861b0.png" />
-<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">The <em>Build dense cloud</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#dense-cloud" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">The <em>Build dense cloud</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#dense-cloud" title="Permalink to this image">¶</a></p>
 </div>
 <p>Once processing is done, you’ll be able to show the <em>dense point cloud</em> on the screen in the <em>Model</em> tab.
 If not, one can visualise the <em>dense point cloud</em> by clicking on the nine-dotted icon in the menu.
@@ -891,7 +894,7 @@ Depth maps may lead to better results when dealing with a big number of minor de
 <p>After selecting <em>Build Mesh</em> from the <em>Workflow</em> menu, you will be able to chose either in the <a class="reference internal" href="#build-mesh"><span class="std std-ref">dialog</span></a> that pops up for <em>Source data:</em>.</p>
 <div class="figure align-default" id="build-mesh">
 <img alt="../../../_images/9b4ac0b8.png" src="../../../_images/9b4ac0b8.png" />
-<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text">The <em>Build mesh</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#build-mesh" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">The <em>Build mesh</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#build-mesh" title="Permalink to this image">¶</a></p>
 </div>
 <p>Other important parameters here are the <em>Quality</em> and <em>Face count</em> parameters.
 These govern the quality of the generated mesh.
@@ -910,7 +913,7 @@ The next step involves generating a texture and placing this “image” onto th
 These can be easily (and scientifically!) removed through use of the <em>Connected component filter</em>, see <a class="reference internal" href="#filter-connected-component-size"><span class="std std-ref">dialog</span></a>.</p>
 <div class="figure align-default" id="filter-connected-component-size">
 <img alt="../../../_images/filter_connected_component_size.gif" src="../../../_images/filter_connected_component_size.gif" />
-<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">Filtering the mesh based on the connected component size.
+<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text">Filtering the mesh based on the connected component size.
 This is a percentage of the largest component, which by default is 100.</span><a class="headerlink" href="#filter-connected-component-size" title="Permalink to this image">¶</a></p>
 </div>
 <div class="warning admonition">
@@ -921,10 +924,10 @@ This is a percentage of the largest component, which by default is 100.</span><a
 <div class="section" id="texture-building">
 <h4>Texture building<a class="headerlink" href="#texture-building" title="Permalink to this headline">¶</a></h4>
 <p>We can build the textures by clicking on the <em>Build Texture</em> command from the <em>Workflow</em> menu.
-While the dialog has many different parameters, the most important are highlighted in <a class="reference internal" href="#build-texture"><span class="std std-numref">Fig. 18</span></a>.</p>
+While the dialog has many different parameters, the most important are highlighted in <a class="reference internal" href="#build-texture"><span class="std std-numref">Fig. 17</span></a>.</p>
 <div class="figure align-default" id="build-texture">
 <img alt="../../../_images/7237597c.png" src="../../../_images/7237597c.png" />
-<p class="caption"><span class="caption-number">Fig. 18 </span><span class="caption-text">The <em>Build texture</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#build-texture" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">The <em>Build texture</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#build-texture" title="Permalink to this image">¶</a></p>
 </div>
 <p>Here <em>Texture size/count</em> determines the quality of the texture.
 Keep in mind that anything over 16384 can very quickly lead to very, very large file sizes on your harddisk.
@@ -946,7 +949,7 @@ Once again we can select the parameters for the processing step through the <a c
 <p>The most import parameter here is the <em>Pixel size (m)</em>, which should never be set than lower than the pixel size available to the model (= the default value shown when opening the dialog).</p>
 <div class="figure align-default" id="build-tiled-model">
 <img alt="../../../_images/6c44a1dc.png" src="../../../_images/6c44a1dc.png" />
-<p class="caption"><span class="caption-number">Fig. 19 </span><span class="caption-text">The <em>Build Tiled Model</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#build-tiled-model" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 18 </span><span class="caption-text">The <em>Build Tiled Model</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#build-tiled-model" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="documenting-processing-parameters">
@@ -981,10 +984,10 @@ Have a look and familiarise yourself with it.</p>
 <h4>In-programme parameters<a class="headerlink" href="#in-programme-parameters" title="Permalink to this headline">¶</a></h4>
 <p>One does not always need to export the processing report to obtain the overview of parameters.
 Handily, Metashape also provides an overview within the <em>Workspace</em> panel after having selected an item in the chunk.
-An example of this is depicted in <a class="reference internal" href="#internal-parameters"><span class="std std-numref">Fig. 20</span></a>.</p>
+An example of this is depicted in <a class="reference internal" href="#internal-parameters"><span class="std std-numref">Fig. 19</span></a>.</p>
 <div class="figure align-default" id="internal-parameters">
 <img alt="../../../_images/5201e3e2.png" src="../../../_images/5201e3e2.png" />
-<p class="caption"><span class="caption-number">Fig. 20 </span><span class="caption-text">An example of the internal <em>Workspace</em> panel, including the parameters and processing metadata that is available from within the Metashape project interface.</span><a class="headerlink" href="#internal-parameters" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 19 </span><span class="caption-text">An example of the internal <em>Workspace</em> panel, including the parameters and processing metadata that is available from within the Metashape project interface.</span><a class="headerlink" href="#internal-parameters" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -1046,7 +1049,7 @@ Furthermore, one should <em><strong>always document each and every processing st
     
       By Peter Betlem<br/>
     
-        &copy; Copyright 2020.<br/>
+        &copy; Copyright 2022.<br/>
   </p>
 </footer>
 </main>

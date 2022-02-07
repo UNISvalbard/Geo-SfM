@@ -36,20 +36,15 @@ The exercise also includes a deliverable, i.e., a set of requirements that are l
 - What is an artifact and how may they arise in your models? (Make screenshots of these when/if found in your own models!)
 ```
 
-It is now up to you to head out and acquire your own data set and process this by following the [photogrammetry tutorial](../l1/tutorial "tutorial").
-Make sure to also give some thought and answer the questions in the side bar.
+It is now up to you to acquire your own data set and process this by following the [photogrammetry tutorial](../l1/tutorial "tutorial").
+Make sure to also give some thoughts and answer the questions in the side bar.
 
 Suggested targets include:
 
-- the {ref}`boulders in front of UNIS <unis_boulders>`
 - small outcrops (ca. 5 m long, 5 m high)
 - a mug turned upside down
-
-```{figure} assets/unis_boulders.png
-:name: unis_boulders
-
-Potential targets include the boulders in front of the UNIS entrance, or small outcrops no larger than ca. 5x5 m.
-```
+- a pirate's hat
+- some fruit
 
 ```{admonition} Checklist and questions
 :class: note
@@ -70,21 +65,27 @@ Potential targets include the boulders in front of the UNIS entrance, or small o
 At the very least, the following should be completed **prior to the start of the next session**.
 Copy it over and send it in to the course responsible.
 
+
+```{admonition} Use the processing network!
+:class: tip
+
+Make sure to submit your processing requests to the network!
+Else processing may take forever!
+```
+
 ```
 group:
     name:
     person1:
     person2:
-    person3:
-    person4:
-    ...
+
 model:
     place: # Where did you find your target?
     land:
     island:  # PICK: Hopen / Spitsbergen / Kong Karls Land / Edgeøya / Barentsøya / Tusenøyane / Nordaustlandet / Kvitøya / Prins Karls Forland / Bjørnøya / Other
 
 data:
-    data_project_path: C:\Users\Peter\Downloads\UNIS_3051_20180827_Spit_Sarstangen_Sarsoyra1_U # FOLDER DIR (absolute)
+    data_project_path: \\svalbox\metashape-processing$\ag222-2022\{your-project-folder} # FOLDER DIR (absolute)
     data_model_file: {model_filename}.obj # MODEL FILE NAME (relative to data_path)
     data_owner:
     data_reference_contact:
@@ -115,7 +116,6 @@ Make sure to also create a *description.txt* file with a description of the obje
 Save these within the project directory with the suggested filenames (*description.txt*, *image_overview.jpg*).
 
 ```
-
 
 ```{note}
 :class: tip

@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
@@ -33,18 +33,17 @@
     
   <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../../_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
-    <script src="../../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -70,12 +69,7 @@
     <div class="container-xl">
       <div class="row">
           
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<div class="col-12 col-md-3 bd-sidebar site-navigation " id="site-navigation">
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../../index.html">
@@ -102,7 +96,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Session 1
  </span>
@@ -124,7 +118,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Session 2
  </span>
@@ -151,7 +145,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Session 3
  </span>
@@ -173,7 +167,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Session 4
  </span>
@@ -195,7 +189,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Session 5
  </span>
@@ -212,7 +206,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Resources
  </span>
@@ -221,11 +215,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../suppl/best_practices.html">
    Best practices
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../suppl/gis.html">
-   GIS 101
   </a>
  </li>
  <li class="toctree-l1">
@@ -264,22 +253,22 @@
 
 
           
-<!-- This is an invisible pixel that we watch to see if we've scrolled. -->
-<div class="sbt-scroll-pixel-helper"></div>
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
     <div class="topbar container-xl fixed-top">
     <div class="topbar-contents row">
         <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
         <div class="col pl-md-4 topbar-main">
-            <div class="topbar-left">
-                
-                <label class="nav-toggle-button" for="__navigation">
-                    <div class="visually-hidden">Toggle navigation</div>
-                    <i class="fas fa-bars"></i>
-                </label>
-                
-            </div>
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
             
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
@@ -384,7 +373,7 @@
             
               <div>
                 
-  <div class="section" id="exercise-2-learning-the-ropes-of-gcp-and-marker-detection">
+  <div class="tex2jax_ignore mathjax_ignore section" id="exercise-2-learning-the-ropes-of-gcp-and-marker-detection">
 <h1>Exercise 2 - learning the ropes of GCP and marker detection<a class="headerlink" href="#exercise-2-learning-the-ropes-of-gcp-and-marker-detection" title="Permalink to this headline">¶</a></h1>
 <div class="admonition-deadline admonition">
 <p class="admonition-title">Deadline</p>
@@ -410,48 +399,27 @@ This includes the generation of both Metashape markers and open-source ArUco mar
 <p>Proceed to the <a class="reference internal" href="markers.html"><span class="doc std std-doc">GCP tutorial</span></a> while keeping the following assignments in mind:</p>
 <div class="note admonition">
 <p class="admonition-title">Checklist and questions</p>
-<ul class="simple">
-<li><p>[ ] GCP generation</p>
-<ul>
-<li><p>[ ] Generate a single Metashape marker and print it on A4 (or show it on your screen)</p></li>
-<li><p>[ ] Generate a single ArUco marker and print it on A4 (or show it on your screen)</p></li>
-</ul>
-</li>
-<li><p>[ ] photoshoot:</p>
-<ul>
-<li><p>[ ] Take at least 10 photos of the printed (or imaged) marker from different angles and distances, making sure the markers are fully included in at least 3 photos each, and at least partially visible in the rest.</p></li>
-</ul>
-</li>
-<li><p>[ ] GCP detection:</p>
-<ul>
-<li><p>[ ] create a new Metashape project conforming the standardised project environment</p></li>
-<li><p>[ ] detect the ArUco marker manually</p></li>
-<li><p>[ ] detect the Metashape marker automatically</p></li>
-</ul>
-</li>
-<li><p>[ ] Combined workflow:</p>
-<ul>
-<li><p>[ ] Create a <a class="reference internal" href="#student-marker"><span class="std std-ref">hand-drawn marker grid</span></a> on A4 with 4 corners marked (i.e., the GCPs).</p></li>
-<li><p>[ ] Measure the distances between the GCPs, treating the top left corner as your origin GCP (=0,0).</p></li>
-<li><p>[ ] Place a small object in the middle, not covering any of the grid points.</p></li>
-<li><p>[ ] Image the object as per last session.</p></li>
-<li><p>[ ] Create a new Metashape project conforming the standardised project environment</p></li>
-<li><p>[ ] Import photos, manually detect the GCPs, and assign real world coordinates to the GCPs</p></li>
-<li><p>[ ] Run all steps leading up to and including texture generation (and export processing report).</p></li>
-</ul>
-</li>
+<p>The workflow:</p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Create a <a class="reference internal" href="#student-marker"><span class="std std-ref">hand-drawn marker grid</span></a> on A4 with 4 corners marked (i.e., the GCPs).</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Measure the distances between the GCPs, treating the top left corner as your origin GCP (=0,0).</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Place a small object in the middle, not covering any of the grid points.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Image the object as per last session.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Create a new Metashape project conforming the standardised project environment</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Import photos, manually detect the GCPs, and assign real world coordinates to the GCPs</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Run all steps leading up to and including texture generation (and export processing report).</p></li>
 </ul>
 <p>In addition, please come up with some thoughts on the following statements:</p>
 <ul class="simple">
 <li><p>GCP detection requires only part of the markers to be visible in an image</p></li>
 <li><p>A GCP should always be fully imaged in at least five images</p></li>
-<li><p>The original, real-world object and the digital model are identicial in dimensions (pro tip: <a class="reference external" href="../l5/geomodel_tutorial#ruler-tool">measure this using the ruler tool</a>).</p></li>
+<li><p>The original, real-world object and the digital model are identical in dimensions (pro tip: <a class="reference external" href="../l5/geomodel_tutorial#ruler-tool">measure this using the ruler tool</a>).</p></li>
 </ul>
 <div class="tip admonition">
 <p class="admonition-title">The Student’s approach to markers in Corona-lockdown.</p>
 <div class="figure align-default" id="student-marker">
 <img alt="../../../_images/student_marker.png" src="../../../_images/student_marker.png" />
-<p class="caption"><span class="caption-number">Fig. 25 </span><span class="caption-text">One does not need to use the binary markers per se.
+<p class="caption"><span class="caption-number">Fig. 24 </span><span class="caption-text">One does not need to use the binary markers per se.
 As long as you have access to a ruler, pencil, and flat (and big enough) piece of paper, you can create your own marker grid.
 Then simply put the object in the middle, and voila!</span><a class="headerlink" href="#student-marker" title="Permalink to this image">¶</a></p>
 </div>
@@ -516,7 +484,7 @@ Make sure to set one corner as the origin (0,0), and use your ruler to measure t
     
       By Peter Betlem<br/>
     
-        &copy; Copyright 2020.<br/>
+        &copy; Copyright 2022.<br/>
   </p>
 </footer>
 </main>

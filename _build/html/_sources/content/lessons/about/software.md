@@ -76,6 +76,7 @@ With the environment all set, we can now install Python and the required package
 The basic syntax is **conda install *package-name***, but we can specify a particular **conda channel** to specify where the package is downloaded using the parameter *-c*.
 So let's proceed with first installing Py37 (Python 3.7) and then the required packages for the automated metashape scripts.
 
+
 ```
 conda install python=3.7
 conda install pyyaml -c conda-forge

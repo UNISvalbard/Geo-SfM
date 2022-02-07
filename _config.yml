@@ -1,7 +1,7 @@
 title: "Geo-SfM Course Beta"
 logo: ./content/assets/logo.gif
 author: Peter Betlem
-copyright: "2020"
+copyright: "2022"
 
 repository:
   url: https://github.com/UNISvalbard/Geo-SfM
@@ -16,9 +16,14 @@ html:
 launch_buttons:
   binderhub_url: ""
 
+bibtex_bibfiles:
+  - content/lessons/about/zreferences.bib
+
 execute:
   execute_notebooks: "auto"
 
+only_build_toc_files: true
+
 parse:
-  myst_extended_syntax: true
+#  myst_extended_syntax: true
   myst_header_anchors: 4
