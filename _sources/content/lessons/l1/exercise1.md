@@ -36,20 +36,15 @@ The exercise also includes a deliverable, i.e., a set of requirements that are l
 - What is an artifact and how may they arise in your models? (Make screenshots of these when/if found in your own models!)
 ```
 
-It is now up to you to head out and acquire your own data set and process this by following the [photogrammetry tutorial](../l1/tutorial "tutorial").
-Make sure to also give some thought and answer the questions in the side bar.
+It is now up to you to acquire your own data set and process this by following the [photogrammetry tutorial](../l1/tutorial "tutorial").
+Make sure to also give some thoughts and answer the questions in the side bar.
 
 Suggested targets include:
 
-- the {ref}`boulders in front of UNIS <unis_boulders>`
 - small outcrops (ca. 5 m long, 5 m high)
 - a mug turned upside down
-
-```{figure} assets/unis_boulders.png
-:name: unis_boulders
-
-Potential targets include the boulders in front of the UNIS entrance, or small outcrops no larger than ca. 5x5 m.
-```
+- a pirate's hat
+- some fruit
 
 ```{admonition} Checklist and questions
 :class: note
