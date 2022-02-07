@@ -61,13 +61,13 @@ Then proceed to *Network* and check the *Enable network processing* setting.
 The following parameters should be used to connect to the server:
 
 Host name:
-: svalbox
+  ~ svalbox
 
 Root:
-: \\svalbox\metashape-processing$
+  ~ \\svalbox\metashape-processing$
 
 Port number:
-: 5840
+  ~ 5840
 
 Whenever you want to use the network for processing, you will have to place your project within the *Root* folder specified above.
 ````

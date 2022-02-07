@@ -578,7 +578,7 @@
 <h2>3D model reconstruction with Agisoft Metashape<a class="headerlink" href="#d-model-reconstruction-with-agisoft-metashape" title="Permalink to this headline">¶</a></h2>
 <div class="suggestion admonition">
 <p class="admonition-title">Creating high-quality models the USGS way</p>
-<p>The United States Geological Survey <a href="#id1"><span class="problematic" id="id2">:cite:`overProcessingCoastalImagery2021`</span></a> has put together an excellent tutorial on the use of Agisoft Metashape for creating high resolution digital elevation models.
+<p>The United States Geological Survey <span id="id1">[]</span> has put together an excellent tutorial on the use of Agisoft Metashape for creating high resolution digital elevation models.
 Although digital elevation models are but one of many desired products, the same guide can be used for the creation of high resolution and properly processed DOMs.
 USGS guidelines and the quick start guide to processing (Table 1) can be found <a class="reference external" href="https://pubs.usgs.gov/of/2021/1039/ofr20211039.pdf">here</a>, and should be used supplementary to this tutorial.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">pubs</span><span class="o">.</span><span class="n">usgs</span><span class="o">.</span><span class="n">gov</span><span class="o">/</span><span class="n">of</span><span class="o">/</span><span class="mi">2021</span><span class="o">/</span><span class="mi">1039</span><span class="o">/</span><span class="n">ofr20211039</span><span class="o">.</span><span class="n">pdf</span>
@@ -617,11 +617,11 @@ Proceed to <em>Tools</em> in the menu bar and click on <em>Preferences…</em>.
 Then proceed to <em>Network</em> and check the <em>Enable network processing</em> setting.</p>
 <p>The following parameters should be used to connect to the server:</p>
 <p>Host name:
-: svalbox</p>
+~ svalbox</p>
 <p>Root:
-: \svalbox\metashape-processing$</p>
+~ \svalbox\metashape-processing$</p>
 <p>Port number:
-: 5840</p>
+~ 5840</p>
 <p>Whenever you want to use the network for processing, you will have to place your project within the <em>Root</em> folder specified above.</p>
 </div>
 <div class="section" id="a-standardised-project-environment">
@@ -770,7 +770,7 @@ Here we change our view to show Spare Point Covariance instead of RGB coloring.<
 </div>
 <p>As the sparse cloud is the very first step in a long processing chain, we want to optimize it as much as possible.
 After all, bad quality in usually equals bad quality out.
-We will now conduct several optimizations to improve quality of the sparse cloud, implementing USGS <a href="#id3"><span class="problematic" id="id4">:cite:`overProcessingCoastalImagery2021`</span></a> recommendations that aim to reduce reconstruction uncertainty, improve projection accuracy, and lower the overall reprojection errors.
+We will now conduct several optimizations to improve quality of the sparse cloud, implementing USGS <span id="id2">[]</span> recommendations that aim to reduce reconstruction uncertainty, improve projection accuracy, and lower the overall reprojection errors.
 Unlike shown below, the project sometimes benefits by having each of the steps repeated multiple times, rather than just once.
 Keep in mind, however, that running too many optimizations may also result in over-fitting of the data.
 That means that the model is no longer based on real input, but rather on the processing parameters (= not real!).</p>
