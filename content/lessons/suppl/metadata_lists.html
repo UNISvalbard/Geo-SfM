@@ -108,6 +108,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../l1/quiz.html">
+   SfM photogrammetry Quiz
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../l1/exercise1.html">
    Exercise 1 - learning the ropes of SfM photogrammetry
   </a>
@@ -319,6 +324,47 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Metadata templates for archiving
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id7">
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -331,6 +377,47 @@
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Metadata templates for archiving
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id7">
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -340,142 +427,17 @@
   <div class="tex2jax_ignore mathjax_ignore section" id="metadata-templates-for-archiving">
 <h1>Metadata templates for archiving<a class="headerlink" href="#metadata-templates-for-archiving" title="Permalink to this headline">¶</a></h1>
 <div class="tabbed-set docutils">
-<input checked="checked" id="3eff5f43-2a50-426d-87a3-eabf9d7d8219" name="7ac875ec-1738-4314-b813-c458e6b89161" type="radio">
-</input><label class="tabbed-label" for="3eff5f43-2a50-426d-87a3-eabf9d7d8219">
-Hand-sized samples</label><div class="tabbed-content docutils">
-<div class="warning admonition">
-<p class="admonition-title">Final list TBD</p>
-<p>Keep in mind that the metadata form below is still undergoing active development.
-The final form required for archiving may therefore not be compatible with the one below.</p>
+<input checked="checked" id="0314b02d-b494-419a-9211-f060107692b7" name="606f42d4-af1f-4e29-bcb6-bbafcbef4d1c" type="radio">
+</input><label class="tabbed-label" for="0314b02d-b494-419a-9211-f060107692b7">
+Outcrop and hand-sized samples</label><div class="tabbed-content docutils">
+<p>acq_camera_lens: # STRING camera lens indicated in proc report in mm
+acq_camera_model: # STRING camera model indicated in proc report.
+acq_date: # STRING DD.MM.YYYY
+acq_georeferencing: # STRING, pick: built-in GPS, dGPS, GCPs, GCPs/GPS, GCPs/dGPS
+comments:</p>
 </div>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is an example yaml configuration for the archiving of a digitised rock/handsample.</span><span class="w"></span>
-<span class="c1"># The name is automatically generated.</span><span class="w"></span>
-
-<span class="c1"># Data</span><span class="w"></span>
-<span class="nt">data_project_path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">C:\Users\Peter\Downloads\UNIS_3051_20180827_Spit_Sarstangen_Sarsoyra1_U</span><span class="w"> </span><span class="c1"># FOLDER DIR (absolute)</span><span class="w"></span>
-<span class="nt">data_model_file</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nv">model_filename</span><span class="p p-Indicator">}</span><span class="l l-Scalar l-Scalar-Plain">.obj</span><span class="w"> </span><span class="c1"># MODEL FILE NAME (relative to data_path)</span><span class="w"></span>
-<span class="nt">data_model_crs_epsg</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">32633</span><span class="w"> </span><span class="c1"># INT EPSG number of model CRS</span><span class="w"></span>
-<span class="nt">data_owner</span><span class="p">:</span><span class="w"></span>
-<span class="nt">data_reference_contact</span><span class="p">:</span><span class="w"></span>
-<span class="nt">data_reference_scientific</span><span class="p">:</span><span class="w"></span>
-<span class="c1">#</span><span class="w"></span>
-<span class="c1"># metadata:</span><span class="w"></span>
-<span class="c1"># Geological information</span><span class="w"></span>
-<span class="nt">geo_rock_type</span><span class="p">:</span><span class="w"></span>
-<span class="nt">geo_supergroup</span><span class="p">:</span><span class="w"></span>
-<span class="nt">geo_group</span><span class="p">:</span><span class="w"></span>
-<span class="nt">geo_formation</span><span class="p">:</span><span class="w"></span>
-<span class="nt">geo_member</span><span class="p">:</span><span class="w"></span>
-<span class="nt">geo_bed</span><span class="p">:</span><span class="w"></span>
-<span class="c1">#</span><span class="w"></span>
-<span class="c1"># sample information</span><span class="w"></span>
-<span class="nt">sample_age</span><span class="p">:</span><span class="w">  </span><span class="c1"># in case it has been scientifically determined</span><span class="w"></span>
-<span class="nt">sample_description</span><span class="p">:</span><span class="w">  </span>
-<span class="nt">sample_type</span><span class="p">:</span><span class="w"> </span><span class="c1"># drill core, pebble, etc.</span><span class="w"></span>
-<span class="nt">sample_weight</span><span class="p">:</span><span class="w"> </span><span class="c1"># weight of sample in grams.</span><span class="w"></span>
-<span class="c1">#</span><span class="w"></span>
-<span class="c1"># sampling data</span><span class="w"></span>
-<span class="nt">sampling_date</span><span class="p">:</span><span class="w">  </span><span class="c1">#YYYYMMDD</span><span class="w"></span>
-<span class="nt">sampling_contact</span><span class="p">:</span><span class="w">  </span><span class="c1"># Person who sampled it. If multiple, use the itemisation below instead and leave empty and remove the preceding # symbols</span><span class="w"></span>
-<span class="c1">#    -</span><span class="w"></span>
-<span class="c1">#    -</span><span class="w"></span>
-<span class="nt">sampling_longitude_wgs84</span><span class="p">:</span><span class="w">  </span><span class="c1"># DD.decimals in WGS84</span><span class="w"></span>
-<span class="nt">sampling_latitude_wgs84</span><span class="p">:</span><span class="w">  </span><span class="c1"># DD.decimals in WGS84</span><span class="w"></span>
-<span class="nt">sampling_locality</span><span class="p">:</span><span class="w">  </span><span class="c1"># Where was the sample sampled? Outcrop name</span><span class="w"></span>
-<span class="nt">sampling_land</span><span class="p">:</span><span class="w">  </span><span class="c1"># In which area was the sample sampled? Valley/fjord/mountain</span><span class="w"></span>
-<span class="nt">sampling_island</span><span class="p">:</span><span class="w">  </span><span class="c1"># In which region was the sample sampled? Think Spitsbergen, Nordaustlandet, etc.</span><span class="w"></span>
-<span class="c1">#</span><span class="w"></span>
-<span class="c1"># storage info</span><span class="w"></span>
-<span class="nt">storage_location</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">non-existing</span><span class="w"> </span><span class="c1"># Description on where&amp;how the data has been stored, or used for e.g. experiments.</span><span class="w"></span>
-<span class="nt">storage_analysis</span><span class="p">:</span><span class="w"></span>
-<span class="nt">storage_contact</span><span class="p">:</span><span class="w"></span>
-<span class="c1">#</span><span class="w"></span>
-<span class="c1"># digital processing info</span><span class="w"></span>
-<span class="nt">processing_date</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.12.2019</span><span class="w"> </span><span class="c1"># STRING DD.MM.YYYY</span><span class="w"></span>
-<span class="nt">processing_camera_model</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">iPad mini 4</span><span class="w"></span>
-<span class="nt">processing_camera_lens</span><span class="p">:</span><span class="w"></span>
-<span class="nt">processing_georeferencing_marker_type</span><span class="p">:</span><span class="w"></span>
-<span class="nt">processing_georeferencing_marker_count</span><span class="p">:</span><span class="w"></span>
-<span class="nt">processing_camera_stations</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">267</span><span class="w"></span>
-<span class="nt">processing_camera_total_error</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span><span class="w"></span>
-<span class="nt">processing_ground_resolution</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.00345</span><span class="w"> </span><span class="c1"># in metres/pixel</span><span class="w"></span>
-<span class="nt">processing_dem_resolution</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0138</span><span class="w"> </span><span class="c1"># in metres/pixel</span><span class="w"></span>
-<span class="nt">processing_dem_point_density</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.526</span><span class="w"> </span><span class="c1"># in points/m2</span><span class="w"></span>
-<span class="nt">processing_flying_altitude</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.8</span><span class="w"> </span><span class="c1"># in m, average distance between cameras and sparse point cloud</span><span class="w"></span>
-<span class="nt">processing_coverage_area</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">932.0</span><span class="w"> </span><span class="c1"># in m2</span><span class="w"></span>
-<span class="nt">processing_reference_contact</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Peter Betlem</span><span class="w">  </span>
-<span class="c1">#</span><span class="w"></span>
-<span class="c1"># publishing info</span><span class="w"></span>
-<span class="nt">publishing_sketchfab_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bf3b54faa2554771a6c49c30638544fb</span><span class="w"></span>
-<span class="nt">publishing_svalbox_post_id</span><span class="p">:</span><span class="w"> </span><span class="c1"># automatically supplied, just for reference</span><span class="w"></span>
-<span class="nt">publishing_svalbox_img_id</span><span class="p">:</span><span class="w"> </span><span class="c1"># automatically supplied, just for reference</span><span class="w"></span>
-<span class="nt">publishing_date_archived</span><span class="p">:</span><span class="w"> </span><span class="c1"># automatically supplied, just for reference</span><span class="w"></span>
-<span class="nt">publishing_date_revised</span><span class="p">:</span><span class="w"> </span><span class="c1"># automatically supplied, just for reference</span><span class="w"></span>
-<span class="c1">#</span><span class="w"></span>
-<span class="c1"># remaining metadata:</span><span class="w"></span>
-<span class="nt">svalbox_hsm_id</span><span class="p">:</span><span class="w"> </span><span class="c1"># automatically supplied, just for reference</span><span class="w"></span>
-<span class="nt">unis_project_no</span><span class="p">:</span><span class="w"></span>
-<span class="nt">unis_project_campaign</span><span class="p">:</span><span class="w"></span>
-<span class="c1">#</span><span class="w"></span>
-<span class="nt">comments</span><span class="p">:</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-<input id="e314b3c0-2dab-477f-840e-7927b393d63f" name="7ac875ec-1738-4314-b813-c458e6b89161" type="radio">
-</input><label class="tabbed-label" for="e314b3c0-2dab-477f-840e-7927b393d63f">
-Digital outcrop models</label><div class="tabbed-content docutils">
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># Data:</span><span class="w"></span>
-<span class="nt">data_project_path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">C:\\Path\to\data\here</span><span class="w"> </span><span class="c1"># STRING with folder directory (absolute)</span><span class="w"></span>
-<span class="nt">data_model_file_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">filename.extension</span><span class="w"> </span><span class="c1"># STRING with model file name and obj extension.</span><span class="w"></span>
-<span class="nt">data_model_crs_epsg</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">32633</span><span class="w"> </span><span class="c1"># INT EPSG number of model CRS</span><span class="w"></span>
-<span class="nt">data_author</span><span class="p">:</span><span class="w"> </span><span class="c1"># Uncomment each line which you want to use by removing the &#39;#&#39;</span><span class="w"></span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Surname, First Name(s)</span><span class="w"></span>
-<span class="c1">#      affiliation: Affiliation1, Affiliation2, Affiliation3, ...</span><span class="w"></span>
-<span class="c1">#      orcid: xxxx-xxxx-xxxx-xxxx</span><span class="w"></span>
-
-<span class="c1"># Metadata:</span><span class="w"></span>
-<span class="nt">acq_date</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DD.MM.YYYY</span><span class="w"> </span><span class="c1"># STRING DD.MM.YYYY</span><span class="w"></span>
-<span class="nt">acq_camera_model</span><span class="p">:</span><span class="w"> </span><span class="c1"># STRING camera model indicated in proc report.</span><span class="w"></span>
-<span class="nt">acq_camera_lens</span><span class="p">:</span><span class="w"> </span><span class="c1"># STRING camera lens indicated in proc report.</span><span class="w"></span>
-<span class="nt">acq_georeferencing</span><span class="p">:</span><span class="w"> </span><span class="c1"># STRING, pick: built-in GPS, dGPS, GCPs, GCPs/GPS, GCPs/dGPS</span><span class="w"></span>
-<span class="c1">#</span><span class="w"></span>
-<span class="nt">location_locality</span><span class="p">:</span><span class="w"> </span><span class="c1"># STRING Location name</span><span class="w"></span>
-<span class="nt">location_land</span><span class="p">:</span><span class="w"> </span><span class="c1"># PICK Albert I Land / Andrée Land / Bünsow Land / Dickson Land / Haakon VII Land /</span><span class="w"></span>
-<span class="c1">#       Heer Land / James I Land / Nathorst Land / Nordenskiöld Land / Ny-Friesland / Olav V Land /</span><span class="w"></span>
-<span class="c1">#       Oscar II Land / Sabine Land / Sørkapp Land / Torell Land / Wedel Jarlsberg Land / Gustav Adolf Land /</span><span class="w"></span>
-<span class="c1">#        Gustav V Land / Orvin Land</span><span class="w"></span>
-<span class="nt">location_island</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Spitsbergen</span><span class="w"> </span><span class="c1"># Island the outcrop is found on PICK: Hopen / Spitsbergen / Kong Karls Land / Edgeøya / Barentsøya /</span><span class="w"></span>
-<span class="c1">#        Tusenøyane / Nordaustlandet / Kvitøya / Prins Karls Forland / Bjørnøya / Other</span><span class="w"></span>
-<span class="c1">#</span><span class="w"></span>
-<span class="nt">proc_software</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Agisoft Metashape</span><span class="w"> </span><span class="c1"># Write down software name here</span><span class="w"></span>
-<span class="nt">proc_software_version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.7.1.11797</span><span class="w"> </span><span class="c1"># And software version, including build number</span><span class="w"></span>
-
-<span class="nt">proc_camera_stations</span><span class="p">:</span><span class="w"> </span><span class="c1"># INTEGER, number of photos</span><span class="w"></span>
-<span class="nt">proc_camera_total_error</span><span class="p">:</span><span class="w"> </span><span class="c1"># FLOAT, in metres found in proc report (e.g., 4.116)</span><span class="w"></span>
-<span class="nt">proc_ground_resolution</span><span class="p">:</span><span class="w"> </span><span class="c1"># FLOAT in metres/pixel found in proc report</span><span class="w"></span>
-<span class="nt">proc_dem_resolution</span><span class="p">:</span><span class="w"> </span><span class="c1"># FLOAT in metres/pixel found in proc report</span><span class="w"></span>
-<span class="nt">proc_dem_point_density</span><span class="p">:</span><span class="w"> </span><span class="c1"># FLOAT in points/m2 found in proc report</span><span class="w"></span>
-<span class="nt">proc_flying_altitude</span><span class="p">:</span><span class="w"> </span><span class="c1"># FLOAT in metres, average distance between cameras and sparse point cloud</span><span class="w"></span>
-<span class="nt">proc_coverage_area</span><span class="p">:</span><span class="w"> </span><span class="c1"># FLOAT in km squared</span><span class="w"></span>
-<span class="nt">proc_georeferencing_type</span><span class="p">:</span><span class="w"> </span><span class="c1"># STRING, e.g., Aruco or Agisoft markers, also indicate marker version.</span><span class="w"></span>
-<span class="nt">proc_georeferencing_crs</span><span class="p">:</span><span class="w"> </span><span class="c1"># INTEGER, epsg CRS number</span><span class="w"></span>
-<span class="nt">publ_sketchfab_id</span><span class="p">:</span><span class="w"> </span><span class="c1">#</span><span class="w"></span>
-<span class="c1">#</span><span class="w"></span>
-<span class="nt">unis_project_no</span><span class="p">:</span><span class="w"> </span><span class="c1"># STRING, UNIS project number funding acq</span><span class="w"></span>
-<span class="nt">unis_project_campaign</span><span class="p">:</span><span class="w"> </span><span class="c1"># STRING, campaign</span><span class="w"></span>
-<span class="nt">funding</span><span class="p">:</span><span class="w"> </span><span class="c1"># Uncomment each line which you want to use by removing the &#39;#&#39;</span><span class="w"></span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Norwegian Research Council</span><span class="w"></span>
-<span class="c1">#      grant_number:</span><span class="w"></span>
-<span class="c1">#    - name: ABC2</span><span class="w"></span>
-<span class="c1">#      grant_number: asdasx/a</span><span class="w"></span>
-<span class="c1">#</span><span class="w"></span>
-<span class="nt">comments</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">All other comments go here...</span><span class="w"></span>
-<span class="nt">keywords</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">separate; each; keyword; by; semi-colons</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-<input id="3406f4aa-2601-4b07-94cd-c8c1c9ba26b1" name="7ac875ec-1738-4314-b813-c458e6b89161" type="radio">
-</input><label class="tabbed-label" for="3406f4aa-2601-4b07-94cd-c8c1c9ba26b1">
+<input id="4fed6cd7-e6a8-41aa-a126-6e6d39b32e84" name="606f42d4-af1f-4e29-bcb6-bbafcbef4d1c" type="radio">
+</input><label class="tabbed-label" for="4fed6cd7-e6a8-41aa-a126-6e6d39b32e84">
 Digital drill core models</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">data_project_path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dir/to\path</span><span class="w"></span>
 <span class="nt">data_owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Svalbox</span><span class="w"></span>
@@ -518,6 +480,97 @@ Digital drill core models</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="id1">
+<h1><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>data_author:</p>
+<ul class="simple">
+<li><p>name:
+affiliation:
+orcid:</p></li>
+<li><p>name: Betlem, Peter
+affiliation: UNIS, UiO, NCCS
+orcid: 0000-0002-6017-9415</p></li>
+</ul>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="id2">
+<h1><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h1>
+<p>data_model_crs_epsg: 32633 # INT EPSG number of model CRS
+data_model_file_name: {filename}.obj # STRING with model file name and obj extension.
+data_project_path: # full path
+data_type: DOM</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="id3">
+<h1><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h1>
+<p>funding:</p>
+<ul class="simple">
+<li><p>organization:
+grant_number:
+geology_age:</p></li>
+<li><p>Era:
+Formation:
+Group:
+Period:
+geology_lithology:</p></li>
+<li><p>lithology:
+grainsize:
+geology_tags:</p></li>
+<li><p>Category:
+Subcategory:
+keywords: # Separated by ;. Last item without.</p></li>
+</ul>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="id4">
+<h1><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h1>
+<p>location_altitude: # altitude used for hand sample models
+location_easting: # easting used for hand sample models
+location_island: # Island the outcrop is found on PICK: Hopen / Spitsbergen / Kong Karls Land / Edgeøya / Barentsøya / Tusenøyane / Nordaustlandet / Kvitøya / Prins Karls Forland / Bjørnøya / Other
+location_land: # PICK Albert I Land / Andrée Land / Bünsow Land / Dickson Land / Haakon VII Land / Heer Land / James I Land / Nathorst Land / Nordenskiöld Land / Ny-Friesland / Olav V Land / Oscar II Land / Sabine Land / Sørkapp Land / Torell Land / Wedel Jarlsberg Land / Gustav Adolf Land / Gustav V Land / Orvin Land
+location_locality:
+location_northing: # northing used for hand sample models</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="id5">
+<h1><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h1>
+<p>proc_alignment_accuracy:
+proc_camera_stations:
+proc_camera_total_error:
+proc_coverage_area: # kmÂ²
+proc_dc_filter_conf_min: # changed from proc_dense_cloud_confidence_minimum
+proc_dem_point_density: # points/mÂ²
+proc_dem_resolution: # m/pix
+proc_depth_map_accuracy:
+proc_flying_altitude: # m
+proc_georeferencing_count: # number of gcps used
+proc_georeferencing_crs: # INTEGER, epsg CRS number
+proc_georeferencing_type: # STRING, e.g., Aruco or Agisoft markers, also indicate marker version.
+proc_ground_resolution: # m/pix
+proc_mesh_filter_con_comp:
+proc_sc_filter_proj_acc:
+proc_sc_filter_recon_uncert:
+proc_sc_filter_reproj_error:
+proc_software:
+proc_software_version:
+proc_volume: # volume of the digitized handsample in cm3
+publ_embargo:</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="id6">
+<h1><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h1>
+<p>publ_related_identifiers:</p>
+<ul class="simple">
+<li><p>identifier:
+relation:
+publ_sketchfab_id:
+publ_v3geo_model:</p></li>
+</ul>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="id7">
+<h1><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h1>
+<p>unis_project_campaign:
+unis_project_no:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is an example yaml configuration for the archiving of a digitised rock/handsample/outcrop.</span><span class="w"></span>
+<span class="c1"># The name is automatically generated.</span><span class="w"></span>
+</pre></div>
 </div>
 </div>
 
