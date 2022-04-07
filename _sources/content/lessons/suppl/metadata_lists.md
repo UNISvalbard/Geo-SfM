@@ -1,6 +1,9 @@
 # Metadata templates for archiving
 
 ````{tabbed} Outcrop and hand-sized samples
+```yaml
+# This is an example yaml configuration for the archiving of a digitised rock/handsample/outcrop.
+# The name is automatically generated.
 
 acq_camera_lens: # STRING camera lens indicated in proc report in mm
 acq_camera_model: # STRING camera model indicated in proc report.
@@ -38,11 +41,11 @@ geology_tags:
 keywords: # Separated by ;. Last item without.
 #
 location_altitude: # altitude used for hand sample models
-location_easting: # easting used for hand sample models
+location_easting: # easting used for hand sample models // EPSG 32633
 location_island: # Island the outcrop is found on PICK: Hopen / Spitsbergen / Kong Karls Land / Edgeøya / Barentsøya / Tusenøyane / Nordaustlandet / Kvitøya / Prins Karls Forland / Bjørnøya / Other
 location_land: # PICK Albert I Land / Andrée Land / Bünsow Land / Dickson Land / Haakon VII Land / Heer Land / James I Land / Nathorst Land / Nordenskiöld Land / Ny-Friesland / Olav V Land / Oscar II Land / Sabine Land / Sørkapp Land / Torell Land / Wedel Jarlsberg Land / Gustav Adolf Land / Gustav V Land / Orvin Land
 location_locality:
-location_northing: # northing used for hand sample models
+location_northing: # northing used for hand sample models // EPSG 32633
 #
 proc_alignment_accuracy:
 proc_camera_stations:
@@ -74,11 +77,6 @@ publ_v3geo_model:
 #
 unis_project_campaign:
 unis_project_no:
-
-```yaml
-# This is an example yaml configuration for the archiving of a digitised rock/handsample/outcrop.
-# The name is automatically generated.
-
 
 ```
 ````
