@@ -4,6 +4,7 @@ parts:
 - caption: Session 1
   chapters:
   - file: content/lessons/l1/sfm_photogrammetry.md
+  - file: content/lessons/l1/quiz.md
   - file: content/lessons/l1/exercise1.md
   - file: content/lessons/l1/tutorial.md
 - caption: Session 2
