@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exercise 1 - learning the ropes of SfM photogrammetry &#8212; Geo-SfM Course Beta</title>
+    <title>Foldio360 Tutorial &#8212; Geo-SfM Course Beta</title>
     
   <link href="../../../_static/css/theme.css" rel="stylesheet">
   <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -51,8 +51,8 @@
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Metashape Tutorial" href="tutorial.html" />
-    <link rel="prev" title="SfM photogrammetry Quiz" href="quiz.html" />
+    <link rel="next" title="Geomodelling overview" href="../l5/geomodel_overview.html" />
+    <link rel="prev" title="Exercise 4 - Digitising field samples" href="hss_field_exercise.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -101,24 +101,24 @@
   Session 1
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="sfm_photogrammetry.html">
+  <a class="reference internal" href="../l1/sfm_photogrammetry.html">
    SfM photogrammetry
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="quiz.html">
+  <a class="reference internal" href="../l1/quiz.html">
    SfM photogrammetry Quiz
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../l1/exercise1.html">
    Exercise 1 - learning the ropes of SfM photogrammetry
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="tutorial.html">
+  <a class="reference internal" href="../l1/tutorial.html">
    Metashape Tutorial
   </a>
  </li>
@@ -177,20 +177,25 @@
   Session 4
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../l4/hss_overview.html">
+  <a class="reference internal" href="hss_overview.html">
    Digitising small objects
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../l4/hss_tutorial.html">
-   Foldio360 Tutorial
+  <a class="reference internal" href="hss_tutorial.html">
+   Exercise 3 - Food for thought
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../l4/hss_field_exercise.html">
+  <a class="reference internal" href="hss_field_exercise.html">
    Exercise 4 - Digitising field samples
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Foldio360 Tutorial
   </a>
  </li>
 </ul>
@@ -283,7 +288,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../_sources/content/lessons/l1/exercise1.md"><button type="button"
+        <a class="dropdown-buttons" href="../../../_sources/content/lessons/l4/hss_software.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -303,7 +308,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/UNISvalbard/Geo-SfM/issues/new?title=Issue%20on%20page%20%2Fcontent/lessons/l1/exercise1.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/UNISvalbard/Geo-SfM/issues/new?title=Issue%20on%20page%20%2Fcontent/lessons/l4/hss_software.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -330,19 +335,56 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learning-goals">
-   Learning goals
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#assignment">
-   Assignment
+  <a class="reference internal nav-link" href="#photo-acquisition-with-lightbox-foldio360">
+   Photo acquisition with Lightbox Foldio360
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#deliverable">
-     Deliverable
+    <a class="reference internal nav-link" href="#photo-set">
+     Photo set
     </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#computer-set">
+     Computer set
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#shooting">
+       Shooting
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#mode">
+       Mode
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#main-settings">
+       Main settings
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sub-settings">
+       Sub Settings
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#focus">
+       Focus
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#histogram">
+       Histogram
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#save-settings">
+       Save Settings
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -356,7 +398,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Exercise 1 - learning the ropes of SfM photogrammetry</h1>
+                <h1>Foldio360 Tutorial</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -367,19 +409,56 @@
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learning-goals">
-   Learning goals
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#assignment">
-   Assignment
+  <a class="reference internal nav-link" href="#photo-acquisition-with-lightbox-foldio360">
+   Photo acquisition with Lightbox Foldio360
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#deliverable">
-     Deliverable
+    <a class="reference internal nav-link" href="#photo-set">
+     Photo set
     </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#computer-set">
+     Computer set
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#shooting">
+       Shooting
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#mode">
+       Mode
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#main-settings">
+       Main settings
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sub-settings">
+       Sub Settings
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#focus">
+       Focus
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#histogram">
+       Histogram
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#save-settings">
+       Save Settings
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -392,131 +471,111 @@
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="exercise-1-learning-the-ropes-of-sfm-photogrammetry">
-<h1>Exercise 1 - learning the ropes of SfM photogrammetry<a class="headerlink" href="#exercise-1-learning-the-ropes-of-sfm-photogrammetry" title="Permalink to this headline">¶</a></h1>
-<div class="admonition-deadline admonition">
-<p class="admonition-title">Deadline</p>
-<p>Please complete this exercise <strong>by the start of the next session</strong>.</p>
-</div>
-<div class="section" id="learning-goals">
-<h2>Learning goals<a class="headerlink" href="#learning-goals" title="Permalink to this headline">¶</a></h2>
-<p><strong>After this session you will be able to:</strong></p>
-<ul class="simple">
-<li><p>Use Agisoft Metashape to digitally reconstruct macro-objects, outcrops, and more.</p></li>
-<li><p>Discover and implement basic tips and tricks for data acquisition</p></li>
-</ul>
+  <div class="tex2jax_ignore mathjax_ignore section" id="foldio360-tutorial">
+<h1>Foldio360 Tutorial<a class="headerlink" href="#foldio360-tutorial" title="Permalink to this headline">¶</a></h1>
 <div class="warning admonition">
-<p class="admonition-title">Support</p>
-<p>Please note that <strong>we only provide feedback and support for students enrolled in the course at the University Centre of Svalbard</strong>.</p>
+<p class="admonition-title">Warning</p>
+<p>Under construction!</p>
 </div>
-<p>We now focus on the reconstruction of a model of our own.
-Split up into separate tasks, we would like you to cover the following goals in groups of 3:</p>
+<p>This tutorial features the following learning goals:</p>
 <ul class="simple">
-<li><p>Image acquisition of an object of your choosing</p></li>
-<li><p>SfM photogrammetry of the object you imaged</p></li>
-<li><p>Archiving of the dataset in a standardised way</p></li>
-<li><p>Documenting the processing steps.</p></li>
+<li><p>You will <strong>use Foldio360 box to acquire high-quality pictures to digitise small objects</strong>.</p></li>
 </ul>
-<p>The exercise also includes a deliverable, i.e., a set of requirements that are listed further below.</p>
-</div>
-<div class="section" id="assignment">
-<h2>Assignment<a class="headerlink" href="#assignment" title="Permalink to this headline">¶</a></h2>
-<div class="sidebar">
-<p class="sidebar-title">What about … ?</p>
-<ul class="simple">
-<li><p>What geological applications do you think this would be useful for?</p></li>
-<li><p>What could the weaknesses be?</p></li>
-<li><p>What should you consider before even acquiring the data? (e.g. scale, resolution, precision requirements - purpose?)</p></li>
-<li><p>What is an artifact and how may they arise in your models? (Make screenshots of these when/if found in your own models!)</p></li>
-</ul>
-</div>
-<p>It is now up to you to acquire your own data set and process this by following the <a class="reference internal" href="tutorial.html"><span class="doc std std-doc">photogrammetry tutorial</span></a>.
-Make sure to also give some thoughts and answer the questions in the side bar.</p>
-<p>Suggested targets include:</p>
-<ul class="simple">
-<li><p>small outcrops (ca. 5 m long, 5 m high)</p></li>
-<li><p>a mug turned upside down</p></li>
-<li><p>a pirate’s hat</p></li>
-<li><p>some fruit</p></li>
-</ul>
-<div class="note admonition">
-<p class="admonition-title">Checklist and questions</p>
-<ul class="contains-task-list simple">
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Find a suitable target</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Take photos of the target</p>
-<ul class="contains-task-list">
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> … from two distances</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> … from two angles</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> … with photos having at least 80% overlap between them</p></li>
-</ul>
-</li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Import the photos to your workstation…</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> … into the standardised folder structure</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Create a textured model, saving project into the assigned folder</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Export a processing report.</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Fill out the deliverable</p></li>
-</ul>
-</div>
-<div class="section" id="deliverable">
-<h3>Deliverable<a class="headerlink" href="#deliverable" title="Permalink to this headline">¶</a></h3>
-<p>At the very least, the following should be completed <strong>prior to the start of the next session</strong>.
-Copy it over and send it in to the course responsible.</p>
 <div class="tip admonition">
-<p class="admonition-title">Use the processing network!</p>
-<p>Make sure to submit your processing requests to the network!
-Else processing may take forever!</p>
+<p class="admonition-title">Hardware and Software needed</p>
+<p>In this tutorial we suggest using the following material.</p>
+<ul class="simple">
+<li><p>Lightbox (Foldio360)</p></li>
+<li><p>Camera</p></li>
+<li><p>Foldio360 App for phone/tablet</p></li>
+<li><p>Imaging Edge App for PC</p></li>
+</ul>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>group:
-    name:
-    person1:
-    person2:
-
-model:
-    place: # Where did you find your target?
-    land:
-    island:  # PICK: Hopen / Spitsbergen / Kong Karls Land / Edgeøya / Barentsøya / Tusenøyane / Nordaustlandet / Kvitøya / Prins Karls Forland / Bjørnøya / Other
-
-data:
-    data_project_path: \\svalbox\metashape-processing$\ag222-2022\{your-project-folder} # FOLDER DIR (absolute)
-    data_model_file: {model_filename}.obj # MODEL FILE NAME (relative to data_path)
-    data_owner:
-    data_reference_contact:
-    data_reference_scientific:
-
-metadata: # these can all be found in the exported processing report :)
-    acquisition_date: 10.12.2019 # STRING DD.MM.YYYY
-    acquisition_reference: # STRING Data collector
-    acquisition_camera_model:
-    acquisition_marker_type:
-    acquisition_camera_lens:
-    processing_camera_stations: # a number
-    processing_camera_total_error:
-    processing_ground_resolution: 0.00345 # in metres/pixel
-    processing_dem_resolution: 0.0138 # in metres/pixel
-    processing_dem_point_density: 0.526 # in points/m2
-    processing_flying_altitude: 10.8 # in m, average distance between cameras and sparse point cloud
-    processing_coverage_area: 932.0 # in m2
-    processing_georeferencing_type:
-    processing_georeferencing_crs:
-    processing_reference_contact:
-</pre></div>
-</div>
+<div class="section" id="photo-acquisition-with-lightbox-foldio360">
+<h2>Photo acquisition with Lightbox Foldio360<a class="headerlink" href="#photo-acquisition-with-lightbox-foldio360" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="photo-set">
+<h3>Photo set<a class="headerlink" href="#photo-set" title="Permalink to this headline">¶</a></h3>
+<p>Log in to the Foldio360 App on your phone and connect to the lightbox device by clicking on “Select device”. It will automatically detect the Foldio device and connect to it.</p>
 <div class="warning admonition">
-<p class="admonition-title">Do not forget…</p>
-<p>Make sure to also create a <em>description.txt</em> file with a description of the object and selecting an overview image.
-Save these within the project directory with the suggested filenames (<em>description.txt</em>, <em>image_overview.jpg</em>).</p>
+<p class="admonition-title">Problems connecting to the lightbox</p>
+<ol class="simple">
+<li><p>Make sure that the Foldio lightbox is turned on</p></li>
+<li><p>Turn on the bluetooth on your phone/tablet</p></li>
+<li><p>Disconnect other devices connected to the Foldio lightbox</p></li>
+</ol>
 </div>
-<div class="tip admonition note">
-<p class="admonition-title">Note</p>
-<p>As for the metadata, you’ll only be able to fill out some of the metadata after fully implementing all the steps (and including up to) the meshing and texturing step.</p>
+<p>After the lightbox device has been linked, click the four bars on the lower-right corner of your screen, select DSLR 360 and then select the camera brand that you are using.
+Now that your phone/tablet is linked with the Foldio360 lightbox, you can edit mutliple parameters.</p>
+<p>Going from left to right on the Foldio360 App menu you will find:</p>
+<div class="figure align-default" id="menu">
+<img alt="../../../_images/menu.png" src="../../../_images/menu.png" />
+<p class="caption"><span class="caption-number">Fig. 32 </span><span class="caption-text">Menu displayed on the Foldio360 App.</span><a class="headerlink" href="#menu" title="Permalink to this image">¶</a></p>
 </div>
+<ol class="simple">
+<li><p><strong>Rotating speed</strong>
+This parameter defines the rotating speed of the platform.</p></li>
+</ol>
 <div class="tip admonition">
-<p class="admonition-title">Image acquisition</p>
-<p>Have a look at the <a class="reference internal" href="../suppl/best_practices.html"><span class="doc std std-doc">supplementary information</span></a> dealing with best practices in photogrammetry.</p>
+<p class="admonition-title">Tip</p>
+<p>We suggest using 1x for better acquisition.</p>
 </div>
+<ol class="simple">
+<li><p><strong>Frame</strong>
+This parameter defines the number of times that the platform will stop for taking a picture. There are three different options: 24, 36 or 48.
+The more stops you select, the more shots you will take from your sample.</p></li>
+<li><p><strong>Center indicator</strong>
+When selecting it, a light grid will appear inside the box for better positioning of your sample.</p></li>
+<li><p><strong>Turn table</strong></p></li>
+<li><p><strong>Brightness</strong></p></li>
+<li><p><strong>Color temperature</strong></p></li>
+</ol>
 <div class="tip admonition">
-<p class="admonition-title">SfM photogrammetry workflow</p>
-<p>Have a look at this session’s accompanying <a class="reference internal" href="tutorial.html"><span class="doc std std-doc">tutorial</span></a> for some useful tips and tricks.</p>
+<p class="admonition-title">Tip</p>
+<p>You will have to define it and make it match with the White Balance settings when you define the parameters in the Imaging Edge Desktop App.
+This, however, is a few steps further.</p>
+</div>
+</div>
+<div class="section" id="computer-set">
+<h3>Computer set<a class="headerlink" href="#computer-set" title="Permalink to this headline">¶</a></h3>
+<p>Open the Imaging Edge Desktop App on your PC.
+Turn on the camera. Double-click it on the Edge Remote App to connect to it. If it doesn’t show, refresh the window.
+Once this steps have been done, you will visualise the live camera image on your computer screen through the Imaging Edge Desktope App.</p>
+<p>Now, you have to define the camera settings for perfect data acquistion.</p>
+<p>We recommend starting by defining the filepath where you want the data to be saved. You do this by goint to “Save Settings” in the lower-most part of the settings bar, click on the three dots and select the folder where to save the data.</p>
+<div class="figure align-default" id="safe-filepath-png">
+<img alt="../../../_images/safe_filepath.png" src="../../../_images/safe_filepath.png" />
+</div>
+<div class="section" id="shooting">
+<h4>Shooting<a class="headerlink" href="#shooting" title="Permalink to this headline">¶</a></h4>
+<p>We recommend using it from your phone/tablet.</p>
+</div>
+<div class="section" id="mode">
+<h4>Mode<a class="headerlink" href="#mode" title="Permalink to this headline">¶</a></h4>
+<p>You can leave it in Normal mode.</p>
+</div>
+<div class="section" id="main-settings">
+<h4>Main settings<a class="headerlink" href="#main-settings" title="Permalink to this headline">¶</a></h4>
+<p>Mode, keep it in Manual
+Shutter Speed
+Focus (F)
+ISO
+EV
+Flash</p>
+</div>
+<div class="section" id="sub-settings">
+<h4>Sub Settings<a class="headerlink" href="#sub-settings" title="Permalink to this headline">¶</a></h4>
+<p>Do not touch anything</p>
+</div>
+<div class="section" id="focus">
+<h4>Focus<a class="headerlink" href="#focus" title="Permalink to this headline">¶</a></h4>
+<p>Go back to the camera and without changing its zoom or position, define the proper d</p>
+</div>
+<div class="section" id="histogram">
+<h4>Histogram<a class="headerlink" href="#histogram" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="save-settings">
+<h4>Save Settings<a class="headerlink" href="#save-settings" title="Permalink to this headline">¶</a></h4>
+<p>Define the filepath where you want to safe your data.</p>
 </div>
 </div>
 </div>
@@ -535,7 +594,7 @@ Save these within the project directory with the suggested filenames (<em>descri
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./content\lessons\l1"
+            path: "./content\lessons\l4"
         },
         predefinedOutput: true
     }
@@ -547,17 +606,17 @@ Save these within the project directory with the suggested filenames (<em>descri
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="quiz.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="hss_field_exercise.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">SfM photogrammetry Quiz</p>
+            <p class="prev-next-title">Exercise 4 - Digitising field samples</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="tutorial.html" title="next page">
+    <a class='right-next' id="next-link" href="../l5/geomodel_overview.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Metashape Tutorial</p>
+        <p class="prev-next-title">Geomodelling overview</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
