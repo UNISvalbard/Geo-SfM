@@ -185,6 +185,11 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../l4/hss_tutorial.html">
+   Foldio360 Tutorial
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../l4/hss_lab_exercise.html">
    Exercise 3 - Food for thought
   </a>
  </li>
@@ -471,7 +476,7 @@ then proceed by running each cell by either clicking the <em>play</em> button or
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span>\<span class="n">ipykernel_26228</span>\<span class="mf">822519927.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span>\<span class="n">ipykernel_28188</span>\<span class="mf">822519927.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">config_file</span> <span class="o">=</span> <span class="s2">&quot;../config/empty_photogrammetry_processing_settings.yml&quot;</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">project</span> <span class="o">=</span> <span class="n">AP</span><span class="p">()</span>
 <span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">project</span><span class="o">.</span><span class="n">read_config</span><span class="p">(</span><span class="n">config_file</span><span class="p">)</span>
@@ -553,8 +558,8 @@ Refer to <a class="reference external" href="https://www.agisoft.com/pdf/metasha
 The parameter-section names should fully follow the parameter names of the Metashape functions.
 In case default parameters are to be used, remove the corresponding parameter-section.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="f75e1b9c-a802-499e-84a2-0bc034087261" name="42d67e4c-5a29-4a8c-b903-fa16bb527ef5" type="radio">
-</input><label class="tabbed-label" for="f75e1b9c-a802-499e-84a2-0bc034087261">
+<input checked="checked" id="16a05cfa-6b06-4bca-bde3-8549c436510c" name="e60e4321-4e6d-4a16-9197-648d767c12be" type="radio">
+</input><label class="tabbed-label" for="16a05cfa-6b06-4bca-bde3-8549c436510c">
 Add photos</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">addPhotos</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
@@ -569,8 +574,8 @@ Add photos</label><div class="tabbed-content docutils">
 This should generally only be set to <em>True</em> when ground control points (GCPs) are to be used.</p>
 </div>
 </div>
-<input id="f9ab41bf-5d79-432f-8cfa-4d718341c5e5" name="42d67e4c-5a29-4a8c-b903-fa16bb527ef5" type="radio">
-</input><label class="tabbed-label" for="f9ab41bf-5d79-432f-8cfa-4d718341c5e5">
+<input id="ecbf8037-4eab-4102-862f-dfdf8de31bc8" name="e60e4321-4e6d-4a16-9197-648d767c12be" type="radio">
+</input><label class="tabbed-label" for="ecbf8037-4eab-4102-862f-dfdf8de31bc8">
 Analyze photos</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">analyzePhotos</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
@@ -578,8 +583,8 @@ Analyze photos</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="9a91f355-969f-446e-a649-53e7a41daa3d" name="42d67e4c-5a29-4a8c-b903-fa16bb527ef5" type="radio">
-</input><label class="tabbed-label" for="9a91f355-969f-446e-a649-53e7a41daa3d">
+<input id="0fbc0fbc-3d77-4700-8bd5-36f203872a1e" name="e60e4321-4e6d-4a16-9197-648d767c12be" type="radio">
+</input><label class="tabbed-label" for="0fbc0fbc-3d77-4700-8bd5-36f203872a1e">
 Add masks</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">masks</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"> </span><span class="c1"># Default, only enable if you have images with masks :)</span><span class="w"></span>
@@ -588,8 +593,8 @@ Add masks</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="a787b6ab-f6de-4991-bfbd-8ef11ca3f8ba" name="42d67e4c-5a29-4a8c-b903-fa16bb527ef5" type="radio">
-</input><label class="tabbed-label" for="a787b6ab-f6de-4991-bfbd-8ef11ca3f8ba">
+<input id="63d55b03-d708-4a85-8e9e-7d14a3e1ead0" name="e60e4321-4e6d-4a16-9197-648d767c12be" type="radio">
+</input><label class="tabbed-label" for="63d55b03-d708-4a85-8e9e-7d14a3e1ead0">
 Alignment</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">alignPhotos</span><span class="p">:</span><span class="w"> </span><span class="c1"># (Metashape: alignPhotos)</span><span class="w"></span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
@@ -608,8 +613,8 @@ Alignment</label><div class="tabbed-content docutils">
 <p>Whether or not to try alignment of images that failed alignment during the first stage.</p>
 </div>
 </div>
-<input id="77261b1f-ca2f-4d44-b857-b3031b1f279e" name="42d67e4c-5a29-4a8c-b903-fa16bb527ef5" type="radio">
-</input><label class="tabbed-label" for="77261b1f-ca2f-4d44-b857-b3031b1f279e">
+<input id="2e066f7c-2b81-462e-bcdf-4cb479761fd3" name="e60e4321-4e6d-4a16-9197-648d767c12be" type="radio">
+</input><label class="tabbed-label" for="2e066f7c-2b81-462e-bcdf-4cb479761fd3">
 Optimise cameras</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">optimizeCameras</span><span class="p">:</span><span class="w"> </span><span class="c1"># (Metashape: optimizeCameras)</span><span class="w"></span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
@@ -618,8 +623,8 @@ Optimise cameras</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="de6a7da2-1fe3-4f93-a2d2-8ad4d7c77289" name="42d67e4c-5a29-4a8c-b903-fa16bb527ef5" type="radio">
-</input><label class="tabbed-label" for="de6a7da2-1fe3-4f93-a2d2-8ad4d7c77289">
+<input id="75c6e656-5fa0-47f7-9d53-647eb656989d" name="e60e4321-4e6d-4a16-9197-648d767c12be" type="radio">
+</input><label class="tabbed-label" for="75c6e656-5fa0-47f7-9d53-647eb656989d">
 Depth maps</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">buildDepthMaps</span><span class="p">:</span><span class="w"> </span><span class="c1"># (Metashape: buildDepthMaps)</span><span class="w"></span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
@@ -641,8 +646,8 @@ Aggressive filtering removes detail and makes worse DEMs (at least for forest).
 NoFiltering takes very long. In trials, it never completed.</p>
 </div>
 </div>
-<input id="f982f766-326d-4ef2-b522-68390d76bed1" name="42d67e4c-5a29-4a8c-b903-fa16bb527ef5" type="radio">
-</input><label class="tabbed-label" for="f982f766-326d-4ef2-b522-68390d76bed1">
+<input id="5808c8be-44ec-4ea3-a5a2-6d39d0a16ce5" name="e60e4321-4e6d-4a16-9197-648d767c12be" type="radio">
+</input><label class="tabbed-label" for="5808c8be-44ec-4ea3-a5a2-6d39d0a16ce5">
 Dense cloud</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">buildDenseCloud</span><span class="p">:</span><span class="w"> </span><span class="c1"># (Metashape: buildDepthMaps, buildDenseCloud, classifyGroundPoints, and exportPoints)</span><span class="w"></span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
@@ -653,8 +658,8 @@ Dense cloud</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="98bfd25e-6471-41d6-ab01-3a6ed099cbd1" name="42d67e4c-5a29-4a8c-b903-fa16bb527ef5" type="radio">
-</input><label class="tabbed-label" for="98bfd25e-6471-41d6-ab01-3a6ed099cbd1">
+<input id="8dbbf4c1-b5f5-4d59-813a-cb0170cbc131" name="e60e4321-4e6d-4a16-9197-648d767c12be" type="radio">
+</input><label class="tabbed-label" for="8dbbf4c1-b5f5-4d59-813a-cb0170cbc131">
 Filter dense cloud</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">filterDenseCloud</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
@@ -662,8 +667,8 @@ Filter dense cloud</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="8382c32d-db39-4486-9304-758c67ab7964" name="42d67e4c-5a29-4a8c-b903-fa16bb527ef5" type="radio">
-</input><label class="tabbed-label" for="8382c32d-db39-4486-9304-758c67ab7964">
+<input id="b1a900e1-90a2-4bcd-a69b-fe50b4ff1ed4" name="e60e4321-4e6d-4a16-9197-648d767c12be" type="radio">
+</input><label class="tabbed-label" for="b1a900e1-90a2-4bcd-a69b-fe50b4ff1ed4">
 Mesh</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">buildMesh</span><span class="p">:</span><span class="w"> </span><span class="c1"># (Metashape: buildModel)</span><span class="w"></span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
@@ -677,8 +682,8 @@ Mesh</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="1eba6f4b-7d12-4b59-82b7-4912648215aa" name="42d67e4c-5a29-4a8c-b903-fa16bb527ef5" type="radio">
-</input><label class="tabbed-label" for="1eba6f4b-7d12-4b59-82b7-4912648215aa">
+<input id="4e542c76-5f7d-4865-adcd-1cfe17e47735" name="e60e4321-4e6d-4a16-9197-648d767c12be" type="radio">
+</input><label class="tabbed-label" for="4e542c76-5f7d-4865-adcd-1cfe17e47735">
 Textures</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">buildTexture</span><span class="p">:</span><span class="w"> </span><span class="c1"># (Metashape: buildTexture)</span><span class="w"></span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
@@ -689,8 +694,8 @@ Textures</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="93b15f1c-1491-4b76-9936-cdcb11dec035" name="42d67e4c-5a29-4a8c-b903-fa16bb527ef5" type="radio">
-</input><label class="tabbed-label" for="93b15f1c-1491-4b76-9936-cdcb11dec035">
+<input id="d55eb42d-98a4-41b6-84c3-b4f97b9a1a44" name="e60e4321-4e6d-4a16-9197-648d767c12be" type="radio">
+</input><label class="tabbed-label" for="d55eb42d-98a4-41b6-84c3-b4f97b9a1a44">
 Tiled model</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">buildTiledModel</span><span class="p">:</span><span class="w"> </span><span class="c1"># (Metashape: buildTexture)</span><span class="w"></span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
@@ -702,8 +707,8 @@ Tiled model</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="3f7e68c4-22e3-4890-9da2-965e2d83aca0" name="42d67e4c-5a29-4a8c-b903-fa16bb527ef5" type="radio">
-</input><label class="tabbed-label" for="3f7e68c4-22e3-4890-9da2-965e2d83aca0">
+<input id="c90585e7-525a-4715-a3db-8c5f3afb250d" name="e60e4321-4e6d-4a16-9197-648d767c12be" type="radio">
+</input><label class="tabbed-label" for="c90585e7-525a-4715-a3db-8c5f3afb250d">
 DEM</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">buildDEM</span><span class="p">:</span><span class="w"> </span><span class="c1"># (Metashape: buildTexture)</span><span class="w"></span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
@@ -713,8 +718,8 @@ DEM</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="68523523-a780-4d1e-806a-e1979d73a028" name="42d67e4c-5a29-4a8c-b903-fa16bb527ef5" type="radio">
-</input><label class="tabbed-label" for="68523523-a780-4d1e-806a-e1979d73a028">
+<input id="5ebbc6c0-f191-4c3f-8c3f-7504b42c0750" name="e60e4321-4e6d-4a16-9197-648d767c12be" type="radio">
+</input><label class="tabbed-label" for="5ebbc6c0-f191-4c3f-8c3f-7504b42c0750">
 GCPs - detection</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">detectGCPs</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
@@ -728,8 +733,8 @@ GCPs - detection</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="423ee4a8-15d7-4964-936e-e0b7825067af" name="42d67e4c-5a29-4a8c-b903-fa16bb527ef5" type="radio">
-</input><label class="tabbed-label" for="423ee4a8-15d7-4964-936e-e0b7825067af">
+<input id="72e81275-66df-4c83-a7ff-1a5418352147" name="e60e4321-4e6d-4a16-9197-648d767c12be" type="radio">
+</input><label class="tabbed-label" for="72e81275-66df-4c83-a7ff-1a5418352147">
 GCPs - add to project</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">addGCPs</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
@@ -740,8 +745,8 @@ GCPs - add to project</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="8ddb060f-cd4f-4726-aa93-f3e2d7b05bd9" name="42d67e4c-5a29-4a8c-b903-fa16bb527ef5" type="radio">
-</input><label class="tabbed-label" for="8ddb060f-cd4f-4726-aa93-f3e2d7b05bd9">
+<input id="8b6e766c-7fa4-4874-882a-cacd1eb175ea" name="e60e4321-4e6d-4a16-9197-648d767c12be" type="radio">
+</input><label class="tabbed-label" for="8b6e766c-7fa4-4874-882a-cacd1eb175ea">
 Publish</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">publishData</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
@@ -758,8 +763,8 @@ Publish</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="fa6fa302-ebe8-4000-9f5f-8332e740ca53" name="42d67e4c-5a29-4a8c-b903-fa16bb527ef5" type="radio">
-</input><label class="tabbed-label" for="fa6fa302-ebe8-4000-9f5f-8332e740ca53">
+<input id="e627ec04-b93d-4189-853e-070932296235" name="e60e4321-4e6d-4a16-9197-648d767c12be" type="radio">
+</input><label class="tabbed-label" for="e627ec04-b93d-4189-853e-070932296235">
 Networking</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">networkProcessing</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
@@ -785,7 +790,7 @@ It should now result in a successful runtime.</p>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span>\<span class="n">ipykernel_26228</span>\<span class="mf">834377757.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span>\<span class="n">ipykernel_28188</span>\<span class="mf">834377757.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">config_file</span> <span class="o">=</span> <span class="s2">&quot;../config/photogrammetry_processing_settings.yml&quot;</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">project</span> <span class="o">=</span> <span class="n">AP</span><span class="p">(</span><span class="n">config_file</span><span class="p">)</span>
 <span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">project</span><span class="o">.</span><span class="n">init_tasks</span><span class="p">()</span>

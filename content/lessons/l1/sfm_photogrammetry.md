@@ -4,7 +4,9 @@ Structure-from-Motion photogrammetry (or SfM photogrammetry for short) allows yo
 
 The video below provides a short and concise overview of how this process takes place, as well as the main steps that are involved in the digitisation of objects to their digital counterparts.
 
-<div><iframe width=100% height=100% src="https://www.youtube.com/embed/i7ierVkXYa8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+```{admonition} Lecture
+<iframe width="600" height="450" src="https://www.youtube.com/embed/i7ierVkXYa8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+```
 
 ## Structure-from-Motion photogrammetry
 

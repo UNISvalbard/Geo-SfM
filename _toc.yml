@@ -22,8 +22,8 @@ parts:
   chapters:
   - file: content/lessons/l4/hss_overview.md
   - file: content/lessons/l4/hss_tutorial.md
+  - file: content/lessons/l4/hss_lab_exercise.md
   - file: content/lessons/l4/hss_field_exercise.md
-  - file: content/lessons/l4/hss_software.md
 - caption: Session 5
   chapters:
   - file: content/lessons/l5/geomodel_overview.md
