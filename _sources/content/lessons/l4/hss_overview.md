@@ -11,7 +11,11 @@ A good example of a digitised handsized sample is Malte's mineral below, which h
 
 Sadly, SketchFab does not (yet?) have distance querying built-in to the frontend.
 However, SketchFab Labs does provide such a feature.
-Access it [here](https://labs.sketchfab.com/experiments/measurements/) or through the iFrame below; then search for *Rock sample Malte* or provide the link with model ID to load the model above and measure the sample's dimensions.
+Either access it through the URL link below, or use the embedded iFrame to search, load and measure *Malte's Rock sample* from within this page.
+
+```yaml
+https://labs.sketchfab.com/experiments/measurements/
+```
 
 ````{admonition} SketchFab 3D model (Verification)
 :class: seealso
@@ -27,19 +31,30 @@ https://sketchfab.com/models/b2cb2ad336dd402eb3dc4222bb03d4bd
 ```
 ````
 
-## 101 to digitising handsamples
+## Digitising hand-sized samples
+
+Betlem et al., {cite}`betlemDigitalDrillCore2020` present an effective means to digitise hand-sized samples at their respective scales.
+While the paper focuses on drill core samples, the same methodology can be used for most hand-sized samples from the field, minerals (e.g., Malte's mineral), and other object, with and without GCPs to ensure correct scaling.
+
+In short, the method relies on acquiring at least three photo haloes (i.e., 24-36 object-centred photos) of an object, in between which the object's orientation has been changed (e.g., from normal position to upside-down to flipped 90 degrees).
+The easiest way of doing this is by using a well-lit round table, which allows a fixed rotation between each of the photos for a specific orientation.
+Furthermore, if one of the orientations contains GCPs, the resulting hand-sized sample model is automatically scaled correctly.
 
 ```{admonition} Lecture
 <iframe width="600" height="450" src="https://www.youtube-nocookie.com/embed/O6R1EEOrM4A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ```
 
-Successful digitisation of small hand samples requires even better imaging routines.
-In a nutshell,
+### 101 to digitising handsamples
 
-1. the target should cover the full frame of the image,
-2. with the entirety of the target kept in focus.
+In a nutshell, successful digitisation of small hand samples can be summarised as follows:
 
-### Focus & aperture
+1. Target-images should be offset by no more than 15 degrees,
+2. and the target's orientation should be changed at least two times (=> 3 photo haloes).
+2. The target should cover the full frame of the image,
+3. with the entirety of the target kept in focus.
+4. Enough light (i.e., minimal shadows) and correct colours
+
+#### Focus & aperture
 
 Given the proximity to smaller handsamples (centimetres versus (deca)metre scale for outcrops), the in-focus depth range of the image is important.
 Optimally, the entire object should be in focus, to enable accurate correlation of the entire object across multiple images, thereby increasing the final quality of the models.
@@ -63,7 +78,7 @@ As seen in {numref}`aperture_diagram`, decreasing the aperture coincides with a 
 Aperture sizes and related f-numbers. Going left to right, each circle is about a factor two smaller than the previous  {cite}`en.wikipediaSVGImageShowing2006`.
 ```
 
-### A tripod, exposure settings and colour diagrams
+#### A tripod, exposure settings and colour diagrams
 
 Longer exposure times in a bright environment have the risk of several things, most notably introducing blur by moving the camera, overexposing the targets, and/or bleaching the colours.
 
@@ -82,7 +97,7 @@ Capture a colour card in the background of your sample to adjust the colour bala
 This works exceptionally well when coupled with *raw* imaging and can be used in conjunction with the light temperature parameter.
 ```
 
-### Haloes, arches and photo rings
+#### Haloes, arches and photo rings
 
 A good camera setup further contributes to consistency in the capturing process.
 Ideally, the sample should be imaged with sufficient overlap between images.
@@ -99,6 +114,12 @@ Within a halo each image should be equally spaced; if not, something has possibl
 {numref}`photo_halo` has four rings in total, which means the sample has been imaged on four sides.
 Digitisation usually only succeeds when the sample is imaged in three distinct orientations, usually in top-down, down-top orientation, and a side-ways orientation that provides overlap between top-down and down-top orientations.
 Each additional orientation increases the confidence and success rate of the final digitisation.
+
+```{admonition} Turntable support
+:class: seealso
+We have access to a FOLDIO360 (lit) turntable at UNIS.
+The [Foldio360 Tutorial](../hss_tutorial "") details its use and allows you to automate a large part of the acquisition process.
+```
 
 ```{admonition} Scaled models
 :class: tip

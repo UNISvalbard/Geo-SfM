@@ -335,24 +335,31 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#to-digitising-handsamples">
-   101 to digitising handsamples
+  <a class="reference internal nav-link" href="#digitising-hand-sized-samples">
+   Digitising hand-sized samples
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#focus-aperture">
-     Focus &amp; aperture
+    <a class="reference internal nav-link" href="#to-digitising-handsamples">
+     101 to digitising handsamples
     </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-tripod-exposure-settings-and-colour-diagrams">
-     A tripod, exposure settings and colour diagrams
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#haloes-arches-and-photo-rings">
-     Haloes, arches and photo rings
-    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#focus-aperture">
+       Focus &amp; aperture
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#a-tripod-exposure-settings-and-colour-diagrams">
+       A tripod, exposure settings and colour diagrams
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#haloes-arches-and-photo-rings">
+       Haloes, arches and photo rings
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -377,24 +384,31 @@
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#to-digitising-handsamples">
-   101 to digitising handsamples
+  <a class="reference internal nav-link" href="#digitising-hand-sized-samples">
+   Digitising hand-sized samples
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#focus-aperture">
-     Focus &amp; aperture
+    <a class="reference internal nav-link" href="#to-digitising-handsamples">
+     101 to digitising handsamples
     </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-tripod-exposure-settings-and-colour-diagrams">
-     A tripod, exposure settings and colour diagrams
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#haloes-arches-and-photo-rings">
-     Haloes, arches and photo rings
-    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#focus-aperture">
+       Focus &amp; aperture
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#a-tripod-exposure-settings-and-colour-diagrams">
+       A tripod, exposure settings and colour diagrams
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#haloes-arches-and-photo-rings">
+       Haloes, arches and photo rings
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -418,7 +432,10 @@ In fact, smaller objects such as rocks make for a great way of learning SfM-phot
 </div>
 <p>Sadly, SketchFab does not (yet?) have distance querying built-in to the frontend.
 However, SketchFab Labs does provide such a feature.
-Access it <a class="reference external" href="https://labs.sketchfab.com/experiments/measurements/">here</a> or through the iFrame below; then search for <em>Rock sample Malte</em> or provide the link with model ID to load the model above and measure the sample’s dimensions.</p>
+Either access it through the URL link below, or use the embedded iFrame to search, load and measure <em>Malte’s Rock sample</em> from within this page.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">https://labs.sketchfab.com/experiments/measurements/</span><span class="w"></span>
+</pre></div>
+</div>
 <div class="seealso admonition">
 <p class="admonition-title">SketchFab 3D model (Verification)</p>
 <p>Verification of your data is key to whatever you do in life.
@@ -429,37 +446,46 @@ As such, why not ask Malte for the original rock sample and compare digital vs r
 </pre></div>
 </div>
 </div>
-<div class="section" id="to-digitising-handsamples">
-<h2>101 to digitising handsamples<a class="headerlink" href="#to-digitising-handsamples" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="digitising-hand-sized-samples">
+<h2>Digitising hand-sized samples<a class="headerlink" href="#digitising-hand-sized-samples" title="Permalink to this headline">¶</a></h2>
+<p>Betlem et al., <span id="id1">[<a class="reference internal" href="../about/zbiblio.html#id5">8</a>]</span> present an effective means to digitise hand-sized samples at their respective scales.
+While the paper focuses on drill core samples, the same methodology can be used for most hand-sized samples from the field, minerals (e.g., Malte’s mineral), and other object, with and without GCPs to ensure correct scaling.</p>
+<p>In short, the method relies on acquiring at least three photo haloes (i.e., 24-36 object-centred photos) of an object, in between which the object’s orientation has been changed (e.g., from normal position to upside-down to flipped 90 degrees).
+The easiest way of doing this is by using a well-lit round table, which allows a fixed rotation between each of the photos for a specific orientation.
+Furthermore, if one of the orientations contains GCPs, the resulting hand-sized sample model is automatically scaled correctly.</p>
 <div class="admonition-lecture admonition">
 <p class="admonition-title">Lecture</p>
 <iframe width="600" height="450" src="https://www.youtube-nocookie.com/embed/O6R1EEOrM4A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
-<p>Successful digitisation of small hand samples requires even better imaging routines.
-In a nutshell,</p>
+<div class="section" id="to-digitising-handsamples">
+<h3>101 to digitising handsamples<a class="headerlink" href="#to-digitising-handsamples" title="Permalink to this headline">¶</a></h3>
+<p>In a nutshell, successful digitisation of small hand samples can be summarised as follows:</p>
 <ol class="simple">
-<li><p>the target should cover the full frame of the image,</p></li>
+<li><p>Target-images should be offset by no more than 15 degrees,</p></li>
+<li><p>and the target’s orientation should be changed at least two times (=&gt; 3 photo haloes).</p></li>
+<li><p>The target should cover the full frame of the image,</p></li>
 <li><p>with the entirety of the target kept in focus.</p></li>
+<li><p>Enough light (i.e., minimal shadows) and correct colours</p></li>
 </ol>
 <div class="section" id="focus-aperture">
-<h3>Focus &amp; aperture<a class="headerlink" href="#focus-aperture" title="Permalink to this headline">¶</a></h3>
+<h4>Focus &amp; aperture<a class="headerlink" href="#focus-aperture" title="Permalink to this headline">¶</a></h4>
 <p>Given the proximity to smaller handsamples (centimetres versus (deca)metre scale for outcrops), the in-focus depth range of the image is important.
 Optimally, the entire object should be in focus, to enable accurate correlation of the entire object across multiple images, thereby increasing the final quality of the models.</p>
 <p>The impact of changing a camera’s aperture value on the focus/sharpness throughout the acquired image is shown in <a class="reference internal" href="#povray-focal-blur-animation"><span class="std std-numref">Fig. 32</span></a>.</p>
 <div class="figure align-default" id="povray-focal-blur-animation">
 <img alt="https://upload.wikimedia.org/wikipedia/commons/c/c3/Povray_focal_blur_animation.gif" src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Povray_focal_blur_animation.gif" />
-<p class="caption"><span class="caption-number">Fig. 32 </span><span class="caption-text">A computer animation showing the effect of how aperture change affects the focus area of the image  <span id="id1">[<a class="reference internal" href="../about/zbiblio.html#id2">8</a>]</span>.</span><a class="headerlink" href="#povray-focal-blur-animation" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 32 </span><span class="caption-text">A computer animation showing the effect of how aperture change affects the focus area of the image  <span id="id2">[<a class="reference internal" href="../about/zbiblio.html#id2">9</a>]</span>.</span><a class="headerlink" href="#povray-focal-blur-animation" title="Permalink to this image">¶</a></p>
 </div>
 <p>The largest in-focus field of depth therefore corresponds with the smallest aperture size (or largest f-number).
 This is something we should thus aim for when configuring our cameras.</p>
 <p>As seen in <a class="reference internal" href="#aperture-diagram"><span class="std std-numref">Fig. 33</span></a>, decreasing the aperture coincides with a reduction in light, and therefore requires either longer exposure times or a brighter imaging location.</p>
 <div class="figure align-default" id="aperture-diagram">
 <img alt="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Aperture_diagram.svg/1920px-Aperture_diagram.svg.png" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Aperture_diagram.svg/1920px-Aperture_diagram.svg.png" />
-<p class="caption"><span class="caption-number">Fig. 33 </span><span class="caption-text">Aperture sizes and related f-numbers. Going left to right, each circle is about a factor two smaller than the previous  <span id="id2">[<a class="reference internal" href="../about/zbiblio.html#id3">9</a>]</span>.</span><a class="headerlink" href="#aperture-diagram" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 33 </span><span class="caption-text">Aperture sizes and related f-numbers. Going left to right, each circle is about a factor two smaller than the previous  <span id="id3">[<a class="reference internal" href="../about/zbiblio.html#id3">10</a>]</span>.</span><a class="headerlink" href="#aperture-diagram" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="a-tripod-exposure-settings-and-colour-diagrams">
-<h3>A tripod, exposure settings and colour diagrams<a class="headerlink" href="#a-tripod-exposure-settings-and-colour-diagrams" title="Permalink to this headline">¶</a></h3>
+<h4>A tripod, exposure settings and colour diagrams<a class="headerlink" href="#a-tripod-exposure-settings-and-colour-diagrams" title="Permalink to this headline">¶</a></h4>
 <p>Longer exposure times in a bright environment have the risk of several things, most notably introducing blur by moving the camera, overexposing the targets, and/or bleaching the colours.</p>
 <p>First and foremost, image acquisition of handsamples should always use a tripod.
 Only a tripod keeps the camera exactly in place while taking an image, therefore preventing any blurring.
@@ -473,7 +499,7 @@ This works exceptionally well when coupled with <em>raw</em> imaging and can be 
 </div>
 </div>
 <div class="section" id="haloes-arches-and-photo-rings">
-<h3>Haloes, arches and photo rings<a class="headerlink" href="#haloes-arches-and-photo-rings" title="Permalink to this headline">¶</a></h3>
+<h4>Haloes, arches and photo rings<a class="headerlink" href="#haloes-arches-and-photo-rings" title="Permalink to this headline">¶</a></h4>
 <p>A good camera setup further contributes to consistency in the capturing process.
 Ideally, the sample should be imaged with sufficient overlap between images.
 Each of the haloes or photo rings in <a class="reference internal" href="#photo-halo"><span class="std std-numref">Fig. 34</span></a> represents this, with equal distances between the images in each ring.</p>
@@ -486,10 +512,16 @@ Within a halo each image should be equally spaced; if not, something has possibl
 <p><a class="reference internal" href="#photo-halo"><span class="std std-numref">Fig. 34</span></a> has four rings in total, which means the sample has been imaged on four sides.
 Digitisation usually only succeeds when the sample is imaged in three distinct orientations, usually in top-down, down-top orientation, and a side-ways orientation that provides overlap between top-down and down-top orientations.
 Each additional orientation increases the confidence and success rate of the final digitisation.</p>
+<div class="seealso admonition">
+<p class="admonition-title">Turntable support</p>
+<p>We have access to a FOLDIO360 (lit) turntable at UNIS.
+The <span class="xref myst">Foldio360 Tutorial</span> details its use and allows you to automate a large part of the acquisition process.</p>
+</div>
 <div class="tip admonition">
 <p class="admonition-title">Scaled models</p>
 <p>By including ground control points (GCPs) in a single orientation (as per the <a class="reference internal" href="../l2/exercise2.html"><span class="doc std std-doc">GCP exercise</span></a>), you can easily <em>georeference</em> the samples to their real-world scale.
 However, make sure to only do so for <em>one (1)</em> orientation, as GCPs are considered absolute reference points during processing and take precedence in aligning (or misaligning) your images!</p>
+</div>
 </div>
 </div>
 </div>
