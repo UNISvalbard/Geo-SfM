@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Digitising small objects &#8212; Geo-SfM Course Beta</title>
+    <title>Small object SfM photogrammetry &#8212; Geo-SfM Course Beta</title>
     
   <link href="../../../_static/css/theme.css" rel="stylesheet">
   <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -51,7 +51,7 @@
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Foldio360 Tutorial" href="hss_tutorial.html" />
+    <link rel="next" title="Exercise 3 - Food for thought" href="hss_lab_exercise.html" />
     <link rel="prev" title="Python-based standardised processing" href="../l3/python.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -180,12 +180,7 @@
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Digitising small objects
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="hss_tutorial.html">
-   Foldio360 Tutorial
+   Small object SfM photogrammetry
   </a>
  </li>
  <li class="toctree-l1">
@@ -196,6 +191,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="hss_field_exercise.html">
    Exercise 4 - Digitising field samples
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="hss_tutorial.html">
+   Foldio360 Tutorial
   </a>
  </li>
 </ul>
@@ -329,6 +329,36 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#to-digitising-handsamples">
+   101 to digitising handsamples
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#focus-aperture">
+     Focus &amp; aperture
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-tripod-exposure-settings-and-colour-diagrams">
+     A tripod, exposure settings and colour diagrams
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#haloes-arches-and-photo-rings">
+     Haloes, arches and photo rings
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -336,36 +366,132 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Digitising small objects</h1>
+                <h1>Small object SfM photogrammetry</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#to-digitising-handsamples">
+   101 to digitising handsamples
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#focus-aperture">
+     Focus &amp; aperture
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-tripod-exposure-settings-and-colour-diagrams">
+     A tripod, exposure settings and colour diagrams
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#haloes-arches-and-photo-rings">
+     Haloes, arches and photo rings
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="digitising-small-objects">
-<h1>Digitising small objects<a class="headerlink" href="#digitising-small-objects" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="small-object-sfm-photogrammetry">
+<h1>Small object SfM photogrammetry<a class="headerlink" href="#small-object-sfm-photogrammetry" title="Permalink to this headline">¶</a></h1>
 <p>The various tips and tricks learned in the previous sessions can not only be applied to human-and-larger-scale objects, but also to objects only centimetres tall.
 In fact, smaller objects such as rocks make for a great way of learning SfM-photogrammetry.</p>
-<div class="admonition-lecture admonition">
-<p class="admonition-title">Lecture</p>
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/O6R1EEOrM4A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
 <p>A good example of a digitised handsized sample is Malte’s mineral below, which has been digitised to scale through use of ground control points.</p>
-<div class="sketchfab-embed-wrapper">
-    <iframe title="A 3D model" width="100%" src="https://sketchfab.com/models/b2cb2ad336dd402eb3dc4222bb03d4bd/embed?autostart=0&amp;camera=0&amp;ui_controls=1&amp;ui_infos=1&amp;ui_inspector=1&amp;ui_stop=1&amp;ui_watermark=1&amp;ui_watermark_link=1" frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+<div class="admonition-sketchfab-3d-model admonition">
+<p class="admonition-title">SketchFab 3D model</p>
+<iframe title="A 3D model" width="600" height="450" src="https://sketchfab.com/models/b2cb2ad336dd402eb3dc4222bb03d4bd/embed?autostart=0&amp;camera=0&amp;ui_controls=1&amp;ui_infos=1&amp;ui_inspector=1&amp;ui_stop=1&amp;ui_watermark=1&amp;ui_watermark_link=1" frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 </div>
 <p>Sadly, SketchFab does not (yet?) have distance querying built-in to the frontend.
 However, SketchFab Labs does provide such a feature.
-Access it <a class="reference external" href="https://labs.sketchfab.com/experiments/measurements/">here</a> and search for <em>Rock sample Malte</em> to load the model above and measure the sample’s dimensions.</p>
+Access it <a class="reference external" href="https://labs.sketchfab.com/experiments/measurements/">here</a> or through the iFrame below; then search for <em>Rock sample Malte</em> or provide the link with model ID to load the model above and measure the sample’s dimensions.</p>
 <div class="seealso admonition">
-<p class="admonition-title">Verification</p>
+<p class="admonition-title">SketchFab 3D model (Verification)</p>
 <p>Verification of your data is key to whatever you do in life.
 As such, why not ask Malte for the original rock sample and compare digital vs real dimensions?</p>
+<iframe title="A 3D model" width="600" height="450" src="https://labs.sketchfab.com/experiments/measurements/#!/" frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+<p>Load Malte’s rock sample by clicking <em>LOAD 3D MODEL</em> and enter the model url:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">https://sketchfab.com/models/b2cb2ad336dd402eb3dc4222bb03d4bd</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="to-digitising-handsamples">
+<h2>101 to digitising handsamples<a class="headerlink" href="#to-digitising-handsamples" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-lecture admonition">
+<p class="admonition-title">Lecture</p>
+<iframe width="600" height="450" src="https://www.youtube-nocookie.com/embed/O6R1EEOrM4A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<p>Successful digitisation of small hand samples requires even better imaging routines.
+In a nutshell,</p>
+<ol class="simple">
+<li><p>the target should cover the full frame of the image,</p></li>
+<li><p>with the entirety of the target kept in focus.</p></li>
+</ol>
+<div class="section" id="focus-aperture">
+<h3>Focus &amp; aperture<a class="headerlink" href="#focus-aperture" title="Permalink to this headline">¶</a></h3>
+<p>Given the proximity to smaller handsamples (centimetres versus (deca)metre scale for outcrops), the in-focus depth range of the image is important.
+Optimally, the entire object should be in focus, to enable accurate correlation of the entire object across multiple images, thereby increasing the final quality of the models.</p>
+<p>The impact of changing a camera’s aperture value on the focus/sharpness throughout the acquired image is shown in <a class="reference internal" href="#povray-focal-blur-animation"><span class="std std-numref">Fig. 32</span></a>.</p>
+<div class="figure align-default" id="povray-focal-blur-animation">
+<img alt="https://upload.wikimedia.org/wikipedia/commons/c/c3/Povray_focal_blur_animation.gif" src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Povray_focal_blur_animation.gif" />
+<p class="caption"><span class="caption-number">Fig. 32 </span><span class="caption-text">A computer animation showing the effect of how aperture change affects the focus area of the image  <span id="id1">[<a class="reference internal" href="../about/zbiblio.html#id2">8</a>]</span>.</span><a class="headerlink" href="#povray-focal-blur-animation" title="Permalink to this image">¶</a></p>
+</div>
+<p>The largest in-focus field of depth therefore corresponds with the smallest aperture size (or largest f-number).
+This is something we should thus aim for when configuring our cameras.</p>
+<p>As seen in <a class="reference internal" href="#aperture-diagram"><span class="std std-numref">Fig. 33</span></a>, decreasing the aperture coincides with a reduction in light, and therefore requires either longer exposure times or a brighter imaging location.</p>
+<div class="figure align-default" id="aperture-diagram">
+<img alt="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Aperture_diagram.svg/1920px-Aperture_diagram.svg.png" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Aperture_diagram.svg/1920px-Aperture_diagram.svg.png" />
+<p class="caption"><span class="caption-number">Fig. 33 </span><span class="caption-text">Aperture sizes and related f-numbers. Going left to right, each circle is about a factor two smaller than the previous  <span id="id2">[<a class="reference internal" href="../about/zbiblio.html#id3">9</a>]</span>.</span><a class="headerlink" href="#aperture-diagram" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="a-tripod-exposure-settings-and-colour-diagrams">
+<h3>A tripod, exposure settings and colour diagrams<a class="headerlink" href="#a-tripod-exposure-settings-and-colour-diagrams" title="Permalink to this headline">¶</a></h3>
+<p>Longer exposure times in a bright environment have the risk of several things, most notably introducing blur by moving the camera, overexposing the targets, and/or bleaching the colours.</p>
+<p>First and foremost, image acquisition of handsamples should always use a tripod.
+Only a tripod keeps the camera exactly in place while taking an image, therefore preventing any blurring.
+For the same reason, a remote trigger is preferable.</p>
+<p>When it comes to lighting, the object should be lit uniformly from all sides to prevent shadows and texture-colour change as a result of the lighting.
+Further, knowing the temperature of the light allows one to specify the light temperature as an acquisition parameter, which should compensate the colour adjustment in the final photos and result in <em>True Colours</em>.</p>
+<div class="tip admonition">
+<p class="admonition-title">True Colours</p>
+<p>Capture a colour card in the background of your sample to adjust the colour balance as part of post processing.
+This works exceptionally well when coupled with <em>raw</em> imaging and can be used in conjunction with the light temperature parameter.</p>
+</div>
+</div>
+<div class="section" id="haloes-arches-and-photo-rings">
+<h3>Haloes, arches and photo rings<a class="headerlink" href="#haloes-arches-and-photo-rings" title="Permalink to this headline">¶</a></h3>
+<p>A good camera setup further contributes to consistency in the capturing process.
+Ideally, the sample should be imaged with sufficient overlap between images.
+Each of the haloes or photo rings in <a class="reference internal" href="#photo-halo"><span class="std std-numref">Fig. 34</span></a> represents this, with equal distances between the images in each ring.</p>
+<div class="figure align-default" id="photo-halo">
+<img alt="../../../_images/photo_halo.png" src="../../../_images/photo_halo.png" />
+<p class="caption"><span class="caption-number">Fig. 34 </span><span class="caption-text">Haloes around the sample (centre point).
+Each halo comprises all the photos taken of the sample in a specific orientation, meaning the sample shown has been imaged in four distinct positions.
+Within a halo each image should be equally spaced; if not, something has possibly gone wrong either during acquisition (or photo alignment), and needs checking.</span><a class="headerlink" href="#photo-halo" title="Permalink to this image">¶</a></p>
+</div>
+<p><a class="reference internal" href="#photo-halo"><span class="std std-numref">Fig. 34</span></a> has four rings in total, which means the sample has been imaged on four sides.
+Digitisation usually only succeeds when the sample is imaged in three distinct orientations, usually in top-down, down-top orientation, and a side-ways orientation that provides overlap between top-down and down-top orientations.
+Each additional orientation increases the confidence and success rate of the final digitisation.</p>
+<div class="tip admonition">
+<p class="admonition-title">Scaled models</p>
+<p>By including ground control points (GCPs) in a single orientation (as per the <a class="reference internal" href="../l2/exercise2.html"><span class="doc std std-doc">GCP exercise</span></a>), you can easily <em>georeference</em> the samples to their real-world scale.
+However, make sure to only do so for <em>one (1)</em> orientation, as GCPs are considered absolute reference points during processing and take precedence in aligning (or misaligning) your images!</p>
+</div>
+</div>
 </div>
 </div>
 
@@ -401,10 +527,10 @@ As such, why not ask Malte for the original rock sample and compare digital vs r
             <p class="prev-next-title">Python-based standardised processing</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="hss_tutorial.html" title="next page">
+    <a class='right-next' id="next-link" href="hss_lab_exercise.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Foldio360 Tutorial</p>
+        <p class="prev-next-title">Exercise 3 - Food for thought</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
