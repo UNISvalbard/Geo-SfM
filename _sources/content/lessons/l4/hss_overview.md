@@ -20,15 +20,23 @@ https://labs.sketchfab.com/experiments/measurements/
 ````{admonition} SketchFab 3D model (Verification)
 :class: seealso
 
+<iframe title="A 3D model" width="600" height="450" src="https://labs.sketchfab.com/experiments/measurements/#!/" frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+
 Verification of your data is key to whatever you do in life.
 As such, why not ask Malte for the original rock sample and compare digital vs real dimensions?
 
-<iframe title="A 3D model" width="600" height="450" src="https://labs.sketchfab.com/experiments/measurements/#!/" frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+You first need to load *Malte's rock sample* into the SketchFab instance by clicking *LOAD 3D MODEL*.
+In the popup, either search *Rock Sample Malte* or click *FROM URL* and paste the URL you copied from below:
 
-Load Malte's rock sample by clicking *LOAD 3D MODEL* and enter the model url:
 ```yaml
 https://sketchfab.com/models/b2cb2ad336dd402eb3dc4222bb03d4bd
 ```
+
+By clicking two points on the model, the *Distance* table updates and shows you a unitless measurement.
+We however know that *Malte's rock sample* has been georeferenced in metric units.
+By increasing the multiplier to 100, we then turn the measurements to centimetres.
+
 ````
 
 ## Digitising hand-sized samples
