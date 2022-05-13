@@ -4,13 +4,10 @@
 The following exercise is to be completed **prior to the final semester presentation**.
 ```
 
-{cite}`betlemDigitalDrillCore2020` present an effective method to digitise hand-sized samples at their respective scales.
-While the paper focuses on drill core samples, the same GCP-based methodology can be used for most hand-sized samples from the field, minerals (e.g., Malte's mineral), and other object.
-
-In short, the method relies on acquiring a single GCP-calibrated photo halo (i.e., 24-36 object-centered photos taken in which at least 5 well-referenced GCPs surround the object) alongside at least two additional photo haloes for which the object's orientation has been changed (see {numref}`tobedone`).
-This is easily done through use of a well-lit round-table or, as present at UNIS, an [automated photography light box](../about/seismic_lab#automated-photography-lightbox "seismiclab") combined with the [automated Python scripts package](../l3/python "python").
-
-A summary of the methodology as well as numerous tips and tricks can be found in the [Resources sections](../suppl/best_practices#Lightbox "best_practices_lightbox"), which should be explored as part of the open-ended exercise below.
+```{admonition} Deadline
+:class: seealso
+A summary of the methodology as well as numerous tips and tricks can be found in the [Small object SfM photogrammetry](../hss_tutorial "") and [Foldio360 Tutorial](../hss_tutorial "") pages, which should be explored as part of the open-ended exercise below.
+```
 
 ## Exercise
 
@@ -22,7 +19,7 @@ A summary of the methodology as well as numerous tips and tricks can be found in
 ````{admonition} Bulk sample density
 :class: note
 
-Seeing as your digital model is 1:1 scaled with the real sample, any idea on how to calculate its wet bulk density?
+Seeing as your digital model is 1:1 scaled with the real sample, any idea on how to calculate its bulk density?
 
 ```{admonition} Metashape volume measurement
 :class: tip
