@@ -1,6 +1,7 @@
 # Small object SfM photogrammetry
 
 ## Malte's rock sample and digital measurements
+
 The various tips and tricks learned in the previous sessions can not only be applied to human-and-larger-scale objects, but also to objects only centimetres tall.
 In fact, smaller objects such as rocks make for a great way of learning SfM-photogrammetry.
 
