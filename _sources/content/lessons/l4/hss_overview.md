@@ -118,7 +118,7 @@ Each additional orientation increases the confidence and success rate of the fin
 ```{admonition} Turntable support
 :class: seealso
 We have access to a FOLDIO360 (lit) turntable at UNIS.
-The [Foldio360 Tutorial](../hss_tutorial "") details its use and allows you to automate a large part of the acquisition process.
+The [Foldio360 Tutorial](./hss_tutorial "") details its use and allows you to automate a large part of the acquisition process.
 ```
 
 ```{admonition} Scaled models
