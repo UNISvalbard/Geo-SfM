@@ -1,0 +1,574 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Downloading and PPK dGNSS data &#8212; Geo-SfM Course Beta</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Best practices" href="../suppl/best_practices.html" />
+    <link rel="prev" title="Geomodeling tutorial" href="../l5/geomodel_tutorial.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/logo.gif" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Geo-SfM Course Beta</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../landing-page.html">
+   Welcome to Geo-SfM
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Session 1
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../l1/sfm_photogrammetry.html">
+   SfM photogrammetry
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../l1/quiz.html">
+   SfM photogrammetry Quiz
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../l1/exercise1.html">
+   Exercise 1 - learning the ropes of SfM photogrammetry
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../l1/tutorial.html">
+   Metashape Tutorial
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Session 2
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../l2/overview.html">
+   Geo-referencing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../l2/gcps.html">
+   Ground control points (GCPs)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../l2/exercise2.html">
+   Exercise 2 - learning the ropes of GCP and marker detection
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../l2/markers.html">
+   GCP tutorial
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Session 3
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../l3/overview.html">
+   Automation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../l3/Batch.html">
+   Batch-based processing through Metashape GUI
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../l3/python.html">
+   Python-based standardised processing
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Session 4
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../l4/hss_overview.html">
+   Small object SfM photogrammetry
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../l4/quiz.html">
+   Hand-sized Sample Quiz
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../l4/hss_lab_exercise.html">
+   Exercise 3 - Food for thought
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../l4/hss_field_exercise.html">
+   Exercise 4 - Digitising field samples
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../l4/hss_tutorial.html">
+   Foldio360 Tutorial
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Session 5
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../l5/geomodel_overview.html">
+   Geomodelling overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../l5/geomodel_tutorial.html">
+   Geomodeling tutorial
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Supplementary - dGNSS data processing
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Downloading and PPK dGNSS data
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Resources
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../suppl/best_practices.html">
+   Best practices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../suppl/metadata_lists.html">
+   Metadata templates for archiving
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/seismic_lab.html">
+   Seismic lab (Signehamna)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/software.html">
+   Software
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/zbiblio.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/content/lessons/suppl_dgnss/dgnss_data_downloading.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/UNISvalbard/Geo-SfM"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/UNISvalbard/Geo-SfM/issues/new?title=Issue%20on%20page%20%2Fcontent/lessons/suppl_dgnss/dgnss_data_downloading.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#accessing-lyrs-base-station-data">
+   Accessing LYRS base station data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-python-way-of-downloading-data">
+     The Python way of downloading data
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Downloading and PPK dGNSS data</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#accessing-lyrs-base-station-data">
+   Accessing LYRS base station data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-python-way-of-downloading-data">
+     The Python way of downloading data
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="downloading-and-ppk-dgnss-data">
+<h1>Downloading and PPK dGNSS data<a class="headerlink" href="#downloading-and-ppk-dgnss-data" title="Permalink to this headline">¶</a></h1>
+<p>For post processing of the acquired dGNSS data in the field we require additional data from a base station.
+At UNIS we have access to the Longyearbyen base station data (“LYRS”) through kartverket.</p>
+<div class="section" id="accessing-lyrs-base-station-data">
+<h2>Accessing LYRS base station data<a class="headerlink" href="#accessing-lyrs-base-station-data" title="Permalink to this headline">¶</a></h2>
+<p>This data can be downloaded through the following domain:</p>
+<p>´´´yaml
+<a class="reference external" href="http://etpos.kartverket.no">etpos.kartverket.no</a>
+´´´</p>
+<p>Credentials can either be privately acquired from kartverket, or are available to UNIS students and staff (ask Peter Betlem or Sara Mollie Cohen).
+The webportal provides an ftp-like interface, in which files are sorted based on the following syntax:</p>
+<p>´´´yaml
+/rnx3/<duration>/<rate>/<year>/<doy>/<name>
+´´´</p>
+<p>der <duration> er filens varighet, <rate> er tidsoppløsningen på observasjonene i filen, <year> er årstall og <doy> er dagnummer i året (1-366).
+In general, it is best to download the 24 hour interval, with 1 second data rate.
+<a class="reference internal" href="#etpos-kartverket"><span class="std std-numref">Fig. 41</span></a> shows how to download all required data for a single day.
+This will need to be done for all days on which location data was acquired in the field.</p>
+<div class="figure align-default" id="etpos-kartverket">
+<img alt="../../../_images/etpos_kartverket.gif" src="../../../_images/etpos_kartverket.gif" />
+<p class="caption"><span class="caption-number">Fig. 41 </span><span class="caption-text">Downloading all required rnx3 data for day 90 of the year 2022.</span><a class="headerlink" href="#etpos-kartverket" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="the-python-way-of-downloading-data">
+<h3>The Python way of downloading data<a class="headerlink" href="#the-python-way-of-downloading-data" title="Permalink to this headline">¶</a></h3>
+<p>The script below provides an alternative way of downloading the data.
+In the script, make sure to specify the usernanem, password, data_storage_path and dates.</p>
+<div class="warning admonition">
+<p class="admonition-title">Required packages</p>
+<p>The script requires some additional packages.
+These can be easily downloaded through the conda package manager:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">conda install paramiko -c conda-forge</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+```python3
+import paramiko
+import datetime as dt
+from pathlib import Path
+import math
+import sys
+
+hostname = &quot;etpos.kartverket.no&quot;
+username = &quot;&quot; # fill this out
+password = &quot;&quot; # fill this out
+
+start_date = &quot;&quot; # fill this out in YYYYMMDD format, e.g. 19th April 2022 = 20220419
+end_date = &quot;&quot; # fill this out in YYYYMMDD format, e.g. 19th April 2022 = 20220419
+station_short = &quot;LYRS&quot; # 4-letter station name
+
+data_storage_path = &quot;data&quot; # path to where to store the data.
+
+def convert_start_end_dates_to_year_day_of(start_date,end_date):
+    start_date = dt.datetime.strptime(start_date, &quot;%Y%m%d&quot;)
+    end_date = dt.datetime.strptime(end_date, &quot;%Y%m%d&quot;)
+    return start_date.year, start_date.timetuple().tm_yday, end_date.timetuple().tm_yday
+
+def progressbar(x, y, filename):
+    &#39;&#39;&#39; progressbar for the pysftp
+    &#39;&#39;&#39;
+    bar_len = 60
+    filled_len = math.ceil(bar_len * x / float(y))
+    percents = math.ceil(100.0 * x / float(y))
+    bar = &#39;=&#39; * filled_len + &#39;-&#39; * (bar_len - filled_len)
+    filesize = f&#39;{math.ceil(y/(1024*1024)):,} MB&#39; if y &gt; 1024 else f&#39;{math.ceil(y/1024):,} KB&#39;
+    sys.stdout.write(f&#39;[{bar}] {percents}% {filesize} - {filename}(\r&#39;)
+    if percents &lt; 100:
+        sys.stdout.flush()
+
+year, start_day, end_day =  convert_start_end_dates_to_year_day_of(start_date,end_date)
+
+data_storage_path = Path(data_storage_path)
+data_storage_path.mkdir(parents=True, exist_ok=True)
+
+with paramiko.Transport((hostname,22)) as transport:
+    # SFTP FIXES
+    transport.default_window_size=paramiko.common.MAX_WINDOW_SIZE
+    transport.packetizer.REKEY_BYTES = pow(2, 40)  # 1TB max, this is a security degradation!
+    transport.packetizer.REKEY_PACKETS = pow(2, 40)  # 1TB max, this is a security degradation!
+    # / SFTP FIXES
+    transport.connect(None,username,password)
+    with paramiko.SFTPClient.from_transport(transport) as sftp:
+
+        print(&quot;Connection successfully established ... &quot;)
+        try:
+            for day in range(start_day, end_day, 1):
+                sftp.chdir(f&#39;/rnx3/24hour/1sec/{year}/{str(day).zfill(3)}&#39;)
+
+                directory_structure = sftp.listdir_attr()
+                lyrs = [attr for attr in directory_structure if &quot;LYRS&quot; in attr.filename]
+
+                for attr in lyrs:
+                    sftp.get(attr.filename, Path(data_storage_path,attr.filename), callback=lambda x,y: progressbar(x,y, attr.filename))
+                    print(f&quot;Downloaded {attr.filename}&quot;)
+        except Exception as e:
+            print(&quot;Unable to download selected dates. Check dates or contact Kartverket...&quot;)
+            print(f&quot;Error: {e}&quot;)
+            pass
+
+```
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content\lessons\suppl_dgnss"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../l5/geomodel_tutorial.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Geomodeling tutorial</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../suppl/best_practices.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Best practices</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Peter Betlem<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
