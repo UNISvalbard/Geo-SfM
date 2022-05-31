@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Downloading and PPK dGNSS data &#8212; Geo-SfM Course Beta</title>
+    <title>Downloading base station dGNSS data &#8212; Geo-SfM Course Beta</title>
     
   <link href="../../../_static/css/theme.css" rel="stylesheet">
   <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -223,13 +223,13 @@
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Supplementary - dGNSS data processing
+  Suppl. dGNSS data processing
  </span>
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Downloading and PPK dGNSS data
+   Downloading base station dGNSS data
   </a>
  </li>
 </ul>
@@ -373,7 +373,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Downloading and PPK dGNSS data</h1>
+                <h1>Downloading base station dGNSS data</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -404,21 +404,21 @@
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="downloading-and-ppk-dgnss-data">
-<h1>Downloading and PPK dGNSS data<a class="headerlink" href="#downloading-and-ppk-dgnss-data" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="downloading-base-station-dgnss-data">
+<h1>Downloading base station dGNSS data<a class="headerlink" href="#downloading-base-station-dgnss-data" title="Permalink to this headline">¶</a></h1>
 <p>For post processing of the acquired dGNSS data in the field we require additional data from a base station.
 At UNIS we have access to the Longyearbyen base station data (“LYRS”) through kartverket.</p>
 <div class="section" id="accessing-lyrs-base-station-data">
 <h2>Accessing LYRS base station data<a class="headerlink" href="#accessing-lyrs-base-station-data" title="Permalink to this headline">¶</a></h2>
 <p>This data can be downloaded through the following domain:</p>
-<p>´´´yaml
-<a class="reference external" href="http://etpos.kartverket.no">etpos.kartverket.no</a>
-´´´</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">etpos.kartverket.no</span><span class="w"></span>
+</pre></div>
+</div>
 <p>Credentials can either be privately acquired from kartverket, or are available to UNIS students and staff (ask Peter Betlem or Sara Mollie Cohen).
 The webportal provides an ftp-like interface, in which files are sorted based on the following syntax:</p>
-<p>´´´yaml
-/rnx3/<duration>/<rate>/<year>/<doy>/<name>
-´´´</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">/rnx3/&lt;duration&gt;/&lt;rate&gt;/&lt;year&gt;/&lt;doy&gt;/&lt;name&gt;</span><span class="w"></span>
+</pre></div>
+</div>
 <p>der <duration> er filens varighet, <rate> er tidsoppløsningen på observasjonene i filen, <year> er årstall og <doy> er dagnummer i året (1-366).
 In general, it is best to download the 24 hour interval, with 1 second data rate.
 <a class="reference internal" href="#etpos-kartverket"><span class="std std-numref">Fig. 41</span></a> shows how to download all required data for a single day.
@@ -439,72 +439,69 @@ These can be easily downloaded through the conda package manager:</p>
 </pre></div>
 </div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-```python3
-import paramiko
-import datetime as dt
-from pathlib import Path
-import math
-import sys
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">paramiko</span>
+<span class="kn">import</span> <span class="nn">datetime</span> <span class="k">as</span> <span class="nn">dt</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">sys</span>
 
-hostname = &quot;etpos.kartverket.no&quot;
-username = &quot;&quot; # fill this out
-password = &quot;&quot; # fill this out
+<span class="n">hostname</span> <span class="o">=</span> <span class="s2">&quot;etpos.kartverket.no&quot;</span>
+<span class="n">username</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="c1"># fill this out</span>
+<span class="n">password</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="c1"># fill this out</span>
 
-start_date = &quot;&quot; # fill this out in YYYYMMDD format, e.g. 19th April 2022 = 20220419
-end_date = &quot;&quot; # fill this out in YYYYMMDD format, e.g. 19th April 2022 = 20220419
-station_short = &quot;LYRS&quot; # 4-letter station name
+<span class="n">start_date</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="c1"># fill this out in YYYYMMDD format, e.g. 19th April 2022 = 20220419</span>
+<span class="n">end_date</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="c1"># fill this out in YYYYMMDD format, e.g. 19th April 2022 = 20220419</span>
+<span class="n">station_short</span> <span class="o">=</span> <span class="s2">&quot;LYRS&quot;</span> <span class="c1"># 4-letter station name</span>
 
-data_storage_path = &quot;data&quot; # path to where to store the data.
+<span class="n">data_storage_path</span> <span class="o">=</span> <span class="s2">&quot;data&quot;</span> <span class="c1"># path to where to store the data.</span>
 
-def convert_start_end_dates_to_year_day_of(start_date,end_date):
-    start_date = dt.datetime.strptime(start_date, &quot;%Y%m%d&quot;)
-    end_date = dt.datetime.strptime(end_date, &quot;%Y%m%d&quot;)
-    return start_date.year, start_date.timetuple().tm_yday, end_date.timetuple().tm_yday
+<span class="k">def</span> <span class="nf">convert_start_end_dates_to_year_day_of</span><span class="p">(</span><span class="n">start_date</span><span class="p">,</span><span class="n">end_date</span><span class="p">):</span>
+    <span class="n">start_date</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">start_date</span><span class="p">,</span> <span class="s2">&quot;%Y%m</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">end_date</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">end_date</span><span class="p">,</span> <span class="s2">&quot;%Y%m</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">start_date</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="n">start_date</span><span class="o">.</span><span class="n">timetuple</span><span class="p">()</span><span class="o">.</span><span class="n">tm_yday</span><span class="p">,</span> <span class="n">end_date</span><span class="o">.</span><span class="n">timetuple</span><span class="p">()</span><span class="o">.</span><span class="n">tm_yday</span>
 
-def progressbar(x, y, filename):
-    &#39;&#39;&#39; progressbar for the pysftp
-    &#39;&#39;&#39;
-    bar_len = 60
-    filled_len = math.ceil(bar_len * x / float(y))
-    percents = math.ceil(100.0 * x / float(y))
-    bar = &#39;=&#39; * filled_len + &#39;-&#39; * (bar_len - filled_len)
-    filesize = f&#39;{math.ceil(y/(1024*1024)):,} MB&#39; if y &gt; 1024 else f&#39;{math.ceil(y/1024):,} KB&#39;
-    sys.stdout.write(f&#39;[{bar}] {percents}% {filesize} - {filename}(\r&#39;)
-    if percents &lt; 100:
-        sys.stdout.flush()
+<span class="k">def</span> <span class="nf">progressbar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39; progressbar for the pysftp</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">bar_len</span> <span class="o">=</span> <span class="mi">60</span>
+    <span class="n">filled_len</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">bar_len</span> <span class="o">*</span> <span class="n">x</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+    <span class="n">percents</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="mf">100.0</span> <span class="o">*</span> <span class="n">x</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+    <span class="n">bar</span> <span class="o">=</span> <span class="s1">&#39;=&#39;</span> <span class="o">*</span> <span class="n">filled_len</span> <span class="o">+</span> <span class="s1">&#39;-&#39;</span> <span class="o">*</span> <span class="p">(</span><span class="n">bar_len</span> <span class="o">-</span> <span class="n">filled_len</span><span class="p">)</span>
+    <span class="n">filesize</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="p">(</span><span class="mi">1024</span><span class="o">*</span><span class="mi">1024</span><span class="p">))</span><span class="si">:</span><span class="s1">,</span><span class="si">}</span><span class="s1"> MB&#39;</span> <span class="k">if</span> <span class="n">y</span> <span class="o">&gt;</span> <span class="mi">1024</span> <span class="k">else</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="mi">1024</span><span class="p">)</span><span class="si">:</span><span class="s1">,</span><span class="si">}</span><span class="s1"> KB&#39;</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;[</span><span class="si">{</span><span class="n">bar</span><span class="si">}</span><span class="s1">] </span><span class="si">{</span><span class="n">percents</span><span class="si">}</span><span class="s1">% </span><span class="si">{</span><span class="n">filesize</span><span class="si">}</span><span class="s1"> - </span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s1">(</span><span class="se">\r</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">percents</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
 
-year, start_day, end_day =  convert_start_end_dates_to_year_day_of(start_date,end_date)
+<span class="n">year</span><span class="p">,</span> <span class="n">start_day</span><span class="p">,</span> <span class="n">end_day</span> <span class="o">=</span>  <span class="n">convert_start_end_dates_to_year_day_of</span><span class="p">(</span><span class="n">start_date</span><span class="p">,</span><span class="n">end_date</span><span class="p">)</span>
 
-data_storage_path = Path(data_storage_path)
-data_storage_path.mkdir(parents=True, exist_ok=True)
+<span class="n">data_storage_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">data_storage_path</span><span class="p">)</span>
+<span class="n">data_storage_path</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-with paramiko.Transport((hostname,22)) as transport:
-    # SFTP FIXES
-    transport.default_window_size=paramiko.common.MAX_WINDOW_SIZE
-    transport.packetizer.REKEY_BYTES = pow(2, 40)  # 1TB max, this is a security degradation!
-    transport.packetizer.REKEY_PACKETS = pow(2, 40)  # 1TB max, this is a security degradation!
-    # / SFTP FIXES
-    transport.connect(None,username,password)
-    with paramiko.SFTPClient.from_transport(transport) as sftp:
+<span class="k">with</span> <span class="n">paramiko</span><span class="o">.</span><span class="n">Transport</span><span class="p">((</span><span class="n">hostname</span><span class="p">,</span><span class="mi">22</span><span class="p">))</span> <span class="k">as</span> <span class="n">transport</span><span class="p">:</span>
+    <span class="c1"># SFTP FIXES</span>
+    <span class="n">transport</span><span class="o">.</span><span class="n">default_window_size</span><span class="o">=</span><span class="n">paramiko</span><span class="o">.</span><span class="n">common</span><span class="o">.</span><span class="n">MAX_WINDOW_SIZE</span>
+    <span class="n">transport</span><span class="o">.</span><span class="n">packetizer</span><span class="o">.</span><span class="n">REKEY_BYTES</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>  <span class="c1"># 1TB max, this is a security degradation!</span>
+    <span class="n">transport</span><span class="o">.</span><span class="n">packetizer</span><span class="o">.</span><span class="n">REKEY_PACKETS</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>  <span class="c1"># 1TB max, this is a security degradation!</span>
+    <span class="c1"># / SFTP FIXES</span>
+    <span class="n">transport</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span><span class="n">username</span><span class="p">,</span><span class="n">password</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">paramiko</span><span class="o">.</span><span class="n">SFTPClient</span><span class="o">.</span><span class="n">from_transport</span><span class="p">(</span><span class="n">transport</span><span class="p">)</span> <span class="k">as</span> <span class="n">sftp</span><span class="p">:</span>
 
-        print(&quot;Connection successfully established ... &quot;)
-        try:
-            for day in range(start_day, end_day, 1):
-                sftp.chdir(f&#39;/rnx3/24hour/1sec/{year}/{str(day).zfill(3)}&#39;)
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Connection successfully established ... &quot;</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">day</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">start_day</span><span class="p">,</span> <span class="n">end_day</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+                <span class="n">sftp</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;/rnx3/24hour/1sec/</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">day</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 
-                directory_structure = sftp.listdir_attr()
-                lyrs = [attr for attr in directory_structure if &quot;LYRS&quot; in attr.filename]
+                <span class="n">directory_structure</span> <span class="o">=</span> <span class="n">sftp</span><span class="o">.</span><span class="n">listdir_attr</span><span class="p">()</span>
+                <span class="n">lyrs</span> <span class="o">=</span> <span class="p">[</span><span class="n">attr</span> <span class="k">for</span> <span class="n">attr</span> <span class="ow">in</span> <span class="n">directory_structure</span> <span class="k">if</span> <span class="s2">&quot;LYRS&quot;</span> <span class="ow">in</span> <span class="n">attr</span><span class="o">.</span><span class="n">filename</span><span class="p">]</span>
 
-                for attr in lyrs:
-                    sftp.get(attr.filename, Path(data_storage_path,attr.filename), callback=lambda x,y: progressbar(x,y, attr.filename))
-                    print(f&quot;Downloaded {attr.filename}&quot;)
-        except Exception as e:
-            print(&quot;Unable to download selected dates. Check dates or contact Kartverket...&quot;)
-            print(f&quot;Error: {e}&quot;)
-            pass
+                <span class="k">for</span> <span class="n">attr</span> <span class="ow">in</span> <span class="n">lyrs</span><span class="p">:</span>
+                    <span class="n">sftp</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">attr</span><span class="o">.</span><span class="n">filename</span><span class="p">,</span> <span class="n">Path</span><span class="p">(</span><span class="n">data_storage_path</span><span class="p">,</span><span class="n">attr</span><span class="o">.</span><span class="n">filename</span><span class="p">),</span> <span class="n">callback</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">:</span> <span class="n">progressbar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="n">attr</span><span class="o">.</span><span class="n">filename</span><span class="p">))</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Downloaded </span><span class="si">{</span><span class="n">attr</span><span class="o">.</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Unable to download selected dates. Check dates or contact Kartverket...&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">pass</span>
 
-```
 </pre></div>
 </div>
 </div>

@@ -1,4 +1,4 @@
-# Downloading and PPK dGNSS data
+# Downloading base station dGNSS data
 
 For post processing of the acquired dGNSS data in the field we require additional data from a base station.
 At UNIS we have access to the Longyearbyen base station data ("LYRS") through kartverket.
@@ -7,16 +7,16 @@ At UNIS we have access to the Longyearbyen base station data ("LYRS") through ka
 
 This data can be downloaded through the following domain:
 
-´´´yaml
+```yaml
 etpos.kartverket.no
-´´´
+```
 
 Credentials can either be privately acquired from kartverket, or are available to UNIS students and staff (ask Peter Betlem or Sara Mollie Cohen).
 The webportal provides an ftp-like interface, in which files are sorted based on the following syntax:
 
-´´´yaml
+```yaml
 /rnx3/<duration>/<rate>/<year>/<doy>/<name>
-´´´
+```
 
 der <duration> er filens varighet, <rate> er tidsoppløsningen på observasjonene i filen, <year> er årstall og <doy> er dagnummer i året (1-366).
 In general, it is best to download the 24 hour interval, with 1 second data rate.
@@ -34,7 +34,7 @@ Downloading all required rnx3 data for day 90 of the year 2022.
 The script below provides an alternative way of downloading the data.
 In the script, make sure to specify the usernanem, password, data_storage_path and dates.
 
-```{admonition} Required packages
+````{admonition} Required packages
 :class: warning
 
 The script requires some additional packages.
