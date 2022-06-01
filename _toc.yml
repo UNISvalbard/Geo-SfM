@@ -29,6 +29,11 @@ parts:
   chapters:
   - file: content/lessons/l5/geomodel_overview.md
   - file: content/lessons/l5/geomodel_tutorial.md
+- caption: Suppl. dGNSS data processing
+  chapters:
+  - file: content/lessons/suppl_dgnss/dgnss_data_downloading.md
+  - file: content/lessons/suppl_dgnss/leica_infinity.md
+  - file: content/lessons/suppl_dgnss/topodrone_ppk.md
 - caption: Resources
   chapters:
   - file: content/lessons/suppl/best_practices.md
