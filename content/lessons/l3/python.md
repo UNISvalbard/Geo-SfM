@@ -192,7 +192,7 @@ Whether or not to try alignment of images that failed alignment during the first
 ```yaml
 optimizeCameras: # (Metashape: optimizeCameras)
     enabled: True
-    adaptive_fitting: True # Recommended: True. Should the camera lens model be fit at the same time as optinizing photos?
+    adaptive_fitting: True # Recommended: True. Should the camera lens model be fit at the same time as optimizing photos?
     tiepoint_covariance: True
 ```
 ````
