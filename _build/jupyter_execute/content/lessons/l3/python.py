@@ -337,7 +337,9 @@ project.init_tasks()
 
 
 config_file = "../config/photogrammetry_processing_settings.yml"
-project = AP(config_file)
+project = AP()
+project.read_config(config_file)
+project.init_workspace()
 project.init_tasks()
 
 
