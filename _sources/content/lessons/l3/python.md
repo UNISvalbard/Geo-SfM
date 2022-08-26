@@ -347,7 +347,9 @@ It should now result in a successful runtime.
 :tags: [raises-exception]
 
 config_file = "../config/photogrammetry_processing_settings.yml"
-project = AP(config_file)
+project = AP()
+project.read_config(config_file)
+project.init_workspace()
 project.init_tasks()
 ```
 

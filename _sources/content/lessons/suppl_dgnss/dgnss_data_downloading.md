@@ -69,16 +69,15 @@ def convert_start_end_dates_to_year_day_of(start_date,end_date):
     return start_date.year, start_date.timetuple().tm_yday, end_date.timetuple().tm_yday
 
 def progressbar(x, y, filename):
-    ''' progressbar for the pysftp
+    ''' progressbar for the paramiko
     '''
     bar_len = 60
     filled_len = math.ceil(bar_len * x / float(y))
     percents = math.ceil(100.0 * x / float(y))
     bar = '=' * filled_len + '-' * (bar_len - filled_len)
     filesize = f'{math.ceil(y/(1024*1024)):,} MB' if y > 1024 else f'{math.ceil(y/1024):,} KB'
-    sys.stdout.write(f'[{bar}] {percents}% {filesize} - {filename}(\r')
-    if percents < 100:
-        sys.stdout.flush()
+    sys.stdout.write(f'[{bar}] {percents}% {filesize} - {filename}\r')
+    sys.stdout.flush()
 
 year, start_day, end_day =  convert_start_end_dates_to_year_day_of(start_date,end_date)
 
