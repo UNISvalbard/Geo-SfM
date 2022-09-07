@@ -681,6 +681,10 @@ The use of this standardised project setup is furthermore a requirement for digi
 <p>Proceed by creating the following project_directory in the folder where you have all your projects..
 Herein folders are named without extensions, and filenames are given extensions.
 Text between {} indicates variable names.</p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="05d7dfd8-370d-48a9-82a0-4400f0ec6dfb" name="370b97a9-60b3-43a3-88d9-86d321b95a3a" type="radio">
+</input><label class="tabbed-label" for="05d7dfd8-370d-48a9-82a0-4400f0ec6dfb">
+Handheld data</label><div class="tabbed-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{project_directory} (The folder with all files related to this project)
 |   overview_img.{ext}
 |   description.txt
@@ -704,6 +708,8 @@ Text between {} indicates variable names.</p>
 |           ...
 ├───────gcps
 |           (We&#39;ll get back to this in a later session)
+├───────GNSS
+|           (We&#39;ll get back to this in a later session)
 ├───export (where you place export models and files to)
         ...
 └───metashape (This is where you save your Agisoft Metashape projects to)
@@ -712,6 +718,46 @@ Text between {} indicates variable names.</p>
         {metashape_project_name}_processing_report.pdf
         (optionally: {metashape_project_name}.log)
 </pre></div>
+</div>
+</div>
+<input id="ab2f2571-f19b-445e-bdd5-2cf44f95cedf" name="370b97a9-60b3-43a3-88d9-86d321b95a3a" type="radio">
+</input><label class="tabbed-label" for="ab2f2571-f19b-445e-bdd5-2cf44f95cedf">
+UAV data</label><div class="tabbed-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{project_directory} (The folder with all files related to this project)
+|   overview_img.{ext}
+|   description.txt
+├───config (where you place your configuration files)
+        {cfg_0001}.yml
+        {cfg_0002}.yml
+        ...
+├───data (where you unzipped the files to)
+├───────f0001 (The folder with images acquired on the first flight)
+|           {img_0001}.{ext}
+|           {img_0002}.{ext}
+|           ...
+├───────f0002 (The folder with images acquired on the second flight)
+|           {img_0001}.{ext}
+|           {img_0002}.{ext}
+|           ...
+|       ...
+├───────f9999 (The folder with images acquired on the last flight)
+|           {img_0001}.{ext}
+|           {img_0002}.{ext}
+|           ...
+├───────gcps
+|           (We&#39;ll get back to this in a later session)
+├───────GNSS
+|           (We&#39;ll get back to this in a later session)
+├───export (where you place export models and files to)
+        ...
+└───metashape (This is where you save your Agisoft Metashape projects to)
+        {metashape_project_name}.psx
+        .{metashape_project_name}.files
+        {metashape_project_name}_processing_report.pdf
+        (optionally: {metashape_project_name}.log)
+</pre></div>
+</div>
+</div>
 </div>
 <p>The standardised project structure (as we will see later on) is also used for automated processing.</p>
 </div>
@@ -722,10 +768,11 @@ Text between {} indicates variable names.</p>
 </pre></div>
 </div>
 <div class="suggestion admonition">
-<p class="admonition-title">More than 999 images?</p>
+<p class="admonition-title">Multiple acquisitions (e.g., flights) or more than 999 images per acquisition?</p>
 <p>In case your project contains more than 999 images, make sure to utilise multiple media folders in the <em>data_directory</em>.
 In other words, create as many <em>{XXX}MEDIA</em> subdirectories as needed, and limit their contents to 999 images.
-This is especially useful when dealing with non-unique filenames, as the different directories prevent files being overwritten.</p>
+While you are at it, why not sort the images by flight or acquisition to improve your data structure?
+A standard folder structure for input data is especially useful when dealing with non-unique filenames, as the use of separate directories prevents files being overwritten.</p>
 </div>
 <div class="suggestion admonition">
 <p class="admonition-title">Want to follow along without your own data?</p>

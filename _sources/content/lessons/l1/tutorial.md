@@ -82,6 +82,7 @@ Proceed by creating the following project_directory in the folder where you have
 Herein folders are named without extensions, and filenames are given extensions.
 Text between {} indicates variable names.
 
+````{tabbed} Handheld data
 ```
 {project_directory} (The folder with all files related to this project)
 |   overview_img.{ext}
@@ -106,6 +107,8 @@ Text between {} indicates variable names.
 |           ...
 ├───────gcps
 |           (We'll get back to this in a later session)
+├───────GNSS
+|           (We'll get back to this in a later session)
 ├───export (where you place export models and files to)
         ...
 └───metashape (This is where you save your Agisoft Metashape projects to)
@@ -114,6 +117,44 @@ Text between {} indicates variable names.
         {metashape_project_name}_processing_report.pdf
         (optionally: {metashape_project_name}.log)
 ```
+````
+
+````{tabbed} UAV data
+```
+{project_directory} (The folder with all files related to this project)
+|   overview_img.{ext}
+|   description.txt
+├───config (where you place your configuration files)
+        {cfg_0001}.yml
+        {cfg_0002}.yml
+        ...
+├───data (where you unzipped the files to)
+├───────f0001 (The folder with images acquired on the first flight)
+|           {img_0001}.{ext}
+|           {img_0002}.{ext}
+|           ...
+├───────f0002 (The folder with images acquired on the second flight)
+|           {img_0001}.{ext}
+|           {img_0002}.{ext}
+|           ...
+|       ...
+├───────f9999 (The folder with images acquired on the last flight)
+|           {img_0001}.{ext}
+|           {img_0002}.{ext}
+|           ...
+├───────gcps
+|           (We'll get back to this in a later session)
+├───────GNSS
+|           (We'll get back to this in a later session)
+├───export (where you place export models and files to)
+        ...
+└───metashape (This is where you save your Agisoft Metashape projects to)
+        {metashape_project_name}.psx
+        .{metashape_project_name}.files
+        {metashape_project_name}_processing_report.pdf
+        (optionally: {metashape_project_name}.log)
+```
+````
 
 The standardised project structure (as we will see later on) is also used for automated processing.
 
@@ -125,12 +166,13 @@ Having created the standardised project structure, proceed with extracting all y
 {project_directory}\data\100MEDIA
 ```
 
-```{admonition} More than 999 images?
+```{admonition} Multiple acquisitions (e.g., flights) or more than 999 images per acquisition?
 :class: suggestion
 
 In case your project contains more than 999 images, make sure to utilise multiple media folders in the *data_directory*.
 In other words, create as many *{XXX}MEDIA* subdirectories as needed, and limit their contents to 999 images.
-This is especially useful when dealing with non-unique filenames, as the different directories prevent files being overwritten.
+While you are at it, why not sort the images by flight or acquisition to improve your data structure?
+A standard folder structure for input data is especially useful when dealing with non-unique filenames, as the use of separate directories prevents files being overwritten.
 ```
 
 ````{admonition} Want to follow along without your own data?
