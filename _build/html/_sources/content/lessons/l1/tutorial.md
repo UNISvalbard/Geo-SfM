@@ -82,6 +82,7 @@ Proceed by creating the following project_directory in the folder where you have
 Herein folders are named without extensions, and filenames are given extensions.
 Text between {} indicates variable names.
 
+````{tabbed} Handheld data
 ```
 {project_directory} (The folder with all files related to this project)
 |   overview_img.{ext}
@@ -106,6 +107,8 @@ Text between {} indicates variable names.
 |           ...
 ├───────gcps
 |           (We'll get back to this in a later session)
+├───────GNSS
+|           (We'll get back to this in a later session)
 ├───export (where you place export models and files to)
         ...
 └───metashape (This is where you save your Agisoft Metashape projects to)
@@ -114,24 +117,78 @@ Text between {} indicates variable names.
         {metashape_project_name}_processing_report.pdf
         (optionally: {metashape_project_name}.log)
 ```
+````
 
-The standardised project structure (as we will see later on) is also used for automated processing.
+````{tabbed} UAV data
+```
+{project_directory} (The folder with all files related to this project)
+|   overview_img.{ext}
+|   description.txt
+├───config (where you place your configuration files)
+        {cfg_0001}.yml
+        {cfg_0002}.yml
+        ...
+├───data (where you unzipped the files to)
+├───────f0001 (The folder with images acquired on the first flight)
+|           {img_0001}.{ext}
+|           {img_0002}.{ext}
+|           ...
+├───────f0002 (The folder with images acquired on the second flight)
+|           {img_0001}.{ext}
+|           {img_0002}.{ext}
+|           ...
+|       ...
+├───────f9999 (The folder with images acquired on the last flight)
+|           {img_0001}.{ext}
+|           {img_0002}.{ext}
+|           ...
+├───────gcps
+|           (We'll get back to this in a later session)
+├───────GNSS
+|           (We'll get back to this in a later session)
+├───export (where you place export models and files to)
+        ...
+└───metashape (This is where you save your Agisoft Metashape projects to)
+        {metashape_project_name}.psx
+        .{metashape_project_name}.files
+        {metashape_project_name}_processing_report.pdf
+        (optionally: {metashape_project_name}.log)
+```
+````
+
+The standardised project structures (as we will see later on) are important for automated processing and archiving.
+The project structures are identical in principle, only differing in the way images are sorted.
 
 ### Photo set
 
-Having created the standardised project structure, proceed with extracting all your taken images to the following directory:
+Having created the standardised project structure, proceed with extracting your taken images to the following directory:
 
+
+````{tabbed} Single folder/acquisition
 ```
 {project_directory}\data\100MEDIA
 ```
+````
 
-```{admonition} More than 999 images?
-:class: suggestion
-
-In case your project contains more than 999 images, make sure to utilise multiple media folders in the *data_directory*.
-In other words, create as many *{XXX}MEDIA* subdirectories as needed, and limit their contents to 999 images.
-This is especially useful when dealing with non-unique filenames, as the different directories prevent files being overwritten.
+````{tabbed} Single acquisition with 1000 images
 ```
+{project_directory}\data\100MEDIA (includes up to 999 images)
+{project_directory}\data\101MEDIA (includes remaining images)
+```
+````
+
+````{tabbed} UAV acquisition with 3 flights
+```
+{project_directory}\data\f0001
+{project_directory}\data\f0002
+{project_directory}\data\f0003
+```
+````
+
+In case the image count exceeds 999 images, make sure to utilise multiple folders in the *data_directory*.
+While you are at it, why not sort the images by flight or acquisition to improve your data structure?
+For instance, those [digitising hand-sized samples](../l4/hsstutorial "hss_tutorial"), or who have acquired data over multiple UAV flights, may find it beneficial to sort the data in specific ways.
+Not only is it easier to find the data that way, but it also prevents accidental data-overwrites of data with non-unique filenames!
 
 ````{admonition} Want to follow along without your own data?
 :class: suggestion
@@ -157,7 +214,7 @@ Verify that this is indeed the case by double clicking one of the *cameras* in t
 ```{admonition} Save often!
 :class: tip
 It is important to save your work often.
-Make a habbit of saving at least after every step.
+Make a habit of saving at least after every step.
 To do so, proceed to *Save as...* under *File* in the menu bar, and save your project in the *project_directory/metashape* directory that you created when extracting in data.
 ```
 
