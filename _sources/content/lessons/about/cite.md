@@ -5,6 +5,4 @@ The full author list is available by viewing the [contributors graph on GitHub](
 
 To cite the Geo-SfM Course in publications, please use the following Zenodo reference:
 
-```{only} html
-[![DOI](TBD)](TBD)
-```
+[![DOI](https://zenodo.org/badge/315614173.svg)](https://zenodo.org/badge/latestdoi/315614173)
