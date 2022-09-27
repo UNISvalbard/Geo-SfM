@@ -2,7 +2,7 @@
 
 ````{tabbed} Outcrop and hand-sized samples
 ```yaml
-acq_camera_lens:  # Camera lens as indicated in the Agisoft Metashape processing report. Unit: mm
+acq_camera_lens:  # Camera lens as indicated in the Agisoft Metashape processing report.. Unit: mm
 acq_camera_model:  # Camera model as indicated in the Agisoft Metashape processing report.
 acq_date:  # Acquisition date of data, in DD.MM.YYYY format.
 comments:  # comments for data entry
@@ -19,7 +19,9 @@ data_author:
   name:  # name of author
   orcid:  # copy paste for number of authors applicable.
 data_doi:  # doi number (without https://doi.org/)
-data_model_file_name: # file name of the texture mesh exported data.
+data_model_file_name: {filename}.obj # STRING with model file name and obj extension.
+data_project_path:  # STRING with full path to the standardized data project.
+data_type: DOM # Data type, defaults to DOM. Other options include DCM, DSM
 funding:
 - grant_number:  # grant number or name associated with the grant
   organization:  # organization identifier
@@ -39,7 +41,7 @@ geology_tags:
   Subcategory: # Pick matching Subcategory from [Structure/]Dikes/Sills/Karsts/Folds/Extensional/Compressional/Faults/Joints/Fractures/Veins/Inversion or [Sedimentology/]Clastic/Carbonates and Evaporites or [Igneous/]Intrusive/Extrusive
 - Category: # Pick from Structure/Sedimentology/Metamorphic/Igneous/Quaternary
   Subcategory: # Pick matching Subcategory from [Structure/]Dikes/Sills/Karsts/Folds/Extensional/Compressional/Faults/Joints/Fractures/Veins/Inversion or [Sedimentology/]Clastic/Carbonates and Evaporites or [Igneous/]Intrusive/Extrusive (select as many combinations as applicable)
-keywords: # list of keywords separated by ;. Last item without.
+keywords:  # list of keywords separated by ;. Last item without.
 location_island:  # Island on which the locality is found, pick from Hopen / Spitsbergen / Kong Karls Land / Edgeøya / Barentsøya / Tusenøyane / Nordaustlandet / Kvitøya / Prins Karls Forland / Bjørnøya / Other
 location_land:  # Land in which the locality is found, pick from Albert I Land / Andrée Land / Bünsow Land / Dickson Land / Haakon VII Land / Heer Land / James I Land / Nathorst Land / Nordenskiöld Land / Ny-Friesland / Olav V Land / Oscar II Land / Sabine Land / Sørkapp Land / Torell Land / Wedel Jarlsberg Land / Gustav Adolf Land / Gustav V Land / Orvin Land
 location_locality:  # Location/area in which the locality is found. This should only contain valley/mountain names and not contain directions.

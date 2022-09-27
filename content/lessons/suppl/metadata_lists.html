@@ -389,10 +389,10 @@
   <div class="tex2jax_ignore mathjax_ignore section" id="metadata-templates-for-archiving">
 <h1>Metadata templates for archiving<a class="headerlink" href="#metadata-templates-for-archiving" title="Permalink to this headline">¶</a></h1>
 <div class="tabbed-set docutils">
-<input checked="checked" id="85b203a1-c5d3-4c44-b99e-d70859be214e" name="15cdb781-facf-4fca-97f9-1f65a9c72145" type="radio">
-</input><label class="tabbed-label" for="85b203a1-c5d3-4c44-b99e-d70859be214e">
+<input checked="checked" id="09b7ea9f-287a-448f-9ada-bc426d8d2cfa" name="61010e52-fafc-499e-a54f-cfb73f8dfb0a" type="radio">
+</input><label class="tabbed-label" for="09b7ea9f-287a-448f-9ada-bc426d8d2cfa">
 Outcrop and hand-sized samples</label><div class="tabbed-content docutils">
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">acq_camera_lens</span><span class="p">:</span><span class="w">  </span><span class="c1"># Camera lens as indicated in the Agisoft Metashape processing report. Unit: mm</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">acq_camera_lens</span><span class="p">:</span><span class="w">  </span><span class="c1"># Camera lens as indicated in the Agisoft Metashape processing report.. Unit: mm</span><span class="w"></span>
 <span class="nt">acq_camera_model</span><span class="p">:</span><span class="w">  </span><span class="c1"># Camera model as indicated in the Agisoft Metashape processing report.</span><span class="w"></span>
 <span class="nt">acq_date</span><span class="p">:</span><span class="w">  </span><span class="c1"># Acquisition date of data, in DD.MM.YYYY format.</span><span class="w"></span>
 <span class="nt">comments</span><span class="p">:</span><span class="w">  </span><span class="c1"># comments for data entry</span><span class="w"></span>
@@ -409,7 +409,9 @@ Outcrop and hand-sized samples</label><div class="tabbed-content docutils">
 <span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w">  </span><span class="c1"># name of author</span><span class="w"></span>
 <span class="w">  </span><span class="nt">orcid</span><span class="p">:</span><span class="w">  </span><span class="c1"># copy paste for number of authors applicable.</span><span class="w"></span>
 <span class="nt">data_doi</span><span class="p">:</span><span class="w">  </span><span class="c1"># doi number (without https://doi.org/)</span><span class="w"></span>
-<span class="nt">data_model_file_name</span><span class="p">:</span><span class="w"> </span><span class="c1"># file name of the texture mesh exported data.</span><span class="w"></span>
+<span class="nt">data_model_file_name</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nv">filename</span><span class="p p-Indicator">}</span><span class="l l-Scalar l-Scalar-Plain">.obj</span><span class="w"> </span><span class="c1"># STRING with model file name and obj extension.</span><span class="w"></span>
+<span class="nt">data_project_path</span><span class="p">:</span><span class="w">  </span><span class="c1"># STRING with full path to the standardized data project.</span><span class="w"></span>
+<span class="nt">data_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DOM</span><span class="w"> </span><span class="c1"># Data type, defaults to DOM. Other options include DCM, DSM</span><span class="w"></span>
 <span class="nt">funding</span><span class="p">:</span><span class="w"></span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">grant_number</span><span class="p">:</span><span class="w">  </span><span class="c1"># grant number or name associated with the grant</span><span class="w"></span>
 <span class="w">  </span><span class="nt">organization</span><span class="p">:</span><span class="w">  </span><span class="c1"># organization identifier</span><span class="w"></span>
@@ -429,7 +431,7 @@ Outcrop and hand-sized samples</label><div class="tabbed-content docutils">
 <span class="w">  </span><span class="nt">Subcategory</span><span class="p">:</span><span class="w"> </span><span class="c1"># Pick matching Subcategory from [Structure/]Dikes/Sills/Karsts/Folds/Extensional/Compressional/Faults/Joints/Fractures/Veins/Inversion or [Sedimentology/]Clastic/Carbonates and Evaporites or [Igneous/]Intrusive/Extrusive</span><span class="w"></span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Category</span><span class="p">:</span><span class="w"> </span><span class="c1"># Pick from Structure/Sedimentology/Metamorphic/Igneous/Quaternary</span><span class="w"></span>
 <span class="w">  </span><span class="nt">Subcategory</span><span class="p">:</span><span class="w"> </span><span class="c1"># Pick matching Subcategory from [Structure/]Dikes/Sills/Karsts/Folds/Extensional/Compressional/Faults/Joints/Fractures/Veins/Inversion or [Sedimentology/]Clastic/Carbonates and Evaporites or [Igneous/]Intrusive/Extrusive (select as many combinations as applicable)</span><span class="w"></span>
-<span class="nt">keywords</span><span class="p">:</span><span class="w"> </span><span class="c1"># list of keywords separated by ;. Last item without.</span><span class="w"></span>
+<span class="nt">keywords</span><span class="p">:</span><span class="w">  </span><span class="c1"># list of keywords separated by ;. Last item without.</span><span class="w"></span>
 <span class="nt">location_island</span><span class="p">:</span><span class="w">  </span><span class="c1"># Island on which the locality is found, pick from Hopen / Spitsbergen / Kong Karls Land / Edgeøya / Barentsøya / Tusenøyane / Nordaustlandet / Kvitøya / Prins Karls Forland / Bjørnøya / Other</span><span class="w"></span>
 <span class="nt">location_land</span><span class="p">:</span><span class="w">  </span><span class="c1"># Land in which the locality is found, pick from Albert I Land / Andrée Land / Bünsow Land / Dickson Land / Haakon VII Land / Heer Land / James I Land / Nathorst Land / Nordenskiöld Land / Ny-Friesland / Olav V Land / Oscar II Land / Sabine Land / Sørkapp Land / Torell Land / Wedel Jarlsberg Land / Gustav Adolf Land / Gustav V Land / Orvin Land</span><span class="w"></span>
 <span class="nt">location_locality</span><span class="p">:</span><span class="w">  </span><span class="c1"># Location/area in which the locality is found. This should only contain valley/mountain names and not contain directions.</span><span class="w"></span>
@@ -463,8 +465,8 @@ Outcrop and hand-sized samples</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="75c21b18-ac9d-4711-b079-3470b517127f" name="15cdb781-facf-4fca-97f9-1f65a9c72145" type="radio">
-</input><label class="tabbed-label" for="75c21b18-ac9d-4711-b079-3470b517127f">
+<input id="30484f4f-e044-4651-ad94-21459cd42c84" name="61010e52-fafc-499e-a54f-cfb73f8dfb0a" type="radio">
+</input><label class="tabbed-label" for="30484f4f-e044-4651-ad94-21459cd42c84">
 Digital drill core models</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">data_project_path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dir/to\path</span><span class="w"></span>
 <span class="nt">data_owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Svalbox</span><span class="w"></span>
