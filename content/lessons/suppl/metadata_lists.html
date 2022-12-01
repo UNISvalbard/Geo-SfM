@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Metadata templates for archiving &#8212; Geo-SfM Course</title>
     
-  <link href="../../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,20 +19,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
@@ -40,14 +37,14 @@
     <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -60,7 +57,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint">Found this tutorial helpful? Please participate in the survey!</div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -69,9 +80,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -89,14 +101,15 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../../landing-page.html">
-   Welcome to Geo-SfM
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../landing-page.html">
+                    Welcome to Geo-SfM
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Session 1
  </span>
@@ -286,8 +299,13 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
 </div>
 
 
@@ -295,76 +313,150 @@
 
 
           
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
     
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
+    <div class="header-article row sticky-top noprint">
         
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../_sources/content/lessons/suppl/metadata_lists.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
 
-            <!-- Source interaction buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
         
-        <a class="issues-button"
-            href="https://github.com/UNISvalbard/Geo-SfM/issues/new?title=Issue%20on%20page%20%2Fcontent/lessons/suppl/metadata_lists.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/UNISvalbard/Geo-SfM/edit/master/content/lessons/suppl/metadata_lists.md"><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/UNISvalbard/Geo-SfM/issues/new?title=Issue%20on%20page%20%2Fcontent/lessons/suppl/metadata_lists.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/UNISvalbard/Geo-SfM/edit/master/content/lessons/suppl/metadata_lists.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../../_sources/content/lessons/suppl/metadata_lists.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
     </div>
 </div>
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-        </div>
-    </div>
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Metadata templates for archiving</h1>
@@ -375,133 +467,12 @@
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="metadata-templates-for-archiving">
-<h1>Metadata templates for archiving<a class="headerlink" href="#metadata-templates-for-archiving" title="Permalink to this headline">¶</a></h1>
-<div class="tabbed-set docutils">
-<input checked="checked" id="9ea4784a-0f00-4994-a18f-01488d5fa292" name="a44cac18-3af1-4c47-afe6-71e3cbfef456" type="radio">
-</input><label class="tabbed-label" for="9ea4784a-0f00-4994-a18f-01488d5fa292">
-Outcrop and hand-sized samples</label><div class="tabbed-content docutils">
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">acq_camera_lens</span><span class="p">:</span><span class="w">  </span><span class="c1"># Camera lens as indicated in the Agisoft Metashape processing report.. Unit: mm</span><span class="w"></span>
-<span class="nt">acq_camera_model</span><span class="p">:</span><span class="w">  </span><span class="c1"># Camera model as indicated in the Agisoft Metashape processing report.</span><span class="w"></span>
-<span class="nt">acq_date</span><span class="p">:</span><span class="w">  </span><span class="c1"># Acquisition date of data, in DD.MM.YYYY format.</span><span class="w"></span>
-<span class="nt">comments</span><span class="p">:</span><span class="w">  </span><span class="c1"># comments for data entry</span><span class="w"></span>
-<span class="nt">cover</span><span class="p">:</span><span class="w"></span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Category</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Snow</span><span class="w"></span>
-<span class="w">  </span><span class="nt">Extent</span><span class="p">:</span><span class="w"> </span><span class="c1"># pick from 0-5; 0=0%, 1=0-20%, 2=20-40%, 3=40-60%, 4=60-80%, 5=80-100%</span><span class="w"></span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Category</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Scree</span><span class="w"></span>
-<span class="w">  </span><span class="nt">Extent</span><span class="p">:</span><span class="w"> </span><span class="c1"># pick from 0-5; 0=0%, 1=0-20%, 2=20-40%, 3=40-60%, 4=60-80%, 5=80-100%</span><span class="w"></span>
-<span class="nt">data_author</span><span class="p">:</span><span class="w"></span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">affiliation</span><span class="p">:</span><span class="w">  </span><span class="c1"># affiliations of author in comma-separated list</span><span class="w"></span>
-<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w">  </span><span class="c1"># name of author</span><span class="w"></span>
-<span class="w">  </span><span class="nt">orcid</span><span class="p">:</span><span class="w">  </span><span class="c1"># orcid ID of author</span><span class="w"></span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">affiliation</span><span class="p">:</span><span class="w">  </span><span class="c1"># affiliations of author in comma-separated list</span><span class="w"></span>
-<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w">  </span><span class="c1"># name of author</span><span class="w"></span>
-<span class="w">  </span><span class="nt">orcid</span><span class="p">:</span><span class="w">  </span><span class="c1"># copy paste for number of authors applicable.</span><span class="w"></span>
-<span class="nt">data_doi</span><span class="p">:</span><span class="w">  </span><span class="c1"># doi number (without https://doi.org/)</span><span class="w"></span>
-<span class="nt">data_model_file_name</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nv">filename</span><span class="p p-Indicator">}</span><span class="l l-Scalar l-Scalar-Plain">.obj</span><span class="w"> </span><span class="c1"># STRING with model file name and obj extension.</span><span class="w"></span>
-<span class="nt">data_project_path</span><span class="p">:</span><span class="w">  </span><span class="c1"># STRING with full path to the standardized data project.</span><span class="w"></span>
-<span class="nt">data_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DOM</span><span class="w"> </span><span class="c1"># Data type, defaults to DOM. Other options include DCM, DSM</span><span class="w"></span>
-<span class="nt">funding</span><span class="p">:</span><span class="w"></span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">grant_number</span><span class="p">:</span><span class="w">  </span><span class="c1"># grant number or name associated with the grant</span><span class="w"></span>
-<span class="w">  </span><span class="nt">organization</span><span class="p">:</span><span class="w">  </span><span class="c1"># organization identifier</span><span class="w"></span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">grant_number</span><span class="p">:</span><span class="w">  </span><span class="c1"># Copy paste for all applicable combinations.</span><span class="w"></span>
-<span class="w">  </span><span class="nt">organization</span><span class="p">:</span><span class="w">  </span><span class="c1"># organization identifier #2</span><span class="w"></span>
-<span class="nt">geology_age</span><span class="p">:</span><span class="w"></span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Era</span><span class="p">:</span><span class="w"> </span><span class="c1"># Pick from</span><span class="w"></span>
-<span class="w">  </span><span class="nt">Formation</span><span class="p">:</span><span class="w">  </span><span class="c1">#</span><span class="w"></span>
-<span class="w">  </span><span class="nt">Group</span><span class="p">:</span><span class="w"> </span><span class="c1">#</span><span class="w"></span>
-<span class="w">  </span><span class="nt">Period</span><span class="p">:</span><span class="w"> </span><span class="c1"># Pick</span><span class="w"></span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Era</span><span class="p">:</span><span class="w"> </span><span class="c1"># Pick from</span><span class="w"></span>
-<span class="w">  </span><span class="nt">Formation</span><span class="p">:</span><span class="w">  </span><span class="c1"># Copy paste for all applicable combinations.</span><span class="w"></span>
-<span class="w">  </span><span class="nt">Group</span><span class="p">:</span><span class="w"> </span><span class="c1">#</span><span class="w"></span>
-<span class="w">  </span><span class="nt">Period</span><span class="p">:</span><span class="w"> </span><span class="c1"># Pick</span><span class="w"></span>
-<span class="nt">geology_tags</span><span class="p">:</span><span class="w"></span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Category</span><span class="p">:</span><span class="w"> </span><span class="c1"># Pick from Structure/Sedimentology/Metamorphic/Igneous/Quaternary</span><span class="w"></span>
-<span class="w">  </span><span class="nt">Subcategory</span><span class="p">:</span><span class="w"> </span><span class="c1"># Pick matching Subcategory from [Structure/]Dikes/Sills/Karsts/Folds/Extensional/Compressional/Faults/Joints/Fractures/Veins/Inversion or [Sedimentology/]Clastic/Carbonates and Evaporites or [Igneous/]Intrusive/Extrusive</span><span class="w"></span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Category</span><span class="p">:</span><span class="w"> </span><span class="c1"># Pick from Structure/Sedimentology/Metamorphic/Igneous/Quaternary</span><span class="w"></span>
-<span class="w">  </span><span class="nt">Subcategory</span><span class="p">:</span><span class="w"> </span><span class="c1"># Pick matching Subcategory from [Structure/]Dikes/Sills/Karsts/Folds/Extensional/Compressional/Faults/Joints/Fractures/Veins/Inversion or [Sedimentology/]Clastic/Carbonates and Evaporites or [Igneous/]Intrusive/Extrusive (select as many combinations as applicable)</span><span class="w"></span>
-<span class="nt">keywords</span><span class="p">:</span><span class="w">  </span><span class="c1"># list of keywords separated by ;. Last item without.</span><span class="w"></span>
-<span class="nt">location_island</span><span class="p">:</span><span class="w">  </span><span class="c1"># Island on which the locality is found, pick from Hopen / Spitsbergen / Kong Karls Land / Edgeøya / Barentsøya / Tusenøyane / Nordaustlandet / Kvitøya / Prins Karls Forland / Bjørnøya / Other</span><span class="w"></span>
-<span class="nt">location_land</span><span class="p">:</span><span class="w">  </span><span class="c1"># Land in which the locality is found, pick from Albert I Land / Andrée Land / Bünsow Land / Dickson Land / Haakon VII Land / Heer Land / James I Land / Nathorst Land / Nordenskiöld Land / Ny-Friesland / Olav V Land / Oscar II Land / Sabine Land / Sørkapp Land / Torell Land / Wedel Jarlsberg Land / Gustav Adolf Land / Gustav V Land / Orvin Land</span><span class="w"></span>
-<span class="nt">location_locality</span><span class="p">:</span><span class="w">  </span><span class="c1"># Location/area in which the locality is found. This should only contain valley/mountain names and not contain directions.</span><span class="w"></span>
-<span class="nt">model_description</span><span class="p">:</span><span class="w">  </span><span class="c1"># Brief (geological) description of the data.</span><span class="w"></span>
-<span class="nt">proc_alignment_accuracy</span><span class="p">:</span><span class="w">  </span><span class="c1"># Photo alignment processing value for generating depth maps. Pick from Highest, High, Medium, Low, Lowest.</span><span class="w"></span>
-<span class="nt">proc_camera_stations</span><span class="p">:</span><span class="w">  </span><span class="c1"># Total number of aligned, as stated in the Agisoft Metashape processing report files.</span><span class="w"></span>
-<span class="nt">proc_camera_total_error</span><span class="p">:</span><span class="w">  </span><span class="c1"># Total error of the cameras, as stated in the Agisoft Metashape processing report files.. Unit: m</span><span class="w"></span>
-<span class="nt">proc_coverage_area</span><span class="p">:</span><span class="w">  </span><span class="c1"># Area covered by the DOMs footprint, as stated in the Agisoft Metashape processing report files.. Unit: km2</span><span class="w"></span>
-<span class="nt">proc_dc_filter_conf_min</span><span class="p">:</span><span class="w">  </span><span class="c1"># Minimum dense cloud confidence value used for dense cloud filtering.</span><span class="w"></span>
-<span class="nt">proc_dem_point_density</span><span class="p">:</span><span class="w">  </span><span class="c1"># Point density of the DEM, as stated in the Agisoft Metashape processing report files.. Unit: points/m2</span><span class="w"></span>
-<span class="nt">proc_dem_resolution</span><span class="p">:</span><span class="w">  </span><span class="c1"># Resolution of the DEM, as stated in the Agisoft Metashape processing report files.. Unit: m</span><span class="w"></span>
-<span class="nt">proc_depth_map_accuracy</span><span class="p">:</span><span class="w">  </span><span class="c1"># Depth map processing value for generating depth maps. Pick from Highest, High, Medium, Low, Lowest.</span><span class="w"></span>
-<span class="nt">proc_flying_altitude</span><span class="p">:</span><span class="w">  </span><span class="c1"># Average distance between the camera and the object, as stated in the Agisoft Metashape processing report files.. Unit: m</span><span class="w"></span>
-<span class="nt">proc_gcp_total_error</span><span class="p">:</span><span class="w">  </span><span class="c1"># Total error of the georeferencing control points, as stated in the Agisoft Metashape processing report files.. Unit: cm</span><span class="w"></span>
-<span class="nt">proc_georeferencing_count</span><span class="p">:</span><span class="w">  </span><span class="c1"># Number of ground control/georeferencing points used for processing.</span><span class="w"></span>
-<span class="nt">proc_georeferencing_crs_epsg</span><span class="p">:</span><span class="w">  </span><span class="c1"># EPSG crs code used by the data used for georeferencing.</span><span class="w"></span>
-<span class="nt">proc_georeferencing_type</span><span class="p">:</span><span class="w">  </span><span class="c1"># Type of data/points used for georeferencing. Marker type and version (e.g., Aruco DICT_6X6_250) should be included.</span><span class="w"></span>
-<span class="nt">proc_ground_resolution</span><span class="p">:</span><span class="w">  </span><span class="c1"># Ground resolution of the DOM, as stated in the Agisoft Metashape processing report files.. Unit: m</span><span class="w"></span>
-<span class="nt">proc_mesh_filter_con_comp</span><span class="p">:</span><span class="w"> </span><span class="c1"># Mesh filter value for connected component.</span><span class="w"></span>
-<span class="nt">proc_sc_filter_proj_acc</span><span class="p">:</span><span class="w"> </span><span class="c1"># Sparse cloud filter value for projection accuracy.</span><span class="w"></span>
-<span class="nt">proc_sc_filter_recon_uncert</span><span class="p">:</span><span class="w"> </span><span class="c1"># Sparse cloud filter value for reconstruction uncertainty.</span><span class="w"></span>
-<span class="nt">proc_sc_filter_reproj_error</span><span class="p">:</span><span class="w">  </span><span class="c1"># Sparse cloud filter value for reprojection error.</span><span class="w"></span>
-<span class="nt">proc_software</span><span class="p">:</span><span class="w">  </span><span class="c1"># name of software used for processing.</span><span class="w"></span>
-<span class="nt">proc_software_version</span><span class="p">:</span><span class="w">  </span><span class="c1"># Software version used for processing, including build number.</span><span class="w"></span>
-<span class="nt">publ_embargo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">6</span><span class="w"> </span><span class="c1"># Currently under discussion.. Unit: months</span><span class="w"></span>
-<span class="nt">publ_related_identifiers</span><span class="p">:</span><span class="w"></span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">identifier</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">relation</span><span class="p">:</span><span class="w"> </span><span class="c1"># Please visit the https://developers.zenodo.org/ for examples.</span><span class="w"></span>
-<span class="nt">publ_sketchfab_id</span><span class="p">:</span><span class="w">  </span><span class="c1"># integer number associated with the data entry on the sketchfab. https://sketchfab.com/models/{SketchFab ID}</span><span class="w"></span>
-<span class="nt">publ_v3geo_model</span><span class="p">:</span><span class="w"> </span><span class="c1"># The V3Geo model ID (obtained after submission on V3Geo)</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-<input id="ea9408a2-00ca-4f6d-9376-fd3a2b27c7ac" name="a44cac18-3af1-4c47-afe6-71e3cbfef456" type="radio">
-</input><label class="tabbed-label" for="ea9408a2-00ca-4f6d-9376-fd3a2b27c7ac">
-Digital drill core models</label><div class="tabbed-content docutils">
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">data_project_path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dir/to\path</span><span class="w"></span>
-<span class="nt">data_owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Svalbox</span><span class="w"></span>
-<span class="nt">data_reference</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Peter Betlem</span><span class="w"></span>
-<span class="nt">data_cite</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;a href =&quot;https://doi.org/10.3390/rs12020330&quot;&gt;Betlem et al. (2020)&lt;/a&gt;</span><span class="w"></span>
-<span class="nt">acq_date</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">18.09.2019</span><span class="w"> </span><span class="c1"># DD.MM.YYYY</span><span class="w"></span>
-<span class="nt">acq_reference</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Peter Betlem</span><span class="w"></span>
-<span class="nt">acq_camera_model</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ILCE-6300</span><span class="w"></span>
-<span class="nt">acq_camera_lens</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">50 mm</span><span class="w"></span>
-<span class="nt">acq_gcp_numbers</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">6</span><span class="w"></span>
-<span class="nt">acq_gcp_space</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2D</span><span class="w"> </span><span class="c1"># options include 2D, 3D</span><span class="w"></span>
-<span class="nt">borehole_identifier</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DH4</span><span class="w"></span>
-<span class="nt">borehole_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DH4</span><span class="w"></span>
-<span class="nt">sample_top_depth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">643.0</span><span class="w"> </span><span class="c1"># m</span><span class="w"></span>
-<span class="nt">sample_base_depth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">643.047</span><span class="w"> </span><span class="c1"># m</span><span class="w"></span>
-<span class="nt">sample_length</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4.7</span><span class="w"> </span><span class="c1"># cm</span><span class="w"></span>
-<span class="nt">sample_width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4.1</span><span class="w"> </span><span class="c1"># cm</span><span class="w"></span>
-<span class="nt">sample_volume</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">54.48</span><span class="w"> </span><span class="c1"># cm3</span><span class="w"></span>
-<span class="nt">sample_weight</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">137.98</span><span class="w"> </span><span class="c1"># g</span><span class="w"></span>
-<span class="nt">sample_bulk_density</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.53</span><span class="w"> </span><span class="c1"># g/cm3</span><span class="w"></span>
-<span class="nt">sample_lithology</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">siltstone</span><span class="w"> </span><span class="c1"># str</span><span class="w"></span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sandstone</span><span class="w"></span>
-<span class="nt">proc_camera_stations</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">96</span><span class="w"> </span><span class="c1"># INT</span><span class="w"></span>
-<span class="nt">proc_camera_total_rmse</span><span class="p">:</span><span class="w"> </span><span class="c1"># in mm</span><span class="w"></span>
-<span class="nt">proc_ground_resolution</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0374</span><span class="w"> </span><span class="c1"># in mm/pix</span><span class="w"></span>
-<span class="nt">proc_dem_resolution</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.04</span><span class="w"> </span><span class="c1"># in mm/pix</span><span class="w"></span>
-<span class="nt">proc_dem_point_density</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">624</span><span class="w"> </span><span class="c1"># points/mm2</span><span class="w"></span>
-<span class="nt">proc_dense_cloud_confidence_min</span><span class="p">:</span><span class="w"></span>
-<span class="nt">proc_flying_altitude</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">48.3</span><span class="w"> </span><span class="c1"># cm</span><span class="w"></span>
-<span class="nt">proc_coverage_area</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">14.2</span><span class="w"> </span><span class="c1"># cm2</span><span class="w"></span>
-<span class="nt">proc_gcp_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Agisoft Metashape</span><span class="w"></span>
-<span class="nt">proc_gcp_crs_epsg</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">40400</span><span class="w"></span>
-<span class="nt">proc_gcp_total_rmse</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.126707</span><span class="w"> </span><span class="c1"># mm</span><span class="w"></span>
-<span class="nt">proc_reference</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Peter Betlem</span><span class="w"></span>
-<span class="nt">publ_sketchfab_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">925c0f05104b491f818925839fb5133b</span><span class="w"></span>
-<span class="nt">unis_project_no</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">123456asbas</span><span class="w"></span>
-<span class="nt">unis_project_campaign</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lightbox</span><span class="w"></span>
-<span class="nt">comments</span><span class="p">:</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-</div>
+<h1>Metadata templates for archiving<a class="headerlink" href="#metadata-templates-for-archiving" title="Permalink to this headline">#</a></h1>
 </div>
 
     <script type="text/x-thebe-config">
@@ -526,9 +497,11 @@ Digital drill core models</label><div class="tabbed-content docutils">
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="best_practices.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -544,24 +517,28 @@ Digital drill core models</label><div class="tabbed-content docutils">
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Peter Betlem and Contributors<br/>
+  
+      &copy; Copyright 2022 (CC-BY-NC except where otherwise stated).<br/>
+</p>
+        </footer>
+    </div>
     
-      By Peter Betlem and Contributors<br/>
-    
-        &copy; Copyright 2022 (CC-BY-NC except where otherwise noted).<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>
