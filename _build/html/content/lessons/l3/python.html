@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Python-based standardised processing &#8212; Geo-SfM Course</title>
     
-  <link href="../../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,20 +19,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
@@ -40,14 +37,14 @@
     <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -60,7 +57,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint">Found this tutorial helpful? Please participate in the survey!</div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -69,9 +80,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -89,14 +101,15 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../../landing-page.html">
-   Welcome to Geo-SfM
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../landing-page.html">
+                    Welcome to Geo-SfM
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Session 1
  </span>
@@ -286,88 +299,204 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        <a class="dropdown-buttons"
-            href="../../../_sources/content/lessons/l3/python.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../_sources/content/lessons/l3/python.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        
-        <a class="issues-button"
-            href="https://github.com/UNISvalbard/Geo-SfM/issues/new?title=Issue%20on%20page%20%2Fcontent/lessons/l3/python.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/UNISvalbard/Geo-SfM/edit/master/content/lessons/l3/python.md"><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
         </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
 
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/UNISvalbard/Geo-SfM/issues/new?title=Issue%20on%20page%20%2Fcontent/lessons/l3/python.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/UNISvalbard/Geo-SfM/edit/master/content/lessons/l3/python.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../../_sources/content/lessons/l3/python.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="../../../_sources/content/lessons/l3/python.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#automated-processing-with-jupyter-lab">
    Automated processing with Jupyter lab
@@ -394,12 +523,11 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Python-based standardised processing</h1>
@@ -442,11 +570,12 @@
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="python-based-standardised-processing">
-<h1>Python-based standardised processing<a class="headerlink" href="#python-based-standardised-processing" title="Permalink to this headline">¶</a></h1>
+<h1>Python-based standardised processing<a class="headerlink" href="#python-based-standardised-processing" title="Permalink to this headline">#</a></h1>
 <p>The following page provices an overview of the functions that are implemented in <a class="reference external" href="https://github.com/PeterBetlem/image_processing">Automated Metashape</a>.
 These require the Python to be installed as documented in <a class="reference external" href="../about/software#Python">the software section</a>.</p>
 <div class="admonition-version admonition">
@@ -462,7 +591,7 @@ Minimal differences may exist between versions, especially when ensuring compati
 </div>
 </div>
 <div class="section" id="automated-processing-with-jupyter-lab">
-<h2>Automated processing with Jupyter lab<a class="headerlink" href="#automated-processing-with-jupyter-lab" title="Permalink to this headline">¶</a></h2>
+<h2>Automated processing with Jupyter lab<a class="headerlink" href="#automated-processing-with-jupyter-lab" title="Permalink to this headline">#</a></h2>
 <p>We here showcase the Automated Metashape scripts through use of Jupyter lab.
 When ready, open Anaconda Prompt again, change into the <em>automated_metashape</em> environment, and run <em>Jupyter lab</em>.</p>
 <div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>conda activate automated_metashape
@@ -507,7 +636,7 @@ then proceed by running each cell by either clicking the <em>play</em> button or
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span>\<span class="n">ipykernel_49744</span>\<span class="mf">822519927.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span>\<span class="n">ipykernel_23904</span>\<span class="mf">822519927.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">config_file</span> <span class="o">=</span> <span class="s2">&quot;../config/empty_photogrammetry_processing_settings.yml&quot;</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">project</span> <span class="o">=</span> <span class="n">AP</span><span class="p">()</span>
 <span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">project</span><span class="o">.</span><span class="n">read_config</span><span class="p">(</span><span class="n">config_file</span><span class="p">)</span>
@@ -536,7 +665,7 @@ then proceed by running each cell by either clicking the <em>play</em> button or
 <p>If all went well, the AutomatedProcessing module was successfully imported (= no error on first input).
 However, as per above, we have a <em>FileNotFoundError</em> - after all, we have yet to set up the configuration file that was linked to.</p>
 <div class="section" id="minimal-yaml-configuration-file">
-<h3>Minimal YAML configuration file<a class="headerlink" href="#minimal-yaml-configuration-file" title="Permalink to this headline">¶</a></h3>
+<h3>Minimal YAML configuration file<a class="headerlink" href="#minimal-yaml-configuration-file" title="Permalink to this headline">#</a></h3>
 <p>The automated processing scripts rely on a <a class="reference external" href="https://yaml.org/">YAML</a> configuration file.
 YAML (or <em>YAML Ain’t Markup Language</em>) is a human friendly data serialization standard for programming languages.</p>
 <p>Proceed by creating a new file in the <em>config</em> directory created previously and give it the <em>.yml</em> extension.
@@ -579,7 +708,7 @@ These should be present in every YAML configuration file, regardless of the desi
 </ul>
 </div>
 <div class="section" id="additional-parameters">
-<h4>Additional parameters<a class="headerlink" href="#additional-parameters" title="Permalink to this headline">¶</a></h4>
+<h4>Additional parameters<a class="headerlink" href="#additional-parameters" title="Permalink to this headline">#</a></h4>
 <p>Steps can be run or skipped using the ‘enabled’ parameter. If enabled == False, everything else in the step is irrelevant.
 Alternatively, the entire parameter can be left out.
 Keep in mind, though, that some steps require others to be completed.
@@ -588,10 +717,10 @@ E.g., not adding photos is likely to prevent photo alignment in some cases. ;)</
 Refer to <a class="reference external" href="https://www.agisoft.com/pdf/metashape_python_api_1_6_0.pdf">Metashape documentation</a> for full parameter definitions.
 The parameter-section names should fully follow the parameter names of the Metashape functions.
 In case default parameters are to be used, remove the corresponding parameter-section.</p>
-<div class="tabbed-set docutils">
-<input checked="checked" id="854dfe8e-238a-4be3-b0c9-07c34bd903b0" name="06c0ee9f-39f7-4803-93e5-cb8020bb8321" type="radio">
-</input><label class="tabbed-label" for="854dfe8e-238a-4be3-b0c9-07c34bd903b0">
-Add photos</label><div class="tabbed-content docutils">
+<div class="sd-tab-set docutils">
+<input checked="checked" id="e9a28539-7c41-456c-a786-77195d7a0088" name="83b44970-b124-4c71-907f-13f30428bd7a" type="radio">
+</input><label class="sd-tab-label" for="e9a28539-7c41-456c-a786-77195d7a0088">
+Add photos</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">addPhotos</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
 <span class="w">    </span><span class="nt">photo_path</span><span class="p">:</span><span class="w"> </span><span class="c1"># path to photo directory (&quot;data_directory&quot; in the standardised folder directory)  - this parameter will be moved to the addPhotos configuration section in later releases.</span><span class="w"></span>
@@ -605,18 +734,18 @@ Add photos</label><div class="tabbed-content docutils">
 This should generally only be set to <em>True</em> when ground control points (GCPs) are to be used.</p>
 </div>
 </div>
-<input id="0c090681-d716-413d-bdd7-15ccdd018ca2" name="06c0ee9f-39f7-4803-93e5-cb8020bb8321" type="radio">
-</input><label class="tabbed-label" for="0c090681-d716-413d-bdd7-15ccdd018ca2">
-Analyze photos</label><div class="tabbed-content docutils">
+<input id="6bfac9a5-16ca-4b4a-8ab0-1a773b9df984" name="83b44970-b124-4c71-907f-13f30428bd7a" type="radio">
+</input><label class="sd-tab-label" for="6bfac9a5-16ca-4b4a-8ab0-1a773b9df984">
+Analyze photos</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">analyzePhotos</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
 <span class="w">    </span><span class="nt">quality_cutoff</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.5</span><span class="w"> </span><span class="c1"># value between 0 and 1, indicates the lowest quality unit at which photos are used for processing. 0.5 is suggested by Agisoft.</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
-<input id="2e435d6a-1a66-4562-9f8f-0ce0c0e87493" name="06c0ee9f-39f7-4803-93e5-cb8020bb8321" type="radio">
-</input><label class="tabbed-label" for="2e435d6a-1a66-4562-9f8f-0ce0c0e87493">
-Add masks</label><div class="tabbed-content docutils">
+<input id="c086fb26-755a-4223-8cc1-ede99ed33ee8" name="83b44970-b124-4c71-907f-13f30428bd7a" type="radio">
+</input><label class="sd-tab-label" for="c086fb26-755a-4223-8cc1-ede99ed33ee8">
+Add masks</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">masks</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"> </span><span class="c1"># Default, only enable if you have images with masks :)</span><span class="w"></span>
 <span class="w">    </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">E:\Anna\EK11\100MEDIA\{filename}_mask.JPG</span><span class="w"> </span><span class="c1"># Has to point to dir with masks</span><span class="w"></span>
@@ -624,9 +753,9 @@ Add masks</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="489de442-6fec-4e92-bd24-8ae9df9e4213" name="06c0ee9f-39f7-4803-93e5-cb8020bb8321" type="radio">
-</input><label class="tabbed-label" for="489de442-6fec-4e92-bd24-8ae9df9e4213">
-Alignment</label><div class="tabbed-content docutils">
+<input id="c3de2165-e3a1-44bf-87e2-15c229bedb62" name="83b44970-b124-4c71-907f-13f30428bd7a" type="radio">
+</input><label class="sd-tab-label" for="c3de2165-e3a1-44bf-87e2-15c229bedb62">
+Alignment</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">alignPhotos</span><span class="p">:</span><span class="w"> </span><span class="c1"># (Metashape: alignPhotos)</span><span class="w"></span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
 <span class="w">    </span><span class="nt">downscale</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span><span class="w"> </span><span class="c1"># Recommended: 0. How much to coarsen the photos when searching for tie points. Corresponding settings in Metashape: 0: Highest, 1: High, 2: Medium, 3: Low, 4: Lowest</span><span class="w"></span>
@@ -644,9 +773,9 @@ Alignment</label><div class="tabbed-content docutils">
 <p>Whether or not to try alignment of images that failed alignment during the first stage.</p>
 </div>
 </div>
-<input id="46de6b67-0a59-4eb9-8c9d-b720e5ff9d08" name="06c0ee9f-39f7-4803-93e5-cb8020bb8321" type="radio">
-</input><label class="tabbed-label" for="46de6b67-0a59-4eb9-8c9d-b720e5ff9d08">
-Optimise cameras</label><div class="tabbed-content docutils">
+<input id="96242399-1385-4c63-8780-0cc44d1652bd" name="83b44970-b124-4c71-907f-13f30428bd7a" type="radio">
+</input><label class="sd-tab-label" for="96242399-1385-4c63-8780-0cc44d1652bd">
+Optimise cameras</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">optimizeCameras</span><span class="p">:</span><span class="w"> </span><span class="c1"># (Metashape: optimizeCameras)</span><span class="w"></span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
 <span class="w">    </span><span class="nt">adaptive_fitting</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"> </span><span class="c1"># Recommended: True. Should the camera lens model be fit at the same time as optimizing photos?</span><span class="w"></span>
@@ -654,9 +783,9 @@ Optimise cameras</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="90bbf8bb-f961-4633-afc3-5571bcd0ef02" name="06c0ee9f-39f7-4803-93e5-cb8020bb8321" type="radio">
-</input><label class="tabbed-label" for="90bbf8bb-f961-4633-afc3-5571bcd0ef02">
-Depth maps</label><div class="tabbed-content docutils">
+<input id="91c8a230-8a5a-4a9d-9d0a-6005e47bc348" name="83b44970-b124-4c71-907f-13f30428bd7a" type="radio">
+</input><label class="sd-tab-label" for="91c8a230-8a5a-4a9d-9d0a-6005e47bc348">
+Depth maps</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">buildDepthMaps</span><span class="p">:</span><span class="w"> </span><span class="c1"># (Metashape: buildDepthMaps)</span><span class="w"></span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
 <span class="w">    </span><span class="nt">downscale</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"> </span><span class="c1"># Recommended: 2. How much to coarsen the photos when searching for matches to build the dense cloud. Corresponding settings in Metashape: 1: Highest, 2: High, 3: Medium, 4: Low, 5: Lowest</span><span class="w"></span>
@@ -677,9 +806,9 @@ Aggressive filtering removes detail and makes worse DEMs (at least for forest).
 NoFiltering takes very long. In trials, it never completed.</p>
 </div>
 </div>
-<input id="f9738fa7-b939-4a69-96c1-7e34430f0a5e" name="06c0ee9f-39f7-4803-93e5-cb8020bb8321" type="radio">
-</input><label class="tabbed-label" for="f9738fa7-b939-4a69-96c1-7e34430f0a5e">
-Dense cloud</label><div class="tabbed-content docutils">
+<input id="83c2d3ee-884d-4146-b2fb-c320d84c0981" name="83b44970-b124-4c71-907f-13f30428bd7a" type="radio">
+</input><label class="sd-tab-label" for="83c2d3ee-884d-4146-b2fb-c320d84c0981">
+Dense cloud</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">buildDenseCloud</span><span class="p">:</span><span class="w"> </span><span class="c1"># (Metashape: buildDepthMaps, buildDenseCloud, classifyGroundPoints, and exportPoints)</span><span class="w"></span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
 <span class="w">    </span><span class="nt">point_colors</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"> </span><span class="c1"># enable point colors calculations</span><span class="w"></span>
@@ -689,18 +818,18 @@ Dense cloud</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="4bc9ad09-a285-410a-8d5c-f3c4c73601ee" name="06c0ee9f-39f7-4803-93e5-cb8020bb8321" type="radio">
-</input><label class="tabbed-label" for="4bc9ad09-a285-410a-8d5c-f3c4c73601ee">
-Filter dense cloud</label><div class="tabbed-content docutils">
+<input id="0279e2fb-5c09-4466-8a6d-605d7cbbbcc2" name="83b44970-b124-4c71-907f-13f30428bd7a" type="radio">
+</input><label class="sd-tab-label" for="0279e2fb-5c09-4466-8a6d-605d7cbbbcc2">
+Filter dense cloud</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">filterDenseCloud</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
 <span class="w">    </span><span class="nt">point_confidence_max</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20</span><span class="w"> </span><span class="c1"># maximum point confidence for points to be removed, ranges from 1-99</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
-<input id="1303d4a5-269d-46ec-8db3-caa19f7abda0" name="06c0ee9f-39f7-4803-93e5-cb8020bb8321" type="radio">
-</input><label class="tabbed-label" for="1303d4a5-269d-46ec-8db3-caa19f7abda0">
-Mesh</label><div class="tabbed-content docutils">
+<input id="497a55d8-6ada-48ee-ba88-11a61dda8496" name="83b44970-b124-4c71-907f-13f30428bd7a" type="radio">
+</input><label class="sd-tab-label" for="497a55d8-6ada-48ee-ba88-11a61dda8496">
+Mesh</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">buildMesh</span><span class="p">:</span><span class="w"> </span><span class="c1"># (Metashape: buildModel)</span><span class="w"></span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
 <span class="w">    </span><span class="nt">surface_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Metashape.Arbitrary</span><span class="w"> </span><span class="c1"># Recommended: Metashape.Arbitrary. Surface type in [Arbitrary, HeightField]</span><span class="w"></span>
@@ -713,9 +842,9 @@ Mesh</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="1a897452-d285-49ea-b2c3-5679cfced0fb" name="06c0ee9f-39f7-4803-93e5-cb8020bb8321" type="radio">
-</input><label class="tabbed-label" for="1a897452-d285-49ea-b2c3-5679cfced0fb">
-Textures</label><div class="tabbed-content docutils">
+<input id="e02d2928-cb95-4b7d-8a0e-80f058d7f450" name="83b44970-b124-4c71-907f-13f30428bd7a" type="radio">
+</input><label class="sd-tab-label" for="e02d2928-cb95-4b7d-8a0e-80f058d7f450">
+Textures</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">buildTexture</span><span class="p">:</span><span class="w"> </span><span class="c1"># (Metashape: buildTexture)</span><span class="w"></span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
 <span class="w">    </span><span class="nt">mapping_mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Metashape.GenericMapping</span><span class="w"> </span><span class="c1"># [LegacyMapping, GenericMapping, OrthophotoMapping, AdaptiveOrthophotoMapping, SphericalMapping, CameraMapping]</span><span class="w"></span>
@@ -725,9 +854,9 @@ Textures</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="c7887c9c-52c3-4b5b-b1d0-31c80e0c003b" name="06c0ee9f-39f7-4803-93e5-cb8020bb8321" type="radio">
-</input><label class="tabbed-label" for="c7887c9c-52c3-4b5b-b1d0-31c80e0c003b">
-Tiled model</label><div class="tabbed-content docutils">
+<input id="09ff9432-f824-42f1-849f-9c4070795427" name="83b44970-b124-4c71-907f-13f30428bd7a" type="radio">
+</input><label class="sd-tab-label" for="09ff9432-f824-42f1-849f-9c4070795427">
+Tiled model</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">buildTiledModel</span><span class="p">:</span><span class="w"> </span><span class="c1"># (Metashape: buildTexture)</span><span class="w"></span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
 <span class="w">    </span><span class="c1">## For depth maps (buldModel)</span><span class="w"></span>
@@ -738,9 +867,9 @@ Tiled model</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="9ab05f88-dd03-4325-9b45-11d595087f15" name="06c0ee9f-39f7-4803-93e5-cb8020bb8321" type="radio">
-</input><label class="tabbed-label" for="9ab05f88-dd03-4325-9b45-11d595087f15">
-DEM</label><div class="tabbed-content docutils">
+<input id="cdb27837-8458-49af-8413-56fd0c6a7be9" name="83b44970-b124-4c71-907f-13f30428bd7a" type="radio">
+</input><label class="sd-tab-label" for="cdb27837-8458-49af-8413-56fd0c6a7be9">
+DEM</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">buildDEM</span><span class="p">:</span><span class="w"> </span><span class="c1"># (Metashape: buildTexture)</span><span class="w"></span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
 <span class="w">    </span><span class="nt">source_data</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Metashape.ModelData</span><span class="w"> </span><span class="c1"># Data source in Metashape.[PointCloudData, DenseCloudData, DepthMapsData, ModelData, TiledModelData, ElevationData, OrthomosaicData, ImagesData]</span><span class="w"></span>
@@ -749,9 +878,9 @@ DEM</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="65f0bb42-6ccb-45b4-8daf-b29c9a43fb5b" name="06c0ee9f-39f7-4803-93e5-cb8020bb8321" type="radio">
-</input><label class="tabbed-label" for="65f0bb42-6ccb-45b4-8daf-b29c9a43fb5b">
-GCPs - detection</label><div class="tabbed-content docutils">
+<input id="4be0a2dc-f3cf-4f81-b261-9b2f12fc9061" name="83b44970-b124-4c71-907f-13f30428bd7a" type="radio">
+</input><label class="sd-tab-label" for="4be0a2dc-f3cf-4f81-b261-9b2f12fc9061">
+GCPs - detection</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">detectGCPs</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
 <span class="w">    </span><span class="nt">photo_path</span><span class="p">:</span><span class="w"> </span><span class="c1"># path to photo directory (&quot;data_directory&quot; in the standardised folder directory)  - this parameter will be moved to the addPhotos configuration section in later releases.</span><span class="w"></span>
@@ -764,9 +893,9 @@ GCPs - detection</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="0590153b-d5bb-453d-947d-e038fcf98312" name="06c0ee9f-39f7-4803-93e5-cb8020bb8321" type="radio">
-</input><label class="tabbed-label" for="0590153b-d5bb-453d-947d-e038fcf98312">
-GCPs - add to project</label><div class="tabbed-content docutils">
+<input id="4de46467-2006-4773-b2f3-1864107dc09c" name="83b44970-b124-4c71-907f-13f30428bd7a" type="radio">
+</input><label class="sd-tab-label" for="4de46467-2006-4773-b2f3-1864107dc09c">
+GCPs - add to project</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">addGCPs</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
 <span class="w">    </span><span class="nt">gcp_crs</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;EPSG::4326&quot;</span><span class="w"> </span><span class="c1"># CRS EPSG code of GCP coordinates. 32633 (UTM 33 N) is the CRS of the sample RGB photoset. 4326 (GPS) is the standard for GPS coordinates.</span><span class="w"></span>
@@ -776,9 +905,9 @@ GCPs - add to project</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="cb821216-848e-4588-b096-05963ed3ab25" name="06c0ee9f-39f7-4803-93e5-cb8020bb8321" type="radio">
-</input><label class="tabbed-label" for="cb821216-848e-4588-b096-05963ed3ab25">
-Publish</label><div class="tabbed-content docutils">
+<input id="84d53ec2-1126-4a81-97d2-612c342d316e" name="83b44970-b124-4c71-907f-13f30428bd7a" type="radio">
+</input><label class="sd-tab-label" for="84d53ec2-1126-4a81-97d2-612c342d316e">
+Publish</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">publishData</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
 <span class="w">    </span><span class="nt">service</span><span class="p">:</span><span class="w">  </span><span class="c1"># Service type in [ServiceSketchfab, ServiceMapbox, Service4DMapper, ServiceSputnik, ServicePointscene, ServiceMelown, ServicePointbox, ServicePicterra]</span><span class="w"></span>
@@ -794,9 +923,9 @@ Publish</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="c6a86115-4ce5-4e65-9f31-8dca4dbf4ca8" name="06c0ee9f-39f7-4803-93e5-cb8020bb8321" type="radio">
-</input><label class="tabbed-label" for="c6a86115-4ce5-4e65-9f31-8dca4dbf4ca8">
-Networking</label><div class="tabbed-content docutils">
+<input id="3137b5c1-4c0d-44a0-b3c1-47d38c79b90e" name="83b44970-b124-4c71-907f-13f30428bd7a" type="radio">
+</input><label class="sd-tab-label" for="3137b5c1-4c0d-44a0-b3c1-47d38c79b90e">
+Networking</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">networkProcessing</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
 <span class="w">    </span><span class="nt">server_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">svalbox</span><span class="w"> </span><span class="c1"># Host Server IP address</span><span class="w"></span>
@@ -807,7 +936,7 @@ Networking</label><div class="tabbed-content docutils">
 </div>
 </div>
 <div class="section" id="another-shot">
-<h3>Another shot<a class="headerlink" href="#another-shot" title="Permalink to this headline">¶</a></h3>
+<h3>Another shot<a class="headerlink" href="#another-shot" title="Permalink to this headline">#</a></h3>
 <p>After copying over the desired parameter-sections, update the config_file path correspondingly and run the cell again.
 It should now result in a successful runtime.</p>
 <div class="cell tag_raises-exception docutils container">
@@ -821,32 +950,32 @@ It should now result in a successful runtime.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-12-01 20:50:22,781 [INFO] automated_metashape.MetashapeProcessing: --------------
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-12-01 21:11:36,273 [INFO] automated_metashape.MetashapeProcessing: --------------
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-12-01 20:50:22,784 [INFO] automated_metashape.MetashapeProcessing: Fresh run initiated.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-12-01 21:11:36,275 [INFO] automated_metashape.MetashapeProcessing: Fresh run initiated.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-12-01 20:50:22,786 [INFO] automated_metashape.MetashapeProcessing: Runtime id: MS_20221201T2050
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-12-01 21:11:36,276 [INFO] automated_metashape.MetashapeProcessing: Runtime id: MS_20221201T2111
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-12-01 20:50:22,787 [INFO] automated_metashape.MetashapeProcessing: --------------
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-12-01 21:11:36,277 [INFO] automated_metashape.MetashapeProcessing: --------------
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-12-01 20:50:22,789 [INFO] automated_metashape.MetashapeProcessing: Agisoft Metashape Professional Version: 1.7.2.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-12-01 21:11:36,277 [INFO] automated_metashape.MetashapeProcessing: Agisoft Metashape Professional Version: 1.7.2.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-12-01 20:50:22,790 [INFO] automated_metashape.MetashapeProcessing: Automated metashape package version: 0.1.11.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-12-01 21:11:36,278 [INFO] automated_metashape.MetashapeProcessing: Automated metashape package version: 0.1.11.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-12-01 20:50:23,201 [WARNING] automated_metashape.MetashapeProcessing: automated_metashape update available 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-12-01 21:11:36,696 [WARNING] automated_metashape.MetashapeProcessing: automated_metashape update available 
 (external version: 0.1.12). Please update from https://github.com/PeterBetlem/automated_metashape/releases. YAML parameters may have changed!
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-12-01 20:50:23,202 [INFO] automated_metashape.MetashapeProcessing: Creating new project...
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-12-01 21:11:36,697 [INFO] automated_metashape.MetashapeProcessing: Creating new project...
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-12-01 20:50:23,611 [INFO] automated_metashape.MetashapeProcessing: Saved project as C:/Users/Peter/Documents/GitHub/automated_agisoft_documentation/content/lessons/l3/metashape/MS_20221201T2050.psx
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-12-01 21:11:37,106 [INFO] automated_metashape.MetashapeProcessing: Saved project as C:/Users/Peter/Documents/GitHub/automated_agisoft_documentation/content/lessons/l3/metashape/MS_20221201T2111.psx
 
 ### Start of input file configuration for startup-stage ###
 load_project_path: null
@@ -859,16 +988,16 @@ subdivide_task: true
 ### End of input file configuration for startup-stage ###
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-12-01 20:50:23,814 [WARNING] automated_metashape.MetashapeProcessing: Failed to export report. Export report manually.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-12-01 21:11:37,311 [WARNING] automated_metashape.MetashapeProcessing: Failed to export report. Export report manually.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-12-01 20:50:24,017 [INFO] automated_metashape.MetashapeProcessing: --------------
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-12-01 21:11:37,514 [INFO] automated_metashape.MetashapeProcessing: --------------
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-12-01 20:50:24,018 [INFO] automated_metashape.MetashapeProcessing: Run completed.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-12-01 21:11:37,515 [INFO] automated_metashape.MetashapeProcessing: Run completed.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-12-01 20:50:24,019 [INFO] automated_metashape.MetashapeProcessing: --------------
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-12-01 21:11:37,515 [INFO] automated_metashape.MetashapeProcessing: --------------
 </pre></div>
 </div>
 </div>
@@ -920,9 +1049,11 @@ It can be easily used to reprocess and exactly repeat the processing.</p>
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="Batch.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -938,24 +1069,28 @@ It can be easily used to reprocess and exactly repeat the processing.</p>
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Peter Betlem and Contributors<br/>
+  
+      &copy; Copyright 2022 (CC-BY-NC except where otherwise stated).<br/>
+</p>
+        </footer>
+    </div>
     
-      By Peter Betlem and Contributors<br/>
-    
-        &copy; Copyright 2022 (CC-BY-NC except where otherwise noted).<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

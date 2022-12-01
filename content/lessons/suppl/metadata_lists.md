@@ -1,6 +1,7 @@
 # Metadata templates for archiving
 
-````{tabbed} Outcrop and hand-sized samples
+`````{tab-set}
+````{tab-item} Outcrop and hand-sized samples
 ```yaml
 acq_camera_lens:  # Camera lens as indicated in the Agisoft Metashape processing report.. Unit: mm
 acq_camera_model:  # Camera model as indicated in the Agisoft Metashape processing report.
@@ -75,7 +76,7 @@ publ_v3geo_model: # The V3Geo model ID (obtained after submission on V3Geo)
 ```
 ````
 
-````{tabbed} Digital drill core models
+````{tab-item} Digital drill core models
 
 ```yaml
 data_project_path: dir/to\path
@@ -118,3 +119,4 @@ unis_project_campaign: lightbox
 comments:
 ```
 ````
+`````

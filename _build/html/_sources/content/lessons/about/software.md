@@ -90,51 +90,48 @@ conda install jupyterlab -c conda-forge
 To interact with the Agisoft Metashape API, you also need to install the [Python 3 Module (v1.7.0 - time-of-writing)](https://www.agisoft.com/downloads/installer/).
 Once downloaded, change your current working directory to your downloads folder:
 
-````{panels}
-:column: col-4
-:card: border-2
-Windows
-^^^
+`````{tab-set}
+````{tab-item} Windows
 ```
 cd C:\Users\{name}\Downloads
 ```
----
-macOS
-^^^
+````
+
+````{tab-item} macOS
 ```
-to be done...
-```
----
-Linux
-^^^
-```
-to be done...
+TBD...
 ```
 ````
 
+````{tab-item} Linux
+```
+TBD...
+```
+````
+`````
+
+
 And then install the downloaded *.whl* file using the [pip package installer](https://packaging.python.org/guides/tool-recommendations/) for Python.
 
-````{panels}
-:column: col-4
-:card: border-2
-Windows
-^^^
+`````{tab-set}
+````{tab-item} Windows
 ```
 pip install Metashape-1.7.1-cp35.cp36.cp37.cp38-none-win_amd64.whl
 ```
----
-macOS
-^^^
+````
+
+````{tab-item} macOS
 ```
 pip install Metashape-1.7.1-cp35.cp36.cp37.cp38-abi3-macosx_10_13_x86_64.whl
 ```
----
-Linux
-^^^
+````
+
+````{tab-item} Linux
 ```
 pip install Metashape-1.7.1-cp35.cp36.cp37.cp38-abi3-linux_x86_64.whl
 ```
 ````
+`````
 
 Finally we can install the *automated metashape* scripts using the pip manager.
 Download the latest pip [redistributable](https://github.com/PeterBetlem/image_processing/releases) and install:

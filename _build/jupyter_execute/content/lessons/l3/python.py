@@ -126,7 +126,8 @@ project.init_tasks()
 # The parameter-section names should fully follow the parameter names of the Metashape functions.
 # In case default parameters are to be used, remove the corresponding parameter-section.
 # 
-# ````{tabbed} Add photos
+# `````{tab-set}
+# ````{tab-item} Add photos
 # ```yaml
 # addPhotos:
 #     enabled: True
@@ -141,7 +142,7 @@ project.init_tasks()
 # ```
 # ````
 # 
-# ````{tabbed} Analyze photos
+# ````{tab-item} Analyze photos
 # ```yaml
 # analyzePhotos:
 #     enabled: True
@@ -149,7 +150,7 @@ project.init_tasks()
 # ```
 # ````
 # 
-# ````{tabbed} Add masks
+# ````{tab-item} Add masks
 # ```yaml
 # masks:
 #     enabled: False # Default, only enable if you have images with masks :)
@@ -158,7 +159,7 @@ project.init_tasks()
 # ```
 # ````
 # 
-# ````{tabbed} Alignment
+# ````{tab-item} Alignment
 # ```yaml
 # alignPhotos: # (Metashape: alignPhotos)
 #     enabled: True
@@ -178,7 +179,7 @@ project.init_tasks()
 # 
 # ````
 # 
-# ````{tabbed} Optimise cameras
+# ````{tab-item} Optimise cameras
 # ```yaml
 # optimizeCameras: # (Metashape: optimizeCameras)
 #     enabled: True
@@ -187,7 +188,7 @@ project.init_tasks()
 # ```
 # ````
 # 
-# ````{tabbed} Depth maps
+# ````{tab-item} Depth maps
 # ```yaml
 # buildDepthMaps: # (Metashape: buildDepthMaps)
 #     enabled: True
@@ -211,7 +212,7 @@ project.init_tasks()
 # ```
 # ````
 # 
-# ````{tabbed} Dense cloud
+# ````{tab-item} Dense cloud
 # ```yaml
 # buildDenseCloud: # (Metashape: buildDepthMaps, buildDenseCloud, classifyGroundPoints, and exportPoints)
 #     enabled: True
@@ -222,7 +223,7 @@ project.init_tasks()
 # ```
 # ````
 # 
-# ````{tabbed} Filter dense cloud
+# ````{tab-item} Filter dense cloud
 # ```yaml
 # filterDenseCloud:
 #     enabled: True
@@ -231,7 +232,7 @@ project.init_tasks()
 # ````
 # 
 # 
-# ````{tabbed} Mesh
+# ````{tab-item} Mesh
 # ```yaml
 # buildMesh: # (Metashape: buildModel)
 #     enabled: True
@@ -245,7 +246,7 @@ project.init_tasks()
 # ```
 # ````
 # 
-# ````{tabbed} Textures
+# ````{tab-item} Textures
 # ```yaml
 # buildTexture: # (Metashape: buildTexture)
 #     enabled: True
@@ -256,7 +257,7 @@ project.init_tasks()
 # ```
 # ````
 # 
-# ````{tabbed} Tiled model
+# ````{tab-item} Tiled model
 # ```yaml
 # buildTiledModel: # (Metashape: buildTexture)
 #     enabled: True
@@ -268,7 +269,7 @@ project.init_tasks()
 # ```
 # ````
 # 
-# ````{tabbed} DEM
+# ````{tab-item} DEM
 # ```yaml
 # buildDEM: # (Metashape: buildTexture)
 #     enabled: True
@@ -278,7 +279,7 @@ project.init_tasks()
 # ```
 # ````
 # 
-# ````{tabbed} GCPs - detection
+# ````{tab-item} GCPs - detection
 # ```yaml
 # detectGCPs:
 #     enabled: True
@@ -292,7 +293,7 @@ project.init_tasks()
 # ```
 # ````
 # 
-# ````{tabbed} GCPs - add to project
+# ````{tab-item} GCPs - add to project
 # ```yaml
 # addGCPs:
 #     enabled: True
@@ -303,7 +304,7 @@ project.init_tasks()
 # ```
 # ````
 # 
-# ````{tabbed} Publish
+# ````{tab-item} Publish
 # ```yaml
 # publishData:
 #     enabled: True
@@ -320,13 +321,14 @@ project.init_tasks()
 # ```
 # ````
 # 
-# ````{tabbed} Networking
+# ````{tab-item} Networking
 # ```yaml
 # networkProcessing:
 #     enabled: True
 #     server_ip: svalbox # Host Server IP address
 # ```
 # ````
+# `````
 # 
 # ### Another shot
 # 
