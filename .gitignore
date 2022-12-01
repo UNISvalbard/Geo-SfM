@@ -2,3 +2,5 @@
 content/lessons/l3/metashape/*
 content/lessons/l3/metashape/**
 
+_build.py
+_build/*

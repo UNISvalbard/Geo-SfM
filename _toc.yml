@@ -4,7 +4,7 @@ parts:
 - caption: Session 1
   chapters:
   - file: content/lessons/l1/sfm_photogrammetry.md
-  - file: content/lessons/l1/quiz.md
+  #- file: content/lessons/l1/quiz.md
   - file: content/lessons/l1/exercise1.md
   - file: content/lessons/l1/tutorial.md
 - caption: Session 2
@@ -21,7 +21,7 @@ parts:
 - caption: Session 4
   chapters:
   - file: content/lessons/l4/hss_overview.md
-  - file: content/lessons/l4/quiz.md
+  #- file: content/lessons/l4/quiz.md
   - file: content/lessons/l4/hss_lab_exercise.md
   - file: content/lessons/l4/hss_field_exercise.md
   - file: content/lessons/l4/hss_tutorial.md
@@ -31,8 +31,8 @@ parts:
   - file: content/lessons/l5/geomodel_tutorial.md
 - caption: Suppl. dGNSS data processing
   chapters:
-  - file: content/lessons/suppl_dgnss/dgnss_data_downloading.md
-  - file: content/lessons/suppl_dgnss/leica_infinity.md
+  - url: https://unisvalbard.github.io/gnss-compendium/readme.html
+    title: UNIS GNSS Compendium
   - file: content/lessons/suppl_dgnss/topodrone_ppk.md
 - caption: Resources
   chapters:
@@ -44,3 +44,8 @@ parts:
 - caption: About Geo-SfM
   chapters:
   - file: content/lessons/about/cite.md
+
+- caption: External Links
+  chapters:
+  - url: https://unisvalbard.github.io/exbooks/
+    title: UNIS Compendium Portal

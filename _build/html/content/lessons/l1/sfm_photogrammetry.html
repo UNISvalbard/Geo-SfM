@@ -51,7 +51,7 @@
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="SfM photogrammetry Quiz" href="quiz.html" />
+    <link rel="next" title="Exercise 1 - learning the ropes of SfM photogrammetry" href="exercise1.html" />
     <link rel="prev" title="Welcome to Geo-SfM" href="../../../landing-page.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -105,11 +105,6 @@
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    SfM photogrammetry
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="quiz.html">
-   SfM photogrammetry Quiz
   </a>
  </li>
  <li class="toctree-l1">
@@ -184,11 +179,6 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../l4/quiz.html">
-   Hand-sized Sample Quiz
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="../l4/hss_lab_exercise.html">
    Exercise 3 - Food for thought
   </a>
@@ -228,13 +218,8 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../suppl_dgnss/dgnss_data_downloading.html">
-   Downloading base station dGNSS data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../suppl_dgnss/leica_infinity.html">
-   Leica Infinity
+  <a class="reference external" href="https://unisvalbard.github.io/gnss-compendium/readme.html">
+   UNIS GNSS Compendium
   </a>
  </li>
  <li class="toctree-l1">
@@ -287,13 +272,21 @@
   </a>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  External Links
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://unisvalbard.github.io/exbooks/">
+   UNIS Compendium Portal
+  </a>
+ </li>
+</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
 
 </div>
 
@@ -342,15 +335,14 @@
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/UNISvalbard/Geo-SfM"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
+        
         <a class="issues-button"
             href="https://github.com/UNISvalbard/Geo-SfM/issues/new?title=Issue%20on%20page%20%2Fcontent/lessons/l1/sfm_photogrammetry.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
+        <a class="edit-button" href="https://github.com/UNISvalbard/Geo-SfM/edit/master/content/lessons/l1/sfm_photogrammetry.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
 </div>
 
@@ -430,13 +422,13 @@ After all, by looking at any given object from a single direction, the 3D scene 
 Where different lines of sight intercept, an estimate of the 3D coordinates of a given point is found that can be combined with other estimated point coordinates to form a <em>point cloud</em>.</p>
 <div class="figure align-default" id="stero-figure">
 <img alt="../../../_images/stereo.jpg" src="../../../_images/stereo.jpg" />
-<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Perceiving depth by tracing lines of sight from different viewing angles. Image from <span id="id1">[<a class="reference internal" href="../about/zbiblio.html#id7">1</a>]</span>.</span><a class="headerlink" href="#stero-figure" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Perceiving depth by tracing lines of sight from different viewing angles. Image from <span id="id1">[<a class="reference internal" href="../about/zbiblio.html#id7">5</a>]</span>.</span><a class="headerlink" href="#stero-figure" title="Permalink to this image">¶</a></p>
 </div>
 <p>Increasing the amount of lines of sight automatically results in a higher confidence of the 3D coordinates of the associated point.
 It is therefore common to not just use two or three 3D images, but rather a series of dozens, hundreds, and even more 2D images to reconstruct a 3D structure of a scene or object.</p>
 <div class="figure align-default" id="sfm-figure">
 <img alt="../../../_images/sfm-diagram.jpg" src="../../../_images/sfm-diagram.jpg" />
-<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Capturing an object from many angles with sufficient overlap between images is a must for usable output. Image from <span id="id2">[<a class="reference internal" href="../about/zbiblio.html#id11">2</a>]</span>.</span><a class="headerlink" href="#sfm-figure" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Capturing an object from many angles with sufficient overlap between images is a must for usable output. Image from <span id="id2">[<a class="reference internal" href="../about/zbiblio.html#id11">3</a>]</span>.</span><a class="headerlink" href="#sfm-figure" title="Permalink to this image">¶</a></p>
 </div>
 <p>Preferably, the images each feature a high degree of overlap and are taken from different angles (<a class="reference internal" href="#sfm-figure"><span class="std std-numref">Fig. 3</span></a>) to narrow down the margin of error of the coordinate estimates.
 Interestingly, modern algorithms do not only calculate the point coordinates - they simultaneously calculate the original camera locations; amazing, no?</p>
@@ -446,7 +438,7 @@ Once the camera positions are known and a hand full of key matching points are e
 <p>One can also connect neighbouring points (coordinates along with other information such as colour, normal vector, etc., called <em>verteces</em>) to create <em>edges</em>; combine <em>edges</em> to create <em>faces</em>; combine <em>faces</em> into <em>polygons</em> and <em>surfaces</em> in a <em>meshed model</em> (<a class="reference internal" href="#sfm-polygons"><span class="std std-numref">Fig. 4</span></a>).</p>
 <div class="figure align-default" id="sfm-polygons">
 <img alt="../../../_images/polygonal_meshing_modelling.png" src="../../../_images/polygonal_meshing_modelling.png" />
-<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Capturing an object from many angles with sufficient overlap between images is a must for usable output. Image from <span id="id3">[<a class="reference internal" href="../about/zbiblio.html#id9">3</a>]</span>.</span><a class="headerlink" href="#sfm-polygons" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Capturing an object from many angles with sufficient overlap between images is a must for usable output. Image from <span id="id3">[<a class="reference internal" href="../about/zbiblio.html#id9">7</a>]</span>.</span><a class="headerlink" href="#sfm-polygons" title="Permalink to this image">¶</a></p>
 </div>
 <p>The <em>meshed model</em> is effectively the digitised outer shell of the 3D scene that was captured on camera.
 <em>Ddigital outcrop models</em> (DOMs) is the term given to meshed models (often with texture, i.e., colouring) of geological outcrops.
@@ -456,7 +448,7 @@ An example of a DOM featuring the folding observed near the top of the Janusfjel
 </div>
 <div class="seealso admonition">
 <p class="admonition-title">Further reading</p>
-<p>Westoby et al. <span id="id4">[<a class="reference internal" href="../about/zbiblio.html#id11">2</a>]</span> put together an excellent overview on the use of SfM photogrammetry in the geosciences, which is a recommended read for the interested reader.</p>
+<p>Westoby et al. <span id="id4">[<a class="reference internal" href="../about/zbiblio.html#id11">3</a>]</span> put together an excellent overview on the use of SfM photogrammetry in the geosciences, which is a recommended read for the interested reader.</p>
 </div>
 </div>
 </div>
@@ -493,10 +485,10 @@ An example of a DOM featuring the folding observed near the top of the Janusfjel
             <p class="prev-next-title">Welcome to Geo-SfM</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="quiz.html" title="next page">
+    <a class='right-next' id="next-link" href="exercise1.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">SfM photogrammetry Quiz</p>
+        <p class="prev-next-title">Exercise 1 - learning the ropes of SfM photogrammetry</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
