@@ -136,7 +136,8 @@ Refer to [Metashape documentation](https://www.agisoft.com/pdf/metashape_python_
 The parameter-section names should fully follow the parameter names of the Metashape functions.
 In case default parameters are to be used, remove the corresponding parameter-section.
 
-````{tabbed} Add photos
+`````{tab-set}
+````{tab-item} Add photos
 ```yaml
 addPhotos:
     enabled: True
@@ -151,7 +152,7 @@ This should generally only be set to *True* when ground control points (GCPs) ar
 ```
 ````
 
-````{tabbed} Analyze photos
+````{tab-item} Analyze photos
 ```yaml
 analyzePhotos:
     enabled: True
@@ -159,7 +160,7 @@ analyzePhotos:
 ```
 ````
 
-````{tabbed} Add masks
+````{tab-item} Add masks
 ```yaml
 masks:
     enabled: False # Default, only enable if you have images with masks :)
@@ -168,7 +169,7 @@ masks:
 ```
 ````
 
-````{tabbed} Alignment
+````{tab-item} Alignment
 ```yaml
 alignPhotos: # (Metashape: alignPhotos)
     enabled: True
@@ -188,7 +189,7 @@ Whether or not to try alignment of images that failed alignment during the first
 
 ````
 
-````{tabbed} Optimise cameras
+````{tab-item} Optimise cameras
 ```yaml
 optimizeCameras: # (Metashape: optimizeCameras)
     enabled: True
@@ -197,7 +198,7 @@ optimizeCameras: # (Metashape: optimizeCameras)
 ```
 ````
 
-````{tabbed} Depth maps
+````{tab-item} Depth maps
 ```yaml
 buildDepthMaps: # (Metashape: buildDepthMaps)
     enabled: True
@@ -221,7 +222,7 @@ NoFiltering takes very long. In trials, it never completed.
 ```
 ````
 
-````{tabbed} Dense cloud
+````{tab-item} Dense cloud
 ```yaml
 buildDenseCloud: # (Metashape: buildDepthMaps, buildDenseCloud, classifyGroundPoints, and exportPoints)
     enabled: True
@@ -232,7 +233,7 @@ buildDenseCloud: # (Metashape: buildDepthMaps, buildDenseCloud, classifyGroundPo
 ```
 ````
 
-````{tabbed} Filter dense cloud
+````{tab-item} Filter dense cloud
 ```yaml
 filterDenseCloud:
     enabled: True
@@ -241,7 +242,7 @@ filterDenseCloud:
 ````
 
 
-````{tabbed} Mesh
+````{tab-item} Mesh
 ```yaml
 buildMesh: # (Metashape: buildModel)
     enabled: True
@@ -255,7 +256,7 @@ buildMesh: # (Metashape: buildModel)
 ```
 ````
 
-````{tabbed} Textures
+````{tab-item} Textures
 ```yaml
 buildTexture: # (Metashape: buildTexture)
     enabled: True
@@ -266,7 +267,7 @@ buildTexture: # (Metashape: buildTexture)
 ```
 ````
 
-````{tabbed} Tiled model
+````{tab-item} Tiled model
 ```yaml
 buildTiledModel: # (Metashape: buildTexture)
     enabled: True
@@ -278,7 +279,7 @@ buildTiledModel: # (Metashape: buildTexture)
 ```
 ````
 
-````{tabbed} DEM
+````{tab-item} DEM
 ```yaml
 buildDEM: # (Metashape: buildTexture)
     enabled: True
@@ -288,7 +289,7 @@ buildDEM: # (Metashape: buildTexture)
 ```
 ````
 
-````{tabbed} GCPs - detection
+````{tab-item} GCPs - detection
 ```yaml
 detectGCPs:
     enabled: True
@@ -302,7 +303,7 @@ detectGCPs:
 ```
 ````
 
-````{tabbed} GCPs - add to project
+````{tab-item} GCPs - add to project
 ```yaml
 addGCPs:
     enabled: True
@@ -313,7 +314,7 @@ addGCPs:
 ```
 ````
 
-````{tabbed} Publish
+````{tab-item} Publish
 ```yaml
 publishData:
     enabled: True
@@ -330,13 +331,14 @@ publishData:
 ```
 ````
 
-````{tabbed} Networking
+````{tab-item} Networking
 ```yaml
 networkProcessing:
     enabled: True
     server_ip: svalbox # Host Server IP address
 ```
 ````
+`````
 
 ### Another shot
 

@@ -682,7 +682,53 @@ So let’s proceed with first installing Py37 (Python 3.7) and then the required
 </div>
 <p>To interact with the Agisoft Metashape API, you also need to install the <a class="reference external" href="https://www.agisoft.com/downloads/installer/">Python 3 Module (v1.7.0 - time-of-writing)</a>.
 Once downloaded, change your current working directory to your downloads folder:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="4423ee83-e865-4da6-9019-bd5f3d0b43a9" name="be39627c-0928-498f-ac34-a668d9b7a9fe" type="radio">
+</input><label class="sd-tab-label" for="4423ee83-e865-4da6-9019-bd5f3d0b43a9">
+Windows</label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="p">{</span><span class="n">name</span><span class="p">}</span>\<span class="n">Downloads</span>
+</pre></div>
+</div>
+</div>
+<input id="dd3bc3a7-cd19-4f51-bc84-8707763d778b" name="be39627c-0928-498f-ac34-a668d9b7a9fe" type="radio">
+</input><label class="sd-tab-label" for="dd3bc3a7-cd19-4f51-bc84-8707763d778b">
+macOS</label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TBD</span><span class="o">...</span>
+</pre></div>
+</div>
+</div>
+<input id="cd28ef2d-5540-4aa2-a20b-d71f135ade5e" name="be39627c-0928-498f-ac34-a668d9b7a9fe" type="radio">
+</input><label class="sd-tab-label" for="cd28ef2d-5540-4aa2-a20b-d71f135ade5e">
+Linux</label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TBD</span><span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>And then install the downloaded <em>.whl</em> file using the <a class="reference external" href="https://packaging.python.org/guides/tool-recommendations/">pip package installer</a> for Python.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="e037e3c0-2adb-44d3-bc8b-9f7fcbfa964e" name="509e61ad-b190-4c30-a5cd-cffa5bb51f24" type="radio">
+</input><label class="sd-tab-label" for="e037e3c0-2adb-44d3-bc8b-9f7fcbfa964e">
+Windows</label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">Metashape</span><span class="o">-</span><span class="mf">1.7.1</span><span class="o">-</span><span class="n">cp35</span><span class="o">.</span><span class="n">cp36</span><span class="o">.</span><span class="n">cp37</span><span class="o">.</span><span class="n">cp38</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="n">win_amd64</span><span class="o">.</span><span class="n">whl</span>
+</pre></div>
+</div>
+</div>
+<input id="878c97e7-6a1b-48e8-9516-e815330abbb6" name="509e61ad-b190-4c30-a5cd-cffa5bb51f24" type="radio">
+</input><label class="sd-tab-label" for="878c97e7-6a1b-48e8-9516-e815330abbb6">
+macOS</label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">Metashape</span><span class="o">-</span><span class="mf">1.7.1</span><span class="o">-</span><span class="n">cp35</span><span class="o">.</span><span class="n">cp36</span><span class="o">.</span><span class="n">cp37</span><span class="o">.</span><span class="n">cp38</span><span class="o">-</span><span class="n">abi3</span><span class="o">-</span><span class="n">macosx_10_13_x86_64</span><span class="o">.</span><span class="n">whl</span>
+</pre></div>
+</div>
+</div>
+<input id="cd91a55d-35f4-4a00-81b0-3326345a67b4" name="509e61ad-b190-4c30-a5cd-cffa5bb51f24" type="radio">
+</input><label class="sd-tab-label" for="cd91a55d-35f4-4a00-81b0-3326345a67b4">
+Linux</label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">Metashape</span><span class="o">-</span><span class="mf">1.7.1</span><span class="o">-</span><span class="n">cp35</span><span class="o">.</span><span class="n">cp36</span><span class="o">.</span><span class="n">cp37</span><span class="o">.</span><span class="n">cp38</span><span class="o">-</span><span class="n">abi3</span><span class="o">-</span><span class="n">linux_x86_64</span><span class="o">.</span><span class="n">whl</span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>Finally we can install the <em>automated metashape</em> scripts using the pip manager.
 Download the latest pip <a class="reference external" href="https://github.com/PeterBetlem/image_processing/releases">redistributable</a> and install:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">automated_metashape</span><span class="o">-</span><span class="mf">0.1.2</span><span class="o">-</span><span class="n">py3</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="nb">any</span><span class="o">.</span><span class="n">whl</span>

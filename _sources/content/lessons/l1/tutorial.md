@@ -82,7 +82,8 @@ Proceed by creating the following project_directory in the folder where you have
 Herein folders are named without extensions, and filenames are given extensions.
 Text between {} indicates variable names.
 
-````{tabbed} Handheld data
+`````{tab-set}
+````{tab-item} Handheld data
 ```
 {project_directory} (The folder with all files related to this project)
 |   overview_img.{ext}
@@ -119,7 +120,7 @@ Text between {} indicates variable names.
 ```
 ````
 
-````{tabbed} UAV data
+````{tab-item} UAV data
 ```
 {project_directory} (The folder with all files related to this project)
 |   overview_img.{ext}
@@ -155,6 +156,7 @@ Text between {} indicates variable names.
         (optionally: {metashape_project_name}.log)
 ```
 ````
+`````
 
 The standardised project structures (as we will see later on) are important for automated processing and archiving.
 The project structures are identical in principle, only differing in the way images are sorted.
@@ -164,26 +166,28 @@ The project structures are identical in principle, only differing in the way ima
 Having created the standardised project structure, proceed with extracting your taken images to the following directory:
 
 
-````{tabbed} Single folder/acquisition
+`````{tab-set}
+````{tab-item} Single folder/acquisition
 ```
 {project_directory}\data\100MEDIA
 ```
 ````
 
-````{tabbed} Single acquisition with 1000 images
+````{tab-item} Single acquisition with 1000 images
 ```
 {project_directory}\data\100MEDIA (includes up to 999 images)
 {project_directory}\data\101MEDIA (includes remaining images)
 ```
 ````
 
-````{tabbed} UAV acquisition with 3 flights
+````{tab-item} UAV acquisition with 3 flights
 ```
 {project_directory}\data\f0001
 {project_directory}\data\f0002
 {project_directory}\data\f0003
 ```
 ````
+`````
 
 In case the image count exceeds 999 images, make sure to utilise multiple folders in the *data_directory*.
 While you are at it, why not sort the images by flight or acquisition to improve your data structure?
@@ -481,7 +485,7 @@ The next step involves generating a texture and placing this "image" onto the me
 If depth maps do exist, and you decide to use them as the source data, then make sure to enable *Reuse depth maps* to save computational time!
 ```
 
-##### Filtering the mesh
+#### Filtering the mesh
 
 Sometiems your mesh/model features blobs that are not connected to the main model.
 These can be easily (and scientifically!) removed through use of the *Connected component filter*, see {ref}`dialog <filter_connected_component_size>`.

@@ -777,12 +777,116 @@ The use of this standardised project setup is furthermore a requirement for digi
 <p>Proceed by creating the following project_directory in the folder where you have all your projects..
 Herein folders are named without extensions, and filenames are given extensions.
 Text between {} indicates variable names.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="b7b378ec-27d7-4feb-ba21-aabea2f0fbde" name="5894bdf0-4beb-4e4b-9bc5-11337c1d4d52" type="radio">
+</input><label class="sd-tab-label" for="b7b378ec-27d7-4feb-ba21-aabea2f0fbde">
+Handheld data</label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{project_directory} (The folder with all files related to this project)
+|   overview_img.{ext}
+|   description.txt
+├───config (where you place your configuration files)
+        {cfg_0001}.yml
+        {cfg_0002}.yml
+        ...
+├───data (where you unzipped the files to)
+├───────100MEDIA (The folder in which all the images reside)
+|           {img_0001}.{ext}
+|           {img_0002}.{ext}
+|           ...
+├───────101MEDIA (The folder in which all the images reside)
+|           {img_0001}.{ext}
+|           {img_0002}.{ext}
+|           ...
+|       ...
+├───────199MEDIA (The folder in which all the images reside)
+|           {img_0001}.{ext}
+|           {img_0002}.{ext}
+|           ...
+├───────gcps
+|           (We&#39;ll get back to this in a later session)
+├───────GNSS
+|           (We&#39;ll get back to this in a later session)
+├───export (where you place export models and files to)
+        ...
+└───metashape (This is where you save your Agisoft Metashape projects to)
+        {metashape_project_name}.psx
+        .{metashape_project_name}.files
+        {metashape_project_name}_processing_report.pdf
+        (optionally: {metashape_project_name}.log)
+</pre></div>
+</div>
+</div>
+<input id="d6bf9529-98eb-4c85-8512-6d4c0bbb09ae" name="5894bdf0-4beb-4e4b-9bc5-11337c1d4d52" type="radio">
+</input><label class="sd-tab-label" for="d6bf9529-98eb-4c85-8512-6d4c0bbb09ae">
+UAV data</label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{project_directory} (The folder with all files related to this project)
+|   overview_img.{ext}
+|   description.txt
+├───config (where you place your configuration files)
+        {cfg_0001}.yml
+        {cfg_0002}.yml
+        ...
+├───data (where you unzipped the files to)
+├───────f0001 (The folder with images acquired on the first flight)
+|           {img_0001}.{ext}
+|           {img_0002}.{ext}
+|           ...
+├───────f0002 (The folder with images acquired on the second flight)
+|           {img_0001}.{ext}
+|           {img_0002}.{ext}
+|           ...
+|       ...
+├───────f9999 (The folder with images acquired on the last flight)
+|           {img_0001}.{ext}
+|           {img_0002}.{ext}
+|           ...
+├───────gcps
+|           (We&#39;ll get back to this in a later session)
+├───────GNSS
+|           (We&#39;ll get back to this in a later session)
+├───export (where you place export models and files to)
+        ...
+└───metashape (This is where you save your Agisoft Metashape projects to)
+        {metashape_project_name}.psx
+        .{metashape_project_name}.files
+        {metashape_project_name}_processing_report.pdf
+        (optionally: {metashape_project_name}.log)
+</pre></div>
+</div>
+</div>
+</div>
 <p>The standardised project structures (as we will see later on) are important for automated processing and archiving.
 The project structures are identical in principle, only differing in the way images are sorted.</p>
 </div>
 <div class="section" id="photo-set">
 <h3>Photo set<a class="headerlink" href="#photo-set" title="Permalink to this headline">#</a></h3>
 <p>Having created the standardised project structure, proceed with extracting your taken images to the following directory:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="a7eccca8-a550-4622-8d0e-76253276938a" name="5c03c6cd-463f-436d-a48b-309bc922b02e" type="radio">
+</input><label class="sd-tab-label" for="a7eccca8-a550-4622-8d0e-76253276938a">
+Single folder/acquisition</label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">project_directory</span><span class="p">}</span>\<span class="n">data</span>\<span class="mi">100</span><span class="n">MEDIA</span>
+</pre></div>
+</div>
+</div>
+<input id="a7266be5-2efb-4ca2-ba22-790151432e48" name="5c03c6cd-463f-436d-a48b-309bc922b02e" type="radio">
+</input><label class="sd-tab-label" for="a7266be5-2efb-4ca2-ba22-790151432e48">
+Single acquisition with 1000 images</label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">project_directory</span><span class="p">}</span>\<span class="n">data</span>\<span class="mi">100</span><span class="n">MEDIA</span> <span class="p">(</span><span class="n">includes</span> <span class="n">up</span> <span class="n">to</span> <span class="mi">999</span> <span class="n">images</span><span class="p">)</span>
+<span class="p">{</span><span class="n">project_directory</span><span class="p">}</span>\<span class="n">data</span>\<span class="mi">101</span><span class="n">MEDIA</span> <span class="p">(</span><span class="n">includes</span> <span class="n">remaining</span> <span class="n">images</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="f780bf1e-eab0-4363-a360-bdc7540e5ec7" name="5c03c6cd-463f-436d-a48b-309bc922b02e" type="radio">
+</input><label class="sd-tab-label" for="f780bf1e-eab0-4363-a360-bdc7540e5ec7">
+UAV acquisition with 3 flights</label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">project_directory</span><span class="p">}</span>\<span class="n">data</span>\<span class="n">f0001</span>
+<span class="p">{</span><span class="n">project_directory</span><span class="p">}</span>\<span class="n">data</span>\<span class="n">f0002</span>
+<span class="p">{</span><span class="n">project_directory</span><span class="p">}</span>\<span class="n">data</span>\<span class="n">f0003</span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>In case the image count exceeds 999 images, make sure to utilise multiple folders in the <em>data_directory</em>.
 While you are at it, why not sort the images by flight or acquisition to improve your data structure?
 For instance, those <span class="xref myst">digitising hand-sized samples</span>, or who have acquired data over multiple UAV flights, may find it beneficial to sort the data in specific ways.
