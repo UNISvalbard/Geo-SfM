@@ -228,13 +228,8 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../suppl_dgnss/dgnss_data_downloading.html">
-   Downloading base station dGNSS data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../suppl_dgnss/leica_infinity.html">
-   Leica Infinity
+  <a class="reference external" href="https://unisvalbard.github.io/gnss-compendium/readme.html">
+   UNIS GNSS Compendium
   </a>
  </li>
  <li class="toctree-l1">
@@ -287,13 +282,21 @@
   </a>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  External Links
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://unisvalbard.github.io/exbooks/">
+   UNIS Compendium Portal
+  </a>
+ </li>
+</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
 
 </div>
 
@@ -342,15 +345,14 @@
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/UNISvalbard/Geo-SfM"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
+        
         <a class="issues-button"
             href="https://github.com/UNISvalbard/Geo-SfM/issues/new?title=Issue%20on%20page%20%2Fcontent/lessons/l1/tutorial.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
+        <a class="edit-button" href="https://github.com/UNISvalbard/Geo-SfM/edit/master/content/lessons/l1/tutorial.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
 </div>
 
@@ -682,8 +684,8 @@ The use of this standardised project setup is furthermore a requirement for digi
 Herein folders are named without extensions, and filenames are given extensions.
 Text between {} indicates variable names.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="2073b863-bc52-4ef5-96df-aa7fc10af8e3" name="9839daaa-88c9-4456-9d03-0ba09c688960" type="radio">
-</input><label class="tabbed-label" for="2073b863-bc52-4ef5-96df-aa7fc10af8e3">
+<input checked="checked" id="520dad55-636a-4961-9b72-ca403535b577" name="66419ee0-e548-4230-a28b-029bdd1d9cba" type="radio">
+</input><label class="tabbed-label" for="520dad55-636a-4961-9b72-ca403535b577">
 Handheld data</label><div class="tabbed-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{project_directory} (The folder with all files related to this project)
 |   overview_img.{ext}
@@ -720,8 +722,8 @@ Handheld data</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="6885b75f-d95a-438a-a235-5a0cbcad27cb" name="9839daaa-88c9-4456-9d03-0ba09c688960" type="radio">
-</input><label class="tabbed-label" for="6885b75f-d95a-438a-a235-5a0cbcad27cb">
+<input id="89fe4921-3164-41fd-ae13-152d02272e18" name="66419ee0-e548-4230-a28b-029bdd1d9cba" type="radio">
+</input><label class="tabbed-label" for="89fe4921-3164-41fd-ae13-152d02272e18">
 UAV data</label><div class="tabbed-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{project_directory} (The folder with all files related to this project)
 |   overview_img.{ext}
@@ -766,23 +768,23 @@ The project structures are identical in principle, only differing in the way ima
 <h3>Photo set<a class="headerlink" href="#photo-set" title="Permalink to this headline">¶</a></h3>
 <p>Having created the standardised project structure, proceed with extracting your taken images to the following directory:</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="2d0e1684-d0b1-4d5b-85ae-313778fbc575" name="2de139ab-23f2-446d-bb92-a074518be886" type="radio">
-</input><label class="tabbed-label" for="2d0e1684-d0b1-4d5b-85ae-313778fbc575">
+<input checked="checked" id="8633f84c-3021-405a-9993-5587072394e5" name="c284712d-386b-413d-9fbb-7c54700a3fac" type="radio">
+</input><label class="tabbed-label" for="8633f84c-3021-405a-9993-5587072394e5">
 Single folder/acquisition</label><div class="tabbed-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">project_directory</span><span class="p">}</span>\<span class="n">data</span>\<span class="mi">100</span><span class="n">MEDIA</span>
 </pre></div>
 </div>
 </div>
-<input id="65249439-1e51-46dd-9e7e-5acaf8fb11eb" name="2de139ab-23f2-446d-bb92-a074518be886" type="radio">
-</input><label class="tabbed-label" for="65249439-1e51-46dd-9e7e-5acaf8fb11eb">
+<input id="84e12c3b-49ce-4f3e-b568-61c4037d8648" name="c284712d-386b-413d-9fbb-7c54700a3fac" type="radio">
+</input><label class="tabbed-label" for="84e12c3b-49ce-4f3e-b568-61c4037d8648">
 Single acquisition with 1000 images</label><div class="tabbed-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">project_directory</span><span class="p">}</span>\<span class="n">data</span>\<span class="mi">100</span><span class="n">MEDIA</span> <span class="p">(</span><span class="n">includes</span> <span class="n">up</span> <span class="n">to</span> <span class="mi">999</span> <span class="n">images</span><span class="p">)</span>
 <span class="p">{</span><span class="n">project_directory</span><span class="p">}</span>\<span class="n">data</span>\<span class="mi">101</span><span class="n">MEDIA</span> <span class="p">(</span><span class="n">includes</span> <span class="n">remaining</span> <span class="n">images</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input id="bc8614ea-8fe3-4182-b45d-67778e2242ed" name="2de139ab-23f2-446d-bb92-a074518be886" type="radio">
-</input><label class="tabbed-label" for="bc8614ea-8fe3-4182-b45d-67778e2242ed">
+<input id="ad5ba00c-051b-4adc-98e9-0c220aeb28a9" name="c284712d-386b-413d-9fbb-7c54700a3fac" type="radio">
+</input><label class="tabbed-label" for="ad5ba00c-051b-4adc-98e9-0c220aeb28a9">
 UAV acquisition with 3 flights</label><div class="tabbed-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">project_directory</span><span class="p">}</span>\<span class="n">data</span>\<span class="n">f0001</span>
 <span class="p">{</span><span class="n">project_directory</span><span class="p">}</span>\<span class="n">data</span>\<span class="n">f0002</span>

@@ -228,13 +228,8 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../suppl_dgnss/dgnss_data_downloading.html">
-   Downloading base station dGNSS data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../suppl_dgnss/leica_infinity.html">
-   Leica Infinity
+  <a class="reference external" href="https://unisvalbard.github.io/gnss-compendium/readme.html">
+   UNIS GNSS Compendium
   </a>
  </li>
  <li class="toctree-l1">
@@ -287,13 +282,21 @@
   </a>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  External Links
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://unisvalbard.github.io/exbooks/">
+   UNIS Compendium Portal
+  </a>
+ </li>
+</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
 
 </div>
 
@@ -345,15 +348,14 @@
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/UNISvalbard/Geo-SfM"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
+        
         <a class="issues-button"
             href="https://github.com/UNISvalbard/Geo-SfM/issues/new?title=Issue%20on%20page%20%2Fcontent/lessons/l3/python.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
+        <a class="edit-button" href="https://github.com/UNISvalbard/Geo-SfM/edit/master/content/lessons/l3/python.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
 </div>
 
@@ -515,7 +517,7 @@ then proceed by running each cell by either clicking the <em>play</em> button or
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span>\<span class="n">ipykernel_28320</span>\<span class="mf">822519927.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span>\<span class="n">ipykernel_52000</span>\<span class="mf">822519927.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">config_file</span> <span class="o">=</span> <span class="s2">&quot;../config/empty_photogrammetry_processing_settings.yml&quot;</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">project</span> <span class="o">=</span> <span class="n">AP</span><span class="p">()</span>
 <span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">project</span><span class="o">.</span><span class="n">read_config</span><span class="p">(</span><span class="n">config_file</span><span class="p">)</span>
@@ -597,8 +599,8 @@ Refer to <a class="reference external" href="https://www.agisoft.com/pdf/metasha
 The parameter-section names should fully follow the parameter names of the Metashape functions.
 In case default parameters are to be used, remove the corresponding parameter-section.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="70801e62-14c5-46fc-ab26-d1d4a8b3b07e" name="989596fb-2dfd-4788-bfc8-11c78843fb43" type="radio">
-</input><label class="tabbed-label" for="70801e62-14c5-46fc-ab26-d1d4a8b3b07e">
+<input checked="checked" id="15db4c78-46be-4020-962c-532b99f88852" name="1c0b788a-eb9c-4166-8d15-cc0c73bfdf35" type="radio">
+</input><label class="tabbed-label" for="15db4c78-46be-4020-962c-532b99f88852">
 Add photos</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">addPhotos</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
@@ -613,8 +615,8 @@ Add photos</label><div class="tabbed-content docutils">
 This should generally only be set to <em>True</em> when ground control points (GCPs) are to be used.</p>
 </div>
 </div>
-<input id="9e6bfb83-1cea-41cf-bfaf-8aed94522dde" name="989596fb-2dfd-4788-bfc8-11c78843fb43" type="radio">
-</input><label class="tabbed-label" for="9e6bfb83-1cea-41cf-bfaf-8aed94522dde">
+<input id="edb85efe-46c5-4858-82ce-d0fb811a60d7" name="1c0b788a-eb9c-4166-8d15-cc0c73bfdf35" type="radio">
+</input><label class="tabbed-label" for="edb85efe-46c5-4858-82ce-d0fb811a60d7">
 Analyze photos</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">analyzePhotos</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
@@ -622,8 +624,8 @@ Analyze photos</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="3255c1dd-1f2b-4e78-bebc-5d3bf182ecdc" name="989596fb-2dfd-4788-bfc8-11c78843fb43" type="radio">
-</input><label class="tabbed-label" for="3255c1dd-1f2b-4e78-bebc-5d3bf182ecdc">
+<input id="e44e5273-bc40-489c-b6d0-a942f73b111c" name="1c0b788a-eb9c-4166-8d15-cc0c73bfdf35" type="radio">
+</input><label class="tabbed-label" for="e44e5273-bc40-489c-b6d0-a942f73b111c">
 Add masks</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">masks</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"> </span><span class="c1"># Default, only enable if you have images with masks :)</span><span class="w"></span>
@@ -632,8 +634,8 @@ Add masks</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="f0a3e8d7-17b7-4475-9f02-4d221d8d18b4" name="989596fb-2dfd-4788-bfc8-11c78843fb43" type="radio">
-</input><label class="tabbed-label" for="f0a3e8d7-17b7-4475-9f02-4d221d8d18b4">
+<input id="52e41d4e-2cda-45d9-b15a-e191dbe56721" name="1c0b788a-eb9c-4166-8d15-cc0c73bfdf35" type="radio">
+</input><label class="tabbed-label" for="52e41d4e-2cda-45d9-b15a-e191dbe56721">
 Alignment</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">alignPhotos</span><span class="p">:</span><span class="w"> </span><span class="c1"># (Metashape: alignPhotos)</span><span class="w"></span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
@@ -652,8 +654,8 @@ Alignment</label><div class="tabbed-content docutils">
 <p>Whether or not to try alignment of images that failed alignment during the first stage.</p>
 </div>
 </div>
-<input id="f989948f-ef37-40a9-947a-4aa08047f88c" name="989596fb-2dfd-4788-bfc8-11c78843fb43" type="radio">
-</input><label class="tabbed-label" for="f989948f-ef37-40a9-947a-4aa08047f88c">
+<input id="7ea95357-6261-495d-89f0-256f793d3291" name="1c0b788a-eb9c-4166-8d15-cc0c73bfdf35" type="radio">
+</input><label class="tabbed-label" for="7ea95357-6261-495d-89f0-256f793d3291">
 Optimise cameras</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">optimizeCameras</span><span class="p">:</span><span class="w"> </span><span class="c1"># (Metashape: optimizeCameras)</span><span class="w"></span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
@@ -662,8 +664,8 @@ Optimise cameras</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="6ed88b4d-f49a-4cbc-ae44-f96c09764c40" name="989596fb-2dfd-4788-bfc8-11c78843fb43" type="radio">
-</input><label class="tabbed-label" for="6ed88b4d-f49a-4cbc-ae44-f96c09764c40">
+<input id="285d6b5c-e8f0-4a9b-bdf7-aed038e02eb1" name="1c0b788a-eb9c-4166-8d15-cc0c73bfdf35" type="radio">
+</input><label class="tabbed-label" for="285d6b5c-e8f0-4a9b-bdf7-aed038e02eb1">
 Depth maps</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">buildDepthMaps</span><span class="p">:</span><span class="w"> </span><span class="c1"># (Metashape: buildDepthMaps)</span><span class="w"></span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
@@ -685,8 +687,8 @@ Aggressive filtering removes detail and makes worse DEMs (at least for forest).
 NoFiltering takes very long. In trials, it never completed.</p>
 </div>
 </div>
-<input id="be429e67-ab32-4729-9f81-4088fb9b6c27" name="989596fb-2dfd-4788-bfc8-11c78843fb43" type="radio">
-</input><label class="tabbed-label" for="be429e67-ab32-4729-9f81-4088fb9b6c27">
+<input id="4827a799-85a4-49d5-a657-16841b227377" name="1c0b788a-eb9c-4166-8d15-cc0c73bfdf35" type="radio">
+</input><label class="tabbed-label" for="4827a799-85a4-49d5-a657-16841b227377">
 Dense cloud</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">buildDenseCloud</span><span class="p">:</span><span class="w"> </span><span class="c1"># (Metashape: buildDepthMaps, buildDenseCloud, classifyGroundPoints, and exportPoints)</span><span class="w"></span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
@@ -697,8 +699,8 @@ Dense cloud</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="98d08870-7e80-41ba-a99d-d83a3cfe7cad" name="989596fb-2dfd-4788-bfc8-11c78843fb43" type="radio">
-</input><label class="tabbed-label" for="98d08870-7e80-41ba-a99d-d83a3cfe7cad">
+<input id="1d43a42b-9e9a-4b6f-b7c8-42f1cfcfa660" name="1c0b788a-eb9c-4166-8d15-cc0c73bfdf35" type="radio">
+</input><label class="tabbed-label" for="1d43a42b-9e9a-4b6f-b7c8-42f1cfcfa660">
 Filter dense cloud</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">filterDenseCloud</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
@@ -706,8 +708,8 @@ Filter dense cloud</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="e39d510a-c7e6-4906-8f39-189fa289077b" name="989596fb-2dfd-4788-bfc8-11c78843fb43" type="radio">
-</input><label class="tabbed-label" for="e39d510a-c7e6-4906-8f39-189fa289077b">
+<input id="6c96f68e-a043-4ba1-ae73-ae95de3de69f" name="1c0b788a-eb9c-4166-8d15-cc0c73bfdf35" type="radio">
+</input><label class="tabbed-label" for="6c96f68e-a043-4ba1-ae73-ae95de3de69f">
 Mesh</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">buildMesh</span><span class="p">:</span><span class="w"> </span><span class="c1"># (Metashape: buildModel)</span><span class="w"></span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
@@ -721,8 +723,8 @@ Mesh</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="2c54683a-9945-479c-8f39-8edd5c6f053e" name="989596fb-2dfd-4788-bfc8-11c78843fb43" type="radio">
-</input><label class="tabbed-label" for="2c54683a-9945-479c-8f39-8edd5c6f053e">
+<input id="0ea3abb0-cd3b-42d7-beba-f02c60c5080c" name="1c0b788a-eb9c-4166-8d15-cc0c73bfdf35" type="radio">
+</input><label class="tabbed-label" for="0ea3abb0-cd3b-42d7-beba-f02c60c5080c">
 Textures</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">buildTexture</span><span class="p">:</span><span class="w"> </span><span class="c1"># (Metashape: buildTexture)</span><span class="w"></span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
@@ -733,8 +735,8 @@ Textures</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="34204c7e-dedb-4444-9d1e-745b5dffd39c" name="989596fb-2dfd-4788-bfc8-11c78843fb43" type="radio">
-</input><label class="tabbed-label" for="34204c7e-dedb-4444-9d1e-745b5dffd39c">
+<input id="cd0635ca-37b7-494b-8ce8-f682abaa97b3" name="1c0b788a-eb9c-4166-8d15-cc0c73bfdf35" type="radio">
+</input><label class="tabbed-label" for="cd0635ca-37b7-494b-8ce8-f682abaa97b3">
 Tiled model</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">buildTiledModel</span><span class="p">:</span><span class="w"> </span><span class="c1"># (Metashape: buildTexture)</span><span class="w"></span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
@@ -746,8 +748,8 @@ Tiled model</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="a9a134fc-60a7-49f5-85ef-314053b717d7" name="989596fb-2dfd-4788-bfc8-11c78843fb43" type="radio">
-</input><label class="tabbed-label" for="a9a134fc-60a7-49f5-85ef-314053b717d7">
+<input id="4440adbb-4deb-4632-b18b-08aa38be6582" name="1c0b788a-eb9c-4166-8d15-cc0c73bfdf35" type="radio">
+</input><label class="tabbed-label" for="4440adbb-4deb-4632-b18b-08aa38be6582">
 DEM</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">buildDEM</span><span class="p">:</span><span class="w"> </span><span class="c1"># (Metashape: buildTexture)</span><span class="w"></span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
@@ -757,8 +759,8 @@ DEM</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="e0695ec1-0677-419a-8d1e-90775a4ba4f1" name="989596fb-2dfd-4788-bfc8-11c78843fb43" type="radio">
-</input><label class="tabbed-label" for="e0695ec1-0677-419a-8d1e-90775a4ba4f1">
+<input id="c298ccd0-2d02-4aa3-a5e4-78736a456629" name="1c0b788a-eb9c-4166-8d15-cc0c73bfdf35" type="radio">
+</input><label class="tabbed-label" for="c298ccd0-2d02-4aa3-a5e4-78736a456629">
 GCPs - detection</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">detectGCPs</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
@@ -772,8 +774,8 @@ GCPs - detection</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="e15d4808-6473-454f-a683-e3f08404b4f8" name="989596fb-2dfd-4788-bfc8-11c78843fb43" type="radio">
-</input><label class="tabbed-label" for="e15d4808-6473-454f-a683-e3f08404b4f8">
+<input id="5512d8dc-a61b-4415-9b51-199493f4561d" name="1c0b788a-eb9c-4166-8d15-cc0c73bfdf35" type="radio">
+</input><label class="tabbed-label" for="5512d8dc-a61b-4415-9b51-199493f4561d">
 GCPs - add to project</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">addGCPs</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
@@ -784,8 +786,8 @@ GCPs - add to project</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="33a51132-c4dd-4948-ab0f-83fce80e081e" name="989596fb-2dfd-4788-bfc8-11c78843fb43" type="radio">
-</input><label class="tabbed-label" for="33a51132-c4dd-4948-ab0f-83fce80e081e">
+<input id="1bb60e67-dbdf-4a89-9d05-006f7317de59" name="1c0b788a-eb9c-4166-8d15-cc0c73bfdf35" type="radio">
+</input><label class="tabbed-label" for="1bb60e67-dbdf-4a89-9d05-006f7317de59">
 Publish</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">publishData</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
@@ -802,8 +804,8 @@ Publish</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="264d0fd0-7d25-4e28-bec6-3e5e4f59f020" name="989596fb-2dfd-4788-bfc8-11c78843fb43" type="radio">
-</input><label class="tabbed-label" for="264d0fd0-7d25-4e28-bec6-3e5e4f59f020">
+<input id="adda1e14-9cb0-4084-a476-c62dc0784f61" name="1c0b788a-eb9c-4166-8d15-cc0c73bfdf35" type="radio">
+</input><label class="tabbed-label" for="adda1e14-9cb0-4084-a476-c62dc0784f61">
 Networking</label><div class="tabbed-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">networkProcessing</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
@@ -829,32 +831,32 @@ It should now result in a successful runtime.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-09-07 15:21:00,553 [INFO] automated_metashape.MetashapeProcessing: --------------
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-12-01 20:46:23,060 [INFO] automated_metashape.MetashapeProcessing: --------------
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-09-07 15:21:00,554 [INFO] automated_metashape.MetashapeProcessing: Fresh run initiated.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-12-01 20:46:23,063 [INFO] automated_metashape.MetashapeProcessing: Fresh run initiated.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-09-07 15:21:00,555 [INFO] automated_metashape.MetashapeProcessing: Runtime id: MS_20220907T1521
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-12-01 20:46:23,063 [INFO] automated_metashape.MetashapeProcessing: Runtime id: MS_20221201T2046
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-09-07 15:21:00,556 [INFO] automated_metashape.MetashapeProcessing: --------------
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-12-01 20:46:23,064 [INFO] automated_metashape.MetashapeProcessing: --------------
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-09-07 15:21:00,556 [INFO] automated_metashape.MetashapeProcessing: Agisoft Metashape Professional Version: 1.7.2.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-12-01 20:46:23,065 [INFO] automated_metashape.MetashapeProcessing: Agisoft Metashape Professional Version: 1.7.2.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-09-07 15:21:00,557 [INFO] automated_metashape.MetashapeProcessing: Automated metashape package version: 0.1.11.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-12-01 20:46:23,065 [INFO] automated_metashape.MetashapeProcessing: Automated metashape package version: 0.1.11.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-09-07 15:21:01,110 [WARNING] automated_metashape.MetashapeProcessing: automated_metashape update available 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-12-01 20:46:23,470 [WARNING] automated_metashape.MetashapeProcessing: automated_metashape update available 
 (external version: 0.1.12). Please update from https://github.com/PeterBetlem/automated_metashape/releases. YAML parameters may have changed!
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-09-07 15:21:01,110 [INFO] automated_metashape.MetashapeProcessing: Creating new project...
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-12-01 20:46:23,471 [INFO] automated_metashape.MetashapeProcessing: Creating new project...
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-09-07 15:21:01,527 [INFO] automated_metashape.MetashapeProcessing: Saved project as C:/Users/Peter/Documents/GitHub/automated_agisoft_documentation/content/lessons/l3/metashape/MS_20220907T1521.psx
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-12-01 20:46:23,887 [INFO] automated_metashape.MetashapeProcessing: Saved project as C:/Users/Peter/Documents/GitHub/automated_agisoft_documentation/content/lessons/l3/metashape/MS_20221201T2046.psx
 
 ### Start of input file configuration for startup-stage ###
 load_project_path: null
@@ -867,16 +869,16 @@ subdivide_task: true
 ### End of input file configuration for startup-stage ###
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-09-07 15:21:01,743 [WARNING] automated_metashape.MetashapeProcessing: Failed to export report. Export report manually.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-12-01 20:46:24,092 [WARNING] automated_metashape.MetashapeProcessing: Failed to export report. Export report manually.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-09-07 15:21:01,949 [INFO] automated_metashape.MetashapeProcessing: --------------
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-12-01 20:46:24,295 [INFO] automated_metashape.MetashapeProcessing: --------------
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-09-07 15:21:01,949 [INFO] automated_metashape.MetashapeProcessing: Run completed.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-12-01 20:46:24,296 [INFO] automated_metashape.MetashapeProcessing: Run completed.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-09-07 15:21:01,950 [INFO] automated_metashape.MetashapeProcessing: --------------
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-12-01 20:46:24,298 [INFO] automated_metashape.MetashapeProcessing: --------------
 </pre></div>
 </div>
 </div>
