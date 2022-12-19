@@ -69,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="visually-hidden">Toggle in-page Table of Contents</div>
 </label>
 <!-- Headers at the top -->
-<div class="announcement header-item noprint">https://github.com/UNISvalbard/Geo-SfM/raw/main/_templates/announcement.html</div>
+<div class="announcement header-item noprint">Found this tutorial helpful? Please participate in the survey!</div>
 <div class="header header-item noprint"></div>
 
     
@@ -683,22 +683,22 @@ So let’s proceed with first installing Py37 (Python 3.7) and then the required
 <p>To interact with the Agisoft Metashape API, you also need to install the <a class="reference external" href="https://www.agisoft.com/downloads/installer/">Python 3 Module (v1.7.0 - time-of-writing)</a>.
 Once downloaded, change your current working directory to your downloads folder:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="67825b4a-8d53-4167-9c7c-52eaa55f8500" name="57a96314-2874-43ff-90af-aca80ef76dc8" type="radio">
-</input><label class="sd-tab-label" for="67825b4a-8d53-4167-9c7c-52eaa55f8500">
+<input checked="checked" id="445d1043-4ec3-46be-9fe6-d1b73525a605" name="f4a25730-eb11-4b9c-999f-eb3c3d5fbebf" type="radio">
+</input><label class="sd-tab-label" for="445d1043-4ec3-46be-9fe6-d1b73525a605">
 Windows</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="p">{</span><span class="n">name</span><span class="p">}</span>\<span class="n">Downloads</span>
 </pre></div>
 </div>
 </div>
-<input id="2f93a572-1ccc-46fd-802a-2c21f7cdb86e" name="57a96314-2874-43ff-90af-aca80ef76dc8" type="radio">
-</input><label class="sd-tab-label" for="2f93a572-1ccc-46fd-802a-2c21f7cdb86e">
+<input id="015a65a1-384d-4bea-ad81-2580d90eb643" name="f4a25730-eb11-4b9c-999f-eb3c3d5fbebf" type="radio">
+</input><label class="sd-tab-label" for="015a65a1-384d-4bea-ad81-2580d90eb643">
 macOS</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TBD</span><span class="o">...</span>
 </pre></div>
 </div>
 </div>
-<input id="612c5db8-8860-40b1-a143-068ef621cd11" name="57a96314-2874-43ff-90af-aca80ef76dc8" type="radio">
-</input><label class="sd-tab-label" for="612c5db8-8860-40b1-a143-068ef621cd11">
+<input id="87dcaf48-502f-43b9-a7d9-c329ee6358a4" name="f4a25730-eb11-4b9c-999f-eb3c3d5fbebf" type="radio">
+</input><label class="sd-tab-label" for="87dcaf48-502f-43b9-a7d9-c329ee6358a4">
 Linux</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TBD</span><span class="o">...</span>
 </pre></div>
@@ -707,22 +707,22 @@ Linux</label><div class="sd-tab-content docutils">
 </div>
 <p>And then install the downloaded <em>.whl</em> file using the <a class="reference external" href="https://packaging.python.org/guides/tool-recommendations/">pip package installer</a> for Python.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="d94867cd-cb0f-4de6-8d6d-c58018a96967" name="456523fb-2c4c-48f6-8e68-e53b65fa3b78" type="radio">
-</input><label class="sd-tab-label" for="d94867cd-cb0f-4de6-8d6d-c58018a96967">
+<input checked="checked" id="ff5440b1-f8ba-4980-a2a6-f059a566d176" name="086af880-3360-4119-b92b-8a17691ee2f0" type="radio">
+</input><label class="sd-tab-label" for="ff5440b1-f8ba-4980-a2a6-f059a566d176">
 Windows</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">Metashape</span><span class="o">-</span><span class="mf">1.7.1</span><span class="o">-</span><span class="n">cp35</span><span class="o">.</span><span class="n">cp36</span><span class="o">.</span><span class="n">cp37</span><span class="o">.</span><span class="n">cp38</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="n">win_amd64</span><span class="o">.</span><span class="n">whl</span>
 </pre></div>
 </div>
 </div>
-<input id="58accc5d-1c28-46b1-b170-1ee31c77122a" name="456523fb-2c4c-48f6-8e68-e53b65fa3b78" type="radio">
-</input><label class="sd-tab-label" for="58accc5d-1c28-46b1-b170-1ee31c77122a">
+<input id="ce4c3b5c-083e-4b0c-bb1d-ff8534960231" name="086af880-3360-4119-b92b-8a17691ee2f0" type="radio">
+</input><label class="sd-tab-label" for="ce4c3b5c-083e-4b0c-bb1d-ff8534960231">
 macOS</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">Metashape</span><span class="o">-</span><span class="mf">1.7.1</span><span class="o">-</span><span class="n">cp35</span><span class="o">.</span><span class="n">cp36</span><span class="o">.</span><span class="n">cp37</span><span class="o">.</span><span class="n">cp38</span><span class="o">-</span><span class="n">abi3</span><span class="o">-</span><span class="n">macosx_10_13_x86_64</span><span class="o">.</span><span class="n">whl</span>
 </pre></div>
 </div>
 </div>
-<input id="71f8beae-9ef5-4085-91e6-81bd3fcc3dcd" name="456523fb-2c4c-48f6-8e68-e53b65fa3b78" type="radio">
-</input><label class="sd-tab-label" for="71f8beae-9ef5-4085-91e6-81bd3fcc3dcd">
+<input id="8c5c4777-30a5-49e3-a42d-5631fa16f890" name="086af880-3360-4119-b92b-8a17691ee2f0" type="radio">
+</input><label class="sd-tab-label" for="8c5c4777-30a5-49e3-a42d-5631fa16f890">
 Linux</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">Metashape</span><span class="o">-</span><span class="mf">1.7.1</span><span class="o">-</span><span class="n">cp35</span><span class="o">.</span><span class="n">cp36</span><span class="o">.</span><span class="n">cp37</span><span class="o">.</span><span class="n">cp38</span><span class="o">-</span><span class="n">abi3</span><span class="o">-</span><span class="n">linux_x86_64</span><span class="o">.</span><span class="n">whl</span>
 </pre></div>
