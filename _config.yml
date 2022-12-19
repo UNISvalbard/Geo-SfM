@@ -13,7 +13,7 @@ html:
   use_repository_button: false
   extra_navbar: ""
   use_edit_page_button: true
-  announcement: "Found this tutorial helpful? Please participate in the survey!"
+  announcement: "https://github.com/UNISvalbard/Geo-SfM/raw/main/_templates/announcement.html" 
 
 #  extra_navbar:
 #  extra_footer:
