@@ -41,10 +41,14 @@ parts:
   - file: content/lessons/about/seismic_lab.md
   - file: content/lessons/about/software.md
   - file: content/lessons/about/zbiblio.md
+
+- caption: Questionnaire
+  chapters:
+  - file: content/lessons/survey.md
+
 - caption: About Geo-SfM
   chapters:
   - file: content/lessons/about/cite.md
-
 - caption: External Links
   chapters:
   - url: https://unisvalbard.github.io/exbooks/
