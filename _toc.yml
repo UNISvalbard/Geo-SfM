@@ -1,5 +1,6 @@
 format: jb-book
 root: landing-page.md
+
 parts:
 - caption: Session 1
   chapters:
@@ -49,6 +50,7 @@ parts:
 - caption: About Geo-SfM
   chapters:
   - file: content/lessons/about/cite.md
+  - file: content/lessons/about/changelog.md
 - caption: External Links
   chapters:
   - url: https://unisvalbard.github.io/exbooks/

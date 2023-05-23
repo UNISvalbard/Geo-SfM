@@ -277,7 +277,7 @@ Depending on your computer specifications, you'll have to weigh computational ti
 Give it a shot, and compare the photo alignment results with *medium* vs *high* processing accuracy.
 ```
 
-(content:tutorial:improve)=
+(content-tutorial-improve)=
 ### Improve alignment step: Error Reduction-Optimization and Camera Calibration
 
 
@@ -346,7 +346,7 @@ A rule of thumb is to select no more than two-thirds to half of all points, and 
 ```
 
 After deleting the selected points, it is important to once more optimize the alignment of your points.
-Do so by revisiting the [](content:tutorial:improve) section.
+Do so by revisiting the [](content-tutorial-improve) section.
 
 #### Filtering by Projection accuracy
 
@@ -362,7 +362,7 @@ After clicking OK, the left corner shows you how many points there are in total,
 
 Keep in mind that not all projects can tolerate the removal of points below 5, which is no problem as long as you document the values you have used.
 After deleting the selected points, it is important to once more optimize the alignment of your points.
-Do so by revisiting the [](content:tutorial:improve) section.
+Do so by revisiting the [](content-tutorial-improve) section.
 
 #### Filtering by Reprojection Error
 
@@ -378,7 +378,7 @@ After clicking OK, the left corner shows you how many points there are in total,
 ```
 
 After deleting the selected points, it is important to runa final *Optimize alignment* step on your points.
-Do so by revisiting the [](content:tutorial:improve) section.
+Do so by revisiting the [](content-tutorial-improve) section.
 
 ```{admonition} Keep your duplicates
 :class: tip
@@ -388,11 +388,11 @@ They allow you to go back and write down important processing parameters, such a
 Only once completely done should you remove these earlier attempts.
 ```
 
-### Build Dense Cloud
+### Build Point Cloud
 
 Based on the estimated camera positions, we can now estimate a *dense point cloud* by calculating depth information for each image.
 
-Select *Build Dense Cloud* from the *Workflow* menu.
+Select *Build Point Cloud* from the *Workflow* menu.
 {ref}`Once again you will be asked about the desired accuracy/quality <dense_cloud>`.
 Keeping in mind what we discussed above, make sure to select *Medium* for the quality.
 
@@ -404,21 +404,21 @@ Also open up the *Advanced* section, and set *Depth filtering* to *Mild*.
 ```{figure} assets/d2a861b0.png
 :name: dense_cloud
 
-The *Build dense cloud* dialog after opening it from the *Workflow* menu.
+The *Build Point Cloud* dialog after opening it from the *Workflow* menu. Reuse depth maps when avaialable. Always toggle Calculate Point Confidence.
 ```
 
 Once processing is done, you'll be able to show the *dense point cloud* on the screen in the *Model* tab.
 If not, one can visualise the *dense point cloud* by clicking on the nine-dotted icon in the menu.
 Alternative, you could also visualise the point confidence.
-Do so by clicking the gray triangle next to the nine-dotted icon and selecting *Dense cloud confidence*.
+Do so by clicking the gray triangle next to the nine-dotted icon and selecting *Point Cloud confidence*.
 The colour coding (red = bad, blue = good) shows where the best confidence is found.
 
 ```{admonition} Point confidence
-*Point confidence* shows how accurate a given point in the dense cloud is.
+*Point confidence* shows how accurate a given point in the Point Cloud is.
 This is key to estimate whether the part we are interested in can be scientifically used for measurements and characterisation based on predefined criteria.
 ```
 
-```{admonition} Dense cloud quality
+```{admonition} Point Cloud quality
 :class: tip
 While this tutorial suggests *Medium* to be used for the quality parameter, you should feel free to change this depending on the computational power at your disposal.
 ```
@@ -429,19 +429,19 @@ While this tutorial suggests *Medium* to be used for the quality parameter, you 
 :class: tip
 Make sure to always either backup your data before playing with it.
 This can be done by either backing up the entire project (*Save as...*) or by making a local copy of the data within the project.
-To do the latter, right click on the *Workspace/Dense Cloud (... points)* and select *Duplicate...*.
-Following alterations to the duplicated data set, you can always switch back to the original by right clicking *Workspace/Dense Cloud (... points)* and *Set As Default*.
+To do the latter, right click on the *Workspace/Point Cloud (... points)* and select *Duplicate...*.
+Following alterations to the duplicated data set, you can always switch back to the original by right clicking *Workspace/Point Cloud (... points)* and *Set As Default*.
 ```
 
-There are various ways of cutting off parts of your Dense Cloud.
+There are various ways of cutting off parts of your Point Cloud.
 However, not all of them are scientifically repeatable - because let's be honest, would you be able to exactly tell which of the points you removed from the data? No.
 
 Luckily, Metashape allows selection and deletion of points by *Point confidence*.
-Proceed to *Tools/Dense Cloud* in the menu and click on *Filter by confidence...*.
+Proceed to *Tools/Point Cloud* in the menu and click on *Filter by confidence...*.
 The dialog that pops up allows you to set minimal and maximal confidences.
 
-For example, try setting *Min*:50 and *Max*:255 to only show the Dense Cloud points wth the highest confidence.
-After looking at the difference, reset the filter by clicking on *Reset filter* within the *Tools/Dense Cloud* menu.
+For example, try setting *Min*:50 and *Max*:255 to only show the Point Cloud points wth the highest confidence.
+After looking at the difference, reset the filter by clicking on *Reset filter* within the *Tools/Point Cloud* menu.
 
 We will now use the method outlined above to filter out the lowest confidence interval (in this case, set *Min*:0 and *Max*:5).
 Proceed by selecting all the points shown in the *Model* tab.
@@ -458,9 +458,9 @@ Now reset the filter, and you'll see that just the high-confidence part remains.
 ### Building a mesh
 
 We can use the dense point cloud to generate a polygonal mesh model.
-While generating the dense cloud, Agisoft Metashape simultaneously generated a set of depth maps (if chosen to save to the project).
+While generating the Point Cloud, Agisoft Metashape simultaneously generated a set of depth maps (if chosen to save to the project).
 This is important as we can decide which of the two to use for meshing.
-Depth maps may lead to better results when dealing with a big number of minor details, but otherwise dense clouds should be used as the source.
+Depth maps may lead to better results when dealing with a big number of minor details, but otherwise Point Clouds should be used as the source.
 
 After selecting *Build Mesh* from the *Workflow* menu, you will be able to chose either in the {ref}`dialog <build_mesh>` that pops up for *Source data:*.
 
@@ -540,7 +540,53 @@ The most import parameter here is the *Pixel size (m)*, which should never be se
 The *Build Tiled Model* dialog after opening it from the *Workflow* menu.
 ```
 
-### Documenting processing parameters
+### Build Digital Elevation Model
+
+`````{tab-set}
+````{tab-item} Geographic
+```{figure} assets/build-dem_geographic.png
+:name: build_dem_geo
+
+The *Build DEM* dialog after opening it from the *Workflow* menu. The **Geographic** type is used to generate the DEM in a known geographic projection (here shown for EPSG:32633).
+```
+````
+````{tab-item} Planar
+```{figure} assets/build-dem_planar.png
+:name: build_dem_planar
+
+The *Build DEM* dialog after opening it from the *Workflow* menu. The **Planar** type is used to generate the DEM in a local coordinate system based on the specified **Projection plane**. This is useful for generating high-resolution cross-section views of the model.
+```
+````
+`````
+
+```{warning}
+This section is currently under construction.
+```
+
+### Build Orthomosaic
+
+`````{tab-set}
+````{tab-item} Geographic
+```{figure} assets/build-orthomosaic_geographic.png
+:name: build_ortho_geo
+
+The *Build Orthomosaic* dialog after opening it from the *Workflow* menu. The **Geographic** type is used to generate the Orthomosaic in a known geographic projection (here shown for EPSG:32633).
+```
+````
+````{tab-item} Planar
+```{figure} assets/build-orthomosaic_planar.png
+:name: build_ortho_planar
+
+The *Build Orthomosaic* dialog after opening it from the *Workflow* menu. The **Planar** type is used to generate the orthomosaic in a local coordinate system based on the specified **Projection plane**. This is useful for generating high-resolution cross-section views of the model.
+```
+````
+`````
+
+```{warning}
+This section is currently under construction.
+```
+
+## Documenting processing parameters
 
 While each of the previous steps has been important in generating the models, ***perhaps the most important aspect of processing is to document the taken processing steps and their parameters***.
 Metashape automatically keeps track and stores all *Workflow* actions that the project has undergone.
@@ -548,7 +594,7 @@ There are two ways of documenting and showing these parameters.
 
 ```{admonition} What about manual alterations?
 :class: warning
-Sadly, the processing report does not include manual changes made to e.g. the point or dense cloud.
+Sadly, the processing report does not include manual changes made to e.g. the point or Point Cloud.
 This means that to be truly *scientifically grounded* and *repeatable*, you should refrain from doing such alterations manually.
 Instead, rely on e.g. the point confidence to make edits (and always report the chosen parameters).
 ```
@@ -588,4 +634,10 @@ The above is just a very generalised approach to SfM-photogrammetry that outline
 In many cases the chosen parameters can (and should!) be changed to match the given circumstances.
 That said, the *Photo alignment* step should always be conducted at the highest setting possible (considering computational power available).
 Furthermore, one should ***always document each and every processing step performed*** - manually cutting and editing part of the model is therefore *not* encouraged as this remains (for now) difficult to document.
+```
+
+### Record video
+
+```{warning}
+This section is currently under construction.
 ```

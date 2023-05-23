@@ -1,7 +1,7 @@
 title: "Geo-SfM Course"
 logo: ./content/assets/logo.gif
-author: Peter Betlem and Contributors
-copyright: "2022 (CC-BY-NC except where otherwise stated)"
+author: Peter Betlem, Nil Rodes and Contributors
+copyright: "2023 (CC-BY-NC except where otherwise stated)"
 
 repository:
   url: https://github.com/UNISvalbard/Geo-SfM
@@ -10,23 +10,23 @@ repository:
 
 html:
   use_issues_button: true
-  use_repository_button: false
+  use_repository_button: true
   extra_navbar: ""
   use_edit_page_button: true
   announcement: 'Found this tutorial helpful? Please participate in the survey (<a href="https://unisvalbard.github.io/Geo-SfM/content/lessons/survey.html">click here</a>) & Star me!        <iframe src="https://ghbtns.com/github-btn.html?user=UNISvalbard&repo=Geo-SfM&type=star&count=true" frameborder="0" scrolling="0" width="150" height="20" title="GitHub"></iframe>'
+  comments:
+    hypothesis: true
 
-#  extra_navbar:
-#  extra_footer:
-#  home_page_in_navbar: Sign up for the <a href="https://www.unis.no/course/ag-222-integrated-geological-methods-from-outcrop-to-geomodel/">UNIS AG222 course</a>
+execute:
+  execute_notebooks: "auto"
+
+parse:
+  myst_extended_syntax: true
+  myst_header_anchors: 4
 
 launch_buttons:
   binderhub_url: ""
 
-bibtex_bibfiles:
-  - content/lessons/about/zreferences.bib
-
-execute:
-  execute_notebooks: "auto"
 
 only_build_toc_files: true
 
@@ -34,7 +34,10 @@ parse:
 #  myst_extended_syntax: true
   myst_header_anchors: 4
 
+bibtex_bibfiles:
+  - content/lessons/about/zreferences.bib
+
 sphinx:
   config:
     #bibtex_reference_style: author_year
-    bibtex_default_style: plain
+    bibtex_default_style: alpha
