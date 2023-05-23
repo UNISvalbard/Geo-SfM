@@ -27,10 +27,11 @@ This is an established SfM photogrammetry package and is often used in the Arcti
 This session introduce basic processing through the graphical user interface through use of a standardised data set.
 
 ```{admonition} Software version
-The following tutorial assumes the use of **Agisoft Metashape version 1.7.x.**
+The following tutorial assumes the use of **Agisoft Metashape version 2.x.x.**
+Note that versions 1.6.x-1.8.x are very similar, and can use the same tutorials (though the interface and pop-up menus may be slightly different).
 
 To see whether you are indeed running the correct version proceed to *Help/About Metashape...* in the menu bar.
-This should provide you with the **major release**, *minor*, and patch (**1**.*7*.x) version number, as well as the build.
+This should provide you with the **major release**, *minor*, and patch (**2**.*0*.x) version number, as well as the build.
 
 If the version does not match the version listed above, please either
 - update the installation; or
