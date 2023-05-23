@@ -1,5 +1,15 @@
 # Welcome to Geo-SfM
 
+````{margin} Part of the Geo-MOD series
+ 
+This compendium forms part of the UNIS [Geo-MOD](https://unisvalbard.github.io/Geo-MOD/landing-page.html) series:
+
+> [Geo-UAV: Learn to fly geoscientific missions](https://unisvalbard.github.io/Geo-UAV/landing-page.html)
+
+> [Geo-SfM: Learn to apply structure-from-motion photogrammetry](https://unisvalbard.github.io/Geo-SfM/landing-page.html)
+
+````
+
 The **Geo-SfM** course teaches you the basic concepts of Structure-from-Motion (SfM) photogrammetry using the Agisoft Metashape software suite alongside the Python programming language. No previous programming experience is required, though may come in handy for more advanced uses.
 
 Geo-SfM covers the necessary skills needed to conduct SfM photogrammetry in a scientifically sound manner, targeting specifically the geosciences.

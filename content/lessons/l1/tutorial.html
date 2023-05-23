@@ -1,34 +1,44 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html >
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Metashape Tutorial &#8212; Geo-SfM Course</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
@@ -37,8 +47,9 @@
     <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -46,61 +57,99 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/lessons/l1/tutorial';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Geo-referencing" href="../l2/overview.html" />
     <link rel="prev" title="Exercise 1 - learning the ropes of SfM photogrammetry" href="exercise1.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint">Found this tutorial helpful? Please participate in the survey (<a href="https://unisvalbard.github.io/Geo-SfM/content/lessons/survey.html">click here</a>) & Star me!        <iframe src="https://ghbtns.com/github-btn.html?user=UNISvalbard&repo=Geo-SfM&type=star&count=true" frameborder="0" scrolling="0" width="150" height="20" title="GitHub"></iframe></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
 
-    
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../../index.html">
+  <div class="bd-header-announcement container-fluid bd-header-announcement">
+    <div class="bd-header-announcement__content">Found this tutorial helpful? Please participate in the survey (<a href="https://unisvalbard.github.io/Geo-SfM/content/lessons/survey.html">click here</a>) & Star me!        <iframe src="https://ghbtns.com/github-btn.html?user=UNISvalbard&repo=Geo-SfM&type=star&count=true" frameborder="0" scrolling="0" width="150" height="20" title="GitHub"></iframe></div>
+  </div>
+
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../../landing-page.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../../../_static/logo.gif" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Geo-SfM Course</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../../../_static/logo.gif" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../../_static/logo.gif" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -109,617 +158,315 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Session 1
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Session 1</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="sfm_photogrammetry.html">
-   SfM photogrammetry
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="exercise1.html">
-   Exercise 1 - learning the ropes of SfM photogrammetry
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Metashape Tutorial
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="sfm_photogrammetry.html">SfM photogrammetry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercise1.html">Exercise 1 - learning the ropes of SfM photogrammetry</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Metashape Tutorial</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Session 2
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Session 2</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../l2/overview.html">
-   Geo-referencing
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../l2/gcps.html">
-   Ground control points (GCPs)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../l2/exercise2.html">
-   Exercise 2 - learning the ropes of GCP and marker detection
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../l2/markers.html">
-   GCP tutorial
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../l2/overview.html">Geo-referencing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../l2/gcps.html">Ground control points (GCPs)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../l2/exercise2.html">Exercise 2 - learning the ropes of GCP and marker detection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../l2/markers.html">GCP tutorial</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Session 3
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Session 3</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../l3/overview.html">
-   Automation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../l3/Batch.html">
-   Batch-based processing through Metashape GUI
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../l3/python.html">
-   Python-based standardised processing
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../l3/overview.html">Automation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../l3/Batch.html">Batch-based processing through Metashape GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../l3/python.html">Python-based standardised processing</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Session 4
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Session 4</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../l4/hss_overview.html">
-   Small object SfM photogrammetry
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../l4/hss_lab_exercise.html">
-   Exercise 3 - Food for thought
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../l4/hss_field_exercise.html">
-   Exercise 4 - Digitising field samples
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../l4/hss_tutorial.html">
-   Foldio360 Tutorial
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../l4/hss_overview.html">Small object SfM photogrammetry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../l4/hss_lab_exercise.html">Exercise 3 - Food for thought</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../l4/hss_field_exercise.html">Exercise 4 - Digitising field samples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../l4/hss_tutorial.html">Foldio360 Tutorial</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Session 5
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Session 5</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../l5/geomodel_overview.html">
-   Geomodelling overview
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../l5/geomodel_tutorial.html">
-   Geomodeling tutorial
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../l5/geomodel_overview.html">Geomodelling overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../l5/geomodel_tutorial.html">Geomodeling tutorial</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Suppl. dGNSS data processing
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Suppl. dGNSS data processing</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference external" href="https://unisvalbard.github.io/gnss-compendium/readme.html">
-   UNIS GNSS Compendium
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../suppl_dgnss/topodrone_ppk.html">
-   Topodrone PPK
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference external" href="https://unisvalbard.github.io/gnss-compendium/readme.html">UNIS GNSS Compendium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../suppl_dgnss/topodrone_ppk.html">Topodrone PPK</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Resources
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../suppl/best_practices.html">
-   Best practices
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../suppl/metadata_lists.html">
-   Metadata templates for archiving
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../about/seismic_lab.html">
-   Seismic lab (Signehamna)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../about/software.html">
-   Software
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../about/zbiblio.html">
-   Bibliography
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../suppl/best_practices.html">Best practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../suppl/metadata_lists.html">Metadata templates for archiving</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/seismic_lab.html">Seismic lab (Signehamna)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/software.html">Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/zbiblio.html">Bibliography</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Questionnaire
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Questionnaire</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../survey.html">
-   Compendium Questionnaire
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../survey.html">Compendium Questionnaire</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  About Geo-SfM
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">About Geo-SfM</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../about/cite.html">
-   Cite Geo-SfM
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../about/cite.html">Cite Geo-SfM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/changelog.html">Changelog</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  External Links
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">External Links</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference external" href="https://unisvalbard.github.io/exbooks/">
-   UNIS Compendium Portal
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference external" href="https://unisvalbard.github.io/exbooks/">UNIS Compendium Portal</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/UNISvalbard/Geo-SfM" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/UNISvalbard/Geo-SfM/edit/main/content/lessons/l1/tutorial.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/UNISvalbard/Geo-SfM/issues/new?title=Issue%20on%20page%20%2Fcontent/lessons/l1/tutorial.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
 
 
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
 
 
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/content/lessons/l1/tutorial.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
   </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/UNISvalbard/Geo-SfM/issues/new?title=Issue%20on%20page%20%2Fcontent/lessons/l1/tutorial.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/UNISvalbard/Geo-SfM/edit/main/content/lessons/l1/tutorial.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Edit this page"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-pencil-alt"></i>
-  </span>
-<span class="headerbtn__text-container">suggest edit</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../../../_sources/content/lessons/l1/tutorial.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.md</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#d-model-reconstruction-with-agisoft-metashape">
-   3D model reconstruction with Agisoft Metashape
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-standardised-project-environment">
-     A standardised project environment
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#photo-set">
-     Photo set
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#adding-photos">
-     Adding photos
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#analyze-photos">
-     Analyze photos
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#aligning-photos">
-     Aligning photos
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#improve-alignment-step-error-reduction-optimization-and-camera-calibration">
-     Improve alignment step: Error Reduction-Optimization and Camera Calibration
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#filtering-by-reconstruction-uncertainty">
-       Filtering by Reconstruction Uncertainty
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#filtering-by-projection-accuracy">
-       Filtering by Projection accuracy
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#filtering-by-reprojection-error">
-       Filtering by Reprojection Error
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#build-dense-cloud">
-     Build Dense Cloud
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#selection-by-point-confidence">
-       Selection by point confidence
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#building-a-mesh">
-     Building a mesh
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#filtering-the-mesh">
-       Filtering the mesh
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#texture-building">
-       Texture building
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#generating-a-tiled-model">
-     Generating a Tiled Model
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#documenting-processing-parameters">
-     Documenting processing parameters
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#processing-report">
-       Processing report
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#in-programme-parameters">
-       In-programme parameters
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Metashape Tutorial</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#d-model-reconstruction-with-agisoft-metashape">
-   3D model reconstruction with Agisoft Metashape
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-standardised-project-environment">
-     A standardised project environment
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#photo-set">
-     Photo set
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#adding-photos">
-     Adding photos
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#analyze-photos">
-     Analyze photos
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#aligning-photos">
-     Aligning photos
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#improve-alignment-step-error-reduction-optimization-and-camera-calibration">
-     Improve alignment step: Error Reduction-Optimization and Camera Calibration
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#filtering-by-reconstruction-uncertainty">
-       Filtering by Reconstruction Uncertainty
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#filtering-by-projection-accuracy">
-       Filtering by Projection accuracy
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#filtering-by-reprojection-error">
-       Filtering by Reprojection Error
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#build-dense-cloud">
-     Build Dense Cloud
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#selection-by-point-confidence">
-       Selection by point confidence
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#building-a-mesh">
-     Building a mesh
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#filtering-the-mesh">
-       Filtering the mesh
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#texture-building">
-       Texture building
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#generating-a-tiled-model">
-     Generating a Tiled Model
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#documenting-processing-parameters">
-     Documenting processing parameters
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#processing-report">
-       Processing report
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#in-programme-parameters">
-       In-programme parameters
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Metashape Tutorial</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-model-reconstruction-with-agisoft-metashape">3D model reconstruction with Agisoft Metashape</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-standardised-project-environment">A standardised project environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#photo-set">Photo set</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-photos">Adding photos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analyze-photos">Analyze photos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aligning-photos">Aligning photos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#improve-alignment-step-error-reduction-optimization-and-camera-calibration">Improve alignment step: Error Reduction-Optimization and Camera Calibration</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-by-reconstruction-uncertainty">Filtering by Reconstruction Uncertainty</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-by-projection-accuracy">Filtering by Projection accuracy</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-by-reprojection-error">Filtering by Reprojection Error</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-point-cloud">Build Point Cloud</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#selection-by-point-confidence">Selection by point confidence</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#building-a-mesh">Building a mesh</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-the-mesh">Filtering the mesh</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#texture-building">Texture building</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-a-tiled-model">Generating a Tiled Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-digital-elevation-model">Build Digital Elevation Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-orthomosaic">Build Orthomosaic</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documenting-processing-parameters">Documenting processing parameters</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#processing-report">Processing report</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-programme-parameters">In-programme parameters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#record-video">Record video</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <div class="tex2jax_ignore mathjax_ignore section" id="metashape-tutorial">
 <h1>Metashape Tutorial<a class="headerlink" href="#metashape-tutorial" title="Permalink to this headline">#</a></h1>
 <p>This tutorial (and exercise) features the following learning goals:</p>
@@ -735,7 +482,7 @@ title="Print to PDF"
 <h2>3D model reconstruction with Agisoft Metashape<a class="headerlink" href="#d-model-reconstruction-with-agisoft-metashape" title="Permalink to this headline">#</a></h2>
 <div class="suggestion admonition">
 <p class="admonition-title">Creating high-quality models the USGS way</p>
-<p>The United States Geological Survey <span id="id1">[<a class="reference internal" href="../about/zbiblio.html#id12">3</a>]</span> has put together an excellent tutorial on the use of Agisoft Metashape for creating high resolution digital elevation models.
+<p>The United States Geological Survey <span id="id1">[]</span> has put together an excellent tutorial on the use of Agisoft Metashape for creating high resolution digital elevation models.
 Although digital elevation models are but one of many desired products, the same guide can be used for the creation of high resolution and properly processed DOMs.
 USGS guidelines and the quick start guide to processing (Table 1) can be found <a class="reference external" href="https://pubs.usgs.gov/of/2021/1039/ofr20211039.pdf">here</a>, and should be used supplementary to this tutorial.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">pubs</span><span class="o">.</span><span class="n">usgs</span><span class="o">.</span><span class="n">gov</span><span class="o">/</span><span class="n">of</span><span class="o">/</span><span class="mi">2021</span><span class="o">/</span><span class="mi">1039</span><span class="o">/</span><span class="n">ofr20211039</span><span class="o">.</span><span class="n">pdf</span>
@@ -790,8 +537,8 @@ The use of this standardised project setup is furthermore a requirement for digi
 Herein folders are named without extensions, and filenames are given extensions.
 Text between {} indicates variable names.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="31e56d31-acde-4c96-98c4-290f4998886b" name="182492a3-3634-4a1d-bcd4-ed9105c6bbff" type="radio">
-</input><label class="sd-tab-label" for="31e56d31-acde-4c96-98c4-290f4998886b">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
 Handheld data</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{project_directory} (The folder with all files related to this project)
 |   overview_img.{ext}
@@ -828,8 +575,8 @@ Handheld data</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="31326a9e-d891-43d6-9eb8-0d3f8f30b6ff" name="182492a3-3634-4a1d-bcd4-ed9105c6bbff" type="radio">
-</input><label class="sd-tab-label" for="31326a9e-d891-43d6-9eb8-0d3f8f30b6ff">
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
 UAV data</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{project_directory} (The folder with all files related to this project)
 |   overview_img.{ext}
@@ -874,23 +621,23 @@ The project structures are identical in principle, only differing in the way ima
 <h3>Photo set<a class="headerlink" href="#photo-set" title="Permalink to this headline">#</a></h3>
 <p>Having created the standardised project structure, proceed with extracting your taken images to the following directory:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="b28e3a03-82fd-4ea5-9710-b055981c8a90" name="f8fb3bdf-1d3c-4f47-affc-a084466864e8" type="radio">
-</input><label class="sd-tab-label" for="b28e3a03-82fd-4ea5-9710-b055981c8a90">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
 Single folder/acquisition</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">project_directory</span><span class="p">}</span>\<span class="n">data</span>\<span class="mi">100</span><span class="n">MEDIA</span>
 </pre></div>
 </div>
 </div>
-<input id="a0c19fd0-01ed-44b0-a170-41c70c56fdc3" name="f8fb3bdf-1d3c-4f47-affc-a084466864e8" type="radio">
-</input><label class="sd-tab-label" for="a0c19fd0-01ed-44b0-a170-41c70c56fdc3">
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
 Single acquisition with 1000 images</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">project_directory</span><span class="p">}</span>\<span class="n">data</span>\<span class="mi">100</span><span class="n">MEDIA</span> <span class="p">(</span><span class="n">includes</span> <span class="n">up</span> <span class="n">to</span> <span class="mi">999</span> <span class="n">images</span><span class="p">)</span>
 <span class="p">{</span><span class="n">project_directory</span><span class="p">}</span>\<span class="n">data</span>\<span class="mi">101</span><span class="n">MEDIA</span> <span class="p">(</span><span class="n">includes</span> <span class="n">remaining</span> <span class="n">images</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input id="41227a4b-0d0b-411f-8c02-6e3dd5f524a1" name="f8fb3bdf-1d3c-4f47-affc-a084466864e8" type="radio">
-</input><label class="sd-tab-label" for="41227a4b-0d0b-411f-8c02-6e3dd5f524a1">
+<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-4">
 UAV acquisition with 3 flights</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">project_directory</span><span class="p">}</span>\<span class="n">data</span>\<span class="n">f0001</span>
 <span class="p">{</span><span class="n">project_directory</span><span class="p">}</span>\<span class="n">data</span>\<span class="n">f0002</span>
@@ -995,7 +742,7 @@ Here we change our view to show Spare Point Covariance instead of RGB coloring.<
 </div>
 <p>As the sparse cloud is the very first step in a long processing chain, we want to optimize it as much as possible.
 After all, bad quality in usually equals bad quality out.
-We will now conduct several optimizations to improve quality of the sparse cloud, implementing USGS <span id="id2">[<a class="reference internal" href="../about/zbiblio.html#id12">3</a>]</span> recommendations that aim to reduce reconstruction uncertainty, improve projection accuracy, and lower the overall reprojection errors.
+We will now conduct several optimizations to improve quality of the sparse cloud, implementing USGS <span id="id2">[]</span> recommendations that aim to reduce reconstruction uncertainty, improve projection accuracy, and lower the overall reprojection errors.
 Unlike shown below, the project sometimes benefits by having each of the steps repeated multiple times, rather than just once.
 Keep in mind, however, that running too many optimizations may also result in over-fitting of the data.
 That means that the model is no longer based on real input, but rather on the processing parameters (= not real!).</p>
@@ -1055,10 +802,10 @@ Only once completely done should you remove these earlier attempts.</p>
 </div>
 </div>
 </div>
-<div class="section" id="build-dense-cloud">
-<h3>Build Dense Cloud<a class="headerlink" href="#build-dense-cloud" title="Permalink to this headline">#</a></h3>
+<div class="section" id="build-point-cloud">
+<h3>Build Point Cloud<a class="headerlink" href="#build-point-cloud" title="Permalink to this headline">#</a></h3>
 <p>Based on the estimated camera positions, we can now estimate a <em>dense point cloud</em> by calculating depth information for each image.</p>
-<p>Select <em>Build Dense Cloud</em> from the <em>Workflow</em> menu.
+<p>Select <em>Build Point Cloud</em> from the <em>Workflow</em> menu.
 <a class="reference internal" href="#dense-cloud"><span class="std std-ref">Once again you will be asked about the desired accuracy/quality</span></a>.
 Keeping in mind what we discussed above, make sure to select <em>Medium</em> for the quality.</p>
 <p>Also open up the <em>Advanced</em> section, and set <em>Depth filtering</em> to <em>Mild</em>.
@@ -1066,20 +813,20 @@ Keeping in mind what we discussed above, make sure to select <em>Medium</em> for
 <p><em>Reuse depth maps</em> can only be selected if depth maps have been previously calculated for the specified quality.</p>
 <div class="figure align-default" id="dense-cloud">
 <img alt="../../../_images/d2a861b0.png" src="../../../_images/d2a861b0.png" />
-<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">The <em>Build dense cloud</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#dense-cloud" title="Permalink to this image">#</a></p>
+<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">The <em>Build Point Cloud</em> dialog after opening it from the <em>Workflow</em> menu. Reuse depth maps when avaialable. Always toggle Calculate Point Confidence.</span><a class="headerlink" href="#dense-cloud" title="Permalink to this image">#</a></p>
 </div>
 <p>Once processing is done, you’ll be able to show the <em>dense point cloud</em> on the screen in the <em>Model</em> tab.
 If not, one can visualise the <em>dense point cloud</em> by clicking on the nine-dotted icon in the menu.
 Alternative, you could also visualise the point confidence.
-Do so by clicking the gray triangle next to the nine-dotted icon and selecting <em>Dense cloud confidence</em>.
+Do so by clicking the gray triangle next to the nine-dotted icon and selecting <em>Point Cloud confidence</em>.
 The colour coding (red = bad, blue = good) shows where the best confidence is found.</p>
 <div class="admonition-point-confidence admonition">
 <p class="admonition-title">Point confidence</p>
-<p><em>Point confidence</em> shows how accurate a given point in the dense cloud is.
+<p><em>Point confidence</em> shows how accurate a given point in the Point Cloud is.
 This is key to estimate whether the part we are interested in can be scientifically used for measurements and characterisation based on predefined criteria.</p>
 </div>
 <div class="tip admonition">
-<p class="admonition-title">Dense cloud quality</p>
+<p class="admonition-title">Point Cloud quality</p>
 <p>While this tutorial suggests <em>Medium</em> to be used for the quality parameter, you should feel free to change this depending on the computational power at your disposal.</p>
 </div>
 <div class="section" id="selection-by-point-confidence">
@@ -1088,16 +835,16 @@ This is key to estimate whether the part we are interested in can be scientifica
 <p class="admonition-title">Save time - make backups</p>
 <p>Make sure to always either backup your data before playing with it.
 This can be done by either backing up the entire project (<em>Save as…</em>) or by making a local copy of the data within the project.
-To do the latter, right click on the <em>Workspace/Dense Cloud (… points)</em> and select <em>Duplicate…</em>.
-Following alterations to the duplicated data set, you can always switch back to the original by right clicking <em>Workspace/Dense Cloud (… points)</em> and <em>Set As Default</em>.</p>
+To do the latter, right click on the <em>Workspace/Point Cloud (… points)</em> and select <em>Duplicate…</em>.
+Following alterations to the duplicated data set, you can always switch back to the original by right clicking <em>Workspace/Point Cloud (… points)</em> and <em>Set As Default</em>.</p>
 </div>
-<p>There are various ways of cutting off parts of your Dense Cloud.
+<p>There are various ways of cutting off parts of your Point Cloud.
 However, not all of them are scientifically repeatable - because let’s be honest, would you be able to exactly tell which of the points you removed from the data? No.</p>
 <p>Luckily, Metashape allows selection and deletion of points by <em>Point confidence</em>.
-Proceed to <em>Tools/Dense Cloud</em> in the menu and click on <em>Filter by confidence…</em>.
+Proceed to <em>Tools/Point Cloud</em> in the menu and click on <em>Filter by confidence…</em>.
 The dialog that pops up allows you to set minimal and maximal confidences.</p>
-<p>For example, try setting <em>Min</em>:50 and <em>Max</em>:255 to only show the Dense Cloud points wth the highest confidence.
-After looking at the difference, reset the filter by clicking on <em>Reset filter</em> within the <em>Tools/Dense Cloud</em> menu.</p>
+<p>For example, try setting <em>Min</em>:50 and <em>Max</em>:255 to only show the Point Cloud points wth the highest confidence.
+After looking at the difference, reset the filter by clicking on <em>Reset filter</em> within the <em>Tools/Point Cloud</em> menu.</p>
 <p>We will now use the method outlined above to filter out the lowest confidence interval (in this case, set <em>Min</em>:0 and <em>Max</em>:5).
 Proceed by selecting all the points shown in the <em>Model</em> tab.
 Do this by enabling the <em>Rectangle Selection</em> tool, found next to the mouse pointer icon in the menu.
@@ -1113,9 +860,9 @@ Delete the selected points by hitting the <em>Del(ete)</em> key on the keyboard.
 <div class="section" id="building-a-mesh">
 <h3>Building a mesh<a class="headerlink" href="#building-a-mesh" title="Permalink to this headline">#</a></h3>
 <p>We can use the dense point cloud to generate a polygonal mesh model.
-While generating the dense cloud, Agisoft Metashape simultaneously generated a set of depth maps (if chosen to save to the project).
+While generating the Point Cloud, Agisoft Metashape simultaneously generated a set of depth maps (if chosen to save to the project).
 This is important as we can decide which of the two to use for meshing.
-Depth maps may lead to better results when dealing with a big number of minor details, but otherwise dense clouds should be used as the source.</p>
+Depth maps may lead to better results when dealing with a big number of minor details, but otherwise Point Clouds should be used as the source.</p>
 <p>After selecting <em>Build Mesh</em> from the <em>Workflow</em> menu, you will be able to chose either in the <a class="reference internal" href="#build-mesh"><span class="std std-ref">dialog</span></a> that pops up for <em>Source data:</em>.</p>
 <div class="figure align-default" id="build-mesh">
 <img alt="../../../_images/9b4ac0b8.png" src="../../../_images/9b4ac0b8.png" />
@@ -1177,19 +924,70 @@ Once again we can select the parameters for the processing step through the <a c
 <p class="caption"><span class="caption-number">Fig. 18 </span><span class="caption-text">The <em>Build Tiled Model</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#build-tiled-model" title="Permalink to this image">#</a></p>
 </div>
 </div>
+<div class="section" id="build-digital-elevation-model">
+<h3>Build Digital Elevation Model<a class="headerlink" href="#build-digital-elevation-model" title="Permalink to this headline">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-5">
+Geographic</label><div class="sd-tab-content docutils">
+<div class="figure align-default" id="build-dem-geo">
+<img alt="../../../_images/build-dem_geographic.png" src="../../../_images/build-dem_geographic.png" />
+<p class="caption"><span class="caption-number">Fig. 19 </span><span class="caption-text">The <em>Build DEM</em> dialog after opening it from the <em>Workflow</em> menu. The <strong>Geographic</strong> type is used to generate the DEM in a known geographic projection (here shown for EPSG:32633).</span><a class="headerlink" href="#build-dem-geo" title="Permalink to this image">#</a></p>
+</div>
+</div>
+<input id="sd-tab-item-6" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-6">
+Planar</label><div class="sd-tab-content docutils">
+<div class="figure align-default" id="build-dem-planar">
+<img alt="../../../_images/build-dem_planar.png" src="../../../_images/build-dem_planar.png" />
+<p class="caption"><span class="caption-number">Fig. 20 </span><span class="caption-text">The <em>Build DEM</em> dialog after opening it from the <em>Workflow</em> menu. The <strong>Planar</strong> type is used to generate the DEM in a local coordinate system based on the specified <strong>Projection plane</strong>. This is useful for generating high-resolution cross-section views of the model.</span><a class="headerlink" href="#build-dem-planar" title="Permalink to this image">#</a></p>
+</div>
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This section is currently under construction.</p>
+</div>
+</div>
+<div class="section" id="build-orthomosaic">
+<h3>Build Orthomosaic<a class="headerlink" href="#build-orthomosaic" title="Permalink to this headline">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-7" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-7">
+Geographic</label><div class="sd-tab-content docutils">
+<div class="figure align-default" id="build-ortho-geo">
+<img alt="../../../_images/build-orthomosaic_geographic.png" src="../../../_images/build-orthomosaic_geographic.png" />
+<p class="caption"><span class="caption-number">Fig. 21 </span><span class="caption-text">The <em>Build Orthomosaic</em> dialog after opening it from the <em>Workflow</em> menu. The <strong>Geographic</strong> type is used to generate the Orthomosaic in a known geographic projection (here shown for EPSG:32633).</span><a class="headerlink" href="#build-ortho-geo" title="Permalink to this image">#</a></p>
+</div>
+</div>
+<input id="sd-tab-item-8" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-8">
+Planar</label><div class="sd-tab-content docutils">
+<div class="figure align-default" id="build-ortho-planar">
+<img alt="../../../_images/build-orthomosaic_planar.png" src="../../../_images/build-orthomosaic_planar.png" />
+<p class="caption"><span class="caption-number">Fig. 22 </span><span class="caption-text">The <em>Build Orthomosaic</em> dialog after opening it from the <em>Workflow</em> menu. The <strong>Planar</strong> type is used to generate the orthomosaic in a local coordinate system based on the specified <strong>Projection plane</strong>. This is useful for generating high-resolution cross-section views of the model.</span><a class="headerlink" href="#build-ortho-planar" title="Permalink to this image">#</a></p>
+</div>
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This section is currently under construction.</p>
+</div>
+</div>
+</div>
 <div class="section" id="documenting-processing-parameters">
-<h3>Documenting processing parameters<a class="headerlink" href="#documenting-processing-parameters" title="Permalink to this headline">#</a></h3>
+<h2>Documenting processing parameters<a class="headerlink" href="#documenting-processing-parameters" title="Permalink to this headline">#</a></h2>
 <p>While each of the previous steps has been important in generating the models, <em><strong>perhaps the most important aspect of processing is to document the taken processing steps and their parameters</strong></em>.
 Metashape automatically keeps track and stores all <em>Workflow</em> actions that the project has undergone.
 There are two ways of documenting and showing these parameters.</p>
 <div class="warning admonition">
 <p class="admonition-title">What about manual alterations?</p>
-<p>Sadly, the processing report does not include manual changes made to e.g. the point or dense cloud.
+<p>Sadly, the processing report does not include manual changes made to e.g. the point or Point Cloud.
 This means that to be truly <em>scientifically grounded</em> and <em>repeatable</em>, you should refrain from doing such alterations manually.
 Instead, rely on e.g. the point confidence to make edits (and always report the chosen parameters).</p>
 </div>
 <div class="section" id="processing-report">
-<h4>Processing report<a class="headerlink" href="#processing-report" title="Permalink to this headline">#</a></h4>
+<h3>Processing report<a class="headerlink" href="#processing-report" title="Permalink to this headline">#</a></h3>
 <p>The first, and perhaps most important, is to generate a processing report.
 Proceed to <em>File/Export</em> in the menu bar and select <em>Generate Report…</em>.
 Provide the desired <em>Title</em> and description, then proceed by clicking <em>OK</em>.
@@ -1206,13 +1004,13 @@ Have a look and familiarise yourself with it.</p>
 </div>
 </div>
 <div class="section" id="in-programme-parameters">
-<h4>In-programme parameters<a class="headerlink" href="#in-programme-parameters" title="Permalink to this headline">#</a></h4>
+<h3>In-programme parameters<a class="headerlink" href="#in-programme-parameters" title="Permalink to this headline">#</a></h3>
 <p>One does not always need to export the processing report to obtain the overview of parameters.
 Handily, Metashape also provides an overview within the <em>Workspace</em> panel after having selected an item in the chunk.
-An example of this is depicted in <a class="reference internal" href="#internal-parameters"><span class="std std-numref">Fig. 19</span></a>.</p>
+An example of this is depicted in <a class="reference internal" href="#internal-parameters"><span class="std std-numref">Fig. 23</span></a>.</p>
 <div class="figure align-default" id="internal-parameters">
 <img alt="../../../_images/5201e3e2.png" src="../../../_images/5201e3e2.png" />
-<p class="caption"><span class="caption-number">Fig. 19 </span><span class="caption-text">An example of the internal <em>Workspace</em> panel, including the parameters and processing metadata that is available from within the Metashape project interface.</span><a class="headerlink" href="#internal-parameters" title="Permalink to this image">#</a></p>
+<p class="caption"><span class="caption-number">Fig. 23 </span><span class="caption-text">An example of the internal <em>Workspace</em> panel, including the parameters and processing metadata that is available from within the Metashape project interface.</span><a class="headerlink" href="#internal-parameters" title="Permalink to this image">#</a></p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -1221,6 +1019,12 @@ In many cases the chosen parameters can (and should!) be changed to match the gi
 That said, the <em>Photo alignment</em> step should always be conducted at the highest setting possible (considering computational power available).
 Furthermore, one should <em><strong>always document each and every processing step performed</strong></em> - manually cutting and editing part of the model is therefore <em>not</em> encouraged as this remains (for now) difficult to document.</p>
 </div>
+</div>
+<div class="section" id="record-video">
+<h3>Record video<a class="headerlink" href="#record-video" title="Permalink to this headline">#</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This section is currently under construction.</p>
 </div>
 </div>
 </div>
@@ -1238,7 +1042,7 @@ Furthermore, one should <em><strong>always document each and every processing st
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./content\lessons\l1"
         },
         predefinedOutput: true
@@ -1246,50 +1050,136 @@ Furthermore, one should <em><strong>always document each and every processing st
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="exercise1.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Exercise 1 - learning the ropes of SfM photogrammetry</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="exercise1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Exercise 1 - learning the ropes of SfM photogrammetry</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="../l2/overview.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="../l2/overview.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Geo-referencing</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By Peter Betlem and Contributors<br/>
-  
-      &copy; Copyright 2022 (CC-BY-NC except where otherwise stated).<br/>
-</p>
-        </footer>
-    </div>
-    
-</div>
-
-
       </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-model-reconstruction-with-agisoft-metashape">3D model reconstruction with Agisoft Metashape</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-standardised-project-environment">A standardised project environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#photo-set">Photo set</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-photos">Adding photos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analyze-photos">Analyze photos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aligning-photos">Aligning photos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#improve-alignment-step-error-reduction-optimization-and-camera-calibration">Improve alignment step: Error Reduction-Optimization and Camera Calibration</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-by-reconstruction-uncertainty">Filtering by Reconstruction Uncertainty</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-by-projection-accuracy">Filtering by Projection accuracy</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-by-reprojection-error">Filtering by Reprojection Error</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-point-cloud">Build Point Cloud</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#selection-by-point-confidence">Selection by point confidence</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#building-a-mesh">Building a mesh</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-the-mesh">Filtering the mesh</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#texture-building">Texture building</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-a-tiled-model">Generating a Tiled Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-digital-elevation-model">Build Digital Elevation Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-orthomosaic">Build Orthomosaic</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documenting-processing-parameters">Documenting processing parameters</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#processing-report">Processing report</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-programme-parameters">In-programme parameters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#record-video">Record video</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Peter Betlem, Nil Rodes and Contributors
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023 (CC-BY-NC except where otherwise stated).
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
