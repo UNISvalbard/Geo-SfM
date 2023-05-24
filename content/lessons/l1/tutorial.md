@@ -541,7 +541,18 @@ The most import parameter here is the *Pixel size (m)*, which should never be se
 The *Build Tiled Model* dialog after opening it from the *Workflow* menu.
 ```
 
-### Build Digital Elevation Model
+### Build Digital Elevation Model (DEM)
+
+_Digital Elevation Model (DEM)_ represents a surface model as a regular grid of height values. Select the _Build DEM_ command from the _Workflow menu_. A dialog box will open to choose the parameters for building DEM.
+
+To start, we need to check the _Projection type_:
+- _Geographic_ : With the Geographic feature, you can select a geographic coordinate system either from the dropdown menu or enter the parameters for a customized system. It's important to specify the coordinate system used for referencing the model. When exporting the results, it will be possible to project them onto a different geographic coordinate system.
+- _Planar_: You can project a DEM onto a plane of your choice. You can select the projection plane and orientation of the resulting DEM.
+- _Cylindrical_: This parameter enables the projection of DEM onto a cylindrical surface. The height value is determined by measuring the distance between the model surface and the cylindrical surface.
+
+Agisoft Metashape allows the DEM generation based on the point cloud or mesh model. It is recommended to use _Point Cloud_ as the source data since it provides more accurate results and faster processing. You can generate elevation data results from depth maps or a tie point cloud. If you need the DEM to follow the polygonal model precisely or if the point cloud hasn't been reconstructed, you can use the Mesh and Tiled Model options.
+
+We suggest keeping the interpolation parameter _Disabled_ for accurate reconstruction results since only areas corresponding to point cloud or polygonal points are reconstructed. Usually, this method is recommended for Mesh and Tiled Model data source.
 
 `````{tab-set}
 ````{tab-item} Geographic
@@ -560,11 +571,30 @@ The *Build DEM* dialog after opening it from the *Workflow* menu. The **Planar**
 ````
 `````
 
-```{warning}
-This section is currently under construction.
-```
+Once the DEM generation process is complete, you can view the reconstructed model in Ortho view by clicking the _Basemap_ button on the _Toolbar_.
 
 ### Build Orthomosaic
+
+Building and exporting an _orthomosaic_ is normally used for generation of high resolution imagery based on the source photos and reconstructed model.
+
+```{note}
+The Build Orthomosaic procedure is only possible for projects saved in .PSX format that have existing mesh or DEM chunks.
+```
+
+To start building and orthomosaic, select _Build Orthomosaic_ command from the _Workflow menu_.
+
+To begin, you have to select the _Projection_ parameter. 
+- _Geographic_ projectionis often used for aerial photogrammetric surveys.
+- _Planar_ projection is helpful when working with models that have vertical surfaces, such as vertical digital outcrop models.
+- _Cylindrical_ projection can help reduce distortions when projecting cylindrical objects like tubes, rounded towers, or tunnels.
+
+To generate an accurate orthomosaic, we advise selecting _Mesh_ as the desired surface. For complete coverage, we recommend selecting the _Enable hole filling_ option under _Blending mode_ to fill in any empty areas of the mosaic.
+
+The suggested _Pixel size (m)_ will be based on the average ground sampling resolution of the original images. Using the surface size and input pixel size, the total size of the orthomosaic (measured in pixels) will be calculated and displayed at the bottom of the dialogue box.
+
+```{note}
+You can store multiple Orthomosaic instances in a single chunk. To save the current Orthomosaic and create a new one in the same chunk, right-click on the Orthomosaic and uncheck the _Set as default_ option. If you want to save the current Orthomosaic and make a copy for editing, right-click on the Orthomosaic and select _Duplicate_.
+```
 
 `````{tab-set}
 ````{tab-item} Geographic
@@ -583,9 +613,7 @@ The *Build Orthomosaic* dialog after opening it from the *Workflow* menu. The **
 ````
 `````
 
-```{warning}
-This section is currently under construction.
-```
+Generated orthomosaic can be reviewed in _Ortho_ mode similar to the digital elevation model. It can be opened in this view mode by double-clicking on the orthomosaic label in the _Workspace_ pane.
 
 ## Documenting processing parameters
 
@@ -642,3 +670,15 @@ Furthermore, one should ***always document each and every processing step perfor
 ```{warning}
 This section is currently under construction.
 ```
+
+Agisoft Metashape allows the creation of a camera track. To do so you have to add viewpoints.
+
+```{note}
+To display the camera track path, select _Model_ > _Show/Hide items_ > _Show animation_.
+```
+
+To create a viewpoint, first set up the scene in the Model view according to how you want it to appear in the animation. Next, click on the _Append_ button located on the _Animation_ pane to add the viewpoint to the current camera track.
+
+If you need to change the position of the viewpoints along the camera track, simply use your left mouse button to drag the waypoints.
+
+After creating the waypoints, you need to record the video according to the camera track you've created. To do this, click the _Capture_ button on the _Animation pane_ toolbar and choose the desired export parameters, such as video resolution, compression type, and frame rate in the _Capture Video_ dialog. Once you've made your selections, click the _OK_ button to save the video as a separate file.
