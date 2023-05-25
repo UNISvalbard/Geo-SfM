@@ -667,10 +667,6 @@ Furthermore, one should ***always document each and every processing step perfor
 
 ### Record video
 
-```{warning}
-This section is currently under construction.
-```
-
 Agisoft Metashape allows the creation of a camera track. To do so you have to add viewpoints.
 
 ````{note}
