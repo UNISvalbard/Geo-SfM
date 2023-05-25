@@ -53,5 +53,5 @@ parts:
   - file: content/lessons/about/changelog.md
 - caption: External Links
   chapters:
-  - url: https://unisvalbard.github.io/exbooks/
+  - url: https://unisvalbard.github.io/ebooks/
     title: UNIS Compendium Portal
