@@ -446,7 +446,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-a-tiled-model">Generating a Tiled Model</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-digital-elevation-model">Build Digital Elevation Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-digital-elevation-model-dem">Build Digital Elevation Model (DEM)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-orthomosaic">Build Orthomosaic</a></li>
 </ul>
 </li>
@@ -925,8 +925,17 @@ Once again we can select the parameters for the processing step through the <a c
 <p class="caption"><span class="caption-number">Fig. 18 </span><span class="caption-text">The <em>Build Tiled Model</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#build-tiled-model" title="Permalink to this image">#</a></p>
 </div>
 </div>
-<div class="section" id="build-digital-elevation-model">
-<h3>Build Digital Elevation Model<a class="headerlink" href="#build-digital-elevation-model" title="Permalink to this headline">#</a></h3>
+<div class="section" id="build-digital-elevation-model-dem">
+<h3>Build Digital Elevation Model (DEM)<a class="headerlink" href="#build-digital-elevation-model-dem" title="Permalink to this headline">#</a></h3>
+<p><em>Digital Elevation Model (DEM)</em> represents a surface model as a regular grid of height values. Select the <em>Build DEM</em> command from the <em>Workflow menu</em>. A dialog box will open to choose the parameters for building DEM.</p>
+<p>To start, we need to check the <em>Projection type</em>:</p>
+<ul class="simple">
+<li><p><em>Geographic</em> : With the Geographic feature, you can select a geographic coordinate system either from the dropdown menu or enter the parameters for a customized system. It’s important to specify the coordinate system used for referencing the model. When exporting the results, it will be possible to project them onto a different geographic coordinate system.</p></li>
+<li><p><em>Planar</em>: You can project a DEM onto a plane of your choice. You can select the projection plane and orientation of the resulting DEM.</p></li>
+<li><p><em>Cylindrical</em>: This parameter enables the projection of DEM onto a cylindrical surface. The height value is determined by measuring the distance between the model surface and the cylindrical surface.</p></li>
+</ul>
+<p>Agisoft Metashape allows the DEM generation based on the point cloud or mesh model. It is recommended to use <em>Point Cloud</em> as the source data since it provides more accurate results and faster processing. You can generate elevation data results from depth maps or a tie point cloud. If you need the DEM to follow the polygonal model precisely or if the point cloud hasn’t been reconstructed, you can use the Mesh and Tiled Model options.</p>
+<p>We suggest keeping the interpolation parameter <em>Disabled</em> for accurate reconstruction results since only areas corresponding to point cloud or polygonal points are reconstructed. Usually, this method is recommended for Mesh and Tiled Model data source.</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-5">
@@ -945,13 +954,28 @@ Planar</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This section is currently under construction.</p>
-</div>
+<p>Once the DEM generation process is complete, you can view the reconstructed model in Ortho view by clicking the <em>Basemap</em> button on the <em>Toolbar</em>.</p>
 </div>
 <div class="section" id="build-orthomosaic">
 <h3>Build Orthomosaic<a class="headerlink" href="#build-orthomosaic" title="Permalink to this headline">#</a></h3>
+<p>Building and exporting an <em>orthomosaic</em> is normally used for generation of high resolution imagery based on the source photos and reconstructed model.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Build Orthomosaic procedure is only possible for projects saved in .PSX format that have existing mesh or DEM chunks.</p>
+</div>
+<p>To start building and orthomosaic, select <em>Build Orthomosaic</em> command from the <em>Workflow menu</em>.</p>
+<p>To begin, you have to select the <em>Projection</em> parameter.</p>
+<ul class="simple">
+<li><p><em>Geographic</em> projectionis often used for aerial photogrammetric surveys.</p></li>
+<li><p><em>Planar</em> projection is helpful when working with models that have vertical surfaces, such as vertical digital outcrop models.</p></li>
+<li><p><em>Cylindrical</em> projection can help reduce distortions when projecting cylindrical objects like tubes, rounded towers, or tunnels.</p></li>
+</ul>
+<p>To generate an accurate orthomosaic, we advise selecting <em>Mesh</em> as the desired surface. For complete coverage, we recommend selecting the <em>Enable hole filling</em> option under <em>Blending mode</em> to fill in any empty areas of the mosaic.</p>
+<p>The suggested <em>Pixel size (m)</em> will be based on the average ground sampling resolution of the original images. Using the surface size and input pixel size, the total size of the orthomosaic (measured in pixels) will be calculated and displayed at the bottom of the dialogue box.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can store multiple Orthomosaic instances in a single chunk. To save the current Orthomosaic and create a new one in the same chunk, right-click on the Orthomosaic and uncheck the <em>Set as default</em> option. If you want to save the current Orthomosaic and make a copy for editing, right-click on the Orthomosaic and select <em>Duplicate</em>.</p>
+</div>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-7" name="sd-tab-set-3" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-7">
@@ -970,10 +994,7 @@ Planar</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This section is currently under construction.</p>
-</div>
+<p>Generated orthomosaic can be reviewed in <em>Ortho</em> mode similar to the digital elevation model. It can be opened in this view mode by double-clicking on the orthomosaic label in the <em>Workspace</em> pane.</p>
 </div>
 </div>
 <div class="section" id="documenting-processing-parameters">
@@ -1023,9 +1044,21 @@ Furthermore, one should <em><strong>always document each and every processing st
 </div>
 <div class="section" id="record-video">
 <h3>Record video<a class="headerlink" href="#record-video" title="Permalink to this headline">#</a></h3>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This section is currently under construction.</p>
+<p>Agisoft Metashape allows the creation of a camera track. To do so you have to add viewpoints.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To display the camera track path, select <em>Model</em> &gt; <em>Show/Hide items</em> &gt; <em>Show animation</em>.</p>
+<div class="figure align-default" id="animation">
+<img alt="../../../_images/animation.gif" src="../../../_images/animation.gif" />
+<p class="caption"><span class="caption-number">Fig. 24 </span><span class="caption-text">Display the <em>Animation</em> menu.</span><a class="headerlink" href="#animation" title="Permalink to this image">#</a></p>
+</div>
+</div>
+<p>To create a viewpoint, first set up the scene in the Model view according to how you want it to appear in the animation. Next, click on the <em>Append</em> button located on the <em>Animation</em> pane to add the viewpoint to the current camera track.</p>
+<p>If you need to change the position of the viewpoints along the camera track, simply use your left mouse button to drag the waypoints.</p>
+<p>After creating the waypoints, you need to record the video according to the camera track you’ve created. To do this, click the <em>Capture</em> button on the <em>Animation pane</em> toolbar and choose the desired export parameters, such as video resolution, compression type, and frame rate in the <em>Capture Video</em> dialog. Once you’ve made your selections, click the <em>OK</em> button to save the video as a separate file.</p>
+<div class="figure align-default" id="manual">
+<img alt="../../../_images/manual.gif" src="../../../_images/manual.gif" />
+<p class="caption"><span class="caption-number">Fig. 25 </span><span class="caption-text">Creation of an animation with two waypoints over 5 seconds.</span><a class="headerlink" href="#manual" title="Permalink to this image">#</a></p>
 </div>
 </div>
 </div>
@@ -1120,7 +1153,7 @@ Furthermore, one should <em><strong>always document each and every processing st
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-a-tiled-model">Generating a Tiled Model</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-digital-elevation-model">Build Digital Elevation Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-digital-elevation-model-dem">Build Digital Elevation Model (DEM)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-orthomosaic">Build Orthomosaic</a></li>
 </ul>
 </li>
