@@ -673,12 +673,24 @@ This section is currently under construction.
 
 Agisoft Metashape allows the creation of a camera track. To do so you have to add viewpoints.
 
-```{note}
+````{note}
 To display the camera track path, select _Model_ > _Show/Hide items_ > _Show animation_.
+
+```{figure} assets/animation.gif
+:name: animation
+
+Display the _Animation_ menu.
 ```
+````
 
 To create a viewpoint, first set up the scene in the Model view according to how you want it to appear in the animation. Next, click on the _Append_ button located on the _Animation_ pane to add the viewpoint to the current camera track.
 
 If you need to change the position of the viewpoints along the camera track, simply use your left mouse button to drag the waypoints.
 
 After creating the waypoints, you need to record the video according to the camera track you've created. To do this, click the _Capture_ button on the _Animation pane_ toolbar and choose the desired export parameters, such as video resolution, compression type, and frame rate in the _Capture Video_ dialog. Once you've made your selections, click the _OK_ button to save the video as a separate file.
+
+```{figure} assets/manual.gif
+:name: manual
+
+Creation of an animation with two waypoints over 5 seconds.
+```
