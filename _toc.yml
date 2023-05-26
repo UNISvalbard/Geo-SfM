@@ -30,6 +30,12 @@ parts:
   chapters:
   - file: content/lessons/l5/geomodel_overview.md
   - file: content/lessons/l5/geomodel_tutorial.md
+- caption: Session 6
+  chapters:
+  - file: content/lessons/l6/intro.md
+  - file: content/lessons/l6/sketchfab.md
+  - file: content/lessons/l6/v3geo.md
+#  - file: content/lessons/l6/cesium.md
 - caption: Suppl. dGNSS data processing
   chapters:
   - url: https://unisvalbard.github.io/gnss-compendium/readme.html
