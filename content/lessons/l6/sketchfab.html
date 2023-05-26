@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exercise 1 - learning the ropes of SfM photogrammetry &#8212; Geo-SfM Course</title>
+    <title>Sketchfab &#8212; Geo-SfM Course</title>
   
   
   
@@ -57,11 +57,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'content/lessons/l1/exercise1';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/lessons/l6/sketchfab';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Metashape Tutorial" href="tutorial.html" />
-    <link rel="prev" title="SfM photogrammetry" href="sfm_photogrammetry.html" />
+    <link rel="next" title="V3Geo" href="v3geo.html" />
+    <link rel="prev" title="Geomodeling tutorial" href="../l5/geomodel_tutorial.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -159,10 +159,10 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Session 1</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="sfm_photogrammetry.html">SfM photogrammetry</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Exercise 1 - learning the ropes of SfM photogrammetry</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Metashape Tutorial</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../l1/sfm_photogrammetry.html">SfM photogrammetry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../l1/exercise1.html">Exercise 1 - learning the ropes of SfM photogrammetry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../l1/tutorial.html">Metashape Tutorial</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Session 2</span></p>
 <ul class="nav bd-sidenav">
@@ -190,9 +190,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../l5/geomodel_tutorial.html">Geomodeling tutorial</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Session 6</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../l6/sketchfab.html">Sketchfab</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../l6/v3geo.html">V3Geo</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Sketchfab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="v3geo.html">V3Geo</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Suppl. dGNSS data processing</span></p>
 <ul class="nav bd-sidenav">
@@ -290,7 +290,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/UNISvalbard/Geo-SfM/edit/main/content/lessons/l1/exercise1.md" target="_blank"
+      <li><a href="https://github.com/UNISvalbard/Geo-SfM/edit/main/content/lessons/l6/sketchfab.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -307,7 +307,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/UNISvalbard/Geo-SfM/issues/new?title=Issue%20on%20page%20%2Fcontent/lessons/l1/exercise1.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/UNISvalbard/Geo-SfM/issues/new?title=Issue%20on%20page%20%2Fcontent/lessons/l6/sketchfab.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -337,7 +337,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../../_sources/content/lessons/l1/exercise1.md" target="_blank"
+      <li><a href="../../../_sources/content/lessons/l6/sketchfab.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -419,7 +419,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Exercise 1 - learning the ropes of SfM photogrammetry</h1>
+    <h1>Sketchfab</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -429,11 +429,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-goals">Learning goals</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assignment">Assignment</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deliverable">Deliverable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publish-your-3d-model">Publish your 3D model</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-sketchfab">From Sketchfab</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#directly-from-agisoft-metashape">Directly from Agisoft Metashape</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publishing-limitations">Publishing limitations</a></li>
 </ul>
             </nav>
         </div>
@@ -445,133 +446,73 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="exercise-1-learning-the-ropes-of-sfm-photogrammetry">
-<h1>Exercise 1 - learning the ropes of SfM photogrammetry<a class="headerlink" href="#exercise-1-learning-the-ropes-of-sfm-photogrammetry" title="Permalink to this headline">#</a></h1>
-<div class="admonition-deadline admonition">
-<p class="admonition-title">Deadline</p>
-<p>Please complete this exercise <strong>by the start of the next session</strong>.</p>
-</div>
-<div class="section" id="learning-goals">
-<h2>Learning goals<a class="headerlink" href="#learning-goals" title="Permalink to this headline">#</a></h2>
-<p><strong>After this session you will be able to:</strong></p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="sketchfab">
+<h1>Sketchfab<a class="headerlink" href="#sketchfab" title="Permalink to this headline">#</a></h1>
+<p><a class="reference external" href="https://sketchfab.com/">Sketchfab</a> is a web-based platform for sharing and visualizing your 3D models online.</p>
+<p>The platform offers users the ability to navigate freely within a 3D scene using mouse, touch manipulation, VR, or AR. You can view static 3D models such as DOMs and in some cases you can also play and control 3D animations.</p>
+<div class="section" id="publish-your-3d-model">
+<h2>Publish your 3D model<a class="headerlink" href="#publish-your-3d-model" title="Permalink to this headline">#</a></h2>
+<p>If you want to make your DOM available online, you have two options:</p>
 <ul class="simple">
-<li><p>Use Agisoft Metashape to digitally reconstruct macro-objects, outcrops, and more.</p></li>
-<li><p>Discover and implement basic tips and tricks for data acquisition</p></li>
+<li><p>Uploading the Mesh and Texture files to Sketchfab and completing all the necessary information manually.</p></li>
+<li><p>Using the API code from your Agisoft Metashape account to do it automatically.</p></li>
 </ul>
-<div class="warning admonition">
-<p class="admonition-title">Support</p>
-<p>Please note that <strong>we only provide feedback and support for students enrolled in the course at the University Centre of Svalbard</strong>.</p>
+<p>The first step for both options is to Create a profile on <a class="reference external" href="https://sketchfab.com/">Sketchfab</a>.</p>
+<div class="section" id="from-sketchfab">
+<h3>From Sketchfab<a class="headerlink" href="#from-sketchfab" title="Permalink to this headline">#</a></h3>
+<ol class="arabic simple">
+<li><p>In your Sketchfab profile, go to <a class="reference external" href="https://sketchfab.com/signup?next=%2Ffeed%23upload"><em>New upload</em></a>.</p></li>
+<li><p>Drag and drop your Mesh (.OBJ) and Texture (.JPG) files to the upload window.</p></li>
+</ol>
+<div class="figure align-default" id="manual-upload">
+<img alt="../../../_images/manual_upload.png" src="../../../_images/manual_upload.png" />
+<p class="caption"><span class="caption-number">Fig. 51 </span><span class="caption-text">Upload a new model tab in Sketchfab.</span><a class="headerlink" href="#manual-upload" title="Permalink to this image">#</a></p>
 </div>
-<p>We now focus on the reconstruction of a model of our own.
-Split up into separate tasks, we would like you to cover the following goals in groups of 3:</p>
+<ol class="arabic simple" start="3">
+<li><p>Fill in all the information parameters related to the 3D model.</p></li>
+<li><p>Publish it to make available online.</p></li>
+</ol>
+</div>
+<div class="section" id="directly-from-agisoft-metashape">
+<h3>Directly from Agisoft Metashape<a class="headerlink" href="#directly-from-agisoft-metashape" title="Permalink to this headline">#</a></h3>
+<ol class="arabic simple">
+<li><p>In your Sketchfab profile, go to <em>Settings</em> –&gt; <em>Password &amp; API</em></p></li>
+</ol>
+<div class="figure align-default" id="settings">
+<img alt="../../../_images/settings.gif" src="../../../_images/settings.gif" />
+<p class="caption"><span class="caption-number">Fig. 52 </span><span class="caption-text">Find the API key in your Sketchfab account.</span><a class="headerlink" href="#settings" title="Permalink to this image">#</a></p>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Copy API token. This makes you able to upload 3D models from exporters &amp; other applications directly to your Sketchfab account.</p></li>
+<li><p>Go to your 3D model in Agisoft Metashape</p></li>
+<li><p>Choose <em>File</em> –&gt; <em>Upload data</em></p></li>
+</ol>
+<div class="figure align-default" id="publish-data">
+<img alt="../../../_images/publish_data.gif" src="../../../_images/publish_data.gif" />
+<p class="caption"><span class="caption-number">Fig. 53 </span><span class="caption-text">Upload new model in Metashape GUI.</span><a class="headerlink" href="#publish-data" title="Permalink to this image">#</a></p>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Choose Sketchfab and paste the API token into the API key field. Give your model a title and a short description. Press OK.</p></li>
+<li><p>Your model should now appear in Sketchfab!</p></li>
+</ol>
+<div class="admonition-quality-of-the-3d-model admonition">
+<p class="admonition-title">Quality of the 3D model</p>
+<p>Although Sketchfab is limited by web constraints and cannot display the model’s original quality, it is an excellent way to share and visualize your models online. Keep in mind that the original file is not overwritten.</p>
+</div>
+</div>
+</div>
+<div class="section" id="publishing-limitations">
+<h2>Publishing limitations<a class="headerlink" href="#publishing-limitations" title="Permalink to this headline">#</a></h2>
+<p>With the <em>basic plan</em> on Sketchfab, the largest file size that can be uploaded is <strong>200MB</strong>.</p>
+<div class="figure align-default" id="limitations">
+<img alt="../../../_images/limitations.png" src="../../../_images/limitations.png" />
+<p class="caption"><span class="caption-number">Fig. 54 </span><span class="caption-text">File size upload limitation for Sketchfab basic plan account.</span><a class="headerlink" href="#limitations" title="Permalink to this image">#</a></p>
+</div>
+<p>In case your file size is larger than 200MB you have different options:</p>
 <ul class="simple">
-<li><p>Image acquisition of an object of your choosing</p></li>
-<li><p>SfM photogrammetry of the object you imaged</p></li>
-<li><p>Archiving of the dataset in a standardised way</p></li>
-<li><p>Documenting the processing steps.</p></li>
+<li><p>Export the model with lower resolution.</p></li>
+<li><p>Upgrade to <em>premium account</em>, for which you will have to pay a monthly fee.</p></li>
 </ul>
-<p>The exercise also includes a deliverable, i.e., a set of requirements that are listed further below.</p>
-</div>
-<div class="section" id="assignment">
-<h2>Assignment<a class="headerlink" href="#assignment" title="Permalink to this headline">#</a></h2>
-<div class="sidebar">
-<p class="sidebar-title">What about … ?</p>
-<ul class="simple">
-<li><p>What geological applications do you think this would be useful for?</p></li>
-<li><p>What could the weaknesses be?</p></li>
-<li><p>What should you consider before even acquiring the data? (e.g. scale, resolution, precision requirements - purpose?)</p></li>
-<li><p>What is an artifact and how may they arise in your models? (Make screenshots of these when/if found in your own models!)</p></li>
-</ul>
-</div>
-<p>It is now up to you to acquire your own data set and process this by following the <a class="reference internal" href="tutorial.html"><span class="doc std std-doc">photogrammetry tutorial</span></a>.
-Make sure to also give some thoughts and answer the questions in the side bar.</p>
-<p>Suggested targets include:</p>
-<ul class="simple">
-<li><p>small outcrops (ca. 5 m long, 5 m high)</p></li>
-<li><p>a mug turned upside down</p></li>
-<li><p>a pirate’s hat</p></li>
-<li><p>some fruit</p></li>
-</ul>
-<div class="note admonition">
-<p class="admonition-title">Checklist and questions</p>
-<ul class="contains-task-list simple">
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Find a suitable target</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Take photos of the target</p>
-<ul class="contains-task-list">
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> … from two distances</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> … from two angles</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> … with photos having at least 80% overlap between them</p></li>
-</ul>
-</li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Import the photos to your workstation…</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> … into the standardised folder structure</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Create a textured model, saving project into the assigned folder</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Export a processing report.</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Fill out the deliverable</p></li>
-</ul>
-</div>
-<div class="section" id="deliverable">
-<h3>Deliverable<a class="headerlink" href="#deliverable" title="Permalink to this headline">#</a></h3>
-<p>At the very least, the following should be completed <strong>prior to the start of the next session</strong>.
-Copy it over and send it in to the course responsible.</p>
-<div class="tip admonition">
-<p class="admonition-title">Use the processing network!</p>
-<p>Make sure to submit your processing requests to the network!
-Else processing may take forever!</p>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>group:
-    name:
-    person1:
-    person2:
-
-model:
-    place: # Where did you find your target?
-    land:
-    island:  # PICK: Hopen / Spitsbergen / Kong Karls Land / Edgeøya / Barentsøya / Tusenøyane / Nordaustlandet / Kvitøya / Prins Karls Forland / Bjørnøya / Other
-
-data:
-    data_project_path: \\svalbox\metashape-processing$\ag222-2022\{your-project-folder} # FOLDER DIR (absolute)
-    data_model_file: {model_filename}.obj # MODEL FILE NAME (relative to data_path)
-    data_owner:
-    data_reference_contact:
-    data_reference_scientific:
-
-metadata: # these can all be found in the exported processing report :)
-    acquisition_date: 10.12.2019 # STRING DD.MM.YYYY
-    acquisition_reference: # STRING Data collector
-    acquisition_camera_model:
-    acquisition_marker_type:
-    acquisition_camera_lens:
-    processing_camera_stations: # a number
-    processing_camera_total_error:
-    processing_ground_resolution: 0.00345 # in metres/pixel
-    processing_dem_resolution: 0.0138 # in metres/pixel
-    processing_dem_point_density: 0.526 # in points/m2
-    processing_flying_altitude: 10.8 # in m, average distance between cameras and sparse point cloud
-    processing_coverage_area: 932.0 # in m2
-    processing_georeferencing_type:
-    processing_georeferencing_crs:
-    processing_reference_contact:
-</pre></div>
-</div>
-<div class="warning admonition">
-<p class="admonition-title">Do not forget…</p>
-<p>Make sure to also create a <em>description.txt</em> file with a description of the object and selecting an overview image.
-Save these within the project directory with the suggested filenames (<em>description.txt</em>, <em>image_overview.jpg</em>).</p>
-</div>
-<div class="tip admonition note">
-<p class="admonition-title">Note</p>
-<p>As for the metadata, you’ll only be able to fill out some of the metadata after fully implementing all the steps (and including up to) the meshing and texturing step.</p>
-</div>
-<div class="tip admonition">
-<p class="admonition-title">Image acquisition</p>
-<p>Have a look at the <a class="reference internal" href="../suppl/best_practices.html"><span class="doc std std-doc">supplementary information</span></a> dealing with best practices in photogrammetry.</p>
-</div>
-<div class="tip admonition">
-<p class="admonition-title">SfM photogrammetry workflow</p>
-<p>Have a look at this session’s accompanying <a class="reference internal" href="tutorial.html"><span class="doc std std-doc">tutorial</span></a> for some useful tips and tricks.</p>
-</div>
-</div>
 </div>
 </div>
 
@@ -588,7 +529,7 @@ Save these within the project directory with the suggested filenames (<em>descri
         },
         kernelOptions: {
             name: "python3",
-            path: "./content\lessons\l1"
+            path: "./content\lessons\l6"
         },
         predefinedOutput: true
     }
@@ -607,20 +548,20 @@ Save these within the project directory with the suggested filenames (<em>descri
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="sfm_photogrammetry.html"
+       href="../l5/geomodel_tutorial.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">SfM photogrammetry</p>
+        <p class="prev-next-title">Geomodeling tutorial</p>
       </div>
     </a>
     <a class="right-next"
-       href="tutorial.html"
+       href="v3geo.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Metashape Tutorial</p>
+        <p class="prev-next-title">V3Geo</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -642,11 +583,12 @@ Save these within the project directory with the suggested filenames (<em>descri
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-goals">Learning goals</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assignment">Assignment</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deliverable">Deliverable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publish-your-3d-model">Publish your 3D model</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-sketchfab">From Sketchfab</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#directly-from-agisoft-metashape">Directly from Agisoft Metashape</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publishing-limitations">Publishing limitations</a></li>
 </ul>
   </nav></div>
 
