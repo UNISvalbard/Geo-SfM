@@ -1,5 +1,11 @@
 # Changelog
 
+## 2023-06-12
+- Updated automated_metashape python documentation.
+
+## 2023-05-25
+- Added descriptions to the DEM, orthomosaic and recording gifs in the tutorial.
+
 ## 2023-05-23
 
 - Updated compatibility to JB=0.15.1
