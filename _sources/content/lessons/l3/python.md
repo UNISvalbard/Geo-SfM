@@ -241,7 +241,6 @@ filterPointCloud:
 ```
 ````
 
-
 ````{tab-item} Mesh
 ```yaml
 buildModel: # (Metashape: buildModel)
@@ -347,6 +346,7 @@ It should now result in a successful runtime.
 
 ```{code-cell} ipython3
 :tags: [raises-exception]
+:tags: ["output_scroll"]
 
 config_file = "../config/photogrammetry_processing_settings.yml"
 project = AP()

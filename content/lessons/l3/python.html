@@ -510,36 +510,29 @@ then proceed by running each cell by either clicking the <em>play</em> button or
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">Exception</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span>\<span class="n">ipykernel_52132</span>\<span class="mf">822519927.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span>\<span class="n">ipykernel_47016</span>\<span class="mf">822519927.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">config_file</span> <span class="o">=</span> <span class="s2">&quot;../config/empty_photogrammetry_processing_settings.yml&quot;</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">project</span> <span class="o">=</span> <span class="n">AP</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">project</span><span class="o">.</span><span class="n">read_config</span><span class="p">(</span><span class="n">config_file</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">project</span> <span class="o">=</span> <span class="n">AP</span><span class="p">()</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">project</span><span class="o">.</span><span class="n">read_config</span><span class="p">(</span><span class="n">config_file</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">project</span><span class="o">.</span><span class="n">init_workspace</span><span class="p">()</span>
 <span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">project</span><span class="o">.</span><span class="n">init_tasks</span><span class="p">()</span>
 
-<span class="nn">~\.conda\envs\automated_metashape\lib\site-packages\automated_metashape\MetashapeProcessing.py</span> in <span class="ni">__init__</span><span class="nt">(self, logger)</span>
-<span class="g g-Whitespace">     </span><span class="mi">65</span>     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">logger</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)):</span>
-<span class="g g-Whitespace">     </span><span class="mi">66</span>         <span class="bp">self</span><span class="o">.</span><span class="n">__version__</span> <span class="o">=</span> <span class="n">pkg_resources</span><span class="o">.</span><span class="n">get_distribution</span><span class="p">(</span><span class="s1">&#39;automated_metashape&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">version</span>
-<span class="ne">---&gt; </span><span class="mi">67</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_check_metashape_activated</span><span class="p">()</span> <span class="c1"># do this before doing anything else...</span>
-<span class="g g-Whitespace">     </span><span class="mi">68</span>         <span class="bp">self</span><span class="o">.</span><span class="n">logger</span> <span class="o">=</span> <span class="n">logger</span>
-<span class="g g-Whitespace">     </span><span class="mi">69</span> 
+<span class="nn">~\.conda\envs\automated_metashape\lib\site-packages\automated_metashape\MetashapeProcessing.py</span> in <span class="ni">read_config</span><span class="nt">(self, config_file)</span>
+<span class="g g-Whitespace">     </span><span class="mi">71</span> 
+<span class="g g-Whitespace">     </span><span class="mi">72</span>     <span class="k">def</span> <span class="nf">read_config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">config_file</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">73</span>         <span class="bp">self</span><span class="o">.</span><span class="n">cfg</span> <span class="o">=</span> <span class="n">read_yaml</span><span class="p">(</span><span class="n">config_file</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">74</span>         <span class="bp">self</span><span class="o">.</span><span class="n">config_file</span> <span class="o">=</span> <span class="n">config_file</span>
+<span class="g g-Whitespace">     </span><span class="mi">75</span>         <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Config file loaded.&quot;</span><span class="p">)</span>
 
-<span class="nn">~\.conda\envs\automated_metashape\lib\site-packages\automated_metashape\MetashapeProcessing.py</span> in <span class="ni">_check_metashape_activated</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">105</span>                     <span class="sa">f</span><span class="s2">&quot;named agisoft_LICENSE and points it to the &quot;</span> <span class="o">+</span>\
-<span class="g g-Whitespace">    </span><span class="mi">106</span>                         <span class="sa">f</span><span class="s2">&quot;Metashape license file in the Agisoft Metashape directory.&quot;</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">107</span>         <span class="n">_check_metashape_version</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">108</span> 
-<span class="g g-Whitespace">    </span><span class="mi">109</span>     <span class="k">def</span> <span class="nf">_init_filesystem</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="nn">~\.conda\envs\automated_metashape\lib\site-packages\automated_metashape\read_yaml.py</span> in <span class="ni">read_yaml</span><span class="nt">(yml_path)</span>
+<span class="g g-Whitespace">     </span><span class="mi">46</span> <span class="k">def</span> <span class="nf">read_yaml</span><span class="p">(</span><span class="n">yml_path</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">47</span>     <span class="n">yml_path</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="n">yml_path</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">48</span>     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">yml_path</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">ymlfile</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">49</span>         <span class="n">cfg</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">ymlfile</span><span class="p">,</span> <span class="n">Loader</span><span class="o">=</span><span class="n">yaml</span><span class="o">.</span><span class="n">SafeLoader</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">50</span> 
 
-<span class="nn">~\.conda\envs\automated_metashape\lib\site-packages\automated_metashape\MetashapeProcessing.py</span> in <span class="ni">_check_metashape_version</span><span class="nt">(logger)</span>
-<span class="g g-Whitespace">     </span><span class="mi">59</span> <span class="k">def</span> <span class="nf">_check_metashape_version</span><span class="p">(</span><span class="n">logger</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)):</span>
-<span class="g g-Whitespace">     </span><span class="mi">60</span>     <span class="k">if</span> <span class="n">version</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s2">&quot;2.0.0&quot;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">version</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">pkg_resources</span><span class="o">.</span><span class="n">get_distribution</span><span class="p">(</span><span class="s1">&#39;Metashape&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">version</span><span class="p">):</span>
-<span class="ne">---&gt; </span><span class="mi">61</span>         <span class="k">raise</span>  <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Metashape Python version &gt; 2.0.0 required. Please update the current installation.&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">62</span> 
-<span class="g g-Whitespace">     </span><span class="mi">63</span> <span class="k">class</span> <span class="nc">AutomatedProcessing</span><span class="p">:</span>
-
-<span class="ne">Exception</span>: Metashape Python version &gt; 2.0.0 required. Please update the current installation.
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;..\\config\\empty_photogrammetry_processing_settings.yml&#39;
 </pre></div>
 </div>
 </div>
@@ -821,7 +814,7 @@ Networking</label><div class="sd-tab-content docutils">
 <h3>Another shot<a class="headerlink" href="#another-shot" title="Permalink to this headline">#</a></h3>
 <p>After copying over the desired parameter-sections, update the config_file path correspondingly and run the cell again.
 It should now result in a successful runtime.</p>
-<div class="cell tag_raises-exception docutils container">
+<div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">config_file</span> <span class="o">=</span> <span class="s2">&quot;../config/photogrammetry_processing_settings.yml&quot;</span>
 <span class="n">project</span> <span class="o">=</span> <span class="n">AP</span><span class="p">()</span>
@@ -832,37 +825,50 @@ It should now result in a successful runtime.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">Exception</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span>\<span class="n">ipykernel_52132</span>\<span class="mf">755088395.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">config_file</span> <span class="o">=</span> <span class="s2">&quot;../config/photogrammetry_processing_settings.yml&quot;</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">project</span> <span class="o">=</span> <span class="n">AP</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">project</span><span class="o">.</span><span class="n">read_config</span><span class="p">(</span><span class="n">config_file</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">project</span><span class="o">.</span><span class="n">init_workspace</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">project</span><span class="o">.</span><span class="n">init_tasks</span><span class="p">()</span>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-06-12 15:40:55,110 [INFO] automated_metashape.MetashapeProcessing: --------------
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-06-12 15:40:55,112 [INFO] automated_metashape.MetashapeProcessing: Fresh run initiated.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-06-12 15:40:55,113 [INFO] automated_metashape.MetashapeProcessing: Runtime id: MS_20230612T1540
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-06-12 15:40:55,113 [INFO] automated_metashape.MetashapeProcessing: --------------
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-06-12 15:40:55,114 [INFO] automated_metashape.MetashapeProcessing: Agisoft Metashape Professional Version: 2.0.2.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-06-12 15:40:55,115 [INFO] automated_metashape.MetashapeProcessing: Automated metashape package version: 0.1.13.dev1.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-06-12 15:40:55,525 [INFO] automated_metashape.MetashapeProcessing: Creating new project...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-06-12 15:40:55,947 [INFO] automated_metashape.MetashapeProcessing: Saved project as C:/Users/Peter/Documents/GitHub/automated_agisoft_documentation/content/lessons/l3/metashape/MS_20230612T1540.psx
 
-<span class="nn">~\.conda\envs\automated_metashape\lib\site-packages\automated_metashape\MetashapeProcessing.py</span> in <span class="ni">__init__</span><span class="nt">(self, logger)</span>
-<span class="g g-Whitespace">     </span><span class="mi">65</span>     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">logger</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)):</span>
-<span class="g g-Whitespace">     </span><span class="mi">66</span>         <span class="bp">self</span><span class="o">.</span><span class="n">__version__</span> <span class="o">=</span> <span class="n">pkg_resources</span><span class="o">.</span><span class="n">get_distribution</span><span class="p">(</span><span class="s1">&#39;automated_metashape&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">version</span>
-<span class="ne">---&gt; </span><span class="mi">67</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_check_metashape_activated</span><span class="p">()</span> <span class="c1"># do this before doing anything else...</span>
-<span class="g g-Whitespace">     </span><span class="mi">68</span>         <span class="bp">self</span><span class="o">.</span><span class="n">logger</span> <span class="o">=</span> <span class="n">logger</span>
-<span class="g g-Whitespace">     </span><span class="mi">69</span> 
-
-<span class="nn">~\.conda\envs\automated_metashape\lib\site-packages\automated_metashape\MetashapeProcessing.py</span> in <span class="ni">_check_metashape_activated</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">105</span>                     <span class="sa">f</span><span class="s2">&quot;named agisoft_LICENSE and points it to the &quot;</span> <span class="o">+</span>\
-<span class="g g-Whitespace">    </span><span class="mi">106</span>                         <span class="sa">f</span><span class="s2">&quot;Metashape license file in the Agisoft Metashape directory.&quot;</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">107</span>         <span class="n">_check_metashape_version</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">108</span> 
-<span class="g g-Whitespace">    </span><span class="mi">109</span>     <span class="k">def</span> <span class="nf">_init_filesystem</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-
-<span class="nn">~\.conda\envs\automated_metashape\lib\site-packages\automated_metashape\MetashapeProcessing.py</span> in <span class="ni">_check_metashape_version</span><span class="nt">(logger)</span>
-<span class="g g-Whitespace">     </span><span class="mi">59</span> <span class="k">def</span> <span class="nf">_check_metashape_version</span><span class="p">(</span><span class="n">logger</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)):</span>
-<span class="g g-Whitespace">     </span><span class="mi">60</span>     <span class="k">if</span> <span class="n">version</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s2">&quot;2.0.0&quot;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">version</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">pkg_resources</span><span class="o">.</span><span class="n">get_distribution</span><span class="p">(</span><span class="s1">&#39;Metashape&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">version</span><span class="p">):</span>
-<span class="ne">---&gt; </span><span class="mi">61</span>         <span class="k">raise</span>  <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Metashape Python version &gt; 2.0.0 required. Please update the current installation.&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">62</span> 
-<span class="g g-Whitespace">     </span><span class="mi">63</span> <span class="k">class</span> <span class="nc">AutomatedProcessing</span><span class="p">:</span>
-
-<span class="ne">Exception</span>: Metashape Python version &gt; 2.0.0 required. Please update the current installation.
+### Start of input file configuration for startup-stage ###
+load_project_path: null
+output_path: ./metashape
+photo_path: .
+project_crs: EPSG::32633
+project_path: ./metashape
+run_name: MS
+subdivide_task: true
+### End of input file configuration for startup-stage ###
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-06-12 15:40:56,163 [WARNING] automated_metashape.MetashapeProcessing: Failed to export report. Export report manually.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-06-12 15:40:56,380 [INFO] automated_metashape.MetashapeProcessing: --------------
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-06-12 15:40:56,380 [INFO] automated_metashape.MetashapeProcessing: Run completed.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-06-12 15:40:56,381 [INFO] automated_metashape.MetashapeProcessing: --------------
 </pre></div>
 </div>
 </div>
