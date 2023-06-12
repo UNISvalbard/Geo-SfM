@@ -509,30 +509,37 @@ then proceed by running each cell by either clicking the <em>play</em> button or
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">--------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                        </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span>\<span class="n">ipykernel_25512</span>\<span class="mf">822519927.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">Exception</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span>\<span class="n">ipykernel_52132</span>\<span class="mf">822519927.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">config_file</span> <span class="o">=</span> <span class="s2">&quot;../config/empty_photogrammetry_processing_settings.yml&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">project</span> <span class="o">=</span> <span class="n">AP</span><span class="p">()</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">project</span><span class="o">.</span><span class="n">read_config</span><span class="p">(</span><span class="n">config_file</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">project</span> <span class="o">=</span> <span class="n">AP</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">project</span><span class="o">.</span><span class="n">read_config</span><span class="p">(</span><span class="n">config_file</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">project</span><span class="o">.</span><span class="n">init_workspace</span><span class="p">()</span>
 <span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">project</span><span class="o">.</span><span class="n">init_tasks</span><span class="p">()</span>
 
-<span class="nn">~\.conda\envs\automated_metashape\lib\site-packages\automated_metashape\MetashapeProcessing.py</span> in <span class="ni">read_config</span><span class="nt">(self, config_file)</span>
-<span class="g g-Whitespace">     </span><span class="mi">72</span> 
-<span class="g g-Whitespace">     </span><span class="mi">73</span>     <span class="k">def</span> <span class="nf">read_config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">config_file</span><span class="p">):</span>
-<span class="ne">---&gt; </span><span class="mi">74</span>         <span class="bp">self</span><span class="o">.</span><span class="n">cfg</span> <span class="o">=</span> <span class="n">read_yaml</span><span class="p">(</span><span class="n">config_file</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">75</span>         <span class="bp">self</span><span class="o">.</span><span class="n">config_file</span> <span class="o">=</span> <span class="n">config_file</span>
-<span class="g g-Whitespace">     </span><span class="mi">76</span>         <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Config file loaded.&quot;</span><span class="p">)</span>
+<span class="nn">~\.conda\envs\automated_metashape\lib\site-packages\automated_metashape\MetashapeProcessing.py</span> in <span class="ni">__init__</span><span class="nt">(self, logger)</span>
+<span class="g g-Whitespace">     </span><span class="mi">65</span>     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">logger</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)):</span>
+<span class="g g-Whitespace">     </span><span class="mi">66</span>         <span class="bp">self</span><span class="o">.</span><span class="n">__version__</span> <span class="o">=</span> <span class="n">pkg_resources</span><span class="o">.</span><span class="n">get_distribution</span><span class="p">(</span><span class="s1">&#39;automated_metashape&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">version</span>
+<span class="ne">---&gt; </span><span class="mi">67</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_check_metashape_activated</span><span class="p">()</span> <span class="c1"># do this before doing anything else...</span>
+<span class="g g-Whitespace">     </span><span class="mi">68</span>         <span class="bp">self</span><span class="o">.</span><span class="n">logger</span> <span class="o">=</span> <span class="n">logger</span>
+<span class="g g-Whitespace">     </span><span class="mi">69</span> 
 
-<span class="nn">~\.conda\envs\automated_metashape\lib\site-packages\automated_metashape\read_yaml.py</span> in <span class="ni">read_yaml</span><span class="nt">(yml_path)</span>
-<span class="g g-Whitespace">     </span><span class="mi">46</span> <span class="k">def</span> <span class="nf">read_yaml</span><span class="p">(</span><span class="n">yml_path</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">47</span>     <span class="n">yml_path</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="n">yml_path</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">48</span>     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">yml_path</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">ymlfile</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">49</span>         <span class="n">cfg</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">ymlfile</span><span class="p">,</span> <span class="n">Loader</span><span class="o">=</span><span class="n">yaml</span><span class="o">.</span><span class="n">SafeLoader</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">50</span> 
+<span class="nn">~\.conda\envs\automated_metashape\lib\site-packages\automated_metashape\MetashapeProcessing.py</span> in <span class="ni">_check_metashape_activated</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">105</span>                     <span class="sa">f</span><span class="s2">&quot;named agisoft_LICENSE and points it to the &quot;</span> <span class="o">+</span>\
+<span class="g g-Whitespace">    </span><span class="mi">106</span>                         <span class="sa">f</span><span class="s2">&quot;Metashape license file in the Agisoft Metashape directory.&quot;</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">107</span>         <span class="n">_check_metashape_version</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">108</span> 
+<span class="g g-Whitespace">    </span><span class="mi">109</span>     <span class="k">def</span> <span class="nf">_init_filesystem</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;..\\config\\empty_photogrammetry_processing_settings.yml&#39;
+<span class="nn">~\.conda\envs\automated_metashape\lib\site-packages\automated_metashape\MetashapeProcessing.py</span> in <span class="ni">_check_metashape_version</span><span class="nt">(logger)</span>
+<span class="g g-Whitespace">     </span><span class="mi">59</span> <span class="k">def</span> <span class="nf">_check_metashape_version</span><span class="p">(</span><span class="n">logger</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)):</span>
+<span class="g g-Whitespace">     </span><span class="mi">60</span>     <span class="k">if</span> <span class="n">version</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s2">&quot;2.0.0&quot;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">version</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">pkg_resources</span><span class="o">.</span><span class="n">get_distribution</span><span class="p">(</span><span class="s1">&#39;Metashape&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">version</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">61</span>         <span class="k">raise</span>  <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Metashape Python version &gt; 2.0.0 required. Please update the current installation.&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">62</span> 
+<span class="g g-Whitespace">     </span><span class="mi">63</span> <span class="k">class</span> <span class="nc">AutomatedProcessing</span><span class="p">:</span>
+
+<span class="ne">Exception</span>: Metashape Python version &gt; 2.0.0 required. Please update the current installation.
 </pre></div>
 </div>
 </div>
@@ -611,8 +618,8 @@ This should generally only be set to <em>True</em> when ground control points (G
 </div>
 <input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-1">
-Analyze photos</label><div class="sd-tab-content docutils">
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">analyzePhotos</span><span class="p">:</span><span class="w"></span>
+Analyze images</label><div class="sd-tab-content docutils">
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">analyzeImages</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
 <span class="w">    </span><span class="nt">quality_cutoff</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.5</span><span class="w"> </span><span class="c1"># value between 0 and 1, indicates the lowest quality unit at which photos are used for processing. 0.5 is suggested by Agisoft.</span><span class="w"></span>
 </pre></div>
@@ -663,10 +670,10 @@ Optimise cameras</label><div class="sd-tab-content docutils">
 Depth maps</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">buildDepthMaps</span><span class="p">:</span><span class="w"> </span><span class="c1"># (Metashape: buildDepthMaps)</span><span class="w"></span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
-<span class="w">    </span><span class="nt">downscale</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"> </span><span class="c1"># Recommended: 2. How much to coarsen the photos when searching for matches to build the dense cloud. Corresponding settings in Metashape: 1: Highest, 2: High, 3: Medium, 4: Low, 5: Lowest</span><span class="w"></span>
+<span class="w">    </span><span class="nt">downscale</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"> </span><span class="c1"># Recommended: 2. How much to coarsen the photos when searching for matches to build the point cloud. Corresponding settings in Metashape: 1: Highest, 2: High, 3: Medium, 4: Low, 5: Lowest</span><span class="w"></span>
 <span class="w">    </span><span class="nt">filter_mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Metashape.MildFiltering</span><span class="w"> </span><span class="c1"># Recommended: Metashape.MildFiltering. How to filter the point cloud. Options are NoFiltering, MildFiltering, ModerateFiltering, AggressiveFiltering. Aggressive filtering removes detail and makes worse DEMs (at least for forest). NoFiltering takes very long. In trials, it never completed.</span><span class="w"></span>
 <span class="w">    </span><span class="nt">reuse_depth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"> </span><span class="c1"># Recommended: True.</span><span class="w"></span>
-<span class="w">    </span><span class="nt">max_neighbors</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span><span class="w"> </span><span class="c1"># Recommended: 100. Maximum number of neighboring photos to use for estimating point cloud. Higher numbers may increase accuracy but dramatically increase processing time.</span><span class="w"></span>
+<span class="w">    </span><span class="nt">max_neighbors</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span><span class="w"> </span><span class="c1"># Recommended: 100. Maximum number of neighbouring photos to use for estimating point cloud. Higher numbers may increase accuracy but dramatically increase processing time.</span><span class="w"></span>
 </pre></div>
 </div>
 <div class="admonition-downscale admonition">
@@ -683,20 +690,20 @@ NoFiltering takes very long. In trials, it never completed.</p>
 </div>
 <input id="sd-tab-item-6" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-6">
-Dense cloud</label><div class="sd-tab-content docutils">
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">buildDenseCloud</span><span class="p">:</span><span class="w"> </span><span class="c1"># (Metashape: buildDepthMaps, buildDenseCloud, classifyGroundPoints, and exportPoints)</span><span class="w"></span>
+Point cloud</label><div class="sd-tab-content docutils">
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">buildPointCloud</span><span class="p">:</span><span class="w"> </span><span class="c1"># (Metashape: buildDepthMaps, buildPointCloud, classifyGroundPoints, and exportPoints)</span><span class="w"></span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
 <span class="w">    </span><span class="nt">point_colors</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"> </span><span class="c1"># enable point colors calculations</span><span class="w"></span>
 <span class="w">    </span><span class="nt">point_confidence</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"> </span><span class="c1"># enable point confidence calculations</span><span class="w"></span>
 <span class="w">    </span><span class="nt">keep_depth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"> </span><span class="c1"># Recommended: True. Enable store depth maps option.</span><span class="w"></span>
-<span class="w">    </span><span class="nt">max_neighbors</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span><span class="w"> </span><span class="c1"># Recommended: 100. Maximum number of neighboring photos to use for estimating point cloud. Higher numbers may increase accuracy but dramatically increase processing time.</span><span class="w"></span>
+<span class="w">    </span><span class="nt">max_neighbors</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span><span class="w"> </span><span class="c1"># Recommended: 100. Maximum number of neighbouring photos to use for estimating point cloud. Higher numbers may increase accuracy but dramatically increase processing time.</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
 <input id="sd-tab-item-7" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-7">
-Filter dense cloud</label><div class="sd-tab-content docutils">
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">filterDenseCloud</span><span class="p">:</span><span class="w"></span>
+Filter point cloud</label><div class="sd-tab-content docutils">
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">filterPointCloud</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
 <span class="w">    </span><span class="nt">point_confidence_max</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20</span><span class="w"> </span><span class="c1"># maximum point confidence for points to be removed, ranges from 1-99</span><span class="w"></span>
 </pre></div>
@@ -705,14 +712,14 @@ Filter dense cloud</label><div class="sd-tab-content docutils">
 <input id="sd-tab-item-8" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-8">
 Mesh</label><div class="sd-tab-content docutils">
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">buildMesh</span><span class="p">:</span><span class="w"> </span><span class="c1"># (Metashape: buildModel)</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">buildModel</span><span class="p">:</span><span class="w"> </span><span class="c1"># (Metashape: buildModel)</span><span class="w"></span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
 <span class="w">    </span><span class="nt">surface_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Metashape.Arbitrary</span><span class="w"> </span><span class="c1"># Recommended: Metashape.Arbitrary. Surface type in [Arbitrary, HeightField]</span><span class="w"></span>
 <span class="w">    </span><span class="nt">interpolation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Metashape.EnabledInterpolation</span><span class="w"> </span><span class="c1"># Interpolation mode in Metashape.[DisabledInterpolation, EnabledInterpolation, Extrapolated]</span><span class="w"></span>
 <span class="w">    </span><span class="nt">face_count</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Metashape.HighFaceCount</span><span class="w"> </span><span class="c1"># Options are [LowFaceCount, MediumFaceCount, HighFaceCount, CustomFaceCount]</span><span class="w"></span>
 <span class="w">    </span><span class="nt">face_count_custom</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100000</span><span class="w"> </span><span class="c1"># Integer, has to be enabled through CustomFaceCount above.</span><span class="w"></span>
-<span class="w">    </span><span class="c1">## For dense cloud (buildDenseCloud)</span><span class="w"></span>
-<span class="w">    </span><span class="nt">source_data</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Metashape.DenseCloudData</span><span class="w"> </span><span class="c1"># Recommended: DenseCloudData. Others include: Data source in [PointCloudData, DenseCloudData, DepthMapsData, ModelData, TiledModelData, ElevationData, OrthomosaicData, ImagesData]</span><span class="w"></span>
+<span class="w">    </span><span class="c1">## For point cloud (buildPointCloud)</span><span class="w"></span>
+<span class="w">    </span><span class="nt">source_data</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Metashape.PointCloudData</span><span class="w"> </span><span class="c1"># Recommended: PointCloudData. Others include: Data source in [PointCloudData, PointCloudData, DepthMapsData, ModelData, TiledModelData, ElevationData, OrthomosaicData, ImagesData]</span><span class="w"></span>
 <span class="w">    </span><span class="nt">volumetric_masks</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"> </span><span class="c1"># Default False; True for volumetric masking during 3D mesh generation, as documented here https://www.agisoft.com/index.php?id=48</span><span class="w"></span>
 </pre></div>
 </div>
@@ -734,8 +741,8 @@ Textures</label><div class="sd-tab-content docutils">
 Tiled model</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">buildTiledModel</span><span class="p">:</span><span class="w"> </span><span class="c1"># (Metashape: buildTexture)</span><span class="w"></span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
-<span class="w">    </span><span class="c1">## For depth maps (buldModel)</span><span class="w"></span>
-<span class="w">    </span><span class="nt">source_data</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Metashape.DenseCloudData</span><span class="w"></span>
+<span class="w">    </span><span class="c1">## For depth maps (buildModel)</span><span class="w"></span>
+<span class="w">    </span><span class="nt">source_data</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Metashape.PointCloudData</span><span class="w"></span>
 <span class="w">    </span><span class="nt">pixel_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.010</span><span class="w"></span>
 <span class="w">    </span><span class="nt">tile_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">128</span><span class="w"></span>
 <span class="w">    </span><span class="nt">face_count</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4000</span><span class="w"></span>
@@ -747,7 +754,7 @@ Tiled model</label><div class="sd-tab-content docutils">
 DEM</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">buildDEM</span><span class="p">:</span><span class="w"> </span><span class="c1"># (Metashape: buildTexture)</span><span class="w"></span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
-<span class="w">    </span><span class="nt">source_data</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Metashape.ModelData</span><span class="w"> </span><span class="c1"># Data source in Metashape.[PointCloudData, DenseCloudData, DepthMapsData, ModelData, TiledModelData, ElevationData, OrthomosaicData, ImagesData]</span><span class="w"></span>
+<span class="w">    </span><span class="nt">source_data</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Metashape.ModelData</span><span class="w"> </span><span class="c1"># Data source in Metashape.[PointCloudData, PointCloudData, DepthMapsData, ModelData, TiledModelData, ElevationData, OrthomosaicData, ImagesData]</span><span class="w"></span>
 <span class="w">    </span><span class="nt">resolution</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.01</span><span class="w"></span>
 <span class="w">    </span><span class="nt">interpolation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Metashape.DisabledInterpolation</span><span class="w"> </span><span class="c1"># Interpolation mode in Metashape.[DisabledInterpolation, EnabledInterpolation, Extrapolated]</span><span class="w"></span>
 </pre></div>
@@ -786,7 +793,7 @@ Publish</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">publishData</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
 <span class="w">    </span><span class="nt">service</span><span class="p">:</span><span class="w">  </span><span class="c1"># Service type in [ServiceSketchfab, ServiceMapbox, Service4DMapper, ServiceSputnik, ServicePointscene, ServiceMelown, ServicePointbox, ServicePicterra]</span><span class="w"></span>
-<span class="w">    </span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="c1"># Data source in [PointCloudData, DenseCloudData, DepthMapsData, ModelData, TiledModelData, ElevationData, OrthomosaicData, ImagesData]</span><span class="w"></span>
+<span class="w">    </span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="c1"># Data source in [PointCloudData, PointCloudData, DepthMapsData, ModelData, TiledModelData, ElevationData, OrthomosaicData, ImagesData]</span><span class="w"></span>
 <span class="w">    </span><span class="nt">with_camera_track</span><span class="p">:</span><span class="w">  </span><span class="c1"># True/False If model should be uploaded with camera track. Can be used only with DataSource.ModelData.</span><span class="w"></span>
 <span class="w">    </span><span class="nt">export_point_colors</span><span class="p">:</span><span class="w">  </span><span class="c1"># True/False If Point Cloud should be uploaded with point colors.</span><span class="w"></span>
 <span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w">  </span><span class="c1"># Title of uploading model.</span><span class="w"></span>
@@ -825,54 +832,37 @@ It should now result in a successful runtime.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-05-26 15:40:46,750 [INFO] automated_metashape.MetashapeProcessing: --------------
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-05-26 15:40:46,752 [INFO] automated_metashape.MetashapeProcessing: Fresh run initiated.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-05-26 15:40:46,752 [INFO] automated_metashape.MetashapeProcessing: Runtime id: MS_20230526T1540
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-05-26 15:40:46,753 [INFO] automated_metashape.MetashapeProcessing: --------------
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-05-26 15:40:46,753 [INFO] automated_metashape.MetashapeProcessing: Agisoft Metashape Professional Version: 1.7.2.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-05-26 15:40:46,754 [INFO] automated_metashape.MetashapeProcessing: Automated metashape package version: 0.1.11.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-05-26 15:40:47,331 [WARNING] automated_metashape.MetashapeProcessing: automated_metashape update available 
-(external version: 0.1.12). Please update from https://github.com/PeterBetlem/automated_metashape/releases. YAML parameters may have changed!
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-05-26 15:40:47,331 [INFO] automated_metashape.MetashapeProcessing: Creating new project...
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-05-26 15:40:47,752 [INFO] automated_metashape.MetashapeProcessing: Saved project as C:/Users/Peter/Documents/Geo-SfM/content/lessons/l3/metashape/MS_20230526T1540.psx
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">Exception</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span>\<span class="n">ipykernel_52132</span>\<span class="mf">755088395.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">config_file</span> <span class="o">=</span> <span class="s2">&quot;../config/photogrammetry_processing_settings.yml&quot;</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">project</span> <span class="o">=</span> <span class="n">AP</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">project</span><span class="o">.</span><span class="n">read_config</span><span class="p">(</span><span class="n">config_file</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">project</span><span class="o">.</span><span class="n">init_workspace</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">project</span><span class="o">.</span><span class="n">init_tasks</span><span class="p">()</span>
 
-### Start of input file configuration for startup-stage ###
-load_project_path: null
-output_path: ./metashape
-photo_path: .
-project_crs: EPSG::32633
-project_path: ./metashape
-run_name: MS
-subdivide_task: true
-### End of input file configuration for startup-stage ###
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-05-26 15:40:47,966 [WARNING] automated_metashape.MetashapeProcessing: Failed to export report. Export report manually.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-05-26 15:40:48,182 [INFO] automated_metashape.MetashapeProcessing: --------------
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-05-26 15:40:48,183 [INFO] automated_metashape.MetashapeProcessing: Run completed.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-05-26 15:40:48,185 [INFO] automated_metashape.MetashapeProcessing: --------------
+<span class="nn">~\.conda\envs\automated_metashape\lib\site-packages\automated_metashape\MetashapeProcessing.py</span> in <span class="ni">__init__</span><span class="nt">(self, logger)</span>
+<span class="g g-Whitespace">     </span><span class="mi">65</span>     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">logger</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)):</span>
+<span class="g g-Whitespace">     </span><span class="mi">66</span>         <span class="bp">self</span><span class="o">.</span><span class="n">__version__</span> <span class="o">=</span> <span class="n">pkg_resources</span><span class="o">.</span><span class="n">get_distribution</span><span class="p">(</span><span class="s1">&#39;automated_metashape&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">version</span>
+<span class="ne">---&gt; </span><span class="mi">67</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_check_metashape_activated</span><span class="p">()</span> <span class="c1"># do this before doing anything else...</span>
+<span class="g g-Whitespace">     </span><span class="mi">68</span>         <span class="bp">self</span><span class="o">.</span><span class="n">logger</span> <span class="o">=</span> <span class="n">logger</span>
+<span class="g g-Whitespace">     </span><span class="mi">69</span> 
+
+<span class="nn">~\.conda\envs\automated_metashape\lib\site-packages\automated_metashape\MetashapeProcessing.py</span> in <span class="ni">_check_metashape_activated</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">105</span>                     <span class="sa">f</span><span class="s2">&quot;named agisoft_LICENSE and points it to the &quot;</span> <span class="o">+</span>\
+<span class="g g-Whitespace">    </span><span class="mi">106</span>                         <span class="sa">f</span><span class="s2">&quot;Metashape license file in the Agisoft Metashape directory.&quot;</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">107</span>         <span class="n">_check_metashape_version</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">108</span> 
+<span class="g g-Whitespace">    </span><span class="mi">109</span>     <span class="k">def</span> <span class="nf">_init_filesystem</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<span class="nn">~\.conda\envs\automated_metashape\lib\site-packages\automated_metashape\MetashapeProcessing.py</span> in <span class="ni">_check_metashape_version</span><span class="nt">(logger)</span>
+<span class="g g-Whitespace">     </span><span class="mi">59</span> <span class="k">def</span> <span class="nf">_check_metashape_version</span><span class="p">(</span><span class="n">logger</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)):</span>
+<span class="g g-Whitespace">     </span><span class="mi">60</span>     <span class="k">if</span> <span class="n">version</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s2">&quot;2.0.0&quot;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">version</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">pkg_resources</span><span class="o">.</span><span class="n">get_distribution</span><span class="p">(</span><span class="s1">&#39;Metashape&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">version</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">61</span>         <span class="k">raise</span>  <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Metashape Python version &gt; 2.0.0 required. Please update the current installation.&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">62</span> 
+<span class="g g-Whitespace">     </span><span class="mi">63</span> <span class="k">class</span> <span class="nc">AutomatedProcessing</span><span class="p">:</span>
+
+<span class="ne">Exception</span>: Metashape Python version &gt; 2.0.0 required. Please update the current installation.
 </pre></div>
 </div>
 </div>

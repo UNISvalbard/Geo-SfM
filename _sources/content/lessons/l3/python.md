@@ -152,9 +152,9 @@ This should generally only be set to *True* when ground control points (GCPs) ar
 ```
 ````
 
-````{tab-item} Analyze photos
+````{tab-item} Analyze images
 ```yaml
-analyzePhotos:
+analyzeImages:
     enabled: True
     quality_cutoff: 0.5 # value between 0 and 1, indicates the lowest quality unit at which photos are used for processing. 0.5 is suggested by Agisoft.
 ```
@@ -202,10 +202,10 @@ optimizeCameras: # (Metashape: optimizeCameras)
 ```yaml
 buildDepthMaps: # (Metashape: buildDepthMaps)
     enabled: True
-    downscale: 2 # Recommended: 2. How much to coarsen the photos when searching for matches to build the dense cloud. Corresponding settings in Metashape: 1: Highest, 2: High, 3: Medium, 4: Low, 5: Lowest
+    downscale: 2 # Recommended: 2. How much to coarsen the photos when searching for matches to build the point cloud. Corresponding settings in Metashape: 1: Highest, 2: High, 3: Medium, 4: Low, 5: Lowest
     filter_mode: Metashape.MildFiltering # Recommended: Metashape.MildFiltering. How to filter the point cloud. Options are NoFiltering, MildFiltering, ModerateFiltering, AggressiveFiltering. Aggressive filtering removes detail and makes worse DEMs (at least for forest). NoFiltering takes very long. In trials, it never completed.
     reuse_depth: True # Recommended: True.
-    max_neighbors: 100 # Recommended: 100. Maximum number of neighboring photos to use for estimating point cloud. Higher numbers may increase accuracy but dramatically increase processing time.
+    max_neighbors: 100 # Recommended: 100. Maximum number of neighbouring photos to use for estimating point cloud. Higher numbers may increase accuracy but dramatically increase processing time.
 
 ```
 
@@ -222,20 +222,20 @@ NoFiltering takes very long. In trials, it never completed.
 ```
 ````
 
-````{tab-item} Dense cloud
+````{tab-item} Point cloud
 ```yaml
-buildDenseCloud: # (Metashape: buildDepthMaps, buildDenseCloud, classifyGroundPoints, and exportPoints)
+buildPointCloud: # (Metashape: buildDepthMaps, buildPointCloud, classifyGroundPoints, and exportPoints)
     enabled: True
     point_colors: True # enable point colors calculations
     point_confidence: True # enable point confidence calculations
     keep_depth: True # Recommended: True. Enable store depth maps option.
-    max_neighbors: 100 # Recommended: 100. Maximum number of neighboring photos to use for estimating point cloud. Higher numbers may increase accuracy but dramatically increase processing time.
+    max_neighbors: 100 # Recommended: 100. Maximum number of neighbouring photos to use for estimating point cloud. Higher numbers may increase accuracy but dramatically increase processing time.
 ```
 ````
 
-````{tab-item} Filter dense cloud
+````{tab-item} Filter point cloud
 ```yaml
-filterDenseCloud:
+filterPointCloud:
     enabled: True
     point_confidence_max: 20 # maximum point confidence for points to be removed, ranges from 1-99
 ```
@@ -244,14 +244,14 @@ filterDenseCloud:
 
 ````{tab-item} Mesh
 ```yaml
-buildMesh: # (Metashape: buildModel)
+buildModel: # (Metashape: buildModel)
     enabled: True
     surface_type: Metashape.Arbitrary # Recommended: Metashape.Arbitrary. Surface type in [Arbitrary, HeightField]
     interpolation: Metashape.EnabledInterpolation # Interpolation mode in Metashape.[DisabledInterpolation, EnabledInterpolation, Extrapolated]
     face_count: Metashape.HighFaceCount # Options are [LowFaceCount, MediumFaceCount, HighFaceCount, CustomFaceCount]
     face_count_custom: 100000 # Integer, has to be enabled through CustomFaceCount above.
-    ## For dense cloud (buildDenseCloud)
-    source_data: Metashape.DenseCloudData # Recommended: DenseCloudData. Others include: Data source in [PointCloudData, DenseCloudData, DepthMapsData, ModelData, TiledModelData, ElevationData, OrthomosaicData, ImagesData]
+    ## For point cloud (buildPointCloud)
+    source_data: Metashape.PointCloudData # Recommended: PointCloudData. Others include: Data source in [PointCloudData, PointCloudData, DepthMapsData, ModelData, TiledModelData, ElevationData, OrthomosaicData, ImagesData]
     volumetric_masks: False # Default False; True for volumetric masking during 3D mesh generation, as documented here https://www.agisoft.com/index.php?id=48
 ```
 ````
@@ -271,8 +271,8 @@ buildTexture: # (Metashape: buildTexture)
 ```yaml
 buildTiledModel: # (Metashape: buildTexture)
     enabled: True
-    ## For depth maps (buldModel)
-    source_data: Metashape.DenseCloudData
+    ## For depth maps (buildModel)
+    source_data: Metashape.PointCloudData
     pixel_size: 0.010
     tile_size: 128
     face_count: 4000
@@ -283,7 +283,7 @@ buildTiledModel: # (Metashape: buildTexture)
 ```yaml
 buildDEM: # (Metashape: buildTexture)
     enabled: True
-    source_data: Metashape.ModelData # Data source in Metashape.[PointCloudData, DenseCloudData, DepthMapsData, ModelData, TiledModelData, ElevationData, OrthomosaicData, ImagesData]
+    source_data: Metashape.ModelData # Data source in Metashape.[PointCloudData, PointCloudData, DepthMapsData, ModelData, TiledModelData, ElevationData, OrthomosaicData, ImagesData]
     resolution: 0.01
     interpolation: Metashape.DisabledInterpolation # Interpolation mode in Metashape.[DisabledInterpolation, EnabledInterpolation, Extrapolated]
 ```
@@ -319,7 +319,7 @@ addGCPs:
 publishData:
     enabled: True
     service:  # Service type in [ServiceSketchfab, ServiceMapbox, Service4DMapper, ServiceSputnik, ServicePointscene, ServiceMelown, ServicePointbox, ServicePicterra]
-    source: # Data source in [PointCloudData, DenseCloudData, DepthMapsData, ModelData, TiledModelData, ElevationData, OrthomosaicData, ImagesData]
+    source: # Data source in [PointCloudData, PointCloudData, DepthMapsData, ModelData, TiledModelData, ElevationData, OrthomosaicData, ImagesData]
     with_camera_track:  # True/False If model should be uploaded with camera track. Can be used only with DataSource.ModelData.
     export_point_colors:  # True/False If Point Cloud should be uploaded with point colors.
     title:  # Title of uploading model.
