@@ -1,5 +1,8 @@
 # Changelog
 
+## 2023-06-15
+- Added brief description on console usage in tutorial.
+
 ## 2023-06-12
 - Updated automated_metashape python documentation.
 

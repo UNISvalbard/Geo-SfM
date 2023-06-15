@@ -223,6 +223,49 @@ Make a habit of saving at least after every step.
 To do so, proceed to *Save as...* under *File* in the menu bar, and save your project in the *project_directory/metashape* directory that you created when extracting in data.
 ```
 
+### Python console and sorting your project data
+
+As you may have noticed while adding your images, most cameras only allow for 999 unique file names (e.g., DJI001-DJI999).
+When hundreds of files are added to a single project, this can quickly become confusing.
+After all, did file DJI007 originate from flight 1 or from flight 2?
+It is thus important to store files in different subfolders (as previously described), but also to have those subfolders available within the processing project in Metashape.
+An easy way to do this is shown in {numref}`group_images`.
+Right click the *Images* tab within the workspace, then click on *Add Camera Group*.
+Then select all cameras that belong to the same acquisition or flight and drag them into the new  *Camera Group*.
+
+```{figure} assets/group-images.gif
+:name: group_images
+
+Creating image groups and sorting the input data of the project.
+```
+
+Alternatively, as we will see in [Session 4](../l3/overview "automation"), we can automate most aspects of the workflow either by using [Batch processing](../l3/Batch "Batchautomation") or by using [the Metashape API](../l3/Batch "Batchautomation").
+We here provide an example of how to use the Metashape API to quickly rename all photos within the project to reflect the data subdirectory they are in.
+
+Proceed to the *Console* panel.
+If you cannot find it, go to the main menu bar, select *View* and click *Console* to activate it.
+This opens the terminal, and allows you to interact with the project through Python.
+
+```{figure} assets/console_view.png
+:name: console_view
+
+View of the Python console in Metashape.
+```
+
+Paste in the following script and see what happens with the labels of your files:
+
+```
+import Metashape # imports the metashape functions/library
+from pathlib import Path # imports the Path function from the pathlib library
+
+doc = Metashape.app.document # accesses the current workspace and document
+chunk = doc.chunk # makes a quicklink variable to the active chunk in the document
+
+for c in chunk.cameras: # loops over all cameras in the active chunk
+    cp = Path(c.photo.path) # gets the photo path on the harddrive for each photo
+    c.label = str(cp.parent.name) + '/' + cp.name # renames the camera label in the metashape workspace to reflect the parent directory of the photo
+```
+
 ### Analyze photos
 
 Before actual processing begins, we need to analyse the imported photos.

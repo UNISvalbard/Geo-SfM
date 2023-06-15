@@ -214,7 +214,6 @@ dependencies:
   - python-dateutil=2.8.2=pyhd8ed1ab_0
   - python_abi=3.7=2_cp37m
   - pytz=2021.3=pyhd8ed1ab_0
-  - pywin32=303=py37hcc03f2d_0
   - pyyaml=6.0=py37hcc03f2d_3
   - pyzmq=22.3.0=py37hcce574b_1
   - qt=5.15.6=h91493d7_0
@@ -273,8 +272,6 @@ dependencies:
   - vc=14.2=hb210afc_6
   - vc14_runtime=14.34.31931=h5081d32_16
   - vs2015_runtime=14.34.31931=hed1258a_16
-  - wcwidth=0.2.5=pyh9f0ad1d_2
-  - webencodings=0.5.1=py_1
   - websocket-client=1.2.3=pyhd8ed1ab_0
   - wheel=0.37.1=pyhd8ed1ab_0
   - widgetsnbextension=3.5.2=py37h03978a9_1
@@ -293,11 +290,15 @@ dependencies:
   - zlib=1.2.13=hcfcfb64_4
   - zstd=1.5.2=h6255e5f_0
   - pip:
-      - automated-metashape==0.1.11
+      - automated-metashape==0.1.13.dev1
       - json5==0.9.6
       - jupyterlab==3.2.9
       - jupyterlab-server==2.10.3
-      - metashape==1.7.2
+      - metashape==2.0.2
       - nbclassic==0.3.5
+      - pywin32==306
       - pywinpty==1.1.6
+      - wcwidth==0.2.6
+      - webencodings==0.5.1
+      - y-py==0.5.9
 prefix: C:\Users\Peter\.conda\envs\automated_metashape
