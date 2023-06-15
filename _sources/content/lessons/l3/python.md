@@ -65,6 +65,12 @@ Here we can copy/paste the below (into individual cells);
 then proceed by running each cell by either clicking the *play* button or shift-enter whilst having click on the cell.
 
 ```{code-cell} ipython3
+:tags: [raises-exception, remove-input]
+import shutil
+shutil.rmtree('./metashape')
+```
+
+```{code-cell} ipython3
 :tags: [raises-exception]
 
 from automated_metashape.MetashapeProcessing import AutomatedProcessing as AP
