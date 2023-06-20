@@ -375,6 +375,11 @@ Making a backup duplicate of Chunk 1. To keep things simple, make sure to rename
 ```
 ````
 
+```{admonition} Use Python scripting 
+:class: tip
+
+The following subsections may be automated through use of the built-in consol and Python code available through the [Python snippets section](../suppl/python-snippets "tutorial").
+```
 
 #### Filtering by Reconstruction Uncertainty
 
