@@ -45,6 +45,7 @@ parts:
   chapters:
   - file: content/lessons/suppl/best_practices.md
   - file: content/lessons/suppl/metadata_lists.md
+  - file: content/lessons/suppl/python-snippets.md
   - file: content/lessons/about/seismic_lab.md
   - file: content/lessons/about/software.md
   - file: content/lessons/about/zbiblio.md

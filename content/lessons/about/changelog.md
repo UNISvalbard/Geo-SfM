@@ -1,5 +1,8 @@
 # Changelog
 
+## 2023-06-17
+- Added python snippets to aid processing
+
 ## 2023-06-15
 - Added brief description on console usage in tutorial.
 

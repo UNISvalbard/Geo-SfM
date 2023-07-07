@@ -36,6 +36,18 @@ These include:
 - Standardising your approach to ensure your science is reproducible
 - Archiving raw data, metadata, processing reports
 
+
+### Learning outcomes
+
+After taking the Geo-SfM course, the participant has been introduced to photogrammetry processing techniques and possesses the skills to independently process and quality assure photogrammetric data sets such as digital elevation models (DEMs) and three-dimensional digital models (e.g., outcrops, hand-sized samples).
+Important aspects include:
+
+- ✔️ The participant has acquired a fundamental understanding of the concepts and workings of structure-from-motion photogrammetry.
+- ✔️ The participant understands and can apply georeferencing and spatial alignment.
+- ✔️ The participant can independently process photogrammetry data to produce orthomosaics, 3D and DEM models.
+- ✔️ The participant is familiar with best-practices in data processes and can conduct quality assessment and data validation.
+- ✔️ The participant is able to perform basic data analysis and feature interpretation.
+
 ## Suggestions and or fixes?
 
 ```{figure} assets/github_tut.gif
