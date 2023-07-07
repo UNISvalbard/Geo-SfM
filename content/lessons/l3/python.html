@@ -204,6 +204,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../suppl/best_practices.html">Best practices</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../suppl/metadata_lists.html">Metadata templates for archiving</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../suppl/python-snippets.html">Python-snippets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../about/seismic_lab.html">Seismic lab (Signehamna)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../about/software.html">Software</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../about/zbiblio.html">Bibliography</a></li>
@@ -511,9 +512,9 @@ then proceed by running each cell by either clicking the <em>play</em> button or
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                      </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span>\<span class="n">ipykernel_51864</span>\<span class="mf">822519927.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span>\<span class="n">ipykernel_73184</span>\<span class="mf">822519927.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">config_file</span> <span class="o">=</span> <span class="s2">&quot;../config/empty_photogrammetry_processing_settings.yml&quot;</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">project</span> <span class="o">=</span> <span class="n">AP</span><span class="p">()</span>
 <span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">project</span><span class="o">.</span><span class="n">read_config</span><span class="p">(</span><span class="n">config_file</span><span class="p">)</span>
@@ -827,28 +828,28 @@ It should now result in a successful runtime.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-06-15 15:13:57,509 [INFO] automated_metashape.MetashapeProcessing: --------------
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-07 19:32:28,960 [INFO] automated_metashape.MetashapeProcessing: --------------
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-06-15 15:13:57,510 [INFO] automated_metashape.MetashapeProcessing: Fresh run initiated.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-07 19:32:28,961 [INFO] automated_metashape.MetashapeProcessing: Fresh run initiated.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-06-15 15:13:57,511 [INFO] automated_metashape.MetashapeProcessing: Runtime id: MS_20230615T1513
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-07 19:32:28,962 [INFO] automated_metashape.MetashapeProcessing: Runtime id: MS_20230707T1932
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-06-15 15:13:57,512 [INFO] automated_metashape.MetashapeProcessing: --------------
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-07 19:32:28,962 [INFO] automated_metashape.MetashapeProcessing: --------------
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-06-15 15:13:57,512 [INFO] automated_metashape.MetashapeProcessing: Agisoft Metashape Professional Version: 2.0.2.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-07 19:32:28,963 [INFO] automated_metashape.MetashapeProcessing: Agisoft Metashape Professional Version: 2.0.2.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-06-15 15:13:57,513 [INFO] automated_metashape.MetashapeProcessing: Automated metashape package version: 0.1.13.dev3.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-07 19:32:28,964 [INFO] automated_metashape.MetashapeProcessing: Automated metashape package version: 0.1.13.dev3.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-06-15 15:13:58,510 [INFO] automated_metashape.MetashapeProcessing: Creating new project...
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-07 19:32:29,954 [INFO] automated_metashape.MetashapeProcessing: Creating new project...
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-06-15 15:13:58,924 [INFO] automated_metashape.MetashapeProcessing: Saved project as C:/Users/Peter/Documents/GitHub/automated_agisoft_documentation/content/lessons/l3/metashape/MS_20230615T1513.psx
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-07 19:32:30,385 [INFO] automated_metashape.MetashapeProcessing: Saved project as C:/Users/Peter/Documents/GitHub/automated_agisoft_documentation/content/lessons/l3/metashape/MS_20230707T1932.psx
 
 ### Start of input file configuration for startup-stage ###
 load_project_path: null
@@ -861,16 +862,16 @@ subdivide_task: true
 ### End of input file configuration for startup-stage ###
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-06-15 15:13:59,143 [WARNING] automated_metashape.MetashapeProcessing: Failed to export report. Export report manually.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-07 19:32:30,601 [WARNING] automated_metashape.MetashapeProcessing: Failed to export report. Export report manually.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-06-15 15:13:59,346 [INFO] automated_metashape.MetashapeProcessing: --------------
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-07 19:32:30,803 [INFO] automated_metashape.MetashapeProcessing: --------------
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-06-15 15:13:59,347 [INFO] automated_metashape.MetashapeProcessing: Run completed.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-07 19:32:30,804 [INFO] automated_metashape.MetashapeProcessing: Run completed.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-06-15 15:13:59,348 [INFO] automated_metashape.MetashapeProcessing: --------------
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-07 19:32:30,805 [INFO] automated_metashape.MetashapeProcessing: --------------
 </pre></div>
 </div>
 </div>
