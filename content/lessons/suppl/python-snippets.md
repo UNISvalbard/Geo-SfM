@@ -31,6 +31,7 @@ class metashape_tiepoint_filter:
             self.doc.save()
             self.filter_reprojection_error()
             self.optimize_cameras()
+            set_label_naming_template()
             self.doc.save()
         else:
             print("Dense cloud exists... Ignoring..")
@@ -76,6 +77,9 @@ class metashape_tiepoint_filter:
         #x = round(x,3)
         self.chunk.label = f"{self.chunk.label.split('Copy of ')[1]}_RepErr={x}"
         f.removePoints(x)
+
+    def set_label_naming_template(self):
+        self.chunk.label = f"{self.chunk.label}_PcAcc=XX_MeshCC=XX"
 
 a = metashape_tiepoint_filter(None)
 a.standard_run()
