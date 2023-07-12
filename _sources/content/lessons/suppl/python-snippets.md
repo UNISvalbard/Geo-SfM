@@ -79,7 +79,7 @@ class metashape_tiepoint_filter:
         f.removePoints(x)
 
     def set_label_naming_template(self):
-        self.chunk.label = f"{self.chunk.label}_PcAcc=XX_MeshCC=XX"
+        self.chunk.label = f"{self.chunk.label}_PcConf=XX_MeshCC=XX"
 
 a = metashape_tiepoint_filter(None)
 a.standard_run()
