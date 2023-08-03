@@ -31,7 +31,7 @@ class metashape_tiepoint_filter:
             self.doc.save()
             self.filter_reprojection_error()
             self.optimize_cameras()
-            set_label_naming_template()
+            self.set_label_naming_template()
             self.doc.save()
         else:
             print("Dense cloud exists... Ignoring..")
