@@ -1,5 +1,11 @@
 # SfM photogrammetry
 
+## Lecture
+
+<iframe src="../../../slides/ppt/photogrammetry.html" title="Geo-SfM intro" width=100% height=450em></iframe>
+
+## Overview
+
 Structure-from-Motion photogrammetry (or SfM photogrammetry for short) allows you to digitise objects using nothing more than a camera, sufficient data storage, and enough processing power.
 
 The video below provides a short and concise overview of how this process takes place, as well as the main steps that are involved in the digitisation of objects to their digital counterparts.

@@ -60,9 +60,9 @@ In a nutshell, successful digitisation of small hand samples can be summarised a
 
 1. Target-images should be offset by no more than 15 degrees,
 2. and the target's orientation should be changed at least two times (=> 3 photo haloes).
-2. The target should cover the full frame of the image,
-3. with the entirety of the target kept in focus.
-4. Enough light (i.e., minimal shadows) and correct colours
+3. The target should cover the full frame of the image,
+4. with the entirety of the target kept in focus.
+5. Enough light (i.e., minimal shadows) and correct colours
 
 #### Focus & aperture
 
@@ -106,6 +106,59 @@ Further, knowing the temperature of the light allows one to specify the light te
 Capture a colour card in the background of your sample to adjust the colour balance as part of post processing.
 This works exceptionally well when coupled with *raw* imaging and can be used in conjunction with the light temperature parameter.
 ```
+
+(exposure_triangle)=
+### Capturing usable images: the Exposure triangle
+
+The aperture, shutter speed and ISO are recurring parameters of importance and key to data acquisition in the field and in the lab.
+In particular, they work together to create an exposure and affect your captured image in different ways.
+This can be visualised through use of the exposure triangle {cite}`ExposureTriangle2017`.
+
+#### Aperture
+
+Aperture affect how much light passes through the lens, and, with it, the depth of field of the image {cite}`UnderstandingApertureDepth2017`.
+Aperture is typically measured in f-stops, with smaller numbers meaning more light and larger numbers less light that hits the sensor.
+When you open your aperture (i.e., lower number, see ({numref}`aperture-explained`)):
+
+- more light hits the sensor
+- depth of field decreases.
+
+```{figure} ./assets/aperture-field.png
+:name: aperture-explained
+
+The impact of changing the aperture on depth of field and focus. Image modified from {cite}`UnderstandingApertureDepth2017`.
+```
+
+(shutter_speed)=
+#### Shutter speed
+
+Your camera's shutter governs the duration that light passes through and is captured by your camera's sensor.
+The amount of time is typically listed in seconds, and each step on the shutter speed scale will give you half or twice the amount of light.
+All light captured by the sensor over the amount of time ("acquisition time") is averaged to give rise to a captured image.
+Shutter speeds that result in longer acquisition times, thus allow for more light to hit the sensor, and thus result in brighter images. 
+Secondly, capturing movements within the acquisition time will result in [motion blur](motion_blur).
+Some additional examples of how to deal with shutter speed are found in e.g. {cite}`ShutterSpeed2017`.
+
+#### ISO
+
+The ISO number describes how much the processor in your camera amplifies the light collected by the sensor.
+It is in a sense an indicator for how much the image is altered to produce a correctly exposed image.
+As with shutter speed and aperture, each step on the ISO scale doubles or halves the camera's sensitivity.
+However, as it increases the camera's sensitivity, it also introduces noise!
+It is thus always advised to keep the ISO as low as possible.
+
+#### Working the triangle: The Rule of Equivalent Exposures
+
+```{figure} ./assets/exposure-triangle.png
+:name: exposure-triangle
+
+The exposure triangle. Image from {cite}`ExposureTriangle2017`.
+```
+
+Exposure and capturing images with the right settings thus comes down to an interplay between the ISO, shutter speed and aperture values {cite}`ExposureTriangle2017`.
+Each click or stop-change in either of them halves or doubles the amount of light that reaches the sensor.
+Thus, if one action cuts the light by half, then you must double it in another to retain the same level of brightness in your captured images.
+
 
 #### Haloes, arches and photo rings
 
