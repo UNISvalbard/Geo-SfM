@@ -22,6 +22,8 @@ This course is **open for everyone to follow online**. The aim of the course is 
 This Geo-SfM course is part of the [University Centre in Svalbard Arctic Geology 222 bachelor course](https://www.unis.no/course/ag-222-integrated-geological-methods-from-outcrop-to-geomodel/), running each spring.
 ```
 
+<iframe src="./slides/ppt/intro.html" title="Geo-SfM intro" width=100% height=450em></iframe>
+
 ## Course format and topics
 
 This course is split in several modules, consisting of interactive lectures walkthroughs, and exercises. The exercises will focus on developing competence in SfM photogrammetr processing for geoscientific purposes, and in particular focusing on the use of Agisoft Metashape. Typical topics cover the operating of Agisoft Metashape, the use of ArUco markers and automated marker detection, and the use of automated Python scripting for automated processing.
