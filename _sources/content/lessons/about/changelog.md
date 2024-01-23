@@ -1,5 +1,10 @@
 # Changelog
 
+## 2024-01-23
+- Added Model overview
+- changed _conf.yml to conf.y
+- added lecture slides
+
 ## 2023-06-17
 - Added python snippets to aid processing
 
