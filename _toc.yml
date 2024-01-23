@@ -35,6 +35,7 @@ parts:
   - file: content/lessons/l6/intro.md
   - file: content/lessons/l6/sketchfab.md
   - file: content/lessons/l6/v3geo.md
+  - file: content/lessons/l6/results.md
 #  - file: content/lessons/l6/cesium.md
 - caption: Suppl. dGNSS data processing
   chapters:
