@@ -56,6 +56,7 @@ Important aspects include:
 Those using this tutorial in teaching are free to assign the following assignment to their students:
 
 **Objectives**
+
 By the end of the Geo-SfM (https://unisvalbard.github.io/Geo-SfMLinks to an external site.) module, all groups should be familiar with:
 
 1. Image acquisition procedures for structure-from-motion processing
@@ -63,6 +64,7 @@ By the end of the Geo-SfM (https://unisvalbard.github.io/Geo-SfMLinks to an exte
 3. GitHub, particularly being able to raise issues and have discussions, as well as create pull-requests to contribute to open resources.
 
 **Instructions**
+
 In pairs of 2, you will be tasked to reconstruct a number of hand-sized items (e.g., small rock samples, common household items, foods and fruits). Use the online Geo-SfM tutorial to aid you in the steps. Each 3D model should be documented with metadata and uploaded to SketchFab. Subsequently, a pull-request (with updates to this file: https://github.com/UNISvalbard/Geo-SfM/blob/main/3dmodels-sketchfab.ymlLinks to an external site.) must be submitted containing a new entry with their SketchFab IDs alongside the year of publishing and course ID.
 
 ```
