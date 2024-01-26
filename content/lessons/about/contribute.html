@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Seismic lab (Signehamna) &#8212; Geo-SfM Course</title>
+    <title>How to contribute &#8212; Geo-SfM Course</title>
   
   
   
@@ -57,11 +57,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'content/lessons/about/seismic_lab';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/lessons/about/contribute';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Software" href="software.html" />
-    <link rel="prev" title="Topodrone PPK" href="../suppl_dgnss/topodrone_ppk.html" />
+    <link rel="next" title="Metadata templates for archiving" href="../suppl/metadata_lists.html" />
+    <link rel="prev" title="Software" href="software.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -203,9 +203,9 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Seismic lab (Signehamna)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seismic_lab.html">Seismic lab (Signehamna)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="software.html">Software</a></li>
-<li class="toctree-l1"><a class="reference internal" href="contribute.html">How to contribute</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">How to contribute</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../suppl/metadata_lists.html">Metadata templates for archiving</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../suppl/python-snippets.html">Python-snippets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="zbiblio.html">Bibliography</a></li>
@@ -293,7 +293,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/UNISvalbard/Geo-SfM/edit/main/content/lessons/about/seismic_lab.md" target="_blank"
+      <li><a href="https://github.com/UNISvalbard/Geo-SfM/edit/main/content/lessons/about/contribute.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -310,7 +310,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/UNISvalbard/Geo-SfM/issues/new?title=Issue%20on%20page%20%2Fcontent/lessons/about/seismic_lab.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/UNISvalbard/Geo-SfM/issues/new?title=Issue%20on%20page%20%2Fcontent/lessons/about/contribute.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -340,7 +340,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../../_sources/content/lessons/about/seismic_lab.md" target="_blank"
+      <li><a href="../../../_sources/content/lessons/about/contribute.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -422,7 +422,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Seismic lab (Signehamna)</h1>
+    <h1>How to contribute</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -432,7 +432,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#automated-photography-lightbox">Automated photography lightbox</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-fork">Creating a fork</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-pull-request">Creating a pull request</a></li>
 </ul>
             </nav>
         </div>
@@ -444,41 +445,51 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="seismic-lab-signehamna">
-<h1>Seismic lab (Signehamna)<a class="headerlink" href="#seismic-lab-signehamna" title="Permalink to this headline">#</a></h1>
-<div class="tip admonition">
-<p class="admonition-title">Following this course remotely?</p>
-<p>The following content deals with the Signehamna data lab facilities at UNIS.
-It may therefore be skipped when taking part in this course remotely and independently.</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="how-to-contribute">
+<span id="contribute"></span><h1>How to contribute<a class="headerlink" href="#how-to-contribute" title="Permalink to this headline">#</a></h1>
+<div class="figure align-default" id="github-tut2">
+<img alt="../../../_images/github_tut.gif" src="../../../_images/github_tut.gif" />
+<p class="caption"><span class="caption-number">Fig. 60 </span><span class="caption-text">This page uses <a class="reference external" href="https://youtu.be/w3jLJU7DT5E">Github</a> as a backbone.
+All it takes is a <a class="reference external" href="https://github.com/join">Github account</a>, which even comes with student benefits.
+Once connected, feel free to open an issue as per the above - whether suggesting improvements or highlighting bugs.</span><a class="headerlink" href="#github-tut2" title="Permalink to this image">#</a></p>
 </div>
-<p>Welcome to the Seismic Lab in the Arctic Geology corridor - also known as Signehamna.
-The Signehamna seismic data lab is equipped with powerful and expensive terminals.
-Specialised licensed software such as SLB Petrel, Agisoft Metashape, Blender, GIS, and Lime is installed that is optimised for (big) data processing.
-Furthermore, confidential data is present that warrants physical restrictions on access to the room.</p>
-<p>The use of Signehamna is therefore primarily reserved for Arctic Geology staff and graduate students conducting research, or for UNIS courses requiring specific software. Other users are requested to use the UNIS computer labs.
-Signehamna also hosts the hand-sample lightbox suitable for hand-sample SfM photogrammetry.</p>
-<div class="warning admonition">
-<p class="admonition-title">Terms and conditions</p>
-<ul class="simple">
-<li><p>Physical access rights to Signehamna are granted by request only – students please email Kim Senger with time period, software required and your UNIS supervisor.</p></li>
-<li><p>No copying of data files from the computers in Signehamna to external media, the cloud etc. without written permission</p></li>
-<li><p>Data in Signehamna is not backed up – so you need to use own external drives on which you work, local drives on the machines may be cleaned without warning</p></li>
-<li><p>Writing, drawing, making presentations, using ArcGIS etc. should be done in the other UNIS PC labs.</p></li>
-<li><p>Strictly no coffee or other liquids near any of the computers</p></li>
-<li><p>Windows with explicit warnings are not be opened to prevent dust from entering the room.</p></li>
-<li><p>Use of the PCs and software requires explicit and correct acknowledgement of grant holders, grants, etc., including grant numbers, when applicable.</p></li>
-</ul>
+<div class="seealso admonition">
+<p class="admonition-title">GitHub how-to’s and tutorial</p>
+<p>GitHub has an extensive documentation available in its <a class="reference external" href="https://docs.github.com/en/get-started/quickstart">GitHub Docs pages</a>, the here-provided information is here to get you started with the basics.</p>
 </div>
-<div class="admonition-acknowledgements admonition">
-<p class="admonition-title">Acknowledgements</p>
-<p>Work in progress</p>
+<p>First things first: to contribute, you will need a GitHub account.
+All it takes is a visit to the <a class="reference external" href="https://github.com/join">signup page</a>.
+You can even link your personal account with your UNIS email address, giving you additional student benefits.</p>
+<p>Once done, you can suggest issues to this module and others by clicking <em>Open Issue</em>, which allows you to open a discussion/ticket in which you can describe what is wrong, provide suggestions, or point out bugs.
+Alternatively, you can directly suggest changes to the code/text underlying the Geo-SfM module.
+This is typically done by creating a fork (or split), making changes, and then merging the fork with the main branch again.
+In addition for allowing another person to review your changes, it also adds your nametag to the change - and provides you with some ownership of the (changed) content.</p>
+<div class="section" id="creating-a-fork">
+<h2>Creating a fork<a class="headerlink" href="#creating-a-fork" title="Permalink to this headline">#</a></h2>
+<p>There are several ways in which you can make a fork, as outlined in the <a class="reference external" href="https://docs.github.com/en/get-started/quickstart">GitHub Docs pages</a>.
+Here, we will use the simplest way to get going, namely, by simply following <a class="reference internal" href="../l1/sfm_photogrammetry.html#sfm-polygons"><span class="std std-numref">Fig. 4</span></a> and clicking <em>Suggest edit</em>.
+This will automatically make a fork (or copy) of the repository into your own GitHub account, which you can then revise and edit independently from the source (<a class="reference internal" href="#github-limited-rights-fork"><span class="std std-numref">Fig. 61</span></a>).</p>
+<div class="figure align-default" id="github-limited-rights-fork">
+<img alt="../../../_images/github-limited-rights-fork.png" src="../../../_images/github-limited-rights-fork.png" />
+<p class="caption"><span class="caption-number">Fig. 61 </span><span class="caption-text">As seen here, the user PeterBetlem does not have write access to the jupyter-book repository.
+As a result, suggesting changes resulted in the creation of a new branch in the fork PeterBetlem/jupyter-book (which is accessible in your Repositories Tab in your account).</span><a class="headerlink" href="#github-limited-rights-fork" title="Permalink to this image">#</a></p>
 </div>
-<div class="section" id="automated-photography-lightbox">
-<h2>Automated photography lightbox<a class="headerlink" href="#automated-photography-lightbox" title="Permalink to this headline">#</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Work in progress</p>
+<p>Once you are done with your changes, make sure to <em>Commit changes</em> with a clear message to contribute to your own branch/the fork.
+Unless you immediate propose changes back to the original branch/repository, your fork will eventually fall behind the original branch.
+Thus, there is a need to update/sync your fork with the original from time to time.
+As a rule of thumb, you would like to do this before making any significant changes.
+A detailed guide on how to sync your fork through the web interface is provided <a class="reference external" href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork">here</a>.</p>
 </div>
+<div class="section" id="creating-a-pull-request">
+<h2>Creating a pull request<a class="headerlink" href="#creating-a-pull-request" title="Permalink to this headline">#</a></h2>
+<div class="figure align-default" id="github-fork-request">
+<img alt="../../../_images/github-fork-request.png" src="../../../_images/github-fork-request.png" />
+<p class="caption"><span class="caption-number">Fig. 62 </span><span class="caption-text">Webinterface of the forked branch, showing both the <em>Sync fork</em> option as well as the <em>Contribute</em> option.</span><a class="headerlink" href="#github-fork-request" title="Permalink to this image">#</a></p>
+</div>
+<p>Once all desired changes have been made, you may proceed with a pull request.
+This is done by clicking the <em>Contribute</em> button as illustrated in <a class="reference internal" href="#github-fork-request"><span class="std std-numref">Fig. 62</span></a>, and then following along with the different prompts.
+Make sure to provide a title and description of what your changes entail, and then click the <em>Create Pull Request</em> to forward your changes back to the original repository.</p>
+<p>If all went well, your suggestions will be approved shortly - and you can celebrate a job well done! Thank you for contributing.</p>
 </div>
 </div>
 
@@ -514,20 +525,20 @@ Signehamna also hosts the hand-sample lightbox suitable for hand-sample SfM phot
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../suppl_dgnss/topodrone_ppk.html"
+       href="software.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Topodrone PPK</p>
+        <p class="prev-next-title">Software</p>
       </div>
     </a>
     <a class="right-next"
-       href="software.html"
+       href="../suppl/metadata_lists.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Software</p>
+        <p class="prev-next-title">Metadata templates for archiving</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -549,7 +560,8 @@ Signehamna also hosts the hand-sample lightbox suitable for hand-sample SfM phot
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#automated-photography-lightbox">Automated photography lightbox</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-fork">Creating a fork</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-pull-request">Creating a pull request</a></li>
 </ul>
   </nav></div>
 

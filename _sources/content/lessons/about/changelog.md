@@ -1,5 +1,9 @@
 # Changelog
 
+```{versionadded} 2024-01-26
+Added pre-session 0, GitHub basic tutorial
+```
+
 ## 2024-01-23
 - Added Model overview
 - changed _conf.yml to conf.y
