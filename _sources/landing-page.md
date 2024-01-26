@@ -75,6 +75,5 @@ In pairs of 2, you will be tasked to reconstruct a number of hand-sized items (e
 This page uses [Github](https://youtu.be/w3jLJU7DT5E) as a backbone.
 All it takes is a [Github account](https://github.com/join), which even comes with student benefits.
 Once connected, feel free to open an issue as per the above - whether suggesting improvements or highlighting bugs.
-```
-
 A more detailed explanation is found on the [how to contribute page](contribute).
+```

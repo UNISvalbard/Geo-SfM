@@ -1,7 +1,7 @@
 # Changelog
 
 ```{versionadded} 2024-01-26
-Added pre-session 0, GitHub basic tutorial
+Added GitHub basic tutorial
 ```
 
 ## 2024-01-23
