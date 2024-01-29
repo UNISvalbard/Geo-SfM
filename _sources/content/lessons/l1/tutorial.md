@@ -504,51 +504,51 @@ Now reset the filter, and you'll see that just the high-confidence part remains.
 **Always write down the chosen confidence interval** - repeatability depends on it!
 ```
 
-### Building a mesh
+### Building a model
 
-We can use the dense point cloud to generate a polygonal mesh model.
+We can use the point cloud to generate a polygonal model.
 While generating the Point Cloud, Agisoft Metashape simultaneously generated a set of depth maps (if chosen to save to the project).
-This is important as we can decide which of the two to use for meshing.
+This is important as we can decide which of the two to use for building the model.
 Depth maps may lead to better results when dealing with a big number of minor details, but otherwise Point Clouds should be used as the source.
 
-After selecting *Build Mesh* from the *Workflow* menu, you will be able to chose either in the {ref}`dialog <build_mesh>` that pops up for *Source data:*.
+After selecting *Build Model* from the *Workflow* menu, you will be able to chose either in the {ref}`dialog <build_model>` that pops up for *Source data:*.
 
 ```{figure} assets/9b4ac0b8.png
-:name: build_mesh
+:name: build_model
 
-The *Build mesh* dialog after opening it from the *Workflow* menu.
+The *Build model* dialog after opening it from the *Workflow* menu.
 ```
 
 Other important parameters here are the *Quality* and *Face count* parameters.
-These govern the quality of the generated mesh.
+These govern the quality of the generated model.
 Remember, however, that quality comes at a cost, so best to stick to *Medium* or lower to manage the exercise within the allocated of time...
 
-Finally, feel free to enable the *Calculate vertext colors* to provide the mesh with some colour as well, otherwise it will be shown as a purple mesh.
+Finally, feel free to enable the *Calculate vertext colors* to provide the model with some colour as well, otherwise it will be shown as a purple model.
 
-Once generated, we can take a closer look at the mesh by clicking on the *Tetrahedral* icon next to the nine-dotted icon.
+Once generated, we can take a closer look at the model by clicking on the *Tetrahedral* icon next to the nine-dotted icon.
 Clicking on the gray triangle next to it, you see that the *Model Textured* is still grayed out.
-The next step involves generating a texture and placing this "image" onto the mesh - after which the *Model Textured* becomes selectable.
+The next step involves generating a texture and placing this "image" onto the model - after which the *Model Textured* becomes selectable.
 
 ```{admonition} Depth maps
 :class: tip
 If depth maps do exist, and you decide to use them as the source data, then make sure to enable *Reuse depth maps* to save computational time!
 ```
 
-#### Filtering the mesh
+#### Filtering the model
 
-Sometiems your mesh/model features blobs that are not connected to the main model.
+Sometiems your model features blobs that are not connected to the main model.
 These can be easily (and scientifically!) removed through use of the *Connected component filter*, see {ref}`dialog <filter_connected_component_size>`.
 
 ```{figure} assets/filter_connected_component_size.gif
 :name: filter_connected_component_size
 
-Filtering the mesh based on the connected component size.
+Filtering the model based on the connected component size.
 This is a percentage of the largest component, which by default is 100.
 ```
 
 ```{admonition} Select the model first!
 :class: warning
-The option may not be available if you have not selected the mesh/model data first, or not in the model view panel.
+The option may not be available if you have not selected the model data first, or not in the model view panel.
 ```
 
 #### Texture building
@@ -577,7 +577,7 @@ It is recommended to follow this even for SketchFab, as this setup generally res
 
 ### Generating a Tiled Model
 
-Sometimes the need arises to not only build a mesh, but also a *Tiled Model*.
+Sometimes the need arises to not only build a model, but also a *Tiled Model*.
 We can do this by selecting *Build Tiled Model* from the *Workflow* menu.
 Once again we can select the parameters for the processing step through the {ref}`dialog <build_tiled_model>` that popped up.
 
@@ -598,9 +598,9 @@ To start, we need to check the _Projection type_:
 - _Planar_: You can project a DEM onto a plane of your choice. You can select the projection plane and orientation of the resulting DEM.
 - _Cylindrical_: This parameter enables the projection of DEM onto a cylindrical surface. The height value is determined by measuring the distance between the model surface and the cylindrical surface.
 
-Agisoft Metashape allows the DEM generation based on the point cloud or mesh model. It is recommended to use _Point Cloud_ as the source data since it provides more accurate results and faster processing. You can generate elevation data results from depth maps or a tie point cloud. If you need the DEM to follow the polygonal model precisely or if the point cloud hasn't been reconstructed, you can use the Mesh and Tiled Model options.
+Agisoft Metashape allows the DEM generation based on the point cloud or model. It is recommended to use _Point Cloud_ as the source data since it provides more accurate results and faster processing. You can generate elevation data results from depth maps or a tie point cloud. If you need the DEM to follow the polygonal model precisely or if the point cloud hasn't been reconstructed, you can use the Model and Tiled Model options.
 
-We suggest keeping the interpolation parameter _Disabled_ for accurate reconstruction results since only areas corresponding to point cloud or polygonal points are reconstructed. Usually, this method is recommended for Mesh and Tiled Model data source.
+We suggest keeping the interpolation parameter _Disabled_ for accurate reconstruction results since only areas corresponding to point cloud or polygonal points are reconstructed. Usually, this method is recommended for Model and Tiled Model data source.
 
 `````{tab-set}
 ````{tab-item} Geographic
@@ -626,7 +626,7 @@ Once the DEM generation process is complete, you can view the reconstructed mode
 Building and exporting an _orthomosaic_ is normally used for generation of high resolution imagery based on the source photos and reconstructed model.
 
 ```{note}
-The Build Orthomosaic procedure is only possible for projects saved in .PSX format that have existing mesh or DEM chunks.
+The Build Orthomosaic procedure is only possible for projects saved in .PSX format that have existing model or DEM chunks.
 ```
 
 To start building and orthomosaic, select _Build Orthomosaic_ command from the _Workflow menu_.
@@ -636,7 +636,7 @@ To begin, you have to select the _Projection_ parameter.
 - _Planar_ projection is helpful when working with models that have vertical surfaces, such as vertical digital outcrop models.
 - _Cylindrical_ projection can help reduce distortions when projecting cylindrical objects like tubes, rounded towers, or tunnels.
 
-To generate an accurate orthomosaic, we advise selecting _Mesh_ as the desired surface. For complete coverage, we recommend selecting the _Enable hole filling_ option under _Blending mode_ to fill in any empty areas of the mosaic.
+To generate an accurate orthomosaic, we advise selecting _Model_ as the desired surface. For complete coverage, we recommend selecting the _Enable hole filling_ option under _Blending mode_ to fill in any empty areas of the mosaic.
 
 The suggested _Pixel size (m)_ will be based on the average ground sampling resolution of the original images. Using the surface size and input pixel size, the total size of the orthomosaic (measured in pixels) will be calculated and displayed at the bottom of the dialogue box.
 
