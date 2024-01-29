@@ -504,19 +504,19 @@ Now reset the filter, and you'll see that just the high-confidence part remains.
 **Always write down the chosen confidence interval** - repeatability depends on it!
 ```
 
-### Building a mesh
+### Building a model
 
-We can use the dense point cloud to generate a polygonal mesh model.
+We can use the point cloud to generate a polygonal mesh model.
 While generating the Point Cloud, Agisoft Metashape simultaneously generated a set of depth maps (if chosen to save to the project).
-This is important as we can decide which of the two to use for meshing.
+This is important as we can decide which of the two to use for building the model.
 Depth maps may lead to better results when dealing with a big number of minor details, but otherwise Point Clouds should be used as the source.
 
-After selecting *Build Mesh* from the *Workflow* menu, you will be able to chose either in the {ref}`dialog <build_mesh>` that pops up for *Source data:*.
+After selecting *Build Model* from the *Workflow* menu, you will be able to chose either in the {ref}`dialog <build_mesh>` that pops up for *Source data:*.
 
 ```{figure} assets/9b4ac0b8.png
 :name: build_mesh
 
-The *Build mesh* dialog after opening it from the *Workflow* menu.
+The *Build model* dialog after opening it from the *Workflow* menu.
 ```
 
 Other important parameters here are the *Quality* and *Face count* parameters.
