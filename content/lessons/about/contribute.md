@@ -26,7 +26,7 @@ In addition for allowing another person to review your changes, it also adds you
 ## Creating a fork
 
 There are several ways in which you can make a fork, as outlined in the [GitHub Docs pages](https://docs.github.com/en/get-started/quickstart).
-Here, we will use the simplest way to get going, namely, by simply following {numref}`sfm_polygons` and clicking *Suggest edit*.
+Here, we will use the simplest way to get going, namely, by simply following {numref}`github_tut` and clicking *Suggest edit*.
 This will automatically make a fork (or copy) of the repository into your own GitHub account, which you can then revise and edit independently from the source ({numref}`github-limited-rights-fork`).
 
 ```{figure} assets/github-limited-rights-fork.png
