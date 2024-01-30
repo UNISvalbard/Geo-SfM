@@ -326,7 +326,7 @@ Give it a shot, and compare the photo alignment results with *medium* vs *high* 
 If you have a problem aligning photos, it might be because of their location data. 
 Go to the *Reference* panel, select all photos, then toggle off the location data.
 
-```{figure} assets/deselect_coordinates
+```{figure} assets/deselect_coordinates.gif
 :name: deselect_coordinates
 
 Deselecting coordinates might help with aligning photos.
