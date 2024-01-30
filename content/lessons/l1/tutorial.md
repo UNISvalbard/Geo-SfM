@@ -321,6 +321,17 @@ Depending on your computer specifications, you'll have to weigh computational ti
 Give it a shot, and compare the photo alignment results with *medium* vs *high* processing accuracy.
 ```
 
+#### Disabling position data
+
+If you have a problem aligning photos, it might be because of their location data. 
+Go to the *Reference* panel, select all photos, then toggle off the location data.
+
+```{figure} assets/deselect_coordinates.gif
+:name: deselect_coordinates
+
+Deselecting coordinates might help with aligning photos.
+```
+
 (content-tutorial-improve)=
 ### Improve alignment step: Error Reduction-Optimization and Camera Calibration
 
@@ -738,3 +749,6 @@ After creating the waypoints, you need to record the video according to the came
 
 Creation of an animation with two waypoints over 5 seconds.
 ```
+
+## Publishing
+The [Publish 3D models](../l6/intro.md) page explains how to export your 3D model and how to best upload it to online technical solutions like [Sketchfab](https://sketchfab.com). 
