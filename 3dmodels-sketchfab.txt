@@ -235,6 +235,26 @@
 <iframe frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/b298e31332494644b6e2f31c1118167b/embed" width=100%> </iframe>
 `````
 
+`````{grid-item-card}
+:text-align: center
+<iframe frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/25651af4008c403c9b9e164cf335aa64/embed" width=100%> </iframe>
+`````
+
+`````{grid-item-card}
+:text-align: center
+<iframe frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/a0b89412dec542218bf5a6e9ca80cf28/embed" width=100%> </iframe>
+`````
+
+`````{grid-item-card}
+:text-align: center
+<iframe frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/85bc64024f75433b82879a9e1f9bbbea/embed" width=100%> </iframe>
+`````
+
+`````{grid-item-card}
+:text-align: center
+<iframe frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/25651af4008c403c9b9e164cf335aa64/embed" width=100%> </iframe>
+`````
+
 ``````
 ```````
 
@@ -275,6 +295,53 @@
 `````{grid-item-card}
 :text-align: center
 <iframe frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/6380444485a64c7c9af2eeada38e9ff5/embed" width=100%> </iframe>
+`````
+
+``````
+```````
+
+```````{tab-item} 2024
+``````{grid} 1 2 3 3
+:gutter: 1 1 2 2
+
+`````{grid-item-card}
+:text-align: center
+<iframe frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/f05f6d5d2be3420aa7a1cb025580b860/embed" width=100%> </iframe>
+`````
+
+`````{grid-item-card}
+:text-align: center
+<iframe frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/d0226dc654154da4bdd81d195dbc9c37/embed" width=100%> </iframe>
+`````
+
+`````{grid-item-card}
+:text-align: center
+<iframe frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/b45be997b4ea4399bcd08cb63241c6bf/embed" width=100%> </iframe>
+`````
+
+`````{grid-item-card}
+:text-align: center
+<iframe frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/d59bccfd4133477394fc0d427f62b8bf/embed" width=100%> </iframe>
+`````
+
+`````{grid-item-card}
+:text-align: center
+<iframe frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/a3beb467478f4dc69e5c9c29bbe7e464/embed" width=100%> </iframe>
+`````
+
+`````{grid-item-card}
+:text-align: center
+<iframe frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/a7d4b98e6ccf42cea49aa9fdb2a01b0a/embed" width=100%> </iframe>
+`````
+
+`````{grid-item-card}
+:text-align: center
+<iframe frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/5734199bf432489e9d64d8434c789800/embed" width=100%> </iframe>
+`````
+
+`````{grid-item-card}
+:text-align: center
+<iframe frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/b305f603bbd34bff847b0e99475040e1/embed" width=100%> </iframe>
 `````
 
 ``````
