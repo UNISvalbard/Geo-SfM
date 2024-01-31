@@ -289,6 +289,13 @@ Showing the image quality and disable photos that do not meet the requirement in
 Then, filter on quality and *Disable* all selected cameras that do not meet the standard.
 Agisoft recommends a *Quality* of at least 0.5.
 
+### Masking photos
+When using pictures that have a non neutral background, it is likely that Agisoft Megashape will try to identify *common features* in the background.
+This will become a problem if you move your object for a different halo or perspective.
+To combat this issue, you can select areas (masks) of the photo that will not be analysed. 
+To start masking you can type *L* or select *Intelligent Scissors* from the selection dropdown menu.
+Then you can draw
+
 ### Aligning photos
 
 With the photos now imported into Metashape and analysed, we can proceed with the alignment process.
