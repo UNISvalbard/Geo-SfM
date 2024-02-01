@@ -289,13 +289,16 @@ Showing the image quality and disable photos that do not meet the requirement in
 Then, filter on quality and *Disable* all selected cameras that do not meet the standard.
 Agisoft recommends a *Quality* of at least 0.5.
 
+(masking_photos)=
 ### Masking photos
-When using pictures that have a non neutral background, it is likely that Agisoft Megashape will try to identify *common features* in the background.
-This will become a problem if you move your object for a different halo or perspective.
-To combat this issue, you can select areas (masks) of the photo that will not be analysed. 
-To start masking you can type *L* or select *Intelligent Scissors* from the selection dropdown menu (or other prefered selection methods).
-To mask everything but the desired object it is easiest to first mask the object and then invert the selection as shown in {numref}`Masking_instruction`.
-To apply the masks in the alignment of the photos (see next section), you can select apply masks to: *keypoints* in the advanced tab of the pop-up menu when aligning the photos.
+When using pictures that have a non-neutral or messy background, Agisoft Megashape will likely try to identify *common features* in the background. This will show up as tie points (blue) outside of your object on your images. This will become a problem if you move your object for a different halo or perspective. To combat this issue, you can select (mask) the areas of the photo that will not be analyzed. 
+
+1. Double click on the image you want to mask.
+2. Type *Ctrl L* or click on the selection tool. Choose tool based on your object and placement of the tie points (blue).
+a.	Are the tie points far away from your object, the most effective tool might be the rectangle (as this is faster than the *intelligent scissor* tool). 
+b.	If your object is very dark compared to e.g. a white background you can also try the *magic wand* tool, but make sure it doesn’t select the tie points that lie within your object. 
+3.	Right click and select invert mask and then add selection as shown in {numref}`Masking_instruction`. The tie points that lie within the dark area will now be ignored when you align your photos again.
+4.	To apply the masks in the alignment of the photos (see next section), you can select apply masks to: *keypoints* in the advanced tab of the pop-up menu when aligning the photos. If you have already aligned your photos, but you have gone back and added masks, remember to check the *Reset the current alignment* box.
 
 ```{figure} assets/Masking_instruction.gif
 :name: Masking_instruction
@@ -305,7 +308,7 @@ Showing how to mask an object in the Metashape GUI
 
 ### Aligning photos
 
-With the photos now imported into Metashape and analysed, we can proceed with the alignment process.
+With the photos now imported into Metashape and analyzed, we can proceed with the alignment process.
 This process goes through all images in the project and tries to identify *common features*.
 In Metashape this first requires the estimation of camera positions for each photo, which are then used to build a *sparse cloud*.
 Select *Align Photos...* in the *Workflow* menu.
@@ -333,6 +336,13 @@ For example, down-sampling a 1000x1000 pixel image to a 100x100 image results in
 Depending on your computer specifications, you'll have to weigh computational time versus output quality.
 
 Give it a shot, and compare the photo alignment results with *medium* vs *high* processing accuracy.
+```
+
+```{admonition} Masking
+:class: warning
+
+If the alignment did not work or if the result looks bad, then you should go back to the masking step ({ref}`masking_photos`) and either mask more of your images or make your masks more precise. 
+
 ```
 
 #### Disabling position data
