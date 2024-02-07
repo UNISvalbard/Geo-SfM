@@ -742,16 +742,21 @@ Then, make sure to view the details rather than icons to check the Quality for e
 Agisoft recommends a <em>Quality</em> of at least 0.5.</p>
 </div>
 <div class="section" id="masking-photos">
-<h3>Masking photos<a class="headerlink" href="#masking-photos" title="Permalink to this headline">#</a></h3>
-<p>When using pictures that have a non neutral background, it is likely that Agisoft Megashape will try to identify <em>common features</em> in the background.
+<span id="id2"></span><h3>Masking photos<a class="headerlink" href="#masking-photos" title="Permalink to this headline">#</a></h3>
+<p>When using pictures that have a non-neutral or messy background, Agisoft Megashape will likely try to identify <em>common features</em> (key and tie points) in the background. This will show up as tie points (blue) outside of your object on your images.
 This will become a problem if you move your object for a different halo or perspective.
-To combat this issue, you can select areas (masks) of the photo that will not be analysed.
-To start masking you can type <em>L</em> or select <em>Intelligent Scissors</em> from the selection dropdown menu (or other prefered selection methods).
-To mask everything but the desired object it is easiest to first mask the object and then invert the selection as shown in <a class="reference internal" href="#masking-instruction"><span class="std std-numref">Fig. 9</span></a>.
-To apply the masks in the alignment of the photos (see next section), you can select apply masks to: <em>keypoints</em> in the advanced tab of the pop-up menu when aligning the photos.</p>
+To mitigate this issue, you can select (mask) the areas of the photo that will not be analysed.</p>
+<ol class="arabic simple">
+<li><p>Double click on the image you want to mask.</p></li>
+<li><p>Type <em>Ctrl L</em> or click on the selection tool. Choose tool based on your object and placement of the tie points (blue).
+a.	Are the tie points far away from your object, the most effective tool might be the rectangle (as this is faster than the <em>intelligent scissor</em> tool).
+b.	If your object is very dark compared to e.g. a white background you can also try the <em>magic wand</em> tool, but make sure it doesn’t select the tie points that lie within your object.</p></li>
+<li><p>Right click and select invert mask and then add selection as shown in <a class="reference internal" href="#masking-instruction"><span class="std std-numref">Fig. 9</span></a>. The tie points that lie within the dark area will now be ignored when you align your photos again.</p></li>
+<li><p>To apply the masks in the alignment of the photos (see next section), you can select apply masks to: <em>keypoints</em> in the advanced tab of the pop-up menu when aligning the photos. If you have already aligned your photos, but you have gone back and added masks, remember to check the <em>Reset the current alignment</em> box.</p></li>
+</ol>
 <div class="figure align-default" id="masking-instruction">
 <img alt="../../../_images/Masking_instruction.gif" src="../../../_images/Masking_instruction.gif" />
-<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">Showing how to mask an object in the Metashape GUI</span><a class="headerlink" href="#masking-instruction" title="Permalink to this image">#</a></p>
+<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">Instructions on how to mask an object in the Metashape GUI.</span><a class="headerlink" href="#masking-instruction" title="Permalink to this image">#</a></p>
 </div>
 </div>
 <div class="section" id="aligning-photos">
@@ -777,6 +782,11 @@ If not, one can select this by clicking the four-dotted icon in the menu.</p>
 For example, down-sampling a 1000x1000 pixel image to a 100x100 image results in a factor 100 compression of data (= easier to process), but you also lose the initial resolution!</p>
 <p>Depending on your computer specifications, you’ll have to weigh computational time versus output quality.</p>
 <p>Give it a shot, and compare the photo alignment results with <em>medium</em> vs <em>high</em> processing accuracy.</p>
+</div>
+<div class="suggestion admonition">
+<p class="admonition-title">Masking</p>
+<p>If the alignment did not work or if the result looks bad, then it may help to apply masks to your input imagery.
+Please refer back to the masking step (<a class="reference internal" href="#masking-photos"><span class="std std-ref">Masking photos</span></a>) on how to better apply masks and improve the alignment output.</p>
 </div>
 <div class="section" id="disabling-position-data">
 <h4>Disabling position data<a class="headerlink" href="#disabling-position-data" title="Permalink to this headline">#</a></h4>
@@ -814,7 +824,7 @@ Here we change our view to show Spare Point Covariance instead of RGB coloring.<
 </div>
 <p>As the sparse cloud is the very first step in a long processing chain, we want to optimize it as much as possible.
 After all, bad quality in usually equals bad quality out.
-We will now conduct several optimizations to improve quality of the sparse cloud, implementing USGS <span id="id2">[]</span> recommendations that aim to reduce reconstruction uncertainty, improve projection accuracy, and lower the overall reprojection errors.
+We will now conduct several optimizations to improve quality of the sparse cloud, implementing USGS <span id="id3">[]</span> recommendations that aim to reduce reconstruction uncertainty, improve projection accuracy, and lower the overall reprojection errors.
 Unlike shown below, the project sometimes benefits by having each of the steps repeated multiple times, rather than just once.
 Keep in mind, however, that running too many optimizations may also result in over-fitting of the data.
 That means that the model is no longer based on real input, but rather on the processing parameters (= not real!).</p>
