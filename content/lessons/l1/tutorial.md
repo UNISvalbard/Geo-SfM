@@ -291,7 +291,9 @@ Agisoft recommends a *Quality* of at least 0.5.
 
 (masking_photos)=
 ### Masking photos
-When using pictures that have a non-neutral or messy background, Agisoft Megashape will likely try to identify *common features* in the background. This will show up as tie points (blue) outside of your object on your images. This will become a problem if you move your object for a different halo or perspective. To combat this issue, you can select (mask) the areas of the photo that will not be analyzed. 
+When using pictures that have a non-neutral or messy background, Agisoft Megashape will likely try to identify *common features* (key and tie points) in the background. This will show up as tie points (blue) outside of your object on your images. 
+This will become a problem if you move your object for a different halo or perspective. 
+To mitigate this issue, you can select (mask) the areas of the photo that will not be analysed. 
 
 1. Double click on the image you want to mask.
 2. Type *Ctrl L* or click on the selection tool. Choose tool based on your object and placement of the tie points (blue).
@@ -303,12 +305,12 @@ b.	If your object is very dark compared to e.g. a white background you can also 
 ```{figure} assets/Masking_instruction.gif
 :name: Masking_instruction
 
-Showing how to mask an object in the Metashape GUI
+Instructions on how to mask an object in the Metashape GUI.
 ```
 
 ### Aligning photos
 
-With the photos now imported into Metashape and analyzed, we can proceed with the alignment process.
+With the photos now imported into Metashape and analysed, we can proceed with the alignment process.
 This process goes through all images in the project and tries to identify *common features*.
 In Metashape this first requires the estimation of camera positions for each photo, which are then used to build a *sparse cloud*.
 Select *Align Photos...* in the *Workflow* menu.
@@ -339,9 +341,10 @@ Give it a shot, and compare the photo alignment results with *medium* vs *high* 
 ```
 
 ```{admonition} Masking
-:class: warning
+:class: suggestion
 
-If the alignment did not work or if the result looks bad, then you should go back to the masking step ({ref}`masking_photos`) and either mask more of your images or make your masks more precise. 
+If the alignment did not work or if the result looks bad, then it may help to apply masks to your input imagery.
+Please refer back to the masking step ({ref}`masking_photos`) on how to better apply masks and improve the alignment output. 
 
 ```
 
@@ -775,4 +778,5 @@ Creation of an animation with two waypoints over 5 seconds.
 ```
 
 ## Publishing
+
 The [Publish 3D models](../l6/intro.md) page explains how to export your 3D model and how to best upload it to online technical solutions like [Sketchfab](https://sketchfab.com). 
