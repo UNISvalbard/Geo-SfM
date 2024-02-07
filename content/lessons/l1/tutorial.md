@@ -291,6 +291,7 @@ Agisoft recommends a *Quality* of at least 0.5.
 
 (masking_photos)=
 ### Masking photos
+
 When using pictures that have a non-neutral or messy background, Agisoft Megashape will likely try to identify *common features* (key and tie points) in the background. This will show up as tie points (blue) outside of your object on your images. 
 This will become a problem if you move your object for a different halo or perspective. 
 To mitigate this issue, you can select (mask) the areas of the photo that will not be analysed. 
