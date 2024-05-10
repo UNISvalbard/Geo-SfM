@@ -21,7 +21,19 @@ html_favicon = ''
 html_logo = './content/assets/logo.gif'
 html_sourcelink_suffix = ''
 html_theme = 'sphinx_book_theme'
-html_theme_options = {'search_bar_text': 'Search this book...', 'launch_buttons': {'notebook_interface': 'classic', 'binderhub_url': '', 'jupyterhub_url': '', 'thebe': False, 'colab_url': ''}, 'path_to_docs': '', 'repository_url': 'https://github.com/UNISvalbard/Geo-SfM', 'repository_branch': 'main', 'extra_footer': '', 'home_page_in_toc': True, 'announcement': 'Found this tutorial helpful? Please participate in the survey (<a href="https://unisvalbard.github.io/Geo-SfM/content/lessons/survey.html">click here</a>) & Star me!        <iframe src="https://ghbtns.com/github-btn.html?user=UNISvalbard&repo=Geo-SfM&type=star&count=true" frameborder="0" scrolling="0" width="150" height="20" title="GitHub"></iframe>', 'analytics': {'google_analytics_id': ''}, 'use_repository_button': True, 'use_edit_page_button': True, 'use_issues_button': True}
+html_theme_options = {
+    'search_bar_text': 'Search this book...', 
+    'launch_buttons': {'notebook_interface': 'classic', 'binderhub_url': '', 'jupyterhub_url': '', 'thebe': False, 'colab_url': ''}, 
+    'path_to_docs': '', 
+    'repository_url': 'https://github.com/UNISvalbard/Geo-SfM', 
+    'repository_branch': 
+    'main', 'extra_footer': '', 
+    'home_page_in_toc': True, 
+    'announcement': 'Found this tutorial helpful? Please Star me <a href="https://github.com/UNISvalbard/Geo-SfM"> <img src="https://img.shields.io/github/stars/UNISvalbard/Geo-SfM"></a>',
+    'analytics': {'google_analytics_id': ''}, 
+    'use_repository_button': True, 
+    'use_edit_page_button': True, 
+    'use_issues_button': True}
 html_title = 'Geo-SfM Course'
 latex_engine = 'pdflatex'
 myst_enable_extensions = ['colon_fence', 'dollarmath', 'linkify', 'substitution', 'tasklist']

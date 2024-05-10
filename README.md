@@ -1,4 +1,4 @@
-<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a>
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a> [![Zenodo DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7057604.svg)](https://doi.org/10.5281/zenodo.7057604)
 
 ### About Geo-SfM
 [Geo-SfM](https://unisvalbard.github.io/Geo-SfM/landing-page.html) is an open-source reference work for the acquisition, processing and analysis of structure-from-motion photogrammetry data in the geosciences.

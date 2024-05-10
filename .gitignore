@@ -4,3 +4,4 @@ content/lessons/l3/metashape/**
 
 _build.py
 _build/*
+__pycache__/*

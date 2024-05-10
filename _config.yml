@@ -13,7 +13,7 @@ html:
   use_repository_button: true
   extra_navbar: ""
   use_edit_page_button: true
-  announcement: 'Found this tutorial helpful? Please participate in the survey (<a href="https://unisvalbard.github.io/Geo-SfM/content/lessons/survey.html">click here</a>) & Star me!        <iframe src="https://ghbtns.com/github-btn.html?user=UNISvalbard&repo=Geo-SfM&type=star&count=true" frameborder="0" scrolling="0" width="150" height="20" title="GitHub"></iframe>'
+  announcement: 'Found this tutorial helpful? Please Star me! [![GitHub Repo stars](https://img.shields.io/github/stars/UNISvalbard/Geo-SfM)](https://github.com/UNISvalbard/Geo-SfM)'
   comments:
     hypothesis: true
   extra_path: ["slides"]

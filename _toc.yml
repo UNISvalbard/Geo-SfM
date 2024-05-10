@@ -51,10 +51,6 @@ parts:
   - file: content/lessons/suppl/python-snippets.md
   - file: content/lessons/about/zbiblio.md
 
-- caption: Questionnaire
-  chapters:
-  - file: content/lessons/survey.md
-
 - caption: About Geo-SfM
   chapters:
   - file: content/lessons/about/cite.md

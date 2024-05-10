@@ -1,0 +1,30 @@
+{
+    "title": "Geo-SfM: Teaching geoscientific Structure-from-Motion photogrammetry processing",
+    "upload_type": "publication",
+    "publication_type": "book",
+    "creators": [
+        {
+            "affiliation": "The University Centre in Svalbard",
+            "name": "Betlem, Peter",
+            "orcid": "0000-0002-6017-9415"
+        },
+        {
+            "name": "Rodes, Nil",
+            "affiliation": "The University Centre in Svalbard",
+            "orcid": "0000-0002-6168-2936"
+        }
+        ],
+    "access_right": "open",
+    "license": "CC-BY-NC-4.0",
+    "related_identifiers": [
+        {
+            "relation": "isSourceOf", 
+            "identifier":"https://unisvalbard.github.io/Geo-SfM/"
+        }, 
+        {
+            "relation": "isSupplementedBy", 
+            "identifier":"https://github.com/UNISvalbard/Geo-SfM"
+        }
+    ],
+    "language": "eng"
+}
