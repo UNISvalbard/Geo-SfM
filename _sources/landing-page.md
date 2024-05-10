@@ -1,5 +1,7 @@
 # Welcome to Geo-SfM
 
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a> [![Zenodo DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7057604.svg)](https://doi.org/10.5281/zenodo.7057604)
+
 ````{margin} Part of the Geo-MOD series
  
 This compendium forms part of the UNIS [Geo-MOD](https://unisvalbard.github.io/Geo-MOD/landing-page.html) series:
