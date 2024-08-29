@@ -12,6 +12,15 @@ This compendium forms part of the UNIS [Geo-MOD](https://unisvalbard.github.io/G
 
 ````
 
+
+```{admonition} Read the paper
+:class: seealso
+
+Interested in our pedagogical findings of using the Jupyter Book environment in teaching?
+[Access the paper](https://gc.copernicus.org/preprints/gc-2024-6/) in Geoscience Communications.
+
+```
+
 The **Geo-SfM** course teaches you the basic concepts of Structure-from-Motion (SfM) photogrammetry using the Agisoft Metashape software suite alongside the Python programming language. No previous programming experience is required, though may come in handy for more advanced uses.
 
 Geo-SfM covers the necessary skills needed to conduct SfM photogrammetry in a scientifically sound manner, targeting specifically the geosciences.
@@ -21,7 +30,12 @@ This course is **open for everyone to follow online**. The aim of the course is 
 ```
 
 ```{admonition} The University Centre in Svalbard
-This Geo-SfM course is part of the [University Centre in Svalbard Arctic Geology 222 bachelor course](https://www.unis.no/course/ag-222-integrated-geological-methods-from-outcrop-to-geomodel/), running each spring.
+This Geo-SfM course is or has been part of the following courses:
+
+- [University Centre in Svalbard (UNIS) Arctic Geology AG-222 bachelor course](https://www.unis.no/course/ag-222-integrated-geological-methods-from-outcrop-to-geomodel/) [2020 - 2024].
+- [UNIS Arctic Geology AG-214 bachelor course](https://www.unis.no/courses/ag-214-the-geological-evolution-of-svalbard-15-ects/) [2024].
+- [UNIS Arctic Geology AG-358/858 master/PhD course](https://www.unis.no/courses/ag-358-geological-constraints-on-subsurface-energy-and-ccs-10-ects/) [2024].
+- [UNIS GeoMOD course](https://unisvalbard.github.io/Geo-MOD/landing-page.html) [2023].
 ```
 
 <iframe src="./slides/ppt/intro.html" title="Geo-SfM intro" width=100% height=450em></iframe>

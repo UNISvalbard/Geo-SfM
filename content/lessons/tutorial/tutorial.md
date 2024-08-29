@@ -747,7 +747,7 @@ This means that to be truly *scientifically grounded* and *repeatable*, you shou
 Instead, rely on e.g. the point confidence to make edits (and always report the chosen parameters).
 ```
 
-#### Processing report
+### Processing report
 
 The first, and perhaps most important, is to generate a processing report.
 Proceed to *File/Export* in the menu bar and select *Generate Report...*.
@@ -765,7 +765,7 @@ You'll find key metadata within the generated processing_report.pdf that has to 
 Have a look and familiarise yourself with it.
 ```
 
-#### In-programme parameters
+### In-programme parameters
 
 One does not always need to export the processing report to obtain the overview of parameters.
 Handily, Metashape also provides an overview within the *Workspace* panel after having selected an item in the chunk.

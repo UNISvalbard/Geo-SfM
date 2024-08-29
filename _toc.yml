@@ -26,10 +26,13 @@ parts:
   - file: content/lessons/automation/overview.md
   - file: content/lessons/automation/Batch.md
   - file: content/lessons/automation/python.md
+  - file: content/lessons/suppl/python-snippets.md
 - caption: Session 5
   chapters:
   - file: content/lessons/geomodelling/geomodel_overview.md
   - file: content/lessons/geomodelling/geomodel_tutorial.md
+  - file: content/lessons/geomodelling/arcgis_cheatsheet.md
+  - file: content/lessons/geomodelling/qgis_cheatsheet.md
 - caption: Session 6
   chapters:
   - file: content/lessons/publish/intro.md
@@ -46,14 +49,14 @@ parts:
   chapters:
   - file: content/lessons/about/seismic_lab.md
   - file: content/lessons/about/software.md
-  - file: content/lessons/about/contribute.md
   - file: content/lessons/suppl/metadata_lists.md
-  - file: content/lessons/suppl/python-snippets.md
+  - file: content/lessons/suppl/best_practices.md
   - file: content/lessons/about/zbiblio.md
 
 - caption: About Geo-SfM
   chapters:
   - file: content/lessons/about/cite.md
+  - file: content/lessons/about/contribute.md
   - file: content/lessons/about/changelog.md
 - caption: External Links
   chapters:

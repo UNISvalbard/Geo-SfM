@@ -1,12 +1,10 @@
-# Geomodeling tutorial
-
-## Interpretation of the digital model
+# Interpreting in Metashape
 
 ```{admonition} Work in progress
 :class: tip
 
 Interpretation of the digital model can be done through different means.
-Thusfar, the tutorial only details the use of the Metashape GUI.
+Thusfar, the tutorial only specific actions done through the Metashape GUI.
 Feel free to contribute with a different programme workflow.
 ```
 
