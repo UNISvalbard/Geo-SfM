@@ -1,6 +1,6 @@
 
-content/lessons/l3/metashape/*
-content/lessons/l3/metashape/**
+content/lessons/automation/metashape/*
+content/lessons/automation/metashape/**
 
 _build.py
 _build/*

@@ -1,5 +1,6 @@
 # Small object SfM photogrammetry
 
+(small-objects:overview)=
 ## Malte's rock sample and digital measurements
 
 The various tips and tricks learned in the previous sessions can not only be applied to human-and-larger-scale objects, but also to objects only centimetres tall.
@@ -136,7 +137,7 @@ Your camera's shutter governs the duration that light passes through and is capt
 The amount of time is typically listed in seconds, and each step on the shutter speed scale will give you half or twice the amount of light.
 All light captured by the sensor over the amount of time ("acquisition time") is averaged to give rise to a captured image.
 Shutter speeds that result in longer acquisition times, thus allow for more light to hit the sensor, and thus result in brighter images. 
-Secondly, capturing movements within the acquisition time will result in [motion blur](motion_blur).
+Secondly, capturing movements within the acquisition time will result in motion blur.
 Some additional examples of how to deal with shutter speed are found in e.g. {cite}`ShutterSpeed2017`.
 
 #### ISO
@@ -187,6 +188,6 @@ The [Foldio360 Tutorial](./hss_tutorial "") details its use and allows you to au
 ```{admonition} Scaled models
 :class: tip
 
-By including ground control points (GCPs) in a single orientation (as per the [GCP exercise](../l2/exercise2 "")), you can easily *georeference* the samples to their real-world scale.
+By including ground control points (GCPs) in a single orientation (as per the [GCP exercise](#section:georeferencing:exercise)), you can easily *georeference* the samples to their real-world scale.
 However, make sure to only do so for *one (1)* orientation, as GCPs are considered absolute reference points during processing and take precedence in aligning (or misaligning) your images!
 ```

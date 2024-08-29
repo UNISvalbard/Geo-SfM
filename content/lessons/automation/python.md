@@ -5,16 +5,13 @@ jupytext:
     format_name: myst
     format_version: 0.12
     jupytext_version: 1.7.1
-kernelspec:
-  display_name: Python 3
-  language: python
-  name: python3
 ---
 
+(section:python)=
 # Python-based standardised processing
 
 The following page provices an overview of the functions that are implemented in [Automated Metashape](https://github.com/PeterBetlem/image_processing).
-These require the Python to be installed as documented in [the software section](../about/software#Python "python").
+These require the Python to be installed as documented in [the software section](#about:software:python).
 
 ```{admonition} Version
 The tutorial below assumes the latest version of Automated Metashape is used.
@@ -36,7 +33,7 @@ Betlem, P., Birchall, T., Mosociova, T., Sartell, A.M.R., and Senger, K., 2020, 
 We here showcase the Automated Metashape scripts through use of Jupyter lab.
 When ready, open Anaconda Prompt again, change into the *automated_metashape* environment, and run *Jupyter lab*.
 
-```markdown
+```{code} shell
 conda activate automated_metashape
 jupyter lab
 ```
@@ -64,21 +61,12 @@ project_directory (The folder with all files related to this project)
 Here we can copy/paste the below (into individual cells);
 then proceed by running each cell by either clicking the *play* button or shift-enter whilst having click on the cell.
 
-```{code-cell} ipython3
-:tags: [raises-exception, remove-input]
-import shutil
-shutil.rmtree('./metashape')
-```
 
-```{code-cell} ipython3
-:tags: [raises-exception]
-
+```{code} ipython3
 from automated_metashape.MetashapeProcessing import AutomatedProcessing as AP
 ```
 
-```{code-cell} ipython3
-:tags: [raises-exception]
-
+```{code} ipython3
 config_file = "../config/empty_photogrammetry_processing_settings.yml"
 project = AP()
 project.read_config(config_file)
@@ -86,9 +74,37 @@ project.init_workspace()
 project.init_tasks()
 ```
 
+```{code} ipython3
+---------------------------------------------------------------------------
+FileNotFoundError                         Traceback (most recent call last)
+~\AppData\Local\Temp\ipykernel_44088\822519927.py in <module>
+      1 config_file = "../config/empty_photogrammetry_processing_settings.yml"
+      2 project = AP()
+----> 3 project.read_config(config_file)
+      4 project.init_workspace()
+      5 project.init_tasks()
+
+~\.conda\envs\automated_metashape\lib\site-packages\automated_metashape\MetashapeProcessing.py in read_config(self, config_file)
+     71 
+     72     def read_config(self,config_file):
+---> 73         self.cfg = read_yaml(config_file)
+     74         self.config_file = config_file
+     75         self.logger.info("Config file loaded.")
+
+~\.conda\envs\automated_metashape\lib\site-packages\automated_metashape\read_yaml.py in read_yaml(yml_path)
+     46 def read_yaml(yml_path):
+     47     yml_path = pathlib.Path(yml_path)
+---> 48     with open(yml_path,'r') as ymlfile:
+     49         cfg = yaml.load(ymlfile, Loader=yaml.SafeLoader)
+     50 
+
+FileNotFoundError: [Errno 2] No such file or directory: '..\\config\\empty_photogrammetry_processing_settings.yml'
+```
+
 If all went well, the AutomatedProcessing module was successfully imported (= no error on first input).
 However, as per above, we have a *FileNotFoundError* - after all, we have yet to set up the configuration file that was linked to.
 
+(section:python:minimalconf)=
 ### Minimal YAML configuration file
 
 The automated processing scripts rely on a [YAML](https://yaml.org/) configuration file.
@@ -114,7 +130,7 @@ The above won't do much - it simply creates a new Metashape project or loads an 
 ```{admonition} Use the standardised folder structure
 :class: tip
 
-As the script automatically searches for all compatible images within the photo_path, make sure to use the standardised folder structure described in the [Metashape tutorial](../l1/tutorial "tutorial").
+As the script automatically searches for all compatible images within the photo_path, make sure to use the standardised folder structure described in the [Metashape tutorial](../tutorial/tutorial "tutorial").
 ```
 
 ```{admonition} Correctly filling out YAML configuration
@@ -130,6 +146,7 @@ Make sure...
     - ... sfasd#comment here
 ```
 
+(section:python:additionalparam)=
 #### Additional parameters
 
 Steps can be run or skipped using the 'enabled' parameter. If enabled == False, everything else in the step is irrelevant.
@@ -350,15 +367,37 @@ networkProcessing:
 After copying over the desired parameter-sections, update the config_file path correspondingly and run the cell again.
 It should now result in a successful runtime.
 
-```{code-cell} ipython3
-:tags: [raises-exception]
-:tags: ["output_scroll"]
-
+```{code} python
 config_file = "../config/photogrammetry_processing_settings.yml"
 project = AP()
 project.read_config(config_file)
 project.init_workspace()
 project.init_tasks()
+```
+```{code} python
+2024-04-23 18:04:32,994 [INFO] automated_metashape.MetashapeProcessing: --------------
+2024-04-23 18:04:32,995 [INFO] automated_metashape.MetashapeProcessing: Fresh run initiated.
+2024-04-23 18:04:32,996 [INFO] automated_metashape.MetashapeProcessing: Runtime id: MS_20240423T1804
+2024-04-23 18:04:32,997 [INFO] automated_metashape.MetashapeProcessing: --------------
+2024-04-23 18:04:32,998 [INFO] automated_metashape.MetashapeProcessing: Agisoft Metashape Professional Version: 2.0.2.
+2024-04-23 18:04:32,998 [INFO] automated_metashape.MetashapeProcessing: Automated metashape package version: 0.1.13.dev3.
+2024-04-23 18:04:33,860 [INFO] automated_metashape.MetashapeProcessing: Creating new project...
+2024-04-23 18:04:34,330 [INFO] automated_metashape.MetashapeProcessing: Saved project as ...
+
+### Start of input file configuration for startup-stage ###
+load_project_path: null
+output_path: ./metashape
+photo_path: .
+project_crs: EPSG::32633
+project_path: ./metashape
+run_name: MS
+subdivide_task: true
+### End of input file configuration for startup-stage ###
+
+2024-04-23 18:04:34,545 [WARNING] automated_metashape.MetashapeProcessing: Failed to export report. Export report manually.
+2024-04-23 18:04:34,763 [INFO] automated_metashape.MetashapeProcessing: --------------
+2024-04-23 18:04:34,764 [INFO] automated_metashape.MetashapeProcessing: Run completed.
+2024-04-23 18:04:34,765 [INFO] automated_metashape.MetashapeProcessing: --------------
 ```
 
 This assumes *..//config/photogrammetry_processing_settings.yml* consist of the following:

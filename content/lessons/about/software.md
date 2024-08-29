@@ -23,6 +23,7 @@ If found, please report these by raising a Github issue.
 
 ### git
 
+(about:software:python)=
 ## Python
 
 Agisoft Metashape has a Python API.

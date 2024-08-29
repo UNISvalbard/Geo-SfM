@@ -73,6 +73,7 @@ Port number:
 Whenever you want to use the network for processing, you will have to place your project within the *Root* folder specified above.
 ````
 
+(tutorial:standardised-environment)=
 ### A standardised project environment
 
 We will be using a standardised project environment throughout this course.
@@ -192,7 +193,7 @@ Having created the standardised project structure, proceed with extracting your 
 
 In case the image count exceeds 999 images, make sure to utilise multiple folders in the *data_directory*.
 While you are at it, why not sort the images by flight or acquisition to improve your data structure?
-For instance, those [digitising hand-sized samples](../l4/hsstutorial "hss_tutorial"), or who have acquired data over multiple UAV flights, may find it beneficial to sort the data in specific ways.
+For instance, those [digitising hand-sized samples](#section:georeferencing:exercise), or who have acquired data over multiple UAV flights, may find it beneficial to sort the data in specific ways.
 Not only is it easier to find the data that way, but it also prevents accidental data-overwrites of data with non-unique filenames!
 
 ````{admonition} Want to follow along without your own data?
@@ -239,7 +240,7 @@ Then select all cameras that belong to the same acquisition or flight and drag t
 Creating image groups and sorting the input data of the project.
 ```
 
-Alternatively, as we will see in [Session 4](../l3/overview "automation"), we can automate most aspects of the workflow either by using [Batch processing](../l3/Batch "Batchautomation") or by using [the Metashape API](../l3/Batch "Batchautomation").
+Alternatively, as we will see in [Session 4](../automation/overview "automation"), we can automate most aspects of the workflow either by using [Batch processing](../automation/Batch "Batchautomation") or by using [the Metashape API](../automation/Batch "Batchautomation").
 We here provide an example of how to use the Metashape API to quickly rename all photos within the project to reflect the data subdirectory they are in.
 
 Proceed to the *Console* panel.
@@ -309,6 +310,7 @@ b.	If your object is very dark compared to e.g. a white background you can also 
 Instructions on how to mask an object in the Metashape GUI.
 ```
 
+(aligning_photos)=
 ### Aligning photos
 
 With the photos now imported into Metashape and analysed, we can proceed with the alignment process.
@@ -349,10 +351,15 @@ Please refer back to the masking step ({ref}`masking_photos`) on how to better a
 
 ```
 
+#### Control points
+
+If desired, control points can be added at this stage, according to the procedure outlined in [the ground control point tutorial](#georeferencing:tutorial).
+
+
 #### Disabling position data
 
-If you have a problem aligning photos, it might be because of their location data. 
-Go to the *Reference* panel, select all photos, then toggle off the location data.
+If you have a problem aligning photos, or solely want to rely on the positioning data of control points, it might be because of their location data. 
+Go to the *Reference* panel, select all photos, then toggle off the location data for all photos whose positions should not be included in the next steps.
 
 ```{figure} assets/deselect_coordinates.gif
 :name: deselect_coordinates
@@ -620,12 +627,22 @@ Sometimes the need arises to not only build a model, but also a *Tiled Model*.
 We can do this by selecting *Build Tiled Model* from the *Workflow* menu.
 Once again we can select the parameters for the processing step through the {ref}`dialog <build_tiled_model>` that popped up.
 
-The most import parameter here is the *Pixel size (m)*, which should never be set than lower than the pixel size available to the model (= the default value shown when opening the dialog).
+The most import parameter here is the *Pixel size (m)*, which should never be set than lower than the pixel size available to the model (= the default value shown when opening the dialog). 
+Typically, you would want to select the *source data* that has been edited the most recent. 
+So if changes/filters have been applied to the *Model*, you should select that as the *Source data*.
 
 ```{figure} assets/6c44a1dc.png
 :name: build_tiled_model
 
 The *Build Tiled Model* dialog after opening it from the *Workflow* menu.
+```
+
+```{admonition} About Tiled Models
+:class: tip
+
+Tiled models are exceptionally suitable for the annotation and extraction of 3D data and observations in other softwares, given their optimisation for rendering at different scales. 
+Think of them as being 3D raster files.
+Why not [export](#tutorial:export) a tiled model and follow along in the [geomodelling chapter](#geomodelling)?
 ```
 
 ### Build Digital Elevation Model (DEM)
@@ -701,6 +718,21 @@ The *Build Orthomosaic* dialog after opening it from the *Workflow* menu. The **
 `````
 
 Generated orthomosaic can be reviewed in _Ortho_ mode similar to the digital elevation model. It can be opened in this view mode by double-clicking on the orthomosaic label in the _Workspace_ pane.
+
+(tutorial:export)=
+### Export data
+
+Data can be exported easily from within Metashape for use in other software suites.
+
+`````{tab-set}
+````{tab-item} Tiled Model
+```{figure} assets/build-orthomosaic_geographic.png
+:name: export_tiled_model
+
+The *Build Orthomosaic* dialog after opening it from the *Workflow* menu. The **Geographic** type is used to generate the Orthomosaic in a known geographic projection (here shown for EPSG:32633).
+```
+````
+`````
 
 ## Documenting processing parameters
 
@@ -780,4 +812,4 @@ Creation of an animation with two waypoints over 5 seconds.
 
 ## Publishing
 
-The [Publish 3D models](../l6/intro.md) page explains how to export your 3D model and how to best upload it to online technical solutions like [Sketchfab](https://sketchfab.com). 
+The [Publish 3D models](../publish/intro.md) page explains how to export your 3D model and how to best upload it to online technical solutions like [Sketchfab](https://sketchfab.com). 

@@ -47,6 +47,7 @@ Use right-click on a selected shape to open the pop-up menu.
 Similar operations allow one to interact with points and polygons.
 ```
 
+(geomodelling:tutorial:ruler)=
 #### Ruler tool
 
 While distances could easily be calculated from the different points in a shape, the {ref}`ruler tool <interp_ruler>` provides an easier way of doing so.
@@ -66,7 +67,7 @@ Measure the real-world dimensions (e.g., height of a hand-sized sample) and thei
 
 It could be that your model has not been properly constrained with a coordinate system or CRS (e.g., from photos with GPS metadata, GCPs).
 Having a valid CRS set for your Metashape project not only allows your model to be exported with real-world coordinates, it also gives meaning to the values given onscreen.
-Remember the SketchFab Labs distance feature discussed in [Session 4](../l4/hss_overview#digitising-small-objects)?
+Remember the SketchFab Labs distance feature discussed in [Session 4](#small-objects:overview)?
 If you look closely you will notice that only numbers are given without units.
 SketchFab is an example of a service that does not use a CRS.
 One therefore has to guess what the original CRS of the uploaded model is to make sense of the SketchFab Labs distances.

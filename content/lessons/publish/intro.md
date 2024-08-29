@@ -8,5 +8,5 @@ Be aware that the publication process may involve converting file formats and op
 ```
 
 In this tutorial, we will guide you through the uploading process for two technical solutions:
-- [Sketchfab](https://unisvalbard.github.io/Geo-SfM/content/lessons/l6/sketchfab.html)
-- [V3Geo](https://unisvalbard.github.io/Geo-SfM/content/lessons/l6/v3geo.html)
+- [Sketchfab](https://unisvalbard.github.io/Geo-SfM/content/lessons/publish/sketchfab.html)
+- [V3Geo](https://unisvalbard.github.io/Geo-SfM/content/lessons/publish/v3geo.html)

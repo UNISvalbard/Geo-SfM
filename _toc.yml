@@ -4,39 +4,39 @@ root: landing-page.md
 parts:
 - caption: Session 1
   chapters:
-  - file: content/lessons/l1/sfm_photogrammetry.md
-  #- file: content/lessons/l1/quiz.md
-  - file: content/lessons/l1/exercise1.md
-  - file: content/lessons/l1/tutorial.md
+  - file: content/lessons/tutorial/sfm_photogrammetry.md
+  #- file: content/lessons/tutorial/quiz.md
+  - file: content/lessons/tutorial/exercise1.md
+  - file: content/lessons/tutorial/tutorial.md
 - caption: Session 2
   chapters:
-  - file: content/lessons/l2/overview.md
-  - file: content/lessons/l2/gcps.md
-  - file: content/lessons/l2/exercise2.md
-  - file: content/lessons/l2/markers.md
+  - file: content/lessons/small-objects/hss_overview.md
+  #- file: content/lessons/small-objects/quiz.md
+  - file: content/lessons/small-objects/hss_lab_exercise.md
+  - file: content/lessons/small-objects/hss_field_exercise.md
+  - file: content/lessons/small-objects/hss_tutorial.md
 - caption: Session 3
   chapters:
-  - file: content/lessons/l3/overview.md
-  - file: content/lessons/l3/Batch.md
-  - file: content/lessons/l3/python.md
+  - file: content/lessons/georeferencing/overview.md
+  - file: content/lessons/georeferencing/gcps.md
+  - file: content/lessons/georeferencing/exercise.md
+  - file: content/lessons/georeferencing/markers.md
 - caption: Session 4
   chapters:
-  - file: content/lessons/l4/hss_overview.md
-  #- file: content/lessons/l4/quiz.md
-  - file: content/lessons/l4/hss_lab_exercise.md
-  - file: content/lessons/l4/hss_field_exercise.md
-  - file: content/lessons/l4/hss_tutorial.md
+  - file: content/lessons/automation/overview.md
+  - file: content/lessons/automation/Batch.md
+  - file: content/lessons/automation/python.md
 - caption: Session 5
   chapters:
-  - file: content/lessons/l5/geomodel_overview.md
-  - file: content/lessons/l5/geomodel_tutorial.md
+  - file: content/lessons/geomodelling/geomodel_overview.md
+  - file: content/lessons/geomodelling/geomodel_tutorial.md
 - caption: Session 6
   chapters:
-  - file: content/lessons/l6/intro.md
-  - file: content/lessons/l6/sketchfab.md
-  - file: content/lessons/l6/v3geo.md
-  - file: content/lessons/l6/results.md
-#  - file: content/lessons/l6/cesium.md
+  - file: content/lessons/publish/intro.md
+  - file: content/lessons/publish/sketchfab.md
+  - file: content/lessons/publish/v3geo.md
+  - file: content/lessons/publish/results.md
+#  - file: content/lessons/publish/cesium.md
 - caption: Suppl. dGNSS data processing
   chapters:
   - url: https://unisvalbard.github.io/gnss-compendium/readme.html

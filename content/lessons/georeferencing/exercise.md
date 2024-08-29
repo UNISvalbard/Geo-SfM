@@ -1,4 +1,4 @@
-# Exercise 2 - learning the ropes of GCP and marker detection
+# Exercise - learning the ropes of GCP and marker detection
 
 ```{admonition} Deadline
 Please complete this exercise **by the start of the next session**.
@@ -22,7 +22,7 @@ This includes the generation of both Metashape markers and open-source ArUco mar
 
 ## Assignment
 
-Proceed to the [GCP tutorial](../l2/markers "GCP tutorial") while keeping the following assignments in mind:
+Proceed to the [GCP tutorial](../georeferencing/markers "GCP tutorial") while keeping the following assignments in mind:
 
 `````{admonition} Checklist and questions
 :class: note
@@ -40,7 +40,7 @@ In addition, please come up with some thoughts on the following statements:
 
 - GCP detection requires only part of the markers to be visible in an image
 - A GCP should always be fully imaged in at least five images
-- The original, real-world object and the digital model are identical in dimensions (pro tip: [measure this using the ruler tool](../l5/geomodel_tutorial#ruler-tool)).
+- The original, real-world object and the digital model are identical in dimensions (pro tip: [measure this using the ruler tool](#geomodelling:tutorial:ruler)).
 
 ````{admonition} The Student's approach to markers in Corona-lockdown.
 :class: tip
@@ -63,5 +63,5 @@ Make sure to set one corner as the origin (0,0), and use your ruler to measure t
 
 ```{admonition} SfM photogrammetry workflow
 :class: tip
-Have a look at last session's accompanying [tutorial](../l1/tutorial "tutorial") for some useful tips and tricks.
+Have a look at last session's accompanying [tutorial](../tutorial/tutorial "tutorial") for some useful tips and tricks.
 ```

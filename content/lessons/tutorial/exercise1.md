@@ -1,4 +1,4 @@
-# Exercise 1 - learning the ropes of SfM photogrammetry
+# Exercise - learning the ropes of SfM photogrammetry
 
 ```{admonition} Deadline
 Please complete this exercise **by the start of the next session**.
@@ -36,7 +36,7 @@ The exercise also includes a deliverable, i.e., a set of requirements that are l
 - What is an artifact and how may they arise in your models? (Make screenshots of these when/if found in your own models!)
 ```
 
-It is now up to you to acquire your own data set and process this by following the [photogrammetry tutorial](../l1/tutorial "tutorial").
+It is now up to you to acquire your own data set and process this by following the [photogrammetry tutorial](../tutorial/tutorial "tutorial").
 Make sure to also give some thoughts and answer the questions in the side bar.
 
 Suggested targets include:
@@ -124,10 +124,10 @@ As for the metadata, you'll only be able to fill out some of the metadata after 
 
 ```{admonition} Image acquisition
 :class: tip
-Have a look at the [supplementary information](../suppl/best_practices "suppl") dealing with best practices in photogrammetry.
+Have a look at the [supplementary information](../suppl/best_practices.md) dealing with best practices in photogrammetry.
 ```
 
 ```{admonition} SfM photogrammetry workflow
 :class: tip
-Have a look at this session's accompanying [tutorial](../l1/tutorial "tutorial") for some useful tips and tricks.
+Have a look at this session's accompanying [tutorial](../tutorial/tutorial.md) for some useful tips and tricks.
 ```

@@ -12,6 +12,7 @@ kernelspec:
   name: python3
 ---
 
+(georeferencing:tutorial)=
 # GCP tutorial
 
 While other GCP marker types exist, we here focus on the use of either ArUco or Agisoft Metashape markers.
@@ -197,18 +198,18 @@ Metashape GUI option for marker detection.
 ```{admonition} Python installation required
 :class: warning
 
-The following steps require the [installation of Python and the automated metashape scripts](../about/software#python).
+The following steps require the [installation of Python and the automated metashape scripts](#about:software:python).
 ```
 
-Prior to automated detection, we will have to configure a settings or parameter file for the [automated metashape scripts](../l3/python.ipynb).
+Prior to automated detection, we will have to configure a settings or parameter file for the [automated metashape scripts](#section:python).
 
-Head over to the [tutorial](../l3/python.ipynb) and put together a minimal working example (MWE) configuration consisting of:
+Head over to the [tutorial](../automation/python.ipynb) and put together a minimal working example (MWE) configuration consisting of:
 
-- [minimal configuration parameters](../l3/python#minimal-yaml-configuration-file)
-- [Add photos](../l3/python#additional-parameters)
-- [GCPs - detection](../l3/python#additional-parameters)
-- [GCPs - add to project additional parameters](../l3/python#additional-parameters)
+- [minimal configuration parameters](#section:python:minimalconf)
+- [Add photos](#section:python:additionalparam)
+- [GCPs - detection](#section:python:additionalparam)
+- [GCPs - add to project additional parameters](#section:python:additionalparam)
 
-Make sure to place this file in the *config directory* of the [standardised project environment](../l1/tutorial#a-standardised-project-environment).
+Make sure to place this file in the *config directory* of the [standardised project environment](#tutorial:standardised-environment).
 
-Then proceed with the [Python tutorial](../l3/python.md) to subsequently add all images to the Metashape project; to detect the GCPs in all the images; to add the detected GCPs and corresponding real world coordinates to the Metashape project.
+Then proceed with the [Python tutorial](../automation/python.md) to subsequently add all images to the Metashape project; to detect the GCPs in all the images; to add the detected GCPs and corresponding real world coordinates to the Metashape project.

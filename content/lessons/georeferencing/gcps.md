@@ -102,7 +102,7 @@ Example of ArUco marker images {cite}`garrido-juradoAutomaticGenerationDetection
 :class: suggestion
 
 ArUco markers (50x50 cm) printed on canvas are available for use in the UNIS Arctic Geology department.
-Marker detection hereof can be done by using the scripts described in {ref}`the Python-automisation chapter <../l3/python.ipynb>`.
+Marker detection hereof can be done by using the scripts described in [the Python-automisation chapter](#section:python).
 ```
 
 ### GCP size
@@ -118,7 +118,7 @@ On the other hand, GCP markers for hand-sized sample digitisation can be as smal
 
 ## Placement of GCPs in terms of highest accuracy
 
-An extensive review on the accuracy of GCPs types is conducted by {cite}`martinez-carricondoAssessmentUAVphotogrammetricMapping2018` and {cite}`vegaAssessmentPhotogrammetricMapping2017`, and we here only focus on the take-home messages.
+An extensive review on the accuracy of GCPs types is conducted by {cite}`martinez-carricondoAssessmentUAVphotogrammetricMapping2018` and {cite}`aguera-vegaAssessmentPhotogrammetricMapping2017`, and we here only focus on the take-home messages.
 These conclusions are based on an accuracy-assessment that seeks minimal root mean square errors (RMSEs) for the GCPs's longitude, latitude, and altitude.
 
 Prior to implementing GCPs, one always has to assess the need of precision and accuracy in terms of cost, i.e., time.

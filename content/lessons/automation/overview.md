@@ -1,7 +1,7 @@
 # Automation
 
 While processing can easily be done manually, real gains are made when things are automated.
-Automation can be done through various means and to different extents, with the most notable being through use of the [Metashape GUI](../Batch "automation_gui") and through the [automated Python scripts](../python "automation_python").
+Automation can be done through various means and to different extents, with the most notable being through use of the [Metashape GUI](#section:batch) and through the [automated Python scripts](#section:python).
 
 There is more to automation than just efficiency.
 Automation often requires a set of commands and parameters to be set prior to processing.
