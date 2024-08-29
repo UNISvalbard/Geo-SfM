@@ -15,7 +15,7 @@ class metashape_tiepoint_filter:
 
         if not ms_path == None:
             self.doc = Metashape.Document()
-            self.doc.open(ms_path.as_posix())
+            self.doc.open(ms_path.as_posix(), read_only=False, ignore_lock=True)
         else:
             self.doc = Metashape.app.document
         self.chunk = self.doc.chunk
@@ -33,6 +33,7 @@ class metashape_tiepoint_filter:
             self.optimize_cameras()
             self.set_label_naming_template()
             self.doc.save()
+            #self.process_point_cloud_over_network()
         else:
             print("Dense cloud exists... Ignoring..")
 
@@ -81,8 +82,32 @@ class metashape_tiepoint_filter:
     def set_label_naming_template(self):
         self.chunk.label = f"{self.chunk.label}_PcConf=XX_MeshCC=XX"
 
+    def process_point_cloud_over_network(self):
+        task1 = Metashape.Tasks.BuildDepthMaps()
+        task1.decode( {'downscale' : 2 })
+
+        task2 = Metashape.Tasks.BuildPointCloud()
+        task2.decode( {
+            'point_colors' : True,
+            'point_confidence' : True,
+            'points_spacing' : 0.001
+        }
+        )
+        client = Metashape.NetworkClient()
+        client.connect('svalbox')
+
+        network_tasks = []
+        network_tasks.append(task1.toNetworkTask(self.chunk))
+        network_tasks.append(task2.toNetworkTask(self.chunk))
+        batch_id = client.createBatch(self.doc.path, network_tasks)
+        
+        client.setBatchPaused(batch_id, False)
+
 a = metashape_tiepoint_filter(None)
 a.standard_run()
+
+
+
 
 
 

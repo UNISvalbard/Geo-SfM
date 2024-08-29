@@ -1,0 +1,1419 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Metashape Tutorial &#8212; Geo-SfM Course</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/lessons/tutorial/tutorial';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Small object SfM photogrammetry" href="../small-objects/hss_overview.html" />
+    <link rel="prev" title="Exercise - learning the ropes of SfM photogrammetry" href="exercise1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+<aside class="bd-header-announcement" aria-label="Announcement">
+  <div class="bd-header-announcement__content">Found this tutorial helpful? Please Star me <a href="https://github.com/UNISvalbard/Geo-SfM"> <img src="https://img.shields.io/github/stars/UNISvalbard/Geo-SfM"></a></div>
+</aside>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../landing-page.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/logo.gif" class="logo__image only-light" alt="Geo-SfM Course - Home"/>
+    <script>document.write(`<img src="../../../_static/logo.gif" class="logo__image only-dark" alt="Geo-SfM Course - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../landing-page.html">
+                    Welcome to Geo-SfM
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Session 1</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="sfm_photogrammetry.html">SfM photogrammetry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercise1.html">Exercise - learning the ropes of SfM photogrammetry</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Metashape Tutorial</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Session 2</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../small-objects/hss_overview.html">Small object SfM photogrammetry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../small-objects/hss_lab_exercise.html">Exercise - Food for thought</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../small-objects/hss_field_exercise.html">Exercise - Digitising field samples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../small-objects/hss_tutorial.html">Foldio360 Tutorial</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Session 3</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../georeferencing/overview.html">Geo-referencing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../georeferencing/gcps.html">Ground control points (GCPs)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../georeferencing/exercise.html">Exercise - learning the ropes of GCP and marker detection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../georeferencing/markers.html">GCP tutorial</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Session 4</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../automation/overview.html">Automation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../automation/Batch.html">Batch-based processing through Metashape GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../automation/python.html">Python-based standardised processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../suppl/python-snippets.html">Python-snippets</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Session 5</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../geomodelling/geomodel_overview.html">Geomodelling overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../geomodelling/geomodel_tutorial.html">Interpreting in Metashape</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../geomodelling/arcgis_cheatsheet.html">Interpreting in ArcGIS Pro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../geomodelling/qgis_cheatsheet.html">Interpreting in QGIS</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Session 6</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../publish/intro.html">Publish 3D models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../publish/sketchfab.html">Sketchfab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../publish/v3geo.html">V3Geo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../publish/results.html">Uploaded examples</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Suppl. dGNSS data processing</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://unisvalbard.github.io/gnss-compendium/readme.html">UNIS GNSS Compendium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../suppl_dgnss/topodrone_ppk.html">Topodrone PPK</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../about/seismic_lab.html">Seismic lab (Signehamna)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/software.html">Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../suppl/metadata_lists.html">Metadata templates for archiving</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/zbiblio.html">Bibliography</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">About Geo-SfM</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../about/cite.html">Cite Geo-SfM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/contribute.html">How to contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/changelog.html">Changelog</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">External Links</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://unisvalbard.github.io/ebooks/">UNIS Compendium Portal</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/UNISvalbard/Geo-SfM" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/UNISvalbard/Geo-SfM/edit/main/content/lessons/tutorial/tutorial.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/UNISvalbard/Geo-SfM/issues/new?title=Issue%20on%20page%20%2Fcontent/lessons/tutorial/tutorial.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/content/lessons/tutorial/tutorial.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Metashape Tutorial</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-model-reconstruction-with-agisoft-metashape">3D model reconstruction with Agisoft Metashape</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-standardised-project-environment">A standardised project environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#photo-set">Photo set</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-photos">Adding photos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-console-and-sorting-your-project-data">Python console and sorting your project data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analyze-photos">Analyze photos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#masking-photos">Masking photos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aligning-photos">Aligning photos</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#control-points">Control points</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#disabling-position-data">Disabling position data</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#improve-alignment-step-error-reduction-optimization-and-camera-calibration">Improve alignment step: Error Reduction-Optimization and Camera Calibration</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-by-reconstruction-uncertainty">Filtering by Reconstruction Uncertainty</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-by-projection-accuracy">Filtering by Projection accuracy</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-by-reprojection-error">Filtering by Reprojection Error</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-point-cloud">Build Point Cloud</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#selection-by-point-confidence">Selection by point confidence</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#building-a-model">Building a model</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-the-model">Filtering the model</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#texture-building">Texture building</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-a-tiled-model">Generating a Tiled Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-digital-elevation-model-dem">Build Digital Elevation Model (DEM)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-orthomosaic">Build Orthomosaic</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#export-data">Export data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documenting-processing-parameters">Documenting processing parameters</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#processing-report">Processing report</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-programme-parameters">In-programme parameters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#record-video">Record video</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publishing">Publishing</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="metashape-tutorial">
+<h1>Metashape Tutorial<a class="headerlink" href="#metashape-tutorial" title="Link to this heading">#</a></h1>
+<p>This tutorial (and exercise) features the following learning goals:</p>
+<ul class="simple">
+<li><p>You will <strong>learn the basics of Agisoft Metashape</strong></p></li>
+<li><p>You will <strong>use Agisoft Metashape to digitise samples and/or outcrops</strong></p></li>
+</ul>
+<div class="warning admonition">
+<p class="admonition-title">Support</p>
+<p>Please note that <strong>we only provide feedback and support for students enrolled in the course at the University Centre of Svalbard</strong>.</p>
+</div>
+<section id="d-model-reconstruction-with-agisoft-metashape">
+<h2>3D model reconstruction with Agisoft Metashape<a class="headerlink" href="#d-model-reconstruction-with-agisoft-metashape" title="Link to this heading">#</a></h2>
+<div class="suggestion admonition">
+<p class="admonition-title">Creating high-quality models the USGS way</p>
+<p>The United States Geological Survey <span id="id1">[<a class="reference internal" href="../about/zbiblio.html#id10" title="Jin-Si R. Over, Andrew C. Ritchie, Christine J. Kranenburg, Jenna A. Brown, Daniel D. Buscombe, Tom Noble, Christopher R. Sherwood, Jonathan A. Warrick, and Phillipe A. Wernette. Processing coastal imagery with Agisoft Metashape Professional Edition, version 1.6—Structure from motion workflow documentation. Technical Report 2021-1039, U.S. Geological Survey, 2021. doi:10.3133/ofr20211039.">ORK+21</a>]</span> has put together an excellent tutorial on the use of Agisoft Metashape for creating high resolution digital elevation models.
+Although digital elevation models are but one of many desired products, the same guide can be used for the creation of high resolution and properly processed DOMs.
+USGS guidelines and the quick start guide to processing (Table 1) can be found <a class="reference external" href="https://pubs.usgs.gov/of/2021/1039/ofr20211039.pdf">here</a>, and should be used supplementary to this tutorial.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">pubs</span><span class="o">.</span><span class="n">usgs</span><span class="o">.</span><span class="n">gov</span><span class="o">/</span><span class="n">of</span><span class="o">/</span><span class="mi">2021</span><span class="o">/</span><span class="mi">1039</span><span class="o">/</span><span class="n">ofr20211039</span><span class="o">.</span><span class="n">pdf</span>
+</pre></div>
+</div>
+</div>
+<p>In this session we will learn how to use Agisoft Metashape.
+This is an established SfM photogrammetry package and is often used in the Arctic Geology department at UNIS to create digital outcrop models (DOMs) and hand-sample models (HSMs).
+This session introduce basic processing through the graphical user interface through use of a standardised data set.</p>
+<div class="admonition-software-version admonition">
+<p class="admonition-title">Software version</p>
+<p>The following tutorial assumes the use of <strong>Agisoft Metashape version 2.x.x.</strong>
+Note that versions 1.6.x-1.8.x are very similar, and can use the same tutorials (though the interface and pop-up menus may be slightly different).</p>
+<p>To see whether you are indeed running the correct version proceed to <em>Help/About Metashape…</em> in the menu bar.
+This should provide you with the <strong>major release</strong>, <em>minor</em>, and patch (<strong>2</strong>.<em>0</em>.x) version number, as well as the build.</p>
+<p>If the version does not match the version listed above, please either</p>
+<ul class="simple">
+<li><p>update the installation; or</p></li>
+<li><p>contact the Seismic Lab software responsible (Peter Betlem)</p></li>
+</ul>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">Think before doing…</p>
+<p>Always remember that quality comes at a cost, in this case as a computational cost (i.e., time) and storage cost (i.e., size).</p>
+<p>In processing this is the key dilemma, and requires you to think about the output before you start.</p>
+<p><em>Is it really necessary to generate a 500 GB model for a 1 by 1 square metre area, considering that your max upload limit for an assignment is only 200 MB?</em></p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Further reading</p>
+<p>The guidelines below are based on the official Agisoft <em>3D model reconstruction</em> tutorial.
+This tutorial, as well as more in-depth help, can be visited <a class="reference external" href="https://agisoft.freshdesk.com/support/solutions/articles/31000152092">here</a>.</p>
+</div>
+<aside class="margin sidebar">
+<p class="sidebar-title">Network processing</p>
+<p>For those present at UNIS and following this tutorial as part of the UNIS AG-222 Course, please enable network processing.
+Proceed to <em>Tools</em> in the menu bar and click on <em>Preferences…</em>.
+Then proceed to <em>Network</em> and check the <em>Enable network processing</em> setting.</p>
+<p>The following parameters should be used to connect to the server:</p>
+<p>Host name:
+~ svalbox</p>
+<p>Root:
+~ \svalbox\metashape-processing$</p>
+<p>Port number:
+~ 5840</p>
+<p>Whenever you want to use the network for processing, you will have to place your project within the <em>Root</em> folder specified above.</p>
+</aside>
+<section id="a-standardised-project-environment">
+<span id="tutorial-standardised-environment"></span><h3>A standardised project environment<a class="headerlink" href="#a-standardised-project-environment" title="Link to this heading">#</a></h3>
+<p>We will be using a standardised project environment throughout this course.
+It is recommended to use this setup (or something similar) throughout all future projects as well.
+The use of this standardised project setup is furthermore a requirement for digital models to be uploaded to <a class="reference external" href="http://svalbox.no">the Svalbox DB</a>.</p>
+<p>Proceed by creating the following project_directory in the folder where you have all your projects..
+Herein folders are named without extensions, and filenames are given extensions.
+Text between {} indicates variable names.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+Handheld data</label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{project_directory} (The folder with all files related to this project)
+|   overview_img.{ext}
+|   description.txt
+├───config (where you place your configuration files)
+        {cfg_0001}.yml
+        {cfg_0002}.yml
+        ...
+├───data (where you unzipped the files to)
+├───────100MEDIA (The folder in which all the images reside)
+|           {img_0001}.{ext}
+|           {img_0002}.{ext}
+|           ...
+├───────101MEDIA (The folder in which all the images reside)
+|           {img_0001}.{ext}
+|           {img_0002}.{ext}
+|           ...
+|       ...
+├───────199MEDIA (The folder in which all the images reside)
+|           {img_0001}.{ext}
+|           {img_0002}.{ext}
+|           ...
+├───────gcps
+|           (We&#39;ll get back to this in a later session)
+├───────GNSS
+|           (We&#39;ll get back to this in a later session)
+├───export (where you place export models and files to)
+        ...
+└───metashape (This is where you save your Agisoft Metashape projects to)
+        {metashape_project_name}.psx
+        .{metashape_project_name}.files
+        {metashape_project_name}_processing_report.pdf
+        (optionally: {metashape_project_name}.log)
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+UAV data</label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{project_directory} (The folder with all files related to this project)
+|   overview_img.{ext}
+|   description.txt
+├───config (where you place your configuration files)
+        {cfg_0001}.yml
+        {cfg_0002}.yml
+        ...
+├───data (where you unzipped the files to)
+├───────f0001 (The folder with images acquired on the first flight)
+|           {img_0001}.{ext}
+|           {img_0002}.{ext}
+|           ...
+├───────f0002 (The folder with images acquired on the second flight)
+|           {img_0001}.{ext}
+|           {img_0002}.{ext}
+|           ...
+|       ...
+├───────f9999 (The folder with images acquired on the last flight)
+|           {img_0001}.{ext}
+|           {img_0002}.{ext}
+|           ...
+├───────gcps
+|           (We&#39;ll get back to this in a later session)
+├───────GNSS
+|           (We&#39;ll get back to this in a later session)
+├───export (where you place export models and files to)
+        ...
+└───metashape (This is where you save your Agisoft Metashape projects to)
+        {metashape_project_name}.psx
+        .{metashape_project_name}.files
+        {metashape_project_name}_processing_report.pdf
+        (optionally: {metashape_project_name}.log)
+</pre></div>
+</div>
+</div>
+</div>
+<p>The standardised project structures (as we will see later on) are important for automated processing and archiving.
+The project structures are identical in principle, only differing in the way images are sorted.</p>
+</section>
+<section id="photo-set">
+<h3>Photo set<a class="headerlink" href="#photo-set" title="Link to this heading">#</a></h3>
+<p>Having created the standardised project structure, proceed with extracting your taken images to the following directory:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+Single folder/acquisition</label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">project_directory</span><span class="p">}</span>\<span class="n">data</span>\<span class="mi">100</span><span class="n">MEDIA</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-3">
+Single acquisition with 1000 images</label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">project_directory</span><span class="p">}</span>\<span class="n">data</span>\<span class="mi">100</span><span class="n">MEDIA</span> <span class="p">(</span><span class="n">includes</span> <span class="n">up</span> <span class="n">to</span> <span class="mi">999</span> <span class="n">images</span><span class="p">)</span>
+<span class="p">{</span><span class="n">project_directory</span><span class="p">}</span>\<span class="n">data</span>\<span class="mi">101</span><span class="n">MEDIA</span> <span class="p">(</span><span class="n">includes</span> <span class="n">remaining</span> <span class="n">images</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-4">
+UAV acquisition with 3 flights</label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">project_directory</span><span class="p">}</span>\<span class="n">data</span>\<span class="n">f0001</span>
+<span class="p">{</span><span class="n">project_directory</span><span class="p">}</span>\<span class="n">data</span>\<span class="n">f0002</span>
+<span class="p">{</span><span class="n">project_directory</span><span class="p">}</span>\<span class="n">data</span>\<span class="n">f0003</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In case the image count exceeds 999 images, make sure to utilise multiple folders in the <em>data_directory</em>.
+While you are at it, why not sort the images by flight or acquisition to improve your data structure?
+For instance, those <a class="reference internal" href="../small-objects/hss_lab_exercise.html#section-georeferencing-exercise"><span class="std std-ref">digitising hand-sized samples</span></a>, or who have acquired data over multiple UAV flights, may find it beneficial to sort the data in specific ways.
+Not only is it easier to find the data that way, but it also prevents accidental data-overwrites of data with non-unique filenames!</p>
+<div class="suggestion admonition">
+<p class="admonition-title">Want to follow along without your own data?</p>
+<p>Go ahead and download the package, then extract the archive’s contents as per the above.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">URL</span><span class="p">:</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="adding-photos">
+<h3>Adding photos<a class="headerlink" href="#adding-photos" title="Link to this heading">#</a></h3>
+<p>Next we’ll be adding the photos to Agisoft Metashape.
+This assumes
+To do this, proceed to and click on <em>Add photos…</em> from <em>Workflow</em> in the <em>menu bar</em>.
+In the dialog that pops up, browse to the <em>project_directory/100MEDIA</em> folder that you created in the previous section.
+Select all files to be processed.
+These should now show up in a <em>chunk</em> with <em>cameras</em> in the <em>Workspace</em> panel.
+Verify that this is indeed the case by double clicking one of the <em>cameras</em> in the <em>Workspace/Chunk/Cameras</em> panel.</p>
+<div class="tip admonition">
+<p class="admonition-title">Save often!</p>
+<p>It is important to save your work often.
+Make a habit of saving at least after every step.
+To do so, proceed to <em>Save as…</em> under <em>File</em> in the menu bar, and save your project in the <em>project_directory/metashape</em> directory that you created when extracting in data.</p>
+</div>
+</section>
+<section id="python-console-and-sorting-your-project-data">
+<h3>Python console and sorting your project data<a class="headerlink" href="#python-console-and-sorting-your-project-data" title="Link to this heading">#</a></h3>
+<p>As you may have noticed while adding your images, most cameras only allow for 999 unique file names (e.g., DJI001-DJI999).
+When hundreds of files are added to a single project, this can quickly become confusing.
+After all, did file DJI007 originate from flight 1 or from flight 2?
+It is thus important to store files in different subfolders (as previously described), but also to have those subfolders available within the processing project in Metashape.
+An easy way to do this is shown in <a class="reference internal" href="#group-images"><span class="std std-numref">Fig. 5</span></a>.
+Right click the <em>Images</em> tab within the workspace, then click on <em>Add Camera Group</em>.
+Then select all cameras that belong to the same acquisition or flight and drag them into the new  <em>Camera Group</em>.</p>
+<figure class="align-default" id="group-images">
+<img alt="../../../_images/group-images.gif" src="../../../_images/group-images.gif" />
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Creating image groups and sorting the input data of the project.</span><a class="headerlink" href="#group-images" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Alternatively, as we will see in <a class="reference internal" href="../automation/overview.html"><span class="doc std std-doc">Session 4</span></a>, we can automate most aspects of the workflow either by using <a class="reference internal" href="../automation/Batch.html"><span class="doc std std-doc">Batch processing</span></a> or by using <a class="reference internal" href="../automation/Batch.html"><span class="doc std std-doc">the Metashape API</span></a>.
+We here provide an example of how to use the Metashape API to quickly rename all photos within the project to reflect the data subdirectory they are in.</p>
+<p>Proceed to the <em>Console</em> panel.
+If you cannot find it, go to the main menu bar, select <em>View</em> and click <em>Console</em> to activate it.
+This opens the terminal, and allows you to interact with the project through Python.</p>
+<figure class="align-default" id="console-view">
+<img alt="../../../_images/console_view.png" src="../../../_images/console_view.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">View of the Python console in Metashape.</span><a class="headerlink" href="#console-view" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Paste in the following script and see what happens with the labels of your files:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">Metashape</span> <span class="c1"># imports the metashape functions/library</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span> <span class="c1"># imports the Path function from the pathlib library</span>
+
+<span class="n">doc</span> <span class="o">=</span> <span class="n">Metashape</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">document</span> <span class="c1"># accesses the current workspace and document</span>
+<span class="n">chunk</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">chunk</span> <span class="c1"># makes a quicklink variable to the active chunk in the document</span>
+
+<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">chunk</span><span class="o">.</span><span class="n">cameras</span><span class="p">:</span> <span class="c1"># loops over all cameras in the active chunk</span>
+    <span class="n">cp</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">photo</span><span class="o">.</span><span class="n">path</span><span class="p">)</span> <span class="c1"># gets the photo path on the harddrive for each photo</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">cp</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">name</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="n">cp</span><span class="o">.</span><span class="n">name</span> <span class="c1"># renames the camera label in the metashape workspace to reflect the parent directory of the photo</span>
+</pre></div>
+</div>
+</section>
+<section id="analyze-photos">
+<h3>Analyze photos<a class="headerlink" href="#analyze-photos" title="Link to this heading">#</a></h3>
+<p>Before actual processing begins, we need to analyse the imported photos.
+This is done by right clicking any of the photos in a <em>Chunk</em>, then selecting <em>Estimate Image Quality…</em>, and select all photos to be analysed, as shown in <a class="reference internal" href="#analyze-process"><span class="std std-numref">Fig. 7</span></a>.</p>
+<figure class="align-default" id="analyze-process">
+<img alt="../../../_images/analyze_process.gif" src="../../../_images/analyze_process.gif" />
+<figcaption>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Estimating image quality in the Metashape GUI.</span><a class="headerlink" href="#analyze-process" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>One can then open the <em>Photos</em> pane by clicking <em>Photos</em> in the <em>View</em> menu.
+Then, make sure to view the details rather than icons to check the Quality for each image (<a class="reference internal" href="#analyze-select"><span class="std std-numref">Fig. 8</span></a>.)</p>
+<figure class="align-default" id="analyze-select">
+<img alt="../../../_images/analyze_select.gif" src="../../../_images/analyze_select.gif" />
+<figcaption>
+<p><span class="caption-number">Fig. 8 </span><span class="caption-text">Showing the image quality and disable photos that do not meet the requirement in the Metashape GUI.</span><a class="headerlink" href="#analyze-select" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Then, filter on quality and <em>Disable</em> all selected cameras that do not meet the standard.
+Agisoft recommends a <em>Quality</em> of at least 0.5.</p>
+</section>
+<section id="masking-photos">
+<span id="id2"></span><h3>Masking photos<a class="headerlink" href="#masking-photos" title="Link to this heading">#</a></h3>
+<p>When using pictures that have a non-neutral or messy background, Agisoft Megashape will likely try to identify <em>common features</em> (key and tie points) in the background. This will show up as tie points (blue) outside of your object on your images.
+This will become a problem if you move your object for a different halo or perspective.
+To mitigate this issue, you can select (mask) the areas of the photo that will not be analysed.</p>
+<ol class="arabic simple">
+<li><p>Double click on the image you want to mask.</p></li>
+<li><p>Type <em>Ctrl L</em> or click on the selection tool. Choose tool based on your object and placement of the tie points (blue).
+a.	Are the tie points far away from your object, the most effective tool might be the rectangle (as this is faster than the <em>intelligent scissor</em> tool).
+b.	If your object is very dark compared to e.g. a white background you can also try the <em>magic wand</em> tool, but make sure it doesn’t select the tie points that lie within your object.</p></li>
+<li><p>Right click and select invert mask and then add selection as shown in <a class="reference internal" href="#masking-instruction"><span class="std std-numref">Fig. 9</span></a>. The tie points that lie within the dark area will now be ignored when you align your photos again.</p></li>
+<li><p>To apply the masks in the alignment of the photos (see next section), you can select apply masks to: <em>keypoints</em> in the advanced tab of the pop-up menu when aligning the photos. If you have already aligned your photos, but you have gone back and added masks, remember to check the <em>Reset the current alignment</em> box.</p></li>
+</ol>
+<figure class="align-default" id="masking-instruction">
+<img alt="../../../_images/Masking_instruction.gif" src="../../../_images/Masking_instruction.gif" />
+<figcaption>
+<p><span class="caption-number">Fig. 9 </span><span class="caption-text">Instructions on how to mask an object in the Metashape GUI.</span><a class="headerlink" href="#masking-instruction" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="aligning-photos">
+<span id="id3"></span><h3>Aligning photos<a class="headerlink" href="#aligning-photos" title="Link to this heading">#</a></h3>
+<p>With the photos now imported into Metashape and analysed, we can proceed with the alignment process.
+This process goes through all images in the project and tries to identify <em>common features</em>.
+In Metashape this first requires the estimation of camera positions for each photo, which are then used to build a <em>sparse cloud</em>.
+Select <em>Align Photos…</em> in the <em>Workflow</em> menu.</p>
+<p>A <a class="reference internal" href="#align-photos"><span class="std std-ref">dialog</span></a> will pop up with several parameter options.
+Most important here is the <em>Accuracy</em> parameter, which governs whether your photos are down-sampled before alignment.</p>
+<p>For now we’ll skip the other parameters; just make sure to deselect <em>Reference preselection</em>, <em>Guided image matching</em>, and <em>Adaptive camera model fitting</em>.
+Keep <em>Generic preselection</em> and <em>Exclude stationary tie points</em> selected.</p>
+<p>After clicking <em>OK</em>, Metashape starts aligning your photos.
+This may take a while, but assuming there is sufficient overlap between the data, a <em>sparse point cloud</em> will be shown on the screen (in the <em>Model</em> tab) once processing is done.
+If not, one can select this by clicking the four-dotted icon in the menu.</p>
+<figure class="align-default" id="align-photos">
+<img alt="../../../_images/3a24665c.png" src="../../../_images/3a24665c.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 10 </span><span class="caption-text">The <em>Align Photos</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#align-photos" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition-down-sampling admonition">
+<p class="admonition-title">Down-sampling</p>
+<p>Down-sampling is the process in which you combine parts of a data set, resulting in the loss of knowledge.
+For example, down-sampling a 1000x1000 pixel image to a 100x100 image results in a factor 100 compression of data (= easier to process), but you also lose the initial resolution!</p>
+<p>Depending on your computer specifications, you’ll have to weigh computational time versus output quality.</p>
+<p>Give it a shot, and compare the photo alignment results with <em>medium</em> vs <em>high</em> processing accuracy.</p>
+</div>
+<div class="suggestion admonition">
+<p class="admonition-title">Masking</p>
+<p>If the alignment did not work or if the result looks bad, then it may help to apply masks to your input imagery.
+Please refer back to the masking step (<a class="reference internal" href="#masking-photos"><span class="std std-ref">Masking photos</span></a>) on how to better apply masks and improve the alignment output.</p>
+</div>
+<section id="control-points">
+<h4>Control points<a class="headerlink" href="#control-points" title="Link to this heading">#</a></h4>
+<p>If desired, control points can be added at this stage, according to the procedure outlined in <a class="reference internal" href="../georeferencing/markers.html#georeferencing-tutorial"><span class="std std-ref">the ground control point tutorial</span></a>.</p>
+</section>
+<section id="disabling-position-data">
+<h4>Disabling position data<a class="headerlink" href="#disabling-position-data" title="Link to this heading">#</a></h4>
+<p>If you have a problem aligning photos, or solely want to rely on the positioning data of control points, it might be because of their location data.
+Go to the <em>Reference</em> panel, select all photos, then toggle off the location data for all photos whose positions should not be included in the next steps.</p>
+<figure class="align-default" id="deselect-coordinates">
+<img alt="../../../_images/deselect_coordinates.gif" src="../../../_images/deselect_coordinates.gif" />
+<figcaption>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Deselecting coordinates might help with aligning photos.</span><a class="headerlink" href="#deselect-coordinates" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="improve-alignment-step-error-reduction-optimization-and-camera-calibration">
+<span id="content-tutorial-improve"></span><h3>Improve alignment step: Error Reduction-Optimization and Camera Calibration<a class="headerlink" href="#improve-alignment-step-error-reduction-optimization-and-camera-calibration" title="Link to this heading">#</a></h3>
+<div class="warning admonition">
+<p class="admonition-title">Ground control points</p>
+<p>Additional steps are needed to ensure ground control points and checkpoints are adequately integrated into the model.
+We will discuss what ground control points are and what they can be used for in <a class="reference internal" href="../georeferencing/gcps.html#content-gcps"><span class="std std-ref">Ground control points (GCPs)</span></a>.</p>
+<p>Those implementing ground control points, please refer to the USGS manual for the correct sequence of steps and optimizations.</p>
+</div>
+<p>Although the photos have now been aligned, it is important to further optimize the cameras.
+This is done by selecting <em>Optimize Cameras</em> from the <em>Tools</em> menu.
+A <a class="reference internal" href="#optimize-cameras"><span class="std std-ref">dialog</span></a> will pop up with several parameter options pre-selected.
+Most important here is to at least select make sure that the <em>Estimate tie point covariance</em> is enabled.</p>
+<figure class="align-default" id="optimize-cameras">
+<img alt="../../../_images/291baf87.png" src="../../../_images/291baf87.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text">The <em>Optimize Camera Alignment</em> dialog after opening it from the <em>Tools</em> menu.
+Make sure to enable <em>Fit f</em>, <em>Fit k1-k3</em>, <em>Fit cx, cy</em>, <em>Fit p1-p2</em>, and <em>Estimate tie point covariance</em>.</span><a class="headerlink" href="#optimize-cameras" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Once processing is done, change the model view to show the Point Cloud Variance by following the instructions given in <a class="reference internal" href="#point-cloud-variance"><span class="std std-ref">dialog</span></a>.
+Lower values (=blue) are generally better and more constrained.</p>
+<figure class="align-default" id="point-cloud-variance">
+<img alt="../../../_images/view_tie_point_covariance.gif" src="../../../_images/view_tie_point_covariance.gif" />
+<figcaption>
+<p><span class="caption-number">Fig. 13 </span><span class="caption-text">Changing the view of your points and model to show errors and other things.
+Here we change our view to show Spare Point Covariance instead of RGB coloring.</span><a class="headerlink" href="#point-cloud-variance" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>As the sparse cloud is the very first step in a long processing chain, we want to optimize it as much as possible.
+After all, bad quality in usually equals bad quality out.
+We will now conduct several optimizations to improve quality of the sparse cloud, implementing USGS <span id="id4">[<a class="reference internal" href="../about/zbiblio.html#id10" title="Jin-Si R. Over, Andrew C. Ritchie, Christine J. Kranenburg, Jenna A. Brown, Daniel D. Buscombe, Tom Noble, Christopher R. Sherwood, Jonathan A. Warrick, and Phillipe A. Wernette. Processing coastal imagery with Agisoft Metashape Professional Edition, version 1.6—Structure from motion workflow documentation. Technical Report 2021-1039, U.S. Geological Survey, 2021. doi:10.3133/ofr20211039.">ORK+21</a>]</span> recommendations that aim to reduce reconstruction uncertainty, improve projection accuracy, and lower the overall reprojection errors.
+Unlike shown below, the project sometimes benefits by having each of the steps repeated multiple times, rather than just once.
+Keep in mind, however, that running too many optimizations may also result in over-fitting of the data.
+That means that the model is no longer based on real input, but rather on the processing parameters (= not real!).</p>
+<div class="tip admonition">
+<p class="admonition-title">Make a backup for every step</p>
+<p>Whenever you are about to perform a destructive action (i.e., “deleting” stuff), make sure to make a backup of the current state first.
+In Metashape this can be done by right clicking an object (e.g., Chunk, Points, etc.) and selecting the <em>Duplicate…</em> option.
+It usually takes a bit of time to complete, but the cost of not doing so is usually much, much higher!</p>
+<figure class="align-default" id="duplication">
+<img alt="../../../_images/duplicate_chunk.gif" src="../../../_images/duplicate_chunk.gif" />
+<figcaption>
+<p><span class="caption-number">Fig. 14 </span><span class="caption-text">Making a backup duplicate of Chunk 1. To keep things simple, make sure to rename your copies; else you may end up with a Copy of Copy of Copy of Something…</span><a class="headerlink" href="#duplication" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Use Python scripting</p>
+<p>The following subsections may be automated through use of the built-in consol and Python code available through the <a class="reference internal" href="../suppl/python-snippets.html"><span class="doc std std-doc">Python snippets section</span></a>.</p>
+</div>
+<section id="filtering-by-reconstruction-uncertainty">
+<h4>Filtering by Reconstruction Uncertainty<a class="headerlink" href="#filtering-by-reconstruction-uncertainty" title="Link to this heading">#</a></h4>
+<p>Once you’re ready (ahem, make a duplicate/backup first!), filter your Sparse points by their Reconstruction Uncertainty.</p>
+<figure class="align-default" id="filter-reconstruction-uncertainty">
+<img alt="../../../_images/reconstruction_uncertainty_filter.gif" src="../../../_images/reconstruction_uncertainty_filter.gif" />
+<figcaption>
+<p><span class="caption-number">Fig. 15 </span><span class="caption-text">The <em>Gradual Selection</em> dialog after opening it from the <em>Model</em> menu, here showing selections that are possible for the Sparse Point Cloud.
+A good value to use here is 10, though make sure you do not remove all points by doing so!
+After clicking OK, the left corner shows you how many points there are in total, followed by the number currently selected.
+A rule of thumb is to select no more than two-thirds to half of all points, and then delete these by pressing the Delete key on the keyboard.</span><a class="headerlink" href="#filter-reconstruction-uncertainty" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>After deleting the selected points, it is important to once more optimize the alignment of your points.
+Do so by revisiting the <a class="reference internal" href="#content-tutorial-improve"><span class="std std-ref">Improve alignment step: Error Reduction-Optimization and Camera Calibration</span></a> section.</p>
+</section>
+<section id="filtering-by-projection-accuracy">
+<h4>Filtering by Projection accuracy<a class="headerlink" href="#filtering-by-projection-accuracy" title="Link to this heading">#</a></h4>
+<p>This time, select the points based on their Projection accuracy, aiming for a final Projection accuracy of 3.</p>
+<figure class="align-default" id="filter-projection-error">
+<img alt="../../../_images/f7c6c589.png" src="../../../_images/f7c6c589.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 16 </span><span class="caption-text">The <em>Gradual Selection</em> dialog after opening it from the <em>Model</em> menu, here making a selection based on the projection accuracy parameter.
+A good value to use here is 3, though make sure you do not remove all points by doing so!
+After clicking OK, the left corner shows you how many points there are in total, followed by the number currently selected.</span><a class="headerlink" href="#filter-projection-error" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Keep in mind that not all projects can tolerate the removal of points below 5, which is no problem as long as you document the values you have used.
+After deleting the selected points, it is important to once more optimize the alignment of your points.
+Do so by revisiting the <a class="reference internal" href="#content-tutorial-improve"><span class="std std-ref">Improve alignment step: Error Reduction-Optimization and Camera Calibration</span></a> section.</p>
+</section>
+<section id="filtering-by-reprojection-error">
+<h4>Filtering by Reprojection Error<a class="headerlink" href="#filtering-by-reprojection-error" title="Link to this heading">#</a></h4>
+<p>Up next is to filter the points by their reprojection error, see <a class="reference internal" href="#filter-reprojection-error"><span class="std std-ref">dialog</span></a>.
+A good value to use here is 0.3, though make sure you do not remove all points by doing so!
+As a rule of thumb, this final selection of points should leave you with approx. 10% of the points you started off with.</p>
+<figure class="align-default" id="filter-reprojection-error">
+<img alt="../../../_images/5fba8b6a.png" src="../../../_images/5fba8b6a.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 17 </span><span class="caption-text">The <em>Gradual Selection</em> dialog after opening it from the <em>Model</em> menu, here making a selection based on the reprojection error parameter.
+After clicking OK, the left corner shows you how many points there are in total, followed by the number currently selected.</span><a class="headerlink" href="#filter-reprojection-error" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>After deleting the selected points, it is important to runa final <em>Optimize alignment</em> step on your points.
+Do so by revisiting the <a class="reference internal" href="#content-tutorial-improve"><span class="std std-ref">Improve alignment step: Error Reduction-Optimization and Camera Calibration</span></a> section.</p>
+<div class="tip admonition">
+<p class="admonition-title">Keep your duplicates</p>
+<p>It is always a good idea to keep your duplicate backups of previous steps until you are fully done with them.
+They allow you to go back and write down important processing parameters, such as how many points were filtered during each step and which cutoff values you used during processing.
+Only once completely done should you remove these earlier attempts.</p>
+</div>
+</section>
+</section>
+<section id="build-point-cloud">
+<h3>Build Point Cloud<a class="headerlink" href="#build-point-cloud" title="Link to this heading">#</a></h3>
+<p>Based on the estimated camera positions, we can now estimate a <em>dense point cloud</em> by calculating depth information for each image.</p>
+<p>Select <em>Build Point Cloud</em> from the <em>Workflow</em> menu.
+<a class="reference internal" href="#dense-cloud"><span class="std std-ref">Once again you will be asked about the desired accuracy/quality</span></a>.
+Keeping in mind what we discussed above, make sure to select <em>Medium</em> for the quality.</p>
+<p>Also open up the <em>Advanced</em> section, and set <em>Depth filtering</em> to <em>Mild</em>.
+<strong>Make sure to always enable <em>Calculate point confidence</em></strong></p>
+<p><em>Reuse depth maps</em> can only be selected if depth maps have been previously calculated for the specified quality.</p>
+<figure class="align-default" id="dense-cloud">
+<img alt="../../../_images/d2a861b0.png" src="../../../_images/d2a861b0.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 18 </span><span class="caption-text">The <em>Build Point Cloud</em> dialog after opening it from the <em>Workflow</em> menu. Reuse depth maps when avaialable. Always toggle Calculate Point Confidence.</span><a class="headerlink" href="#dense-cloud" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Once processing is done, you’ll be able to show the <em>dense point cloud</em> on the screen in the <em>Model</em> tab.
+If not, one can visualise the <em>dense point cloud</em> by clicking on the nine-dotted icon in the menu.
+Alternative, you could also visualise the point confidence.
+Do so by clicking the gray triangle next to the nine-dotted icon and selecting <em>Point Cloud confidence</em>.
+The colour coding (red = bad, blue = good) shows where the best confidence is found.</p>
+<div class="admonition-point-confidence admonition">
+<p class="admonition-title">Point confidence</p>
+<p><em>Point confidence</em> shows how accurate a given point in the Point Cloud is.
+This is key to estimate whether the part we are interested in can be scientifically used for measurements and characterisation based on predefined criteria.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Point Cloud quality</p>
+<p>While this tutorial suggests <em>Medium</em> to be used for the quality parameter, you should feel free to change this depending on the computational power at your disposal.</p>
+</div>
+<section id="selection-by-point-confidence">
+<h4>Selection by point confidence<a class="headerlink" href="#selection-by-point-confidence" title="Link to this heading">#</a></h4>
+<div class="tip admonition">
+<p class="admonition-title">Save time - make backups</p>
+<p>Make sure to always either backup your data before playing with it.
+This can be done by either backing up the entire project (<em>Save as…</em>) or by making a local copy of the data within the project.
+To do the latter, right click on the <em>Workspace/Point Cloud (… points)</em> and select <em>Duplicate…</em>.
+Following alterations to the duplicated data set, you can always switch back to the original by right clicking <em>Workspace/Point Cloud (… points)</em> and <em>Set As Default</em>.</p>
+</div>
+<p>There are various ways of cutting off parts of your Point Cloud.
+However, not all of them are scientifically repeatable - because let’s be honest, would you be able to exactly tell which of the points you removed from the data? No.</p>
+<p>Luckily, Metashape allows selection and deletion of points by <em>Point confidence</em>.
+Proceed to <em>Tools/Point Cloud</em> in the menu and click on <em>Filter by confidence…</em>.
+The dialog that pops up allows you to set minimal and maximal confidences.</p>
+<p>For example, try setting <em>Min</em>:50 and <em>Max</em>:255 to only show the Point Cloud points wth the highest confidence.
+After looking at the difference, reset the filter by clicking on <em>Reset filter</em> within the <em>Tools/Point Cloud</em> menu.</p>
+<p>We will now use the method outlined above to filter out the lowest confidence interval (in this case, set <em>Min</em>:0 and <em>Max</em>:5).
+Proceed by selecting all the points shown in the <em>Model</em> tab.
+Do this by enabling the <em>Rectangle Selection</em> tool, found next to the mouse pointer icon in the menu.
+Then drag a rectangle selection and include all to-be-selected points currently visible.
+Delete the selected points by hitting the <em>Del(ete)</em> key on the keyboard.</p>
+<p>Now reset the filter, and you’ll see that just the high-confidence part remains. :)</p>
+<div class="admonition-scientific-repeatability admonition">
+<p class="admonition-title">Scientific repeatability</p>
+<p><strong>Always write down the chosen confidence interval</strong> - repeatability depends on it!</p>
+</div>
+</section>
+</section>
+<section id="building-a-model">
+<h3>Building a model<a class="headerlink" href="#building-a-model" title="Link to this heading">#</a></h3>
+<p>We can use the point cloud to generate a polygonal model.
+While generating the Point Cloud, Agisoft Metashape simultaneously generated a set of depth maps (if chosen to save to the project).
+This is important as we can decide which of the two to use for building the model.
+Depth maps may lead to better results when dealing with a big number of minor details, but otherwise Point Clouds should be used as the source.</p>
+<p>After selecting <em>Build Model</em> from the <em>Workflow</em> menu, you will be able to chose either in the <a class="reference internal" href="#build-model"><span class="std std-ref">dialog</span></a> that pops up for <em>Source data:</em>.</p>
+<figure class="align-default" id="build-model">
+<img alt="../../../_images/9b4ac0b8.png" src="../../../_images/9b4ac0b8.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 19 </span><span class="caption-text">The <em>Build model</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#build-model" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Other important parameters here are the <em>Quality</em> and <em>Face count</em> parameters.
+These govern the quality of the generated model.
+Remember, however, that quality comes at a cost, so best to stick to <em>Medium</em> or lower to manage the exercise within the allocated of time…</p>
+<p>Finally, feel free to enable the <em>Calculate vertext colors</em> to provide the model with some colour as well, otherwise it will be shown as a purple model.</p>
+<p>Once generated, we can take a closer look at the model by clicking on the <em>Tetrahedral</em> icon next to the nine-dotted icon.
+Clicking on the gray triangle next to it, you see that the <em>Model Textured</em> is still grayed out.
+The next step involves generating a texture and placing this “image” onto the model - after which the <em>Model Textured</em> becomes selectable.</p>
+<div class="tip admonition">
+<p class="admonition-title">Depth maps</p>
+<p>If depth maps do exist, and you decide to use them as the source data, then make sure to enable <em>Reuse depth maps</em> to save computational time!</p>
+</div>
+<section id="filtering-the-model">
+<h4>Filtering the model<a class="headerlink" href="#filtering-the-model" title="Link to this heading">#</a></h4>
+<p>Sometiems your model features blobs that are not connected to the main model.
+These can be easily (and scientifically!) removed through use of the <em>Connected component filter</em>, see <a class="reference internal" href="#filter-connected-component-size"><span class="std std-ref">dialog</span></a>.</p>
+<figure class="align-default" id="filter-connected-component-size">
+<img alt="../../../_images/filter_connected_component_size.gif" src="../../../_images/filter_connected_component_size.gif" />
+<figcaption>
+<p><span class="caption-number">Fig. 20 </span><span class="caption-text">Filtering the model based on the connected component size.
+This is a percentage of the largest component, which by default is 100.</span><a class="headerlink" href="#filter-connected-component-size" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="warning admonition">
+<p class="admonition-title">Select the model first!</p>
+<p>The option may not be available if you have not selected the model data first, or not in the model view panel.</p>
+</div>
+</section>
+<section id="texture-building">
+<h4>Texture building<a class="headerlink" href="#texture-building" title="Link to this heading">#</a></h4>
+<p>We can build the textures by clicking on the <em>Build Texture</em> command from the <em>Workflow</em> menu.
+While the dialog has many different parameters, the most important are highlighted in <a class="reference internal" href="#build-texture"><span class="std std-numref">Fig. 21</span></a>.</p>
+<figure class="align-default" id="build-texture">
+<img alt="../../../_images/7237597c.png" src="../../../_images/7237597c.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 21 </span><span class="caption-text">The <em>Build texture</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#build-texture" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Here <em>Texture size/count</em> determines the quality of the texture.
+Keep in mind that anything over 16384 can very quickly lead to very, very large file sizes on your harddisk.
+On the other hand, anything less than 4096 is probably insufficient.
+For greatest compatibility, keep the <em>Texture size</em> at 4096, but increase the count to e.g. 5 or 10.</p>
+<div class="tip admonition">
+<p class="admonition-title">Publishing on V3Geo or Sketchfab</p>
+<p>Publication guidelines for V3Geo specify that the <em>Texture size</em> must always be 4096.
+In addition, no fewer than 10 <em>Texture count</em> must be used.
+It is recommended to follow this even for SketchFab, as this setup generally results in a higher-quality look of the published model.</p>
+</div>
+</section>
+</section>
+<section id="generating-a-tiled-model">
+<h3>Generating a Tiled Model<a class="headerlink" href="#generating-a-tiled-model" title="Link to this heading">#</a></h3>
+<p>Sometimes the need arises to not only build a model, but also a <em>Tiled Model</em>.
+We can do this by selecting <em>Build Tiled Model</em> from the <em>Workflow</em> menu.
+Once again we can select the parameters for the processing step through the <a class="reference internal" href="#build-tiled-model"><span class="std std-ref">dialog</span></a> that popped up.</p>
+<p>The most import parameter here is the <em>Pixel size (m)</em>, which should never be set than lower than the pixel size available to the model (= the default value shown when opening the dialog).
+Typically, you would want to select the <em>source data</em> that has been edited the most recent.
+So if changes/filters have been applied to the <em>Model</em>, you should select that as the <em>Source data</em>.</p>
+<figure class="align-default" id="build-tiled-model">
+<img alt="../../../_images/6c44a1dc.png" src="../../../_images/6c44a1dc.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 22 </span><span class="caption-text">The <em>Build Tiled Model</em> dialog after opening it from the <em>Workflow</em> menu.</span><a class="headerlink" href="#build-tiled-model" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="tip admonition">
+<p class="admonition-title">About Tiled Models</p>
+<p>Tiled models are exceptionally suitable for the annotation and extraction of 3D data and observations in other softwares, given their optimisation for rendering at different scales.
+Think of them as being 3D raster files.
+Why not <a class="reference internal" href="#tutorial-export">export</a> a tiled model and follow along in the <a class="reference internal" href="../geomodelling/geomodel_overview.html#geomodelling"><span class="std std-ref">geomodelling chapter</span></a>?</p>
+</div>
+</section>
+<section id="build-digital-elevation-model-dem">
+<h3>Build Digital Elevation Model (DEM)<a class="headerlink" href="#build-digital-elevation-model-dem" title="Link to this heading">#</a></h3>
+<p><em>Digital Elevation Model (DEM)</em> represents a surface model as a regular grid of height values. Select the <em>Build DEM</em> command from the <em>Workflow menu</em>. A dialog box will open to choose the parameters for building DEM.</p>
+<p>To start, we need to check the <em>Projection type</em>:</p>
+<ul class="simple">
+<li><p><em>Geographic</em> : With the Geographic feature, you can select a geographic coordinate system either from the dropdown menu or enter the parameters for a customized system. It’s important to specify the coordinate system used for referencing the model. When exporting the results, it will be possible to project them onto a different geographic coordinate system.</p></li>
+<li><p><em>Planar</em>: You can project a DEM onto a plane of your choice. You can select the projection plane and orientation of the resulting DEM.</p></li>
+<li><p><em>Cylindrical</em>: This parameter enables the projection of DEM onto a cylindrical surface. The height value is determined by measuring the distance between the model surface and the cylindrical surface.</p></li>
+</ul>
+<p>Agisoft Metashape allows the DEM generation based on the point cloud or model. It is recommended to use <em>Point Cloud</em> as the source data since it provides more accurate results and faster processing. You can generate elevation data results from depth maps or a tie point cloud. If you need the DEM to follow the polygonal model precisely or if the point cloud hasn’t been reconstructed, you can use the Model and Tiled Model options.</p>
+<p>We suggest keeping the interpolation parameter <em>Disabled</em> for accurate reconstruction results since only areas corresponding to point cloud or polygonal points are reconstructed. Usually, this method is recommended for Model and Tiled Model data source.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-5">
+Geographic</label><div class="sd-tab-content docutils">
+<figure class="align-default" id="build-dem-geo">
+<img alt="../../../_images/build-dem_geographic.png" src="../../../_images/build-dem_geographic.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 23 </span><span class="caption-text">The <em>Build DEM</em> dialog after opening it from the <em>Workflow</em> menu. The <strong>Geographic</strong> type is used to generate the DEM in a known geographic projection (here shown for EPSG:32633).</span><a class="headerlink" href="#build-dem-geo" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+<input id="sd-tab-item-6" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-6">
+Planar</label><div class="sd-tab-content docutils">
+<figure class="align-default" id="build-dem-planar">
+<img alt="../../../_images/build-dem_planar.png" src="../../../_images/build-dem_planar.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 24 </span><span class="caption-text">The <em>Build DEM</em> dialog after opening it from the <em>Workflow</em> menu. The <strong>Planar</strong> type is used to generate the DEM in a local coordinate system based on the specified <strong>Projection plane</strong>. This is useful for generating high-resolution cross-section views of the model.</span><a class="headerlink" href="#build-dem-planar" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+</div>
+<p>Once the DEM generation process is complete, you can view the reconstructed model in Ortho view by clicking the <em>Basemap</em> button on the <em>Toolbar</em>.</p>
+</section>
+<section id="build-orthomosaic">
+<h3>Build Orthomosaic<a class="headerlink" href="#build-orthomosaic" title="Link to this heading">#</a></h3>
+<p>Building and exporting an <em>orthomosaic</em> is normally used for generation of high resolution imagery based on the source photos and reconstructed model.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Build Orthomosaic procedure is only possible for projects saved in .PSX format that have existing model or DEM chunks.</p>
+</div>
+<p>To start building and orthomosaic, select <em>Build Orthomosaic</em> command from the <em>Workflow menu</em>.</p>
+<p>To begin, you have to select the <em>Projection</em> parameter.</p>
+<ul class="simple">
+<li><p><em>Geographic</em> projectionis often used for aerial photogrammetric surveys.</p></li>
+<li><p><em>Planar</em> projection is helpful when working with models that have vertical surfaces, such as vertical digital outcrop models.</p></li>
+<li><p><em>Cylindrical</em> projection can help reduce distortions when projecting cylindrical objects like tubes, rounded towers, or tunnels.</p></li>
+</ul>
+<p>To generate an accurate orthomosaic, we advise selecting <em>Model</em> as the desired surface. For complete coverage, we recommend selecting the <em>Enable hole filling</em> option under <em>Blending mode</em> to fill in any empty areas of the mosaic.</p>
+<p>The suggested <em>Pixel size (m)</em> will be based on the average ground sampling resolution of the original images. Using the surface size and input pixel size, the total size of the orthomosaic (measured in pixels) will be calculated and displayed at the bottom of the dialogue box.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can store multiple Orthomosaic instances in a single chunk. To save the current Orthomosaic and create a new one in the same chunk, right-click on the Orthomosaic and uncheck the <em>Set as default</em> option. If you want to save the current Orthomosaic and make a copy for editing, right-click on the Orthomosaic and select <em>Duplicate</em>.</p>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-7" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-7">
+Geographic</label><div class="sd-tab-content docutils">
+<figure class="align-default" id="build-ortho-geo">
+<img alt="../../../_images/build-orthomosaic_geographic.png" src="../../../_images/build-orthomosaic_geographic.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 25 </span><span class="caption-text">The <em>Build Orthomosaic</em> dialog after opening it from the <em>Workflow</em> menu. The <strong>Geographic</strong> type is used to generate the Orthomosaic in a known geographic projection (here shown for EPSG:32633).</span><a class="headerlink" href="#build-ortho-geo" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+<input id="sd-tab-item-8" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-8">
+Planar</label><div class="sd-tab-content docutils">
+<figure class="align-default" id="build-ortho-planar">
+<img alt="../../../_images/build-orthomosaic_planar.png" src="../../../_images/build-orthomosaic_planar.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 26 </span><span class="caption-text">The <em>Build Orthomosaic</em> dialog after opening it from the <em>Workflow</em> menu. The <strong>Planar</strong> type is used to generate the orthomosaic in a local coordinate system based on the specified <strong>Projection plane</strong>. This is useful for generating high-resolution cross-section views of the model.</span><a class="headerlink" href="#build-ortho-planar" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+</div>
+<p>Generated orthomosaic can be reviewed in <em>Ortho</em> mode similar to the digital elevation model. It can be opened in this view mode by double-clicking on the orthomosaic label in the <em>Workspace</em> pane.</p>
+</section>
+<section id="export-data">
+<span id="tutorial-export"></span><h3>Export data<a class="headerlink" href="#export-data" title="Link to this heading">#</a></h3>
+<p>Data can be exported easily from within Metashape for use in other software suites.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-9" name="sd-tab-set-4" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-9">
+Tiled Model</label><div class="sd-tab-content docutils">
+<figure class="align-default" id="export-tiled-model">
+<img alt="../../../_images/build-orthomosaic_geographic.png" src="../../../_images/build-orthomosaic_geographic.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 27 </span><span class="caption-text">The <em>Build Orthomosaic</em> dialog after opening it from the <em>Workflow</em> menu. The <strong>Geographic</strong> type is used to generate the Orthomosaic in a known geographic projection (here shown for EPSG:32633).</span><a class="headerlink" href="#export-tiled-model" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+</div>
+</section>
+</section>
+<section id="documenting-processing-parameters">
+<h2>Documenting processing parameters<a class="headerlink" href="#documenting-processing-parameters" title="Link to this heading">#</a></h2>
+<p>While each of the previous steps has been important in generating the models, <em><strong>perhaps the most important aspect of processing is to document the taken processing steps and their parameters</strong></em>.
+Metashape automatically keeps track and stores all <em>Workflow</em> actions that the project has undergone.
+There are two ways of documenting and showing these parameters.</p>
+<div class="warning admonition">
+<p class="admonition-title">What about manual alterations?</p>
+<p>Sadly, the processing report does not include manual changes made to e.g. the point or Point Cloud.
+This means that to be truly <em>scientifically grounded</em> and <em>repeatable</em>, you should refrain from doing such alterations manually.
+Instead, rely on e.g. the point confidence to make edits (and always report the chosen parameters).</p>
+</div>
+<section id="processing-report">
+<h3>Processing report<a class="headerlink" href="#processing-report" title="Link to this heading">#</a></h3>
+<p>The first, and perhaps most important, is to generate a processing report.
+Proceed to <em>File/Export</em> in the menu bar and select <em>Generate Report…</em>.
+Provide the desired <em>Title</em> and description, then proceed by clicking <em>OK</em>.
+Store the report alongside the Metashape project in the same directory.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The procedure listed above should <strong>always</strong> be implemented in your workflows, with the output stored together with the raw data (e.g., images) and Metashape project files.
+Make this a habit :)</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Exercise 2</p>
+<p>You’ll find key metadata within the generated processing_report.pdf that has to be submitted as part of the second session’s assignment.
+Have a look and familiarise yourself with it.</p>
+</div>
+</section>
+<section id="in-programme-parameters">
+<h3>In-programme parameters<a class="headerlink" href="#in-programme-parameters" title="Link to this heading">#</a></h3>
+<p>One does not always need to export the processing report to obtain the overview of parameters.
+Handily, Metashape also provides an overview within the <em>Workspace</em> panel after having selected an item in the chunk.
+An example of this is depicted in <a class="reference internal" href="#internal-parameters"><span class="std std-numref">Fig. 28</span></a>.</p>
+<figure class="align-default" id="internal-parameters">
+<img alt="../../../_images/5201e3e2.png" src="../../../_images/5201e3e2.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 28 </span><span class="caption-text">An example of the internal <em>Workspace</em> panel, including the parameters and processing metadata that is available from within the Metashape project interface.</span><a class="headerlink" href="#internal-parameters" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The above is just a very generalised approach to SfM-photogrammetry that outlines the basic steps to be taken from photo acquisition to model generation.
+In many cases the chosen parameters can (and should!) be changed to match the given circumstances.
+That said, the <em>Photo alignment</em> step should always be conducted at the highest setting possible (considering computational power available).
+Furthermore, one should <em><strong>always document each and every processing step performed</strong></em> - manually cutting and editing part of the model is therefore <em>not</em> encouraged as this remains (for now) difficult to document.</p>
+</div>
+</section>
+<section id="record-video">
+<h3>Record video<a class="headerlink" href="#record-video" title="Link to this heading">#</a></h3>
+<p>Agisoft Metashape allows the creation of a camera track. To do so you have to add viewpoints.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To display the camera track path, select <em>Model</em> &gt; <em>Show/Hide items</em> &gt; <em>Show animation</em>.</p>
+<figure class="align-default" id="animation">
+<img alt="../../../_images/animation.gif" src="../../../_images/animation.gif" />
+<figcaption>
+<p><span class="caption-number">Fig. 29 </span><span class="caption-text">Display the <em>Animation</em> menu.</span><a class="headerlink" href="#animation" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+<p>To create a viewpoint, first set up the scene in the Model view according to how you want it to appear in the animation. Next, click on the <em>Append</em> button located on the <em>Animation</em> pane to add the viewpoint to the current camera track.</p>
+<p>If you need to change the position of the viewpoints along the camera track, simply use your left mouse button to drag the waypoints.</p>
+<p>After creating the waypoints, you need to record the video according to the camera track you’ve created. To do this, click the <em>Capture</em> button on the <em>Animation pane</em> toolbar and choose the desired export parameters, such as video resolution, compression type, and frame rate in the <em>Capture Video</em> dialog. Once you’ve made your selections, click the <em>OK</em> button to save the video as a separate file.</p>
+<figure class="align-default" id="manual">
+<img alt="../../../_images/manual.gif" src="../../../_images/manual.gif" />
+<figcaption>
+<p><span class="caption-number">Fig. 30 </span><span class="caption-text">Creation of an animation with two waypoints over 5 seconds.</span><a class="headerlink" href="#manual" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="publishing">
+<h2>Publishing<a class="headerlink" href="#publishing" title="Link to this heading">#</a></h2>
+<p>The <a class="reference internal" href="../publish/intro.html"><span class="std std-doc">Publish 3D models</span></a> page explains how to export your 3D model and how to best upload it to online technical solutions like <a class="reference external" href="https://sketchfab.com">Sketchfab</a>.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content/lessons/tutorial"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="exercise1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Exercise - learning the ropes of SfM photogrammetry</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../small-objects/hss_overview.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Small object SfM photogrammetry</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-model-reconstruction-with-agisoft-metashape">3D model reconstruction with Agisoft Metashape</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-standardised-project-environment">A standardised project environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#photo-set">Photo set</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-photos">Adding photos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-console-and-sorting-your-project-data">Python console and sorting your project data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analyze-photos">Analyze photos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#masking-photos">Masking photos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aligning-photos">Aligning photos</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#control-points">Control points</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#disabling-position-data">Disabling position data</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#improve-alignment-step-error-reduction-optimization-and-camera-calibration">Improve alignment step: Error Reduction-Optimization and Camera Calibration</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-by-reconstruction-uncertainty">Filtering by Reconstruction Uncertainty</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-by-projection-accuracy">Filtering by Projection accuracy</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-by-reprojection-error">Filtering by Reprojection Error</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-point-cloud">Build Point Cloud</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#selection-by-point-confidence">Selection by point confidence</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#building-a-model">Building a model</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-the-model">Filtering the model</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#texture-building">Texture building</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-a-tiled-model">Generating a Tiled Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-digital-elevation-model-dem">Build Digital Elevation Model (DEM)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-orthomosaic">Build Orthomosaic</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#export-data">Export data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documenting-processing-parameters">Documenting processing parameters</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#processing-report">Processing report</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-programme-parameters">In-programme parameters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#record-video">Record video</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publishing">Publishing</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Peter Betlem, Nil Rodes and Contributors
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024 (CC-BY-NC except where otherwise stated).
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -24,13 +24,3 @@ Signehamna also hosts the hand-sample lightbox suitable for hand-sample SfM phot
 -	Windows with explicit warnings are not be opened to prevent dust from entering the room.
 -	Use of the PCs and software requires explicit and correct acknowledgement of grant holders, grants, etc., including grant numbers, when applicable.
 ```
-
-```{admonition} Acknowledgements
-Work in progress
-```
-
-## Automated photography lightbox
-
-```{note}
-Work in progress
-```

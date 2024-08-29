@@ -1,0 +1,736 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Ground control points (GCPs) &#8212; Geo-SfM Course</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/lessons/georeferencing/gcps';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Exercise - learning the ropes of GCP and marker detection" href="exercise.html" />
+    <link rel="prev" title="Geo-referencing" href="overview.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+<aside class="bd-header-announcement" aria-label="Announcement">
+  <div class="bd-header-announcement__content">Found this tutorial helpful? Please Star me <a href="https://github.com/UNISvalbard/Geo-SfM"> <img src="https://img.shields.io/github/stars/UNISvalbard/Geo-SfM"></a></div>
+</aside>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../landing-page.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/logo.gif" class="logo__image only-light" alt="Geo-SfM Course - Home"/>
+    <script>document.write(`<img src="../../../_static/logo.gif" class="logo__image only-dark" alt="Geo-SfM Course - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../landing-page.html">
+                    Welcome to Geo-SfM
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Session 1</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/sfm_photogrammetry.html">SfM photogrammetry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/exercise1.html">Exercise - learning the ropes of SfM photogrammetry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/tutorial.html">Metashape Tutorial</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Session 2</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../small-objects/hss_overview.html">Small object SfM photogrammetry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../small-objects/hss_lab_exercise.html">Exercise - Food for thought</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../small-objects/hss_field_exercise.html">Exercise - Digitising field samples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../small-objects/hss_tutorial.html">Foldio360 Tutorial</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Session 3</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Geo-referencing</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Ground control points (GCPs)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercise.html">Exercise - learning the ropes of GCP and marker detection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markers.html">GCP tutorial</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Session 4</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../automation/overview.html">Automation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../automation/Batch.html">Batch-based processing through Metashape GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../automation/python.html">Python-based standardised processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../suppl/python-snippets.html">Python-snippets</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Session 5</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../geomodelling/geomodel_overview.html">Geomodelling overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../geomodelling/geomodel_tutorial.html">Interpreting in Metashape</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../geomodelling/arcgis_cheatsheet.html">Interpreting in ArcGIS Pro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../geomodelling/qgis_cheatsheet.html">Interpreting in QGIS</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Session 6</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../publish/intro.html">Publish 3D models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../publish/sketchfab.html">Sketchfab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../publish/v3geo.html">V3Geo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../publish/results.html">Uploaded examples</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Suppl. dGNSS data processing</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://unisvalbard.github.io/gnss-compendium/readme.html">UNIS GNSS Compendium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../suppl_dgnss/topodrone_ppk.html">Topodrone PPK</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../about/seismic_lab.html">Seismic lab (Signehamna)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/software.html">Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../suppl/metadata_lists.html">Metadata templates for archiving</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/zbiblio.html">Bibliography</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">About Geo-SfM</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../about/cite.html">Cite Geo-SfM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/contribute.html">How to contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/changelog.html">Changelog</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">External Links</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://unisvalbard.github.io/ebooks/">UNIS Compendium Portal</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/UNISvalbard/Geo-SfM" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/UNISvalbard/Geo-SfM/edit/main/content/lessons/georeferencing/gcps.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/UNISvalbard/Geo-SfM/issues/new?title=Issue%20on%20page%20%2Fcontent/lessons/georeferencing/gcps.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/content/lessons/georeferencing/gcps.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Ground control points (GCPs)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-do-we-need-gcps">When do we need GCPs?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gcp-design">GCP design</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unique-gcp-shapes">Unique GCP shapes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computer-readability">Computer readability</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gcp-size">GCP size</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#placement-of-gcps-in-terms-of-highest-accuracy">Placement of GCPs in terms of highest accuracy</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="ground-control-points-gcps">
+<span id="content-gcps"></span><h1>Ground control points (GCPs)<a class="headerlink" href="#ground-control-points-gcps" title="Link to this heading">#</a></h1>
+<p>Ground control points (GCPs) are locations that we can track with high precision and accuracy between the targeted object and a selection of our photos.
+We can use these to provide “exact” real world coordinates to our reconstructed models, as well as to determine the accuracy and impact of processing parameters.</p>
+<p>In a mapping survey, GCPs are points which can be precisely pinpointed.
+This precision not only applies to the points themselves, but can also be interpolated to the mesh between GCPs.
+It is therefore possible to accurately map large areas with only a handful of precisely known coordinates (up to sub-metre levels!).</p>
+<div class="admonition-geo-location-accuracies admonition">
+<p class="admonition-title">Geo-location accuracies</p>
+<p>We distinguish 3 different scenarios when it comes to geo-referencing:</p>
+<ul class="simple">
+<li><p>Horizontal - i.e., measuring longitude, latitude</p></li>
+<li><p>Vertical - i.e., measuring altitude</p></li>
+<li><p>Full - i.e., measuring longitude, latitude, and altitude</p></li>
+</ul>
+<p>Given the way GPS works, <em>vertical</em> accuracies are usually worse than <em>horizontal</em> accuracies (often by more than an order of magnitude).
+Seeing as most handheld and built-in GPSs have a horizontal error of at least 1 metre, the corresponding vertical error may be large enough to prevent accurate correlation to the real world.</p>
+</div>
+<div class="admonition-built-in-gps admonition">
+<p class="admonition-title">built-in GPS</p>
+<p>The images taken from drones or GPS-equipped cameras store the <em>image location</em> in the image’s metadata.
+Metashape automatically imports this upon loading.
+Do remember, however, that built-in GPSs still have quite large errors compared to differential GPS and similar.</p>
+</div>
+<section id="when-do-we-need-gcps">
+<h2>When do we need GCPs?<a class="headerlink" href="#when-do-we-need-gcps" title="Link to this heading">#</a></h2>
+<p>GCPs are essential when you need <em>high global accuracy</em> (or <em>absolute accuracy</em>) and when you need to verify the accuracy of the final models.</p>
+<p>Applications include:</p>
+<ul class="simple">
+<li><p>terrain mapping (contour map, digital terrain model, etc.)</p></li>
+<li><p>geotechnical surveys (e.g., land titles, other assessments)</p></li>
+<li><p>volume measurements</p></li>
+</ul>
+<p>Only when the area is small and we do not care about <em>absolute accuracy</em> (i.e., only <em>relative accuracy is important</em>) can we omit GCPs.
+This is e.g. the case when we want to compare elements within the same models without relating these to real world properties.</p>
+</section>
+<section id="gcp-design">
+<h2>GCP design<a class="headerlink" href="#gcp-design" title="Link to this heading">#</a></h2>
+<p>In general, ground control points must be <strong>sharp</strong>, <strong>well defined</strong>, and <strong>positively identifiable on at least a sub-selection of photos</strong>.
+In many cases it is therefore a rule of thumb that markers used as GCPs should be <em>unique</em>.</p>
+<p>We generally differentiate between <em>artificial</em> and <em>natural</em> GCPs.
+Here, however, <em>artificial</em> strictly means that a marker or GCP was specifically designed and placed for the survey.
+<em>Natural</em> markers include e.g. terminus of a sidewalk, sharp corner of a parking spot, a unique landscape feature (e.g., rock, peak), etc.
+Artificial markers’ unique appearance makes misidentification less likely, though comes at the cost of extra work and expense as artificial markers have to be manually set up prior to image acquisition.</p>
+<p>So, when implementing GCPs, what should we keep in mind?</p>
+<section id="unique-gcp-shapes">
+<h3>Unique GCP shapes<a class="headerlink" href="#unique-gcp-shapes" title="Link to this heading">#</a></h3>
+<p>While technically not a requirement, it is always preferred to be able to differentiate GCPs based on uniqueness of the marker.
+That means, in its most simplistic form, one could get away with <a class="reference internal" href="#simplemarkers"><span class="std std-ref">a simple four-member marker-set</span></a>.</p>
+<figure class="align-default" id="simplemarkers">
+<img alt="../../../_images/4simplemarkers.png" src="../../../_images/4simplemarkers.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 41 </span><span class="caption-text">A basic set of four unique markers that can be used as artificial markers.</span><a class="headerlink" href="#simplemarkers" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>While identification of the shapes should be rather straightforward, some troubles are also easily foreseen.
+For instance, being highly symmetrical, where would you measure the real world coordinates on the triangle?
+And are you 100% confident that you would be able to pick the same corner?
+And what about going for the centre of the shapes?
+Would you be able to eyeball placement of the measurement and be within the error associated with dGPS (i.e., mm-scale errors in total)?</p>
+<p>Addressing these shortcomings are <a class="reference internal" href="#common-gcps"><span class="std std-ref">modern GCPs</span></a> that implement lessons learned from the <a class="reference external" href="https://en.wikipedia.org/wiki/Barcode">barcode</a>.
+With each subsequent marker in a set slightly differing, and therefore considered unique, these synthetic markers are great for use as GCPs.</p>
+<figure class="align-default" id="common-gcps">
+<img alt="../../../_images/common_gcps.png" src="../../../_images/common_gcps.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 42 </span><span class="caption-text">An example of GCP markers commonly employed in photogrammetry applications <span id="id1">[<a class="reference internal" href="../about/zbiblio.html#id5" title="Davide A. Cucci. ACCURATE OPTICAL TARGET POSE DETERMINATION FOR APPLICATIONS IN AERIAL PHOTOGRAMMETRY. 2016.">Cuc16</a>]</span>.</span><a class="headerlink" href="#common-gcps" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>No longer featuring a plane of symmetry, one can now certainly select a point where the real world coordinates can be measured and later the corresponding pixels in the photo can be selected.</p>
+<div class="suggestion admonition">
+<p class="admonition-title">Be consistent!</p>
+<p>Make sure to always be consistent when dealing with point coordinates.
+If you decide to measure the first marker in the top right corner, then make sure to always measure the top right corners for each subsequent marker.</p>
+</div>
+</section>
+<section id="computer-readability">
+<h3>Computer readability<a class="headerlink" href="#computer-readability" title="Link to this heading">#</a></h3>
+<p>The standardised uniqueness of binary fiducial markers furthermore allows for automisation of the marker detection step.
+While not an issue when dealing with just a handful of photos, highly detailed surveys quickly expand the photo collection to hundreds, if not thousands, of photos.</p>
+<p>While Agisoft Metashape provides a set of GCPs internally, one of the most popular marker sets is the <a class="reference external" href="http://www.uco.es/investiga/grupos/ava/node/26">ArUco library</a> <span id="id2">[<a class="reference internal" href="../about/zbiblio.html#id6" title="S. Garrido-Jurado, R. Muñoz-Salinas, F.J. Madrid-Cuevas, and M.J. Marín-Jiménez. Automatic generation and detection of highly reliable fiducial markers under occlusion. Pattern Recognition, 47(6):2280–2292, 2014. doi:10.1016/j.patcog.2014.01.005.">GarridoJuradoMunozSalinasMadridCuevasMarinJimenez14</a>]</span>.
+In addition to exhibiting a standardised uniqueness, the ArUco-based markers are square markers and thus preferred as a single marker provides enough correspondences (i.e., its four corners) to obtain the camera pose in augmented reality applications.</p>
+<figure class="align-default" id="aruco-markers">
+<img alt="../../../_images/aruco_markers.png" src="../../../_images/aruco_markers.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 43 </span><span class="caption-text">Example of ArUco marker images <span id="id3">[<a class="reference internal" href="../about/zbiblio.html#id6" title="S. Garrido-Jurado, R. Muñoz-Salinas, F.J. Madrid-Cuevas, and M.J. Marín-Jiménez. Automatic generation and detection of highly reliable fiducial markers under occlusion. Pattern Recognition, 47(6):2280–2292, 2014. doi:10.1016/j.patcog.2014.01.005.">GarridoJuradoMunozSalinasMadridCuevasMarinJimenez14</a>]</span>.</span><a class="headerlink" href="#aruco-markers" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="suggestion admonition">
+<p class="admonition-title">Python-based automated marker detection</p>
+<p>ArUco markers (50x50 cm) printed on canvas are available for use in the UNIS Arctic Geology department.
+Marker detection hereof can be done by using the scripts described in <a class="reference internal" href="../automation/python.html#section-python"><span class="std std-ref">the Python-automisation chapter</span></a>.</p>
+</div>
+</section>
+<section id="gcp-size">
+<h3>GCP size<a class="headerlink" href="#gcp-size" title="Link to this heading">#</a></h3>
+<p>As a rule of thumb, a GCP marker should be fully identifiably on a photo by nothing more than the naked eye.
+This means that the size of the GCP markers should scale with the imaging distance, i.e., the distance between the camera lens (albeit in hand, UAV) and the imaging target.</p>
+<div class="admonition-svalbard-experience admonition">
+<p class="admonition-title">Svalbard experience</p>
+<p>From experience in the field in Svalbard using UAVs, GCP markers should at the very least be in A3 format, though preferably at least 50x50 cm in dimensions.
+On the other hand, GCP markers for hand-sized sample digitisation can be as small as 1x1 cm, owing to the close proximity between sample and camera.</p>
+</div>
+</section>
+</section>
+<section id="placement-of-gcps-in-terms-of-highest-accuracy">
+<h2>Placement of GCPs in terms of highest accuracy<a class="headerlink" href="#placement-of-gcps-in-terms-of-highest-accuracy" title="Link to this heading">#</a></h2>
+<p>An extensive review on the accuracy of GCPs types is conducted by <span id="id4">[<a class="reference internal" href="../about/zbiblio.html#id11" title="Patricio Martínez-Carricondo, Francisco Agüera-Vega, Fernando Carvajal-Ramírez, Francisco-Javier Mesas-Carrascosa, Alfonso García-Ferrer, and Fernando-Juan Pérez-Porras. Assessment of UAV-photogrammetric mapping accuracy based on variation of ground control points. International Journal of Applied Earth Observation and Geoinformation, 72:1–10, 2018. doi:10.1016/j.jag.2018.05.015.">MartinezCarricondoAgueraVegaCarvajalRamirez+18</a>]</span> and <span id="id5">[<a class="reference internal" href="../about/zbiblio.html#id2" title="Francisco Agüera-Vega, Fernando Carvajal-Ramírez, and Patricio Martínez-Carricondo. Assessment of photogrammetric mapping accuracy based on variation ground control points number using unmanned aerial vehicle. Measurement, 98:221–227, 2017. doi:10.1016/j.measurement.2016.12.002.">AgueraVegaCarvajalRamirezMartinezCarricondo17</a>]</span>, and we here only focus on the take-home messages.
+These conclusions are based on an accuracy-assessment that seeks minimal root mean square errors (RMSEs) for the GCPs’s longitude, latitude, and altitude.</p>
+<p>Prior to implementing GCPs, one always has to assess the need of precision and accuracy in terms of cost, i.e., time.
+In a timeless setting, one could set up an infinite amount of GCPs (<a class="reference internal" href="#gcp-locations"><span class="std std-numref">Fig. 44</span></a>, top row) and obtain the smallest GCP RMSEs in each direction.
+However, when time is of the essence, there appears to be a cut-off point at which the introduction of an additional GCP does not warrant the additional time it takes to set it up.
+As a result, efficiency can be gained by reducing the number of GCPs (<a class="reference internal" href="#gcp-locations"><span class="std std-numref">Fig. 44</span></a>, second row).</p>
+<figure class="align-default" id="gcp-locations">
+<img alt="../../../_images/gcp_locations.png" src="../../../_images/gcp_locations.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 44 </span><span class="caption-text">Five different GCP distribution types and an example for the combination of 16 GCPs (second row). (a) edge distribution, (b) central distribution, (c) corner distribution (equivalent for all four corners), (d) stratified distribution, (e) random distribution. In general, a combination of the edge and stratified distribution (d) gives rise to the lowest overall errors <span id="id6">[<a class="reference internal" href="../about/zbiblio.html#id11" title="Patricio Martínez-Carricondo, Francisco Agüera-Vega, Fernando Carvajal-Ramírez, Francisco-Javier Mesas-Carrascosa, Alfonso García-Ferrer, and Fernando-Juan Pérez-Porras. Assessment of UAV-photogrammetric mapping accuracy based on variation of ground control points. International Journal of Applied Earth Observation and Geoinformation, 72:1–10, 2018. doi:10.1016/j.jag.2018.05.015.">MartinezCarricondoAgueraVegaCarvajalRamirez+18</a>]</span>.</span><a class="headerlink" href="#gcp-locations" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Placing the GCPs around the edges and in a stratified manner throughout the survey area results in the lowest overall errors.
+Therefore, best accuracies are achieved <strong>(1) placing GCPs around the edge of the study area</strong>, but it is also essential to <strong>(2) place GCPs inside the area with stratified distribution to optimize vertical accuracy</strong> <span id="id7">[<a class="reference internal" href="../about/zbiblio.html#id11" title="Patricio Martínez-Carricondo, Francisco Agüera-Vega, Fernando Carvajal-Ramírez, Francisco-Javier Mesas-Carrascosa, Alfonso García-Ferrer, and Fernando-Juan Pérez-Porras. Assessment of UAV-photogrammetric mapping accuracy based on variation of ground control points. International Journal of Applied Earth Observation and Geoinformation, 72:1–10, 2018. doi:10.1016/j.jag.2018.05.015.">MartinezCarricondoAgueraVegaCarvajalRamirez+18</a>]</span>.
+As for the optimal number of GCPs in the stratified interior, try to aim for a density of around 0.5-1 GCP per hectare to minimise altimetry errors, and make sure to place GCPs throughout the entire altimetry-interval, e.g., covering both ridges and valleys.</p>
+<div class="suggestion admonition">
+<p class="admonition-title">Hand-sized samples</p>
+<p>GCPs are also implemented for the digitisation of hand-sized samples.
+Then, however, it is suggested to only place GCPs along the edge.</p>
+</div>
+<p>Finally, always make sure to properly fasten &amp; secure your GCPs.
+A moving GCP is essentially useless, and likely to give rise to major positional errors in the final models.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content/lessons/georeferencing"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="overview.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Geo-referencing</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="exercise.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Exercise - learning the ropes of GCP and marker detection</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-do-we-need-gcps">When do we need GCPs?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gcp-design">GCP design</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unique-gcp-shapes">Unique GCP shapes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computer-readability">Computer readability</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gcp-size">GCP size</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#placement-of-gcps-in-terms-of-highest-accuracy">Placement of GCPs in terms of highest accuracy</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Peter Betlem, Nil Rodes and Contributors
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024 (CC-BY-NC except where otherwise stated).
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
