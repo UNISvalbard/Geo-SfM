@@ -49,7 +49,6 @@ jobs:
         shell: bash -l {0}
         run: |
           conda install jupyter-book -c conda-forge
-          cp -R ./slides/ ./_build/html/slides
           sphinx-build . ./_build/html -b html
           
       - name: GitHub Pages action
