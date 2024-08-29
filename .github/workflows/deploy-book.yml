@@ -1,0 +1,60 @@
+name: Latest Build
+
+on:
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+        type: choice
+        options:
+        - info
+        - warning
+        - debug
+      tags:
+        description: 'Test scenario tags'
+        required: false
+        type: boolean
+      environment:
+        description: 'Environment to run tests against'
+        type: environment
+        required: true
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.12]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Setup Python
+        uses: conda-incubator/setup-miniconda@v3
+        with:
+          activate-environment: test
+          #environment-file: geomod.yaml
+          python-version: ${{ matrix.python-version }}
+          channels: conda-forge,defaults
+          channel-priority: true
+          auto-activate-base: false
+
+      - name: Build
+        shell: bash -l {0}
+        run: |
+          conda env create -f jupyterbook.yml
+          conda activate jupyterbook
+          cp -R ./slides/ ./_build/html/slides
+          sphinx-build . ./_build/html -b html
+          
+      - name: GitHub Pages action
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_build/html
