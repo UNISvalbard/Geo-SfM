@@ -48,8 +48,7 @@ jobs:
       - name: Build
         shell: bash -l {0}
         run: |
-          conda env create -f jupyterbook.yml
-          conda activate jupyterbook
+          conda install jupyter-book -c conda-forge
           cp -R ./slides/ ./_build/html/slides
           sphinx-build . ./_build/html -b html
           
