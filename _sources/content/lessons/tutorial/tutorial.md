@@ -723,13 +723,18 @@ Generated orthomosaic can be reviewed in _Ortho_ mode similar to the digital ele
 ### Export data
 
 Data can be exported easily from within Metashape for use in other software suites.
+Either right-click one of the features in your *Workspace* or proceed to *File > Export > {...}* and select the desired item for exporting.
+{numref}`export_tiled_model` shows the different options for the *Export* panel.
+
 
 `````{tab-set}
 ````{tab-item} Tiled Model
-```{figure} assets/build-orthomosaic_geographic.png
+```{figure} assets/tutorial/screengrab_export_tiled_model.png
 :name: export_tiled_model
 
-The *Build Orthomosaic* dialog after opening it from the *Workflow* menu. The **Geographic** type is used to generate the Orthomosaic in a known geographic projection (here shown for EPSG:32633).
+Before the dialog opens, you will be prompted for a save location, file name, and file format. 
+Make sure to select the Cesium 3D Tiles 1.1 option (*.3tz).
+Keep the Texture format on JPEG, then press {kbd}`OK`.
 ```
 ````
 `````
