@@ -40,7 +40,7 @@ World terrain and orthomosaic surface data and be overlaid onto the 3D elevation
 Unlike QGIS, ArcGIS Pro supports 3D tiles in various formats, including the zipped *.3tz* file format exported from Agisoft Metashape.
 Thus, there is no reason to unpack the *.3tz* file into its *.json* component.
 Instead, one can simply drag and drop the *.3tz* file from OneDrive/SharePoint into the ArcGIS Pro 3D map window ({numref}`arcgis_add_3dtiledmodel`)
-
+Alternatively, head to the Map menu bar, and then press ![](./assets/arcgis/mapmenu-add-data.png), browse to the data set, and press {kbd}`OK`.
 
 ```{figure} assets/arcgis/arcgis_add_3dtiledmodel.gif
 ---
