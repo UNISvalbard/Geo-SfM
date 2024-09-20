@@ -66,9 +66,9 @@ Otherwise, one may also use the mouse/pointer to change the view.
 The following mouse clicks are supported by the QGIS 3D map viewer.
 First, make sure you have selected the *hand* symbol in the 3D map menubar, then
 
-- left click (and hold + move) to move along the 3D space.
-- right click (and hold + move) to zoom in/out.
-- middle click (and hold + move) to rotate around the clicked point.
+- {kbd}`left-click`+{kbd}`hold`+{kbd}`move` to move along the 3D space.
+- {kbd}`right-click`+{kbd}`hold`+{kbd}`move` to zoom in/out.
+- {kbd}`middle-click`+{kbd}`hold`+{kbd}`move` to rotate around the clicked point.
 
 ### Adding elevation to the 3D map
 
@@ -95,6 +95,7 @@ As discussed in the QGIS Documentation pages section [21. Working with 3D Tiles]
 However, its support is limited to certain file formats, which is currently only the *.json* data type rather than the *.3tz* zipped folder structure exported by Agisoft Metashape and used by ArcGIS Pro.
 
 The downside of the *.json* format is that it requires unzipping of the *.3tz* zipped folder format, thus increasing file size and number.
+This can be easily done by e.g. the 7Zip file manager.
 
 ```{admonition} Be careful extracting the data in OneDrive/SharePoint!
 :class: warning
@@ -104,24 +105,12 @@ OneDrive may crash repeatedly as it cannot handle the hundred thousand+ files...
 This is also the reason these data are shared in the *.3tz* archive format instead.
 ```
 
-{numref}`3dtiles_unpacking` shows how to extract a *.3tz* archive using the 7Zip file manager.
-
-```{figure} assets/qgis/qgis_3dtiles_unpacking.gif
----
-height: 400px
-name: 3dtiles_unpacking
----
-Animations showing how to unpack the *.3tz* file into a directory.
-It is recommended to unpack the file into a temporary directory on an external or internal harddisk.
-It is also recommended to keep the folder structure as similar as possible, as the unpacked files do not have an indicator of which data set they belong to.
-```
-
 ```{figure} assets/qgis/qgis_add_3dtiles.gif
 ---
 height: 400px
 name: qgis_add_3dtiles
 ---
-Once the 3dtiles archive has been unpacked ({numref}`3dtiles_unpacking`), adding it into QGIS is as simple as dropping the *.json* into the desired QGIS project.
+Once the 3dtiles archive has been unpacked, adding it into QGIS is as simple as dropping the *.json* into the desired QGIS project.
 ```
 
 ```{figure} assets/qgis/qgis_rename_3dtiles.gif
