@@ -517,14 +517,14 @@ The latter is key when displaying data in the 3D data viewer (see below).</p>
 <section id="visualising-and-exploring-3d-data">
 <h2>Visualising and exploring 3D data<a class="headerlink" href="#visualising-and-exploring-3d-data" title="Link to this heading">#</a></h2>
 <figure class="align-default" id="qgis-3dmap">
-<a class="reference internal image-reference" href="content/lessons/geomodelling/assets/qgis/qgis_3dmap.gif"><img alt="content/lessons/geomodelling/assets/qgis/qgis_3dmap.gif" src="content/lessons/geomodelling/assets/qgis/qgis_3dmap.gif" style="height: 400px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/qgis_3dmap.gif"><img alt="../../../_images/qgis_3dmap.gif" src="../../../_images/qgis_3dmap.gif" style="height: 400px;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 73 </span><span class="caption-text">The 3D map interface can be opened by going into <em>View</em> &gt; <em>3D map views</em> and selecting either an existing Map item, or creating a new one.
 This opens in another window.</span><a class="headerlink" href="#qgis-3dmap" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="qgis-3dmap-movements">
-<a class="reference internal image-reference" href="content/lessons/geomodelling/assets/qgis/qgis_3dmap_movement.gif"><img alt="content/lessons/geomodelling/assets/qgis/qgis_3dmap_movement.gif" src="content/lessons/geomodelling/assets/qgis/qgis_3dmap_movement.gif" style="height: 400px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/qgis_3dmap_movement.gif"><img alt="../../../_images/qgis_3dmap_movement.gif" src="../../../_images/qgis_3dmap_movement.gif" style="height: 400px;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 74 </span><span class="caption-text">The 3D map interface has its own widget for moving the viewer (it sits in the top right corner).
 Otherwise, one may also use the mouse/pointer to change the view.</span><a class="headerlink" href="#qgis-3dmap-movements" title="Link to this image">#</a></p>
@@ -533,16 +533,16 @@ Otherwise, one may also use the mouse/pointer to change the view.</span><a class
 <p>The following mouse clicks are supported by the QGIS 3D map viewer.
 First, make sure you have selected the <em>hand</em> symbol in the 3D map menubar, then</p>
 <ul class="simple">
-<li><p>left click (and hold + move) to move along the 3D space.</p></li>
-<li><p>right click (and hold + move) to zoom in/out.</p></li>
-<li><p>middle click (and hold + move) to rotate around the clicked point.</p></li>
+<li><p><kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">left</kbd>-<kbd class="kbd docutils literal notranslate">click</kbd></kbd>+<kbd class="kbd docutils literal notranslate">hold</kbd>+<kbd class="kbd docutils literal notranslate">move</kbd> to move along the 3D space.</p></li>
+<li><p><kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">right</kbd>-<kbd class="kbd docutils literal notranslate">click</kbd></kbd>+<kbd class="kbd docutils literal notranslate">hold</kbd>+<kbd class="kbd docutils literal notranslate">move</kbd> to zoom in/out.</p></li>
+<li><p><kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">middle</kbd>-<kbd class="kbd docutils literal notranslate">click</kbd></kbd>+<kbd class="kbd docutils literal notranslate">hold</kbd>+<kbd class="kbd docutils literal notranslate">move</kbd> to rotate around the clicked point.</p></li>
 </ul>
 <section id="adding-elevation-to-the-3d-map">
 <h3>Adding elevation to the 3D map<a class="headerlink" href="#adding-elevation-to-the-3d-map" title="Link to this heading">#</a></h3>
 <p>Data sets can be draped over a digital elevation model and shown in the 3D map.
 This behaviour is toggled through the 3D map settings, accessible from the menu (click wrench symbol), then <em>Configure…</em> (<a class="reference internal" href="#qgis-3dmap-settings"><span class="std std-numref">Fig. 75</span></a>).</p>
 <figure class="align-default" id="qgis-3dmap-settings">
-<a class="reference internal image-reference" href="content/lessons/geomodelling/assets/qgis/qgis_3dmap_settings.gif"><img alt="content/lessons/geomodelling/assets/qgis/qgis_3dmap_settings.gif" src="content/lessons/geomodelling/assets/qgis/qgis_3dmap_settings.gif" style="height: 400px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/qgis_3dmap_settings.gif"><img alt="../../../_images/qgis_3dmap_settings.gif" src="../../../_images/qgis_3dmap_settings.gif" style="height: 400px;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 75 </span><span class="caption-text">The 3D map configuration/settings window.</span><a class="headerlink" href="#qgis-3dmap-settings" title="Link to this image">#</a></p>
 </figcaption>
@@ -558,32 +558,24 @@ This behaviour is toggled through the 3D map settings, accessible from the menu 
 <span id="qgis-3dtiles"></span><h2>Visualising and exploring 3D Tile sets<a class="headerlink" href="#visualising-and-exploring-3d-tile-sets" title="Link to this heading">#</a></h2>
 <p>As discussed in the QGIS Documentation pages section <a class="reference external" href="https://docs.qgis.org/3.34/en/docs/user_manual/working_with_3d_tiles/3d_tiles.html">21. Working with 3D Tiles</a>, QGIS supports 3D tiles natively since version 3.34.
 However, its support is limited to certain file formats, which is currently only the <em>.json</em> data type rather than the <em>.3tz</em> zipped folder structure exported by Agisoft Metashape and used by ArcGIS Pro.</p>
-<p>The downside of the <em>.json</em> format is that it requires unzipping of the <em>.3tz</em> zipped folder format, thus increasing file size and number.</p>
+<p>The downside of the <em>.json</em> format is that it requires unzipping of the <em>.3tz</em> zipped folder format, thus increasing file size and number.
+This can be easily done by e.g. the 7Zip file manager.</p>
 <div class="warning admonition">
 <p class="admonition-title">Be careful extracting the data in OneDrive/SharePoint!</p>
 <p>Given that a single <em>.3tz</em>, once unpacked to the <em>.json</em> format, results in many thousands of files, it is not recommended to unpack these data within a OneDrive/Sharepoint environment.
 OneDrive may crash repeatedly as it cannot handle the hundred thousand+ files…
 This is also the reason these data are shared in the <em>.3tz</em> archive format instead.</p>
 </div>
-<p><a class="reference internal" href="#dtiles-unpacking"><span class="std std-numref">Fig. 76</span></a> shows how to extract a <em>.3tz</em> archive using the 7Zip file manager.</p>
-<figure class="align-default" id="dtiles-unpacking">
-<a class="reference internal image-reference" href="content/lessons/geomodelling/assets/qgis/qgis_3dtiles_unpacking.gif"><img alt="content/lessons/geomodelling/assets/qgis/qgis_3dtiles_unpacking.gif" src="content/lessons/geomodelling/assets/qgis/qgis_3dtiles_unpacking.gif" style="height: 400px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 76 </span><span class="caption-text">Animations showing how to unpack the <em>.3tz</em> file into a directory.
-It is recommended to unpack the file into a temporary directory on an external or internal harddisk.
-It is also recommended to keep the folder structure as similar as possible, as the unpacked files do not have an indicator of which data set they belong to.</span><a class="headerlink" href="#dtiles-unpacking" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
 <figure class="align-default" id="qgis-add-3dtiles">
-<a class="reference internal image-reference" href="content/lessons/geomodelling/assets/qgis/qgis_add_3dtiles.gif"><img alt="content/lessons/geomodelling/assets/qgis/qgis_add_3dtiles.gif" src="content/lessons/geomodelling/assets/qgis/qgis_add_3dtiles.gif" style="height: 400px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/qgis_add_3dtiles.gif"><img alt="../../../_images/qgis_add_3dtiles.gif" src="../../../_images/qgis_add_3dtiles.gif" style="height: 400px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 77 </span><span class="caption-text">Once the 3dtiles archive has been unpacked (<a class="reference internal" href="#dtiles-unpacking"><span class="std std-numref">Fig. 76</span></a>), adding it into QGIS is as simple as dropping the <em>.json</em> into the desired QGIS project.</span><a class="headerlink" href="#qgis-add-3dtiles" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 76 </span><span class="caption-text">Once the 3dtiles archive has been unpacked, adding it into QGIS is as simple as dropping the <em>.json</em> into the desired QGIS project.</span><a class="headerlink" href="#qgis-add-3dtiles" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="qgis-rename-3dtiles">
-<a class="reference internal image-reference" href="content/lessons/geomodelling/assets/qgis/qgis_rename_3dtiles.gif"><img alt="content/lessons/geomodelling/assets/qgis/qgis_rename_3dtiles.gif" src="content/lessons/geomodelling/assets/qgis/qgis_rename_3dtiles.gif" style="height: 400px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/qgis_rename_3dtiles.gif"><img alt="../../../_images/qgis_rename_3dtiles.gif" src="../../../_images/qgis_rename_3dtiles.gif" style="height: 400px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 78 </span><span class="caption-text">Make sure to rename the 3dtiles accordingly!
+<p><span class="caption-number">Fig. 77 </span><span class="caption-text">Make sure to rename the 3dtiles accordingly!
 Otherwise it may be difficult to keep the data sets apart!</span><a class="headerlink" href="#qgis-rename-3dtiles" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
@@ -592,15 +584,15 @@ That makes sense, as they are essentially 3D orthomosaics.</p>
 </section>
 <section id="importing-laz-las-point-cloud-data">
 <h2>Importing .Laz/.Las point cloud data<a class="headerlink" href="#importing-laz-las-point-cloud-data" title="Link to this heading">#</a></h2>
-<p>The addition of .laz/.las files to a QGIS project is similar to the importing of 3d tiles data, shown in <a class="reference internal" href="#qgis-add-laz"><span class="std std-numref">Fig. 79</span></a>.</p>
+<p>The addition of .laz/.las files to a QGIS project is similar to the importing of 3d tiles data, shown in <a class="reference internal" href="#qgis-add-laz"><span class="std std-numref">Fig. 78</span></a>.</p>
 <div class="warning admonition">
 <p class="admonition-title">Crashes? Save often!</p>
 <p>Given the large file sizes of the point data sets, it is best to save the QGIS project before adding data.</p>
 </div>
 <figure class="align-default" id="qgis-add-laz">
-<a class="reference internal image-reference" href="content/lessons/geomodelling/assets/qgis/qgis_add_laz.gif"><img alt="content/lessons/geomodelling/assets/qgis/qgis_add_laz.gif" src="content/lessons/geomodelling/assets/qgis/qgis_add_laz.gif" style="height: 400px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/qgis_add_laz.gif"><img alt="../../../_images/qgis_add_laz.gif" src="../../../_images/qgis_add_laz.gif" style="height: 400px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 79 </span><span class="caption-text">Make sure to rename the 3dtiles accordingly!
+<p><span class="caption-number">Fig. 78 </span><span class="caption-text">Make sure to rename the 3dtiles accordingly!
 Otherwise it may be difficult to keep the data sets apart!</span><a class="headerlink" href="#qgis-add-laz" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
@@ -611,23 +603,23 @@ Once processing is done, an additional file is generated (with <em>.copc.laz/las
 <h3>Styling .Laz/.Las point cloud data<a class="headerlink" href="#styling-laz-las-point-cloud-data" title="Link to this heading">#</a></h3>
 <p>When styling 3D data such as these point clouds, it is important to always select the same symbology/styling for both the 2D and 3D maps.</p>
 <figure class="align-default" id="qgis-laz-attributes-colours">
-<a class="reference internal image-reference" href="content/lessons/geomodelling/assets/qgis/qgis_laz_attributes_colour.gif"><img alt="content/lessons/geomodelling/assets/qgis/qgis_laz_attributes_colour.gif" src="content/lessons/geomodelling/assets/qgis/qgis_laz_attributes_colour.gif" style="height: 400px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/qgis_laz_attributes_colour.gif"><img alt="../../../_images/qgis_laz_attributes_colour.gif" src="../../../_images/qgis_laz_attributes_colour.gif" style="height: 400px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 80 </span><span class="caption-text">Unlike ArcGIS Pro, QGIS allows one to style Point Data also based on custom data attributes, such as the drilling parameters! (Win! :D)
+<p><span class="caption-number">Fig. 79 </span><span class="caption-text">Unlike ArcGIS Pro, QGIS allows one to style Point Data also based on custom data attributes, such as the drilling parameters! (Win! :D)
 Right click the layer you wish to modify, then select <em>Properties</em>, and head over to <em>Symbology</em>.
 There, change the <em>Attribute</em> that is visualised, and change any of the other colour properties to your desire.</span><a class="headerlink" href="#qgis-laz-attributes-colours" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="qgis-laz-attributes">
-<a class="reference internal image-reference" href="content/lessons/geomodelling/assets/qgis/qgis_laz_attributes.gif"><img alt="content/lessons/geomodelling/assets/qgis/qgis_laz_attributes.gif" src="content/lessons/geomodelling/assets/qgis/qgis_laz_attributes.gif" style="height: 400px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/qgis_laz_attributes.gif"><img alt="../../../_images/qgis_laz_attributes.gif" src="../../../_images/qgis_laz_attributes.gif" style="height: 400px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 81 </span><span class="caption-text">Make sure to set the 3D styling to be the same as the 2D styling.</span><a class="headerlink" href="#qgis-laz-attributes" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 80 </span><span class="caption-text">Make sure to set the 3D styling to be the same as the 2D styling.</span><a class="headerlink" href="#qgis-laz-attributes" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="qgis-laz-attributes-3d">
-<a class="reference internal image-reference" href="content/lessons/geomodelling/assets/qgis/qgis_3dmap_colors.gif"><img alt="content/lessons/geomodelling/assets/qgis/qgis_3dmap_colors.gif" src="content/lessons/geomodelling/assets/qgis/qgis_3dmap_colors.gif" style="height: 400px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/qgis_3dmap_colors.gif"><img alt="../../../_images/qgis_3dmap_colors.gif" src="../../../_images/qgis_3dmap_colors.gif" style="height: 400px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 82 </span><span class="caption-text">As you can see, changing the attributes styling changes it across both the 2D and 3D maps.</span><a class="headerlink" href="#qgis-laz-attributes-3d" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 81 </span><span class="caption-text">As you can see, changing the attributes styling changes it across both the 2D and 3D maps.</span><a class="headerlink" href="#qgis-laz-attributes-3d" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
