@@ -33,7 +33,7 @@ This course is **open for everyone to follow online**. The aim of the course is 
 This Geo-SfM course is or has been part of the following courses:
 
 - [University Centre in Svalbard (UNIS) Arctic Geology AG-222 bachelor course](https://www.unis.no/course/ag-222-integrated-geological-methods-from-outcrop-to-geomodel/) [2020 - 2024].
-- [UNIS Arctic Geology AG-214 bachelor course](https://www.unis.no/courses/ag-214-the-geological-evolution-of-svalbard-15-ects/) [2024].
+- [UNIS Arctic Geology AG-214 bachelor course](https://www.unis.no/courses/ag-214-the-geological-evolution-of-svalbard-15-ects/) [2024 - 2025].
 - [UNIS Arctic Geology AG-358/858 master/PhD course](https://www.unis.no/courses/ag-358-geological-constraints-on-subsurface-energy-and-ccs-10-ects/) [2024].
 - [UNIS GeoMOD course](https://unisvalbard.github.io/Geo-MOD/landing-page.html) [2023].
 ```
