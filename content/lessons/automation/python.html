@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -518,7 +518,7 @@ Save it in the following manner, creating directories where needed:</p>
 </div>
 <p>Here we can copy/paste the below (into individual cells);
 then proceed by running each cell by either clicking the <em>play</em> button or shift-enter whilst having click on the cell.</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">automated_metashape.MetashapeProcessing</span> <span class="kn">import</span> <span class="n">AutomatedProcessing</span> <span class="k">as</span> <span class="n">AP</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">automated_metashape.MetashapeProcessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">AutomatedProcessing</span> <span class="k">as</span> <span class="n">AP</span>
 </pre></div>
 </div>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">config_file</span> <span class="o">=</span> <span class="s2">&quot;../config/empty_photogrammetry_processing_settings.yml&quot;</span>
@@ -534,13 +534,13 @@ then proceed by running each cell by either clicking the <em>play</em> button or
 
 <span class="o">~</span>\<span class="o">.</span><span class="n">conda</span>\<span class="n">envs</span>\<span class="n">automated_metashape</span>\<span class="n">lib</span>\<span class="n">site</span><span class="o">-</span><span class="n">packages</span>\<span class="n">automated_metashape</span>\<span class="n">MetashapeProcessing</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="n">read_config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config_file</span><span class="p">)</span>
      <span class="mi">71</span> 
-     <span class="mi">72</span>     <span class="k">def</span> <span class="nf">read_config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">config_file</span><span class="p">):</span>
+     <span class="mi">72</span>     <span class="k">def</span><span class="w"> </span><span class="nf">read_config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">config_file</span><span class="p">):</span>
 <span class="o">---&gt;</span> <span class="mi">73</span>         <span class="bp">self</span><span class="o">.</span><span class="n">cfg</span> <span class="o">=</span> <span class="n">read_yaml</span><span class="p">(</span><span class="n">config_file</span><span class="p">)</span>
      <span class="mi">74</span>         <span class="bp">self</span><span class="o">.</span><span class="n">config_file</span> <span class="o">=</span> <span class="n">config_file</span>
      <span class="mi">75</span>         <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Config file loaded.&quot;</span><span class="p">)</span>
 
 <span class="o">~</span>\<span class="o">.</span><span class="n">conda</span>\<span class="n">envs</span>\<span class="n">automated_metashape</span>\<span class="n">lib</span>\<span class="n">site</span><span class="o">-</span><span class="n">packages</span>\<span class="n">automated_metashape</span>\<span class="n">read_yaml</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="n">read_yaml</span><span class="p">(</span><span class="n">yml_path</span><span class="p">)</span>
-     <span class="mi">46</span> <span class="k">def</span> <span class="nf">read_yaml</span><span class="p">(</span><span class="n">yml_path</span><span class="p">):</span>
+     <span class="mi">46</span> <span class="k">def</span><span class="w"> </span><span class="nf">read_yaml</span><span class="p">(</span><span class="n">yml_path</span><span class="p">):</span>
      <span class="mi">47</span>     <span class="n">yml_path</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="n">yml_path</span><span class="p">)</span>
 <span class="o">---&gt;</span> <span class="mi">48</span>     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">yml_path</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">ymlfile</span><span class="p">:</span>
      <span class="mi">49</span>         <span class="n">cfg</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">ymlfile</span><span class="p">,</span> <span class="n">Loader</span><span class="o">=</span><span class="n">yaml</span><span class="o">.</span><span class="n">SafeLoader</span><span class="p">)</span>
@@ -979,7 +979,7 @@ By Peter Betlem, Nil Rodes and Contributors
 
   <p class="copyright">
     
-      © Copyright 2024 (CC-BY-NC except where otherwise stated).
+      © Copyright 2025 (CC-BY-NC except where otherwise stated).
       <br/>
     
   </p>

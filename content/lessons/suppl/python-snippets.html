@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -465,14 +465,14 @@ document.write(`
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-0">
 Tie Point Filter</label><div class="sd-tab-content docutils">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">Metashape</span>
-<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">Metashape</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
 
-<span class="k">def</span> <span class="nf">progress_print</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">progress_print</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Current task progress: </span><span class="si">{:.2f}</span><span class="s1">%&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">p</span><span class="p">))</span>
 
-<span class="k">class</span> <span class="nc">metashape_tiepoint_filter</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">ms_path</span><span class="p">:</span> <span class="n">Path</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">metashape_tiepoint_filter</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">ms_path</span><span class="p">:</span> <span class="n">Path</span><span class="p">):</span>
 
         <span class="k">if</span> <span class="ow">not</span> <span class="n">ms_path</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">doc</span> <span class="o">=</span> <span class="n">Metashape</span><span class="o">.</span><span class="n">Document</span><span class="p">()</span>
@@ -482,7 +482,7 @@ Tie Point Filter</label><div class="sd-tab-content docutils">
         <span class="bp">self</span><span class="o">.</span><span class="n">chunk</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">doc</span><span class="o">.</span><span class="n">chunk</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">total_tie_points</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">chunk</span><span class="o">.</span><span class="n">tie_points</span><span class="o">.</span><span class="n">points</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">standard_run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">standard_run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">chunk</span><span class="o">.</span><span class="n">point_clouds</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">filter_reconstruction_uncertainty</span><span class="p">()</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">optimize_cameras</span><span class="p">()</span>
@@ -498,7 +498,7 @@ Tie Point Filter</label><div class="sd-tab-content docutils">
         <span class="k">else</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dense cloud exists... Ignoring..&quot;</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">optimize_cameras</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parameters</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">optimize_cameras</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parameters</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;optimize_cameras&quot;</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">chunk</span><span class="o">.</span><span class="n">optimizeCameras</span><span class="p">(</span>
@@ -506,7 +506,7 @@ Tie Point Filter</label><div class="sd-tab-content docutils">
             <span class="n">progress</span><span class="o">=</span><span class="n">progress_print</span>
         <span class="p">)</span>
         
-    <span class="k">def</span> <span class="nf">filter_reconstruction_uncertainty</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">filter_reconstruction_uncertainty</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;filter_reconstruction_uncertainty&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">chunk</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">chunk</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
         <span class="n">f</span> <span class="o">=</span> <span class="n">Metashape</span><span class="o">.</span><span class="n">TiePoints</span><span class="o">.</span><span class="n">Filter</span><span class="p">()</span>
@@ -517,7 +517,7 @@ Tie Point Filter</label><div class="sd-tab-content docutils">
         <span class="bp">self</span><span class="o">.</span><span class="n">chunk</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;RecUnc=</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span>
         <span class="n">f</span><span class="o">.</span><span class="n">removePoints</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
         
-    <span class="k">def</span> <span class="nf">filter_projection_accuracy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">2</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">filter_projection_accuracy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">2</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;filter_projection_accuracy&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">chunk</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">chunk</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
         <span class="n">f</span> <span class="o">=</span> <span class="n">Metashape</span><span class="o">.</span><span class="n">TiePoints</span><span class="o">.</span><span class="n">Filter</span><span class="p">()</span>
@@ -528,7 +528,7 @@ Tie Point Filter</label><div class="sd-tab-content docutils">
         <span class="bp">self</span><span class="o">.</span><span class="n">chunk</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">chunk</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;Copy of &#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">_ProjAcc=</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span>
         <span class="n">f</span><span class="o">.</span><span class="n">removePoints</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
         
-    <span class="k">def</span> <span class="nf">filter_reprojection_error</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">filter_reprojection_error</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;filter_reprojection_error&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">chunk</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">chunk</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
         <span class="n">f</span> <span class="o">=</span> <span class="n">Metashape</span><span class="o">.</span><span class="n">TiePoints</span><span class="o">.</span><span class="n">Filter</span><span class="p">()</span>
@@ -540,10 +540,10 @@ Tie Point Filter</label><div class="sd-tab-content docutils">
         <span class="bp">self</span><span class="o">.</span><span class="n">chunk</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">chunk</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;Copy of &#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">_RepErr=</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span>
         <span class="n">f</span><span class="o">.</span><span class="n">removePoints</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">set_label_naming_template</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_label_naming_template</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">chunk</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">chunk</span><span class="o">.</span><span class="n">label</span><span class="si">}</span><span class="s2">_PcConf=XX_MeshCC=XX&quot;</span>
 
-    <span class="k">def</span> <span class="nf">process_point_cloud_over_network</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">process_point_cloud_over_network</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">task1</span> <span class="o">=</span> <span class="n">Metashape</span><span class="o">.</span><span class="n">Tasks</span><span class="o">.</span><span class="n">BuildDepthMaps</span><span class="p">()</span>
         <span class="n">task1</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span> <span class="p">{</span><span class="s1">&#39;downscale&#39;</span> <span class="p">:</span> <span class="mi">2</span> <span class="p">})</span>
 
@@ -652,7 +652,7 @@ By Peter Betlem, Nil Rodes and Contributors
 
   <p class="copyright">
     
-      © Copyright 2024 (CC-BY-NC except where otherwise stated).
+      © Copyright 2025 (CC-BY-NC except where otherwise stated).
       <br/>
     
   </p>
