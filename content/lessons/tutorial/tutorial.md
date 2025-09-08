@@ -431,6 +431,8 @@ The following subsections may be automated through use of the built-in consol an
 
 Once you're ready (ahem, make a duplicate/backup first!), filter your Sparse points by their Reconstruction Uncertainty.
 
+> student note: this is no longer found under Models, but is found under Tools -> Tie Points -> Clean Tie Points 
+
 ```{figure} assets/reconstruction_uncertainty_filter.gif
 :name: filter_reconstruction_uncertainty
 
@@ -584,6 +586,7 @@ If depth maps do exist, and you decide to use them as the source data, then make
 
 Sometiems your model features blobs that are not connected to the main model.
 These can be easily (and scientifically!) removed through use of the *Connected component filter*, see {ref}`dialog <filter_connected_component_size>`.
+> student note: this is now found under Tools -> Model -> Clean Model 
 
 ```{figure} assets/filter_connected_component_size.gif
 :name: filter_connected_component_size
