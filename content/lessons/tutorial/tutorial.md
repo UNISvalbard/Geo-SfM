@@ -431,6 +431,8 @@ The following subsections may be automated through use of the built-in consol an
 
 Once you're ready (ahem, make a duplicate/backup first!), filter your Sparse points by their Reconstruction Uncertainty.
 
+> student note: this is no longer found under Models, but is found under Tools -> Tie Points -> Clean Tie Points 
+
 ```{figure} assets/reconstruction_uncertainty_filter.gif
 :name: filter_reconstruction_uncertainty
 
