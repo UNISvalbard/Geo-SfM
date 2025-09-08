@@ -1,9 +1,6 @@
 - sketchfab_id: bc45388e7fd74ab3b2a16f37dddb6b80
   year: 2021
   course: AG222
-- sketchfab_id: bb177069ffb54c91a6f09b6d0e7a7bde
-  year: 2025
-  course: AG214
 - sketchfab_id: 5949814d354f437c950f535295b1264d
   year: 2021
   course: AG222
@@ -269,5 +266,8 @@
   year: 2025
   course: AG214
 - sketchfab_id: 242c09006a0841e8bdfbe9c06835cee5
+  year: 2025
+  course: AG214
+- sketchfab_id: bb177069ffb54c91a6f09b6d0e7a7bde
   year: 2025
   course: AG214
