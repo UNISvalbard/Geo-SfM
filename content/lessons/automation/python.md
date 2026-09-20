@@ -74,7 +74,7 @@ project.init_workspace()
 project.init_tasks()
 ```
 
-```{code} ipython3
+```text
 ---------------------------------------------------------------------------
 FileNotFoundError                         Traceback (most recent call last)
 ~\AppData\Local\Temp\ipykernel_44088\822519927.py in <module>
@@ -414,6 +414,7 @@ enable_overwrite: False
 
 ```{admonition} Did you know...
 :class: tip
+
 ... that you can continue processing an existing project by linking to the project file through the *load_project_path* parameter?
 This allows you to inspect the processing after each step, figure out which parameters to adjust, and revise the YAML configuration accordingly.
 Further processing then copies and leaves your original project unaltered.
@@ -421,6 +422,7 @@ Further processing then copies and leaves your original project unaltered.
 
 ```{admonition} Did you know...
 :class: tip
+
 ... that the output shown while processing is also stored in a log file in the *output_path*?
 It even has all the implemted YAML parameter-sections, software versions, and computer specs.
 It can be easily used to reprocess and exactly repeat the processing.

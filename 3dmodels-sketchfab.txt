@@ -429,6 +429,63 @@
 <iframe frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/6f6afe507aa34397bf04d8f09a7122e6/embed" width=100%> </iframe>
 `````
 
+`````{grid-item-card}
+:text-align: center
+<iframe frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/be26284fd8dc4928987a67e9af1474dc/embed" width=100%> </iframe>
+`````
+
+`````{grid-item-card}
+:text-align: center
+<iframe frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/eeb4a7d009c64e78bf6bf5de3a1d2a79/embed" width=100%> </iframe>
+`````
+
+`````{grid-item-card}
+:text-align: center
+<iframe frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/8428e97a0b9b49b0ad5e5500f0b0c9ab/embed" width=100%> </iframe>
+`````
+
+`````{grid-item-card}
+:text-align: center
+<iframe frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/0a8e2874f48b49999d78eb70b6a9df30/embed" width=100%> </iframe>
+`````
+
+`````{grid-item-card}
+:text-align: center
+<iframe frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/cb675c4e0b074713b192ceff9a84971b/embed" width=100%> </iframe>
+`````
+
+`````{grid-item-card}
+:text-align: center
+<iframe frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/a00412f0843846d89989e8da092a343f/embed" width=100%> </iframe>
+`````
+
+`````{grid-item-card}
+:text-align: center
+<iframe frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/05c1b0561d274cfb827fcf4e6b346589/embed" width=100%> </iframe>
+`````
+
+``````
+```````
+
+```````{tab-item} 2025
+``````{grid} 1 2 3 3
+:gutter: 1 1 2 2
+
+`````{grid-item-card}
+:text-align: center
+<iframe frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/2fbbc46d6f5b420e81c0c88fba6ef0b4/embed" width=100%> </iframe>
+`````
+
+`````{grid-item-card}
+:text-align: center
+<iframe frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/242c09006a0841e8bdfbe9c06835cee5/embed" width=100%> </iframe>
+`````
+
+`````{grid-item-card}
+:text-align: center
+<iframe frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/bb177069ffb54c91a6f09b6d0e7a7bde/embed" width=100%> </iframe>
+`````
+
 ``````
 ```````
 ````````

@@ -70,7 +70,7 @@ def build_3dmodel_gallery(app: Sphinx):
     grid_items = []
     models = yaml.safe_load((Path(app.srcdir) / "3dmodels-sketchfab.yml").read_text())
 
-    keyList = [2021,2022,2023,2024]
+    keyList = [2021,2022,2023,2024,2025]
     grid_items = {key: [] for key in keyList}
 
     for item in models:
