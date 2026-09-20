@@ -1,12 +1,13 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../../../" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Foldio360 Tutorial &#8212; Geo-SfM Course</title>
   
@@ -14,50 +15,54 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
-    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
-    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../../../_static/copybutton.js?v=f281be69"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/lessons/small-objects/hss_tutorial';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -72,23 +77,28 @@
 
   
   
-  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
+
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -111,22 +121,17 @@
 </form></div>
   </div>
 
-  <div class="pst-async-banner-revealer d-none">
-  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
-</div>
-<aside class="bd-header-announcement" aria-label="Announcement">
-  <div class="bd-header-announcement__content">Found this tutorial helpful? Please Star me <a href="https://github.com/UNISvalbard/Geo-SfM"> <img src="https://img.shields.io/github/stars/UNISvalbard/Geo-SfM"></a></div>
-</aside>
+
+  <div class="bd-header-announcement container-fluid bd-header-announcement">
+    <div class="bd-header-announcement__content">Found this tutorial helpful? Please Star me <a href="https://github.com/UNISvalbard/Geo-SfM"> <img src="https://img.shields.io/github/stars/UNISvalbard/Geo-SfM"></a></div>
+  </div>
 
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
-    </header>
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
   
-
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
-      
-      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -142,8 +147,6 @@
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
 
-  
-    
   
 
 <a class="navbar-brand logo" href="../../../landing-page.html">
@@ -162,18 +165,7 @@
   
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -260,7 +252,7 @@
 
       </div>
       
-      <main id="main-content" class="bd-main" role="main">
+      <main id="main-content" class="bd-main">
         
         
 
@@ -269,14 +261,14 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article d-print-none">
+              <div class="bd-header-article">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
       
     </div>
   
@@ -418,10 +410,10 @@
 
 <script>
 document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -429,14 +421,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
       
     </div>
@@ -478,10 +470,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article">
+                <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="foldio360-tutorial">
-<h1>Foldio360 Tutorial<a class="headerlink" href="#foldio360-tutorial" title="Link to this heading">#</a></h1>
+<h1>Foldio360 Tutorial<a class="headerlink" href="#foldio360-tutorial" title="Permalink to this heading">#</a></h1>
 <p>This tutorial features the following learning goals:</p>
 <ul class="simple">
 <li><p>You will <strong>use Foldio360 light box and/or Foldio360 Smart Dome to acquire high-quality pictures to digitize small objects</strong>.</p></li>
@@ -503,9 +495,9 @@ document.write(`
 The methodology has been optimised from Betlem et al., <span id="id1">[<a class="reference internal" href="../about/zbiblio.html#id3" title="Peter Betlem, Thomas Birchall, Kei Ogata, Joonsang Park, Elin Skurtveit, and Kim Senger. Digital Drill Core Models: Structure-from-Motion as a Tool for the Characterisation, Orientation, and Digital Archiving of Drill Core Samples. Remote Sensing, 12(2):330, 2020. doi:10.3390/rs12020330.">BBO+20</a>]</span>, and may be adapted for similar setups featuring turntables, lightboxes and cameras.</p>
 </div>
 <section id="photo-acquisition-with-lightbox-foldio360">
-<h2>Photo acquisition with Lightbox Foldio360<a class="headerlink" href="#photo-acquisition-with-lightbox-foldio360" title="Link to this heading">#</a></h2>
+<h2>Photo acquisition with Lightbox Foldio360<a class="headerlink" href="#photo-acquisition-with-lightbox-foldio360" title="Permalink to this heading">#</a></h2>
 <section id="foldio360-app-settings-and-components">
-<h3>Foldio360 App Settings and Components<a class="headerlink" href="#foldio360-app-settings-and-components" title="Link to this heading">#</a></h3>
+<h3>Foldio360 App Settings and Components<a class="headerlink" href="#foldio360-app-settings-and-components" title="Permalink to this heading">#</a></h3>
 <p>Log in to the Foldio360 App on your phone and connect to your Foldio360 device by clicking on “Select device”.
 If Bluetooth is connected, the app will automatically detect the Foldio device and connect to it.</p>
 <div class="tip admonition">
@@ -547,7 +539,7 @@ Especially when long exposures are used, the resulting IR delay may be up to 5 o
 <figure class="align-default" id="menu">
 <img alt="../../../_images/menu.png" src="../../../_images/menu.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 36 </span><span class="caption-text">Menu displayed on the Foldio360 App.</span><a class="headerlink" href="#menu" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 36 </span><span class="caption-text">Menu displayed on the Foldio360 App.</span><a class="headerlink" href="#menu" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p><strong>Start 360 shot</strong>:
@@ -555,15 +547,15 @@ Click the orange button when ready for automated photo acquisition.
 The device will start rotating and the phone/camera will take as many pictures as the ones defined in the Frame menu.</p>
 </section>
 <section id="foldio360-with-dslr-connected-to-pc">
-<h3>Foldio360 with DSLR (connected to PC)<a class="headerlink" href="#foldio360-with-dslr-connected-to-pc" title="Link to this heading">#</a></h3>
+<h3>Foldio360 with DSLR (connected to PC)<a class="headerlink" href="#foldio360-with-dslr-connected-to-pc" title="Permalink to this heading">#</a></h3>
 <section id="connect-to-the-foldio360-device">
-<h4>Connect to the Foldio360 device<a class="headerlink" href="#connect-to-the-foldio360-device" title="Link to this heading">#</a></h4>
+<h4>Connect to the Foldio360 device<a class="headerlink" href="#connect-to-the-foldio360-device" title="Permalink to this heading">#</a></h4>
 <p>Connect to the Foldio360 device using your phone/tablet as per above.
 After the Foldio360 device has been linked to your phone, click the four bars on the lower-right corner of your screen and select DSLR 360.</p>
 <figure class="align-default" id="dslr360-png">
 <img alt="../../../_images/DSLR360.png" src="../../../_images/DSLR360.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 37 </span><span class="caption-text">DSLR360 connection.</span><a class="headerlink" href="#dslr360-png" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 37 </span><span class="caption-text">DSLR360 connection.</span><a class="headerlink" href="#dslr360-png" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Press <em>Connect</em> button and select the foldio device.
@@ -571,7 +563,7 @@ Then select the camera type you are using to connect to the camera.</p>
 <figure class="align-default" id="camera-connection-png">
 <img alt="../../../_images/camera_connection.png" src="../../../_images/camera_connection.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 38 </span><span class="caption-text">Camera connect on remote mode.</span><a class="headerlink" href="#camera-connection-png" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 38 </span><span class="caption-text">Camera connect on remote mode.</span><a class="headerlink" href="#camera-connection-png" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Press the four bars on the low-right corner to select Settings.
@@ -579,7 +571,7 @@ Under <em>SETTINGS &gt; DSLR &gt; IR remote delay</em> define the IR remote dela
 <figure class="align-default" id="ir-settings-png">
 <img alt="../../../_images/IR_settings.png" src="../../../_images/IR_settings.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 39 </span><span class="caption-text">DSLR Settings.</span><a class="headerlink" href="#ir-settings-png" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 39 </span><span class="caption-text">DSLR Settings.</span><a class="headerlink" href="#ir-settings-png" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="tip admonition">
@@ -589,7 +581,7 @@ This, however, is a few steps further.</p>
 </div>
 </section>
 <section id="connect-the-camera-to-the-computer">
-<h4>Connect the camera to the computer<a class="headerlink" href="#connect-the-camera-to-the-computer" title="Link to this heading">#</a></h4>
+<h4>Connect the camera to the computer<a class="headerlink" href="#connect-the-camera-to-the-computer" title="Permalink to this heading">#</a></h4>
 <p>Physically connect the camera to the computer and open the remote control app.
 Use the Imaging Edge Desktop App on your PC for Sony cameras.
 Turn on the camera.
@@ -600,7 +592,7 @@ Now, adjust and center the sample on the screen by changing the camera position 
 Do this by physically adjusting the camera and distance to the sample.
 Then adjust the photo acquisition parameters, here outlined for the Imaging Edge Desktop App.</p>
 <section id="imaging-edge-desktop-app">
-<h5>Imaging Edge Desktop App<a class="headerlink" href="#imaging-edge-desktop-app" title="Link to this heading">#</a></h5>
+<h5>Imaging Edge Desktop App<a class="headerlink" href="#imaging-edge-desktop-app" title="Permalink to this heading">#</a></h5>
 <p>Going from top to bottom in the Imaging Edge Desktop App menu, we recommend using the following settings:</p>
 <p><strong>Shooting</strong>:
 Do not change</p>
@@ -633,7 +625,7 @@ You will always know where your data is, it will help avoid mistakes and data lo
 <figure class="align-default" id="imaging-edge-settings-png">
 <img alt="../../../_images/Imaging_Edge_settings.png" src="../../../_images/Imaging_Edge_settings.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 40 </span><span class="caption-text">Camera settings on the Imaging Edge Desktop App.</span><a class="headerlink" href="#imaging-edge-settings-png" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 40 </span><span class="caption-text">Camera settings on the Imaging Edge Desktop App.</span><a class="headerlink" href="#imaging-edge-settings-png" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>To check that all the settings are optimal for photo acquisition, take a Connection Test by clicking on the camera icon in the “Shooting” menu, or in the phone/tablet menu.
@@ -659,7 +651,7 @@ Once completed, make sure to physically turn/rotate your sample to capture addit
         },
         kernelOptions: {
             name: "python3",
-            path: "./content/lessons/small-objects"
+            path: "./content\lessons\small-objects"
         },
         predefinedOutput: true
     }
@@ -673,7 +665,7 @@ Once completed, make sure to physically turn/rotate your sample to capture addit
               
               
               
-                <footer class="prev-next-footer d-print-none">
+                <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -702,7 +694,6 @@ Once completed, make sure to physically turn/rotate your sample to capture addit
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -746,7 +737,7 @@ By Peter Betlem, Nil Rodes and Contributors
 
   <p class="copyright">
     
-      © Copyright 2025 (CC-BY-NC except where otherwise stated).
+      © Copyright 2026 (CC-BY-NC except where otherwise stated).
       <br/>
     
   </p>
@@ -770,8 +761,8 @@ By Peter Betlem, Nil Rodes and Contributors
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script src="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>

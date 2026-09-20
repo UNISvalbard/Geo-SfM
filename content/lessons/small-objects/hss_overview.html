@@ -1,12 +1,13 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../../../" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Small object SfM photogrammetry &#8212; Geo-SfM Course</title>
   
@@ -14,50 +15,54 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
-    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
-    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../../../_static/copybutton.js?v=f281be69"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/lessons/small-objects/hss_overview';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -72,23 +77,28 @@
 
   
   
-  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
+
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -111,22 +121,17 @@
 </form></div>
   </div>
 
-  <div class="pst-async-banner-revealer d-none">
-  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
-</div>
-<aside class="bd-header-announcement" aria-label="Announcement">
-  <div class="bd-header-announcement__content">Found this tutorial helpful? Please Star me <a href="https://github.com/UNISvalbard/Geo-SfM"> <img src="https://img.shields.io/github/stars/UNISvalbard/Geo-SfM"></a></div>
-</aside>
+
+  <div class="bd-header-announcement container-fluid bd-header-announcement">
+    <div class="bd-header-announcement__content">Found this tutorial helpful? Please Star me <a href="https://github.com/UNISvalbard/Geo-SfM"> <img src="https://img.shields.io/github/stars/UNISvalbard/Geo-SfM"></a></div>
+  </div>
 
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
-    </header>
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
   
-
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
-      
-      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -142,8 +147,6 @@
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
 
-  
-    
   
 
 <a class="navbar-brand logo" href="../../../landing-page.html">
@@ -162,18 +165,7 @@
   
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -260,7 +252,7 @@
 
       </div>
       
-      <main id="main-content" class="bd-main" role="main">
+      <main id="main-content" class="bd-main">
         
         
 
@@ -269,14 +261,14 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article d-print-none">
+              <div class="bd-header-article">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
       
     </div>
   
@@ -418,10 +410,10 @@
 
 <script>
 document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -429,14 +421,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
       
     </div>
@@ -483,12 +475,12 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article">
+                <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="small-object-sfm-photogrammetry">
-<h1>Small object SfM photogrammetry<a class="headerlink" href="#small-object-sfm-photogrammetry" title="Link to this heading">#</a></h1>
+<h1>Small object SfM photogrammetry<a class="headerlink" href="#small-object-sfm-photogrammetry" title="Permalink to this heading">#</a></h1>
 <section id="malte-s-rock-sample-and-digital-measurements">
-<span id="small-objects-overview"></span><h2>Malte’s rock sample and digital measurements<a class="headerlink" href="#malte-s-rock-sample-and-digital-measurements" title="Link to this heading">#</a></h2>
+<span id="small-objects-overview"></span><h2>Malte’s rock sample and digital measurements<a class="headerlink" href="#malte-s-rock-sample-and-digital-measurements" title="Permalink to this heading">#</a></h2>
 <p>The various tips and tricks learned in the previous sessions can not only be applied to human-and-larger-scale objects, but also to objects only centimetres tall.
 In fact, smaller objects such as rocks make for a great way of learning SfM-photogrammetry.</p>
 <p>A good example of a digitised handsized sample is Malte’s mineral below, which has been digitised to scale through use of ground control points.</p>
@@ -518,7 +510,7 @@ By increasing the multiplier to 100, we then turn the measurements to centimetre
 </div>
 </section>
 <section id="digitising-hand-sized-samples">
-<h2>Digitising hand-sized samples<a class="headerlink" href="#digitising-hand-sized-samples" title="Link to this heading">#</a></h2>
+<h2>Digitising hand-sized samples<a class="headerlink" href="#digitising-hand-sized-samples" title="Permalink to this heading">#</a></h2>
 <p>Betlem et al., <span id="id1">[<a class="reference internal" href="../about/zbiblio.html#id3" title="Peter Betlem, Thomas Birchall, Kei Ogata, Joonsang Park, Elin Skurtveit, and Kim Senger. Digital Drill Core Models: Structure-from-Motion as a Tool for the Characterisation, Orientation, and Digital Archiving of Drill Core Samples. Remote Sensing, 12(2):330, 2020. doi:10.3390/rs12020330.">BBO+20</a>]</span> present an effective means to digitise hand-sized samples at their respective scales.
 While the paper focuses on drill core samples, the same methodology can be used for most hand-sized samples from the field, minerals (e.g., Malte’s mineral), and other object, with and without GCPs to ensure correct scaling.</p>
 <p>In short, the method relies on acquiring at least three photo haloes (i.e., 24-36 object-centred photos) of an object, in between which the object’s orientation has been changed (e.g., from normal position to upside-down to flipped 90 degrees).
@@ -529,7 +521,7 @@ Furthermore, if one of the orientations contains GCPs, the resulting hand-sized 
 <iframe width="600" height="450" src="https://www.youtube-nocookie.com/embed/O6R1EEOrM4A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 <section id="to-digitising-handsamples">
-<h3>101 to digitising handsamples<a class="headerlink" href="#to-digitising-handsamples" title="Link to this heading">#</a></h3>
+<h3>101 to digitising handsamples<a class="headerlink" href="#to-digitising-handsamples" title="Permalink to this heading">#</a></h3>
 <p>In a nutshell, successful digitisation of small hand samples can be summarised as follows:</p>
 <ol class="arabic simple">
 <li><p>Target-images should be offset by no more than 15 degrees,</p></li>
@@ -539,14 +531,14 @@ Furthermore, if one of the orientations contains GCPs, the resulting hand-sized 
 <li><p>Enough light (i.e., minimal shadows) and correct colours</p></li>
 </ol>
 <section id="focus-aperture">
-<h4>Focus &amp; aperture<a class="headerlink" href="#focus-aperture" title="Link to this heading">#</a></h4>
+<h4>Focus &amp; aperture<a class="headerlink" href="#focus-aperture" title="Permalink to this heading">#</a></h4>
 <p>Given the proximity to smaller handsamples (centimetres versus (deca)metre scale for outcrops), the in-focus depth range of the image is important.
 Optimally, the entire object should be in focus, to enable accurate correlation of the entire object across multiple images, thereby increasing the final quality of the models.</p>
 <p>The impact of changing a camera’s aperture value on the focus/sharpness throughout the acquired image is shown in <a class="reference internal" href="#povray-focal-blur-animation"><span class="std std-numref">Fig. 31</span></a>.</p>
 <figure class="align-default" id="povray-focal-blur-animation">
 <img alt="https://upload.wikimedia.org/wikipedia/commons/c/c3/Povray_focal_blur_animation.gif" src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Povray_focal_blur_animation.gif" />
 <figcaption>
-<p><span class="caption-number">Fig. 31 </span><span class="caption-text">A computer animation showing the effect of how aperture change affects the focus area of the image  <span id="id2">[]</span>.</span><a class="headerlink" href="#povray-focal-blur-animation" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 31 </span><span class="caption-text">A computer animation showing the effect of how aperture change affects the focus area of the image  <span id="id2">[]</span>.</span><a class="headerlink" href="#povray-focal-blur-animation" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>The largest in-focus field of depth therefore corresponds with the smallest aperture size (or largest f-number).
@@ -555,12 +547,12 @@ This is something we should thus aim for when configuring our cameras.</p>
 <figure class="align-default" id="aperture-diagram">
 <img alt="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Aperture_diagram.svg/1920px-Aperture_diagram.svg.png" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Aperture_diagram.svg/1920px-Aperture_diagram.svg.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 32 </span><span class="caption-text">Aperture sizes and related f-numbers. Going left to right, each circle is about a factor two smaller than the previous  <span id="id3">[]</span>.</span><a class="headerlink" href="#aperture-diagram" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 32 </span><span class="caption-text">Aperture sizes and related f-numbers. Going left to right, each circle is about a factor two smaller than the previous  <span id="id3">[]</span>.</span><a class="headerlink" href="#aperture-diagram" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="a-tripod-exposure-settings-and-colour-diagrams">
-<h4>A tripod, exposure settings and colour diagrams<a class="headerlink" href="#a-tripod-exposure-settings-and-colour-diagrams" title="Link to this heading">#</a></h4>
+<h4>A tripod, exposure settings and colour diagrams<a class="headerlink" href="#a-tripod-exposure-settings-and-colour-diagrams" title="Permalink to this heading">#</a></h4>
 <p>Longer exposure times in a bright environment have the risk of several things, most notably introducing blur by moving the camera, overexposing the targets, and/or bleaching the colours.</p>
 <p>First and foremost, image acquisition of handsamples should always use a tripod.
 Only a tripod keeps the camera exactly in place while taking an image, therefore preventing any blurring.
@@ -575,12 +567,12 @@ This works exceptionally well when coupled with <em>raw</em> imaging and can be 
 </section>
 </section>
 <section id="capturing-usable-images-the-exposure-triangle">
-<span id="exposure-triangle"></span><h3>Capturing usable images: the Exposure triangle<a class="headerlink" href="#capturing-usable-images-the-exposure-triangle" title="Link to this heading">#</a></h3>
+<span id="exposure-triangle"></span><h3>Capturing usable images: the Exposure triangle<a class="headerlink" href="#capturing-usable-images-the-exposure-triangle" title="Permalink to this heading">#</a></h3>
 <p>The aperture, shutter speed and ISO are recurring parameters of importance and key to data acquisition in the field and in the lab.
 In particular, they work together to create an exposure and affect your captured image in different ways.
 This can be visualised through use of the exposure triangle <span id="id4">[<a class="reference internal" href="../about/zbiblio.html#id13" title="The Exposure Triangle. 2017.">Exp17</a>]</span>.</p>
 <section id="aperture">
-<h4>Aperture<a class="headerlink" href="#aperture" title="Link to this heading">#</a></h4>
+<h4>Aperture<a class="headerlink" href="#aperture" title="Permalink to this heading">#</a></h4>
 <p>Aperture affect how much light passes through the lens, and, with it, the depth of field of the image <span id="id5">[<a class="reference internal" href="../about/zbiblio.html#id14" title="Understanding Aperture and Depth of Field. 2017.">Und17</a>]</span>.
 Aperture is typically measured in f-stops, with smaller numbers meaning more light and larger numbers less light that hits the sensor.
 When you open your aperture (i.e., lower number, see (<a class="reference internal" href="#aperture-explained"><span class="std std-numref">Fig. 33</span></a>)):</p>
@@ -591,12 +583,12 @@ When you open your aperture (i.e., lower number, see (<a class="reference intern
 <figure class="align-default" id="aperture-explained">
 <img alt="../../../_images/aperture-field.png" src="../../../_images/aperture-field.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 33 </span><span class="caption-text">The impact of changing the aperture on depth of field and focus. Image modified from <span id="id6">[<a class="reference internal" href="../about/zbiblio.html#id14" title="Understanding Aperture and Depth of Field. 2017.">Und17</a>]</span>.</span><a class="headerlink" href="#aperture-explained" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 33 </span><span class="caption-text">The impact of changing the aperture on depth of field and focus. Image modified from <span id="id6">[<a class="reference internal" href="../about/zbiblio.html#id14" title="Understanding Aperture and Depth of Field. 2017.">Und17</a>]</span>.</span><a class="headerlink" href="#aperture-explained" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="shutter-speed">
-<span id="id7"></span><h4>Shutter speed<a class="headerlink" href="#shutter-speed" title="Link to this heading">#</a></h4>
+<span id="id7"></span><h4>Shutter speed<a class="headerlink" href="#shutter-speed" title="Permalink to this heading">#</a></h4>
 <p>Your camera’s shutter governs the duration that light passes through and is captured by your camera’s sensor.
 The amount of time is typically listed in seconds, and each step on the shutter speed scale will give you half or twice the amount of light.
 All light captured by the sensor over the amount of time (“acquisition time”) is averaged to give rise to a captured image.
@@ -605,7 +597,7 @@ Secondly, capturing movements within the acquisition time will result in motion 
 Some additional examples of how to deal with shutter speed are found in e.g. <span id="id8">[<a class="reference internal" href="../about/zbiblio.html#id15" title="Shutter Speed. 2017.">Shu17</a>]</span>.</p>
 </section>
 <section id="iso">
-<h4>ISO<a class="headerlink" href="#iso" title="Link to this heading">#</a></h4>
+<h4>ISO<a class="headerlink" href="#iso" title="Permalink to this heading">#</a></h4>
 <p>The ISO number describes how much the processor in your camera amplifies the light collected by the sensor.
 It is in a sense an indicator for how much the image is altered to produce a correctly exposed image.
 As with shutter speed and aperture, each step on the ISO scale doubles or halves the camera’s sensitivity.
@@ -613,11 +605,11 @@ However, as it increases the camera’s sensitivity, it also introduces noise!
 It is thus always advised to keep the ISO as low as possible.</p>
 </section>
 <section id="working-the-triangle-the-rule-of-equivalent-exposures">
-<h4>Working the triangle: The Rule of Equivalent Exposures<a class="headerlink" href="#working-the-triangle-the-rule-of-equivalent-exposures" title="Link to this heading">#</a></h4>
+<h4>Working the triangle: The Rule of Equivalent Exposures<a class="headerlink" href="#working-the-triangle-the-rule-of-equivalent-exposures" title="Permalink to this heading">#</a></h4>
 <figure class="align-default" id="id10">
 <img alt="../../../_images/exposure-triangle.png" src="../../../_images/exposure-triangle.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 34 </span><span class="caption-text">The exposure triangle. Image from <span id="id9">[<a class="reference internal" href="../about/zbiblio.html#id13" title="The Exposure Triangle. 2017.">Exp17</a>]</span>.</span><a class="headerlink" href="#id10" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 34 </span><span class="caption-text">The exposure triangle. Image from <span id="id9">[<a class="reference internal" href="../about/zbiblio.html#id13" title="The Exposure Triangle. 2017.">Exp17</a>]</span>.</span><a class="headerlink" href="#id10" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Exposure and capturing images with the right settings thus comes down to an interplay between the ISO, shutter speed and aperture values <span id="id11">[<a class="reference internal" href="../about/zbiblio.html#id13" title="The Exposure Triangle. 2017.">Exp17</a>]</span>.
@@ -625,7 +617,7 @@ Each click or stop-change in either of them halves or doubles the amount of ligh
 Thus, if one action cuts the light by half, then you must double it in another to retain the same level of brightness in your captured images.</p>
 </section>
 <section id="haloes-arches-and-photo-rings">
-<h4>Haloes, arches and photo rings<a class="headerlink" href="#haloes-arches-and-photo-rings" title="Link to this heading">#</a></h4>
+<h4>Haloes, arches and photo rings<a class="headerlink" href="#haloes-arches-and-photo-rings" title="Permalink to this heading">#</a></h4>
 <p>A good camera setup further contributes to consistency in the capturing process.
 Ideally, the sample should be imaged with sufficient overlap between images.
 Each of the haloes or photo rings in <a class="reference internal" href="#photo-halo"><span class="std std-numref">Fig. 35</span></a> represents this, with equal distances between the images in each ring.</p>
@@ -634,7 +626,7 @@ Each of the haloes or photo rings in <a class="reference internal" href="#photo-
 <figcaption>
 <p><span class="caption-number">Fig. 35 </span><span class="caption-text">Haloes around the sample (centre point).
 Each halo comprises all the photos taken of the sample in a specific orientation, meaning the sample shown has been imaged in four distinct positions.
-Within a halo each image should be equally spaced; if not, something has possibly gone wrong either during acquisition (or photo alignment), and needs checking.</span><a class="headerlink" href="#photo-halo" title="Link to this image">#</a></p>
+Within a halo each image should be equally spaced; if not, something has possibly gone wrong either during acquisition (or photo alignment), and needs checking.</span><a class="headerlink" href="#photo-halo" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p><a class="reference internal" href="#photo-halo"><span class="std std-numref">Fig. 35</span></a> has four rings in total, which means the sample has been imaged on four sides.
@@ -647,7 +639,7 @@ The <a class="reference internal" href="hss_tutorial.html"><span class="doc std 
 </div>
 <div class="tip admonition">
 <p class="admonition-title">Scaled models</p>
-<p>By including ground control points (GCPs) in a single orientation (as per the <a class="reference internal" href="hss_lab_exercise.html#section-georeferencing-exercise"><span class="std std-ref">GCP exercise</span></a>), you can easily <em>georeference</em> the samples to their real-world scale.
+<p>By including ground control points (GCPs) in a single orientation (as per the <span class="xref myst">GCP exercise</span>), you can easily <em>georeference</em> the samples to their real-world scale.
 However, make sure to only do so for <em>one (1)</em> orientation, as GCPs are considered absolute reference points during processing and take precedence in aligning (or misaligning) your images!</p>
 </div>
 </section>
@@ -668,7 +660,7 @@ However, make sure to only do so for <em>one (1)</em> orientation, as GCPs are c
         },
         kernelOptions: {
             name: "python3",
-            path: "./content/lessons/small-objects"
+            path: "./content\lessons\small-objects"
         },
         predefinedOutput: true
     }
@@ -682,7 +674,7 @@ However, make sure to only do so for <em>one (1)</em> orientation, as GCPs are c
               
               
               
-                <footer class="prev-next-footer d-print-none">
+                <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -711,7 +703,6 @@ However, make sure to only do so for <em>one (1)</em> orientation, as GCPs are c
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -760,7 +751,7 @@ By Peter Betlem, Nil Rodes and Contributors
 
   <p class="copyright">
     
-      © Copyright 2025 (CC-BY-NC except where otherwise stated).
+      © Copyright 2026 (CC-BY-NC except where otherwise stated).
       <br/>
     
   </p>
@@ -784,8 +775,8 @@ By Peter Betlem, Nil Rodes and Contributors
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script src="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>

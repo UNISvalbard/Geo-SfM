@@ -1,12 +1,13 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../../../" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Interpreting in QGIS &#8212; Geo-SfM Course</title>
   
@@ -14,50 +15,54 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
-    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
-    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../../../_static/copybutton.js?v=f281be69"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/lessons/geomodelling/qgis_cheatsheet';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -72,23 +77,28 @@
 
   
   
-  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
+
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -111,22 +121,17 @@
 </form></div>
   </div>
 
-  <div class="pst-async-banner-revealer d-none">
-  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
-</div>
-<aside class="bd-header-announcement" aria-label="Announcement">
-  <div class="bd-header-announcement__content">Found this tutorial helpful? Please Star me <a href="https://github.com/UNISvalbard/Geo-SfM"> <img src="https://img.shields.io/github/stars/UNISvalbard/Geo-SfM"></a></div>
-</aside>
+
+  <div class="bd-header-announcement container-fluid bd-header-announcement">
+    <div class="bd-header-announcement__content">Found this tutorial helpful? Please Star me <a href="https://github.com/UNISvalbard/Geo-SfM"> <img src="https://img.shields.io/github/stars/UNISvalbard/Geo-SfM"></a></div>
+  </div>
 
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
-    </header>
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
   
-
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
-      
-      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -142,8 +147,6 @@
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
 
-  
-    
   
 
 <a class="navbar-brand logo" href="../../../landing-page.html">
@@ -162,18 +165,7 @@
   
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -260,7 +252,7 @@
 
       </div>
       
-      <main id="main-content" class="bd-main" role="main">
+      <main id="main-content" class="bd-main">
         
         
 
@@ -269,14 +261,14 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article d-print-none">
+              <div class="bd-header-article">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
       
     </div>
   
@@ -418,10 +410,10 @@
 
 <script>
 document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -429,14 +421,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
       
     </div>
@@ -477,10 +469,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article">
+                <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="interpreting-in-qgis">
-<span id="qgis-cheatsheet"></span><h1>Interpreting in QGIS<a class="headerlink" href="#interpreting-in-qgis" title="Link to this heading">#</a></h1>
+<span id="qgis-cheatsheet"></span><h1>Interpreting in QGIS<a class="headerlink" href="#interpreting-in-qgis" title="Permalink to this heading">#</a></h1>
 <p>QGIS is an open-source GIS application.
 QGIS (version 3.36 and later; released early 2024) have the ability to display 3D data natively within the 3D map type, with future updates aimed at addressing 3D annotations and interpretation. QGIS supports the display of 3D Tiled models (.json type) and has extensive support for 3D Point Clouds (much better than ArcGIS Pro).</p>
 <p>The latest version can be downloaded for free at the QGIS project website:</p>
@@ -498,12 +490,12 @@ Specifically, this tutorial details the following steps:</p>
 <li><p>Importing of 3D Point Cloud data in .laz file format</p></li>
 </ul>
 <section id="enabling-2d-3d-map-view">
-<h2>Enabling 2D/3D map view<a class="headerlink" href="#enabling-2d-3d-map-view" title="Link to this heading">#</a></h2>
+<h2>Enabling 2D/3D map view<a class="headerlink" href="#enabling-2d-3d-map-view" title="Permalink to this heading">#</a></h2>
 <p>The creation and exploration of the QGIS map interface is neatly outlined in the QGIS documentation pages, specifically in <a class="reference external" href="https://docs.qgis.org/3.34/en/docs/training_manual/basic_map/index.html">2. Module: Creating and Exploring a Basic Map</a>.
 Lessons <a class="reference external" href="https://docs.qgis.org/3.34/en/docs/training_manual/basic_map/overview.html">2.1</a> and <a class="reference external" href="https://docs.qgis.org/3.34/en/docs/training_manual/basic_map/preparation.html">2.2</a> introduce the interface and addition of layers, respectively.</p>
 </section>
 <section id="creating-and-editing-2d-vectors">
-<h2>Creating and editing 2D vectors<a class="headerlink" href="#creating-and-editing-2d-vectors" title="Link to this heading">#</a></h2>
+<h2>Creating and editing 2D vectors<a class="headerlink" href="#creating-and-editing-2d-vectors" title="Permalink to this heading">#</a></h2>
 <p>The creation of vector data sets is well documented in the QGIS documentation pages, specifically in <a class="reference external" href="https://docs.qgis.org/3.34/en/docs/training_manual/create_vector_data/create_new_vector.html">5.1 Lesson: Creating a New Vector Dataset</a>.
 Follow along the QGIS 5.1 tutorial to quickly learn how to create new layers and fields (=attributes), as well as how to annotate the 2D maps.</p>
 <div class="suggestion admonition">
@@ -515,21 +507,19 @@ Relevant raster data can be geological map data, as well as digital terrain maps
 The latter is key when displaying data in the 3D data viewer (see below).</p>
 </section>
 <section id="visualising-and-exploring-3d-data">
-<h2>Visualising and exploring 3D data<a class="headerlink" href="#visualising-and-exploring-3d-data" title="Link to this heading">#</a></h2>
+<h2>Visualising and exploring 3D data<a class="headerlink" href="#visualising-and-exploring-3d-data" title="Permalink to this heading">#</a></h2>
 <figure class="align-default" id="qgis-3dmap">
-<a class="reference internal image-reference" href="../../../_images/qgis_3dmap.gif"><img alt="../../../_images/qgis_3dmap.gif" src="../../../_images/qgis_3dmap.gif" style="height: 400px;" />
-</a>
+<a class="reference internal image-reference" href="../../../_images/qgis_3dmap.gif"><img alt="../../../_images/qgis_3dmap.gif" src="../../../_images/qgis_3dmap.gif" style="height: 400px;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 73 </span><span class="caption-text">The 3D map interface can be opened by going into <em>View</em> &gt; <em>3D map views</em> and selecting either an existing Map item, or creating a new one.
-This opens in another window.</span><a class="headerlink" href="#qgis-3dmap" title="Link to this image">#</a></p>
+This opens in another window.</span><a class="headerlink" href="#qgis-3dmap" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="qgis-3dmap-movements">
-<a class="reference internal image-reference" href="../../../_images/qgis_3dmap_movement.gif"><img alt="../../../_images/qgis_3dmap_movement.gif" src="../../../_images/qgis_3dmap_movement.gif" style="height: 400px;" />
-</a>
+<a class="reference internal image-reference" href="../../../_images/qgis_3dmap_movement.gif"><img alt="../../../_images/qgis_3dmap_movement.gif" src="../../../_images/qgis_3dmap_movement.gif" style="height: 400px;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 74 </span><span class="caption-text">The 3D map interface has its own widget for moving the viewer (it sits in the top right corner).
-Otherwise, one may also use the mouse/pointer to change the view.</span><a class="headerlink" href="#qgis-3dmap-movements" title="Link to this image">#</a></p>
+Otherwise, one may also use the mouse/pointer to change the view.</span><a class="headerlink" href="#qgis-3dmap-movements" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>The following mouse clicks are supported by the QGIS 3D map viewer.
@@ -540,14 +530,13 @@ First, make sure you have selected the <em>hand</em> symbol in the 3D map menuba
 <li><p><kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">middle</kbd>-<kbd class="kbd docutils literal notranslate">click</kbd></kbd>+<kbd class="kbd docutils literal notranslate">hold</kbd>+<kbd class="kbd docutils literal notranslate">move</kbd> to rotate around the clicked point.</p></li>
 </ul>
 <section id="adding-elevation-to-the-3d-map">
-<h3>Adding elevation to the 3D map<a class="headerlink" href="#adding-elevation-to-the-3d-map" title="Link to this heading">#</a></h3>
+<h3>Adding elevation to the 3D map<a class="headerlink" href="#adding-elevation-to-the-3d-map" title="Permalink to this heading">#</a></h3>
 <p>Data sets can be draped over a digital elevation model and shown in the 3D map.
 This behaviour is toggled through the 3D map settings, accessible from the menu (click wrench symbol), then <em>Configure…</em> (<a class="reference internal" href="#qgis-3dmap-settings"><span class="std std-numref">Fig. 75</span></a>).</p>
 <figure class="align-default" id="qgis-3dmap-settings">
-<a class="reference internal image-reference" href="../../../_images/qgis_3dmap_settings.gif"><img alt="../../../_images/qgis_3dmap_settings.gif" src="../../../_images/qgis_3dmap_settings.gif" style="height: 400px;" />
-</a>
+<a class="reference internal image-reference" href="../../../_images/qgis_3dmap_settings.gif"><img alt="../../../_images/qgis_3dmap_settings.gif" src="../../../_images/qgis_3dmap_settings.gif" style="height: 400px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 75 </span><span class="caption-text">The 3D map configuration/settings window.</span><a class="headerlink" href="#qgis-3dmap-settings" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 75 </span><span class="caption-text">The 3D map configuration/settings window.</span><a class="headerlink" href="#qgis-3dmap-settings" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Make sure to Toggle the <em>Terrain</em> option under <em>Terrain</em>, then set the terrain type accordingly:</p>
@@ -558,7 +547,7 @@ This behaviour is toggled through the 3D map settings, accessible from the menu 
 </section>
 </section>
 <section id="visualising-and-exploring-3d-tile-sets">
-<span id="qgis-3dtiles"></span><h2>Visualising and exploring 3D Tile sets<a class="headerlink" href="#visualising-and-exploring-3d-tile-sets" title="Link to this heading">#</a></h2>
+<span id="qgis-3dtiles"></span><h2>Visualising and exploring 3D Tile sets<a class="headerlink" href="#visualising-and-exploring-3d-tile-sets" title="Permalink to this heading">#</a></h2>
 <p>As discussed in the QGIS Documentation pages section <a class="reference external" href="https://docs.qgis.org/3.34/en/docs/user_manual/working_with_3d_tiles/3d_tiles.html">21. Working with 3D Tiles</a>, QGIS supports 3D tiles natively since version 3.34.
 However, its support is limited to certain file formats, which is currently only the <em>.json</em> data type rather than the <em>.3tz</em> zipped folder structure exported by Agisoft Metashape and used by ArcGIS Pro.</p>
 <p>The downside of the <em>.json</em> format is that it requires unzipping of the <em>.3tz</em> zipped folder format, thus increasing file size and number.
@@ -570,65 +559,59 @@ OneDrive may crash repeatedly as it cannot handle the hundred thousand+ files…
 This is also the reason these data are shared in the <em>.3tz</em> archive format instead.</p>
 </div>
 <figure class="align-default" id="qgis-add-3dtiles">
-<a class="reference internal image-reference" href="../../../_images/qgis_add_3dtiles.gif"><img alt="../../../_images/qgis_add_3dtiles.gif" src="../../../_images/qgis_add_3dtiles.gif" style="height: 400px;" />
-</a>
+<a class="reference internal image-reference" href="../../../_images/qgis_add_3dtiles.gif"><img alt="../../../_images/qgis_add_3dtiles.gif" src="../../../_images/qgis_add_3dtiles.gif" style="height: 400px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 76 </span><span class="caption-text">Once the 3dtiles archive has been unpacked, adding it into QGIS is as simple as dropping the <em>.json</em> into the desired QGIS project.</span><a class="headerlink" href="#qgis-add-3dtiles" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 76 </span><span class="caption-text">Once the 3dtiles archive has been unpacked, adding it into QGIS is as simple as dropping the <em>.json</em> into the desired QGIS project.</span><a class="headerlink" href="#qgis-add-3dtiles" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="qgis-rename-3dtiles">
-<a class="reference internal image-reference" href="../../../_images/qgis_rename_3dtiles.gif"><img alt="../../../_images/qgis_rename_3dtiles.gif" src="../../../_images/qgis_rename_3dtiles.gif" style="height: 400px;" />
-</a>
+<a class="reference internal image-reference" href="../../../_images/qgis_rename_3dtiles.gif"><img alt="../../../_images/qgis_rename_3dtiles.gif" src="../../../_images/qgis_rename_3dtiles.gif" style="height: 400px;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 77 </span><span class="caption-text">Make sure to rename the 3dtiles accordingly!
-Otherwise it may be difficult to keep the data sets apart!</span><a class="headerlink" href="#qgis-rename-3dtiles" title="Link to this image">#</a></p>
+Otherwise it may be difficult to keep the data sets apart!</span><a class="headerlink" href="#qgis-rename-3dtiles" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Once the 3d tiles have been loaded in, they appear as a high-resolution texture/orthomosaic in your 2D window
 That makes sense, as they are essentially 3D orthomosaics.</p>
 </section>
 <section id="importing-laz-las-point-cloud-data">
-<h2>Importing .Laz/.Las point cloud data<a class="headerlink" href="#importing-laz-las-point-cloud-data" title="Link to this heading">#</a></h2>
+<h2>Importing .Laz/.Las point cloud data<a class="headerlink" href="#importing-laz-las-point-cloud-data" title="Permalink to this heading">#</a></h2>
 <p>The addition of .laz/.las files to a QGIS project is similar to the importing of 3d tiles data, shown in <a class="reference internal" href="#qgis-add-laz"><span class="std std-numref">Fig. 78</span></a>.</p>
 <div class="warning admonition">
 <p class="admonition-title">Crashes? Save often!</p>
 <p>Given the large file sizes of the point data sets, it is best to save the QGIS project before adding data.</p>
 </div>
 <figure class="align-default" id="qgis-add-laz">
-<a class="reference internal image-reference" href="../../../_images/qgis_add_laz.gif"><img alt="../../../_images/qgis_add_laz.gif" src="../../../_images/qgis_add_laz.gif" style="height: 400px;" />
-</a>
+<a class="reference internal image-reference" href="../../../_images/qgis_add_laz.gif"><img alt="../../../_images/qgis_add_laz.gif" src="../../../_images/qgis_add_laz.gif" style="height: 400px;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 78 </span><span class="caption-text">Make sure to rename the 3dtiles accordingly!
-Otherwise it may be difficult to keep the data sets apart!</span><a class="headerlink" href="#qgis-add-laz" title="Link to this image">#</a></p>
+Otherwise it may be difficult to keep the data sets apart!</span><a class="headerlink" href="#qgis-add-laz" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Simply drag and drop the <em>.laz</em> or <em>.las</em> files into the project, and it will show up.
 When adding data for the first time, QGIS processes the data set (which takes time), during which it may sporadically hang/crash.
 Once processing is done, an additional file is generated (with <em>.copc.laz/las</em> extension) - future imports will go much smoother!</p>
 <section id="styling-laz-las-point-cloud-data">
-<h3>Styling .Laz/.Las point cloud data<a class="headerlink" href="#styling-laz-las-point-cloud-data" title="Link to this heading">#</a></h3>
+<h3>Styling .Laz/.Las point cloud data<a class="headerlink" href="#styling-laz-las-point-cloud-data" title="Permalink to this heading">#</a></h3>
 <p>When styling 3D data such as these point clouds, it is important to always select the same symbology/styling for both the 2D and 3D maps.</p>
 <figure class="align-default" id="qgis-laz-attributes-colours">
-<a class="reference internal image-reference" href="../../../_images/qgis_laz_attributes_colour.gif"><img alt="../../../_images/qgis_laz_attributes_colour.gif" src="../../../_images/qgis_laz_attributes_colour.gif" style="height: 400px;" />
-</a>
+<a class="reference internal image-reference" href="../../../_images/qgis_laz_attributes_colour.gif"><img alt="../../../_images/qgis_laz_attributes_colour.gif" src="../../../_images/qgis_laz_attributes_colour.gif" style="height: 400px;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 79 </span><span class="caption-text">Unlike ArcGIS Pro, QGIS allows one to style Point Data also based on custom data attributes, such as the drilling parameters! (Win! :D)
 Right click the layer you wish to modify, then select <em>Properties</em>, and head over to <em>Symbology</em>.
-There, change the <em>Attribute</em> that is visualised, and change any of the other colour properties to your desire.</span><a class="headerlink" href="#qgis-laz-attributes-colours" title="Link to this image">#</a></p>
+There, change the <em>Attribute</em> that is visualised, and change any of the other colour properties to your desire.</span><a class="headerlink" href="#qgis-laz-attributes-colours" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="qgis-laz-attributes">
-<a class="reference internal image-reference" href="../../../_images/qgis_laz_attributes.gif"><img alt="../../../_images/qgis_laz_attributes.gif" src="../../../_images/qgis_laz_attributes.gif" style="height: 400px;" />
-</a>
+<a class="reference internal image-reference" href="../../../_images/qgis_laz_attributes.gif"><img alt="../../../_images/qgis_laz_attributes.gif" src="../../../_images/qgis_laz_attributes.gif" style="height: 400px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 80 </span><span class="caption-text">Make sure to set the 3D styling to be the same as the 2D styling.</span><a class="headerlink" href="#qgis-laz-attributes" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 80 </span><span class="caption-text">Make sure to set the 3D styling to be the same as the 2D styling.</span><a class="headerlink" href="#qgis-laz-attributes" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="qgis-laz-attributes-3d">
-<a class="reference internal image-reference" href="../../../_images/qgis_3dmap_colors.gif"><img alt="../../../_images/qgis_3dmap_colors.gif" src="../../../_images/qgis_3dmap_colors.gif" style="height: 400px;" />
-</a>
+<a class="reference internal image-reference" href="../../../_images/qgis_3dmap_colors.gif"><img alt="../../../_images/qgis_3dmap_colors.gif" src="../../../_images/qgis_3dmap_colors.gif" style="height: 400px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 81 </span><span class="caption-text">As you can see, changing the attributes styling changes it across both the 2D and 3D maps.</span><a class="headerlink" href="#qgis-laz-attributes-3d" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 81 </span><span class="caption-text">As you can see, changing the attributes styling changes it across both the 2D and 3D maps.</span><a class="headerlink" href="#qgis-laz-attributes-3d" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -648,7 +631,7 @@ There, change the <em>Attribute</em> that is visualised, and change any of the o
         },
         kernelOptions: {
             name: "python3",
-            path: "./content/lessons/geomodelling"
+            path: "./content\lessons\geomodelling"
         },
         predefinedOutput: true
     }
@@ -662,7 +645,7 @@ There, change the <em>Attribute</em> that is visualised, and change any of the o
               
               
               
-                <footer class="prev-next-footer d-print-none">
+                <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -691,7 +674,6 @@ There, change the <em>Attribute</em> that is visualised, and change any of the o
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -734,7 +716,7 @@ By Peter Betlem, Nil Rodes and Contributors
 
   <p class="copyright">
     
-      © Copyright 2025 (CC-BY-NC except where otherwise stated).
+      © Copyright 2026 (CC-BY-NC except where otherwise stated).
       <br/>
     
   </p>
@@ -758,8 +740,8 @@ By Peter Betlem, Nil Rodes and Contributors
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script src="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>

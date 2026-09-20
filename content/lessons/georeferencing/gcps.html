@@ -1,12 +1,13 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../../../" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Ground control points (GCPs) &#8212; Geo-SfM Course</title>
   
@@ -14,50 +15,54 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
-    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
-    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../../../_static/copybutton.js?v=f281be69"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/lessons/georeferencing/gcps';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -72,23 +77,28 @@
 
   
   
-  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
+
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -111,22 +121,17 @@
 </form></div>
   </div>
 
-  <div class="pst-async-banner-revealer d-none">
-  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
-</div>
-<aside class="bd-header-announcement" aria-label="Announcement">
-  <div class="bd-header-announcement__content">Found this tutorial helpful? Please Star me <a href="https://github.com/UNISvalbard/Geo-SfM"> <img src="https://img.shields.io/github/stars/UNISvalbard/Geo-SfM"></a></div>
-</aside>
+
+  <div class="bd-header-announcement container-fluid bd-header-announcement">
+    <div class="bd-header-announcement__content">Found this tutorial helpful? Please Star me <a href="https://github.com/UNISvalbard/Geo-SfM"> <img src="https://img.shields.io/github/stars/UNISvalbard/Geo-SfM"></a></div>
+  </div>
 
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
-    </header>
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
   
-
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
-      
-      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -142,8 +147,6 @@
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
 
-  
-    
   
 
 <a class="navbar-brand logo" href="../../../landing-page.html">
@@ -162,18 +165,7 @@
   
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -260,7 +252,7 @@
 
       </div>
       
-      <main id="main-content" class="bd-main" role="main">
+      <main id="main-content" class="bd-main">
         
         
 
@@ -269,14 +261,14 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article d-print-none">
+              <div class="bd-header-article">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
       
     </div>
   
@@ -418,10 +410,10 @@
 
 <script>
 document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -429,14 +421,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
       
     </div>
@@ -474,10 +466,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article">
+                <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="ground-control-points-gcps">
-<span id="content-gcps"></span><h1>Ground control points (GCPs)<a class="headerlink" href="#ground-control-points-gcps" title="Link to this heading">#</a></h1>
+<span id="content-gcps"></span><h1>Ground control points (GCPs)<a class="headerlink" href="#ground-control-points-gcps" title="Permalink to this heading">#</a></h1>
 <p>Ground control points (GCPs) are locations that we can track with high precision and accuracy between the targeted object and a selection of our photos.
 We can use these to provide “exact” real world coordinates to our reconstructed models, as well as to determine the accuracy and impact of processing parameters.</p>
 <p>In a mapping survey, GCPs are points which can be precisely pinpointed.
@@ -501,7 +493,7 @@ Metashape automatically imports this upon loading.
 Do remember, however, that built-in GPSs still have quite large errors compared to differential GPS and similar.</p>
 </div>
 <section id="when-do-we-need-gcps">
-<h2>When do we need GCPs?<a class="headerlink" href="#when-do-we-need-gcps" title="Link to this heading">#</a></h2>
+<h2>When do we need GCPs?<a class="headerlink" href="#when-do-we-need-gcps" title="Permalink to this heading">#</a></h2>
 <p>GCPs are essential when you need <em>high global accuracy</em> (or <em>absolute accuracy</em>) and when you need to verify the accuracy of the final models.</p>
 <p>Applications include:</p>
 <ul class="simple">
@@ -513,7 +505,7 @@ Do remember, however, that built-in GPSs still have quite large errors compared 
 This is e.g. the case when we want to compare elements within the same models without relating these to real world properties.</p>
 </section>
 <section id="gcp-design">
-<h2>GCP design<a class="headerlink" href="#gcp-design" title="Link to this heading">#</a></h2>
+<h2>GCP design<a class="headerlink" href="#gcp-design" title="Permalink to this heading">#</a></h2>
 <p>In general, ground control points must be <strong>sharp</strong>, <strong>well defined</strong>, and <strong>positively identifiable on at least a sub-selection of photos</strong>.
 In many cases it is therefore a rule of thumb that markers used as GCPs should be <em>unique</em>.</p>
 <p>We generally differentiate between <em>artificial</em> and <em>natural</em> GCPs.
@@ -522,13 +514,13 @@ Here, however, <em>artificial</em> strictly means that a marker or GCP was speci
 Artificial markers’ unique appearance makes misidentification less likely, though comes at the cost of extra work and expense as artificial markers have to be manually set up prior to image acquisition.</p>
 <p>So, when implementing GCPs, what should we keep in mind?</p>
 <section id="unique-gcp-shapes">
-<h3>Unique GCP shapes<a class="headerlink" href="#unique-gcp-shapes" title="Link to this heading">#</a></h3>
+<h3>Unique GCP shapes<a class="headerlink" href="#unique-gcp-shapes" title="Permalink to this heading">#</a></h3>
 <p>While technically not a requirement, it is always preferred to be able to differentiate GCPs based on uniqueness of the marker.
 That means, in its most simplistic form, one could get away with <a class="reference internal" href="#simplemarkers"><span class="std std-ref">a simple four-member marker-set</span></a>.</p>
 <figure class="align-default" id="simplemarkers">
 <img alt="../../../_images/4simplemarkers.png" src="../../../_images/4simplemarkers.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 41 </span><span class="caption-text">A basic set of four unique markers that can be used as artificial markers.</span><a class="headerlink" href="#simplemarkers" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 41 </span><span class="caption-text">A basic set of four unique markers that can be used as artificial markers.</span><a class="headerlink" href="#simplemarkers" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>While identification of the shapes should be rather straightforward, some troubles are also easily foreseen.
@@ -541,7 +533,7 @@ With each subsequent marker in a set slightly differing, and therefore considere
 <figure class="align-default" id="common-gcps">
 <img alt="../../../_images/common_gcps.png" src="../../../_images/common_gcps.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 42 </span><span class="caption-text">An example of GCP markers commonly employed in photogrammetry applications <span id="id1">[<a class="reference internal" href="../about/zbiblio.html#id5" title="Davide A. Cucci. ACCURATE OPTICAL TARGET POSE DETERMINATION FOR APPLICATIONS IN AERIAL PHOTOGRAMMETRY. 2016.">Cuc16</a>]</span>.</span><a class="headerlink" href="#common-gcps" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 42 </span><span class="caption-text">An example of GCP markers commonly employed in photogrammetry applications <span id="id1">[<a class="reference internal" href="../about/zbiblio.html#id5" title="Davide A. Cucci. ACCURATE OPTICAL TARGET POSE DETERMINATION FOR APPLICATIONS IN AERIAL PHOTOGRAMMETRY. 2016.">Cuc16</a>]</span>.</span><a class="headerlink" href="#common-gcps" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>No longer featuring a plane of symmetry, one can now certainly select a point where the real world coordinates can be measured and later the corresponding pixels in the photo can be selected.</p>
@@ -552,7 +544,7 @@ If you decide to measure the first marker in the top right corner, then make sur
 </div>
 </section>
 <section id="computer-readability">
-<h3>Computer readability<a class="headerlink" href="#computer-readability" title="Link to this heading">#</a></h3>
+<h3>Computer readability<a class="headerlink" href="#computer-readability" title="Permalink to this heading">#</a></h3>
 <p>The standardised uniqueness of binary fiducial markers furthermore allows for automisation of the marker detection step.
 While not an issue when dealing with just a handful of photos, highly detailed surveys quickly expand the photo collection to hundreds, if not thousands, of photos.</p>
 <p>While Agisoft Metashape provides a set of GCPs internally, one of the most popular marker sets is the <a class="reference external" href="http://www.uco.es/investiga/grupos/ava/node/26">ArUco library</a> <span id="id2">[<a class="reference internal" href="../about/zbiblio.html#id6" title="S. Garrido-Jurado, R. Muñoz-Salinas, F.J. Madrid-Cuevas, and M.J. Marín-Jiménez. Automatic generation and detection of highly reliable fiducial markers under occlusion. Pattern Recognition, 47(6):2280–2292, 2014. doi:10.1016/j.patcog.2014.01.005.">GarridoJuradoMunozSalinasMadridCuevasMarinJimenez14</a>]</span>.
@@ -560,17 +552,17 @@ In addition to exhibiting a standardised uniqueness, the ArUco-based markers are
 <figure class="align-default" id="aruco-markers">
 <img alt="../../../_images/aruco_markers.png" src="../../../_images/aruco_markers.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 43 </span><span class="caption-text">Example of ArUco marker images <span id="id3">[<a class="reference internal" href="../about/zbiblio.html#id6" title="S. Garrido-Jurado, R. Muñoz-Salinas, F.J. Madrid-Cuevas, and M.J. Marín-Jiménez. Automatic generation and detection of highly reliable fiducial markers under occlusion. Pattern Recognition, 47(6):2280–2292, 2014. doi:10.1016/j.patcog.2014.01.005.">GarridoJuradoMunozSalinasMadridCuevasMarinJimenez14</a>]</span>.</span><a class="headerlink" href="#aruco-markers" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 43 </span><span class="caption-text">Example of ArUco marker images <span id="id3">[<a class="reference internal" href="../about/zbiblio.html#id6" title="S. Garrido-Jurado, R. Muñoz-Salinas, F.J. Madrid-Cuevas, and M.J. Marín-Jiménez. Automatic generation and detection of highly reliable fiducial markers under occlusion. Pattern Recognition, 47(6):2280–2292, 2014. doi:10.1016/j.patcog.2014.01.005.">GarridoJuradoMunozSalinasMadridCuevasMarinJimenez14</a>]</span>.</span><a class="headerlink" href="#aruco-markers" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="suggestion admonition">
 <p class="admonition-title">Python-based automated marker detection</p>
 <p>ArUco markers (50x50 cm) printed on canvas are available for use in the UNIS Arctic Geology department.
-Marker detection hereof can be done by using the scripts described in <a class="reference internal" href="../automation/python.html#section-python"><span class="std std-ref">the Python-automisation chapter</span></a>.</p>
+Marker detection hereof can be done by using the scripts described in <span class="xref myst">the Python-automisation chapter</span>.</p>
 </div>
 </section>
 <section id="gcp-size">
-<h3>GCP size<a class="headerlink" href="#gcp-size" title="Link to this heading">#</a></h3>
+<h3>GCP size<a class="headerlink" href="#gcp-size" title="Permalink to this heading">#</a></h3>
 <p>As a rule of thumb, a GCP marker should be fully identifiably on a photo by nothing more than the naked eye.
 This means that the size of the GCP markers should scale with the imaging distance, i.e., the distance between the camera lens (albeit in hand, UAV) and the imaging target.</p>
 <div class="admonition-svalbard-experience admonition">
@@ -581,7 +573,7 @@ On the other hand, GCP markers for hand-sized sample digitisation can be as smal
 </section>
 </section>
 <section id="placement-of-gcps-in-terms-of-highest-accuracy">
-<h2>Placement of GCPs in terms of highest accuracy<a class="headerlink" href="#placement-of-gcps-in-terms-of-highest-accuracy" title="Link to this heading">#</a></h2>
+<h2>Placement of GCPs in terms of highest accuracy<a class="headerlink" href="#placement-of-gcps-in-terms-of-highest-accuracy" title="Permalink to this heading">#</a></h2>
 <p>An extensive review on the accuracy of GCPs types is conducted by <span id="id4">[<a class="reference internal" href="../about/zbiblio.html#id11" title="Patricio Martínez-Carricondo, Francisco Agüera-Vega, Fernando Carvajal-Ramírez, Francisco-Javier Mesas-Carrascosa, Alfonso García-Ferrer, and Fernando-Juan Pérez-Porras. Assessment of UAV-photogrammetric mapping accuracy based on variation of ground control points. International Journal of Applied Earth Observation and Geoinformation, 72:1–10, 2018. doi:10.1016/j.jag.2018.05.015.">MartinezCarricondoAgueraVegaCarvajalRamirez+18</a>]</span> and <span id="id5">[<a class="reference internal" href="../about/zbiblio.html#id2" title="Francisco Agüera-Vega, Fernando Carvajal-Ramírez, and Patricio Martínez-Carricondo. Assessment of photogrammetric mapping accuracy based on variation ground control points number using unmanned aerial vehicle. Measurement, 98:221–227, 2017. doi:10.1016/j.measurement.2016.12.002.">AgueraVegaCarvajalRamirezMartinezCarricondo17</a>]</span>, and we here only focus on the take-home messages.
 These conclusions are based on an accuracy-assessment that seeks minimal root mean square errors (RMSEs) for the GCPs’s longitude, latitude, and altitude.</p>
 <p>Prior to implementing GCPs, one always has to assess the need of precision and accuracy in terms of cost, i.e., time.
@@ -591,7 +583,7 @@ As a result, efficiency can be gained by reducing the number of GCPs (<a class="
 <figure class="align-default" id="gcp-locations">
 <img alt="../../../_images/gcp_locations.png" src="../../../_images/gcp_locations.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 44 </span><span class="caption-text">Five different GCP distribution types and an example for the combination of 16 GCPs (second row). (a) edge distribution, (b) central distribution, (c) corner distribution (equivalent for all four corners), (d) stratified distribution, (e) random distribution. In general, a combination of the edge and stratified distribution (d) gives rise to the lowest overall errors <span id="id6">[<a class="reference internal" href="../about/zbiblio.html#id11" title="Patricio Martínez-Carricondo, Francisco Agüera-Vega, Fernando Carvajal-Ramírez, Francisco-Javier Mesas-Carrascosa, Alfonso García-Ferrer, and Fernando-Juan Pérez-Porras. Assessment of UAV-photogrammetric mapping accuracy based on variation of ground control points. International Journal of Applied Earth Observation and Geoinformation, 72:1–10, 2018. doi:10.1016/j.jag.2018.05.015.">MartinezCarricondoAgueraVegaCarvajalRamirez+18</a>]</span>.</span><a class="headerlink" href="#gcp-locations" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 44 </span><span class="caption-text">Five different GCP distribution types and an example for the combination of 16 GCPs (second row). (a) edge distribution, (b) central distribution, (c) corner distribution (equivalent for all four corners), (d) stratified distribution, (e) random distribution. In general, a combination of the edge and stratified distribution (d) gives rise to the lowest overall errors <span id="id6">[<a class="reference internal" href="../about/zbiblio.html#id11" title="Patricio Martínez-Carricondo, Francisco Agüera-Vega, Fernando Carvajal-Ramírez, Francisco-Javier Mesas-Carrascosa, Alfonso García-Ferrer, and Fernando-Juan Pérez-Porras. Assessment of UAV-photogrammetric mapping accuracy based on variation of ground control points. International Journal of Applied Earth Observation and Geoinformation, 72:1–10, 2018. doi:10.1016/j.jag.2018.05.015.">MartinezCarricondoAgueraVegaCarvajalRamirez+18</a>]</span>.</span><a class="headerlink" href="#gcp-locations" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Placing the GCPs around the edges and in a stratified manner throughout the survey area results in the lowest overall errors.
@@ -620,7 +612,7 @@ A moving GCP is essentially useless, and likely to give rise to major positional
         },
         kernelOptions: {
             name: "python3",
-            path: "./content/lessons/georeferencing"
+            path: "./content\lessons\georeferencing"
         },
         predefinedOutput: true
     }
@@ -634,7 +626,7 @@ A moving GCP is essentially useless, and likely to give rise to major positional
               
               
               
-                <footer class="prev-next-footer d-print-none">
+                <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -663,7 +655,6 @@ A moving GCP is essentially useless, and likely to give rise to major positional
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -703,7 +694,7 @@ By Peter Betlem, Nil Rodes and Contributors
 
   <p class="copyright">
     
-      © Copyright 2025 (CC-BY-NC except where otherwise stated).
+      © Copyright 2026 (CC-BY-NC except where otherwise stated).
       <br/>
     
   </p>
@@ -727,8 +718,8 @@ By Peter Betlem, Nil Rodes and Contributors
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script src="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>
